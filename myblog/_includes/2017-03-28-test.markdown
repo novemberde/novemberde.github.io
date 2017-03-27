@@ -1,0 +1,19 @@
+---
+layout: post
+title:  "test"
+date:   2017-03-28 01:24:40 +0900
+categories: jekyll update
+---
+My test page
+
+{% highlight javascript %}
+function test() {
+    alert();
+}
+{% endhighlight %}
+
+Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+
+[jekyll-docs]: https://jekyllrb.com/docs/home
+[jekyll-gh]:   https://github.com/novemberde
+[jekyll-talk]: https://talk.jekyllrb.com/
