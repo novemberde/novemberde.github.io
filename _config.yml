@@ -47,7 +47,7 @@ github_username:  novemberde
 
 # Build settings
 markdown: kramdown
-theme: jekyll-theme-cayman
+theme: minima
 gems:
  - jekyll-feed
 exclude:
