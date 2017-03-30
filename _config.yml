@@ -7,7 +7,7 @@ linkedin: https://www.linkedin.com/in/kyuhyun-byun-70a228115/
 # email: 
 
 
-highlighter: pygments
+# highlighter: pygments
 markdown: redcarpet
 redcarpet:
   extensions: ["tables"]
