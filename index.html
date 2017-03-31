@@ -6,7 +6,7 @@ title: Novemberde's blog
 
 {% if site.posts != empty %}
 <div class="recent-posts">
-  <h1>Recent Posts</h1>
+  <h1>RECENT</h1>
   {% for post in site.posts limit: 3 %}
     {% if forloop.first %}
       {% assign add_class = 'most-recent' %}
@@ -26,6 +26,7 @@ title: Novemberde's blog
               {{ post.date | date_to_string | date: "%b %-d, %Y"  }}
             </time>
           </h4>
+          <h6>{{ post.excerpt | strip_html | truncatewords: 75 }}</h6>
         </span>
       </li>
     </ul>
