@@ -9,7 +9,7 @@ disqus: novemberde-github-io
 
 
 # highlighter: pygments
-markdown: redcarpet
+markdown: kramdown
 redcarpet:
   extensions: ["tables"]
 

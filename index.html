@@ -26,7 +26,9 @@ title: Novemberde's blog
               {{ post.date | date_to_string | date: "%b %-d, %Y"  }}
             </time>
           </h4>
-          <h6>{{ post.excerpt | strip_html | truncatewords: 75 }}</h6>
+        </span>
+        <span>
+          {{ post.excerpt | strip_html | truncatewords: 75 }}
         </span>
       </li>
     </ul>
