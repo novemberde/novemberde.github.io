@@ -92,7 +92,15 @@ $ chmod 600 .ssh/authorized_keys
 
  Host Name 은 ubuntu 계정과 동일하고 SSH 키파일은 docker.ppk로 접속하면 된다.
 
+---------------------
 
+## Security Group에서 80 포트를 열어주자
+
+ 아래와 같은 화면에서 Add Rule을 눌러 Type은 HTTP를 고르고 Source는 Anywhere로 하던가 로컬에서 작성자만 접속하게 하고 싶다면 My IP로 진행한다.
+
+ 간단하게 80포트를 열어주었다. AWS가 나오기 이전에는 직접 ufw를 사용하여 방화벽 설정을 할 수 있었다. 하지만 Security Group을 사용하면 간단하게 방화벽을 구현할 수 있다.
+
+![AWS EC2 Console Security Group]({{ site.baseurl }}/images/aws/ec2/security_group.png)
 
 ## References
 - [http://docs.aws.amazon.com/ko_kr/AWSEC2/latest/UserGuide/managing-users.html](http://docs.aws.amazon.com/ko_kr/AWSEC2/latest/UserGuide/managing-users.html)
