@@ -694,8 +694,8 @@ time
   .container
 {
   width:100%;
-  padding-right:0;
-  padding-left:0;
+  padding-right:5px;
+  padding-left:5px;
   padding-top:30px
 }
 
@@ -728,7 +728,7 @@ time
   margin-bottom:30px;
   background-color:#f9f9f9;
   box-shadow:1px 1px 0 1px #e8e8e8;
-  padding: 0 0 0 0
+  padding: 0 10px 0 10px
 }
 
 #welcome-greeting
@@ -772,7 +772,7 @@ time
   .container {
     width: 100%;
     margin: 0 0 0 0;
-    padding: 15px 0 0 0;
+    padding: 15px 5px 0 5px;
   }
 
   .recent-posts
@@ -792,7 +792,7 @@ time
     margin-bottom:30px;
     background-color:#f9f9f9;
     box-shadow:1px 1px 0 1px #e8e8e8;
-    padding: 0 0 0 0
+    padding: 0 10px 0 10px
   }
 
   #welcome-greeting
