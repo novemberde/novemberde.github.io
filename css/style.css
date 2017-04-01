@@ -50,7 +50,7 @@ li p {
   font-size:20px;
   list-style:none;
   font-weight:lighter;
-  line-height:250%;
+  line-height:150%;
   padding-bottom:30px
 }
 
@@ -691,6 +691,12 @@ time
 }
 
 @media (max-width:767px) {
+  .container
+{
+  width:100%;
+  padding-right:0;
+  padding-top:30px
+}
 
 #wrapper {
   padding-left: 0;
@@ -730,6 +736,7 @@ time
 }
 
 @media screen and (max-width: 500px) {
+
   #welcome-greeting h2 {
    font-size: 15px; 
    transition: all 0.2s ease 0s;
