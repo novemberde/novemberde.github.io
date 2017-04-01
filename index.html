@@ -7,7 +7,7 @@ title: Novemberde's blog
 {% if site.posts != empty %}
 <div class="recent-posts">
   <h1>RECENT</h1>
-  {% for post in site.posts limit: 3 %}
+  {% for post in site.posts limit: 6 %}
     {% if forloop.first %}
       {% assign add_class = 'most-recent' %}
       {% capture fresh_tag %}
