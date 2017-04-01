@@ -695,6 +695,7 @@ time
 {
   width:100%;
   padding-right:0;
+  padding-left:0;
   padding-top:30px
 }
 
@@ -722,6 +723,28 @@ time
   transition: all 0.7s ease 0s;
 }
 
+#article
+{
+  margin-bottom:30px;
+  background-color:#f9f9f9;
+  box-shadow:1px 1px 0 1px #e8e8e8;
+  padding: 0 0 0 0
+}
+
+#welcome-greeting
+{
+  padding: 0 15px 0 15px
+}
+
+.recent-posts
+{
+  background-color:#fff;
+  color:#4d4d4d;
+  box-shadow:1px 1px 0 1px #e8e8e8;
+  margin:0 0 0 0;
+  padding: 0 0 0 0
+}
+
 
 .inset {
   padding: 15px;
@@ -732,6 +755,8 @@ time
   background-color: #ededed;
   margin-top: -20px;
 }
+
+
 
 }
 
@@ -747,13 +772,33 @@ time
   .container {
     width: 100%;
     margin: 0 0 0 0;
-    padding: 15px 15px 0 15px;
+    padding: 15px 0 0 0;
   }
 
-  #article {
+  .recent-posts
+  {
+    background-color:#fff;
+    color:#4d4d4d;
+    box-shadow:1px 1px 0 1px #e8e8e8;
+    margin:0 0 0 0;
+    padding: 0 0 0 0
+  }
+
+  /*#article {
       padding: 0 10px 0 10px;
+  }*/
+  #article
+  {
+    margin-bottom:30px;
+    background-color:#f9f9f9;
+    box-shadow:1px 1px 0 1px #e8e8e8;
+    padding: 0 0 0 0
   }
 
+  #welcome-greeting
+  {
+    padding: 0 15px 0 15px
+  }
   .showcase-wrapper {
     width: 100%;
     height: 50%;
