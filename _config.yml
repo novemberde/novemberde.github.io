@@ -8,8 +8,8 @@ disqus: novemberde-github-io
 # email: 
 
 
-# highlighter: pygments
-markdown: kramdown
+highlighter: Redcarpet
+markdown: Redcarpet
 redcarpet:
   extensions: ["tables"]
 
