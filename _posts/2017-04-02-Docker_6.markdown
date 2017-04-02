@@ -29,7 +29,7 @@ title: PM2를 사용하여 EC2에 Node 서버 배포하기
 
 apt-get을 통해 설치하면 간단하게 node 서버 및 npm 패키지를 설치할 수 있다.
 
-{% highlight shell %}
+```
 # node 7.x대 버전으로 받자.
 $ curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
 $ sudo apt-get install -y nodejs
@@ -39,7 +39,7 @@ $ sudo apt-get install -y build-essential
 
 # PM2를 전역적으로 사용하기 위해 -g 옵션을 붙여 설치하자.
 $ sudo npm install -g pm2
-{% endhighlight %}
+```
 
 
 ---------------------
@@ -55,7 +55,7 @@ $ sudo npm install -g pm2
 
  docker 계정으로 SSH접속을 한 후에 pm2로 서버를 실행시키자. PM2에 대한 자세한 사용법은 [PM2 공식사이트](http://pm2.keymetrics.io/) 를 참고하면 된다.
 
-{% highlight shell %}
+```
 # 천천히 명령어 한줄씩 실행하는 방법.
 $ cd docker_node_server
 $ npm install
@@ -63,7 +63,7 @@ $ pm2 start app.js
 
 # 디렉터리 이동없이 실행.
 $ npm install --prefix /home/docker/docker_node_server && pm2 start /home/docker/docker_node_server
-{% endhighlight %}
+```
 
 ![pm2]({{ site.baseurl }}/images/aws/ec2/pm2.png)
 
@@ -75,73 +75,3 @@ $ npm install --prefix /home/docker/docker_node_server && pm2 start /home/docker
 ## References
 - [https://nodejs.org/ko/download/package-manager/](https://nodejs.org/ko/download/package-manager/)
 - [http://pm2.keymetrics.io/](http://pm2.keymetrics.io/)
-
-
-<!--- [https://www.docker.com/what-docker](https://www.docker.com/what-docker)
-- [http://pyrasis.com/Docker/Docker-HOWTO](http://pyrasis.com/Docker/Docker-HOWTO)
-- [https://www.slideshare.net/pyrasis/docker-docker-38286477](https://www.slideshare.net/pyrasis/docker-docker-38286477)
-- [https://subicura.com/2017/01/19/docker-guide-for-beginners-1.html](https://subicura.com/2017/01/19/docker-guide-for-beginners-1.html)
-- [https://docs.docker.com/engine/installation/linux/ubuntu/](https://docs.docker.com/engine/installation/linux/ubuntu/)
-- [https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04)-->
-
-<!--
-# Samples
-
-# Heading 1
-
-## Heading 2
-
-### Heading 3
-
-#### Heading 4
-
-##### Heading 5
-
-###### Heading 6
-
-### Body text
-
-**Lorem ipsum dolor sit amet**, consectetur adipiscing elit. Quisque tempus nunc diam, non dignissim risus tincidunt a. Curabitur consequat justo vitae ipsum accumsan tempor. Quisque rhoncus eleifend ante vitae ultricies. Pellentesque suscipit nisl ut metus tincidunt, vulputate sodales dui commodo. Sed eget sapien varius, lacinia lectus nec, tempor dolor. Pellentesque sed mattis magna. Curabitur ut tristique turpis. Morbi sagittis dolor suscipit urna placerat, consectetur venenatis sapien viverra. Mauris vitae felis et sem venenatis cursus.
-
-
-![Image]({{ site.baseurl }}/images/test.png)
-
-
-Donec ornare turpis non ullamcorper pulvinar. *Integer ut mauris vehicula mauris posuere adipiscing.* Phasellus dictum cursus convallis. Sed dapibus laoreet porttitor.
-
-### Blockquotes
-
-> Fusce non eleifend nisi. Donec pharetra sed ipsum sit amet sollicitudin. Duis dolor ante, gravida varius neque eget, semper commodo libero. In euismod tempor lobortis. Nulla eget lectus nec enim mattis aliquet a sit amet est.
-
-## List Types
-
-### Lists
-
-1. Item One
-   1. sub one
-   2. sub two
-   3. sub three
-2. Item Two
-
-* Uno
-* Dos
-* Tres
-
-
-## Table
-
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
-
-
-## Code
-
-{% highlight python %}
-class node:
-    def __init__(self, data, next=None):
-        self.data = data
-        self.next = next
-{% endhighlight %}-->

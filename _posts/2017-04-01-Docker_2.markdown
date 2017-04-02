@@ -51,30 +51,30 @@ title: 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기
 
  이제 linux 계정을 설치해보겠다. 여기서 --disabled-password를 사용하는 이유는 SSH로 비밀키의 비밀번호로 접속하기 때문이다. 키파일을 중요하게 관리해야 한다는 점을 잊지말자.
 
-{% highlight shell %}
+```
 # 유저 추가하기
 $ sudo adduser docker --disabled-password 
-{% endhighlight %}
+```
 
-{% highlight shell %}
+```
 # Docker 계정으로 전환하기
 $ sudo su - docker
-{% endhighlight %}
+```
 
-{% highlight shell %}
+```
 # /home/docker 에 .ssh 디렉터리를 생성하기
 $ mkdir .ssh
-{% endhighlight %}
+```
 
-{% highlight shell %}
+```
 # 자신을 제외한 계정이 .ssh폴더에 접근하지 못하도록 한다.
 $ chmod 700 .ssh
-{% endhighlight %}
+```
 
-{% highlight shell %}
+```
 # /home/docker/.ssh 디렉터리에 authorized_keys라는 파일을 생성과 동시에 편집하기.
 $ vi .ssh/authorized_keys
-{% endhighlight %}
+```
 
 1. vi 편집기는 linux에서 편리하게 문서를 관리할 수 있는 편집기이다. 'a'를 누르면 INSERT모드가 된다.
 2. PuttyGen으로 docker.pem 파일을 열고 맨위에 ssh-rsa로 시작하는 부분을 전체 복사한다. 이것을 Public Key 공개키라고 한다.
@@ -82,10 +82,10 @@ $ vi .ssh/authorized_keys
 4. 마지막으로 ESC를 누르고 ':wq'를 입력하면 docker계정은 SSH 접속정보가 담긴 유저가 된다.
 5. .ssh/authorized_keys값은 아무나 변경할 수 없어야 하기 때문에 권한설정을 해준다.
 
-{% highlight shell %}
+```
 # /home/docker/.ssh/authorized_keys값은 아무나 변경할 수 없어야 하기 때문에 권한설정을 해준다.
 $ chmod 600 .ssh/authorized_keys
-{% endhighlight %}
+```
 
 ---------------------
  Docker 계정이 생성되었다. 이제 docker라는 계정으로 SSH접속을 해보자.(Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기 참고)
@@ -104,65 +104,3 @@ $ chmod 600 .ssh/authorized_keys
 
 ## References
 - [http://docs.aws.amazon.com/ko_kr/AWSEC2/latest/UserGuide/managing-users.html](http://docs.aws.amazon.com/ko_kr/AWSEC2/latest/UserGuide/managing-users.html)
-
-<!--
-# Samples
-
-# Heading 1
-
-## Heading 2
-
-### Heading 3
-
-#### Heading 4
-
-##### Heading 5
-
-###### Heading 6
-
-### Body text
-
-**Lorem ipsum dolor sit amet**, consectetur adipiscing elit. Quisque tempus nunc diam, non dignissim risus tincidunt a. Curabitur consequat justo vitae ipsum accumsan tempor. Quisque rhoncus eleifend ante vitae ultricies. Pellentesque suscipit nisl ut metus tincidunt, vulputate sodales dui commodo. Sed eget sapien varius, lacinia lectus nec, tempor dolor. Pellentesque sed mattis magna. Curabitur ut tristique turpis. Morbi sagittis dolor suscipit urna placerat, consectetur venenatis sapien viverra. Mauris vitae felis et sem venenatis cursus.
-
-
-![Image]({{ site.baseurl }}/images/test.png)
-
-
-Donec ornare turpis non ullamcorper pulvinar. *Integer ut mauris vehicula mauris posuere adipiscing.* Phasellus dictum cursus convallis. Sed dapibus laoreet porttitor.
-
-### Blockquotes
-
-> Fusce non eleifend nisi. Donec pharetra sed ipsum sit amet sollicitudin. Duis dolor ante, gravida varius neque eget, semper commodo libero. In euismod tempor lobortis. Nulla eget lectus nec enim mattis aliquet a sit amet est.
-
-## List Types
-
-### Lists
-
-1. Item One
-   1. sub one
-   2. sub two
-   3. sub three
-2. Item Two
-
-* Uno
-* Dos
-* Tres
-
-
-## Table
-
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
-
-
-## Code
-
-{% highlight python %}
-class node:
-    def __init__(self, data, next=None):
-        self.data = data
-        self.next = next
-{% endhighlight %}-->

@@ -44,15 +44,15 @@ Ctrl + `(~) 단축키를 누르면 터미널이 열린다.
 
 노드가 설치되어 있다면 아래 커맨드를 따라주면 된다.
 
-{% highlight shell %}
+```
 # 패키지 초기화 하기. 모두 enter를 치고 default로 사용하자.
 $ npm init
-{% endhighlight %}
+```
 
 ---------------------
 이제 작업 디렉터리에 package.json이 생성되었을 것이다.
 
-{% highlight javascript %}
+```
 {
   "name": "docker_node_server",
   "version": "1.0.0",
@@ -69,22 +69,22 @@ $ npm init
   "license": "ISC",
   "homepage": "https://bitbucket.org/kyuhyun/docker_node_server#readme"
 }
-{% endhighlight %}
+```
 
 ---------------------
 Express JS를 사용하기 위해 npm 명령어를 실행하자.
 
-{% highlight shell %}
+```
 # express 라이브러리 추가하기.
 $ npm install --save express
-{% endhighlight %}
+```
 
 --------------------
 이제 서버를 만들어보자.
 
 app.js라는 파일을 만들고 아래의 코드를 삽입한다.
 
-{% highlight javascript %}
+```
 
 const express = require('express');
 const app = express();
@@ -98,7 +98,7 @@ app.listen(port, () => {
     console.log(`Server is running at ${port}`);
 });
 
-{% endhighlight %}
+```
 
 Express JS의 프로젝트를 생성하는 방법은 [http://webframeworks.kr/](http://webframeworks.kr/)에 잘 설명되어 있다.
 
@@ -120,10 +120,10 @@ npm으로 설치한 모듈 버전 정보는 package.json에 담겨있기 때문�
 
 루트 디렉토리에 .gitignore파일을 만들고 아래 코드를 넣은 다음에 다시 확인하면 node_modules가 전부 사라진 것을 확인할 수 있다. Source Tree는 동기화가 조금 걸리니 나중에 확인하면 사라질 것이다.
 
-{% highlight shell %}
+```
 # node_modules 제외하기
 node_modules
-{% endhighlight %}
+```
 
 --------------------
 최소화된 정보만 갖고 있으니 repository에 push하자
@@ -138,72 +138,3 @@ Commit 메시지는 코드를 추후에 추적하기 편하게 하기 위해 상
 
 ## References
 - [http://webframeworks.kr/](http://webframeworks.kr/)
-
-<!--- [https://www.docker.com/what-docker](https://www.docker.com/what-docker)
-- [http://pyrasis.com/Docker/Docker-HOWTO](http://pyrasis.com/Docker/Docker-HOWTO)
-- [https://www.slideshare.net/pyrasis/docker-docker-38286477](https://www.slideshare.net/pyrasis/docker-docker-38286477)
-- [https://subicura.com/2017/01/19/docker-guide-for-beginners-1.html](https://subicura.com/2017/01/19/docker-guide-for-beginners-1.html)
-- [https://docs.docker.com/engine/installation/linux/ubuntu/](https://docs.docker.com/engine/installation/linux/ubuntu/)
-- [https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04)-->
-
-<!--
-# Samples
-
-# Heading 1
-
-## Heading 2
-
-### Heading 3
-
-#### Heading 4
-
-##### Heading 5
-
-###### Heading 6
-
-### Body text
-
-**Lorem ipsum dolor sit amet**, consectetur adipiscing elit. Quisque tempus nunc diam, non dignissim risus tincidunt a. Curabitur consequat justo vitae ipsum accumsan tempor. Quisque rhoncus eleifend ante vitae ultricies. Pellentesque suscipit nisl ut metus tincidunt, vulputate sodales dui commodo. Sed eget sapien varius, lacinia lectus nec, tempor dolor. Pellentesque sed mattis magna. Curabitur ut tristique turpis. Morbi sagittis dolor suscipit urna placerat, consectetur venenatis sapien viverra. Mauris vitae felis et sem venenatis cursus.
-
-
-![Image]({{ site.baseurl }}/images/test.png)
-
-
-Donec ornare turpis non ullamcorper pulvinar. *Integer ut mauris vehicula mauris posuere adipiscing.* Phasellus dictum cursus convallis. Sed dapibus laoreet porttitor.
-
-### Blockquotes
-
-> Fusce non eleifend nisi. Donec pharetra sed ipsum sit amet sollicitudin. Duis dolor ante, gravida varius neque eget, semper commodo libero. In euismod tempor lobortis. Nulla eget lectus nec enim mattis aliquet a sit amet est.
-
-## List Types
-
-### Lists
-
-1. Item One
-   1. sub one
-   2. sub two
-   3. sub three
-2. Item Two
-
-* Uno
-* Dos
-* Tres
-
-
-## Table
-
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
-
-
-## Code
-
-{% highlight python %}
-class node:
-    def __init__(self, data, next=None):
-        self.data = data
-        self.next = next
-{% endhighlight %}-->
