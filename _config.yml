@@ -7,12 +7,15 @@ linkedin: https://www.linkedin.com/in/kyuhyun-byun-70a228115/
 disqus: novemberde-github-io
 # email: 
 
-
-highlighter: Redcarpet
-markdown: Redcarpet
+gems: [jekyll-gist]
+# highlighter: pygments
+markdown: redcarpet
 redcarpet:
   extensions: ["tables"]
 
+gist:
+  noscript: false
+  
 defaults:
   - scope:
       path: ""
