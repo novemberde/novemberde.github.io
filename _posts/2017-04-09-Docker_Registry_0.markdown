@@ -284,6 +284,7 @@ $ docker push docker-registry.kh-developer.info:5000/hello-world
 - [https://docs.docker.com/registry/deploying/#native-basic-auth]()
 - [http://www.notrudebuthonest.com/2016/02/kitematic-enable-insecure-registry/](http://www.notrudebuthonest.com/2016/02/kitematic-enable-insecure-registry/)
 - 별도로 arn에 따라 policy를 주고 싶은 경우는 아래와 같은 policy를 넣어준다.
+
 ```
 {
     "Version": "2012-10-17",
