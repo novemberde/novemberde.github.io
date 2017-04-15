@@ -62,7 +62,9 @@ System.out.println("sb: " + sb.hashCode());
 
  위에서 보는바와 같이 생성된 클래스의 주소값이 다른 것을 볼 수 있다. String은 새로운 값을 할당할 때마다 새로 생성되기 때문이다.
 이와 달리 StringBuffer는 값은 memory에 append하는 방식으로 클래스를 직접생성하지 않는다. 논리적으로 따져보면 클래스가 생성될 때
-method들과 variable도 같이 생성되는데, StringBuffer는 이런 시간을 사용하지 않는다.
+method들과 variable도 같이 생성되는데, StringBuffer는 이런 시간을 사용하지 않는다. 
+
+또한 지금은 한 번만 생성되었지만 수십번 String이 더해지는 경우에는 각 String의 주소값이 stack에 쌓이고 클래스들은 Garbage Collector가 호출되기 전까지 heap에 지속적으로 쌓이게 된다. 메모리 관리적인 측면에서는 치명적이라고 볼 수 있다.
 
 ---------------------
  
