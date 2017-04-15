@@ -127,5 +127,5 @@ new Thread(() -> {
 ---
 ### References
 ---
-- [http://docs.oracle.com/javase/8/docs/api/][http://docs.oracle.com/javase/8/docs/api/]
-- [http://javahungry.blogspot.com/2013/06/difference-between-string-stringbuilder.html][http://javahungry.blogspot.com/2013/06/difference-between-string-stringbuilder.html]
+- [http://docs.oracle.com/javase/8/docs/api/](http://docs.oracle.com/javase/8/docs/api/)
+- [http://javahungry.blogspot.com/2013/06/difference-between-string-stringbuilder.html](http://javahungry.blogspot.com/2013/06/difference-between-string-stringbuilder.html)
