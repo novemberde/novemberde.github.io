@@ -131,7 +131,7 @@ State or Province Name (full name) []:Seoul
 Locality Name (eg, city) [Default City]:Seongdonggu
 Organization Name (eg, company) [Default Company Ltd]:NOVEMBERDE
 Organizational Unit Name (eg, section) []:TEST
-Common Name (eg, your name or your server's hostname) []:docker-registry.kh-developer.info
+Common Name (eg, your name or your server\'s hostname) []:docker-registry.kh-developer.info
 Email Address []:
 
 # 생성된 파일 확인하기
