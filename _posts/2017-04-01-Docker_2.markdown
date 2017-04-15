@@ -51,27 +51,27 @@ title: 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기
 
  이제 linux 계정을 설치해보겠다. 여기서 --disabled-password를 사용하는 이유는 SSH로 비밀키의 비밀번호로 접속하기 때문이다. 키파일을 중요하게 관리해야 한다는 점을 잊지말자.
 
-```
+```bash
 # 유저 추가하기
 $ sudo adduser docker --disabled-password 
 ```
 
-```
+```bash
 # Docker 계정으로 전환하기
 $ sudo su - docker
 ```
 
-```
+```bash
 # /home/docker 에 .ssh 디렉터리를 생성하기
 $ mkdir .ssh
 ```
 
-```
+```bash
 # 자신을 제외한 계정이 .ssh폴더에 접근하지 못하도록 한다.
 $ chmod 700 .ssh
 ```
 
-```
+```bash
 # /home/docker/.ssh 디렉터리에 authorized_keys라는 파일을 생성과 동시에 편집하기.
 $ vi .ssh/authorized_keys
 ```
@@ -82,7 +82,7 @@ $ vi .ssh/authorized_keys
 4. 마지막으로 ESC를 누르고 ':wq'를 입력하면 docker계정은 SSH 접속정보가 담긴 유저가 된다.
 5. .ssh/authorized_keys값은 아무나 변경할 수 없어야 하기 때문에 권한설정을 해준다.
 
-```
+```bash
 # /home/docker/.ssh/authorized_keys값은 아무나 변경할 수 없어야 하기 때문에 권한설정을 해준다.
 $ chmod 600 .ssh/authorized_keys
 ```

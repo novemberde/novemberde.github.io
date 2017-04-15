@@ -92,7 +92,7 @@ Dockerfile은 아래와 같다.
 만들어진 Dockerfile을 빌드해보자
 
 
-```
+```bash
 # 현재 폴더를 중심으로 한다.
 docker build -t my-node ./
 ```

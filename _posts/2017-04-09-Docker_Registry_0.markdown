@@ -19,12 +19,12 @@ docker가 설치되어 있는 EC2에 접근하여 registry  이미지를 pull �
 
 - docker registry의 기본포트는 5000번이다.
 
-```
+```bash
 # registry 이미지를 가져오기
 $ docker pull registry
 ```
  
-```
+```bash
 # registry를 실행하기
 $ docker run -dit --name docker-registry -p 5000:5000 registry
 ```
@@ -38,7 +38,7 @@ $ docker run -dit --name docker-registry -p 5000:5000 registry
 
 localhost에서 테스트를 진행할테니 localhost:5000/hello-world:latest 이미지를 만들어보자.
 
-```
+```bash
 # hello-world 이미지가 없으니 docker hub에서 pull하자.
 $ docker pull hello-world
 
@@ -48,7 +48,7 @@ $ docker tag hello-world localhost:5000/hello-world
 
 이미지를 만들었으니 내 registry에 push하자.
 
-```
+```bash
 # 이미지 push하기
 $ docker push localhost:5000/hello-world
 
@@ -79,7 +79,7 @@ gabia > 네임플러스 > 호스트(IP) 추가/관리 페이지에서 docker-reg
 - EC2에 security group에서 inbound rule에서 5000번으로 설정해주자. my ip를 선택하여 다른 사람이 접근하지 못하도록 하자.
 
 
-```
+```bash
 # 현재 이미지 목록 보기.
 $ docker images
 
@@ -98,7 +98,7 @@ $ docker push docker-registry.kh-developer.info:5000/hello-world
 
 아래와 같은 메시지가 나오면서 실패할 것이다.
 
-```
+```bash
 Get https://docker-registry.kh-developer.info:5000/v1/_ping: http: server gave HTTP response to HTTPS client
 ```
 
@@ -107,7 +107,7 @@ Get https://docker-registry.kh-developer.info:5000/v1/_ping: http: server gave H
 
 현재의 docker registry 컨테이너를 내리고 다시 registry를 올려보자.
 
-```
+```bash
 # docker registry 컨테이너 내리기
 $ docker stop docker-registry && docker rm docker-registry
 ```
@@ -116,7 +116,7 @@ SSL 사설 인증서를 발급하자. 종잣돈이 많다면 인증서를 구입
 
 이번에는 개인 서명 SSL 인증서를 생성하겠다. openssl이 EC2 인스턴스에 설치되어 있을 것이다.
 
-```
+```bash
 # openssl 버전 확인하기
 $ openssl version
 
@@ -146,7 +146,7 @@ $ openssl x509 -req -days 730 -in server.csr -signkey server.key -out server.crt
 
 인증서를 발급했으니 registry를 다시 가동해보자.
 
-```
+```bash
 $ docker run -d -p 5000:5000 --restart=always --name docker-registry \
   -v /home/<username>/certs:/certs \
   -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/server.crt \
@@ -156,7 +156,7 @@ $ docker run -d -p 5000:5000 --restart=always --name docker-registry \
 
 가동을 성공적으로 마쳤으면 다시 로컬에서 push를 해보자
 
-```
+```bash
 # 다시 로컬환경으로 돌아와서 push하기
 $ docker push docker-registry.kh-developer.info:5000/hello-world
 
@@ -182,7 +182,7 @@ EXTRA_ARGS 에 --insecure-registry를 아래와 같이 추가한다.
 
 이제 다시 docker push를 해보자. 성공적으로 push가 될 것이다.
 
-```
+```bash
 # 다시 로컬환경으로 돌아와서 push하기
 $ docker push docker-registry.kh-developer.info:5000/hello-world
 ```
@@ -208,7 +208,7 @@ Create를 하면 Access Key와 Secret access key를 부여받는다. 잘 보관�
 
 docker registry에서 S3에 접근할 수 있도록 설정하자.
 
-```
+```bash
 # 기존의 registry를 내려주고, 새로 올리자.
 $ docker stop docker-registry && docker rm docker-registry
 
@@ -236,7 +236,7 @@ S3 bucket을 가면 storage가 형성될 것이다.
 
 여기까지 S3를 이미지 저장소로 사용하는 docker registry를 구성하였다면, 지금부터는 docker registry 접근에 대한 인증절차를 두려고 한다.
 
-```
+```bash
 # ~/auth라는 디렉터리에 testuser를 아이디로 갖고 testpassword를 비밀번호로 갖게 해보자.
 $ mkdir auth && docker run --entrypoint htpasswd registry:2 -Bbn testuser testpassword > auth/htpasswd
 
@@ -265,7 +265,7 @@ no basic auth credentials
 
 위처럼 auth credentials이 없다고 나온다. docker login을 해주자.
 
-```
+```bash
 $ docker login docker-registry.kh-developer.info:5000
 Username: testuser
 Password:
@@ -285,7 +285,7 @@ $ docker push docker-registry.kh-developer.info:5000/hello-world
 - [http://www.notrudebuthonest.com/2016/02/kitematic-enable-insecure-registry/](http://www.notrudebuthonest.com/2016/02/kitematic-enable-insecure-registry/)
 - 별도로 arn에 따라 policy를 주고 싶은 경우는 아래와 같은 policy를 넣어준다.
 
-```
+```json
 {
     "Version": "2012-10-17",
     "Statement": [

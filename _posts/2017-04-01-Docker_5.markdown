@@ -44,7 +44,7 @@ Ctrl + `(~) 단축키를 누르면 터미널이 열린다.
 
 노드가 설치되어 있다면 아래 커맨드를 따라주면 된다.
 
-```
+```bash
 # 패키지 초기화 하기. 모두 enter를 치고 default로 사용하자.
 $ npm init
 ```
@@ -52,7 +52,7 @@ $ npm init
 ---------------------
 이제 작업 디렉터리에 package.json이 생성되었을 것이다.
 
-```
+```json
 {
   "name": "docker_node_server",
   "version": "1.0.0",
@@ -74,7 +74,7 @@ $ npm init
 ---------------------
 Express JS를 사용하기 위해 npm 명령어를 실행하자.
 
-```
+```bash
 # express 라이브러리 추가하기.
 $ npm install --save express
 ```
@@ -84,8 +84,7 @@ $ npm install --save express
 
 app.js라는 파일을 만들고 아래의 코드를 삽입한다.
 
-```
-
+```javascript
 const express = require('express');
 const app = express();
 const port = 3000;
@@ -97,7 +96,6 @@ app.get('/', (req, res, next) => {
 app.listen(port, () => {
     console.log(`Server is running at ${port}`);
 });
-
 ```
 
 Express JS의 프로젝트를 생성하는 방법은 [http://webframeworks.kr/](http://webframeworks.kr/)에 잘 설명되어 있다.
@@ -120,7 +118,7 @@ npm으로 설치한 모듈 버전 정보는 package.json에 담겨있기 때문�
 
 루트 디렉토리에 .gitignore파일을 만들고 아래 코드를 넣은 다음에 다시 확인하면 node_modules가 전부 사라진 것을 확인할 수 있다. Source Tree는 동기화가 조금 걸리니 나중에 확인하면 사라질 것이다.
 
-```
+```bash
 # node_modules 제외하기
 node_modules
 ```

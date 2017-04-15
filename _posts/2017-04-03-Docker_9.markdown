@@ -28,7 +28,7 @@ title: 만들어진 Docker image를 EC2 인스턴스에 배포하기
 
  로그인 후 docker에 이미지 리스트를 확인하자.
 
- ```
+ ```bash
  # docker image의 목록 보기
  $ docker images
  ```
@@ -41,14 +41,14 @@ title: 만들어진 Docker image를 EC2 인스턴스에 배포하기
  만약 private으로 되어 있다면 pull을 해도 이미지를 찾을 수 없다고 나올것이다.
  이럴 때는 아래와 같이 로그인을 시도한다.
 
- ```
+ ```bash
  # 이와 같이 커맨드를 실행하면 id와 password를 입력하는 커맨드를 만날 것이다.
  $ docker login
  ```
 
  로그인을 마쳤으면 이제 내 계정에 있는 image를 가져오자.
 
- ```
+ ```bash
  # username에는 나의 docker hub의 name을 적자. 이는 오른쪽 위에서 내 설정에 들어가면 볼 수 있다.
  $ docker pull username:docker_node_server
  ```
@@ -58,7 +58,7 @@ title: 만들어진 Docker image를 EC2 인스턴스에 배포하기
  - 80포트로 동작하게 할 것. 우리 패키지는 3000번의 포트로 동작하니 포워딩시켜주어야 한다.
  - 컨테이너명은 my\_first\_server 로 해보자
 
- ```
+ ```bash
  $ docker run --name my_first_server -p 80:3000 docker_node_server
  ```
 

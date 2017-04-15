@@ -53,42 +53,42 @@ title: EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기
 
  먼저 이전에 만든 EC2 인스턴스에 ubuntu 계정으로 SSH로 접속한다.
 
-```
+```bash
 # 먼저 Package Database를 update한다.
 $ sudo apt-get update
 ```
 
-```
+```bash
 # Docker 공식페이지의 keyserver에서 GPG key를 추가한다.
 $ sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
 ```
 
-```
+```bash
 # Docker repository를 APT sources에 추가한다.
 $ sudo apt-add-repository 'deb https://apt.dockerproject.org/repo ubuntu-xenial main'
 ```
 
-```
+```bash
 # 새로 추가된 Docker package를 업데이트한다.
 $ sudo apt-get update
 ```
 
-```
+```bash
 # Default Ubuntu 16.04 repository 대신에 Docker repository로 부터 install하는 것을 확인한다.
 $ apt-cache policy docker-engine
 ```
 
-```
+```bash
 # docker-engine을 설치한다.
 $ sudo apt-get install -y docker-engine
 ```
 
-```
+```bash
 # Daemon에서 docker가 실행되고 있는지 확인한다. CentOS의 경우에는 별도로 Daemon으로 실행해주어야 한다.
 $ sudo systemctl status docker
 ```
 
-```
+```bash
 # 현재 접속한 ubuntu 계정을 docker 실행 그룹에 포함시켜준다. 이전에 생성한 docker 계정도 포함시켜주자.
 $ sudo usermod -aG docker $(whoami)
 $ sudo usermod -aG docker docker
@@ -99,25 +99,25 @@ $ sudo usermod -aG docker docker
 ## Docker 실행해보기
 ---------------------
 
-```
+```bash
 # Docker의 images를 pull해서 확인해보자.
 $ docker pull hello-world
 $ docker images
 ```
 
-```
+```bash
 # Docker container를 생성해보자.
 $ docker run hello-world
 ```
 
-```
+```bash
 # Docker container의 상태를 확인해보자.
 $ docker ps
 ```
 
 여기서 docker ps를 할 경우에 아무것도 나타나지 않는 것을 볼 수 있다. container가 Daemon에서 동작하는 것이 아닌 한번 실행하고 종료되었기 때문에 실행되고 있는 컨테이너 목록에 나타나지 않는 것이다. 모든 컨테이너의 상태를 보려면 아래와 같이 확인한다.
 
-```
+```bash
 # 모든 Docker container의 상태를 확인해보자.
 $ docker ps -a
 ```
@@ -126,7 +126,7 @@ $ docker ps -a
 
 컨테이너를 삭제해보자. CONTAINER_ID 부분에 삭제하고자 하는 docker container의 아이디를 입력한다. 전부 입력할 필요 없이 첫 글자 또는 두글자만 입력해도 삭제된다. 만약에 여러 컨테이너일 경우에는 구분되는 값까지만 입력하면 삭제된다.
 
-```
+```bash
 # Docker container를 삭제하기
 $ docker rm CONTAINER_ID
 ```

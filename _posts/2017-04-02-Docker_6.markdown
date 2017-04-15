@@ -29,7 +29,7 @@ title: PM2를 사용하여 EC2에 Node 서버 배포하기
 
 apt-get을 통해 설치하면 간단하게 node 서버 및 npm 패키지를 설치할 수 있다.
 
-```
+```bash
 # node 7.x대 버전으로 받자.
 $ curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
 $ sudo apt-get install -y nodejs
@@ -55,7 +55,7 @@ $ sudo npm install -g pm2
 
  docker 계정으로 SSH접속을 한 후에 pm2로 서버를 실행시키자. PM2에 대한 자세한 사용법은 [PM2 공식사이트](http://pm2.keymetrics.io/) 를 참고하면 된다.
 
-```
+```bash
 # 천천히 명령어 한줄씩 실행하는 방법.
 $ cd docker_node_server
 $ npm install
