@@ -8,7 +8,7 @@ disqus: novemberde-github-io
 # email: 
 
 gems: [jekyll-gist]
-highlighter: pygments
+highlighter: rouge
 # markdown: redcarpet
 redcarpet:
   extensions: ["tables"]
