@@ -96,12 +96,12 @@ add key를 누르면 아래와 같은 화면이 나온다. label에는 구분하
 
 ---
 
-다시 ssh 접속화면으로 돌아와서 가져오고 싶은 repository를 pull하자.
+다시 ssh 접속화면으로 돌아와서 가져오고 싶은 repository를 clone하자.
 
 주의할 점은 https가 아닌 ssh를 선택한 값으로 clone해야 한다.
 
 ```
-$ git pull git@bitbucket.org:KH_Own_Team/test.git
+$ git clone git@bitbucket.org:KH_Own_Team/test.git
 ```
 ---
 ### References
