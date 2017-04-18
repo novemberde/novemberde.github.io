@@ -4,7 +4,8 @@ title: Bitbucket access key 발급하기
 
 ## Summary
 ---------------------
- 서버에 프로젝트를 node 서버를 배포한 경우 ftp로 파일을 옮기는 방식으로 사용할 경우도 있지만 git repository를 사용하면 git 명령어만으로 서버코드를 갱신할 수 있다.
+ 서버에 프로젝트를 배포할 경우 ftp로 파일을 옮기는 방식으로 사용할 수도 있다.
+ 하지만 git repository를 사용하면 git 명령어만으로 간단히 서버코드를 갱신할 수 있다.
 
  로그인이 아닌 access key를 통해 git repository에 접근하는 방법에 대해 알아보자.
 
