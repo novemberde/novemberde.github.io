@@ -10,8 +10,8 @@ disqus: novemberde-github-io
 gems: [jekyll-gist]
 highlighter: rouge
 # markdown: redcarpet
-redcarpet:
-  extensions: ["tables"]
+# redcarpet:
+#   extensions: ["tables"]
 
 gist:
   noscript: false
