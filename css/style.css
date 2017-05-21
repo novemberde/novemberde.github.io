@@ -37,14 +37,18 @@ h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover
   color:#29598c
 }
 
-p
+p, li p, .post> ul
 {
   font-family:"Helvetica Neue", helvetica, "Open Sans", sans-serif;
-  font-weight:200
+  font-weight:200;
+  font-size: 16px;
+  line-height:150%;
 }
-li p {
-  font-size: 16px
-}
+
+/*li p {
+  font-size: 16px;
+  line-height:150%;
+}*/
 .posts
 {
   font-size:20px;
