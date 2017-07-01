@@ -1,7 +1,8 @@
 name: KH BYUN
 author: Novemberde
 baseurl: 
-description: Development Log
+description: Developer khbyun's dev log
+keywords: nodejs, AWS, docker, docker registry, sequelize
 github: http://www.github.com/novemberde
 linkedin: https://www.linkedin.com/in/kyuhyun-byun-70a228115/
 disqus: novemberde-github-io
