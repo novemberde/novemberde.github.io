@@ -1,24 +1,381 @@
+--- 
+title: Links 
 ---
-title: Links
----
-  <div class="container">
+<div class="container">
 
-    <div id="article">
-      <h1>Library</h1>
-      <p>Library, Open Source ... etc list that I experienced.</p>
-      <br>
-      <center>
-      <a href="#java"><span class="label label-danger java-button">JAVA</span></a>
+  <div id="article">
+    <h1>Library</h1>
+    <p>Library, Open Source ... etc list that I experienced.</p>
+    <br>
+    <center>
+      <a href="#aws"><span class="label label-danger front-button">AWS</span></a>
       <a href="#node"><span class="label label-danger node-button">NODE.JS</span></a>
-      <!--<a href="#front"><span class="label label-danger front-button">FRONT</span></a>-->
       <a href="#database"><span class="label label-danger database-button">DATABASE</span></a>
+      <a href="#java"><span class="label label-danger java-button">JAVA</span></a>
       <a href="#android"><span class="label label-danger android-button">ETC</span></a>
-      </center>
-      <br>
-    </div>
+    </center>
+    <br>
+  </div>
 
-    <div id="article" class="java">
-      <a name="java">
+  <div id="article" class="aws">
+    <a name="aws">
+      <h2>Amazon Web Service</h2>
+      <table class="table table-hover ">
+        <tbody>
+          <tr>
+            <td valign="top" class="td1">
+              <p class="p2"><span class="s1"><b>Name</b></span></p>
+            </td>
+            <td valign="top" class="td1">
+              <p class="p2"><span class="s1"><b>Description</b></span></p>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top" class="td4">
+              <p class="p2"><span class="s1"><a href="#"><b>EC2</b></a></span></p>
+            </td>
+            <td valign="top" class="td5">
+              <p class="p2"><span class="s1"><span class="Apple-converted-space">AWS의 근간이 되는 서비스. Elastic Compute Cloud의 약자</span></span>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top" class="td4">
+              <p class="p2"><span class="s1"><a href="#"><b>ELB</b></a></span></p>
+            </td>
+            <td valign="top" class="td5">
+              <p class="p2"><span class="s1"><span class="Apple-converted-space">Elastic Load Balancer. 
+                분산환경을 구성하기 위해 필요한 로드 밸런서. Classic Load Balancer와 Application Load Balancer 두 종류가 있다.
+                ALB를 사용하는 것을 적극 권장하는 이유는 OSI 7계층의 Application 계층으로 사용하기 때문에 Logging을 다채롭게 할 수 있다.
+              </span></span>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top" class="td4">
+              <p class="p2"><span class="s1"><a href="#"><b>Route53</b></a></span></p>
+            </td>
+            <td valign="top" class="td5">
+              <p class="p2"><span class="s1"><span class="Apple-converted-space">
+                Domain Name System으로 사용하는데 가용성과 확장성이 우수함.
+                AWS의 인프라와 연동하기에 최적화 되어 있다.
+                </span></span>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top" class="td4">
+              <p class="p2"><span class="s1"><a href="#"><b>S3</b></a></span></p>
+            </td>
+            <td valign="top" class="td5">
+              <p class="p2"><span class="s1"><span class="Apple-converted-space">
+                Simple Storage Service. 데이터 형식과 상관없이 대량의 데이터를 수집하기에 최적화 되어 있다.
+                99.999999999%의 내구성을 지니고 있다.
+                </span></span>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top" class="td4">
+              <p class="p2"><span class="s1"><a href="#"><b>IAM</b></a></span></p>
+            </td>
+            <td valign="top" class="td5">
+              <p class="p2"><span class="s1"><span class="Apple-converted-space">
+                Identity & Access Management. AWS의 서비스와 리소스에 대한 액세스 통제.
+                </span></span>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top" class="td4">
+              <p class="p2"><span class="s1"><a href="#"><b>EB</b></a></span></p>
+            </td>
+            <td valign="top" class="td5">
+              <p class="p2"><span class="s1"><span class="Apple-converted-space">
+                Elastic Beanstalk. 어플리케이션을 배포하기 위한 PaaS. Java, .NET, PHP, Node.js, Python, Ruby, Go, Docker를 사용할 수 있다.
+                </span></span>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top" class="td4">
+              <p class="p2"><span class="s1"><a href="#"><b>CodeDeploy</b></a></span></p>
+            </td>
+            <td valign="top" class="td5">
+              <p class="p2"><span class="s1"><span class="Apple-converted-space">
+                AWS의 모든 instance에 code를 배포할 수 있게 해준다. 배포 프로세스를 자동화.
+                </span></span>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top" class="td4">
+              <p class="p2"><span class="s1"><a href="#"><b>RDS</b></a></span></p>
+            </td>
+            <td valign="top" class="td5">
+              <p class="p2"><span class="s1"><span class="Apple-converted-space">
+                Relational Database Service. 관계형 데이터베이스를 간편하게 설정, 운영 및 확장이 가능.
+                Replication과 같은 귀찮은 부분을 손쉽게 해결할 수 있다. Aurora를 사용하면 PostgreSQL, MySQL을
+                DB의 용량의 제한없이 사용할 수 있다.
+                </span></span>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top" class="td4">
+              <p class="p2"><span class="s1"><a href="#"><b>ETC</b></a></span></p>
+            </td>
+            <td valign="top" class="td5">
+              <p class="p2"><span class="s1"><span class="Apple-converted-space">
+                CloudFormation, DynamoDB, ElasticCache, VPC, Certificate Manager, Athena, Lex 등을 사용하고 있고
+                모든 서비스에 대해 Deep dive하고 있다.
+                </span></span>
+              </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+
+
+
+  <div id="article" class="node">
+    <a name="node">
+      <h2>Javascript & NODE.JS</h2>
+      <table class="table table-hover ">
+        <tbody>
+          <tr>
+            <td valign="top" class="td1">
+              <p class="p2"><span class="s1"><b>Name</b></span></p>
+            </td>
+            <td valign="top" class="td1">
+              <p class="p2"><span class="s1"><b>Description</b></span></p>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top" class="td4">
+              <p class="p2"><span class="s1"><a href="#"><b>Underscore & Lodash</b></a></span></p>
+            </td>
+            <td valign="top" class="td5">
+              <p class="p2"><span class="s1"><span class="Apple-converted-space"> '_.'형식으로 script작성시 필요한 함수를 손쉽게 사용할 수 있게 하는 라이브러리</span></span>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top" class="td4">
+              <p class="p2"><span class="s1"><a href="http://expressjs.com/ko/"><b>Express JS</b></a></span></p>
+            </td>
+            <td valign="top" class="td5">
+              <p class="p2"><span class="s1"><span class="Apple-converted-space">Node.js 서버를 간결하게 만드는 프레임워크.</span></span>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top" class="td4">
+              <p class="p2"><span class="s1"><a href="#"><b>EJS & PUG & Handlebars</b></a></span></p>
+            </td>
+            <td valign="top" class="td5">
+              <p class="p2"><span class="s1"><span class="Apple-converted-space">Node서버에서 View페이지를 렌더링하는 라이브러리</span></span>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top" class="td4">
+              <p class="p2"><span class="s1"><a href="http://docs.sequelizejs.com/en/latest/"><b>Sequelize</b></a></span></p>
+            </td>
+            <td valign="top" class="td5">
+              <p class="p2"><span class="s1"><span class="Apple-converted-space">Node에서 사용하는 ORM Framework. Hibernate와 같이 쿼리를 직접 작성하는 경우가 적다.</span></span>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top" class="td4">
+              <p class="p2"><span class="s1"><a href="http://mongoosejs.com/"><b>Mongoose</b></a></span></p>
+            </td>
+            <td valign="top" class="td5">
+              <p class="p2"><span class="s1"><span class="Apple-converted-space">MongoDB 에서 사용하는 object modeling 라이브러리.</span></span>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top" class="td4">
+              <p class="p2"><span class="s1"><a href="https://aws.amazon.com/ko/sdk-for-node-js/"><b>AWS SDK</b></a></span></p>
+            </td>
+            <td valign="top" class="td5">
+              <p class="p2"><span class="s1"><span class="Apple-converted-space">AWS를 Javascript가 제공하는 객체로 제어하는 라이브러리</span></span>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top" class="td4">
+              <p class="p2"><span class="s1"><a href="https://facebook.github.io/react/"><b>React JS</b></a></span></p>
+            </td>
+            <td valign="top" class="td5">
+              <p class="p2"><span class="s1"><span class="Apple-converted-space">Angular JS와 같은 프론트 라이브러리. 
+                하지만 현재는 프론트 영역에만 제한되어 있지 않고 Server Side에도 사용이 가능하다. 
+                ReactDOM 라이브러리는 DOM과 연관되어 있는 라이브러리고 실제로 React 라이브러리는 네이티브, 웹, 서버 어플리케이션을 만드는 경우에 모두 사용가능하다.</span></span>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top" class="td4">
+              <p class="p2"><span class="s1"><a href="http://dobbit.github.io/redux/"><b>Redux</b></a></span></p>
+            </td>
+            <td valign="top" class="td5">
+              <p class="p2"><span class="s1"><span class="Apple-converted-space">Redux는 MVC처럼 하나의 처리하는 방식이라고 볼 수 있다.
+                어플리케이션의 모든 상태는 하나의 스토어 안에 저장되며 action에 대해 일괄적으로 dispatch 되어 처리되는 구조이다.</span></span>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top" class="td4">
+              <p class="p2"><span class="s1"><a href="https://ionicframework.com/"><b>Ionic</b></a></span></p>
+            </td>
+            <td valign="top" class="td5">
+              <p class="p2"><span class="s1"><span class="Apple-converted-space">하이브리드 웹 형태로 어플리케이션을 만드는 framework. Angular를 사용하여 구현한다.</span></span>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top" class="td4">
+              <p class="p2"><span class="s1"><a href="https://github.com/mzabriskie/axios"><b>Axios</b></a></span></p>
+            </td>
+            <td valign="top" class="td5">
+              <p class="p2"><span class="s1"><span class="Apple-converted-space">비동기 웹요청을 처리하는 라이브러리. Promise 패턴으로 구현되어 있어 사용이 간편하다.</span></span>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top" class="td4">
+              <p class="p2"><span class="s1"><a href="https://datatables.net/"><b>DataTable</b></a></span></p>
+            </td>
+            <td valign="top" class="td5">
+              <p class="p2"><span class="s1"><span class="Apple-converted-space">JQuery 형태로 테이블을 관리할 수 있는 라이브러리. 
+                특정 이벤트에 대해서 비동기로 서버에 요청을 하여 검색, 페이징 등이 간편하게 구현이 가능하다.</span></span>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top" class="td4">
+              <p class="p2"><span class="s1"><a href="https://electron.atom.io/"><b>Electron</b></a></span></p>
+            </td>
+            <td valign="top" class="td5">
+              <p class="p2"><span class="s1"><span class="Apple-converted-space">웹 어플리케이션 형태로 desktop app을 만들 수 있는 프레임워크.
+                Chromium이 내장되어 있어 웹브라우저처럼 어플리케이션이 동작한다. 대표적인 app으로는 Atom과 VS Code 등이 있다.</span></span>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top" class="td4">
+              <p class="p2"><span class="s1"><a href="https://webpack.github.io/"><b>Webpack</b></a></span></p>
+            </td>
+            <td valign="top" class="td5">
+              <p class="p2"><span class="s1"><span class="Apple-converted-space">Module Bundler. 
+                간단히 말하면 여러 js파일을 하나로 합치고 minify까지 가능하게 한다. 
+                이것은 기능의 극히 일부분일 뿐이고, Hot-Module-Replacement를 사용하면 코드수정과 동시에 웹페이지에 반영되어 빠른 Front개발이 가능하게 해주는 도구이기도 하다.
+                grunt, gulp 의 세대를 지나서 각광받고 있는 번들러이다.</span></span>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top" class="td4">
+              <p class="p2"><span class="s1"><a href="https://socket.io/"><b>Socket.io</b></a></span></p>
+            </td>
+            <td valign="top" class="td5">
+              <p class="p2"><span class="s1"><span class="Apple-converted-space">단 몇줄만으로 간단하게 소켓서버를 구현할 수 있다.</span></span>
+              </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+  <div id="article" class="database">
+    <a name="database">
+      <h2>DATA BASE</h2>
+      <table class="table table-hover ">
+        <tbody>
+          <tr>
+            <td valign="top" class="td1">
+              <p class="p2"><span class="s1"><b>Name</b></span></p>
+            </td>
+            <td valign="top" class="td1">
+              <p class="p2"><span class="s1"><b>Description</b></span></p>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top" class="td4">
+              <p class="p2"><span class="s1"><a href="https://www.mysql.com/"><b>MySQL</b></a></span></p>
+            </td>
+            <td valign="top" class="td5">
+              <p class="p2"><span class="s1"><span class="Apple-converted-space">가장 널리 알려진 Open Source Database</span></span>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top" class="td4">
+              <p class="p2"><span class="s1"><a href="https://mariadb.com/kb/ko/mariadb/"><b>MariaDB</b></a></span></p>
+            </td>
+            <td valign="top" class="td5">
+              <p class="p2"><span class="s1"><span class="Apple-converted-space">MySQL을 기반으로 구성된 Open Source Database. 
+                MySQL은 현재 Cumunity Edition과 Enterprise Edition이 구분되어있다. 
+                하지만 MariaDB는 완전한 Open Source이다.</span></span>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top" class="td4">
+              <p class="p2"><span class="s1"><a href="https://mariadb.com/kb/ko/mariadb/"><b>MariaDB</b></a></span></p>
+            </td>
+            <td valign="top" class="td5">
+              <p class="p2"><span class="s1"><span class="Apple-converted-space">MySQL을 기반으로 구성된 Open Source Database. 
+                MySQL은 현재 Cumunity Edition과 Enterprise Edition이 구분되어있다. 
+                하지만 MariaDB는 완전한 Open Source이다.</span></span>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top" class="td4">
+              <p class="p2"><span class="s1"><a href="http://docs.aws.amazon.com/ko_kr/amazondynamodb/latest/developerguide/Introduction.html"><b>DynamoDB</b></a></span></p>
+            </td>
+            <td valign="top" class="td5">
+              <p class="p2"><span class="s1"><span class="Apple-converted-space">AWS에서 제공하는 NoSQL database. 대표적으로 MongoDB가 있다.</span></span>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top" class="td4">
+              <p class="p2"><span class="s1"><a href="https://www.mongodb.com/"><b>MongoDB</b></a></span></p>
+            </td>
+            <td valign="top" class="td5">
+              <p class="p2"><span class="s1"><span class="Apple-converted-space">대표적인 NoSQL이다. JSON기반으로 데이터를 관리하며 사용법이 간단하다.</span></span>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top" class="td4">
+              <p class="p2"><span class="s1"><a href="https://www.oracle.com/index.html"><b>Oracle</b></a></span></p>
+            </td>
+            <td valign="top" class="td5">
+              <p class="p2"><span class="s1"><span class="Apple-converted-space">가장 유명한 기업형 Database. 뛰어난 성능이 필요한 은행권 또는 SI에서 즐겨 사용하는 Database이다.</span></span>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top" class="td4">
+              <p class="p2"><span class="s1"><a href="https://redis.io/"><b>Redis</b></a></span></p>
+            </td>
+            <td valign="top" class="td5">
+              <p class="p2"><span class="s1"><span class="Apple-converted-space">In-memory data 저장소. cache 기능, message broker등 다양하게 사용되어질 수 있다. 
+                또한 다양한 데이터 타입을 지원하기 때문에 효율적인 메모리 관리를 염두에 두어야 한다.</span></span>
+              </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+
+  <div id="article" class="java">
+    <a name="java">
       <h2>JAVA</h2>
       <table class="table table-hover ">
         <tbody>
@@ -36,7 +393,8 @@ title: Links
             </td>
             <td valign="top" class="td5">
               <p class="p2"><span class="s1"><span class="Apple-converted-space">JSP는 Java Server Pages로 구현체에 의해 Servlet으로 변환된다.
-                Servlet은  웹서버를 만들기 위해 사용하는 JavaEE의 인터페이스로 상속받은 클래스들이 웹서버에서 구동된다.</span></span></p>
+                Servlet은  웹서버를 만들기 위해 사용하는 JavaEE의 인터페이스로 상속받은 클래스들이 웹서버에서 구동된다.</span></span>
+              </p>
             </td>
           </tr>
           <tr>
@@ -44,7 +402,8 @@ title: Links
               <p class="p2"><span class="s2"><a href="http://tomcat.apache.org/"><b>Tomcat</b></a></span></p>
             </td>
             <td valign="top" class="td3">
-              <p class="p2"><span class="s1">JSP & Servlet을 구현한 웹서버<span class="Apple-converted-space"> </span></span></p>
+              <p class="p2"><span class="s1">JSP & Servlet을 구현한 웹서버<span class="Apple-converted-space"> </span></span>
+              </p>
             </td>
           </tr>
           <tr>
@@ -52,7 +411,8 @@ title: Links
               <p class="p2"><span class="s1"><a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/html/mvc.html"><b>Spring MVC Framework</b></a></span></p>
             </td>
             <td valign="top" class="td5">
-              <p class="p2"><span class="s1"><span class="Apple-converted-space">Model View Controller 기반의 웹프레임워크. DI, AOP의 개념을 중시하여 구현되었다.</span></span></p>
+              <p class="p2"><span class="s1"><span class="Apple-converted-space">Model View Controller 기반의 웹프레임워크. DI, AOP의 개념을 중시하여 구현되었다.</span></span>
+              </p>
             </td>
           </tr>
           <tr>
@@ -60,8 +420,8 @@ title: Links
               <p class="p2"><span class="s1"><a href="https://projects.spring.io/spring-boot/"><b>Spring boot</b></a></span></p>
             </td>
             <td valign="top" class="td7">
-              <p class="p2">Spring 프로젝트의 생산성 증가를 위해 spring applicaion을 바로 준비하여 구축하게 도와준다. 
-                기존의 web.xml의 configuration에서 벗어나 좀 더 프로그래밍적으로 웹어플리케이션 구현이 가능하다.<span class="s1"></span></p>
+              <p class="p2">Spring 프로젝트의 생산성 증가를 위해 spring applicaion을 바로 준비하여 구축하게 도와준다. 기존의 web.xml의 configuration에서 벗어나 좀 더 프로그래밍적으로
+                웹어플리케이션 구현이 가능하다.<span class="s1"></span></p>
             </td>
           </tr>
           <tr>
@@ -70,7 +430,8 @@ title: Links
             </td>
             <td valign="top" class="td5">
               <p class="p2"><span class="s1"><span class="Apple-converted-space">기존의 JDBC를 사용한 중복 코드를 탈피하고, 
-                별도의 xml문서로 query를 관리하여 Persistence layer에 접근하기 위한 Framework이다. 처음에는 ibatis라 불리었고 현재는 mybatis로 버전업되었다. SQL Mapping Framework이다.</span></span></p>
+                별도의 xml문서로 query를 관리하여 Persistence layer에 접근하기 위한 Framework이다. 처음에는 ibatis라 불리었고 현재는 mybatis로 버전업되었다. SQL Mapping Framework이다.</span></span>
+              </p>
             </td>
           </tr>
           <tr>
@@ -80,7 +441,8 @@ title: Links
             <td valign="top" class="td5">
               <p class="p2"><span class="s1"><span class="Apple-converted-space">mybatis는 쿼리를 관리했다면, Hibernate는 DB의 스키마와 대응하는 클래스를 통해 Persistence layer에 접근한다.
                 ORM(Object Relational Mapping) Framework로 JPA(Java Persistence API)의 구현체이다. 이를 사용하면 클래스를 활용하는 동적인 쿼리 생성이 가능하며, 
-                디비의 스키마가 변경되면 Hibernate의 객체로 반영하기만 해도 기존 쿼리 동작에 영향을 미치지 않는다. Spring Data JPA에는 Hibernate가 내장되어 있다.</span></span></p>
+                디비의 스키마가 변경되면 Hibernate의 객체로 반영하기만 해도 기존 쿼리 동작에 영향을 미치지 않는다. Spring Data JPA에는 Hibernate가 내장되어 있다.</span></span>
+              </p>
             </td>
           </tr>
         </tbody>
@@ -119,224 +481,10 @@ title: Links
           </tr>
         </tbody>-->
       </table>
-    </div>
+  </div>
 
-    <div id="article"class="node">
-      <a name="node">
-      <h2>Javascript & NODE.JS</h2>
-      <table class="table table-hover ">
-        <tbody>
-          <tr>
-            <td valign="top" class="td1">
-              <p class="p2"><span class="s1"><b>Name</b></span></p>
-            </td>
-            <td valign="top" class="td1">
-              <p class="p2"><span class="s1"><b>Description</b></span></p>
-            </td>
-          </tr>
-          <tr>
-            <td valign="top" class="td4">
-              <p class="p2"><span class="s1"><a href="#"><b>Underscore & Lodash</b></a></span></p>
-            </td>
-            <td valign="top" class="td5">
-              <p class="p2"><span class="s1"><span class="Apple-converted-space"> '_.'형식으로 script작성시 필요한 함수를 손쉽게 사용할 수 있게 하는 라이브러리</span></span></p>
-            </td>
-          </tr>
-          <tr>
-            <td valign="top" class="td4">
-              <p class="p2"><span class="s1"><a href="http://expressjs.com/ko/"><b>Express JS</b></a></span></p>
-            </td>
-            <td valign="top" class="td5">
-              <p class="p2"><span class="s1"><span class="Apple-converted-space">Node.js 서버를 간결하게 만드는 프레임워크.</span></span></p>
-            </td>
-          </tr>
-          <tr>
-            <td valign="top" class="td4">
-              <p class="p2"><span class="s1"><a href="#"><b>EJS & PUG & Handlebars</b></a></span></p>
-            </td>
-            <td valign="top" class="td5">
-              <p class="p2"><span class="s1"><span class="Apple-converted-space">Node서버에서 View페이지를 렌더링하는 라이브러리</span></span></p>
-            </td>
-          </tr>
-          <tr>
-            <td valign="top" class="td4">
-              <p class="p2"><span class="s1"><a href="http://docs.sequelizejs.com/en/latest/"><b>Sequelize</b></a></span></p>
-            </td>
-            <td valign="top" class="td5">
-              <p class="p2"><span class="s1"><span class="Apple-converted-space">Node에서 사용하는 ORM Framework. Hibernate와 같이 쿼리를 직접 작성하는 경우가 적다.</span></span></p>
-            </td>
-          </tr>
-          <tr>
-            <td valign="top" class="td4">
-              <p class="p2"><span class="s1"><a href="http://mongoosejs.com/"><b>Mongoose</b></a></span></p>
-            </td>
-            <td valign="top" class="td5">
-              <p class="p2"><span class="s1"><span class="Apple-converted-space">MongoDB 에서 사용하는 object modeling 라이브러리.</span></span></p>
-            </td>
-          </tr>
-          <tr>
-            <td valign="top" class="td4">
-              <p class="p2"><span class="s1"><a href="https://aws.amazon.com/ko/sdk-for-node-js/"><b>AWS SDK</b></a></span></p>
-            </td>
-            <td valign="top" class="td5">
-              <p class="p2"><span class="s1"><span class="Apple-converted-space">AWS를 Javascript가 제공하는 객체로 제어하는 라이브러리</span></span></p>
-            </td>
-          </tr>
-          <tr>
-            <td valign="top" class="td4">
-              <p class="p2"><span class="s1"><a href="https://facebook.github.io/react/"><b>React JS</b></a></span></p>
-            </td>
-            <td valign="top" class="td5">
-              <p class="p2"><span class="s1"><span class="Apple-converted-space">Angular JS와 같은 프론트 라이브러리. 
-                하지만 현재는 프론트 영역에만 제한되어 있지 않고 Server Side에도 사용이 가능하다. 
-                ReactDOM 라이브러리는 DOM과 연관되어 있는 라이브러리고 실제로 React 라이브러리는 네이티브, 웹, 서버 어플리케이션을 만드는 경우에 모두 사용가능하다.</span></span></p>
-            </td>
-          </tr>
-          <tr>
-            <td valign="top" class="td4">
-              <p class="p2"><span class="s1"><a href="http://dobbit.github.io/redux/"><b>Redux</b></a></span></p>
-            </td>
-            <td valign="top" class="td5">
-              <p class="p2"><span class="s1"><span class="Apple-converted-space">Redux는 MVC처럼 하나의 처리하는 방식이라고 볼 수 있다.
-                어플리케이션의 모든 상태는 하나의 스토어 안에 저장되며 action에 대해 일괄적으로 dispatch 되어 처리되는 구조이다.</span></span></p>
-            </td>
-          </tr>
-          <tr>
-            <td valign="top" class="td4">
-              <p class="p2"><span class="s1"><a href="https://ionicframework.com/"><b>Ionic</b></a></span></p>
-            </td>
-            <td valign="top" class="td5">
-              <p class="p2"><span class="s1"><span class="Apple-converted-space">하이브리드 웹 형태로 어플리케이션을 만드는 framework. Angular를 사용하여 구현한다.</span></span></p>
-            </td>
-          </tr>
-          <tr>
-            <td valign="top" class="td4">
-              <p class="p2"><span class="s1"><a href="https://github.com/mzabriskie/axios"><b>Axios</b></a></span></p>
-            </td>
-            <td valign="top" class="td5">
-              <p class="p2"><span class="s1"><span class="Apple-converted-space">비동기 웹요청을 처리하는 라이브러리. Promise 패턴으로 구현되어 있어 사용이 간편하다.</span></span></p>
-            </td>
-          </tr>
-          <tr>
-            <td valign="top" class="td4">
-              <p class="p2"><span class="s1"><a href="https://datatables.net/"><b>DataTable</b></a></span></p>
-            </td>
-            <td valign="top" class="td5">
-              <p class="p2"><span class="s1"><span class="Apple-converted-space">JQuery 형태로 테이블을 관리할 수 있는 라이브러리. 
-                특정 이벤트에 대해서 비동기로 서버에 요청을 하여 검색, 페이징 등이 간편하게 구현이 가능하다.</span></span></p>
-            </td>
-          </tr>
-          <tr>
-            <td valign="top" class="td4">
-              <p class="p2"><span class="s1"><a href="https://electron.atom.io/"><b>Electron</b></a></span></p>
-            </td>
-            <td valign="top" class="td5">
-              <p class="p2"><span class="s1"><span class="Apple-converted-space">웹 어플리케이션 형태로 desktop app을 만들 수 있는 프레임워크.
-                Chromium이 내장되어 있어 웹브라우저처럼 어플리케이션이 동작한다. 대표적인 app으로는 Atom과 VS Code 등이 있다.</span></span></p>
-            </td>
-          </tr>
-          <tr>
-            <td valign="top" class="td4">
-              <p class="p2"><span class="s1"><a href="https://webpack.github.io/"><b>Webpack</b></a></span></p>
-            </td>
-            <td valign="top" class="td5">
-              <p class="p2"><span class="s1"><span class="Apple-converted-space">Module Bundler. 
-                간단히 말하면 여러 js파일을 하나로 합치고 minify까지 가능하게 한다. 
-                이것은 기능의 극히 일부분일 뿐이고, Hot-Module-Replacement를 사용하면 코드수정과 동시에 웹페이지에 반영되어 빠른 Front개발이 가능하게 해주는 도구이기도 하다.
-                grunt, gulp 의 세대를 지나서 각광받고 있는 번들러이다.</span></span></p>
-            </td>
-          </tr>
-          <tr>
-            <td valign="top" class="td4">
-              <p class="p2"><span class="s1"><a href="https://socket.io/"><b>Socket.io</b></a></span></p>
-            </td>
-            <td valign="top" class="td5">
-              <p class="p2"><span class="s1"><span class="Apple-converted-space">단 몇줄만으로 간단하게 소켓서버를 구현할 수 있다.</span></span></p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div id="article"class="database">
-      <a name="database">
-      <h2>DATA BASE</h2>
-      <table class="table table-hover ">
-        <tbody>
-          <tr>
-            <td valign="top" class="td1">
-              <p class="p2"><span class="s1"><b>Name</b></span></p>
-            </td>
-            <td valign="top" class="td1">
-              <p class="p2"><span class="s1"><b>Description</b></span></p>
-            </td>
-          </tr>
-          <tr>
-            <td valign="top" class="td4">
-              <p class="p2"><span class="s1"><a href="https://www.mysql.com/"><b>MySQL</b></a></span></p>
-            </td>
-            <td valign="top" class="td5">
-              <p class="p2"><span class="s1"><span class="Apple-converted-space">가장 널리 알려진 Open Source Database</span></span></p>
-            </td>
-          </tr>
-          <tr>
-            <td valign="top" class="td4">
-              <p class="p2"><span class="s1"><a href="https://mariadb.com/kb/ko/mariadb/"><b>MariaDB</b></a></span></p>
-            </td>
-            <td valign="top" class="td5">
-              <p class="p2"><span class="s1"><span class="Apple-converted-space">MySQL을 기반으로 구성된 Open Source Database. 
-                MySQL은 현재 Cumunity Edition과 Enterprise Edition이 구분되어있다. 
-                하지만 MariaDB는 완전한 Open Source이다.</span></span></p>
-            </td>
-          </tr>
-         <tr>
-            <td valign="top" class="td4">
-              <p class="p2"><span class="s1"><a href="https://mariadb.com/kb/ko/mariadb/"><b>MariaDB</b></a></span></p>
-            </td>
-            <td valign="top" class="td5">
-              <p class="p2"><span class="s1"><span class="Apple-converted-space">MySQL을 기반으로 구성된 Open Source Database. 
-                MySQL은 현재 Cumunity Edition과 Enterprise Edition이 구분되어있다. 
-                하지만 MariaDB는 완전한 Open Source이다.</span></span></p>
-            </td>
-          </tr>
-          <tr>
-            <td valign="top" class="td4">
-              <p class="p2"><span class="s1"><a href="http://docs.aws.amazon.com/ko_kr/amazondynamodb/latest/developerguide/Introduction.html"><b>DynamoDB</b></a></span></p>
-            </td>
-            <td valign="top" class="td5">
-              <p class="p2"><span class="s1"><span class="Apple-converted-space">AWS에서 제공하는 NoSQL database. 대표적으로 MongoDB가 있다.</span></span></p>
-            </td>
-          </tr>
-          <tr>
-            <td valign="top" class="td4">
-              <p class="p2"><span class="s1"><a href="https://www.mongodb.com/"><b>MongoDB</b></a></span></p>
-            </td>
-            <td valign="top" class="td5">
-              <p class="p2"><span class="s1"><span class="Apple-converted-space">대표적인 NoSQL이다. JSON기반으로 데이터를 관리하며 사용법이 간단하다.</span></span></p>
-            </td>
-          </tr>
-          <tr>
-            <td valign="top" class="td4">
-              <p class="p2"><span class="s1"><a href="https://www.oracle.com/index.html"><b>Oracle</b></a></span></p>
-            </td>
-            <td valign="top" class="td5">
-              <p class="p2"><span class="s1"><span class="Apple-converted-space">가장 유명한 기업형 Database. 뛰어난 성능이 필요한 은행권 또는 SI에서 즐겨 사용하는 Database이다.</span></span></p>
-            </td>
-          </tr>
-          <tr>
-            <td valign="top" class="td4">
-              <p class="p2"><span class="s1"><a href="https://redis.io/"><b>Redis</b></a></span></p>
-            </td>
-            <td valign="top" class="td5">
-              <p class="p2"><span class="s1"><span class="Apple-converted-space">In-memory data 저장소. cache 기능, message broker등 다양하게 사용되어질 수 있다. 
-                또한 다양한 데이터 타입을 지원하기 때문에 효율적인 메모리 관리를 염두에 두어야 한다.</span></span></p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div id="article"class="android">
-      <a name="android">
+  <div id="article" class="android">
+    <a name="android">
       <h2>ETC</h2>
       <table class="table table-hover ">
         <tbody>
@@ -353,7 +501,8 @@ title: Links
               <p class="p2"><span class="s1"><a href="https://www.tensorflow.org/"><b>Tensorflow</b></a></span></p>
             </td>
             <td valign="top" class="td5">
-              <p class="p2"><span class="s1"><span class="Apple-converted-space">Open Source library로 딥러닝, 머신러닝등에 사용한다. 아직 기초단계에 있다.</span></span></p>
+              <p class="p2"><span class="s1"><span class="Apple-converted-space">Open Source library로 딥러닝, 머신러닝등에 사용한다. 아직 기초단계에 있다.</span></span>
+              </p>
             </td>
           </tr>
           <tr>
@@ -361,7 +510,8 @@ title: Links
               <p class="p2"><span class="s1"><a href="https://www.docker.com/"><b>Docker</b></a></span></p>
             </td>
             <td valign="top" class="td5">
-              <p class="p2"><span class="s1"><span class="Apple-converted-space">가장 즐겨쓰는 소프트웨어이다. 반가상화를 통해 Host에 구속되지 않은 컨테이너들을 만들 수 있다. Docker registry, Docker compose와 같이 사용해야 더욱 효율적이다.</span></span></p>
+              <p class="p2"><span class="s1"><span class="Apple-converted-space">가장 즐겨쓰는 소프트웨어이다. 반가상화를 통해 Host에 구속되지 않은 컨테이너들을 만들 수 있다. Docker registry, Docker compose와 같이 사용해야 더욱 효율적이다.</span></span>
+              </p>
             </td>
           </tr>
           <tr>
@@ -372,10 +522,11 @@ title: Links
               <p class="p2"><span class="s1"><span class="Apple-converted-space">
                 Continuous Integration Tool로써 웹서버에 배포 및 관리를 손쉽게 해주는 도구이다.
                 Jenkins를 도입하기 전과 후는 배포관리적인 측면에서 극명하게 시간차이가 발생한다.
-                비슷한 것으로는 Codeship, Travis등이 있다. </span></span></p>
+                비슷한 것으로는 Codeship, Travis등이 있다. </span></span>
+              </p>
             </td>
           </tr>
         </tbody>
       </table>
-    </div>
   </div>
+</div>
