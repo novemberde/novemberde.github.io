@@ -6,40 +6,21 @@ tags: AWS, Amazon Web Service, CloudFormation, AWS Architecture, AWS infrastruct
 
 ## Summary
 ---
- AWS CloudFormation의 Master Class를 통해 내용을 살펴보자.
-
----
-### 목표
----
-
-- 기본을 넘어 기술적으로 더 자세히 살펴보기. A technical deep dive that goes beyond the basics
-- AWS 서비스에서 가장 잘 사용하기 위한 방법. Intended to educate you on how to get the best from AWS services
-- 어떻게 진행되는지 살펴본다. Show you how things work and how to get things done
+ AWS CloudFormation의 Master Class를 보고 Reference document를 통해 내용을 살펴보자.
 
 ---
 ### 특징
 ---
 
-- AWS의 리소스들을 생성하고 관리하는 쉬운 방법. An easy way to create & manage a collection of AWS resources.
-- 리소스를 예상가능하게 프로비져닝하고 업데이트하도록 해줌. Allows orderly and predictable provisioning and updating of resources
-- AWS 인프라에 대해 버전 관리가 가능하도록 함. Allows you to version control your AWS infrastructure
-- 콘솔 또는 명령어를 통해 스택을 배포 및 업데이트 할 수 있음. Deploy and update stacks using console, command line or API
-- 생성한 리소스에 대해서만 과금. You only pay for the resources you create
+- Infra structure as a code를 실현하기에 간편한 도구
+- 리소스를 Provisioning하고 update를 해줌
+- Code로 관리하기 때문에 버전관리에 용이
+- AWS cli 또는 AWS console을 통해 배포 및 업데이트가 가능
+- 리소스에 대해서만 과금되기 때문에 별도의 비용지출이 없음
+- Parameter를 통해 Project별로 Customizing이 용이
+- 코드만 올리면 인프라가 형성되기 때문에 인프라 도입에 대한 리소스 투입이 적음
 
----
-
-- Transparent and Open
-- Don't reinvent the whell
-- Declarative & Flexible
-- Noe Extra Charge
-- Customized via Parameters
-- Integration Ready
-
----
-
-- CloudFormation - Components & Thechnology IMAGE
-
----
+<!-- ---
 ### Agenda
 ---
 
@@ -47,24 +28,134 @@ tags: AWS, Amazon Web Service, CloudFormation, AWS Architecture, AWS infrastruct
 - Using a Template to Create and Manage a Stack
 - Working with the CloudFormation API
 - Working with AWS Resources
-- Bootstrapping Applications and Handing Updates
+- Bootstrapping Applications and Handing Updates -->
 
 ---
-### Creating Templates
+### Cloudformation template의 특징
 ---
 
-- Familiar JSON Format
-- Manage Relationships
-- Reusable
-- Provide Feedback
-- Automate Generation
-- Look Up Resources
-- Write & Go
-- Avoid Collisions
+- JSON, YAML 로 개발자 친화적인 포맷
+- 코드로 관리하기 때문에 재사용에 용이
+- Stack 생성시 message를 통해 feedback 제공
+- Sample template 제공
+
+아래는 yaml형식의 ec2를 생성하는 sample template이다. CloudFormation으로 ec2를 생성할 때 파라미터를 받는다.
+instanceType, KeyName, SSHLocation을 설정할 수 있도록 되어 있다.
+선택할 수 있는 인스턴스의 종류를 제한했기 때문에 t2계열의 인스턴스만 선택할 수 있다. 그리고 AMI는 Amazon linux를 사용하였다.
+
+```yaml
+# EC2 sample template
+AWSTemplateFormatVersion: 2010-09-09
+Description: EC2 Sample
+Parameters: # Using before cloudformation is being created
+  KeyName:
+    Description: Name of an existing EC2 KeyPair to enable SSH access to the instance. Recommend use only office IP.
+    Type: 'AWS::EC2::KeyPair::KeyName'
+    ConstraintDescription: must be the name of an existing EC2 KeyPair.
+  InstanceType:
+    Description: WebServer EC2 instance type
+    Type: String
+    Default: t2.small
+    AllowedValues:  # allow only restricted instance
+      - t2.nano
+      - t2.micro
+      - t2.small
+      - t2.medium
+      - t2.large
+    ConstraintDescription: must be a valid EC2 instance type.
+  SSHLocation:
+    Description: The IP address range that can be used to SSH to the EC2 instances
+    Type: String
+    MinLength: '9'
+    MaxLength: '18'
+    Default: 0.0.0.0/0
+    AllowedPattern: '(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})/(\d{1,2})'
+    ConstraintDescription: must be a valid IP CIDR range of the form x.x.x.x/x.
+Mappings: # Conditional value when cloudformation is being created
+  AWSInstanceType2Arch:
+    t2.nano:
+      Arch: HVM64
+    t2.micro:
+      Arch: HVM64
+    t2.small:
+      Arch: HVM64
+    t2.medium:
+      Arch: HVM64
+    t2.large:
+      Arch: HVM64
+  AWSInstanceType2NATArch:
+    t2.nano:
+      Arch: NATHVM64
+    t2.micro:
+      Arch: NATHVM64
+    t2.small:
+      Arch: NATHVM64
+    t2.medium:
+      Arch: NATHVM64
+    t2.large:
+      Arch: NATHVM64
+  AWSRegionArch2AMI:
+    ap-northeast-2:
+      PV64: NOT_SUPPORTED
+      HVM64: ami-2b408b45
+      HVMG2: NOT_SUPPORTED
+Resources:
+  EC2Instance:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      InstanceType: !Ref InstanceType
+      SecurityGroups:
+        - !Ref InstanceSecurityGroup
+      KeyName: !Ref KeyName
+      ImageId: !FindInMap 
+        - AWSRegionArch2AMI
+        - !Ref 'AWS::Region'
+        - !FindInMap 
+          - AWSInstanceType2Arch
+          - !Ref InstanceType
+          - Arch
+  InstanceSecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      GroupDescription: Enable SSH access via port 22
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: '22'
+          ToPort: '22'
+          CidrIp: !Ref SSHLocation
+Outputs:
+  InstanceId:
+    Description: InstanceId of the newly created EC2 instance
+    Value: !Ref EC2Instance
+  AZ:
+    Description: Availability Zone of the newly created EC2 instance
+    Value: !GetAtt 
+      - EC2Instance
+      - AvailabilityZone
+  PublicDNS:
+    Description: Public DNSName of the newly created EC2 instance
+    Value: !GetAtt 
+      - EC2Instance
+      - PublicDnsName
+  PublicIP:
+    Description: Public IP address of the newly created EC2 instance
+    Value: !GetAtt 
+      - EC2Instance
+      - PublicIp
+
+```
+
+한국 유저는 [Asia/seoul region cloudformation sample template](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/sample-templates-services-ap-northeast-2.html#w2ab2c23c22c13c13)
+을 통해 여러 샘플들을 볼 수 있다.
+
+다른 지역의 템플릿을 사용하고 싶으면 left bar에서 다른 region을 선택하면 된다.
 
 ---
-### AWS CLI actions for CloudFormation
+### AWS CLI for CloudFormation
 ---
+
+CloudFormation은 다른 서비스와 마찬가지로 AWS Cli를 통해 사용할 수 있다.
+명령어들은 아래와 같다.
 
 ```bash
 # example
@@ -86,32 +177,10 @@ $ aws cloudformation update-stack help
 - validate-template
 
 ---
-### Working with aws resources
+### Intrinsic functions & pseudo parameters
 ---
 
-- Designed to use your existing experience with AWS
-- Each resource has a set of parameters with names that ar identical to the names used to create the resources through their native API
-
----
-### Referencing the properties of another resource
----
-
-- Reference function
-- Literal references
-- Referencing input parameters - cloundformation을 생성할 때 입력한다. key pairs와 같은 경우.
-  - Validate parameters 기능.
-
-
-
----
-### Conditional Value
----
-
-- Mappings
-
----
-### Intrinsic functions and pseudo parameters
----
+아래와 같은 function과 parameter를 통해 yaml형식의 파일에서 별도의 로직을 추가할 수 있다.
 
 - Intrinsic function
   - Fn::Base64
@@ -127,47 +196,12 @@ $ aws cloudformation update-stack help
   - AWS::StackId
   - AWS::StackName
 
----
-### Working with non-AWS Resources
----
+위에서 EC2를 생성하는 경우에 Fn::FindInMap와 Ref과 같은 것을 사용하였는데 ref는 글자에서 느껴지듯이 reference로 특정 변수를 가리킬 때 사용한다.
+Fn::FindInMap은 별도로 Mapping에 두엇던 파라미터에서 값을 불러오기 위해 사용한다.
 
-- Defining custom resources allows you to include non-AWS resources in a CloudFormation stack
+더 자세한 내용을 알고 싶다면 [AWS Intrinsic function reference](docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference.html)를 참고하도록 하자.
 
----
-### Bootstrapping Applications and handling updates
----
-
-- Continue to use EC2 UserData, which is available as a property of AWS::EC2::Instance resources
-- AWS CloudFormation provides helper scripts for deployment within your EC2 instances
-- Creating files on Instance Filesystems
-- Controlling Services
-  - The services key allows you ensures that the services are not only running when cfn-init finishes (ensureRunning is set to true)
-  - but that they are also restarted upon reboot (enabled is set to true)
-
-All this functionality is available for Windows instances too.
-
-Also, Chef and Puppet are available.
-
----
-### 
----
-AWS CloudFormation Stacks Updates
-
-When you need to make changes to a stack's settings or change its resources, you update the stack instead of deleting it and creating a new stack. For example, if you have a stack with an EC2 instance, you can update the stack to change the instance's AMI ID.
-
-When you update a stack, you submit changes, such as new input parameter values or an updated template. AWS CloudFormation compares the changes you submit with the current state of your stack and updates only the changed resources. For a summary of the update workflow, see How Does AWS CloudFormation Work?.
-
-Note
-When updating a stack, AWS CloudFormation might interrupt resources or replace updated resources, depending on which properties you update. For more information about resource update behaviors, see Update Behaviors of Stack Resources.
-Update Methods
-
-AWS CloudFormation provides two methods for updating stacks: direct update or creating and executing change sets. When you directly update a stack, you submit changes and AWS CloudFormation immediately deploys them. Use direct updates when you want to quickly deploy your updates.
-
-With change sets, you can preview the changes AWS CloudFormation will make to your stack, and then decide whether to apply those changes. Change sets are JSON-formatted documents that summarize the changes AWS CloudFormation will make to a stack. Use change sets when you want to ensure that AWS CloudFormation doesn't make unintentional changes or when you want to consider several options. For example, you can use a change set to verify that AWS CloudFormation won't replace your stack's database instances during an update.
-
-http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html
-
----
+<!-- ---
 ### 인프라 자동 배포를 위한 AWS CloudFormation 고급 활용법 - 박철수 솔루션즈 아키텍트 AWS Korea
 ---
 - [https://www.youtube.com/watch?v=DpkB38n7Yv4](https://www.youtube.com/watch?v=DpkB38n7Yv4)
@@ -256,7 +290,7 @@ http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating
       - IAM role 지정
         - 별도로 크로스-스택 참조를 사용해서 별도의 스택 안에서 IAM 리소스 프로비저닝 가능.
       
-  
+   -->
 
     
 
@@ -268,3 +302,4 @@ http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating
 - [aws.amazon.com/cloudformation/getting-started](aws.amazon.com/cloudformation/getting-started)
 - [aws.amazon.com/cloudformation/aws-cloudformation-templates](aws.amazon.com/cloudformation/aws-cloudformation-templates)
 - [github.com/awslabs/cfncluster](github.com/awslabs/cfncluster)
+- [docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html](docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html)
