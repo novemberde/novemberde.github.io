@@ -8,11 +8,13 @@ linkedin: https://www.linkedin.com/in/kyuhyun-byun-70a228115/
 disqus: novemberde-github-io
 # email: 
 
-gems: [jekyll-gist]
+gems: 
+  - jekyll-gist
+  # - jekyll-sitemap
 highlighter: rouge
 # markdown: redcarpet
 # redcarpet:
-#   extensions: ["tables"]
+#   extensions: ["tables"]\
 
 gist:
   noscript: false
