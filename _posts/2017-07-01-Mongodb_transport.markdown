@@ -1,7 +1,7 @@
 ---
 title: 다른 서버로 Mongodb 이전하기
 category: database
-tags: mongodb
+tags: mongodb, mongodump, scp, mongorestore
 ---
 
 ## Summary

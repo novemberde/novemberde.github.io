@@ -1,5 +1,6 @@
 ---
 title: 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기
+tags: ssh ec2 ubuntu, create user ec2 ubuntu, ec2 ubuntu 유저 생성
 ---
 
 ## Summary

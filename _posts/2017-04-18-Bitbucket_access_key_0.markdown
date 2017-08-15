@@ -1,5 +1,6 @@
 ---
 title: Bitbucket access key 발급하기
+tags: bitbucket access key, bitbucket, access key, ubuntu, git
 ---
 
 ## Summary

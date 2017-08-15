@@ -1,5 +1,6 @@
 ---
 title: 나만의 private docker registry 구성하기.
+tags: docker registry, private docker registry, ec2, docker registry ec2, s3, docker registry s3
 ---
 
 ## Summary

@@ -1,5 +1,6 @@
 ---
 title: AWS에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기
+tags: AWS ec2 instance, aws ec2 ubuntu
 ---
 
 ## Summary

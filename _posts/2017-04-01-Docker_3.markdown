@@ -1,5 +1,6 @@
 ---
 title: EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기
+tags: install ec2 docker, ec2 도커 설치, ec2 docker 설치, ec2 유저 권한
 ---
 
 ## Summary

@@ -1,5 +1,6 @@
 ---
 title: Javascript에서 Closure와 Constructor
+tags: javascript, closure, constructor, performance
 ---
 
 ## Summary

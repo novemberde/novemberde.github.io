@@ -1,5 +1,6 @@
 ---
 title: Amazon Aurora와 sequelize 연동해보기.
+tags: aws, amazon, aurora, sequelize, nodejs, orm
 ---
 
 ## Summary

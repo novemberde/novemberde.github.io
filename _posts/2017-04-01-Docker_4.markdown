@@ -1,5 +1,6 @@
 ---
 title: Bitbucket을 사용하여 git repository 생성하기
+tags: bitbucket, git repository, bitbucket repository 생성
 ---
 
 ## Summary
