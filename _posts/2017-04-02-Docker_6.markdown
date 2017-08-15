@@ -1,6 +1,6 @@
 ---
 title: PM2를 사용하여 EC2에 Node 서버 배포하기
-tags: pm2, ec2, nodejs, pm2 서버 배포
+tags: pm2, ec2, nodejs, 서버, 배포
 ---
 
 ## Summary

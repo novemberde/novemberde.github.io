@@ -1,7 +1,7 @@
 ---
 title: Sequelize에서 parallel execution과 serial execution
 category: nodejs
-tags: nodejs, sequelize, Promise, parallel execution, serial execution
+tags: nodejs, sequelize, Promise, parallel, execution, serial
 ---
 
 ## Summary

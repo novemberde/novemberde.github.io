@@ -1,7 +1,7 @@
 ---
 title: AWS CloudFormation을 활용한 Architecture
 category: AWS
-tags: AWS, Amazon Web Service, CloudFormation, AWS Architecture, AWS infrastructure, CloudFormation 이란
+tags: AWS, Amazon, Web, Service, CloudFormation, Architecture, infrastructure, CloudFormation, 이란, 활용, 시작하기
 ---
 
 ## Summary

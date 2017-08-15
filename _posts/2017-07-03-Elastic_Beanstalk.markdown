@@ -1,7 +1,7 @@
 ---
 title: Docker image를 EB(Elastic Beanstalk)를 통해 배포하기
 category: docker
-tags: docker, eb, aws, elastic beanstalk, elasticbeanstalk, docker image, deploy
+tags: docker, eb, aws, elastic, beanstalk, elasticbeanstalk, image, deploy
 ---
 
 ## Summary

@@ -1,6 +1,6 @@
 ---
 title: Docker를 활용하여 AWS의 Elastic Cache 에 접근하기.
-tags: vpc, aws, elastic cache, elasticcache, elasticsearch, elastic search, access, docker
+tags: vpc, aws, elastic, cache, elasticcache, elasticsearch, elastic, search, access, docker, redis, internal
 ---
 
 ## Summary

@@ -1,7 +1,7 @@
 ---
 title: VS code에서 git bash 사용하기
 category: bash
-tags: bash, git bash, git bash vs code, vs code gitbash, vs code bash, vs code
+tags: bash, git, vs, code, vscode, gitbash
 ---
  
 Windows에서 Power shell이나 CMD로 작업하면 linux 명령어를 사용하기 불편하다.

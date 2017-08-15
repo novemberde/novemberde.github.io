@@ -1,6 +1,6 @@
 ---
 title: Code convention과 개발자가 지켜야할 수칙에 관하여
-tags: developer, code convention, 개발자, 수칙, 협업
+tags: developer, code, convention, 개발자, 수칙, 협업
 ---
 
 ## Summary

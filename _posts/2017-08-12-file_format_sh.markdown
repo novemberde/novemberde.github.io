@@ -1,7 +1,7 @@
 ---
 title: "/bin/bash^M: bad interpreter: No such file or directory"
 category: bash
-tags: bin/bash, bash, bad interpreter in windows, sh fileformat in windows
+tags: bin/bash, bash, bad, interpreter, in, windows, sh, fileformat
 ---
  
 Windows에서 shell script를 작성하여 배포하였을 경우에 다음과 같은 에러를 만날 수 있다.

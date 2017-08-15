@@ -1,6 +1,6 @@
 ---
 title: 만들어진 Docker image를 EC2 인스턴스에 배포하기
-tags: docker, ec2, docker ec2 deploy, docker image ec2 deploy, docker image ubuntu deploy, docker ec2 배포
+tags: docker, ec2, deploy, image, ubuntu, 배포
 ---
 
 ## Summary

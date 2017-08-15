@@ -1,6 +1,6 @@
 ---
 title: Docker로 EC2에 Node 배포하기
-tags: docker, ec2, ubuntu, docker ec2, docker node, docker ec2 docker, docker ec2 배포, docker 배포
+tags: docker, ec2, ubuntu, node, nodejs, 배포, deploy
 ---
 
 ## 소개

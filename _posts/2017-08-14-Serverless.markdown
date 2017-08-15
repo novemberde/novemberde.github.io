@@ -1,7 +1,7 @@
 ---
 title: Serverless을 이용한 AWS Lambda의 배포 자동화
 category: AWS
-tags: AWS, Amazon Web Service, lambda, serverless, lambda serverless, aws lambda serverless, api gateway
+tags: AWS, Amazon, Web, Service, lambda, serverless, api, gateway, apigateway, deploy, 배포, 자동화
 ---
 
 ## Summary
