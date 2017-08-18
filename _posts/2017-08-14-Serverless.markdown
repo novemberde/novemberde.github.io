@@ -6,7 +6,6 @@ tags: AWS, Amazon, Web, Service, lambda, serverless, api, gateway, apigateway, d
 
 ## Summary
 ---
-
 AWS Lambda와 api gateway를 사용하여 작업하면 배포하는 부분에서 상당부분 시간을 사용한다.
 또한 API Gateway와 lambda를 엮는 것은 별도의 설정 과정이 필요하며, Resource & Stage 개념이 있어서
 변경사항이 생길 경우에 API배포를 매번 해주어야 한다.
@@ -58,7 +57,6 @@ Startups and Fortune 500 companies are using it to build incredibly efficient ap
 ---
 ### Serverless framework 사용해보기
 ---
-
 배포하기에 앞서서 사전에 설치되어 있어야 할 것이 있다.
 
 - [nodejs & npm](https://nodejs.org/ko/download/package-manager/)
