@@ -79,6 +79,9 @@ $ electron-packager . c9-app --platform=win32 --arch=x64
 
 이제 편하게 c9으로 작업하자.
 
+관련 작업한 repository는 public으로 github에 올려놓았다.
+[https://github.com/novemberde/c9-app](https://github.com/novemberde/c9-app)
+
 ---
 ### References
 ---
