@@ -10,7 +10,7 @@ disqus: novemberde-github-io
 
 gems: 
   - jekyll-gist
-  # - jekyll-sitemap
+  - jekyll-sitemap
 highlighter: rouge
 # markdown: redcarpet
 # redcarpet:
