@@ -7,7 +7,7 @@ tags: dragon, ball, game, toy, project, 게임
 ---
 When I first started programming, I went on a game project to familiarize myself with Javascript.
 
-I thought there would be a problem with the image license.
+I thought there would be a problem with the image license. If there's a problem, please comment below.
 But, I decided to release this code on Github and hope to be helpful for juniors.
 ---
 
