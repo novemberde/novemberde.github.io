@@ -14,7 +14,7 @@ git repository는 아래에 첨부하였습니다.
 
 ---
 
-<iframe align="middle" style="margin:0px" frameborder="0" position="relative" width="700px" height="700px" scrolling="no" src="https://s3.ap-northeast-2.amazonaws.com/archived-storage/dragon_ball/intro.html"></iframe>
+<iframe align="middle" style="margin:0px" frameborder="0" position="relative" width="750px" height="700px" scrolling="no" src="https://s3.ap-northeast-2.amazonaws.com/archived-storage/dragon_ball/intro.html"></iframe>
 
 추가 사항이라던지 문제점은 댓글로 남겨주시면 반영하겠습니다.
 
