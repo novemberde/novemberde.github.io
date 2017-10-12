@@ -61,7 +61,7 @@ Swarm으로 관리하면 어떤 형식으로 나타나는지 Demo project 개념
 ### 시작하기
 ---
 
-특징을 알아봤으니 Tutorial을 따라 Swarm을 돌려보자
+특징을 알아봤으니 Swarm을 돌려보자
 
 ```bash
 # 초기화 하기
