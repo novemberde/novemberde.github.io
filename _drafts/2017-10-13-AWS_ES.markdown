@@ -1,0 +1,7 @@
+---
+title: AWS elastic search service IAM role public / VPC 문제 해결
+category: aws
+tags: aws, lambda, nodejs, node, express, framework, 개발, aws-lambda-express
+---
+## Summary
+---
