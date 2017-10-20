@@ -139,3 +139,8 @@ SourceTree에서 repository를 add한 후에 사용하면 Local의 GUI환경에�
 나중에 여러 해당 CodeCommit에 대한 계정 정보를 삭제하고 싶은 경우 [도구>옵션]에서 삭제할 수 있다.
 
 ![sourcetreedelete](/images/aws/codecommit/sourcetreedelete.png)
+
+---
+### References
+---
+- [http://docs.aws.amazon.com/ko_kr/codecommit/latest/userguide/welcome.html](http://docs.aws.amazon.com/ko_kr/codecommit/latest/userguide/welcome.html)
