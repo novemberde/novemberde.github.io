@@ -1,0 +1,10 @@
+---
+title: EC2에서 Docker와 Docker-compose 사용하기
+category: docker
+tags: aws, ec2, docker, docker-compose, compose, 사용하기, 사용기, 배포
+---
+## Summary
+---
+2017.06.08에 AWSKRUG에서 EC2에서 Docker와 Docker-compose 사용하기라는 주제로 발표했던 자료입니다.
+
+<iframe src="//slides.com/byunkyuhyun/ec2-docker-docker-compose/embed" width="576" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
