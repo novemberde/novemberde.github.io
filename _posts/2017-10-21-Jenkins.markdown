@@ -1,7 +1,7 @@
 ---
 title: Jenkins를 Blue ocean을 활용하여 배포 관리하기
 category: DevOps
-tags: jenkins, deployment, 배포, 관리, node, nodejs, Blueocean, blue, ocean, pipeline, cdci, cd, ci
+tags: jenkins, deployment, 배포, 관리, Blueocean, blue, ocean, pipeline, cdci, cd, ci
 ---
 ## Summary
 ---
