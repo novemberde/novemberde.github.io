@@ -9,6 +9,6 @@ tags: AWS, Amazon, Web, Service, CodeDeploy, code, deploy, 배포, ci, cd, cicd
 AWS CodeDeploy를 사용하여 코드를 배포 및 해당 인스턴스에서 실행해본다.
 
 ---
-## CodeDeploy 란
+## 사전 준비 사항
 ---
 
