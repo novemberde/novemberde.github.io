@@ -250,3 +250,4 @@ IDE상에서의 Hint가 정의한 Type대로 나타나는 점이다. 각 Object�
 
 - [https://webpack.js.org/](https://webpack.js.org/)
 - [https://www.youtube.com/watch?v=ose1VIo213k](https://www.youtube.com/watch?v=ose1VIo213k)
+- [https://github.com/novemberde/practice_node_server](https://github.com/novemberde/practice_node_server)
