@@ -184,8 +184,38 @@ Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu
 xvda              0.00     0.10    0.07    0.11     0.90     4.01    54.75     0.00    2.98    1.08    4.26   0.49   0.01
 ```
 
+
+---
+
+lsof
+- list open files
+- COMMAND : 실행한 명령어
+- PID : process id
+- USER : 실행한 사용자
+- FD: File Descriptor, 파일의 종류. 
+  - cwd: current working directory
+  - rtd: root directory
+  - mem : memory-mapped file
+  - txt: program text (code and data);
+- TYPE: 파일 종류
+  - DIR: 디렉터리
+  - CHR:  character special file
+  - REG: regular file
+  - unix: 유닉스 도메인 소켓 (MySQL 등이 사용하는 소켓으로 로컬 프로세스에서만 사용 가능하며 TCP/UDP 보다 속도가 매우 빠름)
+- DEVICE : 장치 번호
+- SIZE/OFF: 파일의 크기나 오프셋
+- NODE: 노드 번호
+- NAME:  파일명
+
+```sh
+$ lsof -c docker
+$ lsof +D /tmp
+$ sudo lsof -i TCP:22
+```
+
 ---
 ## Referensces
 ---
 
 - 오다 케이지/ 쿠레마츠 타니히토/ 오카다 노리마사/ 히라야마 츠요시 지음, 김완섭 옮김,『그림으로 공부하는 시스템 성능 구조』, 제이펍(1999), p50-p90
+- [https://www.lesstif.com/pages/viewpage.action?pageId=20776078](https://www.lesstif.com/pages/viewpage.action?pageId=20776078)
