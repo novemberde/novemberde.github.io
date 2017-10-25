@@ -34,7 +34,7 @@ $ docker run -dit --name docker-registry -p 5000:5000 registry
 ## Docker image를 push하기
 ---------------------
 
-[도커허브](hub.docker.com)를 사용할 때는 <계정아이디>/registry:latest 처럼 tag명에 내 아이디가 들어가는 모양이었다.
+[도커허브](https://hub.docker.com)를 사용할 때는 <계정아이디>/registry:latest 처럼 tag명에 내 아이디가 들어가는 모양이었다.
 하지만 private registry를 사용할 때는 <계정아이디>부분에 내 registry의 url주소를 사용하여야 한다.
 
 localhost에서 테스트를 진행할테니 localhost:5000/hello-world:latest 이미지를 만들어보자.

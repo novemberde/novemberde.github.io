@@ -298,8 +298,8 @@ Fn::FindInMap은 별도로 Mapping에 두엇던 파라미터에서 값을 불러
 ### References
 ---
 
-- [aws.amazon.com/cloudformation](aws.amazon.com/cloudformation)
-- [aws.amazon.com/cloudformation/getting-started](aws.amazon.com/cloudformation/getting-started)
-- [aws.amazon.com/cloudformation/aws-cloudformation-templates](aws.amazon.com/cloudformation/aws-cloudformation-templates)
-- [github.com/awslabs/cfncluster](github.com/awslabs/cfncluster)
-- [docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html](docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html)
+- [http://aws.amazon.com/cloudformation](http://aws.amazon.com/cloudformation)
+- [http://aws.amazon.com/cloudformation/getting-started](http://aws.amazon.com/cloudformation/getting-started)
+- [http://aws.amazon.com/cloudformation/aws-cloudformation-templates](http://aws.amazon.com/cloudformation/aws-cloudformation-templates)
+- [http://github.com/awslabs/cfncluster](http://github.com/awslabs/cfncluster)
+- [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html)
