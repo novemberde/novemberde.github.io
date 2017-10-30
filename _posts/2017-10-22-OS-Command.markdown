@@ -357,6 +357,7 @@ $ pwd
 du
 - Disk Usage
 - 디스크의 사용 정보를 출력한다.
+
 df
 - Disk Free
 - 디스크 정보를 출력한다.
