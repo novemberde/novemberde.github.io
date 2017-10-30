@@ -192,7 +192,7 @@ lsof
 - COMMAND : 실행한 명령어
 - PID : process id
 - USER : 실행한 사용자
-- FD: File Descriptor, 파일의 종류. 
+- FD: File Descriptor, 파일의 종류.
   - cwd: current working directory
   - rtd: root directory
   - mem : memory-mapped file
@@ -211,6 +211,115 @@ lsof
 $ lsof -c docker
 $ lsof +D /tmp
 $ sudo lsof -i TCP:22
+```
+
+---
+
+grep
+```sh
+Usage: grep [OPTION]... PATTERN [FILE]...
+Search for PATTERN in each FILE or standard input.
+PATTERN is, by default, a basic regular expression (BRE).
+Example: grep -i 'hello world' menu.h main.c
+
+$ grep -nir "test"
+```
+
+---
+
+ifconfig
+- 네트워크 정보 출력
+
+```sh
+eth0      Link encap:Ethernet  HWaddr 12:99:72:e5:aa:aa
+          inet addr:172.31.58.121  Bcast:172.31.63.255  Mask:255.255.240.0
+          inet6 addr: fe80::1099:72ff:fee5:aaaa/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:9001  Metric:1
+          RX packets:173257 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:46138 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:213551810 (213.5 MB)  TX bytes:20486641 (20.4 MB)
+
+lo        Link encap:Local Loopback
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:160 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:160 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1
+          RX bytes:11840 (11.8 KB)  TX bytes:11840 (11.8 KB)
+```
+
+---
+
+free
+- 메모리 사용량 출력
+
+```sh
+              total        used        free      shared  buff/cache   available
+Mem:        1014660       50304      109820        5704      854536      750084
+Swap:             0           0           0
+```
+
+---
+
+nslookup
+- domain name server 정보 출력
+
+```sh
+$ nslookup naver.com
+Server:         172.31.0.2
+Address:        172.31.0.2#53
+
+Non-authoritative answer:
+Name:   naver.com
+Address: 125.209.222.141
+Name:   naver.com
+Address: 125.209.222.142
+Name:   naver.com
+Address: 202.179.177.21
+Name:   naver.com
+Address: 202.179.177.22
+```
+
+
+---
+
+watch
+- 파일 상태 실시간 확인
+
+```sh
+$ watch --help
+Usage:
+ watch [options] command
+
+Options:
+  -b, --beep             beep if command has a non-zero exit
+  -c, --color            interpret ANSI color and style sequences
+  -d, --differences[=<permanent>]
+                         highlight changes between updates
+  -e, --errexit          exit if command has a non-zero exit
+  -g, --chgexit          exit when output from command changes
+  -n, --interval <secs>  seconds to wait between updates
+  -p, --precise          attempt run command in precise intervals
+  -t, --no-title         turn off header
+  -x, --exec             pass command to exec instead of "sh -c"
+
+ -h, --help     display this help and exit
+ -v, --version  output version information and exit
+
+For more details see watch(1).
+
+$ watch -n 2 ls -al
+```
+
+---
+adduser
+- 유저 생성
+
+```sh
+# 비밀번호 없이 유저 생성
+$ sudo adduser myUser --disabled-password --ingroup ubuntu
 ```
 
 ---
