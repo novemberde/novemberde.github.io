@@ -314,12 +314,68 @@ $ watch -n 2 ls -al
 ```
 
 ---
+
 adduser
 - 유저 생성
 
 ```sh
 # 비밀번호 없이 유저 생성
 $ sudo adduser myUser --disabled-password --ingroup ubuntu
+```
+
+
+---
+
+who
+- 현재 접속하고 있는 유저 리스트 출력
+```sh
+$ who
+ubuntu   pts/0        2017-10-30 02:08 (232.232.232.121)
+```
+
+---
+
+whoami
+- 현재 사용하는 유저 출력
+```sh
+$ whoami
+ubuntu
+```
+
+---
+
+pwd
+- 현재 작업하는 디렉터리 출력
+```sh
+$ pwd
+/home/ubuntu
+```
+
+
+---
+
+du
+- Disk Usage
+- 디스크의 사용 정보를 출력한다.
+df
+- Disk Free
+- 디스크 정보를 출력한다.
+
+```sh
+$ du -c
+4       ./.git/objects/info
+59944   ./.git/objects/pack
+59952   ./.git/objects
+
+$ df
+Filesystem     1K-blocks    Used Available Use% Mounted on
+udev              499480       0    499480   0% /dev
+tmpfs             101468    5676     95792   6% /run
+/dev/xvda1       8065444 1761212   6287848  22% /
+tmpfs             507328       0    507328   0% /dev/shm
+tmpfs               5120       0      5120   0% /run/lock
+tmpfs             507328       0    507328   0% /sys/fs/cgroup
+tmpfs             101468       0    101468   0% /run/user/1000
 ```
 
 ---
