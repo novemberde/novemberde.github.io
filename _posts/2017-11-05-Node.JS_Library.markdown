@@ -41,6 +41,7 @@ Node JS의 라이브러리가 워낙 많다보니 자주쓰는 라이브러리�
   - [gulp](https://gulpjs.com/)
   - [grunt](https://gruntjs.com/)
   - [webpack](https://webpack.github.io/)
+    - [webpack-dashboard](https://github.com/FormidableLabs/webpack-dashboard)
 - Database
   - [sequelize](https://www.npmjs.com/package/sequelize)
   - [graphql-sequelize](https://www.npmjs.com/package/graphql-sequelize)
@@ -65,15 +66,46 @@ Node JS의 라이브러리가 워낙 많다보니 자주쓰는 라이브러리�
   - [sails](https://sailsjs.com/)
   - [loopback](https://www.npmjs.com/package/loopback)
   - [express](https://www.npmjs.com/package/express)
+  - [connect](https://www.npmjs.com/package/connect)
+  - [fastify](https://github.com/fastify/fastify)
   - [js-data](https://www.npmjs.com/package/js-data)
+  - [vuejs](https://github.com/vuejs/vue)
+  - [micro](https://www.npmjs.com/package/micro)
 - Parser & Data binding
   - [useragent](https://www.npmjs.com/package/useragent)
   - [redux](https://reduxframework.com/)
   - [flux](https://facebook.github.io/flux/)
-- Express Middle ware
+- [Express Middle ware](https://expressjs.com/en/resources/middleware.html)
   - cors
   - body-parser
   - cookie-parser
+  - cookie-session
+  - compression
+  - csurf
+  - errorhandler
+  - method-override
+  - multer
+  - response-time
+  - serve-favicon
+  - serve-index
+  - serve-static
+  - session
+  - timeout
+  - vhost
+  - connect-rid
+  - connect-image-optimus
+  - express-debug
+  - express-partial-response
+  - express-simple-cdn
+  - express-slash
+  - express-stormpath
+  - express-uncapitalize
+  - helmet
+  - join-io
+  - passport
+  - static-expiry
+  - view-helpers
+  - sriracha-admin
 - SDK
   - [aws](https://www.npmjs.com/package/aws-sdk)
   - [alexa](https://www.npmjs.com/package/alexa-sdk)
@@ -90,8 +122,14 @@ Node JS의 라이브러리가 워낙 많다보니 자주쓰는 라이브러리�
   - [react-router](https://www.npmjs.com/package/react-router)
   - [react-redux](https://www.npmjs.com/package/react-redux)
   - [react-hot-loader](https://www.npmjs.com/package/react-hot-loader)
+  - [create-react-app](https://github.com/facebookincubator/create-react-app)
   - [create-react-kotlin-app](https://github.com/JetBrains/create-react-kotlin-app)
   - [semantic-ui-react](https://www.npmjs.com/package/semantic-ui-react)
+  - [react-static](https://github.com/nozzle/react-static)
+  - [react-native](https://github.com/facebook/react-native)
+  - [react-pwa](https://github.com/Atyantik/react-pwa)
+  - React boilerplate.
+    - [ant-design-pro](https://github.com/ant-design/ant-design-pro)
 - Node.js native addon build tool
   - [node-gyp](https://www.npmjs.com/package/node-gyp)
 - Crypto
@@ -109,4 +147,22 @@ Node JS의 라이브러리가 워낙 많다보니 자주쓰는 라이브러리�
   - [socket.io-client](https://www.npmjs.com/package/socket.io-client)
   - [ws](https://www.npmjs.com/package/ws)
   - [socket.io-redis](https://www.npmjs.com/package/socket.io-redis)
+- A simple visual editor for creating commutative diagrams
+  - [tikzcd-editor](https://github.com/yishn/tikzcd-editor)
+- Chart
+  - [Frappé Charts](https://github.com/frappe/charts)
+  - [billboard.js](https://github.com/naver/billboard.js)
+- Design Block
+  - [froala](https://www.froala.com/)
+- Drag and drop behaviour
+  - [draggable](https://shopify.github.io/draggable/)
+- An opinionated code formatter
+  - [prettier](https://github.com/prettier/prettier)
+- Flash OS images to SD cards & USB drives, safely and easily.
+  - [etcher](https://github.com/resin-io/etcher)
+- Markup language for building responsive email.
+  - [heml](https://github.com/SparkPost/heml)
 
+- [Node.js Best Practices](https://github.com/i0natan/nodebestpractices)
+- [Front-End Checklist](https://github.com/thedaviddias/Front-End-Checklist)
+- [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
