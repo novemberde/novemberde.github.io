@@ -1,7 +1,7 @@
 ---
-title: 유용한 Node js 라이브러리 정리
+title: Node js 라이브러리 및 유용한 자료
 category: node
-tags: Node, nodejs, js, lib, 라이브러리, library, 유용한, 정리, list
+tags: Node, nodejs, js, lib, 라이브러리, library, 유용한, 정리, list, 자료
 ---
 ## Summary
 ---
@@ -23,6 +23,7 @@ Node JS의 라이브러리가 워낙 많다보니 자주쓰는 라이브러리�
   - [moment.js](https://momentjs.com/)
 - MarkDown
   - [highlight.js](https://highlightjs.org/)
+  - [prismjs](http://prismjs.com/)
 - Ajax
   - [request](https://www.npmjs.com/package/request)
   - [request-promise](https://www.npmjs.com/package/request-promise)
@@ -71,6 +72,8 @@ Node JS의 라이브러리가 워낙 많다보니 자주쓰는 라이브러리�
   - [js-data](https://www.npmjs.com/package/js-data)
   - [vuejs](https://github.com/vuejs/vue)
   - [micro](https://www.npmjs.com/package/micro)
+  - [next.js](https://github.com/zeit/next.js)
+  - [serverless](https://github.com/serverless/serverless)
 - Parser & Data binding
   - [useragent](https://www.npmjs.com/package/useragent)
   - [redux](https://reduxframework.com/)
@@ -128,8 +131,15 @@ Node JS의 라이브러리가 워낙 많다보니 자주쓰는 라이브러리�
   - [react-static](https://github.com/nozzle/react-static)
   - [react-native](https://github.com/facebook/react-native)
   - [react-pwa](https://github.com/Atyantik/react-pwa)
+  - [react-json-tree](https://github.com/alexkuz/react-json-tree)
   - React boilerplate.
     - [ant-design-pro](https://github.com/ant-design/ant-design-pro)
+- UI
+  - [egjs-flicking](https://github.com/naver/egjs-flicking)
+  - [egjs-axes](https://naver.github.io/egjs-axes/)
+  - [egjs-visible](https://naver.github.io/egjs-visible/)
+  - [egjs-infinitegrid](https://github.com/naver/egjs-infinitegrid)
+  - [picturefill](https://github.com/scottjehl/picturefill)
 - Node.js native addon build tool
   - [node-gyp](https://www.npmjs.com/package/node-gyp)
 - Crypto
@@ -162,7 +172,10 @@ Node JS의 라이브러리가 워낙 많다보니 자주쓰는 라이브러리�
   - [etcher](https://github.com/resin-io/etcher)
 - Markup language for building responsive email.
   - [heml](https://github.com/SparkPost/heml)
+- Image-to-Image Translation with Conditional Adversarial Nets
+  - [pix2pix](https://github.com/phillipi/pix2pix)
 
 - [Node.js Best Practices](https://github.com/i0natan/nodebestpractices)
 - [Front-End Checklist](https://github.com/thedaviddias/Front-End-Checklist)
 - [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
+- [Developer-roadmap](https://github.com/kamranahmedse/developer-roadmap)
