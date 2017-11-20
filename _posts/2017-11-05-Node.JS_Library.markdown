@@ -176,6 +176,8 @@ Node JS의 라이브러리가 워낙 많다보니 자주쓰는 라이브러리�
   - [heml](https://github.com/SparkPost/heml)
 - Image-to-Image Translation with Conditional Adversarial Nets
   - [pix2pix](https://github.com/phillipi/pix2pix)
+- OCR
+  - [ocr](https://www.npmjs.com/package/ocr)
 
 - [Node.js Best Practices](https://github.com/i0natan/nodebestpractices)
 - [Front-End Checklist](https://github.com/thedaviddias/Front-End-Checklist)
