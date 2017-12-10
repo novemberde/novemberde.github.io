@@ -3,7 +3,7 @@ title: Docker와 DevOps에서 Serverless와 NoOps로의 여정
 category: docker
 tags: docker, devops, serverless, noops, 여정, 도커, 데브옵스, 서버리스, 노옵스
 ---
-## SUMMARY
+## Summary
 ---
 "Docker와 DevOps에서 Serverless와 NoOps로의 여정"이라는 주제로 2017년 12월 06일에 [W3C Conference](https://onoffmix.com/event/119375)에서 발표한 자료입니다.
 
