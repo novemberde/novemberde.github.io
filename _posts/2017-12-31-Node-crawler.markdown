@@ -1,5 +1,5 @@
 ---
-title: Node + AWS Lambda + AWS CloudWatch + Tor + Slack 를 활용한  Web crawler 만들기
+title: Node + AWS Lambda + AWS CloudWatch + Slack 를 활용한  Web crawler 만들기
 category: node
 tags: node, crawler, lambda, cloudWatch, slack, crawler, crawling, 크롤링, got, cheerio, serverless
 ---
@@ -16,7 +16,6 @@ Serverless framework를 활용하면 빠른 배포 및 관리가 가능하니 �
     - cheerio: jQuery형식으로 서버에서 사용하는 모듈
 - AWS CloudWatch: 주기적으로 Lambda 함수를 실행하기 위함
 - Serverless framework: 내부적으로 Serverless Application Model 파일을 생성하여 CloudFormation으로 배포하는 것을 자동화
-- Tor: Tor는 온라인 상에서의 익명을 보장하고 검열을 피할 수 있게 해주는 자유 소프트웨어
 - Slack bot: 정해진 시간이 지나고 다시 뉴스정보를 불러오고 싶을 때 사용한다. Lambda를 trigger하는 방법으로 사용
 
 ---
