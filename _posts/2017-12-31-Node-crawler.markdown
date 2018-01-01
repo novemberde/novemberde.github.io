@@ -76,7 +76,7 @@ provider:
   memorySize: 128
 
 functions:
-  hello:
+  crawler:
     handler: handler.crawler
     events:
       - schedule: rate(1 day)
