@@ -110,7 +110,7 @@ module.exports.crawler = (event, context, callback) => {
 serverless로 deploy를 하기 위해선 사전에 AWS Command line interface가 설치되어 있고
 IAM user를 생성하여 등록해야한다. 아직 하지 않았다면 [여기](/aws/2017/08/14/Serverless.html)를 참고하여 설정한다.
 
-그리고 위에서 profile 설정을 해주었는데 기본적으로 aws configure로 프로필을 설정하면
+그리고 위에서 profile 설정을 해주었는데 기본적으로 aws configure로 설정하면
 여러 service account을 매번 설정해주어야 하기 때문에 aws configure --profile [profile-name] 으로 설정하여 
 여러 계정 정보를 가지고 있는 경우에도 문제없이 작업할 수 있도록 한다.
 
