@@ -209,11 +209,11 @@ module.exports.crawler = (event, context, callback) => {
   let result;
 
   got('https://www.naver.com').then(res => {
-    $ = cheerio.load(res.body);
+    const $ = cheerio.load(res.body);
 
     result = $('.ca_item .ca_a');
 
-    return got("POST_URL", {
+    return got(SLACK_URL, {
       method: "post",
       body: JSON.stringify({text: result.text()})
     });
