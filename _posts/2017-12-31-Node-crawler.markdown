@@ -208,7 +208,7 @@ const SLACK_URL = require('./slack.config.json').URL;
 module.exports.crawler = (event, context, callback) => {
   let result;
 
-  got('https://www.naver.com').then(res => {
+  return got('https://www.naver.com').then(res => {
     const $ = cheerio.load(res.body);
 
     result = $('.ca_item .ca_a');
@@ -227,7 +227,6 @@ module.exports.crawler = (event, context, callback) => {
       }),
     };
 
-    console.log(result.text());
     callback(null, response);
   });
 
