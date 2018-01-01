@@ -1,5 +1,5 @@
 ---
-title: Node + AWS Lambda + AWS CloudWatch + Slack 를 활용한  Web crawler 만들기
+title: Serverless + AWS Lambda + AWS CloudWatch + Slack 를 활용한  Web crawler 만들기
 category: node
 tags: node, crawler, lambda, cloudWatch, slack, crawler, crawling, 크롤링, got, cheerio, serverless
 ---
