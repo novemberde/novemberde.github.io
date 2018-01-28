@@ -135,6 +135,18 @@ jobs:
 ## 먼저 Admin권한으로 CloudFormation 설정하기
 ---
 
-CircleCI에 AWS AccessKey를 입력하기 전에 염두해두어야 할 것이 있다. CircleCI에 AdminisratorAccess 권한의 키를 주어 사용하면 편하지만 보안을 고려한 관점으로 봤을 땐
-문제가 생길 여지가 있다. 그래서 처음에 한 번 배포를 할 때만 AdminisratorAccess의 권한을 주고 다음부턴 최소의 권한으로만 접근한다.
+CircleCI에 AWS AccessKey를 입력하기 전에 염두해두어야 할 것이 있다. CircleCI에 
+AdminisratorAccess 권한의 키를 주어 사용하면 편하지만 보안을 고려한 관점으로 봤을 땐
+문제가 생길 여지가 있다. 그래서 처음에 한 번 배포를 할 때만 AdminisratorAccess의 권한을 주고 
+다음부턴 최소의 권한으로만 접근한다.
+
+관련한 이슈는 다음을 참고한다. 데모에서는 디테일하게 IAM policy를 부여하게 되면 
+디버깅에 큰 어려움이 있으니 AdminisratorAccess로 진행한다.
+
+- [https://github.com/serverless/serverless/issues/1439](https://github.com/serverless/serverless/issues/1439)
+- [https://github.com/serverless/serverless/issues/3084](https://github.com/serverless/serverless/issues/3084)
+
+그럼 [AWS Console > IAM > Users](https://console.aws.amazon.com/iam/home?region=us-east-1#/users)로 가서 
+AdminisratorAccess의 유저를 생성하여 주자.
+
 
