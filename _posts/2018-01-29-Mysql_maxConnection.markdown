@@ -41,6 +41,22 @@ show variables like 'max_connections';
 - M3.2xlarge: 2492
 - R3.xlarge: 2540
 
+Amazon Aurora의 instance type에 따른 max_connections는 다음과 같다.
+
+- db.t2.small: 45
+- db.t2.medium: 90
+- db.r3.large: 1000
+- db.r3.xlarge: 2000
+- db.r3.2xlarge: 3000
+- db.r3.4xlarge: 4000
+- db.r3.8xlarge: 5000
+- db.r4.large: 1000
+- db.r4.xlarge: 2000
+- db.r4.2xlarge: 3000
+- db.r4.4xlarge: 4000
+- db.r4.8xlarge: 5000
+- db.r4.16xlarge: 6000
+
 
 ## 사용하는 Persistance framework의 Connection pool size알기
 ---
