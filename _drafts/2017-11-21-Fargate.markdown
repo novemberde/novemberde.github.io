@@ -1,7 +1,0 @@
----
-title: AWS Fargate에 대해서 알아보기
-category: aws
-tags: aws, fargate
----
-## Summary
----
