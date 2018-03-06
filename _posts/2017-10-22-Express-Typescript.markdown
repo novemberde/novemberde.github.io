@@ -28,12 +28,13 @@ $ npm init -y
 - typescript: typescript로 구성한 코드를 javascript로 트랜스파일링 해준다.
 - npm-run-all: 여러 npm 실행 명령을 병렬로 실행할 수 있게 해준다.
 - webpack: 요즘 각광받는 모듈 번들러
+- source-map-support: typescript로 개발시 source-map을 지원해준다.
 - @types/express: express 모듈에 대한 type을 지원해준다.
 
 ```sh
 $ npm install -g npx
 $ npm install --save-dev typescript ts-loader npm-run-all webpack @types/express nodemon
-$ npm install --save express
+$ npm install --save express source-map-support
 ```
 
 
@@ -160,6 +161,7 @@ express server를 실행하는 코드를 작성한다.
 
 #### [src/www.ts]
 ```ts
+import 'source-map-support/register'; // source-map을 사용하기 위해 추가함.
 import App from './App';
 import * as express from "express";
 
