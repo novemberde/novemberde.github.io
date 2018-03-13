@@ -49,6 +49,7 @@ Node JS의 라이브러리가 워낙 많다보니 자주쓰는 라이브러리�
   - [sequelize-cli](https://www.npmjs.com/package/sequelize-cli)
   - [mongodb](https://www.npmjs.com/package/mongodb)
   - [mongoose](https://www.npmjs.com/package/mongoose)
+  - [AdminMongo](https://github.com/mrvautin/adminMongo)
   - [waterline](https://www.npmjs.com/package/waterline)
   - [sails-mongo](https://www.npmjs.com/package/sails-mongo)
   - [redis](https://www.npmjs.com/package/redis)
@@ -179,8 +180,12 @@ Node JS의 라이브러리가 워낙 많다보니 자주쓰는 라이브러리�
   - [pix2pix](https://github.com/phillipi/pix2pix)
 - OCR
   - [ocr](https://www.npmjs.com/package/ocr)
+- Uplod
+  - [uppy](https://uppy.io/)
+- 
 
 - [Node.js Best Practices](https://github.com/i0natan/nodebestpractices)
 - [Front-End Checklist](https://github.com/thedaviddias/Front-End-Checklist)
 - [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
 - [Developer-roadmap](https://github.com/kamranahmedse/developer-roadmap)
+- [https://devhints.io/](https://devhints.io/)
