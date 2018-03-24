@@ -185,6 +185,9 @@ Node JS의 라이브러리가 워낙 많다보니 자주쓰는 라이브러리�
 - Ip to Geolocation
   - [geoip-lite](https://github.com/bluesmoon/node-geoip)
   - [geoip2](https://www.npmjs.com/package/geoip2)
+- DynamoDB
+  - [dynamoose](https://github.com/automategreen/dynamoose)
+  - [vogels](https://www.npmjs.com/package/vogels)
 
 - [Node.js Best Practices](https://github.com/i0natan/nodebestpractices)
 - [Front-End Checklist](https://github.com/thedaviddias/Front-End-Checklist)
