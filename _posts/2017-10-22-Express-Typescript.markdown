@@ -146,7 +146,7 @@ class App {
 
   constructor () {
     this.app = express();
-    this.app.get("/", (req: express.Request: res: express.Response, next: express.NextFunction) => {
+    this.app.get("/", (req: express.Request, res: express.Response, next: express.NextFunction) => {
       res.send("Hello world");
     });
   }
