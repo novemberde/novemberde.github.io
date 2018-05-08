@@ -188,6 +188,10 @@ Node JS의 라이브러리가 워낙 많다보니 자주쓰는 라이브러리�
 - DynamoDB
   - [dynamoose](https://github.com/automategreen/dynamoose)
   - [vogels](https://www.npmjs.com/package/vogels)
+- Child_process
+  - [execa](https://www.npmjs.com/package/execa)
+- Image resizer
+  - [sharp](https://www.npmjs.com/package/sharp)
 
 - [Node.js Best Practices](https://github.com/i0natan/nodebestpractices)
 - [Front-End Checklist](https://github.com/thedaviddias/Front-End-Checklist)
