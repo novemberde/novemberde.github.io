@@ -57,6 +57,7 @@ $ npm i -S git+ssh://git@github.com:<username>/<repository>.git
 
 # https의 경우
 $ npm i -S https://github.com/<username>/<repository>
+$ npm i -S git+https://<token>:x-oauth-basic@github.com/<username>/<repository>.git
 ```
 
 로컬에서 사용시 여기까지는 문제없이 진행되었다. 하지만 CircleCI에서 ssh키를 추가하여 
