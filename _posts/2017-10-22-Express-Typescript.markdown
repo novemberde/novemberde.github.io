@@ -8,7 +8,6 @@ tags: typescript, nodejs, node, js, express, server, development, 개발, 서버
 최근에 직방의 AWS Lambda 코드를 세미나에서 스쳐지나가는 것을 보았다. 
 TypeScript로 짜여져 있었고 나중에 지속적인 프로젝트 관리적인 이점이 있을 것으로 생각이 되기 때문에 TypeScript로 프로젝트를 구성해보는 것을 정리해보기로 결심했다.
 
----
 ## node.js 프로젝트 생성하기
 ---
 
@@ -38,7 +37,6 @@ $ npm install --save express source-map-support
 ```
 
 
----
 ## 기본 설정하기
 ---
 
@@ -224,7 +222,21 @@ Development build complete.
 Express server listening at 3000
 ```
 
+
+## 사소한 팁
 ---
+
+추가적으로 초기에 build될 때 엄청나게 restart할 경우가 있는데, 이는 nodemon옵션으로 조절할 수 있다.
+
+```sh
+$ nodemon --delay 10 server.js  # 10초
+$ nodemon --delay 2.5 server.js # 2.5초
+$ nodemon --delay 2500ms server.js  # 2.5초
+```
+
+그리고 Server side rendering을 지원해야하는 경우 views directory가 빌드된 패키지에 포함되어 있어야한다.
+이걸 지원하기 위해서는 [copy-webpack-plugin](https://www.npmjs.com/package/copy-webpack-plugin)을 사용하면 손쉽게 빌드된 패키지에 views 디렉터리를 포함시킬 수 있다.
+
 ## 고찰
 ---
 
@@ -246,7 +258,6 @@ IDE상에서의 Hint가 정의한 Type대로 나타나는 점이다. 각 Object�
 
 이렇게 한 번 정리해놓았기 때문에 다음번에는 편한 개발이 가능할 것이다.
 
----
 ## References
 ---
 
