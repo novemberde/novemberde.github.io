@@ -4,17 +4,15 @@ tags: docker, registry, private, ec2, s3, 나만의, 구성
 ---
 
 ## Summary
----------------------
+---
  Docker hub에 private image를 올리는 것은 제한이 있다. 
  개인 사용자의 경우 하나의 이미지만 private이 가능하고 organization의 경우에는 비용을 지불해야만 사용이 가능하다.
  이런점에 비추어 볼 때 우리는 private registry환경을 구축하고 싶다는 생각이 들 것이다.
  
  EC2에 개인 registry를 구축하고 local 또는 다른 서버에서 접근하는 방법에 대해서 진행해보겠다. 그리고 Amazon S3 를 이미지 저장소로 사용하겠다.
 
----------------------
-
 ## Docker registry 구축하기
----------------------
+---
 
 docker가 설치되어 있는 EC2에 접근하여 registry  이미지를 pull 해보자. 
 
@@ -30,9 +28,8 @@ $ docker pull registry
 $ docker run -dit --name docker-registry -p 5000:5000 registry
 ```
 
----------------------
 ## Docker image를 push하기
----------------------
+---
 
 [도커허브](https://hub.docker.com)를 사용할 때는 <계정아이디>/registry:latest 처럼 tag명에 내 아이디가 들어가는 모양이었다.
 하지만 private registry를 사용할 때는 <계정아이디>부분에 내 registry의 url주소를 사용하여야 한다.
@@ -62,10 +59,9 @@ $ curl -X GET http://localhost:5000/v2/hello-world/tags/list
 # 출력 {"name":"hello-world","tags":["latest"]}
 ```
 
-
----------------------
 ## 원격지에서 Docker image를 push하기
----------------------
+---
+
 지금 이미지의 태그명을 보면 localhost/~ 로 되어 있는 것을 볼 수 있다.
 하지만 원격지에서는 특정도메인 또는 IP로 접근하기 때문에 localhost, 127.0.0.1을 사용할 수 없다.
 gabia, godaddy 또는 AWS 53을 사용하여 DNS설정을 하는 방법과 직접 아이피로 접근해서 등록하는 방법 2가지가 있다.
@@ -188,7 +184,7 @@ EXTRA_ARGS 에 --insecure-registry를 아래와 같이 추가한다.
 $ docker push docker-registry.kh-developer.info:5000/hello-world
 ```
 
----
+
 ### S3를 저장소로 사용하기
 ---
 
@@ -231,7 +227,7 @@ $ docker push docker-registry.kh-developer.info:5000/hello-world
 
 S3 bucket을 가면 storage가 형성될 것이다.
 
----
+
 ### Authentification 추가하기
 ---
 
@@ -276,7 +272,55 @@ Login Succeeded
 $ docker push docker-registry.kh-developer.info:5000/hello-world
 ```
 
+
+
+### 2018-05-29 추가사항
 ---
+
+위에 글을 보면 어렵사리 Docker registry 를 구축하였다. 하지만 살펴보면 곳곳에 문제점이 보일 것이다.
+이글을 다시 살펴보면서 정리한 의문점은 다음과 같다.
+
+1. 동시에 수십 수백대의 서버가 업데이트를 하는 경우에는 단일 registry 서버로 감당할 수 있을 것인가? 만약 그럴 수 없다면 어떻게 설계해야할까?
+2. 이걸 구축하지 않고 편하게 사용할 수 있는 다른 Managed Service는 없을까?
+
+먼저 첫번째 질문에 답을 하자면, docker registry 관련 문서에 다음과 같이 잘 나와 있다.
+
+Load balancing considerations
+
+One may want to use a load balancer to distribute load, terminate TLS or provide high availability. While a full load balancing setup is outside the scope of this document, there are a few considerations that can make the process smoother.
+
+The most important aspect is that a load balanced cluster of registries must share the same resources. For the current version of the registry, this means the following must be the same:
+
+Storage Driver
+
+HTTP Secret
+
+Redis Cache (if configured)
+
+Differences in any of the above cause problems serving requests. As an example, if you’re using the filesystem driver, all registry instances must have access to the same filesystem root, on the same machine. For other drivers, such as S3 or Azure, they should be accessing the same resource and share an identical configuration. The HTTP Secret coordinates uploads, so also must be the same across instances. Configuring different redis instances works (at the time of writing), but is not optimal if the instances are not shared, because more requests are directed to the backend.
+
+[출처: https://docs.docker.com/registry/deploying/#load-balancing-considerations](https://docs.docker.com/registry/deploying/#load-balancing-considerations)
+
+이 내용을 간단하게 요약하면 다음과 같다.
+Load balancing을 고려한 설계를 한 경우이다. 웹어플리케이션 설계와 비슷한 방법으로 공통 스토리지는 Storage Driver를 통해 동일 Storage에 접근하도록 하고 Caching을 위해 Redis를 올려놓늗다. 또한 HTTP Secret을 통해 업로드하므로 모든 인스턴스는 동일한 HTTP Secret을 가져야한다.
+
+Cluster를 인스턴스 Auto-scaling하듯이 여러 인스턴스를 배포하고 공통된 Storage에 접근하도록 설정한 다음 배포하면 되는 것이다. 그렇다면 동시에 많은 요청을 감당할 수 있다.
+
+두번째로 Managed Service를 찾아보았다. 
+docker hub에 Billing plan을 변경하여 private repository를 생성하는 방법이 있다.
+또한 AWS ECR을 사용하여 사용하는 저장공간과 네트워크 비용만 지출할 수 있다.
+만약 이렇게 비용을 지불하기 싫다면, 배포할 Artifact를 tar로 압축하여
+사용할 서버에 던진 다음에 image를 압축해제해서 사용하면 된다.
+이러한 방식은 docker save / load 명령어를 통해 사용해볼 수 있다.
+
+요즘에는 AWS를 기본으로 사용하다보니 docker registry를 올려본지 오래되었다.
+그렇지만 처음 내용을 참고하시는 분들이 계신 것 같아, 처음에 글을 쓴 목적과 달리 다른 방법을 사용하는 것을 추천하고 싶다.
+
+tar로 git hash를 이용하여 versioning하고, 그 다음에 이 tar에 대해서 artifact를 관리하던지,
+아니면 Managed service를 활용하여 운영리소스를 줄이는 방법이다.
+피치 못할 사정으로 자체 IDC에 docker registry를 올려야 한다면 docker registry를 단일 컨테이너로 올리는 것이 아닌,
+k8s나 swarm으로 해당 docker registry를 autoscaling group으로 묶어서 배포하면 될 것이다.
+
 ### References
 ---
 
