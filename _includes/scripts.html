@@ -11,4 +11,18 @@
   ga('create', 'UA-97433460-1', 'auto');
   ga('send', 'pageview');
 
+  function sendClickToGa(category) {
+    ga('send', {
+      hitType: 'event',
+      eventCategory: category,
+      eventAction: 'click',
+    });
+  }
+  document.getElementById("headerBanner").addEventListener("click", function() {
+    sendClickToGa("HeaderBanner");
+  });
+  document.getElementById("footerBanner").addEventListener("click", function() {
+    sendClickToGa("HeaderBanner");
+  });
+
 </script>
