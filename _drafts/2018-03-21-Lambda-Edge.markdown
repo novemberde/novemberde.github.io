@@ -1,5 +1,5 @@
 ---
-title: JAWSDAY 참가 후기
+title: Lambda Edge로 
 category: aws
 tags: jawsday, aws, 참가, 후기
 ---

@@ -1,5 +1,5 @@
 ---
-title: JAWSDAY 참가 후기
+title: GCP에서 Kubernetes를 활용하여 Spinnaker 올려보기
 category: aws
 tags: jawsday, aws, 참가, 후기
 ---

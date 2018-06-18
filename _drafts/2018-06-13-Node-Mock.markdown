@@ -1,0 +1,14 @@
+---
+title: Mocking 도구
+category: node
+tags: connection, pool, 커넥션풀, 커넥션, 풀, 고찰, trobleshooting
+---
+## Summary
+---
+Connection pool은 DB와 연동할 때 반드시 사용하는 것중에 하나이다.
+매번 쿼리를 실행하기 전에 커넥션을 맺기 보다는 connection pool을 생성하고
+생성돼있는 connection pool에서 connection을 가져와서 바로 쿼리를 실행하는 것이 빠르기 때문이다.
+
+그런데 한가지 의문점이 생겼다.
+
+---

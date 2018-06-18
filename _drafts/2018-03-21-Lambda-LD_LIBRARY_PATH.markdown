@@ -1,5 +1,5 @@
 ---
-title: JAWSDAY 참가 후기
+title:  2018-03-21-Lambda-LD_LIBRARY_PATH
 category: aws
 tags: jawsday, aws, 참가, 후기
 ---
