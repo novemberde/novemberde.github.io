@@ -52,6 +52,9 @@ $ aws s3 ls --profile testUser
 # 환경변수로 default profile을 등록하여 준다.
 $ export AWS_DEFAULT_PROFILE=testUser
 
+# 만일 윈도우 사용자라면 set을 사용한다.
+$ set AWS_DEFAULT_PROFILE=testUser
+
 # 방금 전에 --profile 옵션과 함께 출력됐던 버킷의 리스트가 출력된다.
 $ aws s3 ls
 
@@ -65,6 +68,34 @@ secret_key     ****************aaaa shared-credentials-file
     region           ap-northeast-2      config-file    ~/.aws/config
 ```
 
+이렇게 하면 당장은 되는 것처럼 보이지만 다른 Terminal을 열어서 해보면 되지 않는다.
+
+```sh
+$ aws s3 ls
+An error occurred (InvalidAccessKeyId) when calling the ListBuckets operation: The AWS Access Key Id you provided does not exist in our records.
+```
+
+당황하지 말고 ~/.bashrc 또는 ~/.zshrc파일의 마지막 라인에
+"export AWS_DEFAULT_PROFILE=testUser"를 추가한다.
+
+#### ~/.zshrc 또는 ~/.bashrc
+
+```sh
+...
+...
+export AWS_DEFAULT_PROFILE=testUser
+```
+
+```sh
+# 재설정한다.
+$ source ~/.zshrc # 또는 source ~/.bashrc
+
+# Default로 설정이 완료되었다.
+$ aws s3 ls
+```
+
+하지만 변동 가능한 환경변수에 대한 설정정보를 bashrc에 넣는 것은 바람직해보이지 않는다.
+귀찮더라도 이정도는 매번 손으로 설정하는 것이 위험 부담을 줄이는 길이라고 생각한다.
 
 ## References
 ---
