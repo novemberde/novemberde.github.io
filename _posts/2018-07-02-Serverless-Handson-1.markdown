@@ -1,5 +1,5 @@
 ---
-title: 2018 AWS Serverless Hands-on 1, 손쉽게 시작하는 Serverless Architecture
+title: 2018년 AWS Serverless Hands-on 1, 손쉽게 시작하는 Serverless Architecture
 category: aws
 tags: aws, serverless, framework, todo, webapp, handson
 ---
