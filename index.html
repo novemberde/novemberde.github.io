@@ -1,13 +1,13 @@
 ---
-title: Novemberde's blog
+title: Novemberde's dev
 ---
 {% include showcase.html %}
 {% include greeting.html %}
 
 {% if site.posts != empty %}
 <div class="recent-posts">
-  <h1>RECENT</h1>
-  {% for post in site.posts limit: 6 %}
+  <h1>DEV LOGS</h1>
+  {% for post in site.posts limit: 4 %}
     {% if forloop.first %}
       {% assign add_class = 'most-recent' %}
       {% capture fresh_tag %}
