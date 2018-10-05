@@ -18,13 +18,24 @@ $ npm install -g git-puller
 ### Usage
 
 ```sh
-$ git-puller <DirectoryName>
+Usage: git-puller [options]
 
-# Example
-$ git-puller .  # current directory
-$ git-puller ../../_my_project # other directory
-$ git-puller ../../_my_project origin master # git pull by remote branch
-...
+Options:
+
+  -V, --version            output the version number
+  -d, --directory [value]  Target directory
+  -r, --remote [value]     Git Remote (default: origin)
+  -b, --branch [value]     Git branch (default: master)
+  -h, --help               output usage information
+
+examples:
+  git-puller -d ./                       # Current directory
+  git-puller -d ../../_my_project        # Other directory
+  git-puller -d ./ -r origin -b master   # Specify remote and branch
+
+  gplr -d ./                             # Current directory
+  gplr -d ../../_my_project              # Other directory
+  gplr -d ./ -r origin -b master         # Specify remote and branch
 ```
 
 ---
