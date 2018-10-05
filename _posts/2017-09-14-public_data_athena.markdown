@@ -1,5 +1,5 @@
 ---
-title: Athena, QuicSight를 활용한 공공데이터 분석
+title: Athena, QuickSight를 활용한 공공데이터 분석
 category: aws
 tags: athena, quicksight, 공공데이터, public, data, publicdata, 분석, 활용, analytics
 ---
