@@ -14,29 +14,21 @@ title: Novemberde's blog
         &nbsp;<span class="badge"><smaller>FRESH</smaller></span>
       {% endcapture %}
     {% endif %}
-    <ul class="homepage-posts {{ add_class }}">
-      <li>
-        <span>
+    <div class="article-card">
+      <span>
           <h4>
-            <a href="{{ site.baseurl }}{{ post.url }}">
-              {{ post.title }}
-            </a>
+            <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
             {{ fresh_tag }}
-            <time class="pull-right">
-              {{ post.date | date_to_string | date: "%b %-d, %Y"  }}
-            </time>
+            <time class="pull-right post-list">{{ post.date | date_to_string | date: "%b %-d, %Y"  }}</time>
           </h4>
         </span>
-        <span>
-          {{ post.excerpt | strip_html | truncatewords: 75 }}
-        </span>
-      </li>
-    </ul>
+        <p>{{ post.excerpt | strip_html | truncatewords: 75 }}</p>
+    </div>
     {% assign add_class = '' %}
     {% assign fresh_tag = '' %}
   {% endfor %}
-  <ul>
-    <a href="{{ site.baseurl }}/list.html">View More...</a>
+  <ul class="float-left">
+    <h4><a href="{{ site.baseurl }}/list.html">View More...</a></h4>
   </ul>
 </div>
 {% endif %}
