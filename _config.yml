@@ -5,16 +5,22 @@ description: Developer khbyun's dev log
 keywords: nodejs, AWS, docker, docker, registry, sequelize, lambda
 github: http://www.github.com/novemberde
 linkedin: https://www.linkedin.com/in/kyuhyun-byun-70a228115/
+rss: /feed.xml
 disqus: novemberde-github-io
 # email: 
 
-gems: 
+plugins: 
   - jekyll-gist
   - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-feed
 highlighter: rouge
 # markdown: redcarpet
 # redcarpet:
 #   extensions: ["tables"]\
+
+paginate: 5
+paginate_path: "/list/page:num/"
 
 gist:
   noscript: false
