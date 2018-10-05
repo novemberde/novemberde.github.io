@@ -50,8 +50,8 @@ p, li p, .post> ul
 {
   font-family:"Helvetica Neue", helvetica, "Open Sans", sans-serif;
   font-weight:200;
-  font-size: 16px;
-  line-height:150%;
+  font-size: 18px;
+  line-height:160%;
 }
 
 /*li p {
@@ -712,7 +712,7 @@ time
 {
   margin-top: 20px;
   background-color: #efefef55;
-  padding: 10px;
+  padding: 8px 20px 8px 20px;
   border-radius: 10px;
 }
 
