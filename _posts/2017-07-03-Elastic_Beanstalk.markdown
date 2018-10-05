@@ -16,7 +16,7 @@ tags: docker, eb, aws, elastic, beanstalk, elasticbeanstalk, image, deploy
 이전에 node js server를 하나의 Dockerfile로 만들어 놓았다. 
 테스트하고 싶으신 분들은 [this repository](https://bitbucket.org/kyuhyun/docker_node_server)를 참고하길 바란다.
 
-```Dockerfile
+```dockerfile
 FROM novemberde/node-pm2
 
 MAINTAINER KH BYUN "novemberde.github.io"

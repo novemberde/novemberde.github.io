@@ -24,7 +24,7 @@ Dockerfile 작성은 어렵지 않다.
 
 작성한 Dockerfile은 다음과 같다.
 
-```Dockerfile
+```dockerfile
 FROM docker:stable
 
 # Install node
