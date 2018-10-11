@@ -200,6 +200,19 @@ Node JS의 라이브러리가 워낙 많다보니 자주쓰는 라이브러리�
   - [reveal-md](https://github.com/webpro/reveal-md)
 - Fake data in the browser and node.js
   - [faker.js](https://github.com/marak/Faker.js/)
+- A browser based code editor
+  - [monaco-editor](https://github.com/Microsoft/monaco-editor)
+- Tesla Model S node.js apps and javascript libraries using Tesla's HTTP interfaces
+  - [teslams](https://github.com/hjespers/teslams)
+- Game server framework
+  - [colyseus](https://github.com/gamestdio/colyseus.js)
+- guppy
+- node-fetch
+- CodeceptJS
+- clipboard.js
+- aws-amplify/amplify-js
+- commanderjs
+
 
 
 - [Node.js Best Practices](https://github.com/i0natan/nodebestpractices)
