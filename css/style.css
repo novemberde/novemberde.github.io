@@ -40,7 +40,9 @@ h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover {
 #article, h4.article, h5.article, p.article {
   float: left;
 }
-
+#article {
+  width: 100%;
+}
 p, li p, .post>ul {
   font-family: "Helvetica Neue", helvetica, "Open Sans", sans-serif;
   font-weight: 200;
