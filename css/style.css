@@ -208,7 +208,9 @@ blockquote {
 }
 
 ul, ol {
-  font-weight: lighter
+  font-weight: lighter;
+  font-size: 18px;
+  line-height:160%;
 }
 
 pre {
