@@ -27,12 +27,13 @@ $ npm init -y
 - typescript: typescript로 구성한 코드를 javascript로 트랜스파일링 해준다.
 - npm-run-all: 여러 npm 실행 명령을 병렬로 실행할 수 있게 해준다.
 - webpack: 요즘 각광받는 모듈 번들러
+- webpack-cli: webpack 명령을 사용하기 위한 CLI도구
 - source-map-support: typescript로 개발시 source-map을 지원해준다.
 - @types/express: express 모듈에 대한 type을 지원해준다.
 
 ```sh
 $ npm install -g npx
-$ npm install --save-dev typescript ts-loader npm-run-all webpack @types/express nodemon
+$ npm install --save-dev typescript ts-loader npm-run-all webpack @types/express nodemon webpack-cli
 $ npm install --save express source-map-support
 ```
 
@@ -52,75 +53,51 @@ tsconfig.json와 같은 파일이 생성되는데 안에 주석처리 되어 있
 ```json
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
-    "sourceMap": true,
-    "strict": true
-  },
-  "exclude": [
-    "node_modules"
-  ]
+     "lib": [
+        "es5",
+        "es6"
+     ],
+     "target": "es5",
+     "module": "commonjs",
+     "moduleResolution": "node",
+     "outDir": "./build",
+     "emitDecoratorMetadata": true,
+     "experimentalDecorators": true,
+     "sourceMap": true
+  }
 }
 ```
 
 ---
 
-설정한 후에 아래와 같이 config 디렉터리를 생성하고 webpack.config.dev.js 파일을 생성하여 아래의 코드를 입력한다.
+아래와 같이 루트디렉터리에 webpack.config.js 파일을 생성하여 아래의 코드를 입력한다.
 
-#### [config/webpack.config.dev.js]
+#### [config/webpack.config.js]
 ```js
 const path = require('path');
-const webpack = require('webpack');
 
 module.exports = {
-  entry: path.resolve(__dirname, '../src/www.ts'),
-  target: "node", // node js environment
-  output: {
-    path: path.resolve(__dirname, '../dist'),
-    filename: 'dev.bundle.js'
-  },
-  resolve: {
-    extensions: ['.ts', '.js']
-  },
-  devtool: 'source-map',
+  entry: './src/www.ts',
   module: {
     rules: [
-      { test: /\.ts$/, loader: 'ts-loader' }
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/
+      }
     ]
   },
-  plugins: [
-    new webpack.optimize.UglifyJsPlugin()
-  ]
+  devtool: 'source-map',
+  target: 'node',
+  resolve: {
+    extensions: [ '.tsx', '.ts', '.js' ]
+  },
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist')
+  }
 };
 ```
-
----
-
-webpack을 실행하는 script를 작성한다.
-
-#### [scripts/build-dev.ts]
-```ts
-process.env.NODE_ENV = "development";
-
-const webpack = require('webpack');
-const config = require('../config/webpack.config.dev');
-
-const compiler = webpack(config, () => {
-  console.log("Development build complete.");
-});
-
-const watching = compiler.watch({
-  aggregateTimeout: 500,
-  poll: 1200,
-  ignored: /node_modules/
-}, (err, stats) => {
-  if(err) return console.error(err);
-
-  // console.log(stats);
-  console.log("Server is updated.");
-});
-```
-
 ---
 
 설정을 완료했다면 src 디렉터리를 추가하고 App.ts파일을 생성하고 아래의 코드를 입력한다.
@@ -172,53 +149,45 @@ app.listen(port, () => console.log(`Express server listening at ${port}`))
 
 ---
 
-아래와 같이 명령어를 입력하여 제대로 동작하는지 확인한다.
-
-```sh
-$ node scripts/build-dev.js
-Server is updated.
-Development build complete.
-```
-
-문제없이 webpack이 동작하여 dist/dev.bundle.js가 생기는 것을 확인했다면 package.json에 scripts에 다음 설정도 추가해준다.
-
-webpack이 번들로 지속적으로 변환시켜주면 node express server를 재시작해준다.
+package.json에 scripts에 다음 설정도 추가해준다.
 
 #### [package.json]
 ```json
 {
-  "start": "npm-run-all -p start:server start:build",
-  "start:server": "nodemon ./dist/dev.bundle.js --watch \"./dist\"",
-  "start:build": "node ./scripts/build-dev"
+  "start": "nodemon --watch src --delay 1 --exec 'ts-node' src/www.ts",
+  "build": "webpack --config webpack.config.js"
 }
 ```
 
 마지막으로 npm start를 하면 코드가 바뀔 때마다 재시작 하는 것을 확인할 수 있다.
+여기서 nodemon을 실행할 때 ts-node를 사용해서 typescript로 작성된 코드를 바로 동작시킨다.
 
 ```sh
 $ npm start
-> practice_node_server@1.0.0 start 
-> npm-run-all -p start:server start:build
 
+> practice_node_server@1.0.0 start practice_node_server
+> nodemon --watch src --delay 1 --exec 'ts-node' src/www.ts
 
-> practice_node_server@1.0.0 start:server 
-> nodemon ./dist/dev.bundle.js --watch "./dist"
-
-
-> practice_node_server@1.0.0 start:build 
-> node ./scripts/build-dev
-
-[nodemon] 1.12.1
+[nodemon] 1.18.6
 [nodemon] to restart at any time, enter `rs`
-[nodemon] watching: 
-[nodemon] starting `node ./dist/dev.bundle.js`
+[nodemon] watching: practice_node_server/src/**/*
+[nodemon] starting `ts-node src/www.ts`
 Express server listening at 3000
-Server is updated.
-[nodemon] restarting due to changes...
-[nodemon] starting `node ./dist/dev.bundle.js`
-[nodemon] restarting due to changes...
-Development build complete.
-[nodemon] starting `node ./dist/dev.bundle.js`
+```
+
+실제로 배포할 때는 컴파일된 bundle file 하나만 배포하게 된다.
+다음과 같은 명령어로 실행가능한 서버하나의 파일을 생성하고 실행해본다.
+
+```sh
+# Webpack을 사용하여 번들링한다.
+$ npm run build
+
+> practice_node_server@1.0.0 build practice_node_server
+> webpack --config webpack.config.js
+
+
+# Bundled file을 실행해본다.
+$ node dist/bundle.js
 Express server listening at 3000
 ```
 
