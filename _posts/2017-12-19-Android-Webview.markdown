@@ -30,7 +30,7 @@ public class MyWebView extends AppCompatActivity {
         webView.setWebViewClient(new WebViewClient());
         webView.setWebChromeClient(new WebChromeClient());
         webView.setNetworkAvailable(true);
-        webView.getSettings().setJavaScriptEnabled(tue);
+        webView.getSettings().setJavaScriptEnabled(true);
         webView.loadUrl(url);
     }
 }
@@ -52,7 +52,7 @@ public class MyWebView extends AppCompatActivity {
         webView.setWebViewClient(new WebViewClient());
         webView.setWebChromeClient(new WebChromeClient());
         webView.setNetworkAvailable(true);
-        webView.getSettings().setJavaScriptEnabled(tue);
+        webView.getSettings().setJavaScriptEnabled(true);
 
         //// Sets whether the DOM storage API is enabled.
         webView.getSettings().setDomStorageEnabled(true);
