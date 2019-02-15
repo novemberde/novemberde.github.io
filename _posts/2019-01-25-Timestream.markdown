@@ -1,5 +1,5 @@
 ---
-title: [Amazon Timestream] 시계열 데이터 전용 DB 소개
+title: Amazon Timestream 시계열 데이터 전용 DB 소개
 category: aws
 tags: aws, timestream, 타임스트림, amazon, 시계열, 데이터, timeseries
 ---
