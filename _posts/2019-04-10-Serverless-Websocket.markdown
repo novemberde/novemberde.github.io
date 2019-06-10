@@ -5,7 +5,7 @@ tags: aws, serverless, 서버리스, lambda, websocket, 란, 웹소켓
 ---
 ## Summary
 ---
-[AWSKRUG 판교 밋업](https://github.com/awskrug/pangyo-group/blob/master/meetups/20190410_meetup.md)에서 서버리스를 활용하여 데이터를 수집 및 분석 후기를 공유하였다.
+[AWSKRUG 판교 밋업](https://github.com/awskrug/pangyo-group/blob/master/meetups/20190410_meetup.md)에서 서버리스 웹소켓에 대한 내용을 공유하였다.
 
 - [발표자료](https://www.slideshare.net/KyuhyunByun1/serverless-websocket)
 - [DEMO](https://bit.ly/ws-sls-demo)
