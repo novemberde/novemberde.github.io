@@ -55,7 +55,7 @@ my_private_aws
 
 ```sh
 $ direnv allow
-direnv: loading .envrc                                                                                                                         
+direnv: loading .envrc
 load my_private_aws
 direnv: export +AWS_ACCESS_KEY_ID +AWS_SECRET_ACCESS_KEY
 ```
