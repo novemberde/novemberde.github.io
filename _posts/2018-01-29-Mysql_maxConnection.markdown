@@ -84,3 +84,12 @@ too many connections error를 내뿜게 된다.
 이렇게 되면 어느정도 too many connections error를 잡는데 도움을 준다.
 
 그렇지만 무엇보다 비지니스 로직에서 최적화를 잘 시켜서 timeout상태를 만들지 않는게 중요할 것이다.
+
+## 2019-12-22 업데이트
+
+최근에 RDS Proxy라는 것이 릴리즈되었다. 이는 RDS의 Connection Pool을 제공하고
+API를 통해 RDS에 접근한다.
+기존의 Serverless Architecture에서 힘들게 한 Max Connection 문제에 대해서 해결하기 쉽게 해준다.
+현재는 MySQL만 지원하면 다른 유형의 데이터베이스는 추후에 지원될 예정이다.
+
+해당 내용은 [여기(https://aws.amazon.com/ko/rds/proxy/)](https://aws.amazon.com/ko/rds/proxy/)서 확인할 수 있다.
