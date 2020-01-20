@@ -154,6 +154,8 @@ tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      
 tcp6       0      0 :::2377                 :::*                    LISTEN      -
 tcp6       0      0 :::7946                 :::*                    LISTEN      -
 tcp6       0      0 :::22                   :::*                    LISTEN      -
+
+$ netstat -ant | grep 5432 | wc -l
 ```
 
 ---
