@@ -29,7 +29,7 @@ Golang은 Open source project 이며 모든 개발 내역이 Github에 코드로
 
 ### Scheduler structures
 
-스케쥴러는 런타임에 걸쳐서 세 가지 유형의 리소스로 운영한다: Gs, Ms, 그리고 Ps.
+스케쥴러는 런타임에 걸쳐서 세 가지 유형의 리소스로 운영한다: G, M, 그리고 P.
 직접 스케쥴러를 통한 로직을 돌리지 않더라도, 이것을 이해하는 것은 중요하다.
 
 #### Gs, Ms, Ps
