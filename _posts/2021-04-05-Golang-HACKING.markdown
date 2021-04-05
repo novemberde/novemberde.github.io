@@ -116,7 +116,7 @@ notesleep은 notewakeup이 일어나자마자 즉시 반환된다. note는 sleep
 
 Gooutine scheduler와 직접적으로 소통하기 위해, `gopark` 와 `goready` 를 사용한다.
 gopark는 현재의 goroutine을 "waiting" 상태에 두고 스케쥴러의 run queue에서 제거한다.
-그리고 다른 goroutine을 현재의 M/P에 할당한다. goready는 parked goroutinedmf 
+그리고 다른 goroutine을 현재의 M/P에 할당한다. goready는 parked goroutine을
 다시 "runnable" 상태로 돌리고, run queue에 추가한다.
 
 요약하자면 다음과 같다.
