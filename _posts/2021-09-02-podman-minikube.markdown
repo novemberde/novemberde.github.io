@@ -54,13 +54,13 @@ kube-system   storage-provisioner                1/1     Running   0          3m
 
 ## Kompose로 docker-compose.yml을 minikube에 올리기
 
-1. Kompose 설치하기
+### Kompose 설치하기
 
 ```sh
 $ brew install kompose
 ```
 
-2. docker-compose.yml을 kompose convert로 하고 배포하기
+### docker-compose.yml을 kompose convert하고 배포하기
 
 **docker.compose.yml 파일**
 
@@ -91,13 +91,13 @@ services:
       kompose.service.type: LoadBalancer
 ```
 
-**배포하기**
+#### Convert 하기
 
 ```sh
 $ kompose convert -f docker-compose.yml --out converted.yml
 ```
 
-**배포하기**
+#### 배포하기
 
 ```sh
 $ kubectl apply -f converted.yml
