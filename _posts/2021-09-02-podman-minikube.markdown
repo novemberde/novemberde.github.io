@@ -30,7 +30,7 @@ minikube에서는 m1 mac을 사용할 수 없다. docker를 사용하던지 아�
 
 만약 podman이 apple silicon을 지원하게 된다면 그때 이 문서를 다시 업데이트할 것이다.
 
-1. 설치방법은 간단하다.
+### 설치하기
 
 ```sh
 $ brew install hyperkit
@@ -38,7 +38,7 @@ $ brew install minikube
 $ minikube start --driver=hyperkit
 ```
 
-2. pod 살펴보기
+### 확인하기
 
 ```sh
 $ kubectl get po -A
