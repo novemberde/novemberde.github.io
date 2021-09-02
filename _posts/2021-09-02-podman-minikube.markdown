@@ -14,17 +14,17 @@ Docker desktop이 유료로 전환된다는 소식이 있다. ([링크](https://
 
 ## Docker Desktop 삭제하기
 
-이건 어렵지 않다. 다음 그림과 같이 docker desktop > Preferences > troubleshootings > uninstall 을 눌러 삭제한다.
-
-![remove-docker-desktop](/images/docker/remove-docker-desktop.png)
+이건 어렵지 않다. 다음 그림과 같이 docker desktop > Preferences > troubleshootings > uninstall 을 눌러 삭제한다.(그림참고)
 
 그리고 말끔하게 Applications(응용프로그램)에 있는 docker desktop도 삭제한다.
 
+![remove-docker-desktop](/images/docker/remove-docker-desktop.png)
+
 ## minikube 설치하기
 
-m1 mac인 경우에는 ["Disable all drivers except "docker" and "ssh" on darwin/arm64" PR](https://github.com/kubernetes/minikube/pull/10452)을 참고하자면
-minikube에서는 m1 mac을 사용할 수 없다. docker를 사용하던지 아니면 ssh로 리모트의 VM을 써야한다.
-뭐 로컬에 virtualbox나 vmware로 띄우고 ssh를 써도 사용은 되겠지만, localhost에서 사용하기 위한 다른 설정을 하는 건 조금 수고스럽다고 생각된다.
+m1 mac인 경우에는 ["Disable all drivers except "docker" and "ssh" on darwin/arm64" PR](https://github.com/kubernetes/minikube/pull/10452)의 내용을 요약하자면,
+minikube에서는 m1 mac을 사용할 수 없다는 내용이다. docker를 사용하던지 아니면 ssh로 remote host를 써야한다.
+로컬에 virtualbox나 vmware로 띄우고 ssh를 써도 사용은 되겠지만, localhost에서 사용하기 위한 다른 설정을 하는 건 조금 수고스럽다고 생각된다.
 
 당장은 방법이 없으니 조금만 더 docker desktop을 사용하면 된다.
 
