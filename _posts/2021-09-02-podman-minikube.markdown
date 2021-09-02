@@ -1,5 +1,5 @@
 ---
-title: "minukube로 docker와 docker-compose를 대체하기"
+title: "minikube로 docker와 docker-compose를 대체하기"
 category: docker
 tags: docker, podman, minikube
 ---
