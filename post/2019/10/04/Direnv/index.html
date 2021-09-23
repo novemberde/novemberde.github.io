@@ -25,7 +25,8 @@ AWS 설정 옮겨가며 편하게 사용하기 AWS CLI를 계정별로 관리하
 <noscript>
 <style>#theme-toggle,.top-link{display:none}</style>
 <style>@media(prefers-color-scheme:dark){:root{--theme:#1d1e20;--entry:#2e2e33;--primary:rgba(255, 255, 255, 0.84);--secondary:rgba(255, 255, 255, 0.56);--tertiary:rgba(255, 255, 255, 0.16);--content:rgba(255, 255, 255, 0.74);--hljs-bg:#2e2e33;--code-bg:#37383e;--border:#333}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
-</noscript><meta property="og:title" content="Direnv를 활용한 프로젝트 별 환경설정하기">
+</noscript>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-97433460-1','auto'),ga('send','pageview'))</script><meta property="og:title" content="Direnv를 활용한 프로젝트 별 환경설정하기">
 <meta property="og:description" content="현재 Amazon EKS위에 컨테이너를 배포하기 위한 환경을 구축중이다. 각 운영되는 서비스 또는 Repository마다 환경들이 다르고, 개인으로 운영하는 서비스도 가끔 확인해야하는데 Global로 AWS 또는 K8s 환경 설정을 하면 귀찮아지기 때문에 폴더별로 모든 환경을 관리하고 싶어졌다.
 Direnv를 활용하면 directory마다 환경을 따로 관리할 수 있는데, 매번 같은 키를 넣고 관리하기도 귀찮아서 Direnv에서 사용하는 변수들도 따로 관리하고 있다. 다음은 현재 사용하는 패턴이다.
 Direnv 설치하기 다음은 참고한 문서이다.

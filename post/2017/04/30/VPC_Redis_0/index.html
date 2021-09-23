@@ -23,7 +23,8 @@
 <noscript>
 <style>#theme-toggle,.top-link{display:none}</style>
 <style>@media(prefers-color-scheme:dark){:root{--theme:#1d1e20;--entry:#2e2e33;--primary:rgba(255, 255, 255, 0.84);--secondary:rgba(255, 255, 255, 0.56);--tertiary:rgba(255, 255, 255, 0.16);--content:rgba(255, 255, 255, 0.74);--hljs-bg:#2e2e33;--code-bg:#37383e;--border:#333}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
-</noscript><meta property="og:title" content="Docker를 활용하여 AWS의 Elastic Cache 에 접근하기.">
+</noscript>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-97433460-1','auto'),ga('send','pageview'))</script><meta property="og:title" content="Docker를 활용하여 AWS의 Elastic Cache 에 접근하기.">
 <meta property="og:description" content="Summary  Localhost에서 elastic cache에는 원칙적으로 접근할 수 없다. 별도로 VPC내에 Virtual Private Gateways나 Customer Gateways를 사용하여 VPC내에 존재하는 Elasic Cache에 접근할 수 있다. 하지만 이는 별도의 설정과정이 들어가므로 귀찮았다. 그래서 바로 VPC내의 EC2 인스턴스에서 Elastic Cache에 접근하였다. Docker 이미지 중에서 Redis-cli가 있기 때문에 손쉽게 별도의 설치과정 없이 접근할 수 있다.
 이 과정은 이미 elastic cache를 사용하고 있고 인스턴스에 Docker가 설치되어 있다는 전제 하에 진행한다.
  Docker hub에서 redis-cli 이미지를 받아 접속하자.">

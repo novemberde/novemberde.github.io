@@ -25,7 +25,8 @@ $ bash SomeScript.sh /bin/bash^M: bad interpreter: No such file or directory 이
 <noscript>
 <style>#theme-toggle,.top-link{display:none}</style>
 <style>@media(prefers-color-scheme:dark){:root{--theme:#1d1e20;--entry:#2e2e33;--primary:rgba(255, 255, 255, 0.84);--secondary:rgba(255, 255, 255, 0.56);--tertiary:rgba(255, 255, 255, 0.16);--content:rgba(255, 255, 255, 0.74);--hljs-bg:#2e2e33;--code-bg:#37383e;--border:#333}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
-</noscript><meta property="og:title" content="/bin/bash^M: bad interpreter: No such file or directory">
+</noscript>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-97433460-1','auto'),ga('send','pageview'))</script><meta property="og:title" content="/bin/bash^M: bad interpreter: No such file or directory">
 <meta property="og:description" content="Windows에서 shell script를 작성하여 배포하였을 경우에 다음과 같은 에러를 만날 수 있다.
 $ bash SomeScript.sh /bin/bash^M: bad interpreter: No such file or directory 이것은 CRLF를 Windows에서 기본으로 사용하였기 때문에 나타난다. 리눅스 기반은 LF를 기반으로 하기 때문에 newline문자가 달라지기 때문이다. VS code를 사용한다면 오른쪽 맨 밑에 CRLF를 LF를 수정하면 해결된다.
 만일 다른 에디터를 사용한다면 설정메뉴에서 바꾸면 될 것이다.
