@@ -1,0 +1,20 @@
+:root {
+--progress-height: 40px;
+--progress-width: 300px;
+--progress-border-size: 15px;
+--progress-outer-height: calc(
+	var(--progress-height) + var(--progress-border-size) * 2
+);
+--progress-outer-width: calc(
+	var(--progress-width) + var(--progress-border-size) * 2
+);
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+}
