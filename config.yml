@@ -46,3 +46,10 @@ disqusShortname: novemberde-github-io
 
 github: http://www.github.com/novemberde
 linkedin: https://www.linkedin.com/in/novemberde/
+
+disablePathToLower: true
+enableInlineShortcodes: true
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
