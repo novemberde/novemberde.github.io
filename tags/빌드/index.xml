@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>빌드 on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/%EB%B9%8C%EB%93%9C/</link>
+    <description>Recent content in 빌드 on Novemberde&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Mon, 17 Sep 2018 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/%EB%B9%8C%EB%93%9C/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Circle CI에서 Docker Build 하기</title>
+      <link>https://novemberde.github.io/post/2018/09/17/Circleci-docker/</link>
+      <pubDate>Mon, 17 Sep 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2018/09/17/Circleci-docker/</guid>
+      <description>Summary  현재 Terraform으로 ECS 인프라를 생성하고, CircleCI에서 docker image를 빌드하고 ECR에 푸시하는 과정을 자동화하고 있다. 이 과정에 있어서 docker image를 빌드하는 것에서 문제가 발생했다.
+CircleCI에서 script를 실행하는 환경은 Container 기반으로 되어 있기 때문이다. Docker image를 빌드하기 위해서는 docker가 설치되어 있는 환경이어야 했다.
+docker-in-docker라는 개념으로 docker hub에 &amp;ldquo;docker&amp;quot;라는 docker image가 있다. 하지만 이 이미지로는 프로덕션 이미지를 빌드하고 배포할 때 사용하는 기본 패키지가 없는데, 이러한 기본패키지를 추가하여 CircleCI에서 docker를 빌드할 수 있는 이미지 생성하는 방법 및 CircleCI 설정을 정리해보았다.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,302 @@
+<!doctype html><html lang=en dir=auto>
+<head><meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=robots content="index, follow">
+<title>MySQL에서 DB스키마 작성시 주의할 점들 | Novemberde's Blog</title>
+<meta name=keywords content="db,mysql,schema,스키마,주의,database">
+<meta name=description content="신규프로젝트를 진행할 경우 디비 스키마를 설계를 해야한다. 데이터의 타입부터 외래키 설정등 신경써야하는 부분들이 생각보다 자잘하게 있다. 이 경우에 주의해야하는 점들을 정리해보았다. 이 문서는 지속적으로 수정될 예정이다.
+Datatype MySQL에서 사용하는 데이터 타입은 다음과 같다.
+Numeric Type  BIT[(M)] - A bit-value type. M indicates the number of bits per value, from 1 to 64. The default is 1 if M is omitted. TINYINT[(M)] [UNSIGNED] [ZEROFILL] - A very small integer. The signed range is -128 to 127.">
+<meta name=author content>
+<link rel=canonical href=https://novemberde.github.io/post/2019/06/10/MySQL-Desgin-cheatsheet/>
+<link crossorigin=anonymous href=/assets/css/stylesheet.min.9f1d947375927e9847272b1f4e9be81336f539e513bf04d52cade31f81cad1af.css integrity="sha256-nx2Uc3WSfphHJysfTpvoEzb1OeUTvwTVLK3jH4HK0a8=" rel="preload stylesheet" as=style>
+<script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://novemberde.github.io/favicon.ico>
+<link rel=icon type=image/png sizes=16x16 href=https://novemberde.github.io/favicon-16x16.png>
+<link rel=icon type=image/png sizes=32x32 href=https://novemberde.github.io/favicon-32x32.png>
+<link rel=apple-touch-icon href=https://novemberde.github.io/apple-touch-icon.png>
+<link rel=mask-icon href=https://novemberde.github.io/safari-pinned-tab.svg>
+<meta name=theme-color content="#2e2e33">
+<meta name=msapplication-TileColor content="#2e2e33">
+<meta name=generator content="Hugo 0.88.1">
+<noscript>
+<style>#theme-toggle,.top-link{display:none}</style>
+<style>@media(prefers-color-scheme:dark){:root{--theme:#1d1e20;--entry:#2e2e33;--primary:rgba(255, 255, 255, 0.84);--secondary:rgba(255, 255, 255, 0.56);--tertiary:rgba(255, 255, 255, 0.16);--content:rgba(255, 255, 255, 0.74);--hljs-bg:#2e2e33;--code-bg:#37383e;--border:#333}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
+</noscript><meta property="og:title" content="MySQL에서 DB스키마 작성시 주의할 점들">
+<meta property="og:description" content="신규프로젝트를 진행할 경우 디비 스키마를 설계를 해야한다. 데이터의 타입부터 외래키 설정등 신경써야하는 부분들이 생각보다 자잘하게 있다. 이 경우에 주의해야하는 점들을 정리해보았다. 이 문서는 지속적으로 수정될 예정이다.
+Datatype MySQL에서 사용하는 데이터 타입은 다음과 같다.
+Numeric Type  BIT[(M)] - A bit-value type. M indicates the number of bits per value, from 1 to 64. The default is 1 if M is omitted. TINYINT[(M)] [UNSIGNED] [ZEROFILL] - A very small integer. The signed range is -128 to 127.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://novemberde.github.io/post/2019/06/10/MySQL-Desgin-cheatsheet/"><meta property="article:section" content="post">
+<meta property="article:published_time" content="2019-06-10T11:30:03+00:00">
+<meta property="article:modified_time" content="2019-06-10T11:30:03+00:00"><meta property="og:site_name" content="Novemberde's Blog">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="MySQL에서 DB스키마 작성시 주의할 점들">
+<meta name=twitter:description content="신규프로젝트를 진행할 경우 디비 스키마를 설계를 해야한다. 데이터의 타입부터 외래키 설정등 신경써야하는 부분들이 생각보다 자잘하게 있다. 이 경우에 주의해야하는 점들을 정리해보았다. 이 문서는 지속적으로 수정될 예정이다.
+Datatype MySQL에서 사용하는 데이터 타입은 다음과 같다.
+Numeric Type  BIT[(M)] - A bit-value type. M indicates the number of bits per value, from 1 to 64. The default is 1 if M is omitted. TINYINT[(M)] [UNSIGNED] [ZEROFILL] - A very small integer. The signed range is -128 to 127.">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://novemberde.github.io/post/"},{"@type":"ListItem","position":2,"name":"MySQL에서 DB스키마 작성시 주의할 점들","item":"https://novemberde.github.io/post/2019/06/10/MySQL-Desgin-cheatsheet/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"MySQL에서 DB스키마 작성시 주의할 점들","name":"MySQL에서 DB스키마 작성시 주의할 점들","description":"신규프로젝트를 진행할 경우 디비 스키마를 설계를 해야한다. 데이터의 타입부터 외래키 설정등 신경써야하는 부분들이 생각보다 자잘하게 있다. 이 경우에 주의해야하는 점들을 정리해보았다. 이 문서는 지속적으로 수정될 예정이다.\nDatatype MySQL에서 사용하는 데이터 타입은 다음과 같다.\nNumeric Type  BIT[(M)] - A bit-value type. M indicates the number of bits per value, from 1 to 64. The default is 1 if M is omitted. TINYINT[(M)] [UNSIGNED] [ZEROFILL] - A very small integer. The signed range is -128 to 127.","keywords":["db","mysql","schema","스키마","주의","database"],"articleBody":"신규프로젝트를 진행할 경우 디비 스키마를 설계를 해야한다. 데이터의 타입부터 외래키 설정등 신경써야하는 부분들이 생각보다 자잘하게 있다. 이 경우에 주의해야하는 점들을 정리해보았다. 이 문서는 지속적으로 수정될 예정이다.\nDatatype MySQL에서 사용하는 데이터 타입은 다음과 같다.\nNumeric Type  BIT[(M)] - A bit-value type. M indicates the number of bits per value, from 1 to 64. The default is 1 if M is omitted. TINYINT[(M)] [UNSIGNED] [ZEROFILL] - A very small integer. The signed range is -128 to 127. The unsigned range is 0 to 255. BOOL, BOOLEAN - These types are synonyms for TINYINT(1). A value of zero is considered false. Nonzero values are considered true. However, the values TRUE and FALSE are merely aliases for 1 and 0, respectively, as shown here. SMALLINT[(M)] [UNSIGNED] [ZEROFILL] - A small integer. The signed range is -32768 to 32767. The unsigned range is 0 to 65535. MEDIUMINT[(M)] [UNSIGNED] [ZEROFILL] - A medium-sized integer. The signed range is -8388608 to 8388607. The unsigned range is 0 to 16777215. INT[(M)] [UNSIGNED] [ZEROFILL] - A normal-size integer. The signed range is -2147483648 to 2147483647. The unsigned range is 0 to 4294967295. INTEGER[(M)] [UNSIGNED] [ZEROFILL] - This type is a synonym for INT. BIGINT[(M)] [UNSIGNED] [ZEROFILL] - A large integer. The signed range is -9223372036854775808 to 9223372036854775807. The unsigned range is 0 to 18446744073709551615. SERIAL is an alias for BIGINT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE.   Some things you should be aware of with respect to BIGINT columns:\n All arithmetic is done using signed BIGINT or DOUBLE values, so you should not use unsigned big integers larger than 9223372036854775807 (63 bits) except with bit functions! If you do that, some of the last digits in the result may be wrong because of rounding errors when converting a BIGINT value to a DOUBLE.  MySQL can handle BIGINT in the following cases:\n  When using integers to store large unsigned values in a BIGINT column.\n  In MIN(col_name) or MAX(col_name), where col_name refers to a BIGINT column.\n  When using operators (+, -, *, and so on) where both operands are integers.\n  You can always store an exact integer value in a BIGINT column by storing it using a string. In this case, MySQL performs a string-to-number conversion that involves no intermediate double-precision representation.\n  The -, +, and * operators use BIGINT arithmetic when both operands are integer values. This means that if you multiply two big integers (or results from functions that return integers), you may get unexpected results when the result is larger than 9223372036854775807.\n    DECIMAL[(M[,D])] [UNSIGNED] [ZEROFILL]   A packed “exact” fixed-point number. M is the total number of digits (the precision) and D is the number of digits after the decimal point (the scale). The decimal point and (for negative numbers) the - sign are not counted in M. If D is 0, values have no decimal point or fractional part. The maximum number of digits (M) for DECIMAL is 65. The maximum number of supported decimals (D) is 30. If D is omitted, the default is 0. If M is omitted, the default is 10.\nUNSIGNED, if specified, disallows negative values.\nAll basic calculations (+, -, *, /) with DECIMAL columns are done with a precision of 65 digits.\n   DEC[(M[,D])] [UNSIGNED] [ZEROFILL], NUMERIC[(M[,D])] [UNSIGNED] [ZEROFILL], FIXED[(M[,D])] [UNSIGNED] [ZEROFILL] - These types are synonyms for DECIMAL. The FIXED synonym is available for compatibility with other database systems.\n  FLOAT[(M,D)] [UNSIGNED] [ZEROFILL] - A small (single-precision) floating-point number. Permissible values are -3.402823466E+38 to -1.175494351E-38, 0, and 1.175494351E-38 to 3.402823466E+38. These are the theoretical limits, based on the IEEE standard. The actual range might be slightly smaller depending on your hardware or operating system.\n  FLOAT(p) [UNSIGNED] [ZEROFILL] - A floating-point number. p represents the precision in bits, but MySQL uses this value only to determine whether to use FLOAT or DOUBLE for the resulting data type. If p is from 0 to 24, the data type becomes FLOAT with no M or D values. If p is from 25 to 53, the data type becomes DOUBLE with no M or D values. The range of the resulting column is the same as for the single-precision FLOAT or double-precision DOUBLE data types described earlier in this section.\n  DOUBLE[(M,D)] [UNSIGNED] [ZEROFILL] - A normal-size (double-precision) floating-point number. Permissible values are -1.7976931348623157E+308 to -2.2250738585072014E-308, 0, and 2.2250738585072014E-308 to 1.7976931348623157E+308. These are the theoretical limits, based on the IEEE standard. The actual range might be slightly smaller depending on your hardware or operating system.\n  DOUBLE PRECISION[(M,D)] [UNSIGNED] [ZEROFILL], REAL[(M,D)] [UNSIGNED] [ZEROFILL] - These types are synonyms for DOUBLE. Exception: If the REAL_AS_FLOAT SQL mode is enabled, REAL is a synonym for FLOAT rather than DOUBLE.\n  Date and Time Type   DATE - A date. The supported range is ‘1000-01-01’ to ‘9999-12-31’. MySQL displays DATE values in ‘YYYY-MM-DD’ format, but permits assignment of values to DATE columns using either strings or numbers.\n  DATETIME[(fsp)]\n A date and time combination. The supported range is ‘1000-01-01 00:00:00.000000’ to ‘9999-12-31 23:59:59.999999’. MySQL displays DATETIME values in ‘YYYY-MM-DD HH:MM:SS[.fraction]’ format, but permits assignment of values to DATETIME columns using either strings or numbers. An optional fsp value in the range from 0 to 6 may be given to specify fractional seconds precision. A value of 0 signifies that there is no fractional part. If omitted, the default precision is 0. Automatic initialization and updating to the current date and time for DATETIME columns can be specified using DEFAULT and ON UPDATE column definition clauses, as described in Section 11.3.4, “Automatic Initialization and Updating for TIMESTAMP and DATETIME”.    TIMESTAMP[(fsp)]\n A timestamp. The range is ‘1970-01-01 00:00:01.000000’ UTC to ‘2038-01-19 03:14:07.999999’ UTC. TIMESTAMP values are stored as the number of seconds since the epoch (‘1970-01-01 00:00:00’ UTC). A TIMESTAMP cannot represent the value ‘1970-01-01 00:00:00’ because that is equivalent to 0 seconds from the epoch and the value 0 is reserved for representing ‘0000-00-00 00:00:00’, the “zero” TIMESTAMP value. An optional fsp value in the range from 0 to 6 may be given to specify fractional seconds precision. A value of 0 signifies that there is no fractional part. If omitted, the default precision is 0. The way the server handles TIMESTAMP definitions depends on the value of the explicit_defaults_for_timestamp system variable (see Section 5.1.8, “Server System Variables”). If explicit_defaults_for_timestamp is enabled, there is no automatic assignment of the DEFAULT CURRENT_TIMESTAMP or ON UPDATE CURRENT_TIMESTAMP attributes to any TIMESTAMP column. They must be included explicitly in the column definition. Also, any TIMESTAMP not explicitly declared as NOT NULL permits NULL values. If explicit_defaults_for_timestamp is disabled, the server handles TIMESTAMP as follows: Unless specified otherwise, the first TIMESTAMP column in a table is defined to be automatically set to the date and time of the most recent modification if not explicitly assigned a value. This makes TIMESTAMP useful for recording the timestamp of an INSERT or UPDATE operation. You can also set any TIMESTAMP column to the current date and time by assigning it a NULL value, unless it has been defined with the NULL attribute to permit NULL values. Automatic initialization and updating to the current date and time can be specified using DEFAULT CURRENT_TIMESTAMP and ON UPDATE CURRENT_TIMESTAMP column definition clauses. By default, the first TIMESTAMP column has these properties, as previously noted. However, any TIMESTAMP column in a table can be defined to have these properties.    TIME[(fsp)]\n A time. The range is ‘-838:59:59.000000’ to ‘838:59:59.000000’. MySQL displays TIME values in ‘HH:MM:SS[.fraction]’ format, but permits assignment of values to TIME columns using either strings or numbers. An optional fsp value in the range from 0 to 6 may be given to specify fractional seconds precision. A value of 0 signifies that there is no fractional part. If omitted, the default precision is 0.    YEAR[(4)] - A year in four-digit format. MySQL displays YEAR values in YYYY format, but permits assignment of values to YEAR columns using either strings or numbers. Values display as 1901 to 2155, and 0000.\n   The SUM() and AVG() aggregate functions do not work with temporal values. (They convert the values to numbers, losing everything after the first nonnumeric character.) To work around this problem, convert to numeric units, perform the aggregate operation, and convert back to a temporal value.\n String Type   CHARACTER SET specifies the character set. If desired, a collation for the character set can be specified with the COLLATE attribute, along with any other attributes.(latin1, utf-8…etc). CHARSET is a synonym for CHARACTER SET. Specifying the CHARACTER SET binary attribute for a character string data type causes the column to be created as the corresponding binary string data type: CHAR becomes BINARY, VARCHAR becomes VARBINARY, and TEXT becomes BLOB. For the ENUM and SET data types, this does not occur; they are created as declared. The BINARY attribute is shorthand for specifying the table default character set and the binary (_bin) collation of that character set. In this case, comparison and sorting are based on numeric character code values. The ASCII attribute is shorthand for CHARACTER SET latin1. The UNICODE attribute is shorthand for CHARACTER SET ucs2.    [NATIONAL] CHAR[(M)] [CHARACTER SET charset_name] [COLLATE collation_name] - A fixed-length string that is always right-padded with spaces to the specified length when stored. M represents the column length in characters. The range of M is 0 to 255. If M is omitted, the length is 1. [NATIONAL] VARCHAR(M) [CHARACTER SET charset_name] [COLLATE collation_name] - A variable-length string. M represents the maximum column length in characters. The range of M is 0 to 65,535. The effective maximum length of a VARCHAR is subject to the maximum row size (65,535 bytes, which is shared among all columns) and the character set used. For example, utf8 characters can require up to three bytes per character, so a VARCHAR column that uses the utf8 character set can be declared to be a maximum of 21,844 characters. BINARY[(M)] - The BINARY type is similar to the CHAR type, but stores binary byte strings rather than nonbinary character strings. An optional length M represents the column length in bytes. If omitted, M defaults to 1. VARBINARY(M) - The VARBINARY type is similar to the VARCHAR type, but stores binary byte strings rather than nonbinary character strings. M represents the maximum column length in bytes. TINYBLOB - A BLOB column with a maximum length of 255 (28 − 1) bytes. Each TINYBLOB value is stored using a 1-byte length prefix that indicates the number of bytes in the value. TINYTEXT [CHARACTER SET charset_name] [COLLATE collation_name] - A TEXT column with a maximum length of 255 (28 − 1) characters. The effective maximum length is less if the value contains multibyte characters. Each TINYTEXT value is stored using a 1-byte length prefix that indicates the number of bytes in the value. BLOB[(M)] - A BLOB column with a maximum length of 65,535 (216 − 1) bytes. Each BLOB value is stored using a 2-byte length prefix that indicates the number of bytes in the value. An optional length M can be given for this type. If this is done, MySQL creates the column as the smallest BLOB type large enough to hold values M bytes long. TEXT[(M)] [CHARACTER SET charset_name] [COLLATE collation_name] - A TEXT column with a maximum length of 65,535 (216 − 1) characters. The effective maximum length is less if the value contains multibyte characters. Each TEXT value is stored using a 2-byte length prefix that indicates the number of bytes in the value. An optional length M can be given for this type. If this is done, MySQL creates the column as the smallest TEXT type large enough to hold values M characters long. MEDIUMBLOB - A BLOB column with a maximum length of 16,777,215 (224 − 1) bytes. Each MEDIUMBLOB value is stored using a 3-byte length prefix that indicates the number of bytes in the value. MEDIUMTEXT [CHARACTER SET charset_name] [COLLATE collation_name] - A TEXT column with a maximum length of 16,777,215 (224 − 1) characters. The effective maximum length is less if the value contains multibyte characters. Each MEDIUMTEXT value is stored using a 3-byte length prefix that indicates the number of bytes in the value. LONGBLOB - A BLOB column with a maximum length of 4,294,967,295 or 4GB (232 − 1) bytes. The effective maximum length of LONGBLOB columns depends on the configured maximum packet size in the client/server protocol and available memory. Each LONGBLOB value is stored using a 4-byte length prefix that indicates the number of bytes in the value. LONGTEXT [CHARACTER SET charset_name] [COLLATE collation_name] - A TEXT column with a maximum length of 4,294,967,295 or 4GB (232 − 1) characters. The effective maximum length is less if the value contains multibyte characters. The effective maximum length of LONGTEXT columns also depends on the configured maximum packet size in the client/server protocol and available memory. Each LONGTEXT value is stored using a 4-byte length prefix that indicates the number of bytes in the value. ENUM(‘value1’,‘value2’,…) [CHARACTER SET charset_name] [COLLATE collation_name]  An enumeration. A string object that can have only one value, chosen from the list of values ‘value1’, ‘value2’, …, NULL or the special '' error value. ENUM values are represented internally as integers. An ENUM column can have a maximum of 65,535 distinct elements. The maximum supported length of an individual ENUM element is M   SET(‘value1’,‘value2’,…) [CHARACTER SET charset_name] [COLLATE collation_name]  A set. A string object that can have zero or more values, each of which must be chosen from the list of values ‘value1’, ‘value2’, … SET values are represented internally as integers. A SET column can have a maximum of 64 distinct members. The maximum supported length of an individual SET element is M    Which is faster: char(1) or tinyint(1) ? Why? I think you should create column with ENUM(‘n’,‘y’). Mysql stores this type in optimal way. It also will help you to store only allowed values in the field.\n고려할 점들  현재 운영하는 데이터베이스의 기본 Character Collation을 알아두어야한다. 생성할 테이블이 데이터베이스의 기본 Charset을 사용하는 것으로 옵션이 설정되어 있을 수 있기 때문이다.  예를들어, Amazon Aurora MySQL의 Default collation은 latin1으로 되어있다. 하지만 보통 MySQL Workbench에서는 utf-8을 default로 옵션이 설정되어있기 때문에 나중에 프로덕션에서 한글로 입력이 안되는 경우가 있다.   ID값은 BIGINT를 추천한다. 나중에 서비스가 커져 INT를 BIGINT로 바꾸는 경우도 생각보다 만만치 않다. 고려할 점이 생긴다. 마음 편히 BIGINT로 ID를 지정하여 추후에 있을지도 모를 업무를 줄여야 한다. ENUM을 적극 활용한다. yes 또는 no를 ‘y’와 ‘n’으로 CHAR(1)로 선언하여 사용하는 경우가 있다. 이는 스키마의 콘텍스트를 이해하는데 명확하지 않을 뿐만 아니라 ‘a’, ‘1’ 등과 같은 다른 문자도 허용한다. 반면에 ENUM(‘yes’, ‘no’)로 표현하면 명확하게 의미를 포함할 뿐만 아니라 코멘트가 없이 쉽게 컬럼이 가진 속성에 대해서 빠르게 이해할 수 있다. 테이블 명을 지을때는 복수형을 사용하지 않늗다. 가끔 orm에서 저절로 복수형으로 테이블을 생성해주는 경우가 있는데, 마지막 글자가 y이거나 s일 경우에 -ies나 -ses로 표현되어 상당히 골치아픈 경우가 있다. 명확하게 단수형으로 한다. 이모지를 지원하는 컬럼은 utf8-mb4로 charset을 설정하도록 한다. deleted_at과 같은 컬럼은 인덱스를 걸어줄 필요가 없다. 오히려 인덱스를 컬어주게되면 퍼포먼스에 영향을 끼친다. 인덱스를 걸어주는 컬럼을 선택하는 경우는 조회시 전체 데이터의 1%내로 WHERE절에서 조건을 걸어줄 때이다. 어지간한 데이터는 히스토리를 남기도록한다. UPDATE문 사용은 지양한다. 대신 INSERT를 하고 나중의 값을 불러올 때는 최신의 데이터만 가져온다. 테이블간의 외래키를 직접적으로 넣는 것에 대해서 고민을 해야한다. 1:N관계가 나은지 아니면 사이에 테이블을 하나 더 두어 N:M 관계의 테이블을 둘지 잘 생각한다. 1:N 관계의 테이블은 강한 결합이 되어 나중에 서비스 확장에 많은 난관에 봉착하게 된다. N:M 관계의 테이블을 하나 더 두게 된다면 후임자가 쉽게 이해못하는 경우도 있다. 쉬운 설계로 할 것인가 잘만들 것인가는 다른 문제이다. 한국식 영어를 쓰지 않도록 한다. 찾아보면 좋은 컬럼명들이 있다. 글로벌 서비스가 목표라면 대충짓지 않도록한다. Push service를 위한 토큰 저장테이블은 ad_id값과 함께 따로 두도록 한다. 여러 디바이스를 사용하는 사용자일 경우에 모든 디바이스에 알림을 던질 수 있다. 가끔 유저테이블에 두는 FCM 토큰값을 두는 경우가 있는데 이 때문에 추후에 코드를 수정하는게 굉장히 귀찮다.  References  https://dev.mysql.com/doc/refman/8.0/en/data-types.html https://stackoverflow.com/questions/2023476/which-is-faster-char1-or-tinyint1-why   이 문서는 지속적으로 업데이트 될 예정입니다.\n ","wordCount":"2677","inLanguage":"en","datePublished":"2019-06-10T11:30:03Z","dateModified":"2019-06-10T11:30:03Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://novemberde.github.io/post/2019/06/10/MySQL-Desgin-cheatsheet/"},"publisher":{"@type":"Organization","name":"Novemberde's Blog","logo":{"@type":"ImageObject","url":"https://novemberde.github.io/favicon.ico"}}}</script><script async src=//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-8620431066400094",enable_page_level_ads:!0})</script>
+</head>
+<body id=top>
+<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<header class=header>
+<nav class=nav>
+<div class=logo>
+<a href=https://novemberde.github.io/ accesskey=h title="Novemberde's Blog (Alt + H)">Novemberde's Blog</a>
+<span class=logo-switches>
+<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
+</span>
+</div>
+<ul id=menu>
+<li>
+<a href=https://novemberde.github.io/post/ title=Post>
+<span>Post</span>
+</a>
+</li>
+<li>
+<a href=https://novemberde.github.io/about title=About>
+<span>About</span>
+</a>
+</li>
+<li>
+<a href=https://novemberde.github.io/tags/ title=Tags>
+<span>Tags</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class=main>
+<article class=post-single>
+<header class=post-header>
+<div class=breadcrumbs><a href=https://novemberde.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://novemberde.github.io/post/>Posts</a></div>
+<h1 class=post-title>
+MySQL에서 DB스키마 작성시 주의할 점들
+</h1>
+<div class=post-meta>June 10, 2019&nbsp;·&nbsp;13 min
+</div>
+</header>
+<div class=post-content><p>신규프로젝트를 진행할 경우 디비 스키마를 설계를 해야한다.
+데이터의 타입부터 외래키 설정등 신경써야하는 부분들이 생각보다 자잘하게 있다.
+이 경우에 주의해야하는 점들을 정리해보았다.
+이 문서는 지속적으로 수정될 예정이다.</p>
+<h2 id=datatype>Datatype<a hidden class=anchor aria-hidden=true href=#datatype>#</a></h2>
+<p>MySQL에서 사용하는 데이터 타입은 다음과 같다.</p>
+<h3 id=numeric-type>Numeric Type<a hidden class=anchor aria-hidden=true href=#numeric-type>#</a></h3>
+<ul>
+<li>BIT[(M)] - A bit-value type. M indicates the number of bits per value, from 1 to 64. The default is 1 if M is omitted.</li>
+<li>TINYINT[(M)] [UNSIGNED] [ZEROFILL] - A very small integer. The signed range is -128 to 127. The unsigned range is 0 to 255.</li>
+<li>BOOL, BOOLEAN - These types are synonyms for TINYINT(1). A value of zero is considered false. Nonzero values are considered true. However, the values TRUE and FALSE are merely aliases for 1 and 0, respectively, as shown here.</li>
+<li>SMALLINT[(M)] [UNSIGNED] [ZEROFILL] - A small integer. The signed range is -32768 to 32767. The unsigned range is 0 to 65535.</li>
+<li>MEDIUMINT[(M)] [UNSIGNED] [ZEROFILL] - A medium-sized integer. The signed range is -8388608 to 8388607. The unsigned range is 0 to 16777215.</li>
+<li>INT[(M)] [UNSIGNED] [ZEROFILL] - A normal-size integer. The signed range is -2147483648 to 2147483647. The unsigned range is 0 to 4294967295.</li>
+<li>INTEGER[(M)] [UNSIGNED] [ZEROFILL] - This type is a synonym for INT.</li>
+<li>BIGINT[(M)] [UNSIGNED] [ZEROFILL] - A large integer. The signed range is -9223372036854775808 to 9223372036854775807. The unsigned range is 0 to 18446744073709551615. SERIAL is an alias for BIGINT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE.</li>
+</ul>
+<blockquote>
+<p>Some things you should be aware of with respect to BIGINT columns:</p>
+<ul>
+<li>All arithmetic is done using signed BIGINT or DOUBLE values, so you should not use unsigned big integers larger than 9223372036854775807 (63 bits) except with bit functions! If you do that, some of the last digits in the result may be wrong because of rounding errors when converting a BIGINT value to a DOUBLE.</li>
+</ul>
+<p>MySQL can handle BIGINT in the following cases:</p>
+<ul>
+<li>
+<p>When using integers to store large unsigned values in a BIGINT column.</p>
+</li>
+<li>
+<p>In MIN(col_name) or MAX(col_name), where col_name refers to a BIGINT column.</p>
+</li>
+<li>
+<p>When using operators (+, -, *, and so on) where both operands are integers.</p>
+</li>
+<li>
+<p>You can always store an exact integer value in a BIGINT column by storing it using a string. In this case, MySQL performs a string-to-number conversion that involves no intermediate double-precision representation.</p>
+</li>
+<li>
+<p>The -, +, and * operators use BIGINT arithmetic when both operands are integer values. This means that if you multiply two big integers (or results from functions that return integers), you may get unexpected results when the result is larger than >9223372036854775807.</p>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li>DECIMAL[(M[,D])] [UNSIGNED] [ZEROFILL]</li>
+</ul>
+<blockquote>
+<p>A packed “exact” fixed-point number. M is the total number of digits (the precision) and D is the number of digits after the decimal point (the scale). The decimal point and (for negative numbers) the - sign are not counted in M. If D is 0, values have no decimal point or fractional part. The maximum number of digits (M) for DECIMAL is 65. The maximum number of supported decimals (D) is 30. If D is omitted, the default is 0. If M is omitted, the default is 10.</p>
+<p>UNSIGNED, if specified, disallows negative values.</p>
+<p>All basic calculations (+, -, *, /) with DECIMAL columns are done with a precision of 65 digits.</p>
+</blockquote>
+<ul>
+<li>
+<p>DEC[(M[,D])] [UNSIGNED] [ZEROFILL], NUMERIC[(M[,D])] [UNSIGNED] [ZEROFILL], FIXED[(M[,D])] [UNSIGNED] [ZEROFILL] - These types are synonyms for DECIMAL. The FIXED synonym is available for compatibility with other database systems.</p>
+</li>
+<li>
+<p>FLOAT[(M,D)] [UNSIGNED] [ZEROFILL] - A small (single-precision) floating-point number. Permissible values are -3.402823466E+38 to -1.175494351E-38, 0, and 1.175494351E-38 to 3.402823466E+38. These are the theoretical limits, based on the IEEE standard. The actual range might be slightly smaller depending on your hardware or operating system.</p>
+</li>
+<li>
+<p>FLOAT(p) [UNSIGNED] [ZEROFILL] - A floating-point number. p represents the precision in bits, but MySQL uses this value only to determine whether to use FLOAT or DOUBLE for the resulting data type. If p is from 0 to 24, the data type becomes FLOAT with no M or D values. If p is from 25 to 53, the data type becomes DOUBLE with no M or D values. The range of the resulting column is the same as for the single-precision FLOAT or double-precision DOUBLE data types described earlier in this section.</p>
+</li>
+<li>
+<p>DOUBLE[(M,D)] [UNSIGNED] [ZEROFILL] - A normal-size (double-precision) floating-point number. Permissible values are -1.7976931348623157E+308 to -2.2250738585072014E-308, 0, and 2.2250738585072014E-308 to 1.7976931348623157E+308. These are the theoretical limits, based on the IEEE standard. The actual range might be slightly smaller depending on your hardware or operating system.</p>
+</li>
+<li>
+<p>DOUBLE PRECISION[(M,D)] [UNSIGNED] [ZEROFILL], REAL[(M,D)] [UNSIGNED] [ZEROFILL] - These types are synonyms for DOUBLE. Exception: If the REAL_AS_FLOAT SQL mode is enabled, REAL is a synonym for FLOAT rather than DOUBLE.</p>
+</li>
+</ul>
+<h3 id=date-and-time-type>Date and Time Type<a hidden class=anchor aria-hidden=true href=#date-and-time-type>#</a></h3>
+<ul>
+<li>
+<p>DATE - A date. The supported range is &lsquo;1000-01-01&rsquo; to &lsquo;9999-12-31&rsquo;. MySQL displays DATE values in &lsquo;YYYY-MM-DD&rsquo; format, but permits assignment of values to DATE columns using either strings or numbers.</p>
+</li>
+<li>
+<p>DATETIME[(fsp)]</p>
+<ul>
+<li>A date and time combination. The supported range is &lsquo;1000-01-01 00:00:00.000000&rsquo; to &lsquo;9999-12-31 23:59:59.999999&rsquo;. MySQL displays DATETIME values in &lsquo;YYYY-MM-DD HH:MM:SS[.fraction]&rsquo; format, but permits assignment of values to DATETIME columns using either strings or numbers.</li>
+<li>An optional fsp value in the range from 0 to 6 may be given to specify fractional seconds precision. A value of 0 signifies that there is no fractional part. If omitted, the default precision is 0.</li>
+<li>Automatic initialization and updating to the current date and time for DATETIME columns can be specified using DEFAULT and ON UPDATE column definition clauses, as described in Section 11.3.4, “Automatic Initialization and Updating for TIMESTAMP and DATETIME”.</li>
+</ul>
+</li>
+<li>
+<p>TIMESTAMP[(fsp)]</p>
+<ul>
+<li>A timestamp. The range is &lsquo;1970-01-01 00:00:01.000000&rsquo; UTC to &lsquo;2038-01-19 03:14:07.999999&rsquo; UTC. TIMESTAMP values are stored as the number of seconds since the epoch (&lsquo;1970-01-01 00:00:00&rsquo; UTC). A TIMESTAMP cannot represent the value &lsquo;1970-01-01 00:00:00&rsquo; because that is equivalent to 0 seconds from the epoch and the value 0 is reserved for representing &lsquo;0000-00-00 00:00:00&rsquo;, the “zero” TIMESTAMP value.</li>
+<li>An optional fsp value in the range from 0 to 6 may be given to specify fractional seconds precision. A value of 0 signifies that there is no fractional part. If omitted, the default precision is 0.</li>
+<li>The way the server handles TIMESTAMP definitions depends on the value of the explicit_defaults_for_timestamp system variable (see Section 5.1.8, “Server System Variables”).</li>
+<li>If explicit_defaults_for_timestamp is enabled, there is no automatic assignment of the DEFAULT CURRENT_TIMESTAMP or ON UPDATE CURRENT_TIMESTAMP attributes to any TIMESTAMP column. They must be included explicitly in the column definition. Also, any TIMESTAMP not explicitly declared as NOT NULL permits NULL values.</li>
+<li>If explicit_defaults_for_timestamp is disabled, the server handles TIMESTAMP as follows:</li>
+<li>Unless specified otherwise, the first TIMESTAMP column in a table is defined to be automatically set to the date and time of the most recent modification if not explicitly assigned a value. This makes TIMESTAMP useful for recording the timestamp of an INSERT or UPDATE operation. You can also set any TIMESTAMP column to the current date and time by assigning it a NULL value, unless it has been defined with the NULL attribute to permit NULL values.</li>
+<li>Automatic initialization and updating to the current date and time can be specified using DEFAULT CURRENT_TIMESTAMP and ON UPDATE CURRENT_TIMESTAMP column definition clauses. By default, the first TIMESTAMP column has these properties, as previously noted. However, any TIMESTAMP column in a table can be defined to have these properties.</li>
+</ul>
+</li>
+<li>
+<p>TIME[(fsp)]</p>
+<ul>
+<li>A time. The range is &lsquo;-838:59:59.000000&rsquo; to &lsquo;838:59:59.000000&rsquo;. MySQL displays TIME values in &lsquo;HH:MM:SS[.fraction]&rsquo; format, but permits assignment of values to TIME columns using either strings or numbers.</li>
+<li>An optional fsp value in the range from 0 to 6 may be given to specify fractional seconds precision. A value of 0 signifies that there is no fractional part. If omitted, the default precision is 0.</li>
+</ul>
+</li>
+<li>
+<p>YEAR[(4)] - A year in four-digit format. MySQL displays YEAR values in YYYY format, but permits assignment of values to YEAR columns using either strings or numbers. Values display as 1901 to 2155, and 0000.</p>
+</li>
+</ul>
+<blockquote>
+<p>The SUM() and AVG() aggregate functions do not work with temporal values. (They convert the values to numbers, losing everything after the first nonnumeric character.) To work around this problem, convert to numeric units, perform the aggregate operation, and convert back to a temporal value.</p>
+</blockquote>
+<h3 id=string-type>String Type<a hidden class=anchor aria-hidden=true href=#string-type>#</a></h3>
+<blockquote>
+<ul>
+<li>CHARACTER SET specifies the character set. If desired, a collation for the character set can be specified with the COLLATE attribute, along with any other attributes.(latin1, utf-8&mldr;etc). CHARSET is a synonym for CHARACTER SET.</li>
+<li>Specifying the CHARACTER SET binary attribute for a character string data type causes the column to be created as the corresponding binary string data type: CHAR becomes BINARY, VARCHAR becomes VARBINARY, and TEXT becomes BLOB. For the ENUM and SET data types, this does not occur; they are created as declared.</li>
+<li>The BINARY attribute is shorthand for specifying the table default character set and the binary (_bin) collation of that character set. In this case, comparison and sorting are based on numeric character code values.</li>
+<li>The ASCII attribute is shorthand for CHARACTER SET latin1.</li>
+<li>The UNICODE attribute is shorthand for CHARACTER SET ucs2.</li>
+</ul>
+</blockquote>
+<ul>
+<li>[NATIONAL] CHAR[(M)] [CHARACTER SET charset_name] [COLLATE collation_name] - A fixed-length string that is always right-padded with spaces to the specified length when stored. M represents the column length in characters. The range of M is 0 to 255. If M is omitted, the length is 1.</li>
+<li>[NATIONAL] VARCHAR(M) [CHARACTER SET charset_name] [COLLATE collation_name] - A variable-length string. M represents the maximum column length in characters. The range of M is 0 to 65,535. The effective maximum length of a VARCHAR is subject to the maximum row size (65,535 bytes, which is shared among all columns) and the character set used. For example, utf8 characters can require up to three bytes per character, so a VARCHAR column that uses the utf8 character set can be declared to be a maximum of 21,844 characters.</li>
+<li>BINARY[(M)] - The BINARY type is similar to the CHAR type, but stores binary byte strings rather than nonbinary character strings. An optional length M represents the column length in bytes. If omitted, M defaults to 1.</li>
+<li>VARBINARY(M) - The VARBINARY type is similar to the VARCHAR type, but stores binary byte strings rather than nonbinary character strings. M represents the maximum column length in bytes.</li>
+<li>TINYBLOB - A BLOB column with a maximum length of 255 (28 − 1) bytes. Each TINYBLOB value is stored using a 1-byte length prefix that indicates the number of bytes in the value.</li>
+<li>TINYTEXT [CHARACTER SET charset_name] [COLLATE collation_name] - A TEXT column with a maximum length of 255 (28 − 1) characters. The effective maximum length is less if the value contains multibyte characters. Each TINYTEXT value is stored using a 1-byte length prefix that indicates the number of bytes in the value.</li>
+<li>BLOB[(M)] - A BLOB column with a maximum length of 65,535 (216 − 1) bytes. Each BLOB value is stored using a 2-byte length prefix that indicates the number of bytes in the value. An optional length M can be given for this type. If this is done, MySQL creates the column as the smallest BLOB type large enough to hold values M bytes long.</li>
+<li>TEXT[(M)] [CHARACTER SET charset_name] [COLLATE collation_name] - A TEXT column with a maximum length of 65,535 (216 − 1) characters. The effective maximum length is less if the value contains multibyte characters. Each TEXT value is stored using a 2-byte length prefix that indicates the number of bytes in the value. An optional length M can be given for this type. If this is done, MySQL creates the column as the smallest TEXT type large enough to hold values M characters long.</li>
+<li>MEDIUMBLOB - A BLOB column with a maximum length of 16,777,215 (224 − 1) bytes. Each MEDIUMBLOB value is stored using a 3-byte length prefix that indicates the number of bytes in the value.</li>
+<li>MEDIUMTEXT [CHARACTER SET charset_name] [COLLATE collation_name] - A TEXT column with a maximum length of 16,777,215 (224 − 1) characters. The effective maximum length is less if the value contains multibyte characters. Each MEDIUMTEXT value is stored using a 3-byte length prefix that indicates the number of bytes in the value.</li>
+<li>LONGBLOB - A BLOB column with a maximum length of 4,294,967,295 or 4GB (232 − 1) bytes. The effective maximum length of LONGBLOB columns depends on the configured maximum packet size in the client/server protocol and available memory. Each LONGBLOB value is stored using a 4-byte length prefix that indicates the number of bytes in the value.</li>
+<li>LONGTEXT [CHARACTER SET charset_name] [COLLATE collation_name] - A TEXT column with a maximum length of 4,294,967,295 or 4GB (232 − 1) characters. The effective maximum length is less if the value contains multibyte characters. The effective maximum length of LONGTEXT columns also depends on the configured maximum packet size in the client/server protocol and available memory. Each LONGTEXT value is stored using a 4-byte length prefix that indicates the number of bytes in the value.</li>
+<li>ENUM(&lsquo;value1&rsquo;,&lsquo;value2&rsquo;,&mldr;) [CHARACTER SET charset_name] [COLLATE collation_name]
+<ul>
+<li>An enumeration. A string object that can have only one value, chosen from the list of values &lsquo;value1&rsquo;, &lsquo;value2&rsquo;, &mldr;, NULL or the special '' error value. ENUM values are represented internally as integers.</li>
+<li>An ENUM column can have a maximum of 65,535 distinct elements.</li>
+<li>The maximum supported length of an individual ENUM element is M &lt;= 255 and (M x w) &lt;= 1020, where M is the element literal length and w is the number of bytes required for the maximum-length character in the character set.</li>
+</ul>
+</li>
+<li>SET(&lsquo;value1&rsquo;,&lsquo;value2&rsquo;,&mldr;) [CHARACTER SET charset_name] [COLLATE collation_name]
+<ul>
+<li>A set. A string object that can have zero or more values, each of which must be chosen from the list of values &lsquo;value1&rsquo;, &lsquo;value2&rsquo;, &mldr; SET values are represented internally as integers.</li>
+<li>A SET column can have a maximum of 64 distinct members.</li>
+<li>The maximum supported length of an individual SET element is M &lt;= 255 and (M x w) &lt;= 1020, where M is the element literal length and w is the number of bytes required for the maximum-length character in the character set.</li>
+</ul>
+</li>
+</ul>
+<h2 id=which-is-faster-char1-or-tinyint1--why>Which is faster: char(1) or tinyint(1) ? Why?<a hidden class=anchor aria-hidden=true href=#which-is-faster-char1-or-tinyint1--why>#</a></h2>
+<p><a href=https://stackoverflow.com/questions/2023476/which-is-faster-char1-or-tinyint1-why>I think you should create column with ENUM(&lsquo;n&rsquo;,&lsquo;y&rsquo;). Mysql stores this type in optimal way. It also will help you to store only allowed values in the field.</a></p>
+<h2 id=고려할-점들>고려할 점들<a hidden class=anchor aria-hidden=true href=#고려할-점들>#</a></h2>
+<ul>
+<li>현재 운영하는 데이터베이스의 기본 Character Collation을 알아두어야한다. 생성할 테이블이 데이터베이스의 기본 Charset을 사용하는 것으로 옵션이 설정되어 있을 수 있기 때문이다.
+<ul>
+<li>예를들어, Amazon Aurora MySQL의 Default collation은 latin1으로 되어있다. 하지만 보통 MySQL Workbench에서는 utf-8을 default로 옵션이 설정되어있기 때문에 나중에 프로덕션에서 한글로 입력이 안되는 경우가 있다.</li>
+</ul>
+</li>
+<li>ID값은 BIGINT를 추천한다. 나중에 서비스가 커져 INT를 BIGINT로 바꾸는 경우도 생각보다 만만치 않다. 고려할 점이 생긴다. 마음 편히 BIGINT로 ID를 지정하여 추후에 있을지도 모를 업무를 줄여야 한다.</li>
+<li>ENUM을 적극 활용한다. yes 또는 no를 &lsquo;y&rsquo;와 &lsquo;n&rsquo;으로 CHAR(1)로 선언하여 사용하는 경우가 있다. 이는 스키마의 콘텍스트를 이해하는데 명확하지 않을 뿐만 아니라
+&lsquo;a&rsquo;, &lsquo;1&rsquo; 등과 같은 다른 문자도 허용한다. 반면에 ENUM(&lsquo;yes&rsquo;, &lsquo;no&rsquo;)로 표현하면 명확하게 의미를 포함할 뿐만 아니라 코멘트가 없이 쉽게 컬럼이 가진 속성에 대해서 빠르게 이해할 수 있다.</li>
+<li>테이블 명을 지을때는 복수형을 사용하지 않늗다. 가끔 orm에서 저절로 복수형으로 테이블을 생성해주는 경우가 있는데, 마지막 글자가 y이거나 s일 경우에 -ies나 -ses로 표현되어 상당히 골치아픈 경우가 있다.
+명확하게 단수형으로 한다.</li>
+<li>이모지를 지원하는 컬럼은 utf8-mb4로 charset을 설정하도록 한다.</li>
+<li>deleted_at과 같은 컬럼은 인덱스를 걸어줄 필요가 없다. 오히려 인덱스를 컬어주게되면 퍼포먼스에 영향을 끼친다.</li>
+<li>인덱스를 걸어주는 컬럼을 선택하는 경우는 조회시 전체 데이터의 1%내로 WHERE절에서 조건을 걸어줄 때이다.</li>
+<li>어지간한 데이터는 히스토리를 남기도록한다. UPDATE문 사용은 지양한다. 대신 INSERT를 하고 나중의 값을 불러올 때는 최신의 데이터만 가져온다.</li>
+<li>테이블간의 외래키를 직접적으로 넣는 것에 대해서 고민을 해야한다. 1:N관계가 나은지 아니면 사이에 테이블을 하나 더 두어 N:M 관계의 테이블을 둘지 잘 생각한다.
+1:N 관계의 테이블은 강한 결합이 되어 나중에 서비스 확장에 많은 난관에 봉착하게 된다. N:M 관계의 테이블을 하나 더 두게 된다면 후임자가 쉽게 이해못하는 경우도 있다.
+쉬운 설계로 할 것인가 잘만들 것인가는 다른 문제이다.</li>
+<li>한국식 영어를 쓰지 않도록 한다. 찾아보면 좋은 컬럼명들이 있다. 글로벌 서비스가 목표라면 대충짓지 않도록한다.</li>
+<li>Push service를 위한 토큰 저장테이블은 ad_id값과 함께 따로 두도록 한다. 여러 디바이스를 사용하는 사용자일 경우에 모든 디바이스에 알림을 던질 수 있다.
+가끔 유저테이블에 두는 FCM 토큰값을 두는 경우가 있는데 이 때문에 추후에 코드를 수정하는게 굉장히 귀찮다.</li>
+</ul>
+<h2 id=references>References<a hidden class=anchor aria-hidden=true href=#references>#</a></h2>
+<ul>
+<li><a href=https://dev.mysql.com/doc/refman/8.0/en/data-types.html>https://dev.mysql.com/doc/refman/8.0/en/data-types.html</a></li>
+<li><a href=https://stackoverflow.com/questions/2023476/which-is-faster-char1-or-tinyint1-why>https://stackoverflow.com/questions/2023476/which-is-faster-char1-or-tinyint1-why</a></li>
+</ul>
+<blockquote>
+<p>이 문서는 지속적으로 업데이트 될 예정입니다.</p>
+</blockquote>
+</div>
+<footer class=post-footer>
+<ul class=post-tags>
+<li><a href=https://novemberde.github.io/tags/db/>db</a></li>
+<li><a href=https://novemberde.github.io/tags/mysql/>mysql</a></li>
+<li><a href=https://novemberde.github.io/tags/schema/>schema</a></li>
+<li><a href=https://novemberde.github.io/tags/%EC%8A%A4%ED%82%A4%EB%A7%88/>스키마</a></li>
+<li><a href=https://novemberde.github.io/tags/%EC%A3%BC%EC%9D%98/>주의</a></li>
+<li><a href=https://novemberde.github.io/tags/database/>database</a></li>
+</ul>
+<nav class=paginav>
+<a class=prev href=https://novemberde.github.io/post/2019/10/04/Direnv/>
+<span class=title>« Prev Page</span>
+<br>
+<span>Direnv를 활용한 프로젝트 별 환경설정하기</span>
+</a>
+<a class=next href=https://novemberde.github.io/post/2019/05/13/CircleCI-1st-Meetup/>
+<span class=title>Next Page »</span>
+<br>
+<span>Serverless Application CI/CD on CircleCI</span>
+</a>
+</nav>
+</footer>
+<div id=disqus_thread></div>
+<script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return}var b=document,a=b.createElement('script');a.async=!0,a.src='//novemberde-github-io.disqus.com/embed.js',a.setAttribute('data-timestamp',+new Date),(b.head||b.body).appendChild(a)})()</script>
+<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript>
+<a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a>
+</article>
+</main>
+<footer class=footer>
+<span>&copy; 2021 <a href=https://novemberde.github.io/>Novemberde's Blog</a></span>
+<span>
+Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
+</span>
+</footer>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a>
+<script>let menu=document.getElementById('menu');menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)},document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
+</body>
+</html>

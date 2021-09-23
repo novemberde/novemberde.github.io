@@ -1,0 +1,207 @@
+<!doctype html><html lang=en dir=auto>
+<head><meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=robots content="index, follow">
+<title>EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기 | Novemberde's Blog</title>
+<meta name=keywords content="ec2,docker,도커,설치,유저,권한">
+<meta name=description content="Summary  Docker의 개념을 간단히 살펴보고 EC2 ubuntu instance에 Docker를 설치해보자.
+ 순서   Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기 EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기 Bitbucket을 사용하여 git repository 생성하기 Express JS를 사용하여 Node 서버 구축하기 테스트로 PM2를 사용하여 EC2에 Node 서버 배포하기 Node 서버를 바탕으로 Dockerfile로 만들기 Docker Hub의 automated build를 사용하여 Docker image를 만들기 만들어진 Docker image를 EC2 인스턴스에 배포하기   Docker 란?">
+<meta name=author content>
+<link rel=canonical href=https://novemberde.github.io/post/2017/04/01/Docker_3/>
+<link crossorigin=anonymous href=/assets/css/stylesheet.min.9f1d947375927e9847272b1f4e9be81336f539e513bf04d52cade31f81cad1af.css integrity="sha256-nx2Uc3WSfphHJysfTpvoEzb1OeUTvwTVLK3jH4HK0a8=" rel="preload stylesheet" as=style>
+<script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://novemberde.github.io/favicon.ico>
+<link rel=icon type=image/png sizes=16x16 href=https://novemberde.github.io/favicon-16x16.png>
+<link rel=icon type=image/png sizes=32x32 href=https://novemberde.github.io/favicon-32x32.png>
+<link rel=apple-touch-icon href=https://novemberde.github.io/apple-touch-icon.png>
+<link rel=mask-icon href=https://novemberde.github.io/safari-pinned-tab.svg>
+<meta name=theme-color content="#2e2e33">
+<meta name=msapplication-TileColor content="#2e2e33">
+<meta name=generator content="Hugo 0.88.1">
+<noscript>
+<style>#theme-toggle,.top-link{display:none}</style>
+<style>@media(prefers-color-scheme:dark){:root{--theme:#1d1e20;--entry:#2e2e33;--primary:rgba(255, 255, 255, 0.84);--secondary:rgba(255, 255, 255, 0.56);--tertiary:rgba(255, 255, 255, 0.16);--content:rgba(255, 255, 255, 0.74);--hljs-bg:#2e2e33;--code-bg:#37383e;--border:#333}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
+</noscript><meta property="og:title" content="EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기">
+<meta property="og:description" content="Summary  Docker의 개념을 간단히 살펴보고 EC2 ubuntu instance에 Docker를 설치해보자.
+ 순서   Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기 EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기 Bitbucket을 사용하여 git repository 생성하기 Express JS를 사용하여 Node 서버 구축하기 테스트로 PM2를 사용하여 EC2에 Node 서버 배포하기 Node 서버를 바탕으로 Dockerfile로 만들기 Docker Hub의 automated build를 사용하여 Docker image를 만들기 만들어진 Docker image를 EC2 인스턴스에 배포하기   Docker 란?">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://novemberde.github.io/post/2017/04/01/Docker_3/"><meta property="article:section" content="post">
+<meta property="article:published_time" content="2017-04-01T11:30:03+00:00">
+<meta property="article:modified_time" content="2017-04-01T11:30:03+00:00"><meta property="og:site_name" content="Novemberde's Blog">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기">
+<meta name=twitter:description content="Summary  Docker의 개념을 간단히 살펴보고 EC2 ubuntu instance에 Docker를 설치해보자.
+ 순서   Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기 EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기 Bitbucket을 사용하여 git repository 생성하기 Express JS를 사용하여 Node 서버 구축하기 테스트로 PM2를 사용하여 EC2에 Node 서버 배포하기 Node 서버를 바탕으로 Dockerfile로 만들기 Docker Hub의 automated build를 사용하여 Docker image를 만들기 만들어진 Docker image를 EC2 인스턴스에 배포하기   Docker 란?">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://novemberde.github.io/post/"},{"@type":"ListItem","position":2,"name":"EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기","item":"https://novemberde.github.io/post/2017/04/01/Docker_3/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기","name":"EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기","description":"Summary  Docker의 개념을 간단히 살펴보고 EC2 ubuntu instance에 Docker를 설치해보자.\n 순서   Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기 EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기 Bitbucket을 사용하여 git repository 생성하기 Express JS를 사용하여 Node 서버 구축하기 테스트로 PM2를 사용하여 EC2에 Node 서버 배포하기 Node 서버를 바탕으로 Dockerfile로 만들기 Docker Hub의 automated build를 사용하여 Docker image를 만들기 만들어진 Docker image를 EC2 인스턴스에 배포하기   Docker 란?","keywords":["ec2","docker","도커","설치","유저","권한"],"articleBody":"Summary  Docker의 개념을 간단히 살펴보고 EC2 ubuntu instance에 Docker를 설치해보자.\n 순서   Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기 EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기 Bitbucket을 사용하여 git repository 생성하기 Express JS를 사용하여 Node 서버 구축하기 테스트로 PM2를 사용하여 EC2에 Node 서버 배포하기 Node 서버를 바탕으로 Dockerfile로 만들기 Docker Hub의 automated build를 사용하여 Docker image를 만들기 만들어진 Docker image를 EC2 인스턴스에 배포하기   Docker 란?  공식사이트의 소개를 보면 이렇게 말한다.\nPackage software into standardized units for development, shipment and deployment 패키지 소프트웨어를 개발 및 구축, 배포를 위한 표준화된 단위로.\n이말은 도커는 하나의 패키징된 소프트웨어로 만들어 배포를 하는 도구로 활용할 수 있고 도커는 이러한 단위라고 말하고 있다. 이전까지는 VMware, Microsoft Hyper-V(Virtual PC), Virtual Box와 같은 가상머신(Virtual Machine)에 리눅스를 올려 작업하였다.\n이미지를 백업하고 관리상의 이점은 분명히 있었지만 성능적인 이슈가 문제였다. 가상머신에는 OS이미지가 포함되어 있기 때문에 무겁고 네트워크적으로 가상화이미지에 데이터를 주고 받는 것도 부담된다. 또한, CPU가상화를 위한 기능이 아직까지는 실제 머신의 성능까지 이끌지는 못한다.\n하지만 이러한 문제를 해결하기 위해 나타난 것이 반가상화(Paravirtualization) 방식이다. OS자원은 호스트와 공유하여 이미지 용량의 감소된다. 가상화 레이어가 없기 때문에 커널과 직접적으로 사용하기 때문에 빠른 네트워크 응답과 하드웨어 성능을 이끌어낼 수 있다. 아래 이미지는 Docker의 성능분석 자료이다. Native와 동일한 성능을 내고 있음을 알 수 있다.\n 출처: https://blogs.vmware.com/performance/2014/10/docker-containers-performance-vmware-vsphere.html  아래의 사진을 보면 각 컨테이너는 운영체제의 Kernel 즉 핵심을 공유하고 있고 그 안에서 경량화되고 독립적인, 실행가능한 패키지의 한 조각으로 존재한다.\n이러한 컨테이너는 이것들을 실행하기 위한 모든 것을 포함하고 있으며 code, system tools, system libraries와 같은 기능과 정보를 갖고 있다.\n이 개념을 사용하면 리눅스, 윈도우 베이스의 어플리케이션까지 환경에 상관없이 사용가능한 앱을 구축할 수 있다고 한다. (하지만 경험해본 결과 안되는 경우도 있다. 라즈베리파이와 같은 ARM 기반의 하드웨어에는 docker container가 정상적으로 동작하지 않을 때도 있고, MongoDB의 wiredtiger 같은 DB엔진은 windows에서 filesystem이 호환되지 않아 동작하지 않는다. 하지만 보편적으로는 문제없이 가동된다.)\n Docker 설치하기  도커에 대해 기본적인 개념을 알아봤다. 상세한 내용은 아래 References를 참고하면 좋은 내용을 얻을 수 있을 것이다.\n먼저 이전에 만든 EC2 인스턴스에 ubuntu 계정으로 SSH로 접속한다.\n# 먼저 Package Database를 update한다. $ sudo apt-get update # Docker 공식페이지의 keyserver에서 GPG key를 추가한다. $ sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D # Docker repository를 APT sources에 추가한다. $ sudo apt-add-repository 'deb https://apt.dockerproject.org/repo ubuntu-xenial main' # 새로 추가된 Docker package를 업데이트한다. $ sudo apt-get update # Default Ubuntu 16.04 repository 대신에 Docker repository로 부터 install하는 것을 확인한다. $ apt-cache policy docker-engine # docker-engine을 설치한다. $ sudo apt-get install -y docker-engine # Daemon에서 docker가 실행되고 있는지 확인한다. CentOS의 경우에는 별도로 Daemon으로 실행해주어야 한다. $ sudo systemctl status docker # 현재 접속한 ubuntu 계정을 docker 실행 그룹에 포함시켜준다. 이전에 생성한 docker 계정도 포함시켜주자. $ sudo usermod -aG docker $(whoami) $ sudo usermod -aG docker docker  Docker 실행해보기  # Docker의 images를 pull해서 확인해보자. $ docker pull hello-world $ docker images # Docker container를 생성해보자. $ docker run hello-world # Docker container의 상태를 확인해보자. $ docker ps 여기서 docker ps를 할 경우에 아무것도 나타나지 않는 것을 볼 수 있다. container가 Daemon에서 동작하는 것이 아닌 한번 실행하고 종료되었기 때문에 실행되고 있는 컨테이너 목록에 나타나지 않는 것이다. 모든 컨테이너의 상태를 보려면 아래와 같이 확인한다.\n# 모든 Docker container의 상태를 확인해보자. $ docker ps -a 컨테이너의 STATUS를 보면 Exited (0) ~~~ ago 라는 문구를 볼 수 있다. 이미 종료되었다는 의미이다.\n컨테이너를 삭제해보자. CONTAINER_ID 부분에 삭제하고자 하는 docker container의 아이디를 입력한다. 전부 입력할 필요 없이 첫 글자 또는 두글자만 입력해도 삭제된다. 만약에 여러 컨테이너일 경우에는 구분되는 값까지만 입력하면 삭제된다.\n# Docker container를 삭제하기 $ docker rm CONTAINER_ID References  https://www.docker.com/what-docker http://pyrasis.com/Docker/Docker-HOWTO https://www.slideshare.net/pyrasis/docker-docker-38286477 https://subicura.com/2017/01/19/docker-guide-for-beginners-1.html https://docs.docker.com/engine/installation/linux/ubuntu/ https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04  ","wordCount":"565","inLanguage":"en","datePublished":"2017-04-01T11:30:03Z","dateModified":"2017-04-01T11:30:03Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://novemberde.github.io/post/2017/04/01/Docker_3/"},"publisher":{"@type":"Organization","name":"Novemberde's Blog","logo":{"@type":"ImageObject","url":"https://novemberde.github.io/favicon.ico"}}}</script><script async src=//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-8620431066400094",enable_page_level_ads:!0})</script>
+</head>
+<body id=top>
+<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<header class=header>
+<nav class=nav>
+<div class=logo>
+<a href=https://novemberde.github.io/ accesskey=h title="Novemberde's Blog (Alt + H)">Novemberde's Blog</a>
+<span class=logo-switches>
+<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
+</span>
+</div>
+<ul id=menu>
+<li>
+<a href=https://novemberde.github.io/post/ title=Post>
+<span>Post</span>
+</a>
+</li>
+<li>
+<a href=https://novemberde.github.io/about title=About>
+<span>About</span>
+</a>
+</li>
+<li>
+<a href=https://novemberde.github.io/tags/ title=Tags>
+<span>Tags</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class=main>
+<article class=post-single>
+<header class=post-header>
+<div class=breadcrumbs><a href=https://novemberde.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://novemberde.github.io/post/>Posts</a></div>
+<h1 class=post-title>
+EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기
+</h1>
+<div class=post-meta>April 1, 2017&nbsp;·&nbsp;3 min
+</div>
+</header>
+<div class=post-content><h2 id=summary>Summary<a hidden class=anchor aria-hidden=true href=#summary>#</a></h2>
+<hr>
+<p>Docker의 개념을 간단히 살펴보고 EC2 ubuntu instance에 Docker를 설치해보자.</p>
+<hr>
+<h2 id=순서>순서<a hidden class=anchor aria-hidden=true href=#순서>#</a></h2>
+<hr>
+<ol>
+<li>Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기</li>
+<li>접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기</li>
+<li>EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기</li>
+<li>Bitbucket을 사용하여 git repository 생성하기</li>
+<li>Express JS를 사용하여 Node 서버 구축하기</li>
+<li>테스트로 PM2를 사용하여 EC2에 Node 서버 배포하기</li>
+<li>Node 서버를 바탕으로 Dockerfile로 만들기</li>
+<li>Docker Hub의 automated build를 사용하여 Docker image를 만들기</li>
+<li>만들어진 Docker image를 EC2 인스턴스에 배포하기</li>
+</ol>
+<hr>
+<h2 id=docker-란>Docker 란?<a hidden class=anchor aria-hidden=true href=#docker-란>#</a></h2>
+<hr>
+<p>공식사이트의 소개를 보면 이렇게 말한다.</p>
+<h5 id=package-software-into-standardized-units-for-development-shipment-and-deployment>Package software into standardized units for development, shipment and deployment<a hidden class=anchor aria-hidden=true href=#package-software-into-standardized-units-for-development-shipment-and-deployment>#</a></h5>
+<p>패키지 소프트웨어를 개발 및 구축, 배포를 위한 표준화된 단위로.</p>
+<p>이말은 도커는 하나의 패키징된 소프트웨어로 만들어 배포를 하는 도구로 활용할 수 있고 도커는 이러한 단위라고 말하고 있다. 이전까지는 VMware, Microsoft Hyper-V(Virtual PC), Virtual Box와 같은 가상머신(Virtual Machine)에 리눅스를 올려 작업하였다.</p>
+<p>이미지를 백업하고 관리상의 이점은 분명히 있었지만 성능적인 이슈가 문제였다. 가상머신에는 OS이미지가 포함되어 있기 때문에 무겁고 네트워크적으로 가상화이미지에 데이터를 주고 받는 것도 부담된다. 또한, CPU가상화를 위한 기능이 아직까지는 실제 머신의 성능까지 이끌지는 못한다.</p>
+<p>하지만 이러한 문제를 해결하기 위해 나타난 것이 반가상화(Paravirtualization) 방식이다. OS자원은 호스트와 공유하여 이미지 용량의 감소된다. 가상화 레이어가 없기 때문에 커널과 직접적으로 사용하기 때문에 빠른 네트워크 응답과 하드웨어 성능을 이끌어낼 수 있다. 아래 이미지는 Docker의 성능분석 자료이다. Native와 동일한 성능을 내고 있음을 알 수 있다.</p>
+<p><img loading=lazy src=/images/aws/ec2/docker_performance.png alt=docker_performance>
+</p>
+<ul>
+<li>출처: <a href=https://blogs.vmware.com/performance/2014/10/docker-containers-performance-vmware-vsphere.html>https://blogs.vmware.com/performance/2014/10/docker-containers-performance-vmware-vsphere.html</a></li>
+</ul>
+<p>아래의 사진을 보면 각 컨테이너는 운영체제의 Kernel 즉 핵심을 공유하고 있고 그 안에서 경량화되고 독립적인, 실행가능한 패키지의 한 조각으로 존재한다.</p>
+<p>이러한 컨테이너는 이것들을 실행하기 위한 모든 것을 포함하고 있으며 code, system tools, system libraries와 같은 기능과 정보를 갖고 있다.</p>
+<p>이 개념을 사용하면 리눅스, 윈도우 베이스의 어플리케이션까지 환경에 상관없이 사용가능한 앱을 구축할 수 있다고 한다. (하지만 경험해본 결과 안되는 경우도 있다. 라즈베리파이와 같은 ARM 기반의 하드웨어에는 docker container가 정상적으로 동작하지 않을 때도 있고, MongoDB의 wiredtiger 같은 DB엔진은 windows에서 filesystem이 호환되지 않아 동작하지 않는다. 하지만 보편적으로는 문제없이 가동된다.)</p>
+<p><img loading=lazy src=/images/aws/ec2/docker.png alt=Docker>
+</p>
+<hr>
+<h2 id=docker-설치하기>Docker 설치하기<a hidden class=anchor aria-hidden=true href=#docker-설치하기>#</a></h2>
+<hr>
+<p>도커에 대해 기본적인 개념을 알아봤다. 상세한 내용은 아래 References를 참고하면 좋은 내용을 얻을 수 있을 것이다.</p>
+<p>먼저 이전에 만든 EC2 인스턴스에 ubuntu 계정으로 SSH로 접속한다.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e># 먼저 Package Database를 update한다.</span>
+$ sudo apt-get update
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e># Docker 공식페이지의 keyserver에서 GPG key를 추가한다.</span>
+$ sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e># Docker repository를 APT sources에 추가한다.</span>
+$ sudo apt-add-repository <span style=color:#e6db74>&#39;deb https://apt.dockerproject.org/repo ubuntu-xenial main&#39;</span>
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e># 새로 추가된 Docker package를 업데이트한다.</span>
+$ sudo apt-get update
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e># Default Ubuntu 16.04 repository 대신에 Docker repository로 부터 install하는 것을 확인한다.</span>
+$ apt-cache policy docker-engine
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e># docker-engine을 설치한다.</span>
+$ sudo apt-get install -y docker-engine
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e># Daemon에서 docker가 실행되고 있는지 확인한다. CentOS의 경우에는 별도로 Daemon으로 실행해주어야 한다.</span>
+$ sudo systemctl status docker
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e># 현재 접속한 ubuntu 계정을 docker 실행 그룹에 포함시켜준다. 이전에 생성한 docker 계정도 포함시켜주자.</span>
+$ sudo usermod -aG docker <span style=color:#66d9ef>$(</span>whoami<span style=color:#66d9ef>)</span>
+$ sudo usermod -aG docker docker
+</code></pre></div><hr>
+<h2 id=docker-실행해보기>Docker 실행해보기<a hidden class=anchor aria-hidden=true href=#docker-실행해보기>#</a></h2>
+<hr>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e># Docker의 images를 pull해서 확인해보자.</span>
+$ docker pull hello-world
+$ docker images
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e># Docker container를 생성해보자.</span>
+$ docker run hello-world
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e># Docker container의 상태를 확인해보자.</span>
+$ docker ps
+</code></pre></div><p>여기서 docker ps를 할 경우에 아무것도 나타나지 않는 것을 볼 수 있다. container가 Daemon에서 동작하는 것이 아닌 한번 실행하고 종료되었기 때문에 실행되고 있는 컨테이너 목록에 나타나지 않는 것이다. 모든 컨테이너의 상태를 보려면 아래와 같이 확인한다.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e># 모든 Docker container의 상태를 확인해보자.</span>
+$ docker ps -a
+</code></pre></div><p>컨테이너의 STATUS를 보면 Exited (0) ~~~ ago 라는 문구를 볼 수 있다. 이미 종료되었다는 의미이다.</p>
+<p>컨테이너를 삭제해보자. CONTAINER_ID 부분에 삭제하고자 하는 docker container의 아이디를 입력한다. 전부 입력할 필요 없이 첫 글자 또는 두글자만 입력해도 삭제된다. 만약에 여러 컨테이너일 경우에는 구분되는 값까지만 입력하면 삭제된다.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e># Docker container를 삭제하기</span>
+$ docker rm CONTAINER_ID
+</code></pre></div><h2 id=references>References<a hidden class=anchor aria-hidden=true href=#references>#</a></h2>
+<ul>
+<li><a href=https://www.docker.com/what-docker>https://www.docker.com/what-docker</a></li>
+<li><a href=http://pyrasis.com/Docker/Docker-HOWTO>http://pyrasis.com/Docker/Docker-HOWTO</a></li>
+<li><a href=https://www.slideshare.net/pyrasis/docker-docker-38286477>https://www.slideshare.net/pyrasis/docker-docker-38286477</a></li>
+<li><a href=https://subicura.com/2017/01/19/docker-guide-for-beginners-1.html>https://subicura.com/2017/01/19/docker-guide-for-beginners-1.html</a></li>
+<li><a href=https://docs.docker.com/engine/installation/linux/ubuntu/>https://docs.docker.com/engine/installation/linux/ubuntu/</a></li>
+<li><a href=https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04>https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04</a></li>
+</ul>
+</div>
+<footer class=post-footer>
+<ul class=post-tags>
+<li><a href=https://novemberde.github.io/tags/ec2/>ec2</a></li>
+<li><a href=https://novemberde.github.io/tags/docker/>docker</a></li>
+<li><a href=https://novemberde.github.io/tags/%EB%8F%84%EC%BB%A4/>도커</a></li>
+<li><a href=https://novemberde.github.io/tags/%EC%84%A4%EC%B9%98/>설치</a></li>
+<li><a href=https://novemberde.github.io/tags/%EC%9C%A0%EC%A0%80/>유저</a></li>
+<li><a href=https://novemberde.github.io/tags/%EA%B6%8C%ED%95%9C/>권한</a></li>
+</ul>
+<nav class=paginav>
+<a class=prev href=https://novemberde.github.io/post/2017/04/01/Docker_4/>
+<span class=title>« Prev Page</span>
+<br>
+<span>Bitbucket을 사용하여 git repository 생성하기</span>
+</a>
+<a class=next href=https://novemberde.github.io/post/2017/04/01/Docker_5/>
+<span class=title>Next Page »</span>
+<br>
+<span>Express JS를 사용하여 Node 서버 구축하기</span>
+</a>
+</nav>
+</footer>
+<div id=disqus_thread></div>
+<script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return}var b=document,a=b.createElement('script');a.async=!0,a.src='//novemberde-github-io.disqus.com/embed.js',a.setAttribute('data-timestamp',+new Date),(b.head||b.body).appendChild(a)})()</script>
+<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript>
+<a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a>
+</article>
+</main>
+<footer class=footer>
+<span>&copy; 2021 <a href=https://novemberde.github.io/>Novemberde's Blog</a></span>
+<span>
+Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
+</span>
+</footer>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a>
+<script>let menu=document.getElementById('menu');menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)},document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
+</body>
+</html>

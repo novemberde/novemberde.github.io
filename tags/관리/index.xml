@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>관리 on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/%EA%B4%80%EB%A6%AC/</link>
+    <description>Recent content in 관리 on Novemberde&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Sat, 21 Oct 2017 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/%EA%B4%80%EB%A6%AC/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Jenkins의 Blue ocean을 활용하여 배포 관리하기</title>
+      <link>https://novemberde.github.io/post/2017/10/21/Jenkins/</link>
+      <pubDate>Sat, 21 Oct 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/10/21/Jenkins/</guid>
+      <description>Summary  Jenkins는 CD/CI로 가장 알려진 도구이다. 이번에는 Jenkins 설정부터 시작하여 Pipeline으로 배포관리하는 과정을 정리해본다.
+ Jenkins로 기본 설정하기  Jenkins를 Install Jenkins를 참고하여 설치한다.
+설치하여 맨처음 접속하면 아래와 같은 화면이 나타난다. 다음의 명령어로 나온 텍스트를 입력한다.
+$ cat /var/jenkins_home/secrets/initialAdminPassword  Customize Jenkins화면에서 여기서는 크게 설정할 필요없이 Install suggested plugins을 선택한다.
+이후에 해당 플러그인을 설치하고 관리자 계정을 설정할 수 있다.
+테스트를 위해 계정 정보는 다음과 같이 설정한다.
+ 계정명: admin 암호: 1234 이름: admin 이메일 주소: 본인 이메일 주소   Jenkins 관리 &amp;gt; 플러그인 관리 &amp;gt; 설치 가능 으로 들어가서 Blue ocean을 선택하여 재시작없이 설치하기 버튼을 클릭한다.</description>
+    </item>
+    
+  </channel>
+</rss>

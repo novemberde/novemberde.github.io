@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>switch on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/switch/</link>
+    <description>Recent content in switch on Novemberde&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Wed, 20 Jun 2018 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/switch/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS Configure 여러 계정으로 스위칭하며 사용하기</title>
+      <link>https://novemberde.github.io/post/2018/06/20/AWS-config-switching/</link>
+      <pubDate>Wed, 20 Jun 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2018/06/20/AWS-config-switching/</guid>
+      <description>Summary  개인용 개발계정, 회사계정, 워크샵 전용 계정 등등 여러 계정들을 사용하다보니 Default로 Access Key ID 와 Secret Access Key를 관리하고 싶어졌다. Default로 두고 사용하다가 잘못하면 회사계정에 잘못된 인프라를 생성 및 변경할 수도 있기 때문이다.
+AWS Configure &amp;ndash;profile  기본적인 aws cli를 설정하는 것은 어렵지 않다. AWS Console의 IAM에서 유저를 생성하고 Access Key를 생성하면 된다. 생성된 키를 통해 로컬이 AWS의 권한을 사용하도록 설정하는 것은 다음과 같다.
+# 생성된 키와 리전을 입력하면 된다.</description>
+    </item>
+    
+  </channel>
+</rss>

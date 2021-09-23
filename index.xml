@@ -1,0 +1,790 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/</link>
+    <description>Recent content on Novemberde&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Sun, 19 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>https://novemberde.github.io/about/</link>
+      <pubDate>Sun, 19 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/about/</guid>
+      <description>Byun Kyuhyun? 유도와 주짓수를 하며 로드바이크를 즐기는 개발자.
+The developer who enjoy riding a bicycle and playing judo &amp;amp; jiu-jitsu.
+ Github Linkedin  </description>
+    </item>
+    
+    <item>
+      <title>minikube로 docker와 docker-compose를 대체하기</title>
+      <link>https://novemberde.github.io/post/2021/09/02/podman-minikube/</link>
+      <pubDate>Sun, 12 Sep 2021 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2021/09/02/podman-minikube/</guid>
+      <description>Docker desktop이 유료로 전환된다는 소식이 있다. (링크)
+이 소식을 들은 많은 개발자들은 당황했을거라 생각하는데 언제나 그랬듯이 대안은 있다. 사내에 이미 이런 내용에 대해서 대응하신 분이 있고, 그걸 글로 녹여보려고 한다.(Ian 감사해요) 아래 내용은 Mac에만 해당되며, Window는 별도의 방법을 찾아야할지도 모른다.
+ Docker Desktop 삭제하기 이건 어렵지 않다. 다음 그림과 같이 docker desktop &amp;gt; Preferences &amp;gt; troubleshootings &amp;gt; uninstall 을 눌러 삭제한다.(그림참고)
+그리고 말끔하게 Applications(응용프로그램)에 있는 docker desktop도 삭제한다.
+minikube 설치하기 m1 mac인 경우에는 &amp;ldquo;Disable all drivers except &amp;ldquo;docker&amp;rdquo; and &amp;ldquo;ssh&amp;rdquo; on darwin/arm64&amp;rdquo; PR의 내용을 요약하자면, minikube에서는 m1 mac을 사용할 수 없다는 내용이다.</description>
+    </item>
+    
+    <item>
+      <title>잔디 월간일잘러: 빠르게 성장하는 당근마켓에서 효율적으로 일하는 방법</title>
+      <link>https://novemberde.github.io/post/2021/08/31/Jandi-monthly/</link>
+      <pubDate>Tue, 31 Aug 2021 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2021/08/31/Jandi-monthly/</guid>
+      <description>Jandi라는 업무메신저를 개발하는 토스랩에서 어떻게 일하는지 공유할 수 있냐고 요청이 왔다. 이번에 번아웃, One-on-one Meeting, 그리고 회의등에 대해서 고민을 많이 했는데, 마침 적절한 기회라 생각해서 참여했다.
+역시 전문적인 사람들이라 인터뷰 내용을 블로그에 깔끔하게 정리해주셨는데, 강조한 내용들을 그림으로 넣어주어 이해를 도왔다.
+자세한 내용은 Youtube 영상 및 블로그 글을 참고하길 바란다.
+ Youtube  Jandi Blogs  http://blog.jandi.com/ko/2021/08/31/how_to_work_carrot_interview/  References  http://blog.jandi.com/ko/2021/08/31/how_to_work_carrot_interview/ https://www.youtube.com/watch?v=5I94tQJUrh8  </description>
+    </item>
+    
+    <item>
+      <title>고언어(Golang) HACKING.md 내용 정리</title>
+      <link>https://novemberde.github.io/post/2021/04/05/Golang-HACKING/</link>
+      <pubDate>Mon, 05 Apr 2021 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2021/04/05/Golang-HACKING/</guid>
+      <description>Golang은 Open source project 이며 모든 개발 내역이 Github에 코드로 구현되어 있다. 하나하나의 구현 내용을 이해하고 싶다면 각 패키지를 읽어보며 이해할 수 있다. 그렇지만 방대한 양이기 때문에 처음에 접하는 경우에는 어디서부터 읽어야할지, 그리고 기본적인 구조를 어떻게 잡아야하는지 어렵기만 하다.
+그렇다면 Golang의 기본적인 구조에 대해서 이해하고 싶다면 어떻게 시작해야할까? 다행히도 고언어 개발자들은 HANKING.md에 기본적인 내용을 정리해두었다. 고언어의 런타임이 어떤 구조로 이뤄져 있는지, 그리고 동시성 처리를 위한 방식이나 메모리 관리 측면에서는 어떻게 하고 있는지 등 다양한 내용이 정리되어 있다.</description>
+    </item>
+    
+    <item>
+      <title>AWS re:Invent Recap For Data analyst</title>
+      <link>https://novemberde.github.io/post/2021/01/15/AWS-Glue-DataBrew/</link>
+      <pubDate>Fri, 15 Jan 2021 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2021/01/15/AWS-Glue-DataBrew/</guid>
+      <description>AWS re:Invent 2020 에서 새로 출시한 AWS Glue DataBrew라는 서비스를 살펴보고, 기존의 Data engineer의 역할을 DataBrew로 어떻게 대체할 수 있는지 설명한다. 마지막으로 DataBrew를 통해 코드 한 줄 없이 ETL을 하는 과정을 데모로 확인한다.
+Slide Share   데이터 분석가를 위한 AWS 신규 서비스 소개 - 변규현 SW 엔지니어, 당근마켓  from Amazon Web Services Korea  Youtube  Reference  AWS re:Invent recap 2020 행사 링크 https://pages.awscloud.com/aws-reinvent-recap-kr-reg.html  </description>
+    </item>
+    
+    <item>
+      <title>당근마켓의 고언어 도입기, 그리고 활용법</title>
+      <link>https://novemberde.github.io/post/2020/11/24/Golang-use-case-in-karrot/</link>
+      <pubDate>Tue, 24 Nov 2020 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2020/11/24/Golang-use-case-in-karrot/</guid>
+      <description>당근마켓에 들어와서 고언어를 어떻게 도입하고, 어떻게 활용했는지에 대해서 정리해보았다. 서비스가 성장함에 따라서 요구하는 조건은 달라지고 이에 최적화된 언어를 도입하고, 기존 서비스에서 필요한 곳만 하나씩 고언어를 통해 플랫폼화하는 방법을 정리했다.
+Slide Share   당근마켓 고언어 도입기, 그리고 활용법  from Kyuhyun Byun  Youtube  Reference  어쩌다 밋업 링크 https://www.facebook.com/1512494142177634/posts/3692166177543742/  </description>
+    </item>
+    
+    <item>
+      <title>RDS PostgreSQL에서 Aurora PostgreSQL Migration 하기</title>
+      <link>https://novemberde.github.io/post/2020/10/17/RDS-to-aurora/</link>
+      <pubDate>Sat, 17 Oct 2020 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2020/10/17/RDS-to-aurora/</guid>
+      <description>RDS PostgreSQL에서 Aurora PostgreSQL을 도입한 후기
+Presentation   RDS에서 Aurora PostgreSQL Migration한 후기  from Kyuhyun Byun  Youtube  Reference  AWS Community Day 2020 소개 링크 https://pages.awscloud.com/aws-community-day-online-2020.html  </description>
+    </item>
+    
+    <item>
+      <title>Handle massive traffic with serverless</title>
+      <link>https://novemberde.github.io/post/2020/07/10/Handle-massive-traffic-with-serverless/</link>
+      <pubDate>Fri, 10 Jul 2020 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2020/07/10/Handle-massive-traffic-with-serverless/</guid>
+      <description>The journey to adopt the serverless architecture from beginning to advanced.
+Presentation   Handle massive traffic with serverless  from Kyuhyun Byun </description>
+    </item>
+    
+    <item>
+      <title>Go언어로 서버리스 서비스 시작하기</title>
+      <link>https://novemberde.github.io/post/2019/12/22/Go-serverless/</link>
+      <pubDate>Sun, 22 Dec 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2019/12/22/Go-serverless/</guid>
+      <description>AWS에서 서버리스로 구현하는 앱은 보통 Javascript 또는 Python으로 작성된다. 그렇지만 AWS Lambda에서는 거의 모든 언어를 지원하고 있다. 더욱이 인프라 및 서버사이드에서 이뤄지는 프로젝트는 대부분 고언어로 작성되고 있다. 생산성 뿐만 아니라 배포시에도 이점을 가져가고 있기 때문이다. Serverless의 장단점에 대해서 이야기하고, Go 언어를 통해 서버리스 Todo 앱을 작성하고 배포하는 예제를 Golang Korea Meetup에서 발표하였다. 다음은 발표 때 사용했던 슬라이드 및 참고한 자료들이다.
+Presentation   Start Serverless with Golang!  from Kyuhyun Byun  References  https://github.</description>
+    </item>
+    
+    <item>
+      <title>Let&#39;s start SVELTE, goodbye React &amp; Vue</title>
+      <link>https://novemberde.github.io/post/2019/10/11/Svelte-revealjs/</link>
+      <pubDate>Fri, 11 Oct 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2019/10/11/Svelte-revealjs/</guid>
+      <description>W3C Conference Korea 2019  View presentation on new tab References  https://www.44bits.io/ko/post/direnv_for_managing_directory_environment  </description>
+    </item>
+    
+    <item>
+      <title>Direnv를 활용한 프로젝트 별 환경설정하기</title>
+      <link>https://novemberde.github.io/post/2019/10/04/Direnv/</link>
+      <pubDate>Fri, 04 Oct 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2019/10/04/Direnv/</guid>
+      <description>현재 Amazon EKS위에 컨테이너를 배포하기 위한 환경을 구축중이다. 각 운영되는 서비스 또는 Repository마다 환경들이 다르고, 개인으로 운영하는 서비스도 가끔 확인해야하는데 Global로 AWS 또는 K8s 환경 설정을 하면 귀찮아지기 때문에 폴더별로 모든 환경을 관리하고 싶어졌다.
+Direnv를 활용하면 directory마다 환경을 따로 관리할 수 있는데, 매번 같은 키를 넣고 관리하기도 귀찮아서 Direnv에서 사용하는 변수들도 따로 관리하고 있다. 다음은 현재 사용하는 패턴이다.
+Direnv 설치하기 다음은 참고한 문서이다.
+direnv로 디렉토리(프로젝트) 별 개발환경 구축하기
+AWS 설정 옮겨가며 편하게 사용하기 AWS CLI를 계정별로 관리하고 싶을 때 profile 옵션을 사용한다.</description>
+    </item>
+    
+    <item>
+      <title>MySQL에서 DB스키마 작성시 주의할 점들</title>
+      <link>https://novemberde.github.io/post/2019/06/10/MySQL-Desgin-cheatsheet/</link>
+      <pubDate>Mon, 10 Jun 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2019/06/10/MySQL-Desgin-cheatsheet/</guid>
+      <description>신규프로젝트를 진행할 경우 디비 스키마를 설계를 해야한다. 데이터의 타입부터 외래키 설정등 신경써야하는 부분들이 생각보다 자잘하게 있다. 이 경우에 주의해야하는 점들을 정리해보았다. 이 문서는 지속적으로 수정될 예정이다.
+Datatype MySQL에서 사용하는 데이터 타입은 다음과 같다.
+Numeric Type  BIT[(M)] - A bit-value type. M indicates the number of bits per value, from 1 to 64. The default is 1 if M is omitted. TINYINT[(M)] [UNSIGNED] [ZEROFILL] - A very small integer. The signed range is -128 to 127.</description>
+    </item>
+    
+    <item>
+      <title>Serverless Application CI/CD on CircleCI</title>
+      <link>https://novemberde.github.io/post/2019/05/13/CircleCI-1st-Meetup/</link>
+      <pubDate>Mon, 13 May 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2019/05/13/CircleCI-1st-Meetup/</guid>
+      <description>Summary  CircleCI Korea User Group 첫번째 밋업에서 서버리스 앱을 배포하기 위해 CircleCI 상에서 어떻게 빌드하는지 알아보았다. 또한, CircleCI의 기본적인 기능 및 특징에 대해서 살펴본다.
+ 발표자료  발표 슬라이드    CircleCI로 Serverless API의 CI/CD 환경 구축하기  from Kyuhyun Byun  </description>
+    </item>
+    
+    <item>
+      <title>Serverless Websocket 톺아보기</title>
+      <link>https://novemberde.github.io/post/2019/04/10/Serverless-Websocket/</link>
+      <pubDate>Wed, 10 Apr 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2019/04/10/Serverless-Websocket/</guid>
+      <description>Summary  AWSKRUG 판교 밋업에서 서버리스 웹소켓에 대한 내용을 공유하였다.
+ 발표자료 DEMO  발표 슬라이드    Serverless websocket 톺아보기  from Kyuhyun Byun  </description>
+    </item>
+    
+    <item>
+      <title>Native addon을 포함하여 Node.js &#43; Typescript &#43; Serverless 빌드 및 배포하기</title>
+      <link>https://novemberde.github.io/post/2019/02/14/Ts-Serverless-Build/</link>
+      <pubDate>Thu, 14 Feb 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2019/02/14/Ts-Serverless-Build/</guid>
+      <description>AWSKRUG Serverless Group에서 발표한 자료입니다. C++로 빌드한 Native addon을 Serverless 환경에서 사용할 때 빌드 및 배포하는 방법을 다루었습니다.
+발표자료   Native addon을 포함하여 Node.js + Typescript + Serverless 빌드 및 배포하기  from Kyuhyun Byun  References  https://www.slideshare.net/KyuhyunByun1/native-addon-nodejs-typescript-serverless  </description>
+    </item>
+    
+    <item>
+      <title>Amazon Timestream 시계열 데이터 전용 DB 소개</title>
+      <link>https://novemberde.github.io/post/2019/01/25/Timestream/</link>
+      <pubDate>Fri, 25 Jan 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2019/01/25/Timestream/</guid>
+      <description>&amp;ldquo;시계열 데이터 전용 DB 소개&amp;quot;라는 주제로 2019년 1월 25일에 AWSKRUG re:Invent recap 행사에서 발표한 자료입니다.
+발표자료   Amazon Timestream 시계열 데이터 전용 DB 소개 :: 변규현 - AWS Community Day 2019  from AWS Korea UserGroup (AWS한국사용자모임)  References  https://www.slideshare.net/awskr/amazon-timestream-db https://pages.awscloud.com/aws-community-day-seoul-2019.html  </description>
+    </item>
+    
+    <item>
+      <title>2017년부터 2018년까지의 회고</title>
+      <link>https://novemberde.github.io/post/2019/01/01/Retrospect/</link>
+      <pubDate>Tue, 01 Jan 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2019/01/01/Retrospect/</guid>
+      <description>2017부터 2018년에 대해서 회고를 남기려고 한다. 어느때보다 치열하고 열심히 달려온 한해였다. 다음은 한해동한 진행했던 일들의 대한 목록은 다음과 같다.
+ AWSKRUG 회사 강의 활동   AWSKRUG 개발자 커리어에서 가장 크게 영향력을 준 모임이다. AWSKRUG는 Amazon Web Service Korea User Group의 약자로 AWS 한국 사용자 그룹이라고도 불린다. 이 모임에 처음으로 참여하게된 것은 2017년 4월 쯤이었다. 지난 2년여간 데이터 사이언스 그룹을 시작으로 거의 모든 모임에 참석하였다. AWSKRUG 통해 많은 것을 배울 수 있었다.</description>
+    </item>
+    
+    <item>
+      <title>OWASP TOP 10</title>
+      <link>https://novemberde.github.io/post/2018/11/02/OWASP/</link>
+      <pubDate>Fri, 02 Nov 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2018/11/02/OWASP/</guid>
+      <description>Summary  보안 취약점의 종류를 이해하고 정리한다. 보안은 개발속도를 늦추는 경우도 있지만 제품의 안정성과 신뢰성에 기여하기 때문에 필수적인 요소이다. 다음은 OWASP(The Open Web Application Security Project)의 년도별 TOP 10 취약점의 종류이다.
+2017    Injection
+  Broken Authentication
+  Sensitivy Data Exposure
+  XML External Entities(XXE)
+  Broken Access Control
+  Security Misconfiguration
+  Cross-Site Scripting(XXS)
+  Insecure Deserialization
+  Using Component with Known Vulnerabilities</description>
+    </item>
+    
+    <item>
+      <title>0원으로 시작하는 데이터 수집 및 분석</title>
+      <link>https://novemberde.github.io/post/2018/10/29/Potal-Analysis/</link>
+      <pubDate>Mon, 29 Oct 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2018/10/29/Potal-Analysis/</guid>
+      <description>Summary  부산 스마트 앱 개발자 포럼에서 서버리스를 활용하여 데이터를 수집 및 분석 후기를 공유하였다.
+ 발표자료 Github repo.  발표 슬라이드    0원으로 시작하는 서버리스 데이터 수집 및 분석  from Kyuhyun Byun  고찰  지난 여름부터 모아온 데이터를 분석하고 이 데이터를 기반으로 AWS의 데이터 처리 서비스들에 대해서 공부하는 계기였다. 실제로 현업에서 데이터를 분석할 일은 많다. 데이터를 쌓고 보기 쉽게 변환하는 과정 그리고 시각화까지 다양한 기술을 요구한다.</description>
+    </item>
+    
+    <item>
+      <title>Circle CI에서 Docker Build 하기</title>
+      <link>https://novemberde.github.io/post/2018/09/17/Circleci-docker/</link>
+      <pubDate>Mon, 17 Sep 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2018/09/17/Circleci-docker/</guid>
+      <description>Summary  현재 Terraform으로 ECS 인프라를 생성하고, CircleCI에서 docker image를 빌드하고 ECR에 푸시하는 과정을 자동화하고 있다. 이 과정에 있어서 docker image를 빌드하는 것에서 문제가 발생했다.
+CircleCI에서 script를 실행하는 환경은 Container 기반으로 되어 있기 때문이다. Docker image를 빌드하기 위해서는 docker가 설치되어 있는 환경이어야 했다.
+docker-in-docker라는 개념으로 docker hub에 &amp;ldquo;docker&amp;quot;라는 docker image가 있다. 하지만 이 이미지로는 프로덕션 이미지를 빌드하고 배포할 때 사용하는 기본 패키지가 없는데, 이러한 기본패키지를 추가하여 CircleCI에서 docker를 빌드할 수 있는 이미지 생성하는 방법 및 CircleCI 설정을 정리해보았다.</description>
+    </item>
+    
+    <item>
+      <title>2018년 AWS Serverless Hands-on 1, 손쉽게 시작하는 Serverless Architecture</title>
+      <link>https://novemberde.github.io/post/2018/07/02/Serverless-Handson-1/</link>
+      <pubDate>Mon, 02 Jul 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2018/07/02/Serverless-Handson-1/</guid>
+      <description>Summary  2018년 AWSKRUG에서 8회에 걸쳐 진행하는 핸즈온 중 하나인 Serverless Hands-on 입니다
+제목: 손쉽게 시작하는 Serverless Architecture
+내용: Serverless Architecture는 말그대로 서버를 올리지 않는 아키텍처를 의미합니다. 기존에는 각 서버에 운영하는 어플리케이션들을 배포했지만, Serverless Architecture를 적용하면 운영 부담없이 비지니스 로직에만 집중할 수 있습니다. 서버없이 Web Application과 Crawler를 만들어 운영이 필요없는 데모 서비스를 구성합니다.
+Serverless Group First Hands-on Part 1  AWSKRUG Serverless Group의 첫번째 핸즈온 Part.1 웹어플리케이션 만들기입니다.😁
+바로가기
+Serverless Group First Hands-on Part 2 AWSKRUG Serverless Group의 첫번째 핸즈온 Part.</description>
+    </item>
+    
+    <item>
+      <title>AWS Configure 여러 계정으로 스위칭하며 사용하기</title>
+      <link>https://novemberde.github.io/post/2018/06/20/AWS-config-switching/</link>
+      <pubDate>Wed, 20 Jun 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2018/06/20/AWS-config-switching/</guid>
+      <description>Summary  개인용 개발계정, 회사계정, 워크샵 전용 계정 등등 여러 계정들을 사용하다보니 Default로 Access Key ID 와 Secret Access Key를 관리하고 싶어졌다. Default로 두고 사용하다가 잘못하면 회사계정에 잘못된 인프라를 생성 및 변경할 수도 있기 때문이다.
+AWS Configure &amp;ndash;profile  기본적인 aws cli를 설정하는 것은 어렵지 않다. AWS Console의 IAM에서 유저를 생성하고 Access Key를 생성하면 된다. 생성된 키를 통해 로컬이 AWS의 권한을 사용하도록 설정하는 것은 다음과 같다.
+# 생성된 키와 리전을 입력하면 된다.</description>
+    </item>
+    
+    <item>
+      <title>Legacy android application, Kotlin 적용기</title>
+      <link>https://novemberde.github.io/post/2018/05/28/kotlin/</link>
+      <pubDate>Mon, 28 May 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2018/05/28/kotlin/</guid>
+      <description>Summary  안드로이드 개발 언어의 트렌드는 바뀌었다. 최근 Google I/O에서 나오는 샘플 코드들은 Kotlin으로 짜여져 있었다. 또한 안드로이드 개발 컨퍼런스의 주제는 Kotlin으로 개발한 경험담이 주를 이루고 있다.
+Kotlin으로 개발하는 것이 낫다는 내용을 많이 보기도 하였고 개발에 욕심이 있다보니, 이번에는 기존에 JAVA로 개발되어 있던 코드에 Kotlin을 적용하여 새로 구성하거나 변경하는 클래스를 Kotlin으로 구성해보았다.
+다음은 이런 과정을 거치면서 느낀 장점과 단점에 대한 고찰이다.
+고찰  Kotlin의 장점을 느끼기 전에는 치명적인 단점(?)과 싸워야만 한다.</description>
+    </item>
+    
+    <item>
+      <title>The difference among String, StringBuilder, and StringBuffer in JAVA</title>
+      <link>https://novemberde.github.io/post/2018/05/24/String/</link>
+      <pubDate>Thu, 24 May 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2018/05/24/String/</guid>
+      <description>Summary  If you&amp;rsquo;re a lazy JAVA developer, you concatenate Strings by using the plus sign (&amp;ldquo;Some text&amp;rdquo; + &amp;quot; added text&amp;quot;) But if you want to level-up your skills as a JAVA developer, you should be more careful about the Class that you choose. Let&amp;rsquo;s take a glance at the use cases of String, StringBuilder and StringBuffer.
+Feature of Classes  It&amp;rsquo;s necessary to be familiar with the Java API documents before getting your hands dirty.</description>
+    </item>
+    
+    <item>
+      <title>CircleCI에서 Github private repository를 npm module로 사용하기</title>
+      <link>https://novemberde.github.io/post/2018/05/16/CircleCI-npm-private-github/</link>
+      <pubDate>Wed, 16 May 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2018/05/16/CircleCI-npm-private-github/</guid>
+      <description>Summary  현재 공통적인 모듈을 Git으로 따로 관리하여 npm private module로 사용한다. 또한 Webpack을 사용하여 Typescript로 작성된 서버를 번들링한다. 로컬에서는 모두 정상적으로 동작하지만 CircleCI에서 빌드할 경우에는 CircleCI의 권한이 해당 repository에 대한 권한만 가지고 있기 때문에 npm private module을 가져올 수가 없다.
+이와같은 문제를 해결하기 위해서 트러블 슈팅을 하였다.
+Problem  npm install을 할 때에 github에 있는 repository를 사용하는 방법은 두가지가 있다.
+ https ssh  ssh로 사용할 경우 관련 명령어는 다음과 같다.</description>
+    </item>
+    
+    <item>
+      <title>GraphDB 란?</title>
+      <link>https://novemberde.github.io/post/2018/04/12/Neo4j/</link>
+      <pubDate>Thu, 12 Apr 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2018/04/12/Neo4j/</guid>
+      <description>Summary  각 사용자들의 연관 관계 분석을 위하여 GraphDB를 도입하려한다. 시작하기에 앞서서 GraphDB에 대해서 이해가 필요했다. 다음에서 GraphDB의 기본 내용을 담았다.
+Graph Database란?  In computing, a graph database is a database that uses graph structures for semantic queries with nodes, edges and properties to represent and store data. A key concept of the system is the graph (or edge or relationship), which directly relates data items in the store. The relationships allow data in the store to be linked together directly, and in many cases retrieved with one operation.</description>
+    </item>
+    
+    <item>
+      <title>NODE response를 apicache로 처리하기</title>
+      <link>https://novemberde.github.io/post/2018/03/01/Node_apicache/</link>
+      <pubDate>Thu, 01 Mar 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2018/03/01/Node_apicache/</guid>
+      <description>문제인식  서비스가 성장해가면서 기존에는 보이지 않던 문제점들이 나타났다. 처음에는 Slow query의 최적화를 필요로하지도 않았고, DB에 부하가 몰려서 Bottle neck point가 되는 것을 상상만 했지 직접 경험하지는 못했었다. 하지만 점차 Query의 optimization이 필요한 경우가 생겼고, DB로 몰리는 부하를 분산하기 위해 어떻게 처리해야하는지 고민하기 시작했다.
+ Cache me if you can 다행히도 AWSKRUG활동을 하면서 AWS re:Invent행사에 참석한 경험이 도움이 되었다. 들었던 세션중에서 가장 감명깊은 것중에 하나는 &amp;ldquo;Cache me if you can&amp;quot;이었다. 주된 내용은 점차 서비스가 커져감에 따라서 우린 Database로 몰리는 부하를 분산시켜야만 하고, 그것을 해결하기 위해서는 각 요청에 따라 Cache로 처리할 수 있는 부분은 모두 Cache로 해결해야 된다는 내용이었다.</description>
+    </item>
+    
+    <item>
+      <title>AWS Lambda에서의 Cold Start 문제 해결하기(Golang &#43; serverless framework)</title>
+      <link>https://novemberde.github.io/post/2018/02/02/Lambda_coldStart/</link>
+      <pubDate>Fri, 02 Feb 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2018/02/02/Lambda_coldStart/</guid>
+      <description>Summary  AWS Lambda와 API Gateway를 연동하여 웹서버를 Serverless architecture로 운영하고 있다. 관리할 서버가 없고 비지니스 로직에만 집중할 수 있어서 좋기도 하지만 항상 Lambda container가 대기중인 상태가 아니다 보니 Cold start관련하여 요청사항이 발생했다.
+일정시간이 경과된 후에 해당 페이지를 접속할 경우에 로딩이 3~4초이상 걸리기 때문에 사용이 불편하였다. 이를 해결하기 위해 5분마다 각 api를 health check하는 scheduler를 두기로 결정하였다. 그렇게되면 지속적인 lambda 호출로 인해 항상 하나이상의 lambda container가 대기하는 형태가 되어 lambda의 cold start의 가장 큰 시간을 소비하는 DB connection의 시간을 느낄 수 없다.</description>
+    </item>
+    
+    <item>
+      <title>AWS Lambda와 MySQL의 max connection 문제</title>
+      <link>https://novemberde.github.io/post/2018/01/29/Mysql_maxConnection/</link>
+      <pubDate>Mon, 29 Jan 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2018/01/29/Mysql_maxConnection/</guid>
+      <description>Summary  MySQL에서 Max Connection에 대해서 알아보려고 한다. AWS Lambda container가 지속적으로 생성될 때 Database가 감당할 수 있는 Max connection이 얼마인지 알아야 대응할 수 있기 때문이다. 만약 Lambda container가 MySQL이 감당할 수 없을 정도로 계속 생성된다면 Database에 connection이 일어나지 않게 되고, too many connections error가 발생하여 웹서버 역할을 해야하는 Lambda가 동작하지 않을 수 있다. 물론 MySQL에 접속하는 다른 Worker들도 동작하지 않는다.
+RDS를 사용하면 스케일 업이 될 때마다 Max connection 설정을 따로 하지 않더라도 알아서 늘어난다.</description>
+    </item>
+    
+    <item>
+      <title>ECS &amp; Fargate Demo</title>
+      <link>https://novemberde.github.io/post/2018/01/20/ECS_Fargate/</link>
+      <pubDate>Sat, 20 Jan 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2018/01/20/ECS_Fargate/</guid>
+      <description>Summary  &amp;ldquo;ECS와 Fargate&amp;quot;라는 주제로 2018년 1월 20일에 AWSKRUG re:Invent recap 행사에서 발표한 자료입니다.
+ 발표자료   ECS/Fargate와 함께하는 간편한 Docker 사용법 - 트랙2, Community Day 2018 re:Invent 특집  from AWS Korea UserGroup (AWS한국사용자모임)   발표 영상  데모로 시연한 샘플코드는 아래와 같습니다. https://github.com/novemberde/aws-fargate-demo  References   https://www.slideshare.net/awskr/ecs-fargate-2018 https://www.meetup.com/ko-KR/awskrug/events/245940818/ https://github.com/novemberde/aws-fargate-demo  </description>
+    </item>
+    
+    <item>
+      <title>Serverless &#43; AWS Lambda &#43; AWS CloudWatch &#43; Slack 를 활용한  Web crawler 만들기</title>
+      <link>https://novemberde.github.io/post/2017/12/31/Node-crawler/</link>
+      <pubDate>Sun, 31 Dec 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/12/31/Node-crawler/</guid>
+      <description>Summary  우리는 매일 각 웹사이트를 확인하여 뉴스를 취합한다. 별다른 요구사항 없이 직접 업무를 진행하시지만 이건 자동화해야된다는 생각이 들었다. 하루에 한 번 이뤄지는 일이니 주기적으로 슬랙에 최신 뉴스를 보내도록 자동화한다면 업무의 작은 시간도 아낄 수 있을 것이다. 그래서 이번에 크롤링 자동화 방법에 대해서 정리하려고 한다.
+Serverless framework를 활용하면 빠른 배포 및 관리가 가능하니 기술 스택을 다음과 같이 정했다.
+ AWS Lambda: javascript로 작성. got, cheerio를 사용하여 crawler 설계  got: Request 모듈.</description>
+    </item>
+    
+    <item>
+      <title>Android Webview에서 Javascript에러로 인해 뷰가 안나올 경우</title>
+      <link>https://novemberde.github.io/post/2017/12/19/Android-Webview/</link>
+      <pubDate>Tue, 19 Dec 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/12/19/Android-Webview/</guid>
+      <description>Summary  Javascript WebView로 특정 URL의 컨텐츠를 보여주는데 화면이 나오지 않았다. 현상은 배경색까지 나타나고 DOM이 뿌려지지 않는 문제였다. Webview에서 Unexpected token의 에러를 뿜었기 때문에 쉽게 Javascript 관련 오류라는 것을 알 수 있었고 Javascript error를 무시할 수 있도록 하는 메서드를 실행하였다.
+ Webview의 Setting에 setDomStorageEnabled(true)를 추가하기  기존의 코드는 다음과 같다
+public class MyWebView extends AppCompatActivity { private WebView webView; @Override protected void onCreate(Bundle savedStateInstance){ super.onCreate(savedStateInstance); setContentView(R.layout.webview); webView = ( WebView )findViewById( R.</description>
+    </item>
+    
+    <item>
+      <title>Docker와 DevOps에서 Serverless와 NoOps로의 여정</title>
+      <link>https://novemberde.github.io/post/2017/12/06/Docker-to-serverless/</link>
+      <pubDate>Wed, 06 Dec 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/12/06/Docker-to-serverless/</guid>
+      <description>Summary  &amp;ldquo;Docker와 DevOps에서 Serverless와 NoOps로의 여정&amp;quot;이라는 주제로 2017년 12월 06일에 W3C Conference에서 발표한 자료입니다.
+   Docker와 DevOps에서 Serverless와 NoOps로의 여정  from Kyuhyun Byun  데모로 시연한 샘플코드는 아래와 같습니다. https://github.com/novemberde/serverless-webapp-demo  References   https://www.slideshare.net/KyuhyunByun1/docker-devops-serverless-noops https://onoffmix.com/event/119375 https://github.com/novemberde/serverless-webapp-demo  </description>
+    </item>
+    
+    <item>
+      <title>EC2 meta data에 대해 알아보기</title>
+      <link>https://novemberde.github.io/post/2017/11/06/Instance_metadata/</link>
+      <pubDate>Wed, 06 Dec 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/11/06/Instance_metadata/</guid>
+      <description>Summary  Amazon EC2의 설정을 자동으로 하기 위해선 인스턴스의 정보를 받아와서 설정할 수 있어야 한다.
+예를 들어 특정 태그로 묶인 그룹에게 재가동시 소스코드 갱신과 서버 재가동의 명령어를 init.d에 등록했을 때 인스턴스 정보를 얻어온다면 개별적으로 인스턴스의 역할에 맞는 work load를 할당할 수 있을 것이다.
+ meta-data 확인하기  Metadata에 대해서 찾아보니 위키백과에 아래와 같이 쓰여 있었다.
+ 메타데이터(metadata)는 데이터(data)에 대한 데이터이다. 이렇게 흔히들 간단히 정의하지만 엄격하게는, Karen Coyle에 의하면 &amp;ldquo;어떤 목적을 가지고 만들어진 데이터 (Constructed data with a purpose)&amp;ldquo;라고도 정의한다.</description>
+    </item>
+    
+    <item>
+      <title>Node js 라이브러리 및 유용한 자료</title>
+      <link>https://novemberde.github.io/post/2017/11/05/Node.JS_Library/</link>
+      <pubDate>Sun, 05 Nov 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/11/05/Node.JS_Library/</guid>
+      <description>Summary  Node JS의 라이브러리가 워낙 많다보니 자주쓰는 라이브러리를 정리해야될 필요성을 느꼈다.
+그리고 재밌는 라이브러리를 리스트로 관리하지 않다보니 잊게 되었다.
+발견할 때마다 정리하고 라이브러리의 용도에 맞게 분류하여 나중에 필요할 경우 바로 사용할 수 있도록 한다.
+ 자주 쓰는 패키지    JavaScript utility library
+ underscore lodash    Year, month, date, time
+ moment.js    MarkDown
+ highlight.js prismjs    Ajax
+ request request-promise superagent axios got    Test</description>
+    </item>
+    
+    <item>
+      <title>TypeScript로 Node.js Express 서버 개발하기</title>
+      <link>https://novemberde.github.io/post/2017/10/22/Express-Typescript/</link>
+      <pubDate>Sun, 22 Oct 2017 13:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/10/22/Express-Typescript/</guid>
+      <description>Summary  최근에 직방의 AWS Lambda 코드를 세미나에서 스쳐지나가는 것을 보았다. TypeScript로 짜여져 있었고 나중에 지속적인 프로젝트 관리적인 이점이 있을 것으로 생각이 되기 때문에 TypeScript로 프로젝트를 구성해보는 것을 정리해보기로 결심했다.
+node.js 프로젝트 생성하기  먼저 프로젝트를 생성한다. 기존에 npm과 nodejs가 설치되어 있다는 전제하에 시작한다.
+만약 설치되어 있지 않다면 다음의 링크를 참고한다. https://nodejs.org/ko/download/package-manager/
+$ mkdir node_typescript $ npm init -y 그리고 편의를 위해 사전에 설치되어 있어야 하는 패키지들이 있다.
+ npx: global로 패키지를 설치하지 않더라도 프로젝트 내에서 사용할 수 있게 해준다.</description>
+    </item>
+    
+    <item>
+      <title>유용한 OS 명령어 모음</title>
+      <link>https://novemberde.github.io/post/2017/10/22/OS-Command/</link>
+      <pubDate>Sun, 22 Oct 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/10/22/OS-Command/</guid>
+      <description>Summary  개발을 하다가 명령어를 모두 기억하고 싶어도 잠깐 다른 업무를 하다가 다시하면 잊게되는 명령어들이 있다. 특히 OS 관련 명령어는 서버에 문제가 생겼을 때 사용하기 때문에 더욱 그렇다. 이번에는 자주 사용하지 않았으면 하는 명령어들을 정리해본다.
+ OS 명령어  sar
+ 리소스 사용 내역을 볼 수 있다. CPU 사용율 Idle 상태 상태 확인 I/O 의 사용율 메모리 사용율  $ sudo apt-get install sysstat $ sudo vi /etc/default/sysstat ENABLED=&amp;#34;true&amp;#34; $ sar -u 1 5 Linux 4.</description>
+    </item>
+    
+    <item>
+      <title>Jenkins의 Blue ocean을 활용하여 배포 관리하기</title>
+      <link>https://novemberde.github.io/post/2017/10/21/Jenkins/</link>
+      <pubDate>Sat, 21 Oct 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/10/21/Jenkins/</guid>
+      <description>Summary  Jenkins는 CD/CI로 가장 알려진 도구이다. 이번에는 Jenkins 설정부터 시작하여 Pipeline으로 배포관리하는 과정을 정리해본다.
+ Jenkins로 기본 설정하기  Jenkins를 Install Jenkins를 참고하여 설치한다.
+설치하여 맨처음 접속하면 아래와 같은 화면이 나타난다. 다음의 명령어로 나온 텍스트를 입력한다.
+$ cat /var/jenkins_home/secrets/initialAdminPassword  Customize Jenkins화면에서 여기서는 크게 설정할 필요없이 Install suggested plugins을 선택한다.
+이후에 해당 플러그인을 설치하고 관리자 계정을 설정할 수 있다.
+테스트를 위해 계정 정보는 다음과 같이 설정한다.
+ 계정명: admin 암호: 1234 이름: admin 이메일 주소: 본인 이메일 주소   Jenkins 관리 &amp;gt; 플러그인 관리 &amp;gt; 설치 가능 으로 들어가서 Blue ocean을 선택하여 재시작없이 설치하기 버튼을 클릭한다.</description>
+    </item>
+    
+    <item>
+      <title>EC2에서 Docker와 Docker-compose 사용하기</title>
+      <link>https://novemberde.github.io/post/2017/10/20/Docker/</link>
+      <pubDate>Fri, 20 Oct 2017 13:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/10/20/Docker/</guid>
+      <description>2017.06.08에 AWSKRUG에서 EC2에서 Docker와 Docker-compose 사용하기라는 주제로 발표했던 자료입니다.
+ </description>
+    </item>
+    
+    <item>
+      <title>CodeCommit 과 SourceTree 연동</title>
+      <link>https://novemberde.github.io/post/2017/10/20/CodeCommit/</link>
+      <pubDate>Fri, 20 Oct 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/10/20/CodeCommit/</guid>
+      <description>Summary  AWS CodeCommit은 AWS 완전 관리형 private git repository로 인데, 콘솔화면이 조금 부실해서 콘솔화면에서 repository 관리가 좋아보이진 않았다.
+SourceTree라는 Atlassian의 Git GUI tool로 AWS CodeCommit을 연동해보자.
+ AWS CodeCommit에서 Git repository 생성하기  AWS CodeCommit화면으로 들어가서 Create repository를 하면 아래와 같은 화면이 나오는데 각 항목에 내용을 입력하자.
+ Repository name: test Description: CodeCommit with SourceTree   Local에 Git repository 설정하기  Repository를 생성하면 다음과 같은 화면이 나타난다.
+주목해야 할 부분은 빨간 박스로 표시해놓았다.</description>
+    </item>
+    
+    <item>
+      <title>Git pull all sub repository of certain directory.</title>
+      <link>https://novemberde.github.io/post/2017/09/26/git_puller/</link>
+      <pubDate>Tue, 26 Sep 2017 13:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/09/26/git_puller/</guid>
+      <description>Summary  여러 프로젝트를 동시에 진행하다보니 여러 repository를 한번에 갱신할 필요성이 생겼다. 일일이 하나씩 들어가서 git pull을 하려니 은근 귀찮았다. 그렇기 때문에 특정 디렉터리에 있는 all repositories(sub directories)에 대해서 git을 갱신해주는 코드를 개발하였다. 코드는 github에 공개되어 있으며 사용 방법은 아래와 같다.
+ $ npm install -g git-puller Usage Usage: git-puller [options] Options: -V, --version output the version number -d, --directory [value] Target directory -r, --remote [value] Git Remote (default: origin) -b, --branch [value] Git branch (default: master) -h, --help output usage information examples: git-puller -d .</description>
+    </item>
+    
+    <item>
+      <title>프로그래밍을 막 시작했을 때 만든 Dragon ball 게임</title>
+      <link>https://novemberde.github.io/post/2017/09/26/dragon_ball_game/</link>
+      <pubDate>Tue, 26 Sep 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/09/26/dragon_ball_game/</guid>
+      <description>Summary  When I first started programming, I went on a game project to familiarize myself with Javascript.
+I thought there would be a problem with the image license. If there&amp;rsquo;s a problem, please comment below. But, I decided to release this code on Github and hope to be helpful for juniors.  Please enjoy this game. Thanks.
+ References   https://github.com/novemberde/js-game/tree/master/dragon_ball  </description>
+    </item>
+    
+    <item>
+      <title>AWS ALB로 ElasticBeanstalk 배포하기</title>
+      <link>https://novemberde.github.io/post/2017/09/25/ALB_to_elasticbeanstalk/</link>
+      <pubDate>Mon, 25 Sep 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/09/25/ALB_to_elasticbeanstalk/</guid>
+      <description>Summary  ElasticBeanstalk를 Docker로 배포하기 위해 살펴보았는데 문제점이 있었다. 기존의 사용하던 ALB와 연동하여 사용하고 싶었지만 설정화면에서는 Classic Load Balancer만 지원되었기 때문이다. eb-cli를 사용하여 AutoScaling Group을 생성하여 ALB의 Target Group에 설정하여 앱을 배포해보자.
+ EB cli 설치하기  Install eb cli를 참고하여 로컬에 eb-cli를 설치하자.
+사전에 python이 2.7 또는 3.4이상의 버전이 설치되어 있어야 한다.
+$ pip install awsebcli --upgrade --user 설치 후에 환경변수에 아래와 같은 path를 추가하자.
+ Linux – ~/.local/bin macOS – ~/Library/Python/3.</description>
+    </item>
+    
+    <item>
+      <title>Athena, QuickSight를 활용한 공공데이터 분석</title>
+      <link>https://novemberde.github.io/post/2017/09/14/public_data_athena/</link>
+      <pubDate>Thu, 14 Sep 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/09/14/public_data_athena/</guid>
+      <description>빅데이터를 직접 모으는 방법이 있지만, 공공데이터 포털과 네이버 데이터랩처럼 정해진 API를 통해 접근하거나 데이터를 JSON, XML, CSV와 같은 형식으로 지원해주는 사이트들을 적극 활용해볼 수 있습니다.
+ AWSKRUG 류한진 님과 함께 준비한 Athena, QuickSight Hands-on lab입니다. 아래 링크는 발표자료 및 Hands-on 문서입니다.
+ 발표자료 Hands-on  아래는 류한진 님과 함께 작성한 &amp;lt;공공데이터 + Athena + QuickSight&amp;gt; 튜토리얼입니다.
+ 공공데이터를 이용한 데이터 만들기부터 분석까지  개요 빅데이터를 직접 모으는 방법이 있지만, 공공데이터 포털과 네이버 데이터랩처럼 정해진 API를 통해 접근하거나 데이터를 JSON, XML, CSV와 같은 형식으로 지원해주는 사이트들을 적극 활용해볼 수 있다.</description>
+    </item>
+    
+    <item>
+      <title>Electron으로 Cloud 9 (c9.io) desktop app 만들기</title>
+      <link>https://novemberde.github.io/post/2017/08/18/make_c9_app/</link>
+      <pubDate>Fri, 18 Aug 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/08/18/make_c9_app/</guid>
+      <description>Summary  c9.io를 살펴보니 상당히 괜찮은 IDE로 느껴졌다. Docker container를 할당해서 독립적인 작업 공간을 부여하는 점과 리눅스환경이기 때문에 window를 사용하는 사람에게 여러 환경설정의 늪에서 벗어나게 해줄 수 있을 것 같았다.
+하지만 불편한 점도 있다. 브라우저 안에 갇혀 있기 때문에 답답한 느낌이 드는게 가장 큰 부분이었다. 거기에다가 installer도 지원해주지 않기 때문에 별도로 app형식으로 사용하지 못했다.
+이럴 때 Electron이 떠올랐는데, Chromium 기반으로 Google chrome에서 돌아가는 웹페이지는 모두 어플리케이션으로 만들 수 있기 때문이다.</description>
+    </item>
+    
+    <item>
+      <title>Serverless을 이용한 AWS Lambda의 배포 자동화</title>
+      <link>https://novemberde.github.io/post/2017/08/14/Serverless/</link>
+      <pubDate>Mon, 14 Aug 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/08/14/Serverless/</guid>
+      <description>Summary  AWS Lambda와 api gateway를 사용하여 작업하면 배포하는 부분에서 상당부분 시간을 사용한다. 또한 API Gateway와 lambda를 엮는 것은 별도의 설정 과정이 필요하며, Resource &amp;amp; Stage 개념이 있어서 변경사항이 생길 경우에 API배포를 매번 해주어야 한다.
+Serverless framework는 이 모든 것을 자동화해주며, 내부적으로 CloudFormation을 사용하기 때문에 API gateway에서 api변동사항을 더욱 쉽게 반영해줄 수 있다.
+ Serverless framework 란?  The open-source, application framework to easily build serverless architectures on AWS Lambda &amp;amp; more.</description>
+    </item>
+    
+    <item>
+      <title>VS code에서 git bash 사용하기</title>
+      <link>https://novemberde.github.io/post/2017/08/13/Git_Bash/</link>
+      <pubDate>Sun, 13 Aug 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/08/13/Git_Bash/</guid>
+      <description>Windows에서 Power shell이나 CMD로 작업하면 linux 명령어를 사용하기 불편하다.
+그렇기 때문에 종종 git bash를 사용했는데 매번 git bash를 켜서 작업하는 것도 귀찮았다.
+Visual Studio Code에서 git bash를 기본 터미널로 설정하면 편하게 작업할 수 있을 것이다.
+방법은 설정에서 사용자 정의 부분을 아래와 같이 덮어씌우면 된다.
+{ &amp;#34;terminal.integrated.shell.windows&amp;#34;: &amp;#34;C:\\Program Files\\Git\\bin\\bash.exe&amp;#34; } 이제 linux 명령어를 편하게 사용하면서 작업하자.
+ Reference   https://code.visualstudio.com/docs/editor/integrated-terminal  </description>
+    </item>
+    
+    <item>
+      <title>/bin/bash^M: bad interpreter: No such file or directory</title>
+      <link>https://novemberde.github.io/post/2017/08/12/file_format_sh/</link>
+      <pubDate>Sat, 12 Aug 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/08/12/file_format_sh/</guid>
+      <description>Windows에서 shell script를 작성하여 배포하였을 경우에 다음과 같은 에러를 만날 수 있다.
+$ bash SomeScript.sh /bin/bash^M: bad interpreter: No such file or directory 이것은 CRLF를 Windows에서 기본으로 사용하였기 때문에 나타난다. 리눅스 기반은 LF를 기반으로 하기 때문에 newline문자가 달라지기 때문이다. VS code를 사용한다면 오른쪽 맨 밑에 CRLF를 LF를 수정하면 해결된다.
+만일 다른 에디터를 사용한다면 설정메뉴에서 바꾸면 될 것이다.
+ CRLF와 LF란  CR과 LF의 뜻을 알아보자.
+ CR: Carriage Return LF: Line Feed  CR은 커서의 위치를 가장 앞으로 옮기는 동작이며, LF는 커서의 위치를 한칸 내리는 것을 의미한다.</description>
+    </item>
+    
+    <item>
+      <title>AWS CloudFormation을 활용한 Architecture</title>
+      <link>https://novemberde.github.io/post/2017/08/03/CloudFormation/</link>
+      <pubDate>Thu, 03 Aug 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/08/03/CloudFormation/</guid>
+      <description>Summary  AWS CloudFormation의 Master Class를 보고 Reference document를 통해 내용을 살펴보자.
+ 특징   Infra structure as a code를 실현하기에 간편한 도구 리소스를 Provisioning하고 update를 해줌 Code로 관리하기 때문에 버전관리에 용이 AWS cli 또는 AWS console을 통해 배포 및 업데이트가 가능 리소스에 대해서만 과금되기 때문에 별도의 비용지출이 없음 Parameter를 통해 Project별로 Customizing이 용이 코드만 올리면 인프라가 형성되기 때문에 인프라 도입에 대한 리소스 투입이 적음   Cloudformation template의 특징   JSON, YAML 로 개발자 친화적인 포맷 코드로 관리하기 때문에 재사용에 용이 Stack 생성시 message를 통해 feedback 제공 Sample template 제공  아래는 yaml형식의 ec2를 생성하는 sample template이다.</description>
+    </item>
+    
+    <item>
+      <title>Docker image를 EB(Elastic Beanstalk)를 통해 배포하기</title>
+      <link>https://novemberde.github.io/post/2017/07/03/Elastic_Beanstalk/</link>
+      <pubDate>Mon, 03 Jul 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/07/03/Elastic_Beanstalk/</guid>
+      <description>Summary  AWS에서 Elastic Beanstalk를 통해 docker image를 배포할 수 있다. 이번에는 기존에 만들었던 Dockerfile을 Elastic beanstalk에 배포해 보겠다.
+ Dockerfile 준비하기  이전에 node js server를 하나의 Dockerfile로 만들어 놓았다. 테스트하고 싶으신 분들은 this repository를 참고하길 바란다.
+FROMnovemberde/node-pm2MAINTAINERKH BYUN &amp;#34;novemberde.github.io&amp;#34;ENV NODE_ENV productionEXPOSE3000COPY ./ /srcRUN npm install --prefix /srcCMD [&amp;#34;pm2-docker&amp;#34;, &amp;#34;/src/app.js&amp;#34;] Elastic Beanstalk 설정하기  Elastic Beanstalk로 배포하는 경우에 아래와 같이 2가지 방법이 있다.
+ Single instance Load balancing, auto scaling  Single instance는 하나에 인스턴스에 해당 dockerfile로 구성된 인스턴스가 올라가는 경우를 발한다.</description>
+    </item>
+    
+    <item>
+      <title>Sequelize에서 parallel execution과 serial execution</title>
+      <link>https://novemberde.github.io/post/2017/07/01/Sequelize_0/</link>
+      <pubDate>Sat, 01 Jul 2017 13:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/07/01/Sequelize_0/</guid>
+      <description>Summary  node js로 서버를 구성할 때 ORM framework로 sequelize를 사용한다. 하지만 비동기로 모든 CRUD가 진행되다보니 동시에 여러 쿼리문의 결과가 요구될 때도 있다. serial execution과 parallel execution을 살표보자.
+ parallel execution과 serial execution  Promise pattern을 활용하여 절차적으로 함수를 실행하면 여러 트랜잭션 과정을 파악하기 쉽다. callback 패턴의 늪에서 벗어날 수 있는 Promise는 현재 서버사이드에서 사용되는 라이브러리들에서 적극 활용되어지고 있다.
+먼저 serial execution을 살펴보고 이에 대한 단점도 파악해 보자.
+아래의 예제는 User를 검색하고 관계가 형성되어 있지 않은 다른 테이블을 Select하는 경우이다.</description>
+    </item>
+    
+    <item>
+      <title>다른 서버로 Mongodb 이전하기</title>
+      <link>https://novemberde.github.io/post/2017/07/01/Mongodb_transport/</link>
+      <pubDate>Sat, 01 Jul 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/07/01/Mongodb_transport/</guid>
+      <description>Summary  의뢰중에 호스팅 서버를 AWS로 옮겨달라는 요청이 있었다. MongoDB서버를 옮기기 위해서 DB를 백업하고 SCP를 사용하여 백업한 정보를 해당 인스턴스로 보내 백업을 진행하였다. 몇몇 간단한 명령어를 통하면 DB의 backup정보를 통해 복구할 수 있다. 과정을 살펴보자.
+ 현재 db정보를 dump로 만들어 SCP로 파일 전송하기  이전작업을 하기 전에 먼저 클라이언트에게 DB를 실제 서비스에서 분리하고 작업해야된다고 하였다.
+설정정보를 바꾼다면 DB를 재가동 해야하는 이유도 있었으며, mongodb dump파일을 생성한 시점부터는 추가되는 데이터가 없어야 하기 때문이다.</description>
+    </item>
+    
+    <item>
+      <title>Code convention과 개발자가 지켜야할 수칙에 관하여</title>
+      <link>https://novemberde.github.io/post/2017/05/21/Javascript_policy/</link>
+      <pubDate>Sun, 21 May 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/05/21/Javascript_policy/</guid>
+      <description>Summary  요즘 서버 및 웹클라이언트 환경을 javascript로 대부분 진행하고 있다. 그러던 도중 최근 한 스타트업의 서버 최적화를 진행할 때 굉장히 문제가 많은 코드를 접하였다. 거의 난독증이 생길정도의 코드였고, 기본 수칙만 지켜도 나타나지 않을 오류들이 많았다.
+이번에는 node js와 web framework를 개발하는 개발자들이 기본적으로 지켜주었으면 하는 내용을 담아보겠다.
+ Javascript를 떠나 개발자가 코드를 짤 때 지켜야할 수칙  code를 짜다보면 대충 stackoverflow에서 복붙하고 넘어가고 싶고 그것을 으레 당연하게 여기는 개발자가 많음을 느끼고 있다.</description>
+    </item>
+    
+    <item>
+      <title>Amazon Aurora와 sequelize 연동해보기.</title>
+      <link>https://novemberde.github.io/post/2017/05/09/Aurora_sequelize_0/</link>
+      <pubDate>Tue, 09 May 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/05/09/Aurora_sequelize_0/</guid>
+      <description>Summary  최근에 글 중에서 aurora와 sequelize가 과연 연동이 가능할까라는 글을 본적이 있다. aurora는 MySQL과 호환이 가능한 DB라고 하기 때문에 나 또한 궁금증이 생겼다. 직접 aurora와 sequelize를 연동해보고, MySQL workbench로 aurora를 사용할 수 있는지까지 확인해보겠다.
+ Aurora instance 생성하기  이전까지 사용할 때는 MySQL이나 MariaDB위주로 사용했다. 스타트업은 라이센스 비용에 민감하기 때문에 Open Source를 주로 선택했기 때문이다.
+또한 아래 리스트를 보면 RDS 이름에서 추측할 수 있듯이 RDS에서는 관계형 DB만 사용할 수 있는 것을 알 수 있다.</description>
+    </item>
+    
+    <item>
+      <title>Bitbucket access key 발급하기</title>
+      <link>https://novemberde.github.io/post/2017/04/18/Bitbucket_access_key_0/</link>
+      <pubDate>Tue, 09 May 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/04/18/Bitbucket_access_key_0/</guid>
+      <description>Summary  서버에 프로젝트를 배포할 경우 ftp로 파일을 옮기는 방식으로 사용할 수도 있다. 하지만 git repository를 사용하면 git 명령어만으로 간단히 서버코드를 갱신할 수 있다.
+로그인이 아닌 access key를 통해 git repository에 접근하는 방법에 대해 알아보자.
+ Key pair 생성하기  먼저 배포하고 싶은 서버에 ssh로 접속한 후 key pair를 생성하자.
+# 이 커맨드는 현재 접속한 유저 directory에 .ssh폴더가 없으면 생성할 것이고, 있다면 .ssh directory에 key pair만 생성할 것이다. $ ssh-keygen Generating public/private rsa key pair.</description>
+    </item>
+    
+    <item>
+      <title>Docker를 활용하여 AWS의 Elastic Cache 에 접근하기.</title>
+      <link>https://novemberde.github.io/post/2017/04/30/VPC_Redis_0/</link>
+      <pubDate>Tue, 09 May 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/04/30/VPC_Redis_0/</guid>
+      <description>Summary  Localhost에서 elastic cache에는 원칙적으로 접근할 수 없다. 별도로 VPC내에 Virtual Private Gateways나 Customer Gateways를 사용하여 VPC내에 존재하는 Elasic Cache에 접근할 수 있다. 하지만 이는 별도의 설정과정이 들어가므로 귀찮았다. 그래서 바로 VPC내의 EC2 인스턴스에서 Elastic Cache에 접근하였다. Docker 이미지 중에서 Redis-cli가 있기 때문에 손쉽게 별도의 설치과정 없이 접근할 수 있다.
+이 과정은 이미 elastic cache를 사용하고 있고 인스턴스에 Docker가 설치되어 있다는 전제 하에 진행한다.
+ Docker hub에서 redis-cli 이미지를 받아 접속하자.</description>
+    </item>
+    
+    <item>
+      <title>Javascript에서 Closure와 Constructor</title>
+      <link>https://novemberde.github.io/post/2017/04/16/Closure_0/</link>
+      <pubDate>Sun, 16 Apr 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/04/16/Closure_0/</guid>
+      <description>Summary  node js나 web ui를 다루기 위해 javascript를 사용하면 closure를 사용할 것이다. constructor로 객체를 생성하지 않고 왜 closure를 사용하는지 살펴보자.
+ Constructor와 Closure의 성능차이  샘플코드는 아래와 같다. 성능 결과값을 보면 거의 2배의 차이가 나는 것을 볼 수 있다.
+이러한 차이는 node 서버를 사용할 경우 더욱 두드러지게 체감할 것이다.
+constructor를 사용하는 경우 javascript 객체가 반드시 가져야할 함수들을 상속받기 때문에 속도차이가 나타나는 것이다. 하지만 front에서는 클라이언트가 메모리를 가지기 때문에 크게 우려하지 않아도 된다.</description>
+    </item>
+    
+    <item>
+      <title>Java에서 String, StringBuilder, StringBuffer의 차이</title>
+      <link>https://novemberde.github.io/post/2017/04/15/String_0/</link>
+      <pubDate>Sat, 15 Apr 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/04/15/String_0/</guid>
+      <description>Summary  Java를 개발하다보면 String에 대해서 별다른 고민없이 (&amp;ldquo;Some text&amp;rdquo; + &amp;quot; added text&amp;quot;)와 같이 &amp;lsquo;+&amp;lsquo;기호를 통해 스트링을 더하곤 한다. 하지만 Java 개발자라면 고민을 더 해보고 Class를 선택해야한다. String과 StringBuilder, 그리고 StringBuffer를 어떤 경우에 사용하는지 확인해보자.
+ 각 클래스의 특징  설명에 들어가기에 앞서서 java api와 친숙해져야 된다고 생각한다.
+java api에 접속해서 java.lang 패키지를 들어가보자. java.lang은 별도로 import를 해주지 않아도 사용할 수 있는 class들이 모여있다. Classes항목을 보면 자주 기본적인 클래스들이 있는 것을 볼 수 있다.</description>
+    </item>
+    
+    <item>
+      <title>나만의 private docker registry 구성하기.</title>
+      <link>https://novemberde.github.io/post/2017/04/09/Docker_Registry_0/</link>
+      <pubDate>Sun, 09 Apr 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/04/09/Docker_Registry_0/</guid>
+      <description>Summary  Docker hub에 private image를 올리는 것은 제한이 있다. 개인 사용자의 경우 하나의 이미지만 private이 가능하고 organization의 경우에는 비용을 지불해야만 사용이 가능하다. 이런점에 비추어 볼 때 우리는 private registry환경을 구축하고 싶다는 생각이 들 것이다.
+EC2에 개인 registry를 구축하고 local 또는 다른 서버에서 접근하는 방법에 대해서 진행해보겠다. 그리고 Amazon S3 를 이미지 저장소로 사용하겠다.
+Docker registry 구축하기  docker가 설치되어 있는 EC2에 접근하여 registry 이미지를 pull 해보자.
+ docker registry의 기본포트는 5000번이다.</description>
+    </item>
+    
+    <item>
+      <title>만들어진 Docker image를 EC2 인스턴스에 배포하기</title>
+      <link>https://novemberde.github.io/post/2017/04/03/Docker_9/</link>
+      <pubDate>Mon, 03 Apr 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/04/03/Docker_9/</guid>
+      <description>Summary  이제 모든 준비는 끝났다. Docker image를 EC2 인스턴스에 배포하자.
+ 순서   Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기 EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기 Bitbucket을 사용하여 git repository 생성하기 Express JS를 사용하여 Node 서버 구축하기 PM2를 사용하여 EC2에 Node 서버 배포하기 Node 서버를 바탕으로 Dockerfile로 만들기 Docker Hub의 automated build를 사용하여 Docker image를 만들기 만들어진 Docker image를 EC2 인스턴스에 배포하기   Docker image를 받아오기  EC2 인스턴스에 SSH로 접속하자.</description>
+    </item>
+    
+    <item>
+      <title>Docker Hub의 automated build를 사용하여 Docker image를 만들기</title>
+      <link>https://novemberde.github.io/post/2017/04/02/Docker_8/</link>
+      <pubDate>Sun, 02 Apr 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/04/02/Docker_8/</guid>
+      <description>Summary  이전에는 Dockerfile을 만들었다. 하지만 매번 build하는 것은 소모적인 시간이라고 생각한다. 그럼 만들어진 Dockerfile을 git repository에 push하면 Dockerfile이 빌드되는지 확인하는 것은 어떨까. docker hub의 automated_build기능을 사용하면 간단히 구현된다.
+ 순서   Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기 EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기 Bitbucket을 사용하여 git repository 생성하기 Express JS를 사용하여 Node 서버 구축하기 PM2를 사용하여 EC2에 Node 서버 배포하기 Node 서버를 바탕으로 Dockerfile로 만들기 Docker Hub의 automated build를 사용하여 Docker image를 만들기 만들어진 Docker image를 EC2 인스턴스에 배포하기   Automated_build  Docker hub에서 지원해주는 이미지 빌딩시스템이다.</description>
+    </item>
+    
+    <item>
+      <title>Node 서버를 바탕으로 Dockerfile로 만들기</title>
+      <link>https://novemberde.github.io/post/2017/04/02/Docker_7/</link>
+      <pubDate>Sun, 02 Apr 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/04/02/Docker_7/</guid>
+      <description>Summary  Dockerfile로 이미지로 관리하면 배포 및 관리가 간편하게 가능하다. 여기서는 node를 베이스 이미지로하여 노드 서버를 배포할 수 있도록 준비한다.
+ 순서   Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기 EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기 Bitbucket을 사용하여 git repository 생성하기 Express JS를 사용하여 Node 서버 구축하기 PM2를 사용하여 EC2에 Node 서버 배포하기 Node 서버를 바탕으로 Dockerfile로 만들기 Docker Hub의 automated build를 사용하여 Docker image를 만들기 만들어진 Docker image를 EC2 인스턴스에 배포하기   Dockerfile 이란?</description>
+    </item>
+    
+    <item>
+      <title>PM2를 사용하여 EC2에 Node 서버 배포하기</title>
+      <link>https://novemberde.github.io/post/2017/04/02/Docker_6/</link>
+      <pubDate>Sun, 02 Apr 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/04/02/Docker_6/</guid>
+      <description>Summary  node js 패키지 중에서 PM2를 사용하여 웹서버를 배포하자.
+ 순서   Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기 EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기 Bitbucket을 사용하여 git repository 생성하기 Express JS를 사용하여 Node 서버 구축하기 PM2를 사용하여 EC2에 Node 서버 배포하기 Node 서버를 바탕으로 Dockerfile로 만들기 Docker Hub의 automated build를 사용하여 Docker image를 만들기 만들어진 Docker image를 EC2 인스턴스에 배포하기   웹서버에 node js를 설치하고 PM2를 설치하기  이전에 생성한 EC2 인스턴스에 ubuntu계정으로 SSH 접속한 후 Node js를 설치하자.</description>
+    </item>
+    
+    <item>
+      <title>Bitbucket을 사용하여 git repository 생성하기</title>
+      <link>https://novemberde.github.io/post/2017/04/01/Docker_4/</link>
+      <pubDate>Sat, 01 Apr 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/04/01/Docker_4/</guid>
+      <description>Summary  Bitbucket을 사용하여 git respository를 생성한다. 보통은 github로 관리하지만 github는 private한 repository를 사용하기 위해서는 사용료를 내야한다. 하지만 Bitbucket은 무제한적인 repository를 생성할 수 있으며 repository의 크기만 제한되어 있다. 2GB까지 사용이 가능한데 보통 코드로만 200MB도 사용하기 어려운 관계로 사실상 무제한이라고 볼 수 있다.
+ 순서   Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기 EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기 Bitbucket을 사용하여 git repository 생성하기 Express JS를 사용하여 Node 서버 구축하기 테스트로 PM2를 사용하여 EC2에 Node 서버 배포하기 Node 서버를 바탕으로 Dockerfile로 만들기 Docker Hub의 automated build를 사용하여 Docker image를 만들기 만들어진 Docker image를 EC2 인스턴스에 배포하기   Bitbucket Repository 생성하기  먼저 bitbucket.</description>
+    </item>
+    
+    <item>
+      <title>EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기</title>
+      <link>https://novemberde.github.io/post/2017/04/01/Docker_3/</link>
+      <pubDate>Sat, 01 Apr 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/04/01/Docker_3/</guid>
+      <description>Summary  Docker의 개념을 간단히 살펴보고 EC2 ubuntu instance에 Docker를 설치해보자.
+ 순서   Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기 EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기 Bitbucket을 사용하여 git repository 생성하기 Express JS를 사용하여 Node 서버 구축하기 테스트로 PM2를 사용하여 EC2에 Node 서버 배포하기 Node 서버를 바탕으로 Dockerfile로 만들기 Docker Hub의 automated build를 사용하여 Docker image를 만들기 만들어진 Docker image를 EC2 인스턴스에 배포하기   Docker 란?</description>
+    </item>
+    
+    <item>
+      <title>Express JS를 사용하여 Node 서버 구축하기</title>
+      <link>https://novemberde.github.io/post/2017/04/01/Docker_5/</link>
+      <pubDate>Sat, 01 Apr 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/04/01/Docker_5/</guid>
+      <description>Summary  Node JS의 Express framework를 사용하여 Node JS 서버를 구축해본다. 기본적으로는 http모듈을 사용하여 서버 리스너를 구동하는 것이 있다. http 모듈을 사용하여 서버를 가동하면 exception이 발생하는 동시에 서버가 정지하게 된다. 하지만 Express framework를 사용하면 error처리가 가능하다.
+ 순서   Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기 EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기 Bitbucket을 사용하여 git repository 생성하기 Express JS를 사용하여 Node 서버 구축하기 테스트로 PM2를 사용하여 EC2에 Node 서버 배포하기 Node 서버를 바탕으로 Dockerfile로 만들기 Docker Hub의 automated build를 사용하여 Docker image를 만들기 만들어진 Docker image를 EC2 인스턴스에 배포하기   Express JS 시작하기  편집기는 아무거나 사용해도 상관없다.</description>
+    </item>
+    
+    <item>
+      <title>접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기</title>
+      <link>https://novemberde.github.io/post/2017/04/01/Docker_2/</link>
+      <pubDate>Sat, 01 Apr 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/04/01/Docker_2/</guid>
+      <description>Summary  생성한 EC2 인스턴스에 docker라는 계정을 생성해 보려고 한다.
+또한 Security Group을 응용하여 접속포트는 80을 열어 사이트를 접근할 수 있도록 설정해주자.
+ 순서   Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기 EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기 Bitbucket을 사용하여 git repository 생성하기 Express JS를 사용하여 Node 서버 구축하기 테스트로 PM2를 사용하여 EC2에 Node 서버 배포하기 Node 서버를 바탕으로 Dockerfile로 만들기 Docker Hub의 automated build를 사용하여 Docker image를 만들기 만들어진 Docker image를 EC2 인스턴스에 배포하기   docker 라는 linux 계정을 생성해본다.</description>
+    </item>
+    
+    <item>
+      <title>AWS에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기</title>
+      <link>https://novemberde.github.io/post/2017/03/31/Docker_1/</link>
+      <pubDate>Fri, 31 Mar 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/03/31/Docker_1/</guid>
+      <description>Summary  요즘에는 직접 IDC를 통해 서버를 운영하는 경우가 사라지고 있다. Amazon에서 지원하는 IaaS인 EC2를 사용하면 간단하게 서버 인프라를 구축할 수 있다. 가입은 간단하니 생략하고, EC2를 생성하고 SSH로 접속하는 과정을 진행해보겠다.
+ 순서   Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기 EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기 Bitbucket을 사용하여 git repository 생성하기 Express JS를 사용하여 Node 서버 구축하기 테스트로 PM2를 사용하여 EC2에 Node 서버 배포하기 Node 서버를 바탕으로 Dockerfile로 만들기 Docker Hub의 automated build를 사용하여 Docker image를 만들기 만들어진 Docker image를 EC2 인스턴스에 배포하기   EC2 생성하기  처음에 접속하면 아래와 같은 콘솔화면이 나타난다.</description>
+    </item>
+    
+    <item>
+      <title>Docker로 EC2에 Node 배포하기</title>
+      <link>https://novemberde.github.io/post/2017/03/31/Docker_0/</link>
+      <pubDate>Fri, 31 Mar 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/03/31/Docker_0/</guid>
+      <description>소개 Node JS 서버를 배포하려고 한다. 매일 같이 하던 방식이지만 방법을 잊을 수도 있다는 생각이 들었다. 이것을 보고 사람들이 노드 서버를 간결하게 배포하였으면 한다.
+순서   Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기 EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기 Bitbucket을 사용하여 git repository 생성하기 Express JS를 사용하여 Node 서버 구축하기 테스트로 PM2를 사용하여 EC2에 Node 서버 배포하기 Node 서버를 바탕으로 Dockerfile로 만들기 Docker Hub의 automated build를 사용하여 Docker image를 만들기 만들어진 Docker image를 EC2 인스턴스에 배포하기   </description>
+    </item>
+    
+    <item>
+      <title>RSS Feeds</title>
+      <link>https://novemberde.github.io/rss/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/rss/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

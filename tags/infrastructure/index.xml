@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>infrastructure on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/infrastructure/</link>
+    <description>Recent content in infrastructure on Novemberde&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Thu, 03 Aug 2017 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/infrastructure/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS CloudFormation을 활용한 Architecture</title>
+      <link>https://novemberde.github.io/post/2017/08/03/CloudFormation/</link>
+      <pubDate>Thu, 03 Aug 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/08/03/CloudFormation/</guid>
+      <description>Summary  AWS CloudFormation의 Master Class를 보고 Reference document를 통해 내용을 살펴보자.
+ 특징   Infra structure as a code를 실현하기에 간편한 도구 리소스를 Provisioning하고 update를 해줌 Code로 관리하기 때문에 버전관리에 용이 AWS cli 또는 AWS console을 통해 배포 및 업데이트가 가능 리소스에 대해서만 과금되기 때문에 별도의 비용지출이 없음 Parameter를 통해 Project별로 Customizing이 용이 코드만 올리면 인프라가 형성되기 때문에 인프라 도입에 대한 리소스 투입이 적음   Cloudformation template의 특징   JSON, YAML 로 개발자 친화적인 포맷 코드로 관리하기 때문에 재사용에 용이 Stack 생성시 message를 통해 feedback 제공 Sample template 제공  아래는 yaml형식의 ec2를 생성하는 sample template이다.</description>
+    </item>
+    
+  </channel>
+</rss>

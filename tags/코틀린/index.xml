@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>코틀린 on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/%EC%BD%94%ED%8B%80%EB%A6%B0/</link>
+    <description>Recent content in 코틀린 on Novemberde&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Mon, 28 May 2018 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/%EC%BD%94%ED%8B%80%EB%A6%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Legacy android application, Kotlin 적용기</title>
+      <link>https://novemberde.github.io/post/2018/05/28/kotlin/</link>
+      <pubDate>Mon, 28 May 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2018/05/28/kotlin/</guid>
+      <description>Summary  안드로이드 개발 언어의 트렌드는 바뀌었다. 최근 Google I/O에서 나오는 샘플 코드들은 Kotlin으로 짜여져 있었다. 또한 안드로이드 개발 컨퍼런스의 주제는 Kotlin으로 개발한 경험담이 주를 이루고 있다.
+Kotlin으로 개발하는 것이 낫다는 내용을 많이 보기도 하였고 개발에 욕심이 있다보니, 이번에는 기존에 JAVA로 개발되어 있던 코드에 Kotlin을 적용하여 새로 구성하거나 변경하는 클래스를 Kotlin으로 구성해보았다.
+다음은 이런 과정을 거치면서 느낀 장점과 단점에 대한 고찰이다.
+고찰  Kotlin의 장점을 느끼기 전에는 치명적인 단점(?)과 싸워야만 한다.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>생성 on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/%EC%83%9D%EC%84%B1/</link>
+    <description>Recent content in 생성 on Novemberde&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Sat, 01 Apr 2017 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/%EC%83%9D%EC%84%B1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기</title>
+      <link>https://novemberde.github.io/post/2017/04/01/Docker_2/</link>
+      <pubDate>Sat, 01 Apr 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/04/01/Docker_2/</guid>
+      <description>Summary  생성한 EC2 인스턴스에 docker라는 계정을 생성해 보려고 한다.
+또한 Security Group을 응용하여 접속포트는 80을 열어 사이트를 접근할 수 있도록 설정해주자.
+ 순서   Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기 EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기 Bitbucket을 사용하여 git repository 생성하기 Express JS를 사용하여 Node 서버 구축하기 테스트로 PM2를 사용하여 EC2에 Node 서버 배포하기 Node 서버를 바탕으로 Dockerfile로 만들기 Docker Hub의 automated build를 사용하여 Docker image를 만들기 만들어진 Docker image를 EC2 인스턴스에 배포하기   docker 라는 linux 계정을 생성해본다.</description>
+    </item>
+    
+  </channel>
+</rss>

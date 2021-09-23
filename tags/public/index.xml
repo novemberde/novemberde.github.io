@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>public on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/public/</link>
+    <description>Recent content in public on Novemberde&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Thu, 14 Sep 2017 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/public/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Athena, QuickSight를 활용한 공공데이터 분석</title>
+      <link>https://novemberde.github.io/post/2017/09/14/public_data_athena/</link>
+      <pubDate>Thu, 14 Sep 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/09/14/public_data_athena/</guid>
+      <description>빅데이터를 직접 모으는 방법이 있지만, 공공데이터 포털과 네이버 데이터랩처럼 정해진 API를 통해 접근하거나 데이터를 JSON, XML, CSV와 같은 형식으로 지원해주는 사이트들을 적극 활용해볼 수 있습니다.
+ AWSKRUG 류한진 님과 함께 준비한 Athena, QuickSight Hands-on lab입니다. 아래 링크는 발표자료 및 Hands-on 문서입니다.
+ 발표자료 Hands-on  아래는 류한진 님과 함께 작성한 &amp;lt;공공데이터 + Athena + QuickSight&amp;gt; 튜토리얼입니다.
+ 공공데이터를 이용한 데이터 만들기부터 분석까지  개요 빅데이터를 직접 모으는 방법이 있지만, 공공데이터 포털과 네이버 데이터랩처럼 정해진 API를 통해 접근하거나 데이터를 JSON, XML, CSV와 같은 형식으로 지원해주는 사이트들을 적극 활용해볼 수 있다.</description>
+    </item>
+    
+  </channel>
+</rss>

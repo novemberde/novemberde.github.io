@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>deploy on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/deploy/</link>
+    <description>Recent content in deploy on Novemberde&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Mon, 14 Aug 2017 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/deploy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Serverless을 이용한 AWS Lambda의 배포 자동화</title>
+      <link>https://novemberde.github.io/post/2017/08/14/Serverless/</link>
+      <pubDate>Mon, 14 Aug 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/08/14/Serverless/</guid>
+      <description>Summary  AWS Lambda와 api gateway를 사용하여 작업하면 배포하는 부분에서 상당부분 시간을 사용한다. 또한 API Gateway와 lambda를 엮는 것은 별도의 설정 과정이 필요하며, Resource &amp;amp; Stage 개념이 있어서 변경사항이 생길 경우에 API배포를 매번 해주어야 한다.
+Serverless framework는 이 모든 것을 자동화해주며, 내부적으로 CloudFormation을 사용하기 때문에 API gateway에서 api변동사항을 더욱 쉽게 반영해줄 수 있다.
+ Serverless framework 란?  The open-source, application framework to easily build serverless architectures on AWS Lambda &amp;amp; more.</description>
+    </item>
+    
+    <item>
+      <title>Docker image를 EB(Elastic Beanstalk)를 통해 배포하기</title>
+      <link>https://novemberde.github.io/post/2017/07/03/Elastic_Beanstalk/</link>
+      <pubDate>Mon, 03 Jul 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/07/03/Elastic_Beanstalk/</guid>
+      <description>Summary  AWS에서 Elastic Beanstalk를 통해 docker image를 배포할 수 있다. 이번에는 기존에 만들었던 Dockerfile을 Elastic beanstalk에 배포해 보겠다.
+ Dockerfile 준비하기  이전에 node js server를 하나의 Dockerfile로 만들어 놓았다. 테스트하고 싶으신 분들은 this repository를 참고하길 바란다.
+FROMnovemberde/node-pm2MAINTAINERKH BYUN &amp;#34;novemberde.github.io&amp;#34;ENV NODE_ENV productionEXPOSE3000COPY ./ /srcRUN npm install --prefix /srcCMD [&amp;#34;pm2-docker&amp;#34;, &amp;#34;/src/app.js&amp;#34;] Elastic Beanstalk 설정하기  Elastic Beanstalk로 배포하는 경우에 아래와 같이 2가지 방법이 있다.
+ Single instance Load balancing, auto scaling  Single instance는 하나에 인스턴스에 해당 dockerfile로 구성된 인스턴스가 올라가는 경우를 발한다.</description>
+    </item>
+    
+    <item>
+      <title>만들어진 Docker image를 EC2 인스턴스에 배포하기</title>
+      <link>https://novemberde.github.io/post/2017/04/03/Docker_9/</link>
+      <pubDate>Mon, 03 Apr 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/04/03/Docker_9/</guid>
+      <description>Summary  이제 모든 준비는 끝났다. Docker image를 EC2 인스턴스에 배포하자.
+ 순서   Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기 EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기 Bitbucket을 사용하여 git repository 생성하기 Express JS를 사용하여 Node 서버 구축하기 PM2를 사용하여 EC2에 Node 서버 배포하기 Node 서버를 바탕으로 Dockerfile로 만들기 Docker Hub의 automated build를 사용하여 Docker image를 만들기 만들어진 Docker image를 EC2 인스턴스에 배포하기   Docker image를 받아오기  EC2 인스턴스에 SSH로 접속하자.</description>
+    </item>
+    
+    <item>
+      <title>Docker로 EC2에 Node 배포하기</title>
+      <link>https://novemberde.github.io/post/2017/03/31/Docker_0/</link>
+      <pubDate>Fri, 31 Mar 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/03/31/Docker_0/</guid>
+      <description>소개 Node JS 서버를 배포하려고 한다. 매일 같이 하던 방식이지만 방법을 잊을 수도 있다는 생각이 들었다. 이것을 보고 사람들이 노드 서버를 간결하게 배포하였으면 한다.
+순서   Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기 EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기 Bitbucket을 사용하여 git repository 생성하기 Express JS를 사용하여 Node 서버 구축하기 테스트로 PM2를 사용하여 EC2에 Node 서버 배포하기 Node 서버를 바탕으로 Dockerfile로 만들기 Docker Hub의 automated build를 사용하여 Docker image를 만들기 만들어진 Docker image를 EC2 인스턴스에 배포하기   </description>
+    </item>
+    
+  </channel>
+</rss>

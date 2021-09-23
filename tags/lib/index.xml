@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>lib on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/lib/</link>
+    <description>Recent content in lib on Novemberde&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Sun, 05 Nov 2017 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/lib/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Node js 라이브러리 및 유용한 자료</title>
+      <link>https://novemberde.github.io/post/2017/11/05/Node.JS_Library/</link>
+      <pubDate>Sun, 05 Nov 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/11/05/Node.JS_Library/</guid>
+      <description>Summary  Node JS의 라이브러리가 워낙 많다보니 자주쓰는 라이브러리를 정리해야될 필요성을 느꼈다.
+그리고 재밌는 라이브러리를 리스트로 관리하지 않다보니 잊게 되었다.
+발견할 때마다 정리하고 라이브러리의 용도에 맞게 분류하여 나중에 필요할 경우 바로 사용할 수 있도록 한다.
+ 자주 쓰는 패키지    JavaScript utility library
+ underscore lodash    Year, month, date, time
+ moment.js    MarkDown
+ highlight.js prismjs    Ajax
+ request request-promise superagent axios got    Test</description>
+    </item>
+    
+  </channel>
+</rss>

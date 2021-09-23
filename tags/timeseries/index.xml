@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>timeseries on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/timeseries/</link>
+    <description>Recent content in timeseries on Novemberde&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Fri, 25 Jan 2019 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/timeseries/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Amazon Timestream 시계열 데이터 전용 DB 소개</title>
+      <link>https://novemberde.github.io/post/2019/01/25/Timestream/</link>
+      <pubDate>Fri, 25 Jan 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2019/01/25/Timestream/</guid>
+      <description>&amp;ldquo;시계열 데이터 전용 DB 소개&amp;quot;라는 주제로 2019년 1월 25일에 AWSKRUG re:Invent recap 행사에서 발표한 자료입니다.
+발표자료   Amazon Timestream 시계열 데이터 전용 DB 소개 :: 변규현 - AWS Community Day 2019  from AWS Korea UserGroup (AWS한국사용자모임)  References  https://www.slideshare.net/awskr/amazon-timestream-db https://pages.awscloud.com/aws-community-day-seoul-2019.html  </description>
+    </item>
+    
+  </channel>
+</rss>

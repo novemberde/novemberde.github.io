@@ -1,0 +1,312 @@
+<!doctype html><html lang=en dir=auto>
+<head><meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=robots content="index, follow">
+<title>AWS CloudFormation을 활용한 Architecture | Novemberde's Blog</title>
+<meta name=keywords content="AWS,CloudFormation,Architecture,infrastructure,CloudFormation,시작하기">
+<meta name=description content="Summary  AWS CloudFormation의 Master Class를 보고 Reference document를 통해 내용을 살펴보자.
+ 특징   Infra structure as a code를 실현하기에 간편한 도구 리소스를 Provisioning하고 update를 해줌 Code로 관리하기 때문에 버전관리에 용이 AWS cli 또는 AWS console을 통해 배포 및 업데이트가 가능 리소스에 대해서만 과금되기 때문에 별도의 비용지출이 없음 Parameter를 통해 Project별로 Customizing이 용이 코드만 올리면 인프라가 형성되기 때문에 인프라 도입에 대한 리소스 투입이 적음   Cloudformation template의 특징   JSON, YAML 로 개발자 친화적인 포맷 코드로 관리하기 때문에 재사용에 용이 Stack 생성시 message를 통해 feedback 제공 Sample template 제공  아래는 yaml형식의 ec2를 생성하는 sample template이다.">
+<meta name=author content>
+<link rel=canonical href=https://novemberde.github.io/post/2017/08/03/CloudFormation/>
+<link crossorigin=anonymous href=/assets/css/stylesheet.min.9f1d947375927e9847272b1f4e9be81336f539e513bf04d52cade31f81cad1af.css integrity="sha256-nx2Uc3WSfphHJysfTpvoEzb1OeUTvwTVLK3jH4HK0a8=" rel="preload stylesheet" as=style>
+<script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://novemberde.github.io/favicon.ico>
+<link rel=icon type=image/png sizes=16x16 href=https://novemberde.github.io/favicon-16x16.png>
+<link rel=icon type=image/png sizes=32x32 href=https://novemberde.github.io/favicon-32x32.png>
+<link rel=apple-touch-icon href=https://novemberde.github.io/apple-touch-icon.png>
+<link rel=mask-icon href=https://novemberde.github.io/safari-pinned-tab.svg>
+<meta name=theme-color content="#2e2e33">
+<meta name=msapplication-TileColor content="#2e2e33">
+<meta name=generator content="Hugo 0.88.1">
+<noscript>
+<style>#theme-toggle,.top-link{display:none}</style>
+<style>@media(prefers-color-scheme:dark){:root{--theme:#1d1e20;--entry:#2e2e33;--primary:rgba(255, 255, 255, 0.84);--secondary:rgba(255, 255, 255, 0.56);--tertiary:rgba(255, 255, 255, 0.16);--content:rgba(255, 255, 255, 0.74);--hljs-bg:#2e2e33;--code-bg:#37383e;--border:#333}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
+</noscript><meta property="og:title" content="AWS CloudFormation을 활용한 Architecture">
+<meta property="og:description" content="Summary  AWS CloudFormation의 Master Class를 보고 Reference document를 통해 내용을 살펴보자.
+ 특징   Infra structure as a code를 실현하기에 간편한 도구 리소스를 Provisioning하고 update를 해줌 Code로 관리하기 때문에 버전관리에 용이 AWS cli 또는 AWS console을 통해 배포 및 업데이트가 가능 리소스에 대해서만 과금되기 때문에 별도의 비용지출이 없음 Parameter를 통해 Project별로 Customizing이 용이 코드만 올리면 인프라가 형성되기 때문에 인프라 도입에 대한 리소스 투입이 적음   Cloudformation template의 특징   JSON, YAML 로 개발자 친화적인 포맷 코드로 관리하기 때문에 재사용에 용이 Stack 생성시 message를 통해 feedback 제공 Sample template 제공  아래는 yaml형식의 ec2를 생성하는 sample template이다.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://novemberde.github.io/post/2017/08/03/CloudFormation/"><meta property="article:section" content="post">
+<meta property="article:published_time" content="2017-08-03T11:30:03+00:00">
+<meta property="article:modified_time" content="2017-08-03T11:30:03+00:00"><meta property="og:site_name" content="Novemberde's Blog">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="AWS CloudFormation을 활용한 Architecture">
+<meta name=twitter:description content="Summary  AWS CloudFormation의 Master Class를 보고 Reference document를 통해 내용을 살펴보자.
+ 특징   Infra structure as a code를 실현하기에 간편한 도구 리소스를 Provisioning하고 update를 해줌 Code로 관리하기 때문에 버전관리에 용이 AWS cli 또는 AWS console을 통해 배포 및 업데이트가 가능 리소스에 대해서만 과금되기 때문에 별도의 비용지출이 없음 Parameter를 통해 Project별로 Customizing이 용이 코드만 올리면 인프라가 형성되기 때문에 인프라 도입에 대한 리소스 투입이 적음   Cloudformation template의 특징   JSON, YAML 로 개발자 친화적인 포맷 코드로 관리하기 때문에 재사용에 용이 Stack 생성시 message를 통해 feedback 제공 Sample template 제공  아래는 yaml형식의 ec2를 생성하는 sample template이다.">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://novemberde.github.io/post/"},{"@type":"ListItem","position":2,"name":"AWS CloudFormation을 활용한 Architecture","item":"https://novemberde.github.io/post/2017/08/03/CloudFormation/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"AWS CloudFormation을 활용한 Architecture","name":"AWS CloudFormation을 활용한 Architecture","description":"Summary  AWS CloudFormation의 Master Class를 보고 Reference document를 통해 내용을 살펴보자.\n 특징   Infra structure as a code를 실현하기에 간편한 도구 리소스를 Provisioning하고 update를 해줌 Code로 관리하기 때문에 버전관리에 용이 AWS cli 또는 AWS console을 통해 배포 및 업데이트가 가능 리소스에 대해서만 과금되기 때문에 별도의 비용지출이 없음 Parameter를 통해 Project별로 Customizing이 용이 코드만 올리면 인프라가 형성되기 때문에 인프라 도입에 대한 리소스 투입이 적음   Cloudformation template의 특징   JSON, YAML 로 개발자 친화적인 포맷 코드로 관리하기 때문에 재사용에 용이 Stack 생성시 message를 통해 feedback 제공 Sample template 제공  아래는 yaml형식의 ec2를 생성하는 sample template이다.","keywords":["AWS","CloudFormation","Architecture","infrastructure","CloudFormation","시작하기"],"articleBody":"Summary  AWS CloudFormation의 Master Class를 보고 Reference document를 통해 내용을 살펴보자.\n 특징   Infra structure as a code를 실현하기에 간편한 도구 리소스를 Provisioning하고 update를 해줌 Code로 관리하기 때문에 버전관리에 용이 AWS cli 또는 AWS console을 통해 배포 및 업데이트가 가능 리소스에 대해서만 과금되기 때문에 별도의 비용지출이 없음 Parameter를 통해 Project별로 Customizing이 용이 코드만 올리면 인프라가 형성되기 때문에 인프라 도입에 대한 리소스 투입이 적음   Cloudformation template의 특징   JSON, YAML 로 개발자 친화적인 포맷 코드로 관리하기 때문에 재사용에 용이 Stack 생성시 message를 통해 feedback 제공 Sample template 제공  아래는 yaml형식의 ec2를 생성하는 sample template이다. CloudFormation으로 ec2를 생성할 때 파라미터를 받는다. instanceType, KeyName, SSHLocation을 설정할 수 있도록 되어 있다. 선택할 수 있는 인스턴스의 종류를 제한했기 때문에 t2계열의 인스턴스만 선택할 수 있다. 그리고 AMI는 Amazon linux를 사용하였다.\n# EC2 sample template AWSTemplateFormatVersion: 2010-09-09 Description: EC2 Sample Parameters: # Using before cloudformation is being created KeyName: Description: Name of an existing EC2 KeyPair to enable SSH access to the instance. Recommend use only office IP. Type: 'AWS::EC2::KeyPair::KeyName' ConstraintDescription: must be the name of an existing EC2 KeyPair. InstanceType: Description: WebServer EC2 instance type Type: String Default: t2.small AllowedValues: # allow only restricted instance - t2.nano - t2.micro - t2.small - t2.medium - t2.large ConstraintDescription: must be a valid EC2 instance type. SSHLocation: Description: The IP address range that can be used to SSH to the EC2 instances Type: String MinLength: '9' MaxLength: '18' Default: 0.0.0.0/0 AllowedPattern: '(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})/(\\d{1,2})' ConstraintDescription: must be a valid IP CIDR range of the form x.x.x.x/x. Mappings: # Conditional value when cloudformation is being created AWSInstanceType2Arch: t2.nano: Arch: HVM64 t2.micro: Arch: HVM64 t2.small: Arch: HVM64 t2.medium: Arch: HVM64 t2.large: Arch: HVM64 AWSInstanceType2NATArch: t2.nano: Arch: NATHVM64 t2.micro: Arch: NATHVM64 t2.small: Arch: NATHVM64 t2.medium: Arch: NATHVM64 t2.large: Arch: NATHVM64 AWSRegionArch2AMI: ap-northeast-2: PV64: NOT_SUPPORTED HVM64: ami-2b408b45 HVMG2: NOT_SUPPORTED Resources: EC2Instance: Type: 'AWS::EC2::Instance' Properties: InstanceType: !Ref InstanceType SecurityGroups: - !Ref InstanceSecurityGroup KeyName: !Ref KeyName ImageId: !FindInMap  - AWSRegionArch2AMI - !Ref 'AWS::Region' - !FindInMap  - AWSInstanceType2Arch - !Ref InstanceType - Arch InstanceSecurityGroup: Type: 'AWS::EC2::SecurityGroup' Properties: GroupDescription: Enable SSH access via port 22 SecurityGroupIngress: - IpProtocol: tcp FromPort: '22' ToPort: '22' CidrIp: !Ref SSHLocation Outputs: InstanceId: Description: InstanceId of the newly created EC2 instance Value: !Ref EC2Instance AZ: Description: Availability Zone of the newly created EC2 instance Value: !GetAtt  - EC2Instance - AvailabilityZone PublicDNS: Description: Public DNSName of the newly created EC2 instance Value: !GetAtt  - EC2Instance - PublicDnsName PublicIP: Description: Public IP address of the newly created EC2 instance Value: !GetAtt  - EC2Instance - PublicIp 한국 유저는 Asia/seoul region cloudformation sample template 을 통해 여러 샘플들을 볼 수 있다.\n다른 지역의 템플릿을 사용하고 싶으면 left bar에서 다른 region을 선택하면 된다.\n AWS CLI for CloudFormation  CloudFormation은 다른 서비스와 마찬가지로 AWS Cli를 통해 사용할 수 있다. 명령어들은 아래와 같다.\n# example $ aws cloudformation update-stack help  get-stack-policy set-stack-policy create-stack update-stack cancel-update-stack delete-stack list-stack-resources list-stacks describe-stack-events describe-stack-resouce describe-stack-resouces describe-stacks get-template validate-template   Intrinsic functions \u0026 pseudo parameters  아래와 같은 function과 parameter를 통해 yaml형식의 파일에서 별도의 로직을 추가할 수 있다.\n Intrinsic function  Fn::Base64 Fn::FindInMap Fn::GetAtt Fn::GetAZs Fn::Join Fn::Select Ref   Pseudo parameters  AWS::NotificationARNs AWS::Region AWS::StackId AWS::StackName    위에서 EC2를 생성하는 경우에 Fn::FindInMap와 Ref과 같은 것을 사용하였는데 ref는 글자에서 느껴지듯이 reference로 특정 변수를 가리킬 때 사용한다. Fn::FindInMap은 별도로 Mapping에 두엇던 파라미터에서 값을 불러오기 위해 사용한다.\n더 자세한 내용을 알고 싶다면 AWS Intrinsic function reference를 참고하도록 하자.\nCreate or update a stack) - 단계 - 소스 - CloudFormation 템플릿을 위한 소스 단계 - AWS CodeCommit, S3 및 Github와 같은 저장소와 연동 - 테스트 - 실행하기 앞서 CloudFormation의 Change Set을 사용하여 배포 검증 - 배포 - 스택 또는 변경 집합을 생성, 업데이트 및 삭제 - 파이프라인 모델링 - 네트워크 리소스 파이프라인 - 자신의 영역마다 네트워크 리소스를 별도로 관리 - 샌드 박스와 프로덕션 네트워크 환경을 반영하고 따로 관리 - 순서 - Source repository - 샌드박스/ 개발 환경을 위한 네트워킹 리소스 - 개별 스택, 종속성을 고려한 순서 - 프로덕션 환경의 변경을 미리보기 위한 변경집합 - 변경이 프로덕션에 적용되기 전에 수동 승인 - 프로덕션에 변경 적용 - 어플리케이션 파이프라인 - 애플리케이션과 인프라 코드에서 더 자주 반복 - 개발환경에서 새 버전을 시작해보고 프로덕션에서 실행 - 순서 - 새 버전이 게시되는 즉시 실행되는 파이프라인 - 테스트를 실행하고, 완료되면 개발 환경을 제거. 사용하지 않는 인스턴스에 대한 요금이 부과되지 않음 - 리소스 수정 또는 교체가 예상대로 이루어지는지 검토 - 프로덕션에 변경사항을 지속적으로 전달 - CloudFormation을 이용하여 파이프라인 생성 및 관리 - 파이프라인을 성정하기 위한 CloudFormation 템플릿 - 파이프라인 artifacts s3 bucket - 파이프라인 알림 SNS 이메일 알림 - 파이프라인 - IAM role 지정 - 별도로 크로스-스택 참조를 사용해서 별도의 스택 안에서 IAM 리소스 프로비저닝 가능. --  References   http://aws.amazon.com/cloudformation http://aws.amazon.com/cloudformation/getting-started http://aws.amazon.com/cloudformation/aws-cloudformation-templates http://github.com/awslabs/cfncluster http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html  ","wordCount":"747","inLanguage":"en","datePublished":"2017-08-03T11:30:03Z","dateModified":"2017-08-03T11:30:03Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://novemberde.github.io/post/2017/08/03/CloudFormation/"},"publisher":{"@type":"Organization","name":"Novemberde's Blog","logo":{"@type":"ImageObject","url":"https://novemberde.github.io/favicon.ico"}}}</script><script async src=//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-8620431066400094",enable_page_level_ads:!0})</script>
+</head>
+<body id=top>
+<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<header class=header>
+<nav class=nav>
+<div class=logo>
+<a href=https://novemberde.github.io/ accesskey=h title="Novemberde's Blog (Alt + H)">Novemberde's Blog</a>
+<span class=logo-switches>
+<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
+</span>
+</div>
+<ul id=menu>
+<li>
+<a href=https://novemberde.github.io/post/ title=Post>
+<span>Post</span>
+</a>
+</li>
+<li>
+<a href=https://novemberde.github.io/about title=About>
+<span>About</span>
+</a>
+</li>
+<li>
+<a href=https://novemberde.github.io/tags/ title=Tags>
+<span>Tags</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class=main>
+<article class=post-single>
+<header class=post-header>
+<div class=breadcrumbs><a href=https://novemberde.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://novemberde.github.io/post/>Posts</a></div>
+<h1 class=post-title>
+AWS CloudFormation을 활용한 Architecture
+</h1>
+<div class=post-meta>August 3, 2017&nbsp;·&nbsp;4 min
+</div>
+</header>
+<div class=post-content><h2 id=summary>Summary<a hidden class=anchor aria-hidden=true href=#summary>#</a></h2>
+<hr>
+<p>AWS CloudFormation의 Master Class를 보고 Reference document를 통해 내용을 살펴보자.</p>
+<hr>
+<h3 id=특징>특징<a hidden class=anchor aria-hidden=true href=#특징>#</a></h3>
+<hr>
+<ul>
+<li>Infra structure as a code를 실현하기에 간편한 도구</li>
+<li>리소스를 Provisioning하고 update를 해줌</li>
+<li>Code로 관리하기 때문에 버전관리에 용이</li>
+<li>AWS cli 또는 AWS console을 통해 배포 및 업데이트가 가능</li>
+<li>리소스에 대해서만 과금되기 때문에 별도의 비용지출이 없음</li>
+<li>Parameter를 통해 Project별로 Customizing이 용이</li>
+<li>코드만 올리면 인프라가 형성되기 때문에 인프라 도입에 대한 리소스 투입이 적음</li>
+</ul>
+<hr>
+<h3 id=cloudformation-template의-특징>Cloudformation template의 특징<a hidden class=anchor aria-hidden=true href=#cloudformation-template의-특징>#</a></h3>
+<hr>
+<ul>
+<li>JSON, YAML 로 개발자 친화적인 포맷</li>
+<li>코드로 관리하기 때문에 재사용에 용이</li>
+<li>Stack 생성시 message를 통해 feedback 제공</li>
+<li>Sample template 제공</li>
+</ul>
+<p>아래는 yaml형식의 ec2를 생성하는 sample template이다. CloudFormation으로 ec2를 생성할 때 파라미터를 받는다.
+instanceType, KeyName, SSHLocation을 설정할 수 있도록 되어 있다.
+선택할 수 있는 인스턴스의 종류를 제한했기 때문에 t2계열의 인스턴스만 선택할 수 있다. 그리고 AMI는 Amazon linux를 사용하였다.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#75715e># EC2 sample template</span>
+<span style=color:#f92672>AWSTemplateFormatVersion</span>: <span style=color:#e6db74>2010-09-09</span>
+<span style=color:#f92672>Description</span>: <span style=color:#ae81ff>EC2 Sample</span>
+<span style=color:#f92672>Parameters</span>: <span style=color:#75715e># Using before cloudformation is being created</span>
+  <span style=color:#f92672>KeyName</span>:
+    <span style=color:#f92672>Description</span>: <span style=color:#ae81ff>Name of an existing EC2 KeyPair to enable SSH access to the instance. Recommend use only office IP.</span>
+    <span style=color:#f92672>Type</span>: <span style=color:#e6db74>&#39;AWS::EC2::KeyPair::KeyName&#39;</span>
+    <span style=color:#f92672>ConstraintDescription</span>: <span style=color:#ae81ff>must be the name of an existing EC2 KeyPair.</span>
+  <span style=color:#f92672>InstanceType</span>:
+    <span style=color:#f92672>Description</span>: <span style=color:#ae81ff>WebServer EC2 instance type</span>
+    <span style=color:#f92672>Type</span>: <span style=color:#ae81ff>String</span>
+    <span style=color:#f92672>Default</span>: <span style=color:#ae81ff>t2.small</span>
+    <span style=color:#f92672>AllowedValues</span>:  <span style=color:#75715e># allow only restricted instance</span>
+      - <span style=color:#ae81ff>t2.nano</span>
+      - <span style=color:#ae81ff>t2.micro</span>
+      - <span style=color:#ae81ff>t2.small</span>
+      - <span style=color:#ae81ff>t2.medium</span>
+      - <span style=color:#ae81ff>t2.large</span>
+    <span style=color:#f92672>ConstraintDescription</span>: <span style=color:#ae81ff>must be a valid EC2 instance type.</span>
+  <span style=color:#f92672>SSHLocation</span>:
+    <span style=color:#f92672>Description</span>: <span style=color:#ae81ff>The IP address range that can be used to SSH to the EC2 instances</span>
+    <span style=color:#f92672>Type</span>: <span style=color:#ae81ff>String</span>
+    <span style=color:#f92672>MinLength</span>: <span style=color:#e6db74>&#39;9&#39;</span>
+    <span style=color:#f92672>MaxLength</span>: <span style=color:#e6db74>&#39;18&#39;</span>
+    <span style=color:#f92672>Default</span>: <span style=color:#ae81ff>0.0.0.0</span><span style=color:#ae81ff>/0</span>
+    <span style=color:#f92672>AllowedPattern</span>: <span style=color:#e6db74>&#39;(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})/(\d{1,2})&#39;</span>
+    <span style=color:#f92672>ConstraintDescription</span>: <span style=color:#ae81ff>must be a valid IP CIDR range of the form x.x.x.x/x.</span>
+<span style=color:#f92672>Mappings</span>: <span style=color:#75715e># Conditional value when cloudformation is being created</span>
+  <span style=color:#f92672>AWSInstanceType2Arch</span>:
+    <span style=color:#f92672>t2.nano</span>:
+      <span style=color:#f92672>Arch</span>: <span style=color:#ae81ff>HVM64</span>
+    <span style=color:#f92672>t2.micro</span>:
+      <span style=color:#f92672>Arch</span>: <span style=color:#ae81ff>HVM64</span>
+    <span style=color:#f92672>t2.small</span>:
+      <span style=color:#f92672>Arch</span>: <span style=color:#ae81ff>HVM64</span>
+    <span style=color:#f92672>t2.medium</span>:
+      <span style=color:#f92672>Arch</span>: <span style=color:#ae81ff>HVM64</span>
+    <span style=color:#f92672>t2.large</span>:
+      <span style=color:#f92672>Arch</span>: <span style=color:#ae81ff>HVM64</span>
+  <span style=color:#f92672>AWSInstanceType2NATArch</span>:
+    <span style=color:#f92672>t2.nano</span>:
+      <span style=color:#f92672>Arch</span>: <span style=color:#ae81ff>NATHVM64</span>
+    <span style=color:#f92672>t2.micro</span>:
+      <span style=color:#f92672>Arch</span>: <span style=color:#ae81ff>NATHVM64</span>
+    <span style=color:#f92672>t2.small</span>:
+      <span style=color:#f92672>Arch</span>: <span style=color:#ae81ff>NATHVM64</span>
+    <span style=color:#f92672>t2.medium</span>:
+      <span style=color:#f92672>Arch</span>: <span style=color:#ae81ff>NATHVM64</span>
+    <span style=color:#f92672>t2.large</span>:
+      <span style=color:#f92672>Arch</span>: <span style=color:#ae81ff>NATHVM64</span>
+  <span style=color:#f92672>AWSRegionArch2AMI</span>:
+    <span style=color:#f92672>ap-northeast-2</span>:
+      <span style=color:#f92672>PV64</span>: <span style=color:#ae81ff>NOT_SUPPORTED</span>
+      <span style=color:#f92672>HVM64</span>: <span style=color:#ae81ff>ami-2b408b45</span>
+      <span style=color:#f92672>HVMG2</span>: <span style=color:#ae81ff>NOT_SUPPORTED</span>
+<span style=color:#f92672>Resources</span>:
+  <span style=color:#f92672>EC2Instance</span>:
+    <span style=color:#f92672>Type</span>: <span style=color:#e6db74>&#39;AWS::EC2::Instance&#39;</span>
+    <span style=color:#f92672>Properties</span>:
+      <span style=color:#f92672>InstanceType</span>: !<span style=color:#ae81ff>Ref InstanceType</span>
+      <span style=color:#f92672>SecurityGroups</span>:
+        - !<span style=color:#ae81ff>Ref InstanceSecurityGroup</span>
+      <span style=color:#f92672>KeyName</span>: !<span style=color:#ae81ff>Ref KeyName</span>
+      <span style=color:#f92672>ImageId</span>: !<span style=color:#ae81ff>FindInMap </span>
+        - <span style=color:#ae81ff>AWSRegionArch2AMI</span>
+        - !<span style=color:#ae81ff>Ref &#39;AWS::Region&#39;</span>
+        - !<span style=color:#ae81ff>FindInMap </span>
+          - <span style=color:#ae81ff>AWSInstanceType2Arch</span>
+          - !<span style=color:#ae81ff>Ref InstanceType</span>
+          - <span style=color:#ae81ff>Arch</span>
+  <span style=color:#f92672>InstanceSecurityGroup</span>:
+    <span style=color:#f92672>Type</span>: <span style=color:#e6db74>&#39;AWS::EC2::SecurityGroup&#39;</span>
+    <span style=color:#f92672>Properties</span>:
+      <span style=color:#f92672>GroupDescription</span>: <span style=color:#ae81ff>Enable SSH access via port 22</span>
+      <span style=color:#f92672>SecurityGroupIngress</span>:
+        - <span style=color:#f92672>IpProtocol</span>: <span style=color:#ae81ff>tcp</span>
+          <span style=color:#f92672>FromPort</span>: <span style=color:#e6db74>&#39;22&#39;</span>
+          <span style=color:#f92672>ToPort</span>: <span style=color:#e6db74>&#39;22&#39;</span>
+          <span style=color:#f92672>CidrIp</span>: !<span style=color:#ae81ff>Ref SSHLocation</span>
+<span style=color:#f92672>Outputs</span>:
+  <span style=color:#f92672>InstanceId</span>:
+    <span style=color:#f92672>Description</span>: <span style=color:#ae81ff>InstanceId of the newly created EC2 instance</span>
+    <span style=color:#f92672>Value</span>: !<span style=color:#ae81ff>Ref EC2Instance</span>
+  <span style=color:#f92672>AZ</span>:
+    <span style=color:#f92672>Description</span>: <span style=color:#ae81ff>Availability Zone of the newly created EC2 instance</span>
+    <span style=color:#f92672>Value</span>: !<span style=color:#ae81ff>GetAtt </span>
+      - <span style=color:#ae81ff>EC2Instance</span>
+      - <span style=color:#ae81ff>AvailabilityZone</span>
+  <span style=color:#f92672>PublicDNS</span>:
+    <span style=color:#f92672>Description</span>: <span style=color:#ae81ff>Public DNSName of the newly created EC2 instance</span>
+    <span style=color:#f92672>Value</span>: !<span style=color:#ae81ff>GetAtt </span>
+      - <span style=color:#ae81ff>EC2Instance</span>
+      - <span style=color:#ae81ff>PublicDnsName</span>
+  <span style=color:#f92672>PublicIP</span>:
+    <span style=color:#f92672>Description</span>: <span style=color:#ae81ff>Public IP address of the newly created EC2 instance</span>
+    <span style=color:#f92672>Value</span>: !<span style=color:#ae81ff>GetAtt </span>
+      - <span style=color:#ae81ff>EC2Instance</span>
+      - <span style=color:#ae81ff>PublicIp</span>
+
+</code></pre></div><p>한국 유저는 <a href=http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/sample-templates-services-ap-northeast-2.html#w2ab2c23c22c13c13>Asia/seoul region cloudformation sample template</a>
+을 통해 여러 샘플들을 볼 수 있다.</p>
+<p>다른 지역의 템플릿을 사용하고 싶으면 left bar에서 다른 region을 선택하면 된다.</p>
+<hr>
+<h3 id=aws-cli-for-cloudformation>AWS CLI for CloudFormation<a hidden class=anchor aria-hidden=true href=#aws-cli-for-cloudformation>#</a></h3>
+<hr>
+<p>CloudFormation은 다른 서비스와 마찬가지로 AWS Cli를 통해 사용할 수 있다.
+명령어들은 아래와 같다.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e># example</span>
+$ aws cloudformation update-stack help
+</code></pre></div><ul>
+<li>get-stack-policy</li>
+<li>set-stack-policy</li>
+<li>create-stack</li>
+<li>update-stack</li>
+<li>cancel-update-stack</li>
+<li>delete-stack</li>
+<li>list-stack-resources</li>
+<li>list-stacks</li>
+<li>describe-stack-events</li>
+<li>describe-stack-resouce</li>
+<li>describe-stack-resouces</li>
+<li>describe-stacks</li>
+<li>get-template</li>
+<li>validate-template</li>
+</ul>
+<hr>
+<h3 id=intrinsic-functions--pseudo-parameters>Intrinsic functions & pseudo parameters<a hidden class=anchor aria-hidden=true href=#intrinsic-functions--pseudo-parameters>#</a></h3>
+<hr>
+<p>아래와 같은 function과 parameter를 통해 yaml형식의 파일에서 별도의 로직을 추가할 수 있다.</p>
+<ul>
+<li>Intrinsic function
+<ul>
+<li>Fn::Base64</li>
+<li>Fn::FindInMap</li>
+<li>Fn::GetAtt</li>
+<li>Fn::GetAZs</li>
+<li>Fn::Join</li>
+<li>Fn::Select</li>
+<li>Ref</li>
+</ul>
+</li>
+<li>Pseudo parameters
+<ul>
+<li>AWS::NotificationARNs</li>
+<li>AWS::Region</li>
+<li>AWS::StackId</li>
+<li>AWS::StackName</li>
+</ul>
+</li>
+</ul>
+<p>위에서 EC2를 생성하는 경우에 Fn::FindInMap와 Ref과 같은 것을 사용하였는데 ref는 글자에서 느껴지듯이 reference로 특정 변수를 가리킬 때 사용한다.
+Fn::FindInMap은 별도로 Mapping에 두엇던 파라미터에서 값을 불러오기 위해 사용한다.</p>
+<p>더 자세한 내용을 알고 싶다면 <a href=docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference.html>AWS Intrinsic function reference</a>를 참고하도록 하자.</p>
+<hr>
+<h3 id=references>References<a hidden class=anchor aria-hidden=true href=#references>#</a></h3>
+<hr>
+<ul>
+<li><a href=http://aws.amazon.com/cloudformation>http://aws.amazon.com/cloudformation</a></li>
+<li><a href=http://aws.amazon.com/cloudformation/getting-started>http://aws.amazon.com/cloudformation/getting-started</a></li>
+<li><a href=http://aws.amazon.com/cloudformation/aws-cloudformation-templates>http://aws.amazon.com/cloudformation/aws-cloudformation-templates</a></li>
+<li><a href=http://github.com/awslabs/cfncluster>http://github.com/awslabs/cfncluster</a></li>
+<li><a href=http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html>http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html</a></li>
+</ul>
+</div>
+<footer class=post-footer>
+<ul class=post-tags>
+<li><a href=https://novemberde.github.io/tags/AWS/>AWS</a></li>
+<li><a href=https://novemberde.github.io/tags/Architecture/>Architecture</a></li>
+<li><a href=https://novemberde.github.io/tags/infrastructure/>infrastructure</a></li>
+<li><a href=https://novemberde.github.io/tags/CloudFormation/>CloudFormation</a></li>
+<li><a href=https://novemberde.github.io/tags/%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/>시작하기</a></li>
+</ul>
+<nav class=paginav>
+<a class=prev href=https://novemberde.github.io/post/2017/08/12/file_format_sh/>
+<span class=title>« Prev Page</span>
+<br>
+<span>/bin/bash^M: bad interpreter: No such file or directory</span>
+</a>
+<a class=next href=https://novemberde.github.io/post/2017/07/03/Elastic_Beanstalk/>
+<span class=title>Next Page »</span>
+<br>
+<span>Docker image를 EB(Elastic Beanstalk)를 통해 배포하기</span>
+</a>
+</nav>
+</footer>
+<div id=disqus_thread></div>
+<script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return}var b=document,a=b.createElement('script');a.async=!0,a.src='//novemberde-github-io.disqus.com/embed.js',a.setAttribute('data-timestamp',+new Date),(b.head||b.body).appendChild(a)})()</script>
+<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript>
+<a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a>
+</article>
+</main>
+<footer class=footer>
+<span>&copy; 2021 <a href=https://novemberde.github.io/>Novemberde's Blog</a></span>
+<span>
+Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
+</span>
+</footer>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a>
+<script>let menu=document.getElementById('menu');menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)},document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
+</body>
+</html>

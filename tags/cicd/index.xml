@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>cicd on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/cicd/</link>
+    <description>Recent content in cicd on Novemberde&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Mon, 13 May 2019 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/cicd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Serverless Application CI/CD on CircleCI</title>
+      <link>https://novemberde.github.io/post/2019/05/13/CircleCI-1st-Meetup/</link>
+      <pubDate>Mon, 13 May 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2019/05/13/CircleCI-1st-Meetup/</guid>
+      <description>Summary  CircleCI Korea User Group 첫번째 밋업에서 서버리스 앱을 배포하기 위해 CircleCI 상에서 어떻게 빌드하는지 알아보았다. 또한, CircleCI의 기본적인 기능 및 특징에 대해서 살펴본다.
+ 발표자료  발표 슬라이드    CircleCI로 Serverless API의 CI/CD 환경 구축하기  from Kyuhyun Byun  </description>
+    </item>
+    
+    <item>
+      <title>Jenkins의 Blue ocean을 활용하여 배포 관리하기</title>
+      <link>https://novemberde.github.io/post/2017/10/21/Jenkins/</link>
+      <pubDate>Sat, 21 Oct 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/10/21/Jenkins/</guid>
+      <description>Summary  Jenkins는 CD/CI로 가장 알려진 도구이다. 이번에는 Jenkins 설정부터 시작하여 Pipeline으로 배포관리하는 과정을 정리해본다.
+ Jenkins로 기본 설정하기  Jenkins를 Install Jenkins를 참고하여 설치한다.
+설치하여 맨처음 접속하면 아래와 같은 화면이 나타난다. 다음의 명령어로 나온 텍스트를 입력한다.
+$ cat /var/jenkins_home/secrets/initialAdminPassword  Customize Jenkins화면에서 여기서는 크게 설정할 필요없이 Install suggested plugins을 선택한다.
+이후에 해당 플러그인을 설치하고 관리자 계정을 설정할 수 있다.
+테스트를 위해 계정 정보는 다음과 같이 설정한다.
+ 계정명: admin 암호: 1234 이름: admin 이메일 주소: 본인 이메일 주소   Jenkins 관리 &amp;gt; 플러그인 관리 &amp;gt; 설치 가능 으로 들어가서 Blue ocean을 선택하여 재시작없이 설치하기 버튼을 클릭한다.</description>
+    </item>
+    
+  </channel>
+</rss>

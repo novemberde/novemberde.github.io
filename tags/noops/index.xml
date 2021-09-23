@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>noops on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/noops/</link>
+    <description>Recent content in noops on Novemberde&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Wed, 06 Dec 2017 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/noops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker와 DevOps에서 Serverless와 NoOps로의 여정</title>
+      <link>https://novemberde.github.io/post/2017/12/06/Docker-to-serverless/</link>
+      <pubDate>Wed, 06 Dec 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/12/06/Docker-to-serverless/</guid>
+      <description>Summary  &amp;ldquo;Docker와 DevOps에서 Serverless와 NoOps로의 여정&amp;quot;이라는 주제로 2017년 12월 06일에 W3C Conference에서 발표한 자료입니다.
+   Docker와 DevOps에서 Serverless와 NoOps로의 여정  from Kyuhyun Byun  데모로 시연한 샘플코드는 아래와 같습니다. https://github.com/novemberde/serverless-webapp-demo  References   https://www.slideshare.net/KyuhyunByun1/docker-devops-serverless-noops https://onoffmix.com/event/119375 https://github.com/novemberde/serverless-webapp-demo  </description>
+    </item>
+    
+  </channel>
+</rss>

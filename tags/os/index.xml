@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>os on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/os/</link>
+    <description>Recent content in os on Novemberde&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Sun, 22 Oct 2017 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/os/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>유용한 OS 명령어 모음</title>
+      <link>https://novemberde.github.io/post/2017/10/22/OS-Command/</link>
+      <pubDate>Sun, 22 Oct 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/10/22/OS-Command/</guid>
+      <description>Summary  개발을 하다가 명령어를 모두 기억하고 싶어도 잠깐 다른 업무를 하다가 다시하면 잊게되는 명령어들이 있다. 특히 OS 관련 명령어는 서버에 문제가 생겼을 때 사용하기 때문에 더욱 그렇다. 이번에는 자주 사용하지 않았으면 하는 명령어들을 정리해본다.
+ OS 명령어  sar
+ 리소스 사용 내역을 볼 수 있다. CPU 사용율 Idle 상태 상태 확인 I/O 의 사용율 메모리 사용율  $ sudo apt-get install sysstat $ sudo vi /etc/default/sysstat ENABLED=&amp;#34;true&amp;#34; $ sar -u 1 5 Linux 4.</description>
+    </item>
+    
+  </channel>
+</rss>

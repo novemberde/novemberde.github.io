@@ -1,0 +1,223 @@
+<!doctype html><html lang=en dir=auto>
+<head><meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=robots content="index, follow">
+<title>Posts | Novemberde's Blog</title>
+<meta name=keywords content>
+<meta name=description content="Posts - Novemberde's Blog">
+<meta name=author content>
+<link rel=canonical href=https://novemberde.github.io/post/>
+<link crossorigin=anonymous href=/assets/css/stylesheet.min.9f1d947375927e9847272b1f4e9be81336f539e513bf04d52cade31f81cad1af.css integrity="sha256-nx2Uc3WSfphHJysfTpvoEzb1OeUTvwTVLK3jH4HK0a8=" rel="preload stylesheet" as=style>
+<link rel=icon href=https://novemberde.github.io/favicon.ico>
+<link rel=icon type=image/png sizes=16x16 href=https://novemberde.github.io/favicon-16x16.png>
+<link rel=icon type=image/png sizes=32x32 href=https://novemberde.github.io/favicon-32x32.png>
+<link rel=apple-touch-icon href=https://novemberde.github.io/apple-touch-icon.png>
+<link rel=mask-icon href=https://novemberde.github.io/safari-pinned-tab.svg>
+<meta name=theme-color content="#2e2e33">
+<meta name=msapplication-TileColor content="#2e2e33">
+<meta name=generator content="Hugo 0.88.1">
+<link rel=alternate type=application/rss+xml href=https://novemberde.github.io/post/index.xml>
+<noscript>
+<style>#theme-toggle,.top-link{display:none}</style>
+<style>@media(prefers-color-scheme:dark){:root{--theme:#1d1e20;--entry:#2e2e33;--primary:rgba(255, 255, 255, 0.84);--secondary:rgba(255, 255, 255, 0.56);--tertiary:rgba(255, 255, 255, 0.16);--content:rgba(255, 255, 255, 0.74);--hljs-bg:#2e2e33;--code-bg:#37383e;--border:#333}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
+</noscript><meta property="og:title" content="Posts">
+<meta property="og:description" content="Developer novemberde's dev log">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://novemberde.github.io/post/"><meta property="og:site_name" content="Novemberde's Blog">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Posts">
+<meta name=twitter:description content="Developer novemberde's dev log">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://novemberde.github.io/post/"}]}</script><script async src=//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-8620431066400094",enable_page_level_ads:!0})</script>
+</head>
+<body class=list id=top>
+<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<header class=header>
+<nav class=nav>
+<div class=logo>
+<a href=https://novemberde.github.io/ accesskey=h title="Novemberde's Blog (Alt + H)">Novemberde's Blog</a>
+<span class=logo-switches>
+<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
+</span>
+</div>
+<ul id=menu>
+<li>
+<a href=https://novemberde.github.io/post/ title=Post>
+<span class=active>Post</span>
+</a>
+</li>
+<li>
+<a href=https://novemberde.github.io/about title=About>
+<span>About</span>
+</a>
+</li>
+<li>
+<a href=https://novemberde.github.io/tags/ title=Tags>
+<span>Tags</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class=main>
+<header class=page-header>
+<h1>Posts</h1>
+</header>
+<article class=post-entry>
+<header class=entry-header>
+<h2>MySQL에서 DB스키마 작성시 주의할 점들
+</h2>
+</header>
+<section class=entry-content>
+<p>신규프로젝트를 진행할 경우 디비 스키마를 설계를 해야한다. 데이터의 타입부터 외래키 설정등 신경써야하는 부분들이 생각보다 자잘하게 있다. 이 경우에 주의해야하는 점들을 정리해보았다. 이 문서는 지속적으로 수정될 예정이다.
+Datatype MySQL에서 사용하는 데이터 타입은 다음과 같다.
+Numeric Type BIT[(M)] - A bit-value type. M indicates the number of bits per value, from 1 to 64. The default is 1 if M is omitted. TINYINT[(M)] [UNSIGNED] [ZEROFILL] - A very small integer. The signed range is -128 to 127....</p>
+</section>
+<footer class=entry-footer>June 10, 2019&nbsp;·&nbsp;13 min</footer>
+<a class=entry-link aria-label="post link to MySQL에서 DB스키마 작성시 주의할 점들" href=https://novemberde.github.io/post/2019/06/10/MySQL-Desgin-cheatsheet/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>Serverless Application CI/CD on CircleCI
+</h2>
+</header>
+<section class=entry-content>
+<p>Summary CircleCI Korea User Group 첫번째 밋업에서 서버리스 앱을 배포하기 위해 CircleCI 상에서 어떻게 빌드하는지 알아보았다. 또한, CircleCI의 기본적인 기능 및 특징에 대해서 살펴본다.
+발표자료 발표 슬라이드 CircleCI로 Serverless API의 CI/CD 환경 구축하기 from Kyuhyun Byun </p>
+</section>
+<footer class=entry-footer>May 13, 2019&nbsp;·&nbsp;1 min</footer>
+<a class=entry-link aria-label="post link to Serverless Application CI/CD on CircleCI" href=https://novemberde.github.io/post/2019/05/13/CircleCI-1st-Meetup/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>Serverless Websocket 톺아보기
+</h2>
+</header>
+<section class=entry-content>
+<p>Summary AWSKRUG 판교 밋업에서 서버리스 웹소켓에 대한 내용을 공유하였다.
+발표자료 DEMO 발표 슬라이드 Serverless websocket 톺아보기 from Kyuhyun Byun </p>
+</section>
+<footer class=entry-footer>April 10, 2019&nbsp;·&nbsp;1 min</footer>
+<a class=entry-link aria-label="post link to Serverless Websocket 톺아보기" href=https://novemberde.github.io/post/2019/04/10/Serverless-Websocket/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>Native addon을 포함하여 Node.js + Typescript + Serverless 빌드 및 배포하기
+</h2>
+</header>
+<section class=entry-content>
+<p>AWSKRUG Serverless Group에서 발표한 자료입니다. C++로 빌드한 Native addon을 Serverless 환경에서 사용할 때 빌드 및 배포하는 방법을 다루었습니다.
+발표자료 Native addon을 포함하여 Node.js + Typescript + Serverless 빌드 및 배포하기 from Kyuhyun Byun References https://www.slideshare.net/KyuhyunByun1/native-addon-nodejs-typescript-serverless </p>
+</section>
+<footer class=entry-footer>February 14, 2019&nbsp;·&nbsp;1 min</footer>
+<a class=entry-link aria-label="post link to Native addon을 포함하여 Node.js + Typescript + Serverless 빌드 및 배포하기" href=https://novemberde.github.io/post/2019/02/14/Ts-Serverless-Build/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>Amazon Timestream 시계열 데이터 전용 DB 소개
+</h2>
+</header>
+<section class=entry-content>
+<p>“시계열 데이터 전용 DB 소개"라는 주제로 2019년 1월 25일에 AWSKRUG re:Invent recap 행사에서 발표한 자료입니다.
+발표자료 Amazon Timestream 시계열 데이터 전용 DB 소개 :: 변규현 - AWS Community Day 2019 from AWS Korea UserGroup (AWS한국사용자모임) References https://www.slideshare.net/awskr/amazon-timestream-db https://pages.awscloud.com/aws-community-day-seoul-2019.html </p>
+</section>
+<footer class=entry-footer>January 25, 2019&nbsp;·&nbsp;1 min</footer>
+<a class=entry-link aria-label="post link to Amazon Timestream 시계열 데이터 전용 DB 소개" href=https://novemberde.github.io/post/2019/01/25/Timestream/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>2017년부터 2018년까지의 회고
+</h2>
+</header>
+<section class=entry-content>
+<p>2017부터 2018년에 대해서 회고를 남기려고 한다. 어느때보다 치열하고 열심히 달려온 한해였다. 다음은 한해동한 진행했던 일들의 대한 목록은 다음과 같다.
+AWSKRUG 회사 강의 활동  AWSKRUG 개발자 커리어에서 가장 크게 영향력을 준 모임이다. AWSKRUG는 Amazon Web Service Korea User Group의 약자로 AWS 한국 사용자 그룹이라고도 불린다. 이 모임에 처음으로 참여하게된 것은 2017년 4월 쯤이었다. 지난 2년여간 데이터 사이언스 그룹을 시작으로 거의 모든 모임에 참석하였다. AWSKRUG 통해 많은 것을 배울 수 있었다....</p>
+</section>
+<footer class=entry-footer>January 1, 2019&nbsp;·&nbsp;9 min</footer>
+<a class=entry-link aria-label="post link to 2017년부터 2018년까지의 회고" href=https://novemberde.github.io/post/2019/01/01/Retrospect/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>OWASP TOP 10
+</h2>
+</header>
+<section class=entry-content>
+<p>Summary 보안 취약점의 종류를 이해하고 정리한다. 보안은 개발속도를 늦추는 경우도 있지만 제품의 안정성과 신뢰성에 기여하기 때문에 필수적인 요소이다. 다음은 OWASP(The Open Web Application Security Project)의 년도별 TOP 10 취약점의 종류이다.
+2017 Injection
+Broken Authentication
+Sensitivy Data Exposure
+XML External Entities(XXE)
+Broken Access Control
+Security Misconfiguration
+Cross-Site Scripting(XXS)
+Insecure Deserialization
+Using Component with Known Vulnerabilities...</p>
+</section>
+<footer class=entry-footer>November 2, 2018&nbsp;·&nbsp;1 min</footer>
+<a class=entry-link aria-label="post link to OWASP TOP 10" href=https://novemberde.github.io/post/2018/11/02/OWASP/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>0원으로 시작하는 데이터 수집 및 분석
+</h2>
+</header>
+<section class=entry-content>
+<p>Summary 부산 스마트 앱 개발자 포럼에서 서버리스를 활용하여 데이터를 수집 및 분석 후기를 공유하였다.
+발표자료 Github repo. 발표 슬라이드 0원으로 시작하는 서버리스 데이터 수집 및 분석 from Kyuhyun Byun 고찰 지난 여름부터 모아온 데이터를 분석하고 이 데이터를 기반으로 AWS의 데이터 처리 서비스들에 대해서 공부하는 계기였다. 실제로 현업에서 데이터를 분석할 일은 많다. 데이터를 쌓고 보기 쉽게 변환하는 과정 그리고 시각화까지 다양한 기술을 요구한다....</p>
+</section>
+<footer class=entry-footer>October 29, 2018&nbsp;·&nbsp;1 min</footer>
+<a class=entry-link aria-label="post link to 0원으로 시작하는 데이터 수집 및 분석" href=https://novemberde.github.io/post/2018/10/29/Potal-Analysis/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>Circle CI에서 Docker Build 하기
+</h2>
+</header>
+<section class=entry-content>
+<p>Summary 현재 Terraform으로 ECS 인프라를 생성하고, CircleCI에서 docker image를 빌드하고 ECR에 푸시하는 과정을 자동화하고 있다. 이 과정에 있어서 docker image를 빌드하는 것에서 문제가 발생했다.
+CircleCI에서 script를 실행하는 환경은 Container 기반으로 되어 있기 때문이다. Docker image를 빌드하기 위해서는 docker가 설치되어 있는 환경이어야 했다.
+docker-in-docker라는 개념으로 docker hub에 “docker"라는 docker image가 있다. 하지만 이 이미지로는 프로덕션 이미지를 빌드하고 배포할 때 사용하는 기본 패키지가 없는데, 이러한 기본패키지를 추가하여 CircleCI에서 docker를 빌드할 수 있는 이미지 생성하는 방법 및 CircleCI 설정을 정리해보았다....</p>
+</section>
+<footer class=entry-footer>September 17, 2018&nbsp;·&nbsp;2 min</footer>
+<a class=entry-link aria-label="post link to Circle CI에서 Docker Build 하기" href=https://novemberde.github.io/post/2018/09/17/Circleci-docker/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
+<h2>2018년 AWS Serverless Hands-on 1, 손쉽게 시작하는 Serverless Architecture
+</h2>
+</header>
+<section class=entry-content>
+<p>Summary 2018년 AWSKRUG에서 8회에 걸쳐 진행하는 핸즈온 중 하나인 Serverless Hands-on 입니다
+제목: 손쉽게 시작하는 Serverless Architecture
+내용: Serverless Architecture는 말그대로 서버를 올리지 않는 아키텍처를 의미합니다. 기존에는 각 서버에 운영하는 어플리케이션들을 배포했지만, Serverless Architecture를 적용하면 운영 부담없이 비지니스 로직에만 집중할 수 있습니다. 서버없이 Web Application과 Crawler를 만들어 운영이 필요없는 데모 서비스를 구성합니다.
+Serverless Group First Hands-on Part 1 AWSKRUG Serverless Group의 첫번째 핸즈온 Part.1 웹어플리케이션 만들기입니다.😁
+바로가기
+Serverless Group First Hands-on Part 2 AWSKRUG Serverless Group의 첫번째 핸즈온 Part....</p>
+</section>
+<footer class=entry-footer>July 2, 2018&nbsp;·&nbsp;1 min</footer>
+<a class=entry-link aria-label="post link to 2018년 AWS Serverless Hands-on 1, 손쉽게 시작하는 Serverless Architecture" href=https://novemberde.github.io/post/2018/07/02/Serverless-Handson-1/></a>
+</article>
+<footer class=page-footer>
+<nav class=pagination>
+<a class=prev href=https://novemberde.github.io/post/>« Prev Page</a>
+<a class=next href=https://novemberde.github.io/post/page/3/>Next Page »</a>
+</nav>
+</footer>
+</main>
+<footer class=footer>
+<span>&copy; 2021 <a href=https://novemberde.github.io/>Novemberde's Blog</a></span>
+<span>
+Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
+</span>
+</footer>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a>
+<script>let menu=document.getElementById('menu');menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)},document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>자동화 on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/%EC%9E%90%EB%8F%99%ED%99%94/</link>
+    <description>Recent content in 자동화 on Novemberde&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Mon, 14 Aug 2017 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/%EC%9E%90%EB%8F%99%ED%99%94/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Serverless을 이용한 AWS Lambda의 배포 자동화</title>
+      <link>https://novemberde.github.io/post/2017/08/14/Serverless/</link>
+      <pubDate>Mon, 14 Aug 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/08/14/Serverless/</guid>
+      <description>Summary  AWS Lambda와 api gateway를 사용하여 작업하면 배포하는 부분에서 상당부분 시간을 사용한다. 또한 API Gateway와 lambda를 엮는 것은 별도의 설정 과정이 필요하며, Resource &amp;amp; Stage 개념이 있어서 변경사항이 생길 경우에 API배포를 매번 해주어야 한다.
+Serverless framework는 이 모든 것을 자동화해주며, 내부적으로 CloudFormation을 사용하기 때문에 API gateway에서 api변동사항을 더욱 쉽게 반영해줄 수 있다.
+ Serverless framework 란?  The open-source, application framework to easily build serverless architectures on AWS Lambda &amp;amp; more.</description>
+    </item>
+    
+  </channel>
+</rss>

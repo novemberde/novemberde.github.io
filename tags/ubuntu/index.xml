@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>ubuntu on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/ubuntu/</link>
+    <description>Recent content in ubuntu on Novemberde&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Tue, 09 May 2017 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bitbucket access key 발급하기</title>
+      <link>https://novemberde.github.io/post/2017/04/18/Bitbucket_access_key_0/</link>
+      <pubDate>Tue, 09 May 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/04/18/Bitbucket_access_key_0/</guid>
+      <description>Summary  서버에 프로젝트를 배포할 경우 ftp로 파일을 옮기는 방식으로 사용할 수도 있다. 하지만 git repository를 사용하면 git 명령어만으로 간단히 서버코드를 갱신할 수 있다.
+로그인이 아닌 access key를 통해 git repository에 접근하는 방법에 대해 알아보자.
+ Key pair 생성하기  먼저 배포하고 싶은 서버에 ssh로 접속한 후 key pair를 생성하자.
+# 이 커맨드는 현재 접속한 유저 directory에 .ssh폴더가 없으면 생성할 것이고, 있다면 .ssh directory에 key pair만 생성할 것이다. $ ssh-keygen Generating public/private rsa key pair.</description>
+    </item>
+    
+    <item>
+      <title>만들어진 Docker image를 EC2 인스턴스에 배포하기</title>
+      <link>https://novemberde.github.io/post/2017/04/03/Docker_9/</link>
+      <pubDate>Mon, 03 Apr 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/04/03/Docker_9/</guid>
+      <description>Summary  이제 모든 준비는 끝났다. Docker image를 EC2 인스턴스에 배포하자.
+ 순서   Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기 EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기 Bitbucket을 사용하여 git repository 생성하기 Express JS를 사용하여 Node 서버 구축하기 PM2를 사용하여 EC2에 Node 서버 배포하기 Node 서버를 바탕으로 Dockerfile로 만들기 Docker Hub의 automated build를 사용하여 Docker image를 만들기 만들어진 Docker image를 EC2 인스턴스에 배포하기   Docker image를 받아오기  EC2 인스턴스에 SSH로 접속하자.</description>
+    </item>
+    
+    <item>
+      <title>접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기</title>
+      <link>https://novemberde.github.io/post/2017/04/01/Docker_2/</link>
+      <pubDate>Sat, 01 Apr 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/04/01/Docker_2/</guid>
+      <description>Summary  생성한 EC2 인스턴스에 docker라는 계정을 생성해 보려고 한다.
+또한 Security Group을 응용하여 접속포트는 80을 열어 사이트를 접근할 수 있도록 설정해주자.
+ 순서   Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기 EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기 Bitbucket을 사용하여 git repository 생성하기 Express JS를 사용하여 Node 서버 구축하기 테스트로 PM2를 사용하여 EC2에 Node 서버 배포하기 Node 서버를 바탕으로 Dockerfile로 만들기 Docker Hub의 automated build를 사용하여 Docker image를 만들기 만들어진 Docker image를 EC2 인스턴스에 배포하기   docker 라는 linux 계정을 생성해본다.</description>
+    </item>
+    
+    <item>
+      <title>AWS에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기</title>
+      <link>https://novemberde.github.io/post/2017/03/31/Docker_1/</link>
+      <pubDate>Fri, 31 Mar 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/03/31/Docker_1/</guid>
+      <description>Summary  요즘에는 직접 IDC를 통해 서버를 운영하는 경우가 사라지고 있다. Amazon에서 지원하는 IaaS인 EC2를 사용하면 간단하게 서버 인프라를 구축할 수 있다. 가입은 간단하니 생략하고, EC2를 생성하고 SSH로 접속하는 과정을 진행해보겠다.
+ 순서   Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기 EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기 Bitbucket을 사용하여 git repository 생성하기 Express JS를 사용하여 Node 서버 구축하기 테스트로 PM2를 사용하여 EC2에 Node 서버 배포하기 Node 서버를 바탕으로 Dockerfile로 만들기 Docker Hub의 automated build를 사용하여 Docker image를 만들기 만들어진 Docker image를 EC2 인스턴스에 배포하기   EC2 생성하기  처음에 접속하면 아래와 같은 콘솔화면이 나타난다.</description>
+    </item>
+    
+    <item>
+      <title>Docker로 EC2에 Node 배포하기</title>
+      <link>https://novemberde.github.io/post/2017/03/31/Docker_0/</link>
+      <pubDate>Fri, 31 Mar 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/03/31/Docker_0/</guid>
+      <description>소개 Node JS 서버를 배포하려고 한다. 매일 같이 하던 방식이지만 방법을 잊을 수도 있다는 생각이 들었다. 이것을 보고 사람들이 노드 서버를 간결하게 배포하였으면 한다.
+순서   Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기 EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기 Bitbucket을 사용하여 git repository 생성하기 Express JS를 사용하여 Node 서버 구축하기 테스트로 PM2를 사용하여 EC2에 Node 서버 배포하기 Node 서버를 바탕으로 Dockerfile로 만들기 Docker Hub의 automated build를 사용하여 Docker image를 만들기 만들어진 Docker image를 EC2 인스턴스에 배포하기   </description>
+    </item>
+    
+  </channel>
+</rss>

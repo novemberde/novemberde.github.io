@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>haking on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/haking/</link>
+    <description>Recent content in haking on Novemberde&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Mon, 05 Apr 2021 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/haking/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>고언어(Golang) HACKING.md 내용 정리</title>
+      <link>https://novemberde.github.io/post/2021/04/05/Golang-HACKING/</link>
+      <pubDate>Mon, 05 Apr 2021 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2021/04/05/Golang-HACKING/</guid>
+      <description>Golang은 Open source project 이며 모든 개발 내역이 Github에 코드로 구현되어 있다. 하나하나의 구현 내용을 이해하고 싶다면 각 패키지를 읽어보며 이해할 수 있다. 그렇지만 방대한 양이기 때문에 처음에 접하는 경우에는 어디서부터 읽어야할지, 그리고 기본적인 구조를 어떻게 잡아야하는지 어렵기만 하다.
+그렇다면 Golang의 기본적인 구조에 대해서 이해하고 싶다면 어떻게 시작해야할까? 다행히도 고언어 개발자들은 HANKING.md에 기본적인 내용을 정리해두었다. 고언어의 런타임이 어떤 구조로 이뤄져 있는지, 그리고 동시성 처리를 위한 방식이나 메모리 관리 측면에서는 어떻게 하고 있는지 등 다양한 내용이 정리되어 있다.</description>
+    </item>
+    
+  </channel>
+</rss>

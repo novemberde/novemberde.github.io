@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>cold on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/cold/</link>
+    <description>Recent content in cold on Novemberde&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Fri, 02 Feb 2018 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/cold/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS Lambda에서의 Cold Start 문제 해결하기(Golang &#43; serverless framework)</title>
+      <link>https://novemberde.github.io/post/2018/02/02/Lambda_coldStart/</link>
+      <pubDate>Fri, 02 Feb 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2018/02/02/Lambda_coldStart/</guid>
+      <description>Summary  AWS Lambda와 API Gateway를 연동하여 웹서버를 Serverless architecture로 운영하고 있다. 관리할 서버가 없고 비지니스 로직에만 집중할 수 있어서 좋기도 하지만 항상 Lambda container가 대기중인 상태가 아니다 보니 Cold start관련하여 요청사항이 발생했다.
+일정시간이 경과된 후에 해당 페이지를 접속할 경우에 로딩이 3~4초이상 걸리기 때문에 사용이 불편하였다. 이를 해결하기 위해 5분마다 각 api를 health check하는 scheduler를 두기로 결정하였다. 그렇게되면 지속적인 lambda 호출로 인해 항상 하나이상의 lambda container가 대기하는 형태가 되어 lambda의 cold start의 가장 큰 시간을 소비하는 DB connection의 시간을 느낄 수 없다.</description>
+    </item>
+    
+  </channel>
+</rss>

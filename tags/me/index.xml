@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>me on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/me/</link>
+    <description>Recent content in me on Novemberde&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Sun, 19 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/me/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>https://novemberde.github.io/about/</link>
+      <pubDate>Sun, 19 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/about/</guid>
+      <description>Byun Kyuhyun? 유도와 주짓수를 하며 로드바이크를 즐기는 개발자.
+The developer who enjoy riding a bicycle and playing judo &amp;amp; jiu-jitsu.
+ Github Linkedin  </description>
+    </item>
+    
+  </channel>
+</rss>

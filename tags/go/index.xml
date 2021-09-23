@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>go on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/go/</link>
+    <description>Recent content in go on Novemberde&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Tue, 24 Nov 2020 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>당근마켓의 고언어 도입기, 그리고 활용법</title>
+      <link>https://novemberde.github.io/post/2020/11/24/Golang-use-case-in-karrot/</link>
+      <pubDate>Tue, 24 Nov 2020 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2020/11/24/Golang-use-case-in-karrot/</guid>
+      <description>당근마켓에 들어와서 고언어를 어떻게 도입하고, 어떻게 활용했는지에 대해서 정리해보았다. 서비스가 성장함에 따라서 요구하는 조건은 달라지고 이에 최적화된 언어를 도입하고, 기존 서비스에서 필요한 곳만 하나씩 고언어를 통해 플랫폼화하는 방법을 정리했다.
+Slide Share   당근마켓 고언어 도입기, 그리고 활용법  from Kyuhyun Byun  Youtube  Reference  어쩌다 밋업 링크 https://www.facebook.com/1512494142177634/posts/3692166177543742/  </description>
+    </item>
+    
+    <item>
+      <title>Handle massive traffic with serverless</title>
+      <link>https://novemberde.github.io/post/2020/07/10/Handle-massive-traffic-with-serverless/</link>
+      <pubDate>Fri, 10 Jul 2020 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2020/07/10/Handle-massive-traffic-with-serverless/</guid>
+      <description>The journey to adopt the serverless architecture from beginning to advanced.
+Presentation   Handle massive traffic with serverless  from Kyuhyun Byun </description>
+    </item>
+    
+    <item>
+      <title>Go언어로 서버리스 서비스 시작하기</title>
+      <link>https://novemberde.github.io/post/2019/12/22/Go-serverless/</link>
+      <pubDate>Sun, 22 Dec 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2019/12/22/Go-serverless/</guid>
+      <description>AWS에서 서버리스로 구현하는 앱은 보통 Javascript 또는 Python으로 작성된다. 그렇지만 AWS Lambda에서는 거의 모든 언어를 지원하고 있다. 더욱이 인프라 및 서버사이드에서 이뤄지는 프로젝트는 대부분 고언어로 작성되고 있다. 생산성 뿐만 아니라 배포시에도 이점을 가져가고 있기 때문이다. Serverless의 장단점에 대해서 이야기하고, Go 언어를 통해 서버리스 Todo 앱을 작성하고 배포하는 예제를 Golang Korea Meetup에서 발표하였다. 다음은 발표 때 사용했던 슬라이드 및 참고한 자료들이다.
+Presentation   Start Serverless with Golang!  from Kyuhyun Byun  References  https://github.</description>
+    </item>
+    
+    <item>
+      <title>AWS Lambda에서의 Cold Start 문제 해결하기(Golang &#43; serverless framework)</title>
+      <link>https://novemberde.github.io/post/2018/02/02/Lambda_coldStart/</link>
+      <pubDate>Fri, 02 Feb 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2018/02/02/Lambda_coldStart/</guid>
+      <description>Summary  AWS Lambda와 API Gateway를 연동하여 웹서버를 Serverless architecture로 운영하고 있다. 관리할 서버가 없고 비지니스 로직에만 집중할 수 있어서 좋기도 하지만 항상 Lambda container가 대기중인 상태가 아니다 보니 Cold start관련하여 요청사항이 발생했다.
+일정시간이 경과된 후에 해당 페이지를 접속할 경우에 로딩이 3~4초이상 걸리기 때문에 사용이 불편하였다. 이를 해결하기 위해 5분마다 각 api를 health check하는 scheduler를 두기로 결정하였다. 그렇게되면 지속적인 lambda 호출로 인해 항상 하나이상의 lambda container가 대기하는 형태가 되어 lambda의 cold start의 가장 큰 시간을 소비하는 DB connection의 시간을 느낄 수 없다.</description>
+    </item>
+    
+  </channel>
+</rss>

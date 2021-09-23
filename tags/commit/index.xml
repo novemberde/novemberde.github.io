@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>commit on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/commit/</link>
+    <description>Recent content in commit on Novemberde&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Fri, 20 Oct 2017 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/commit/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CodeCommit 과 SourceTree 연동</title>
+      <link>https://novemberde.github.io/post/2017/10/20/CodeCommit/</link>
+      <pubDate>Fri, 20 Oct 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/10/20/CodeCommit/</guid>
+      <description>Summary  AWS CodeCommit은 AWS 완전 관리형 private git repository로 인데, 콘솔화면이 조금 부실해서 콘솔화면에서 repository 관리가 좋아보이진 않았다.
+SourceTree라는 Atlassian의 Git GUI tool로 AWS CodeCommit을 연동해보자.
+ AWS CodeCommit에서 Git repository 생성하기  AWS CodeCommit화면으로 들어가서 Create repository를 하면 아래와 같은 화면이 나오는데 각 항목에 내용을 입력하자.
+ Repository name: test Description: CodeCommit with SourceTree   Local에 Git repository 설정하기  Repository를 생성하면 다음과 같은 화면이 나타난다.
+주목해야 할 부분은 빨간 박스로 표시해놓았다.</description>
+    </item>
+    
+  </channel>
+</rss>

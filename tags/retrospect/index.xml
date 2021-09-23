@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>retrospect on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/retrospect/</link>
+    <description>Recent content in retrospect on Novemberde&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Tue, 01 Jan 2019 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/retrospect/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2017년부터 2018년까지의 회고</title>
+      <link>https://novemberde.github.io/post/2019/01/01/Retrospect/</link>
+      <pubDate>Tue, 01 Jan 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2019/01/01/Retrospect/</guid>
+      <description>2017부터 2018년에 대해서 회고를 남기려고 한다. 어느때보다 치열하고 열심히 달려온 한해였다. 다음은 한해동한 진행했던 일들의 대한 목록은 다음과 같다.
+ AWSKRUG 회사 강의 활동   AWSKRUG 개발자 커리어에서 가장 크게 영향력을 준 모임이다. AWSKRUG는 Amazon Web Service Korea User Group의 약자로 AWS 한국 사용자 그룹이라고도 불린다. 이 모임에 처음으로 참여하게된 것은 2017년 4월 쯤이었다. 지난 2년여간 데이터 사이언스 그룹을 시작으로 거의 모든 모임에 참석하였다. AWSKRUG 통해 많은 것을 배울 수 있었다.</description>
+    </item>
+    
+  </channel>
+</rss>

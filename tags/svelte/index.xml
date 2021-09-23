@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>svelte on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/svelte/</link>
+    <description>Recent content in svelte on Novemberde&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Fri, 11 Oct 2019 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/svelte/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Let&#39;s start SVELTE, goodbye React &amp; Vue</title>
+      <link>https://novemberde.github.io/post/2019/10/11/Svelte-revealjs/</link>
+      <pubDate>Fri, 11 Oct 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2019/10/11/Svelte-revealjs/</guid>
+      <description>W3C Conference Korea 2019  View presentation on new tab References  https://www.44bits.io/ko/post/direnv_for_managing_directory_environment  </description>
+    </item>
+    
+  </channel>
+</rss>

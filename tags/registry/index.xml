@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>registry on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/registry/</link>
+    <description>Recent content in registry on Novemberde&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Sun, 09 Apr 2017 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/registry/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>나만의 private docker registry 구성하기.</title>
+      <link>https://novemberde.github.io/post/2017/04/09/Docker_Registry_0/</link>
+      <pubDate>Sun, 09 Apr 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/04/09/Docker_Registry_0/</guid>
+      <description>Summary  Docker hub에 private image를 올리는 것은 제한이 있다. 개인 사용자의 경우 하나의 이미지만 private이 가능하고 organization의 경우에는 비용을 지불해야만 사용이 가능하다. 이런점에 비추어 볼 때 우리는 private registry환경을 구축하고 싶다는 생각이 들 것이다.
+EC2에 개인 registry를 구축하고 local 또는 다른 서버에서 접근하는 방법에 대해서 진행해보겠다. 그리고 Amazon S3 를 이미지 저장소로 사용하겠다.
+Docker registry 구축하기  docker가 설치되어 있는 EC2에 접근하여 registry 이미지를 pull 해보자.
+ docker registry의 기본포트는 5000번이다.</description>
+    </item>
+    
+  </channel>
+</rss>

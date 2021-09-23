@@ -1,0 +1,189 @@
+<!doctype html><html lang=en dir=auto>
+<head><meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta name=robots content="index, follow">
+<title>Javascript에서 Closure와 Constructor | Novemberde's Blog</title>
+<meta name=keywords content="javascript,closure,constructor,performance">
+<meta name=description content="Summary  node js나 web ui를 다루기 위해 javascript를 사용하면 closure를 사용할 것이다. constructor로 객체를 생성하지 않고 왜 closure를 사용하는지 살펴보자.
+ Constructor와 Closure의 성능차이  샘플코드는 아래와 같다. 성능 결과값을 보면 거의 2배의 차이가 나는 것을 볼 수 있다.
+이러한 차이는 node 서버를 사용할 경우 더욱 두드러지게 체감할 것이다.
+constructor를 사용하는 경우 javascript 객체가 반드시 가져야할 함수들을 상속받기 때문에 속도차이가 나타나는 것이다. 하지만 front에서는 클라이언트가 메모리를 가지기 때문에 크게 우려하지 않아도 된다.">
+<meta name=author content>
+<link rel=canonical href=https://novemberde.github.io/post/2017/04/16/Closure_0/>
+<link crossorigin=anonymous href=/assets/css/stylesheet.min.9f1d947375927e9847272b1f4e9be81336f539e513bf04d52cade31f81cad1af.css integrity="sha256-nx2Uc3WSfphHJysfTpvoEzb1OeUTvwTVLK3jH4HK0a8=" rel="preload stylesheet" as=style>
+<script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://novemberde.github.io/favicon.ico>
+<link rel=icon type=image/png sizes=16x16 href=https://novemberde.github.io/favicon-16x16.png>
+<link rel=icon type=image/png sizes=32x32 href=https://novemberde.github.io/favicon-32x32.png>
+<link rel=apple-touch-icon href=https://novemberde.github.io/apple-touch-icon.png>
+<link rel=mask-icon href=https://novemberde.github.io/safari-pinned-tab.svg>
+<meta name=theme-color content="#2e2e33">
+<meta name=msapplication-TileColor content="#2e2e33">
+<meta name=generator content="Hugo 0.88.1">
+<noscript>
+<style>#theme-toggle,.top-link{display:none}</style>
+<style>@media(prefers-color-scheme:dark){:root{--theme:#1d1e20;--entry:#2e2e33;--primary:rgba(255, 255, 255, 0.84);--secondary:rgba(255, 255, 255, 0.56);--tertiary:rgba(255, 255, 255, 0.16);--content:rgba(255, 255, 255, 0.74);--hljs-bg:#2e2e33;--code-bg:#37383e;--border:#333}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
+</noscript><meta property="og:title" content="Javascript에서 Closure와 Constructor">
+<meta property="og:description" content="Summary  node js나 web ui를 다루기 위해 javascript를 사용하면 closure를 사용할 것이다. constructor로 객체를 생성하지 않고 왜 closure를 사용하는지 살펴보자.
+ Constructor와 Closure의 성능차이  샘플코드는 아래와 같다. 성능 결과값을 보면 거의 2배의 차이가 나는 것을 볼 수 있다.
+이러한 차이는 node 서버를 사용할 경우 더욱 두드러지게 체감할 것이다.
+constructor를 사용하는 경우 javascript 객체가 반드시 가져야할 함수들을 상속받기 때문에 속도차이가 나타나는 것이다. 하지만 front에서는 클라이언트가 메모리를 가지기 때문에 크게 우려하지 않아도 된다.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://novemberde.github.io/post/2017/04/16/Closure_0/"><meta property="article:section" content="post">
+<meta property="article:published_time" content="2017-04-16T11:30:03+00:00">
+<meta property="article:modified_time" content="2017-04-16T11:30:03+00:00"><meta property="og:site_name" content="Novemberde's Blog">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Javascript에서 Closure와 Constructor">
+<meta name=twitter:description content="Summary  node js나 web ui를 다루기 위해 javascript를 사용하면 closure를 사용할 것이다. constructor로 객체를 생성하지 않고 왜 closure를 사용하는지 살펴보자.
+ Constructor와 Closure의 성능차이  샘플코드는 아래와 같다. 성능 결과값을 보면 거의 2배의 차이가 나는 것을 볼 수 있다.
+이러한 차이는 node 서버를 사용할 경우 더욱 두드러지게 체감할 것이다.
+constructor를 사용하는 경우 javascript 객체가 반드시 가져야할 함수들을 상속받기 때문에 속도차이가 나타나는 것이다. 하지만 front에서는 클라이언트가 메모리를 가지기 때문에 크게 우려하지 않아도 된다.">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://novemberde.github.io/post/"},{"@type":"ListItem","position":2,"name":"Javascript에서 Closure와 Constructor","item":"https://novemberde.github.io/post/2017/04/16/Closure_0/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Javascript에서 Closure와 Constructor","name":"Javascript에서 Closure와 Constructor","description":"Summary  node js나 web ui를 다루기 위해 javascript를 사용하면 closure를 사용할 것이다. constructor로 객체를 생성하지 않고 왜 closure를 사용하는지 살펴보자.\n Constructor와 Closure의 성능차이  샘플코드는 아래와 같다. 성능 결과값을 보면 거의 2배의 차이가 나는 것을 볼 수 있다.\n이러한 차이는 node 서버를 사용할 경우 더욱 두드러지게 체감할 것이다.\nconstructor를 사용하는 경우 javascript 객체가 반드시 가져야할 함수들을 상속받기 때문에 속도차이가 나타나는 것이다. 하지만 front에서는 클라이언트가 메모리를 가지기 때문에 크게 우려하지 않아도 된다.","keywords":["javascript","closure","constructor","performance"],"articleBody":"Summary  node js나 web ui를 다루기 위해 javascript를 사용하면 closure를 사용할 것이다. constructor로 객체를 생성하지 않고 왜 closure를 사용하는지 살펴보자.\n Constructor와 Closure의 성능차이  샘플코드는 아래와 같다. 성능 결과값을 보면 거의 2배의 차이가 나는 것을 볼 수 있다.\n이러한 차이는 node 서버를 사용할 경우 더욱 두드러지게 체감할 것이다.\nconstructor를 사용하는 경우 javascript 객체가 반드시 가져야할 함수들을 상속받기 때문에 속도차이가 나타나는 것이다. 하지만 front에서는 클라이언트가 메모리를 가지기 때문에 크게 우려하지 않아도 된다.\nreact와 같이 사용하는 프레임워크는 ES6문법으로 class를 사용하는 것을 권장하고 있다.\nvar iterations = 1000000; var closureObj = function( a, b ) { var c = a + b; return { getA: function() { return a; }, getB: function() { return b; }, getC: function() { return c; }, sayHello: function() { console.log(\"say\"); } }; } var ConstructorObj = function(a, b) { this.a = a; this.b = b; this.c = a + b; this.sayHello = function() { console.log(\"say\"); } } console.time('Closure'); for(var i = 0; i  iterations; i++ ){ var a = closureObj(\"1\", \"2\"); }; console.timeEnd('Closure') console.time('Constructor'); for(var i = 0; i  iterations; i++ ){ var a = new ConstructorObj(\"1\", \"2\"); }; console.timeEnd('Constructor'); 결과: Closure: 103.231ms Constructor: 206.072ms  References   https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Closures  ","wordCount":"191","inLanguage":"en","datePublished":"2017-04-16T11:30:03Z","dateModified":"2017-04-16T11:30:03Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://novemberde.github.io/post/2017/04/16/Closure_0/"},"publisher":{"@type":"Organization","name":"Novemberde's Blog","logo":{"@type":"ImageObject","url":"https://novemberde.github.io/favicon.ico"}}}</script><script async src=//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js></script>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-8620431066400094",enable_page_level_ads:!0})</script>
+</head>
+<body id=top>
+<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+<header class=header>
+<nav class=nav>
+<div class=logo>
+<a href=https://novemberde.github.io/ accesskey=h title="Novemberde's Blog (Alt + H)">Novemberde's Blog</a>
+<span class=logo-switches>
+<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
+</span>
+</div>
+<ul id=menu>
+<li>
+<a href=https://novemberde.github.io/post/ title=Post>
+<span>Post</span>
+</a>
+</li>
+<li>
+<a href=https://novemberde.github.io/about title=About>
+<span>About</span>
+</a>
+</li>
+<li>
+<a href=https://novemberde.github.io/tags/ title=Tags>
+<span>Tags</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class=main>
+<article class=post-single>
+<header class=post-header>
+<div class=breadcrumbs><a href=https://novemberde.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://novemberde.github.io/post/>Posts</a></div>
+<h1 class=post-title>
+Javascript에서 Closure와 Constructor
+</h1>
+<div class=post-meta>April 16, 2017&nbsp;·&nbsp;1 min
+</div>
+</header>
+<div class=post-content><h2 id=summary>Summary<a hidden class=anchor aria-hidden=true href=#summary>#</a></h2>
+<hr>
+<p>node js나 web ui를 다루기 위해 javascript를 사용하면 closure를 사용할 것이다. constructor로 객체를 생성하지 않고 왜 closure를 사용하는지 살펴보자.</p>
+<hr>
+<h2 id=constructor와-closure의-성능차이>Constructor와 Closure의 성능차이<a hidden class=anchor aria-hidden=true href=#constructor와-closure의-성능차이>#</a></h2>
+<hr>
+<p>샘플코드는 아래와 같다. 성능 결과값을 보면 거의 2배의 차이가 나는 것을 볼 수 있다.</p>
+<p>이러한 차이는 node 서버를 사용할 경우 더욱 두드러지게 체감할 것이다.</p>
+<p>constructor를 사용하는 경우 javascript 객체가 반드시 가져야할 함수들을 상속받기 때문에 속도차이가 나타나는 것이다. 하지만 front에서는 클라이언트가 메모리를 가지기 때문에 크게 우려하지 않아도 된다.</p>
+<p>react와 같이 사용하는 프레임워크는 ES6문법으로 class를 사용하는 것을 권장하고 있다.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#66d9ef>var</span> <span style=color:#a6e22e>iterations</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>1000000</span>;
+
+<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>closureObj</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>function</span>( <span style=color:#a6e22e>a</span>, <span style=color:#a6e22e>b</span> ) {
+    <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>c</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>a</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>b</span>;
+
+    <span style=color:#66d9ef>return</span> {
+        <span style=color:#a6e22e>getA</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>function</span>() {
+            <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>a</span>;
+        },
+        <span style=color:#a6e22e>getB</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>function</span>() {
+            <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>b</span>;
+        },
+        <span style=color:#a6e22e>getC</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>function</span>() {
+            <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>c</span>;
+        },
+        <span style=color:#a6e22e>sayHello</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>function</span>() {
+            <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#34;say&#34;</span>);
+        }
+    };
+}
+
+<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>ConstructorObj</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>function</span>(<span style=color:#a6e22e>a</span>, <span style=color:#a6e22e>b</span>) {
+    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>a</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>a</span>;
+    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>b</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>b</span>;
+    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>c</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>a</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>b</span>;
+
+    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>sayHello</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>function</span>() {
+        <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#34;say&#34;</span>);
+    }
+}
+
+<span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>time</span>(<span style=color:#e6db74>&#39;Closure&#39;</span>);
+<span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>i</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; <span style=color:#a6e22e>i</span> <span style=color:#f92672>&lt;</span> <span style=color:#a6e22e>iterations</span>; <span style=color:#a6e22e>i</span><span style=color:#f92672>++</span> ){
+    <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>a</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>closureObj</span>(<span style=color:#e6db74>&#34;1&#34;</span>, <span style=color:#e6db74>&#34;2&#34;</span>);
+};
+<span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>timeEnd</span>(<span style=color:#e6db74>&#39;Closure&#39;</span>)
+
+<span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>time</span>(<span style=color:#e6db74>&#39;Constructor&#39;</span>);
+<span style=color:#66d9ef>for</span>(<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>i</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>; <span style=color:#a6e22e>i</span> <span style=color:#f92672>&lt;</span> <span style=color:#a6e22e>iterations</span>; <span style=color:#a6e22e>i</span><span style=color:#f92672>++</span> ){
+    <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>a</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>ConstructorObj</span>(<span style=color:#e6db74>&#34;1&#34;</span>, <span style=color:#e6db74>&#34;2&#34;</span>);
+};
+<span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>timeEnd</span>(<span style=color:#e6db74>&#39;Constructor&#39;</span>);
+
+<span style=color:#a6e22e>결과</span><span style=color:#f92672>:</span> 
+    <span style=color:#a6e22e>Closure</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>103.231</span><span style=color:#a6e22e>ms</span>
+    <span style=color:#a6e22e>Constructor</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>206.072</span><span style=color:#a6e22e>ms</span>
+</code></pre></div><hr>
+<h3 id=references>References<a hidden class=anchor aria-hidden=true href=#references>#</a></h3>
+<hr>
+<ul>
+<li><a href=https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Closures>https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Closures</a></li>
+</ul>
+</div>
+<footer class=post-footer>
+<ul class=post-tags>
+<li><a href=https://novemberde.github.io/tags/javascript/>javascript</a></li>
+<li><a href=https://novemberde.github.io/tags/closure/>closure</a></li>
+<li><a href=https://novemberde.github.io/tags/constructor/>constructor</a></li>
+<li><a href=https://novemberde.github.io/tags/performance/>performance</a></li>
+</ul>
+<nav class=paginav>
+<a class=prev href=https://novemberde.github.io/post/2017/04/30/VPC_Redis_0/>
+<span class=title>« Prev Page</span>
+<br>
+<span>Docker를 활용하여 AWS의 Elastic Cache 에 접근하기.</span>
+</a>
+<a class=next href=https://novemberde.github.io/post/2017/04/15/String_0/>
+<span class=title>Next Page »</span>
+<br>
+<span>Java에서 String, StringBuilder, StringBuffer의 차이</span>
+</a>
+</nav>
+</footer>
+<div id=disqus_thread></div>
+<script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return}var b=document,a=b.createElement('script');a.async=!0,a.src='//novemberde-github-io.disqus.com/embed.js',a.setAttribute('data-timestamp',+new Date),(b.head||b.body).appendChild(a)})()</script>
+<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript>
+<a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a>
+</article>
+</main>
+<footer class=footer>
+<span>&copy; 2021 <a href=https://novemberde.github.io/>Novemberde's Blog</a></span>
+<span>
+Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
+</span>
+</footer>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+</a>
+<script>let menu=document.getElementById('menu');menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)},document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
+</body>
+</html>

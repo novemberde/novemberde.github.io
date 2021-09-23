@@ -1,0 +1,2378 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tags on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/</link>
+    <description>Recent content in Tags on Novemberde&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Sun, 19 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>about</title>
+      <link>https://novemberde.github.io/tags/about/</link>
+      <pubDate>Sun, 19 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/about/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>me</title>
+      <link>https://novemberde.github.io/tags/me/</link>
+      <pubDate>Sun, 19 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/me/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://novemberde.github.io/tags/docker/</link>
+      <pubDate>Sun, 12 Sep 2021 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>minikube</title>
+      <link>https://novemberde.github.io/tags/minikube/</link>
+      <pubDate>Sun, 12 Sep 2021 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/minikube/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>podman</title>
+      <link>https://novemberde.github.io/tags/podman/</link>
+      <pubDate>Sun, 12 Sep 2021 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/podman/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jandi</title>
+      <link>https://novemberde.github.io/tags/jandi/</link>
+      <pubDate>Tue, 31 Aug 2021 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/jandi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>karrot</title>
+      <link>https://novemberde.github.io/tags/karrot/</link>
+      <pubDate>Tue, 31 Aug 2021 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/karrot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>work</title>
+      <link>https://novemberde.github.io/tags/work/</link>
+      <pubDate>Tue, 31 Aug 2021 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/work/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>월간일잘러</title>
+      <link>https://novemberde.github.io/tags/%EC%9B%94%EA%B0%84%EC%9D%BC%EC%9E%98%EB%9F%AC/</link>
+      <pubDate>Tue, 31 Aug 2021 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EC%9B%94%EA%B0%84%EC%9D%BC%EC%9E%98%EB%9F%AC/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>golang</title>
+      <link>https://novemberde.github.io/tags/golang/</link>
+      <pubDate>Mon, 05 Apr 2021 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>haking</title>
+      <link>https://novemberde.github.io/tags/haking/</link>
+      <pubDate>Mon, 05 Apr 2021 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/haking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>고언어</title>
+      <link>https://novemberde.github.io/tags/%EA%B3%A0%EC%96%B8%EC%96%B4/</link>
+      <pubDate>Mon, 05 Apr 2021 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EA%B3%A0%EC%96%B8%EC%96%B4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>analysis</title>
+      <link>https://novemberde.github.io/tags/analysis/</link>
+      <pubDate>Fri, 15 Jan 2021 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AWS</title>
+      <link>https://novemberde.github.io/tags/AWS/</link>
+      <pubDate>Fri, 15 Jan 2021 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/AWS/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>data</title>
+      <link>https://novemberde.github.io/tags/data/</link>
+      <pubDate>Fri, 15 Jan 2021 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>databrew</title>
+      <link>https://novemberde.github.io/tags/databrew/</link>
+      <pubDate>Fri, 15 Jan 2021 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/databrew/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>engineer</title>
+      <link>https://novemberde.github.io/tags/engineer/</link>
+      <pubDate>Fri, 15 Jan 2021 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/engineer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>glue</title>
+      <link>https://novemberde.github.io/tags/glue/</link>
+      <pubDate>Fri, 15 Jan 2021 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/glue/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>go</title>
+      <link>https://novemberde.github.io/tags/go/</link>
+      <pubDate>Tue, 24 Nov 2020 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>도입</title>
+      <link>https://novemberde.github.io/tags/%EB%8F%84%EC%9E%85/</link>
+      <pubDate>Tue, 24 Nov 2020 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EB%8F%84%EC%9E%85/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>활용법</title>
+      <link>https://novemberde.github.io/tags/%ED%99%9C%EC%9A%A9%EB%B2%95/</link>
+      <pubDate>Tue, 24 Nov 2020 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%ED%99%9C%EC%9A%A9%EB%B2%95/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>aurora</title>
+      <link>https://novemberde.github.io/tags/aurora/</link>
+      <pubDate>Sat, 17 Oct 2020 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/aurora/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>database</title>
+      <link>https://novemberde.github.io/tags/database/</link>
+      <pubDate>Sat, 17 Oct 2020 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>postgres</title>
+      <link>https://novemberde.github.io/tags/postgres/</link>
+      <pubDate>Sat, 17 Oct 2020 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/postgres/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>postgresql</title>
+      <link>https://novemberde.github.io/tags/postgresql/</link>
+      <pubDate>Sat, 17 Oct 2020 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/postgresql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rds</title>
+      <link>https://novemberde.github.io/tags/rds/</link>
+      <pubDate>Sat, 17 Oct 2020 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/rds/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>serverless</title>
+      <link>https://novemberde.github.io/tags/serverless/</link>
+      <pubDate>Fri, 10 Jul 2020 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/serverless/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>서버리스</title>
+      <link>https://novemberde.github.io/tags/%EC%84%9C%EB%B2%84%EB%A6%AC%EC%8A%A4/</link>
+      <pubDate>Fri, 10 Jul 2020 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EC%84%9C%EB%B2%84%EB%A6%AC%EC%8A%A4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>demo</title>
+      <link>https://novemberde.github.io/tags/demo/</link>
+      <pubDate>Fri, 11 Oct 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/demo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>presentations</title>
+      <link>https://novemberde.github.io/tags/presentations/</link>
+      <pubDate>Fri, 11 Oct 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/presentations/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>react</title>
+      <link>https://novemberde.github.io/tags/react/</link>
+      <pubDate>Fri, 11 Oct 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/react/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>start</title>
+      <link>https://novemberde.github.io/tags/start/</link>
+      <pubDate>Fri, 11 Oct 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/start/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>svelte</title>
+      <link>https://novemberde.github.io/tags/svelte/</link>
+      <pubDate>Fri, 11 Oct 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/svelte/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vue</title>
+      <link>https://novemberde.github.io/tags/vue/</link>
+      <pubDate>Fri, 11 Oct 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/vue/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>direnv</title>
+      <link>https://novemberde.github.io/tags/direnv/</link>
+      <pubDate>Fri, 04 Oct 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/direnv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>env</title>
+      <link>https://novemberde.github.io/tags/env/</link>
+      <pubDate>Fri, 04 Oct 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/env/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>environment</title>
+      <link>https://novemberde.github.io/tags/environment/</link>
+      <pubDate>Fri, 04 Oct 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/environment/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>project</title>
+      <link>https://novemberde.github.io/tags/project/</link>
+      <pubDate>Fri, 04 Oct 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/project/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>설정</title>
+      <link>https://novemberde.github.io/tags/%EC%84%A4%EC%A0%95/</link>
+      <pubDate>Fri, 04 Oct 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EC%84%A4%EC%A0%95/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>환경설정</title>
+      <link>https://novemberde.github.io/tags/%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95/</link>
+      <pubDate>Fri, 04 Oct 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>db</title>
+      <link>https://novemberde.github.io/tags/db/</link>
+      <pubDate>Mon, 10 Jun 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/db/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mysql</title>
+      <link>https://novemberde.github.io/tags/mysql/</link>
+      <pubDate>Mon, 10 Jun 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/mysql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>schema</title>
+      <link>https://novemberde.github.io/tags/schema/</link>
+      <pubDate>Mon, 10 Jun 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/schema/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>스키마</title>
+      <link>https://novemberde.github.io/tags/%EC%8A%A4%ED%82%A4%EB%A7%88/</link>
+      <pubDate>Mon, 10 Jun 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EC%8A%A4%ED%82%A4%EB%A7%88/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>주의</title>
+      <link>https://novemberde.github.io/tags/%EC%A3%BC%EC%9D%98/</link>
+      <pubDate>Mon, 10 Jun 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EC%A3%BC%EC%9D%98/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cicd</title>
+      <link>https://novemberde.github.io/tags/cicd/</link>
+      <pubDate>Mon, 13 May 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/cicd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>circleci</title>
+      <link>https://novemberde.github.io/tags/circleci/</link>
+      <pubDate>Mon, 13 May 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/circleci/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>lambda</title>
+      <link>https://novemberde.github.io/tags/lambda/</link>
+      <pubDate>Mon, 13 May 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/lambda/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>websocket</title>
+      <link>https://novemberde.github.io/tags/websocket/</link>
+      <pubDate>Wed, 10 Apr 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/websocket/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>웹소켓</title>
+      <link>https://novemberde.github.io/tags/%EC%9B%B9%EC%86%8C%EC%BC%93/</link>
+      <pubDate>Wed, 10 Apr 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EC%9B%B9%EC%86%8C%EC%BC%93/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>addon</title>
+      <link>https://novemberde.github.io/tags/addon/</link>
+      <pubDate>Thu, 14 Feb 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/addon/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>build</title>
+      <link>https://novemberde.github.io/tags/build/</link>
+      <pubDate>Thu, 14 Feb 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/build/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>deployment</title>
+      <link>https://novemberde.github.io/tags/deployment/</link>
+      <pubDate>Thu, 14 Feb 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/deployment/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nativce</title>
+      <link>https://novemberde.github.io/tags/nativce/</link>
+      <pubDate>Thu, 14 Feb 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/nativce/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nodejs</title>
+      <link>https://novemberde.github.io/tags/nodejs/</link>
+      <pubDate>Thu, 14 Feb 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/nodejs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>typescript</title>
+      <link>https://novemberde.github.io/tags/typescript/</link>
+      <pubDate>Thu, 14 Feb 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/typescript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>배포</title>
+      <link>https://novemberde.github.io/tags/%EB%B0%B0%ED%8F%AC/</link>
+      <pubDate>Thu, 14 Feb 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EB%B0%B0%ED%8F%AC/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>amazon</title>
+      <link>https://novemberde.github.io/tags/amazon/</link>
+      <pubDate>Fri, 25 Jan 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/amazon/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>timeseries</title>
+      <link>https://novemberde.github.io/tags/timeseries/</link>
+      <pubDate>Fri, 25 Jan 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/timeseries/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>timestream</title>
+      <link>https://novemberde.github.io/tags/timestream/</link>
+      <pubDate>Fri, 25 Jan 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/timestream/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>시계열</title>
+      <link>https://novemberde.github.io/tags/%EC%8B%9C%EA%B3%84%EC%97%B4/</link>
+      <pubDate>Fri, 25 Jan 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EC%8B%9C%EA%B3%84%EC%97%B4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>타임스트림</title>
+      <link>https://novemberde.github.io/tags/%ED%83%80%EC%9E%84%EC%8A%A4%ED%8A%B8%EB%A6%BC/</link>
+      <pubDate>Fri, 25 Jan 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%ED%83%80%EC%9E%84%EC%8A%A4%ED%8A%B8%EB%A6%BC/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>retrospect</title>
+      <link>https://novemberde.github.io/tags/retrospect/</link>
+      <pubDate>Tue, 01 Jan 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/retrospect/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>회고</title>
+      <link>https://novemberde.github.io/tags/%ED%9A%8C%EA%B3%A0/</link>
+      <pubDate>Tue, 01 Jan 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%ED%9A%8C%EA%B3%A0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>owasp</title>
+      <link>https://novemberde.github.io/tags/owasp/</link>
+      <pubDate>Fri, 02 Nov 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/owasp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>security</title>
+      <link>https://novemberde.github.io/tags/security/</link>
+      <pubDate>Fri, 02 Nov 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>athena</title>
+      <link>https://novemberde.github.io/tags/athena/</link>
+      <pubDate>Mon, 29 Oct 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/athena/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>quicksight</title>
+      <link>https://novemberde.github.io/tags/quicksight/</link>
+      <pubDate>Mon, 29 Oct 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/quicksight/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>devops</title>
+      <link>https://novemberde.github.io/tags/devops/</link>
+      <pubDate>Mon, 17 Sep 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/devops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>도커</title>
+      <link>https://novemberde.github.io/tags/%EB%8F%84%EC%BB%A4/</link>
+      <pubDate>Mon, 17 Sep 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EB%8F%84%EC%BB%A4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>빌드</title>
+      <link>https://novemberde.github.io/tags/%EB%B9%8C%EB%93%9C/</link>
+      <pubDate>Mon, 17 Sep 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EB%B9%8C%EB%93%9C/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>handson</title>
+      <link>https://novemberde.github.io/tags/handson/</link>
+      <pubDate>Mon, 02 Jul 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/handson/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>todo</title>
+      <link>https://novemberde.github.io/tags/todo/</link>
+      <pubDate>Mon, 02 Jul 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/todo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>configure</title>
+      <link>https://novemberde.github.io/tags/configure/</link>
+      <pubDate>Wed, 20 Jun 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/configure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>profile</title>
+      <link>https://novemberde.github.io/tags/profile/</link>
+      <pubDate>Wed, 20 Jun 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/profile/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>switch</title>
+      <link>https://novemberde.github.io/tags/switch/</link>
+      <pubDate>Wed, 20 Jun 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/switch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>switching</title>
+      <link>https://novemberde.github.io/tags/switching/</link>
+      <pubDate>Wed, 20 Jun 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/switching/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>바꾸기</title>
+      <link>https://novemberde.github.io/tags/%EB%B0%94%EA%BE%B8%EA%B8%B0/</link>
+      <pubDate>Wed, 20 Jun 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EB%B0%94%EA%BE%B8%EA%B8%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>android</title>
+      <link>https://novemberde.github.io/tags/android/</link>
+      <pubDate>Mon, 28 May 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/android/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>java</title>
+      <link>https://novemberde.github.io/tags/java/</link>
+      <pubDate>Mon, 28 May 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kotlin</title>
+      <link>https://novemberde.github.io/tags/kotlin/</link>
+      <pubDate>Mon, 28 May 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/kotlin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>legacy</title>
+      <link>https://novemberde.github.io/tags/legacy/</link>
+      <pubDate>Mon, 28 May 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/legacy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>공존</title>
+      <link>https://novemberde.github.io/tags/%EA%B3%B5%EC%A1%B4/</link>
+      <pubDate>Mon, 28 May 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EA%B3%B5%EC%A1%B4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>안드로이드</title>
+      <link>https://novemberde.github.io/tags/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C/</link>
+      <pubDate>Mon, 28 May 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>자바</title>
+      <link>https://novemberde.github.io/tags/%EC%9E%90%EB%B0%94/</link>
+      <pubDate>Mon, 28 May 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EC%9E%90%EB%B0%94/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>코틀린</title>
+      <link>https://novemberde.github.io/tags/%EC%BD%94%ED%8B%80%EB%A6%B0/</link>
+      <pubDate>Mon, 28 May 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EC%BD%94%ED%8B%80%EB%A6%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>difference</title>
+      <link>https://novemberde.github.io/tags/difference/</link>
+      <pubDate>Thu, 24 May 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/difference/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>string</title>
+      <link>https://novemberde.github.io/tags/string/</link>
+      <pubDate>Thu, 24 May 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/string/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>stringbuffer</title>
+      <link>https://novemberde.github.io/tags/stringbuffer/</link>
+      <pubDate>Thu, 24 May 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/stringbuffer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>stringbuilder</title>
+      <link>https://novemberde.github.io/tags/stringbuilder/</link>
+      <pubDate>Thu, 24 May 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/stringbuilder/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>github</title>
+      <link>https://novemberde.github.io/tags/github/</link>
+      <pubDate>Wed, 16 May 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>module</title>
+      <link>https://novemberde.github.io/tags/module/</link>
+      <pubDate>Wed, 16 May 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/module/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>npm</title>
+      <link>https://novemberde.github.io/tags/npm/</link>
+      <pubDate>Wed, 16 May 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/npm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>private</title>
+      <link>https://novemberde.github.io/tags/private/</link>
+      <pubDate>Wed, 16 May 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/private/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>repo</title>
+      <link>https://novemberde.github.io/tags/repo/</link>
+      <pubDate>Wed, 16 May 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/repo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>repository</title>
+      <link>https://novemberde.github.io/tags/repository/</link>
+      <pubDate>Wed, 16 May 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/repository/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>graphDB</title>
+      <link>https://novemberde.github.io/tags/graphDB/</link>
+      <pubDate>Thu, 12 Apr 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/graphDB/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>neo4j</title>
+      <link>https://novemberde.github.io/tags/neo4j/</link>
+      <pubDate>Thu, 12 Apr 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/neo4j/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>apicache</title>
+      <link>https://novemberde.github.io/tags/apicache/</link>
+      <pubDate>Thu, 01 Mar 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/apicache/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cache</title>
+      <link>https://novemberde.github.io/tags/cache/</link>
+      <pubDate>Thu, 01 Mar 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/cache/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>caching</title>
+      <link>https://novemberde.github.io/tags/caching/</link>
+      <pubDate>Thu, 01 Mar 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/caching/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>캐시</title>
+      <link>https://novemberde.github.io/tags/%EC%BA%90%EC%8B%9C/</link>
+      <pubDate>Thu, 01 Mar 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EC%BA%90%EC%8B%9C/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>apigateway</title>
+      <link>https://novemberde.github.io/tags/apigateway/</link>
+      <pubDate>Fri, 02 Feb 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/apigateway/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cold</title>
+      <link>https://novemberde.github.io/tags/cold/</link>
+      <pubDate>Fri, 02 Feb 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/cold/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>coldstart</title>
+      <link>https://novemberde.github.io/tags/coldstart/</link>
+      <pubDate>Fri, 02 Feb 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/coldstart/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>framework</title>
+      <link>https://novemberde.github.io/tags/framework/</link>
+      <pubDate>Fri, 02 Feb 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/framework/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>go언어</title>
+      <link>https://novemberde.github.io/tags/go%EC%96%B8%EC%96%B4/</link>
+      <pubDate>Fri, 02 Feb 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/go%EC%96%B8%EC%96%B4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>문제</title>
+      <link>https://novemberde.github.io/tags/%EB%AC%B8%EC%A0%9C/</link>
+      <pubDate>Fri, 02 Feb 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EB%AC%B8%EC%A0%9C/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>concurrency</title>
+      <link>https://novemberde.github.io/tags/concurrency/</link>
+      <pubDate>Mon, 29 Jan 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/concurrency/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>connection</title>
+      <link>https://novemberde.github.io/tags/connection/</link>
+      <pubDate>Mon, 29 Jan 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/connection/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>max</title>
+      <link>https://novemberde.github.io/tags/max/</link>
+      <pubDate>Mon, 29 Jan 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/max/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>max_connections</title>
+      <link>https://novemberde.github.io/tags/max_connections/</link>
+      <pubDate>Mon, 29 Jan 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/max_connections/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>병렬</title>
+      <link>https://novemberde.github.io/tags/%EB%B3%91%EB%A0%AC/</link>
+      <pubDate>Mon, 29 Jan 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EB%B3%91%EB%A0%AC/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ecs</title>
+      <link>https://novemberde.github.io/tags/ecs/</link>
+      <pubDate>Sat, 20 Jan 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/ecs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>fargate</title>
+      <link>https://novemberde.github.io/tags/fargate/</link>
+      <pubDate>Sat, 20 Jan 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/fargate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>데모</title>
+      <link>https://novemberde.github.io/tags/%EB%8D%B0%EB%AA%A8/</link>
+      <pubDate>Sat, 20 Jan 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EB%8D%B0%EB%AA%A8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cheerio</title>
+      <link>https://novemberde.github.io/tags/cheerio/</link>
+      <pubDate>Sun, 31 Dec 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/cheerio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cloudWatch</title>
+      <link>https://novemberde.github.io/tags/cloudWatch/</link>
+      <pubDate>Sun, 31 Dec 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/cloudWatch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>crawler</title>
+      <link>https://novemberde.github.io/tags/crawler/</link>
+      <pubDate>Sun, 31 Dec 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/crawler/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>crawling</title>
+      <link>https://novemberde.github.io/tags/crawling/</link>
+      <pubDate>Sun, 31 Dec 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/crawling/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>got</title>
+      <link>https://novemberde.github.io/tags/got/</link>
+      <pubDate>Sun, 31 Dec 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/got/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>node</title>
+      <link>https://novemberde.github.io/tags/node/</link>
+      <pubDate>Sun, 31 Dec 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/node/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>slack</title>
+      <link>https://novemberde.github.io/tags/slack/</link>
+      <pubDate>Sun, 31 Dec 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/slack/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>크롤링</title>
+      <link>https://novemberde.github.io/tags/%ED%81%AC%EB%A1%A4%EB%A7%81/</link>
+      <pubDate>Sun, 31 Dec 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%ED%81%AC%EB%A1%A4%EB%A7%81/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>error</title>
+      <link>https://novemberde.github.io/tags/error/</link>
+      <pubDate>Tue, 19 Dec 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/error/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>javascript</title>
+      <link>https://novemberde.github.io/tags/javascript/</link>
+      <pubDate>Tue, 19 Dec 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>webview</title>
+      <link>https://novemberde.github.io/tags/webview/</link>
+      <pubDate>Tue, 19 Dec 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/webview/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>에러</title>
+      <link>https://novemberde.github.io/tags/%EC%97%90%EB%9F%AC/</link>
+      <pubDate>Tue, 19 Dec 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EC%97%90%EB%9F%AC/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ec2</title>
+      <link>https://novemberde.github.io/tags/ec2/</link>
+      <pubDate>Wed, 06 Dec 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/ec2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>instance</title>
+      <link>https://novemberde.github.io/tags/instance/</link>
+      <pubDate>Wed, 06 Dec 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/instance/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>meta</title>
+      <link>https://novemberde.github.io/tags/meta/</link>
+      <pubDate>Wed, 06 Dec 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/meta/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>metadata</title>
+      <link>https://novemberde.github.io/tags/metadata/</link>
+      <pubDate>Wed, 06 Dec 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/metadata/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>noops</title>
+      <link>https://novemberde.github.io/tags/noops/</link>
+      <pubDate>Wed, 06 Dec 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/noops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>role</title>
+      <link>https://novemberde.github.io/tags/role/</link>
+      <pubDate>Wed, 06 Dec 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/role/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>노옵스</title>
+      <link>https://novemberde.github.io/tags/%EB%85%B8%EC%98%B5%EC%8A%A4/</link>
+      <pubDate>Wed, 06 Dec 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EB%85%B8%EC%98%B5%EC%8A%A4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>데브옵스</title>
+      <link>https://novemberde.github.io/tags/%EB%8D%B0%EB%B8%8C%EC%98%B5%EC%8A%A4/</link>
+      <pubDate>Wed, 06 Dec 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EB%8D%B0%EB%B8%8C%EC%98%B5%EC%8A%A4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>사용법</title>
+      <link>https://novemberde.github.io/tags/%EC%82%AC%EC%9A%A9%EB%B2%95/</link>
+      <pubDate>Wed, 06 Dec 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EC%82%AC%EC%9A%A9%EB%B2%95/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>알아보기</title>
+      <link>https://novemberde.github.io/tags/%EC%95%8C%EC%95%84%EB%B3%B4%EA%B8%B0/</link>
+      <pubDate>Wed, 06 Dec 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EC%95%8C%EC%95%84%EB%B3%B4%EA%B8%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>여정</title>
+      <link>https://novemberde.github.io/tags/%EC%97%AC%EC%A0%95/</link>
+      <pubDate>Wed, 06 Dec 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EC%97%AC%EC%A0%95/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>js</title>
+      <link>https://novemberde.github.io/tags/js/</link>
+      <pubDate>Sun, 05 Nov 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/js/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>lib</title>
+      <link>https://novemberde.github.io/tags/lib/</link>
+      <pubDate>Sun, 05 Nov 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/lib/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>library</title>
+      <link>https://novemberde.github.io/tags/library/</link>
+      <pubDate>Sun, 05 Nov 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/library/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>list</title>
+      <link>https://novemberde.github.io/tags/list/</link>
+      <pubDate>Sun, 05 Nov 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/list/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>라이브러리</title>
+      <link>https://novemberde.github.io/tags/%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC/</link>
+      <pubDate>Sun, 05 Nov 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>유용한</title>
+      <link>https://novemberde.github.io/tags/%EC%9C%A0%EC%9A%A9%ED%95%9C/</link>
+      <pubDate>Sun, 05 Nov 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EC%9C%A0%EC%9A%A9%ED%95%9C/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>자료</title>
+      <link>https://novemberde.github.io/tags/%EC%9E%90%EB%A3%8C/</link>
+      <pubDate>Sun, 05 Nov 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EC%9E%90%EB%A3%8C/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>정리</title>
+      <link>https://novemberde.github.io/tags/%EC%A0%95%EB%A6%AC/</link>
+      <pubDate>Sun, 05 Nov 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EC%A0%95%EB%A6%AC/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>development</title>
+      <link>https://novemberde.github.io/tags/development/</link>
+      <pubDate>Sun, 22 Oct 2017 13:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>express</title>
+      <link>https://novemberde.github.io/tags/express/</link>
+      <pubDate>Sun, 22 Oct 2017 13:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/express/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>server</title>
+      <link>https://novemberde.github.io/tags/server/</link>
+      <pubDate>Sun, 22 Oct 2017 13:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/server/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>개발</title>
+      <link>https://novemberde.github.io/tags/%EA%B0%9C%EB%B0%9C/</link>
+      <pubDate>Sun, 22 Oct 2017 13:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EA%B0%9C%EB%B0%9C/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>서버</title>
+      <link>https://novemberde.github.io/tags/%EC%84%9C%EB%B2%84/</link>
+      <pubDate>Sun, 22 Oct 2017 13:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EC%84%9C%EB%B2%84/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>command</title>
+      <link>https://novemberde.github.io/tags/command/</link>
+      <pubDate>Sun, 22 Oct 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/command/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>os</title>
+      <link>https://novemberde.github.io/tags/os/</link>
+      <pubDate>Sun, 22 Oct 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/os/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>명령어</title>
+      <link>https://novemberde.github.io/tags/%EB%AA%85%EB%A0%B9%EC%96%B4/</link>
+      <pubDate>Sun, 22 Oct 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EB%AA%85%EB%A0%B9%EC%96%B4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>모음</title>
+      <link>https://novemberde.github.io/tags/%EB%AA%A8%EC%9D%8C/</link>
+      <pubDate>Sun, 22 Oct 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EB%AA%A8%EC%9D%8C/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>유용한OS명령어</title>
+      <link>https://novemberde.github.io/tags/%EC%9C%A0%EC%9A%A9%ED%95%9COS%EB%AA%85%EB%A0%B9%EC%96%B4/</link>
+      <pubDate>Sun, 22 Oct 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EC%9C%A0%EC%9A%A9%ED%95%9COS%EB%AA%85%EB%A0%B9%EC%96%B4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Blueocean</title>
+      <link>https://novemberde.github.io/tags/Blueocean/</link>
+      <pubDate>Sat, 21 Oct 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/Blueocean/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cd</title>
+      <link>https://novemberde.github.io/tags/cd/</link>
+      <pubDate>Sat, 21 Oct 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/cd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ci</title>
+      <link>https://novemberde.github.io/tags/ci/</link>
+      <pubDate>Sat, 21 Oct 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/ci/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jenkins</title>
+      <link>https://novemberde.github.io/tags/jenkins/</link>
+      <pubDate>Sat, 21 Oct 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/jenkins/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pipeline</title>
+      <link>https://novemberde.github.io/tags/pipeline/</link>
+      <pubDate>Sat, 21 Oct 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/pipeline/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>관리</title>
+      <link>https://novemberde.github.io/tags/%EA%B4%80%EB%A6%AC/</link>
+      <pubDate>Sat, 21 Oct 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EA%B4%80%EB%A6%AC/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>compose</title>
+      <link>https://novemberde.github.io/tags/compose/</link>
+      <pubDate>Fri, 20 Oct 2017 13:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/compose/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker-compose</title>
+      <link>https://novemberde.github.io/tags/docker-compose/</link>
+      <pubDate>Fri, 20 Oct 2017 13:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/docker-compose/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>code</title>
+      <link>https://novemberde.github.io/tags/code/</link>
+      <pubDate>Fri, 20 Oct 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/code/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CodeCommit</title>
+      <link>https://novemberde.github.io/tags/CodeCommit/</link>
+      <pubDate>Fri, 20 Oct 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/CodeCommit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>commit</title>
+      <link>https://novemberde.github.io/tags/commit/</link>
+      <pubDate>Fri, 20 Oct 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/commit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sourcetree</title>
+      <link>https://novemberde.github.io/tags/sourcetree/</link>
+      <pubDate>Fri, 20 Oct 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/sourcetree/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>연동</title>
+      <link>https://novemberde.github.io/tags/%EC%97%B0%EB%8F%99/</link>
+      <pubDate>Fri, 20 Oct 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EC%97%B0%EB%8F%99/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>directory</title>
+      <link>https://novemberde.github.io/tags/directory/</link>
+      <pubDate>Tue, 26 Sep 2017 13:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/directory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://novemberde.github.io/tags/git/</link>
+      <pubDate>Tue, 26 Sep 2017 13:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pull</title>
+      <link>https://novemberde.github.io/tags/pull/</link>
+      <pubDate>Tue, 26 Sep 2017 13:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/pull/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>puller</title>
+      <link>https://novemberde.github.io/tags/puller/</link>
+      <pubDate>Tue, 26 Sep 2017 13:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/puller/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>renew</title>
+      <link>https://novemberde.github.io/tags/renew/</link>
+      <pubDate>Tue, 26 Sep 2017 13:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/renew/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sub</title>
+      <link>https://novemberde.github.io/tags/sub/</link>
+      <pubDate>Tue, 26 Sep 2017 13:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/sub/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>subdirectory</title>
+      <link>https://novemberde.github.io/tags/subdirectory/</link>
+      <pubDate>Tue, 26 Sep 2017 13:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/subdirectory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>갱신</title>
+      <link>https://novemberde.github.io/tags/%EA%B0%B1%EC%8B%A0/</link>
+      <pubDate>Tue, 26 Sep 2017 13:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EA%B0%B1%EC%8B%A0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dragonball</title>
+      <link>https://novemberde.github.io/tags/dragonball/</link>
+      <pubDate>Tue, 26 Sep 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/dragonball/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>game</title>
+      <link>https://novemberde.github.io/tags/game/</link>
+      <pubDate>Tue, 26 Sep 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/game/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>toy</title>
+      <link>https://novemberde.github.io/tags/toy/</link>
+      <pubDate>Tue, 26 Sep 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/toy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>게임</title>
+      <link>https://novemberde.github.io/tags/%EA%B2%8C%EC%9E%84/</link>
+      <pubDate>Tue, 26 Sep 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EA%B2%8C%EC%9E%84/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ALB</title>
+      <link>https://novemberde.github.io/tags/ALB/</link>
+      <pubDate>Mon, 25 Sep 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/ALB/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>application</title>
+      <link>https://novemberde.github.io/tags/application/</link>
+      <pubDate>Mon, 25 Sep 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/application/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>balancer</title>
+      <link>https://novemberde.github.io/tags/balancer/</link>
+      <pubDate>Mon, 25 Sep 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/balancer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>beanstalk</title>
+      <link>https://novemberde.github.io/tags/beanstalk/</link>
+      <pubDate>Mon, 25 Sep 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/beanstalk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>container</title>
+      <link>https://novemberde.github.io/tags/container/</link>
+      <pubDate>Mon, 25 Sep 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/container/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>eb</title>
+      <link>https://novemberde.github.io/tags/eb/</link>
+      <pubDate>Mon, 25 Sep 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/eb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>elastic</title>
+      <link>https://novemberde.github.io/tags/elastic/</link>
+      <pubDate>Mon, 25 Sep 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/elastic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>elasticbeanstalk</title>
+      <link>https://novemberde.github.io/tags/elasticbeanstalk/</link>
+      <pubDate>Mon, 25 Sep 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/elasticbeanstalk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ELB</title>
+      <link>https://novemberde.github.io/tags/ELB/</link>
+      <pubDate>Mon, 25 Sep 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/ELB/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>load</title>
+      <link>https://novemberde.github.io/tags/load/</link>
+      <pubDate>Mon, 25 Sep 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/load/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>multicontainer</title>
+      <link>https://novemberde.github.io/tags/multicontainer/</link>
+      <pubDate>Mon, 25 Sep 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/multicontainer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>analytics</title>
+      <link>https://novemberde.github.io/tags/analytics/</link>
+      <pubDate>Thu, 14 Sep 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/analytics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>public</title>
+      <link>https://novemberde.github.io/tags/public/</link>
+      <pubDate>Thu, 14 Sep 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/public/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>publicdata</title>
+      <link>https://novemberde.github.io/tags/publicdata/</link>
+      <pubDate>Thu, 14 Sep 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/publicdata/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>공공데이터</title>
+      <link>https://novemberde.github.io/tags/%EA%B3%B5%EA%B3%B5%EB%8D%B0%EC%9D%B4%ED%84%B0/</link>
+      <pubDate>Thu, 14 Sep 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EA%B3%B5%EA%B3%B5%EB%8D%B0%EC%9D%B4%ED%84%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>분석</title>
+      <link>https://novemberde.github.io/tags/%EB%B6%84%EC%84%9D/</link>
+      <pubDate>Thu, 14 Sep 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EB%B6%84%EC%84%9D/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>활용</title>
+      <link>https://novemberde.github.io/tags/%ED%99%9C%EC%9A%A9/</link>
+      <pubDate>Thu, 14 Sep 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%ED%99%9C%EC%9A%A9/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>c9</title>
+      <link>https://novemberde.github.io/tags/c9/</link>
+      <pubDate>Fri, 18 Aug 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/c9/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cloud9</title>
+      <link>https://novemberde.github.io/tags/cloud9/</link>
+      <pubDate>Fri, 18 Aug 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/cloud9/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>desktopapp</title>
+      <link>https://novemberde.github.io/tags/desktopapp/</link>
+      <pubDate>Fri, 18 Aug 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/desktopapp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>electron</title>
+      <link>https://novemberde.github.io/tags/electron/</link>
+      <pubDate>Fri, 18 Aug 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/electron/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>deploy</title>
+      <link>https://novemberde.github.io/tags/deploy/</link>
+      <pubDate>Mon, 14 Aug 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/deploy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>자동화</title>
+      <link>https://novemberde.github.io/tags/%EC%9E%90%EB%8F%99%ED%99%94/</link>
+      <pubDate>Mon, 14 Aug 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EC%9E%90%EB%8F%99%ED%99%94/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bash</title>
+      <link>https://novemberde.github.io/tags/bash/</link>
+      <pubDate>Sun, 13 Aug 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/bash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gitbash</title>
+      <link>https://novemberde.github.io/tags/gitbash/</link>
+      <pubDate>Sun, 13 Aug 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/gitbash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vscode</title>
+      <link>https://novemberde.github.io/tags/vscode/</link>
+      <pubDate>Sun, 13 Aug 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/vscode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bad</title>
+      <link>https://novemberde.github.io/tags/bad/</link>
+      <pubDate>Sat, 12 Aug 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/bad/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>fileformat</title>
+      <link>https://novemberde.github.io/tags/fileformat/</link>
+      <pubDate>Sat, 12 Aug 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/fileformat/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>interpreter</title>
+      <link>https://novemberde.github.io/tags/interpreter/</link>
+      <pubDate>Sat, 12 Aug 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/interpreter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sh</title>
+      <link>https://novemberde.github.io/tags/sh/</link>
+      <pubDate>Sat, 12 Aug 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/sh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>windows</title>
+      <link>https://novemberde.github.io/tags/windows/</link>
+      <pubDate>Sat, 12 Aug 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/windows/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Architecture</title>
+      <link>https://novemberde.github.io/tags/Architecture/</link>
+      <pubDate>Thu, 03 Aug 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/Architecture/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CloudFormation</title>
+      <link>https://novemberde.github.io/tags/CloudFormation/</link>
+      <pubDate>Thu, 03 Aug 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/CloudFormation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>infrastructure</title>
+      <link>https://novemberde.github.io/tags/infrastructure/</link>
+      <pubDate>Thu, 03 Aug 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/infrastructure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>시작하기</title>
+      <link>https://novemberde.github.io/tags/%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/</link>
+      <pubDate>Thu, 03 Aug 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>execution</title>
+      <link>https://novemberde.github.io/tags/execution/</link>
+      <pubDate>Sat, 01 Jul 2017 13:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/execution/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>parallel</title>
+      <link>https://novemberde.github.io/tags/parallel/</link>
+      <pubDate>Sat, 01 Jul 2017 13:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/parallel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Promise</title>
+      <link>https://novemberde.github.io/tags/Promise/</link>
+      <pubDate>Sat, 01 Jul 2017 13:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/Promise/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sequelize</title>
+      <link>https://novemberde.github.io/tags/sequelize/</link>
+      <pubDate>Sat, 01 Jul 2017 13:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/sequelize/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mongodb</title>
+      <link>https://novemberde.github.io/tags/mongodb/</link>
+      <pubDate>Sat, 01 Jul 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/mongodb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mongodump</title>
+      <link>https://novemberde.github.io/tags/mongodump/</link>
+      <pubDate>Sat, 01 Jul 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/mongodump/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mongorestore</title>
+      <link>https://novemberde.github.io/tags/mongorestore/</link>
+      <pubDate>Sat, 01 Jul 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/mongorestore/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>scp</title>
+      <link>https://novemberde.github.io/tags/scp/</link>
+      <pubDate>Sat, 01 Jul 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/scp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>convention</title>
+      <link>https://novemberde.github.io/tags/convention/</link>
+      <pubDate>Sun, 21 May 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/convention/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>developer</title>
+      <link>https://novemberde.github.io/tags/developer/</link>
+      <pubDate>Sun, 21 May 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/developer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>개발자</title>
+      <link>https://novemberde.github.io/tags/%EA%B0%9C%EB%B0%9C%EC%9E%90/</link>
+      <pubDate>Sun, 21 May 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EA%B0%9C%EB%B0%9C%EC%9E%90/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>수칙</title>
+      <link>https://novemberde.github.io/tags/%EC%88%98%EC%B9%99/</link>
+      <pubDate>Sun, 21 May 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EC%88%98%EC%B9%99/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>협업</title>
+      <link>https://novemberde.github.io/tags/%ED%98%91%EC%97%85/</link>
+      <pubDate>Sun, 21 May 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%ED%98%91%EC%97%85/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>access</title>
+      <link>https://novemberde.github.io/tags/access/</link>
+      <pubDate>Tue, 09 May 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/access/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>accesskey</title>
+      <link>https://novemberde.github.io/tags/accesskey/</link>
+      <pubDate>Tue, 09 May 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/accesskey/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bitbucket</title>
+      <link>https://novemberde.github.io/tags/bitbucket/</link>
+      <pubDate>Tue, 09 May 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/bitbucket/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>elasticcache</title>
+      <link>https://novemberde.github.io/tags/elasticcache/</link>
+      <pubDate>Tue, 09 May 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/elasticcache/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>elasticsearch</title>
+      <link>https://novemberde.github.io/tags/elasticsearch/</link>
+      <pubDate>Tue, 09 May 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/elasticsearch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>internal</title>
+      <link>https://novemberde.github.io/tags/internal/</link>
+      <pubDate>Tue, 09 May 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/internal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>orm</title>
+      <link>https://novemberde.github.io/tags/orm/</link>
+      <pubDate>Tue, 09 May 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/orm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>redis</title>
+      <link>https://novemberde.github.io/tags/redis/</link>
+      <pubDate>Tue, 09 May 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/redis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ssh</title>
+      <link>https://novemberde.github.io/tags/ssh/</link>
+      <pubDate>Tue, 09 May 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/ssh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ubuntu</title>
+      <link>https://novemberde.github.io/tags/ubuntu/</link>
+      <pubDate>Tue, 09 May 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/ubuntu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vpc</title>
+      <link>https://novemberde.github.io/tags/vpc/</link>
+      <pubDate>Tue, 09 May 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/vpc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>접근</title>
+      <link>https://novemberde.github.io/tags/%EC%A0%91%EA%B7%BC/</link>
+      <pubDate>Tue, 09 May 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EC%A0%91%EA%B7%BC/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>접속</title>
+      <link>https://novemberde.github.io/tags/%EC%A0%91%EC%86%8D/</link>
+      <pubDate>Tue, 09 May 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EC%A0%91%EC%86%8D/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>closure</title>
+      <link>https://novemberde.github.io/tags/closure/</link>
+      <pubDate>Sun, 16 Apr 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/closure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>constructor</title>
+      <link>https://novemberde.github.io/tags/constructor/</link>
+      <pubDate>Sun, 16 Apr 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/constructor/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>performance</title>
+      <link>https://novemberde.github.io/tags/performance/</link>
+      <pubDate>Sun, 16 Apr 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/performance/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>registry</title>
+      <link>https://novemberde.github.io/tags/registry/</link>
+      <pubDate>Sun, 09 Apr 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/registry/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>s3</title>
+      <link>https://novemberde.github.io/tags/s3/</link>
+      <pubDate>Sun, 09 Apr 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/s3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>image</title>
+      <link>https://novemberde.github.io/tags/image/</link>
+      <pubDate>Mon, 03 Apr 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/image/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>automated</title>
+      <link>https://novemberde.github.io/tags/automated/</link>
+      <pubDate>Sun, 02 Apr 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/automated/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dockerfile</title>
+      <link>https://novemberde.github.io/tags/dockerfile/</link>
+      <pubDate>Sun, 02 Apr 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/dockerfile/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dockerhub</title>
+      <link>https://novemberde.github.io/tags/dockerhub/</link>
+      <pubDate>Sun, 02 Apr 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/dockerhub/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hub</title>
+      <link>https://novemberde.github.io/tags/hub/</link>
+      <pubDate>Sun, 02 Apr 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/hub/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pm2</title>
+      <link>https://novemberde.github.io/tags/pm2/</link>
+      <pubDate>Sun, 02 Apr 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/pm2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>만들기</title>
+      <link>https://novemberde.github.io/tags/%EB%A7%8C%EB%93%A4%EA%B8%B0/</link>
+      <pubDate>Sun, 02 Apr 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EB%A7%8C%EB%93%A4%EA%B8%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>create</title>
+      <link>https://novemberde.github.io/tags/create/</link>
+      <pubDate>Sat, 01 Apr 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/create/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>expressjs</title>
+      <link>https://novemberde.github.io/tags/expressjs/</link>
+      <pubDate>Sat, 01 Apr 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/expressjs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>user</title>
+      <link>https://novemberde.github.io/tags/user/</link>
+      <pubDate>Sat, 01 Apr 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/user/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>권한</title>
+      <link>https://novemberde.github.io/tags/%EA%B6%8C%ED%95%9C/</link>
+      <pubDate>Sat, 01 Apr 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EA%B6%8C%ED%95%9C/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>생성</title>
+      <link>https://novemberde.github.io/tags/%EC%83%9D%EC%84%B1/</link>
+      <pubDate>Sat, 01 Apr 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EC%83%9D%EC%84%B1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>설치</title>
+      <link>https://novemberde.github.io/tags/%EC%84%A4%EC%B9%98/</link>
+      <pubDate>Sat, 01 Apr 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EC%84%A4%EC%B9%98/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>유저</title>
+      <link>https://novemberde.github.io/tags/%EC%9C%A0%EC%A0%80/</link>
+      <pubDate>Sat, 01 Apr 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EC%9C%A0%EC%A0%80/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bin/bash</title>
+      <link>https://novemberde.github.io/tags/bin/bash/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/bin/bash/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

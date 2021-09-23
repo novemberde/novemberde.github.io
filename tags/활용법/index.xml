@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>활용법 on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/%ED%99%9C%EC%9A%A9%EB%B2%95/</link>
+    <description>Recent content in 활용법 on Novemberde&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Tue, 24 Nov 2020 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/%ED%99%9C%EC%9A%A9%EB%B2%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>당근마켓의 고언어 도입기, 그리고 활용법</title>
+      <link>https://novemberde.github.io/post/2020/11/24/Golang-use-case-in-karrot/</link>
+      <pubDate>Tue, 24 Nov 2020 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2020/11/24/Golang-use-case-in-karrot/</guid>
+      <description>당근마켓에 들어와서 고언어를 어떻게 도입하고, 어떻게 활용했는지에 대해서 정리해보았다. 서비스가 성장함에 따라서 요구하는 조건은 달라지고 이에 최적화된 언어를 도입하고, 기존 서비스에서 필요한 곳만 하나씩 고언어를 통해 플랫폼화하는 방법을 정리했다.
+Slide Share   당근마켓 고언어 도입기, 그리고 활용법  from Kyuhyun Byun  Youtube  Reference  어쩌다 밋업 링크 https://www.facebook.com/1512494142177634/posts/3692166177543742/  </description>
+    </item>
+    
+  </channel>
+</rss>

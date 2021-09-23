@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>javascript on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/javascript/</link>
+    <description>Recent content in javascript on Novemberde&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Tue, 19 Dec 2017 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Android Webview에서 Javascript에러로 인해 뷰가 안나올 경우</title>
+      <link>https://novemberde.github.io/post/2017/12/19/Android-Webview/</link>
+      <pubDate>Tue, 19 Dec 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/12/19/Android-Webview/</guid>
+      <description>Summary  Javascript WebView로 특정 URL의 컨텐츠를 보여주는데 화면이 나오지 않았다. 현상은 배경색까지 나타나고 DOM이 뿌려지지 않는 문제였다. Webview에서 Unexpected token의 에러를 뿜었기 때문에 쉽게 Javascript 관련 오류라는 것을 알 수 있었고 Javascript error를 무시할 수 있도록 하는 메서드를 실행하였다.
+ Webview의 Setting에 setDomStorageEnabled(true)를 추가하기  기존의 코드는 다음과 같다
+public class MyWebView extends AppCompatActivity { private WebView webView; @Override protected void onCreate(Bundle savedStateInstance){ super.onCreate(savedStateInstance); setContentView(R.layout.webview); webView = ( WebView )findViewById( R.</description>
+    </item>
+    
+    <item>
+      <title>Javascript에서 Closure와 Constructor</title>
+      <link>https://novemberde.github.io/post/2017/04/16/Closure_0/</link>
+      <pubDate>Sun, 16 Apr 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/04/16/Closure_0/</guid>
+      <description>Summary  node js나 web ui를 다루기 위해 javascript를 사용하면 closure를 사용할 것이다. constructor로 객체를 생성하지 않고 왜 closure를 사용하는지 살펴보자.
+ Constructor와 Closure의 성능차이  샘플코드는 아래와 같다. 성능 결과값을 보면 거의 2배의 차이가 나는 것을 볼 수 있다.
+이러한 차이는 node 서버를 사용할 경우 더욱 두드러지게 체감할 것이다.
+constructor를 사용하는 경우 javascript 객체가 반드시 가져야할 함수들을 상속받기 때문에 속도차이가 나타나는 것이다. 하지만 front에서는 클라이언트가 메모리를 가지기 때문에 크게 우려하지 않아도 된다.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,812 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>Let's start SVELTE!</title>
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/black.css">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="lib/css/monokai.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>Let’s start SVELTE!</h1>
+        <h2>Goodbye React & Vue</h2>
+        <div style="margin-top: 50px;">
+          <img src="res/dg-logo.png" class="img dg-logo" alt="Dangguen">
+          <div style="font-size: 1.5rem;">
+            Dangguen Market, Byun Kyuhyun
+          </div>
+          <div style="font-size: 2rem; margin-top: 50px; color: deepskyblue;">
+            W3C Conference Korea 2019
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>Who am I?</h2>
+        <img src="res/me.jpg" class="img" style="margin-left: 20px; width: 350px;float: left; border-radius: 10%;"
+          alt="">
+        <ul style="font-size: 1.8rem; margin-left: 80px; float: left; margin-top: 60px;">
+          <li>Danggeun Market Software engineer</li>
+          <li>AWSKRUG Serverless Group Organizer</li>
+          <li>CircleCI User Group Organizer</li>
+          <li>Node.js, AWS, DevOps, Serverless</li>
+          <li>Golang, Typescript, Javascript</li>
+          <li>
+            <a href="https://novemberde.github.io">https://novemberde.github.io</a>
+          </li>
+          <li>
+            <a href="https://github.com/novemberde">https://github.com/novemberde</a>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <div>
+          <img src="res/svelte.png" class="img" alt="svelte">
+        </div>
+        <h2>What is svelte?</h2>
+        <p>Cybernetically enhanced web apps</p>
+        <div class="ref">
+          <a href="https://vujson.com/img/svelte.png">https://vujson.com/img/svelte.png</a>
+        </div>
+        <aside class="notes">
+          the science of communications and automatic control systems in both machines and living things.
+          자동으로 컨트롤하는 것이 강화된 웹앱
+          Svelte는 어떠한 것들을 키워드로 가지고 있는지 알아볼게요
+        </aside>
+      </section>
+      <section>
+        <img class="svelte-meaning" src="res/svelte-meaning.png" alt="">
+      </section>
+      <section>
+        <ul>
+          <h3 style="color: cornflowerblue !important;">*Write less code</h3>
+          <h3 style="color: thistle !important;">*No virtual DOM</h3>
+        </ul>
+      </section>
+      <section>
+        <h3>Write less code</h3>
+        <!-- <pre>
+            <code class="hljs" data-line-numbers="4,8-11">
+import React, { useState } from 'react';
+  
+function Example() {
+  const [count, setCount] = useState(0);
+  
+  return (
+  <div>
+    <p>You clicked {count} times</p>
+    <button onClick={() => setCount(count + 1)}>
+    Click me
+    </button>
+  </div>
+  );
+}
+            </code>
+          </pre> -->
+        <pre>
+            <code class="hljs">
+for (let i = 0; i <= 100; i += 1) {
+  if (i % 2 === 0) {
+    console.log(`${i} is even`);
+  }
+}
+            </code>
+          </pre>
+        <pre>
+            <code class="hljs">
+for (let i = 0; i <= 100; i += 1) if (i % 2 === 0) console.log(`${i} is even`);
+            </code>
+          </pre>
+        <aside class="notes">
+          코드를 줄인다는 것은 이런 의미가 아니에요.
+          코드가 여러줄로 되어있는 것을 줄여서 한줄로 표현하는 것이다. 이건 아니에요.
+          하고자하는 말은 우린 생각보다 많은 시간을 코드를 이해하는 데 사용하고 있어요.
+          코드를 설명하기 위한 주석이라던지 아니면 전체 컴포넌트간의 의존관계를 설정하는
+          코드들이라던지 이런것들이 많이 생기면 전채룰 이해하는데 많은 시간이 들어요.
+          ---
+          사실 코드베이스의 크기를 가지고 선형이 아닌 사차적으로 성장한다는 것은 널리 인정되고 있다.
+          우리의 직관이 담긴 트랙: 10줄짜리 당기기 요청은 100줄짜리에는 거의 적용되지 않는 정도의 정밀 조사를 받게 될 것이다.
+          그리고 일단 주어진 모듈이 너무 커서 하나의 화면에 맞지 않게 되면,
+          그것을 이해하는 데 필요한 인지적 노력이 현저하게 증가한다.
+          우리는 코멘트를 리액터링하고 추가함으로써 보상한다.
+          거의 항상 더 많은 코드로 이어지는 활동. 악순환이다.
+          하지만 우리가 강박관념에 빠져있는 동안- 바로! — 성능 번호, 번들 크기 및 기타 측정할 수 있는 모든 것을 넘어서서,
+          우리는 우리가 쓰고 있는 코드의 양에 거의 주의를 기울이지 않는다.
+
+          판독성이 중요하다.
+          나는 확실히 우리가 읽기 쉽다고 해서 가능한 한 가장 컴팩트한 형태로 코드를 긁어모아야 한다고 주장하는 것은 아니다.
+          또한 나는 코드 라인을 줄이는 것이 반드시 가치 있는 목표라고 주장하는 것이 아니다.
+          왜냐하면 그것은 이렇게 읽을 수 있는 코드를 바꾸도록 장려하기 때문이다.
+
+          위처럼 줄인다고 능사가 아니다.
+          대신, 나는 우리가 자연스럽게 코드를 덜 쓸 수 있게 하는 언어와 패턴을 선호해야 한다고 주장하고 있다.
+        </aside>
+      </section>
+      <section>
+        <h3>Write less code</h3>
+        <iframe title="Simple component example" src="https://svelte.dev/repl/embed?example=blog-write-less-code"
+          scrolling="no"></iframe>
+        <aside class="notes">
+          간단히 보여지는 Svelte 코드에요
+        </aside>
+      </section>
+      <section>
+        <h3>Write less code - How about React?</h3>
+        <pre>
+            <code class="hljs small">
+import React, { useState } from 'react';
+
+export default () => {
+  const [a, setA] = useState(1);
+  const [b, setB] = useState(2);
+
+  function handleChangeA(event) {
+    setA(+event.target.value);
+  }
+
+  function handleChangeB(event) {
+    setB(+event.target.value);
+  }
+
+  return (
+    <div>
+      <input type="number" value={a} onChange={handleChangeA}/>
+      <input type="number" value={b} onChange={handleChangeB}/>
+
+      <p>{a} + {b} = {a + b}</p>
+    </div>
+  );
+};
+            </code>
+          </pre>
+      </section>
+      <section>
+        <h3>Write less code - How about Vue?</h3>
+        <pre>
+            <code class="hljs small">
+<template>
+  <div>
+    <input type="number" v-model.number="a">
+    <input type="number" v-model.number="b">
+
+    <p>{{a}} + {{b}} = {{a + b}}</p>
+  </div>
+</template>
+
+<script>
+  export default {
+    data: function () {
+      return {
+        a: 1,
+        b: 2
+      };
+    }
+  };
+</script>
+            </code>
+          </pre>
+      </section>
+      <section>
+        <h3>Write less code</h3>
+        <ul>
+          <li>React - 442 Characters</li>
+          <li>Vue - 263 Characters</li>
+          <li><b>Svelte - 145 Charaters</b></li>
+        </ul>
+        <aside class="notes">
+          즉, 스벨트에서 145자를 차지하는 것을 달성하려면 리액트에서는 442자, 브에에서는 263자가 필요하다. 리액트 버전은 말 그대로 3배 더 크다! 그 차이가 아주 명백하게
+          나타나는 것은 이례적이다. 내 경험상, 리액트 구성요소가 스벨트의 등가물보다 보통 40% 정도 크다. 아이디어를 보다 간결하게 표현할 수 있는 스벨트의 디자인 특징을 살펴보자.
+        </aside>
+      </section>
+      <section>
+        <h3>Write less code</h3>
+        <p>Top-level elements</p>
+        <ul>
+          <li>React: &lt;&gt; or &lt;div&gt;</li>
+          <li>Vue: &lt;template&gt;</li>
+          <li>Svelte: As many as you want to create</li>
+        </ul>
+        <!-- <p>
+            In Svelte, a component can have as many top-level elements as you like. 
+            In React and Vue, a component must have a single top-level element — in React's case,
+            trying to return two top-level elements from a component function would result in syntactically invalid code. (You can use a fragment — &lt;&gt; — instead of a &lt;div&gt;, but it's the same basic idea, and still results in an extra level of indentation).
+            
+            In Vue, your markup must be wrapped in a &lt;template&gt; element, which I'd argue is redundant.
+          </p> -->
+        <aside class="notes">
+          최상위 요소 스벨트에서 구성요소는 원하는 만큼의 최상위 요소를 가질 수 있다.
+          React와 Vue에서 구성 요소는 단일 최상위 요소를 가져야 한다.
+          React의 경우 구성 요소 기능에서 두 개의 최상위 요소를 반환하려고 하면 구문적으로 유효하지 않은 코드가 발생할 수 있다.
+          (div 대신 파편 — (> — 를 사용할 수 있지만, 그것은 같은 기본 사상이고, 여전히 추가적인 침입을 초래한다.)
+          Vue에서, 당신의 마크업은 반드시 template 요소에 싸여있어야 하는데, 나는 그것이 불필요한 것이라고 주장한다.
+        </aside>
+      </section>
+      <section>
+        <h3>Write less code - state</h3>
+        <div style="font-size: 1.8rem; margin-bottom: -30px;">Update local component state in Svelte:</div>
+        <pre style="box-shadow: none;">
+            <code class="hljs small">
+let count = 0;
+
+function increment() {
+  count += 1;
+}
+            </code>
+          </pre>
+        <div style="font-size: 1.8rem; margin-bottom: -30px; margin-top: -50px;">Use the useState hook in react:
+        </div>
+        <pre style="box-shadow: none;">
+            <code class="hljs small">
+const [count, setCount] = useState(0);
+
+function increment() {
+  setCount(count + 1);
+}
+            </code>
+          </pre>
+        <aside class="notes">
+          This is much noisier — it expresses the exact same concept but with over 60% more characters.
+          As you're reading the code, you have to do that much more work to understand the author's intent.
+          In Vue, meanwhile, we have a default export with a data function that returns an object literal with
+          properties corresponding to our local state.
+          Things like helper functions and child components can't simply be imported and used in the template,
+          but must instead be 'registered' by attaching them to the correct part of the default export.
+
+          이것은 훨씬 더 시끄럽다. 정확히 같은 개념을 표현하지만 60%가 넘는 문자로 표현한다.
+          코드를 읽으면서 저자의 의도를 이해하기 위해서는 그만큼 더 많은 작업을 해야 한다.
+          한편, Vue에서는, 우리의 로컬 상태에 해당하는 속성을 가진 물체를 리터럴로 반환하는 데이터 함수와 함께 기본 내보내기가 있다.
+          도우미 기능이나 아동 구성품과 같은 것들은 단순히 템플릿에서 수입하여 사용할 수 있는 것이 아니라,
+          대신 기본 수출품의 올바른 부분에 부착하여 '등록'해야 한다.
+        </aside>
+      </section>
+      <section>
+        <h3>Write less code</h3>
+        <p>Death to boilerplate</p>
+        <aside class="notes">
+          리액트를 개발했을 때 생각보다 많은 시간을 리액트에서 제약하는 것들에 대해서 공부하는데 시간을 보내게 된다.
+          이는 가장 배우기 힘든 부분중에 하나이다. 사용하는 Javascript라는 언어의 특성을 사용하는 것보단 그쪽에 더 많이 치우쳐있다.
+          예를 들어 프록시나 훅같은 기능을 예로 들 수 있다.
+        </aside>
+      </section>
+      <section>
+        <h2>No virtual dom</h2>
+      </section>
+      <section>
+        <p>Are you a <span style="color: dodgerblue">React</span> developer?</p>
+        <p>You may think this is nonsense</p>
+      </section>
+      <section>
+        <p>Since 2013... you heard that <span style="color:fuchsia">the virtual DOM is fast</span>! </p>
+      </section>
+      <section>
+        <img data-src="res/rethinking-best-practices.jpg">
+        <div class="ref">Screenshot from at JSConfEU 2013</div>
+      </section>
+      <section>
+        <img data-src="res/rethinking-best-practices2.png">
+        <div class="ref">Screenshot from at JSConfEU 2013</div>
+      </section>
+      <section data-background-image="res/rethinking-best-practices2.png" data-background-opacity="0.6">
+        <p style="color: chocolate;">Few minutes later...He said:</p>
+        <ul style="font-size: 1.5rem; margin-top: 80px">
+          <li>React is not magic.</li>
+          <li>Just like you can drop into assembler with C and beat the C compiler, you can drop into raw DOM
+            operations and DOM API calls and beat React if you wanted to.</li>
+          <li>However, using C or Java or JavaScript is an order of magnitude performance improvement because
+            you don't have to worry...about the specifics of the platform.</li>
+          <li>With React you can build applications without even thinking about performance and the default
+            state is fast.</li>
+        </ul>
+        <div class="ref">
+          <a href="https://youtu.be/x7cQ3mrcKaY?t=1362" target="_blank">https://youtu.be/x7cQ3mrcKaY?t=1362</a>
+        </div>
+      </section>
+      <section>
+        <h3>Virtual DOM is slow?</h3>
+        <p>the virtual DOM is usually fast enough.</p>
+        <ul style="font-size: 1.8rem;">
+          <li>The original promise of React was that you could re-render your entire app on every single state
+            change without worrying about performance.</li>
+          <li>there'd be no need for optimisations like shouldComponentUpdate (which is a way of telling React
+            when it can safely skip a component).</li>
+        </ul>
+      </section>
+      <section>
+        <h3>Virtual DOM is slow?</h3>
+        <ul style="font-size: 1.8rem;">
+          <li>Even with shouldComponentUpdate, updating your entire app's virtual DOM in one go is a lot of
+            work.</li>
+          <li>The React team introduced something called React Fiber which allows the update to be broken into
+            smaller chunks.</li>
+          <li>This means (among other things) that updates don't block the main thread for long periods of
+            time, though it doesn't reduce the total amount of work or the time an update takes.</li>
+        </ul>
+      </section>
+      <section>
+        <p>Where does <span style="color: chocolate;">the OVERHEAD</span> come from?</p>
+      </section>
+      <section>
+        <p><span style="color: chocolate;">Diffing</span> isn't free</p>
+        <aside class="notes">
+          Most obviously, . You can't apply changes to the real DOM without first comparing the new virtual
+          DOM with the previous snapshot. To take the earlier HelloMessage example, suppose the name prop
+          changed from 'world' to 'everybody'.
+
+          Both snapshots contain a single element. In both cases it's a <div>, which means we can keep the
+            same DOM node
+            We enumerate all the attributes on the old <div> and the new one to see if any need to be
+              changed, added or removed. In both cases we have a single attribute — a className with a
+              value of "greeting"
+              Descending into the element, we see that the text has changed, so we'll need to update the
+              real DOM
+              Of these three steps, only the third has value in this case, since — as is the case in the
+              vast majority of updates — the basic structure of the app is unchanged. It would be much
+              more efficient if we could skip straight to step 3:
+
+              if (changed.name) {
+              text.data = name;
+              }
+              (This is almost exactly the update code that Svelte generates. Unlike traditional UI
+              frameworks, Svelte is a compiler that knows at build time how things could change in your
+              app, rather than waiting to do the work at run time.)
+        </aside>
+      </section>
+      <section>
+        <h3>Unnecessary work</h3>
+        <pre>
+            <code class="hljs small">
+function MoreRealisticComponent(props) {
+  const [selected, setSelected] = useState(null);
+
+  return (
+    <div>
+      <p>Selected {selected ? selected.name : 'nothing'}</p>
+
+      <ul>
+        {props.items.map(item =>
+          <li>
+            <button onClick={() \=&lt; setSelected(item)}>
+              {item.name}
+            </button>
+          </li>
+        )}
+      </ul>
+    </div>
+  );
+}
+            </code>
+          </pre>
+        <aside class="notes">
+          Here, we're generating a new array of virtual &lt;li&gt; elements
+          — each with their own inline event handler —
+          on every state change, regardless of whether props.items has changed.
+          Unless you're unhealthily obsessed with performance,
+          you're not going to optimise that. There's no point. It's plenty fast enough. But you know what
+          would be even faster? Not doing that.
+
+          The danger of defaulting to doing unnecessary work, even if that work is trivial, is that your app
+          will eventually succumb to 'death by a thousand cuts' with no clear bottleneck to aim at once it's
+          time to optimise.
+
+          Svelte is explicitly designed to prevent you from ending up in that situation.
+        </aside>
+      </section>
+      <section>
+        <p>Why do frameworks use <span style="color: chocolate;">the virtual DOM</span> then?</p>
+        <ul style="font-size: 1.8rem;">
+          <li>It's important to understand that virtual DOM isn't a feature.</li>
+          <li>It's a means to an end, the end being declarative, state-driven UI development.</li>
+          <li>Virtual DOM is valuable because it allows you to build apps without thinking about state
+            transitions, with performance that is generally good enough.</li>
+          <li>That means less buggy code, and more time spent on creative tasks instead of tedious ones.</li>
+          <li>But it turns out that we can achieve a similar programming model without using virtual DOM — and
+            that's where Svelte comes in.</li>
+        </ul>
+        <aside class="notes">
+          가상 DOM은 기능이 아니라는 것을 이해하는 것이 중요하다. 그것은 목적을 위한 수단이며, 목적은 선언적이고, 주 주도적인 UI 개발이다.
+          가상 DOM은 일반적으로 충분한 성능을 가지고 상태 전환에 대해 생각하지 않고 앱을 구축할 수 있기 때문에 가치가 있다.
+          이것은 버그 코드가 덜하고 지루한 작업 대신에 창의적인 작업에 더 많은 시간을 소비한다는 것을 의미한다.
+        </aside>
+      </section>
+      <section>
+        <img src="res/svelte.png" class="img" style="width: 200px" alt="svelte">
+        <h3>So, What is Svelte?</h3>
+      </section>
+      <section>
+        <p>Svelte is <span style="color: chocolate;">a component framework</span> — like React or Vue</p>
+      </section>
+      <section>
+        <p>But,</p>
+        <p>there's an important difference</p>
+      </section>
+      <section>
+        <p style="text-align: left; padding: 0 10% 5% 10%;">Traditional frameworks allow you to write <span
+            style="color: chocolate;">declarative state-driven code</span></p>
+        <ul style="font-size: 1.8rem;padding: 0 5% 0 5%;">
+          <li>Penalty: the browser must do extra work to convert those declarative structures into DOM
+            operations, using techniques like that eat into your frame budget and tax the garbage collector.
+          </li>
+        </ul>
+      </section>
+      <section>
+        <p>Svelte runs at <span style="color:deeppink;">BUILD TIME</span></p>
+        <p style="font-size: 1.8rem; padding: 0 10% 0 10%; text-align: left;">converting your components into
+          highly efficient imperative code that surgically updates the DOM</p>
+      </section>
+      <section>
+        <p style="font-size: 1.8rem; padding: 0 10% 0 10%; text-align: left;">As a result, you're able to write
+          <span style="color: chocolate;">ambitious applications with excellent performance
+            characteristics</span></p>
+      </section>
+      <section>
+        <p>Let's see <span style="color: darkseagreen;">the performance examples</span></p>
+      </section>
+      <section>
+        <iframe title="React example" src="react-demo/demo/index.html" scrolling="no"></iframe>
+        <a href="react-demo/demo/index.html" style="font-size: 1.5rem;color:chocolate;" target="_blank">New tab(click)</a>
+      </section>
+      <section>
+        <iframe title="Svelte example" src="svelte-demo/public/index.html" scrolling="no"></iframe>
+        <a href="svelte-demo/public/index.html" style="font-size: 1.5rem;color:chocolate;" target="_blank">New tab(click)</a>
+      </section>
+      <section>
+        <h3>Result of memory usage</h3>
+        <ul>
+          <li>React : 30 ~ 110 MB</li>
+          <li>Svelte: 15 ~ 30 MB</li>
+        </ul>
+      </section>
+      <section data-background-image="res/wow.jpeg" data-background-opacity="0.6">
+        <h3>WOW</h3>
+
+      </section>
+      <section>
+        <p><span style="color: lightcoral">SVELTE</span> has the fantastic performance</p>
+      </section>
+      <section>
+        <p>Let's see the <span style="color: lightskyblue">Svelte Syntax</span></p>
+      </section>
+      <section>
+        <p>Tags</p>
+        <pre>
+            <code class="hljs small">
+<script>
+  import Widget from './Widget.svelte';
+</script>
+<style>
+  p {/* this will only affect <p> elements in this component */
+    color: burlywood;
+  }
+  :global(body) {/* this will apply to <body> */
+    margin: 0;
+  }
+</style>
+<!-- A lowercase tag, like <div>, denotes a regular HTML element.
+A capitalised tag, such as <Widget> or <Namespace.Widget>, indicates a component. -->
+<div>
+  <Widget/>
+</div>
+<!-- By default, attributes work exactly like their HTML counterparts. -->
+<div class="foo">
+  <button disabled>can't touch this</button>
+</div>
+<!-- Attribute values can contain JavaScript expressions. -->
+<a href="page/{p}">page {p}</a>
+<!-- These are equivalent -->
+<button disabled={disabled}>...</button>
+<button {disabled}>...</button>
+<Widget {...things} />
+<Widget foo={bar} answer={42} text="hello" />
+            </code>
+          </pre>
+      </section>
+      <section>
+        <p>Script</p>
+        <pre>
+            <code class="hljs small">
+<script>
+
+export let foo;
+
+// Values that are passed in as props are immediately available
+console.log({ foo });
+
+// You can specify a default value, which will be used if the component's consumer doesn't specify a prop.
+export let bar = 'optional default value';
+export let baz = undefined;
+// these are readonly
+export const thisIs = 'readonly';
+
+export function greet(name) {
+  alert(`hello ${name}!`);
+}
+
+// this is a prop
+export let format = n => n.toFixed(2);
+
+let className;
+
+// creates a `class` property, even though it is a reserved word
+export { className as class };
+
+</script>
+            </code>
+          </pre>
+      </section>
+      <section>
+        <p>Reactive</p>
+        <pre>
+            <code class="hljs small">
+<script>
+export let title;
+
+// this will update `document.title` whenever
+// the `title` prop changes
+$: document.title = title;
+
+$: {
+  console.log(`multiple statements can be combined`);
+  console.log(`the current title is ${title}`);
+}
+// we don't need to declare `squared` and `cubed`
+// — Svelte does it for us
+$: squared = num * num;
+$: cubed = squared * num;
+</script>
+            </code>
+          </pre>
+        <aside class="notes">
+          Any top-level statement (i.e. not inside a block or a function) can be made reactive by prefixing it
+          with the $: .
+          Reactive statements run immediately before the component updates, whenever the values that they
+          depend on have changed.
+        </aside>
+      </section>
+      <section>
+        <p>Store</p>
+        <pre>
+            <code class="hljs small">
+// The svelte/store module contains minimal store implementations which fulfil this contract.
+// You can use these as the basis for your own stores, or you can implement your stores from scratch.
+const unsubscribe = store.subscribe(value => {
+  console.log(value);
+}); // logs `value`
+
+// later...
+unsubscribe();
+
+import { writable } from 'svelte/store';
+
+const count = writable(0);
+console.log($count); // logs 0
+
+count.set(1);
+console.log($count); // logs 1
+
+$count = 2;
+console.log($count); // logs 2
+// https://svelte.dev/docs#svelte_store
+            </code>
+          </pre>
+      </section>
+      <section>
+        <p>Module</p>
+        <pre>
+            <code class="hljs small">
+<script context="module">
+  // This runs once when the module first evaluates, rather than for each component instance. 
+  let totalComponents = 0;
+
+  // this allows an importer to do e.g.
+  // `import Example, { alertTotal } from './Example.svelte'`
+
+  export function alertTotal() {
+    alert(totalComponents);
+  }
+</script>
+
+<script>
+  totalComponents += 1;
+  console.log(`total number of times this component has been created: ${totalComponents}`);
+</script>
+            </code>
+          </pre>
+      </section>
+      <section>
+        <p>{#if ...}</p>
+          <pre>
+            <code class="hljs small">
+{#if porridge.temperature > 100}
+  <p>too hot!</p>
+{:else if 80 > porridge.temperature}
+  <p>too cold!</p>
+{:else}
+  <p>just right!</p>
+{/if}
+            </code>
+          </pre>
+        </section>
+        <section>
+          <p>{#each...}</p>
+          <pre>
+            <code class="hljs small">
+<h1>Shopping list</h1>
+<ul>
+  {#each items as item}
+    <li>{item.name} x {item.qty}</li>
+  {/each}
+</ul>
+            </code>
+          </pre>
+        </section>
+        <section>
+          <p>on:eventname</p>
+          <pre>
+            <code class="hljs small">
+<script>
+  let count = 0;
+
+  function handleClick(event) {
+    count += 1;
+  }
+</script>
+
+<button on:click={handleClick}>
+  count: {count}
+</button>
+
+<!-- Add modifiers to DOM events with the | character. -->
+<form on:submit|preventDefault={handleSubmit}>
+<!-- the `submit` event's default is prevented, so the page won't reload -->
+</form>
+            </code>
+          </pre>
+        </section>
+        <section>
+          <p>Immutable</p>
+          <iframe title="Immutable-data" src="https://svelte.dev/examples#immutable-data" scrolling="no"></iframe>
+          <aside class="notes">
+              Now, when you toggle todos by clicking on them, only the updated component flashes.
+          </aside>
+        </section>
+        <section>
+          See more features of <a href="https://svelte.dev/docs" target="_blank" style="color: limegreen">SVELTE API<span style="font-size: 1.5rem;">(click)</span></a>
+        </section>
+        <section>
+          Don't you think this is kind of cool stuff?😎
+        </section>
+        <section data-background-image="/res/embedded-systems.jpg" data-background-opacity="0.1">
+          <p><span style="color: tomato;">SVELTE</span> is specially stand for ...</p>
+          <p style="font-size: 2.3rem;">Embedded Web & Mobile Web</p>
+          <img src="res/svelte.png" class="img" alt="">
+          <aside class="notes">
+            웹앱으로 포스단말기 UI를 제작하는 경우에 svelte를 사용
+          </aside>
+          <div class="ref">https://www.theengineeringprojects.com/wp-content/uploads/2016/11/Examples-of-Embedded-Systems.jpg</div>
+        </section>
+        <section data-background-image="/res/embedded-systems.jpg" data-background-opacity="0.1">
+          <p><span style="color: tomato;">SVELTE</span> satisfied those of features</p>
+          <ul style="font-size: 2rem;">
+            <li>Minimized Javascript&CSS bundling(5 ~ 20KB)</li>
+            <li>Extremely high performance</li>
+            <li>Easy to learn</li>
+            <li>Rapid web app development</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Beyond SVELTE</h3>
+          <ul>
+            <li>SAPPER: Next/Gatsby-style framework. Automic SSR & Code-splitting</li>
+            <li>SVELTE NATIVE: Based on nativescript-vue</li>
+            <li>SVELTE GL: Like Three.js</li>
+            <li>Generally support typescript. But... we can fix syntax errors at the build time.</li>
+          </ul>
+    </section>
+        <section>
+          <img src="res/svelte.png" style="width: 150px;" class="img" alt="svelte">
+          <p style="font-size: 2rem;">
+            How about starting development using <span style="color: tomato; font-size: 2.3rem;">SVELTE</span>?
+          </p>
+    </section>
+    <section>
+      <p style="color: cornsilk;">References</p>
+      <ul style="font-size: 2rem">
+        <li><a style="color: floralwhite" href="https://svelte.dev" target="_blank">https://svelte.dev</a>/</li>
+        <li><a style="color: floralwhite" href="https://svelte.dev/blog/write-less-code" target="_blank">https://svelte.dev/blog/write-less-code</a></li>
+        <li><a style="color: floralwhite" href="https://svelte.dev/blog/virtual-dom-is-pure-overhead" target="_blank">https://svelte.dev/blog/virtual-dom-is-pure-overhead</a></li>
+        <li><a style="color: floralwhite" href="https://svelte.dev/blog/svelte-3-rethinking-reactivity" target="_blank">https://svelte.dev/blog/svelte-3-rethinking-reactivity</a></li>
+        <li><a style="color: floralwhite" href="https://youtu.be/AdNJ3fydeao" target="_blank">https://youtu.be/AdNJ3fydeao</a></li>
+        <li><a style="color: floralwhite" href="https://velog.io/@ashnamuh/hello-svelte" target="_blank">https://velog.io/@ashnamuh/hello-svelte</a></li>
+        <li><a style="color: floralwhite" href="https://github.com/jaeseokk/ui-block-demo" target="_blank">https://github.com/jaeseokk/ui-block-demo</a></li>
+      </ul>
+    </section>
+    <section>
+      <h3>We're hiring!</h3>
+      <img src="res/dg-logo.png" class="img dg-logo" alt="Dangguen">
+      <p>bit.ly/dangguen</p>
+    </section>
+    <section data-background-image="res/bien.jpg" data-background-opacity="0.3">
+      <h3 style="font-size: 5rem;">
+        Thank you!!
+      </h3>
+      <ul style="font-size: 1.5rem;">
+        <li>Email:&nbsp;&nbsp;&nbsp; novemberde1@gmail.com</li>
+        <li>Blog:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; https://novemberde.github.io</li>
+        <li>Github:&nbsp;https://github.com/novemberde</li>
+      </ul>
+    </section>
+
+
+        <!-- <section>
+          <p>Tags</p>
+          <pre>
+            <code class="hljs small">
+            </code>
+          </pre>
+        </section> -->
+        
+        <!-- <section>
+          <h3>Svelte API</h3>
+        </section>
+        <section>
+          <pre>
+            <code class="hljs small">
+            </code>
+          </pre>
+        </section>				
+        <section>
+        </section> -->
+      </div>
+    </div>
+
+    <script src="js/reveal.js"></script>
+
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        dependencies: [
+          { src: 'plugin/markdown/marked.js' },
+          { src: 'plugin/markdown/markdown.js' },
+          { src: 'plugin/notes/notes.js', async: true },
+          { src: 'plugin/highlight/highlight.js', async: true }
+        ],
+        hash: true,
+        slideNumber: true,
+        pdfMaxPagesPerSlide: 1,
+      });
+    </script>
+    <script>
+      (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+      ga('create', 'UA-97433460-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>캐시 on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/%EC%BA%90%EC%8B%9C/</link>
+    <description>Recent content in 캐시 on Novemberde&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Thu, 01 Mar 2018 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/%EC%BA%90%EC%8B%9C/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>NODE response를 apicache로 처리하기</title>
+      <link>https://novemberde.github.io/post/2018/03/01/Node_apicache/</link>
+      <pubDate>Thu, 01 Mar 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2018/03/01/Node_apicache/</guid>
+      <description>문제인식  서비스가 성장해가면서 기존에는 보이지 않던 문제점들이 나타났다. 처음에는 Slow query의 최적화를 필요로하지도 않았고, DB에 부하가 몰려서 Bottle neck point가 되는 것을 상상만 했지 직접 경험하지는 못했었다. 하지만 점차 Query의 optimization이 필요한 경우가 생겼고, DB로 몰리는 부하를 분산하기 위해 어떻게 처리해야하는지 고민하기 시작했다.
+ Cache me if you can 다행히도 AWSKRUG활동을 하면서 AWS re:Invent행사에 참석한 경험이 도움이 되었다. 들었던 세션중에서 가장 감명깊은 것중에 하나는 &amp;ldquo;Cache me if you can&amp;quot;이었다. 주된 내용은 점차 서비스가 커져감에 따라서 우린 Database로 몰리는 부하를 분산시켜야만 하고, 그것을 해결하기 위해서는 각 요청에 따라 Cache로 처리할 수 있는 부분은 모두 Cache로 해결해야 된다는 내용이었다.</description>
+    </item>
+    
+  </channel>
+</rss>

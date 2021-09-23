@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>배포 on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/%EB%B0%B0%ED%8F%AC/</link>
+    <description>Recent content in 배포 on Novemberde&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Thu, 14 Feb 2019 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/%EB%B0%B0%ED%8F%AC/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Native addon을 포함하여 Node.js &#43; Typescript &#43; Serverless 빌드 및 배포하기</title>
+      <link>https://novemberde.github.io/post/2019/02/14/Ts-Serverless-Build/</link>
+      <pubDate>Thu, 14 Feb 2019 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2019/02/14/Ts-Serverless-Build/</guid>
+      <description>AWSKRUG Serverless Group에서 발표한 자료입니다. C++로 빌드한 Native addon을 Serverless 환경에서 사용할 때 빌드 및 배포하는 방법을 다루었습니다.
+발표자료   Native addon을 포함하여 Node.js + Typescript + Serverless 빌드 및 배포하기  from Kyuhyun Byun  References  https://www.slideshare.net/KyuhyunByun1/native-addon-nodejs-typescript-serverless  </description>
+    </item>
+    
+    <item>
+      <title>Jenkins의 Blue ocean을 활용하여 배포 관리하기</title>
+      <link>https://novemberde.github.io/post/2017/10/21/Jenkins/</link>
+      <pubDate>Sat, 21 Oct 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/10/21/Jenkins/</guid>
+      <description>Summary  Jenkins는 CD/CI로 가장 알려진 도구이다. 이번에는 Jenkins 설정부터 시작하여 Pipeline으로 배포관리하는 과정을 정리해본다.
+ Jenkins로 기본 설정하기  Jenkins를 Install Jenkins를 참고하여 설치한다.
+설치하여 맨처음 접속하면 아래와 같은 화면이 나타난다. 다음의 명령어로 나온 텍스트를 입력한다.
+$ cat /var/jenkins_home/secrets/initialAdminPassword  Customize Jenkins화면에서 여기서는 크게 설정할 필요없이 Install suggested plugins을 선택한다.
+이후에 해당 플러그인을 설치하고 관리자 계정을 설정할 수 있다.
+테스트를 위해 계정 정보는 다음과 같이 설정한다.
+ 계정명: admin 암호: 1234 이름: admin 이메일 주소: 본인 이메일 주소   Jenkins 관리 &amp;gt; 플러그인 관리 &amp;gt; 설치 가능 으로 들어가서 Blue ocean을 선택하여 재시작없이 설치하기 버튼을 클릭한다.</description>
+    </item>
+    
+    <item>
+      <title>EC2에서 Docker와 Docker-compose 사용하기</title>
+      <link>https://novemberde.github.io/post/2017/10/20/Docker/</link>
+      <pubDate>Fri, 20 Oct 2017 13:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/10/20/Docker/</guid>
+      <description>2017.06.08에 AWSKRUG에서 EC2에서 Docker와 Docker-compose 사용하기라는 주제로 발표했던 자료입니다.
+ </description>
+    </item>
+    
+    <item>
+      <title>AWS ALB로 ElasticBeanstalk 배포하기</title>
+      <link>https://novemberde.github.io/post/2017/09/25/ALB_to_elasticbeanstalk/</link>
+      <pubDate>Mon, 25 Sep 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/09/25/ALB_to_elasticbeanstalk/</guid>
+      <description>Summary  ElasticBeanstalk를 Docker로 배포하기 위해 살펴보았는데 문제점이 있었다. 기존의 사용하던 ALB와 연동하여 사용하고 싶었지만 설정화면에서는 Classic Load Balancer만 지원되었기 때문이다. eb-cli를 사용하여 AutoScaling Group을 생성하여 ALB의 Target Group에 설정하여 앱을 배포해보자.
+ EB cli 설치하기  Install eb cli를 참고하여 로컬에 eb-cli를 설치하자.
+사전에 python이 2.7 또는 3.4이상의 버전이 설치되어 있어야 한다.
+$ pip install awsebcli --upgrade --user 설치 후에 환경변수에 아래와 같은 path를 추가하자.
+ Linux – ~/.local/bin macOS – ~/Library/Python/3.</description>
+    </item>
+    
+    <item>
+      <title>Serverless을 이용한 AWS Lambda의 배포 자동화</title>
+      <link>https://novemberde.github.io/post/2017/08/14/Serverless/</link>
+      <pubDate>Mon, 14 Aug 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/08/14/Serverless/</guid>
+      <description>Summary  AWS Lambda와 api gateway를 사용하여 작업하면 배포하는 부분에서 상당부분 시간을 사용한다. 또한 API Gateway와 lambda를 엮는 것은 별도의 설정 과정이 필요하며, Resource &amp;amp; Stage 개념이 있어서 변경사항이 생길 경우에 API배포를 매번 해주어야 한다.
+Serverless framework는 이 모든 것을 자동화해주며, 내부적으로 CloudFormation을 사용하기 때문에 API gateway에서 api변동사항을 더욱 쉽게 반영해줄 수 있다.
+ Serverless framework 란?  The open-source, application framework to easily build serverless architectures on AWS Lambda &amp;amp; more.</description>
+    </item>
+    
+    <item>
+      <title>만들어진 Docker image를 EC2 인스턴스에 배포하기</title>
+      <link>https://novemberde.github.io/post/2017/04/03/Docker_9/</link>
+      <pubDate>Mon, 03 Apr 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/04/03/Docker_9/</guid>
+      <description>Summary  이제 모든 준비는 끝났다. Docker image를 EC2 인스턴스에 배포하자.
+ 순서   Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기 EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기 Bitbucket을 사용하여 git repository 생성하기 Express JS를 사용하여 Node 서버 구축하기 PM2를 사용하여 EC2에 Node 서버 배포하기 Node 서버를 바탕으로 Dockerfile로 만들기 Docker Hub의 automated build를 사용하여 Docker image를 만들기 만들어진 Docker image를 EC2 인스턴스에 배포하기   Docker image를 받아오기  EC2 인스턴스에 SSH로 접속하자.</description>
+    </item>
+    
+    <item>
+      <title>PM2를 사용하여 EC2에 Node 서버 배포하기</title>
+      <link>https://novemberde.github.io/post/2017/04/02/Docker_6/</link>
+      <pubDate>Sun, 02 Apr 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/04/02/Docker_6/</guid>
+      <description>Summary  node js 패키지 중에서 PM2를 사용하여 웹서버를 배포하자.
+ 순서   Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기 EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기 Bitbucket을 사용하여 git repository 생성하기 Express JS를 사용하여 Node 서버 구축하기 PM2를 사용하여 EC2에 Node 서버 배포하기 Node 서버를 바탕으로 Dockerfile로 만들기 Docker Hub의 automated build를 사용하여 Docker image를 만들기 만들어진 Docker image를 EC2 인스턴스에 배포하기   웹서버에 node js를 설치하고 PM2를 설치하기  이전에 생성한 EC2 인스턴스에 ubuntu계정으로 SSH 접속한 후 Node js를 설치하자.</description>
+    </item>
+    
+    <item>
+      <title>Docker로 EC2에 Node 배포하기</title>
+      <link>https://novemberde.github.io/post/2017/03/31/Docker_0/</link>
+      <pubDate>Fri, 31 Mar 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/03/31/Docker_0/</guid>
+      <description>소개 Node JS 서버를 배포하려고 한다. 매일 같이 하던 방식이지만 방법을 잊을 수도 있다는 생각이 들었다. 이것을 보고 사람들이 노드 서버를 간결하게 배포하였으면 한다.
+순서   Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기 EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기 Bitbucket을 사용하여 git repository 생성하기 Express JS를 사용하여 Node 서버 구축하기 테스트로 PM2를 사용하여 EC2에 Node 서버 배포하기 Node 서버를 바탕으로 Dockerfile로 만들기 Docker Hub의 automated build를 사용하여 Docker image를 만들기 만들어진 Docker image를 EC2 인스턴스에 배포하기   </description>
+    </item>
+    
+  </channel>
+</rss>

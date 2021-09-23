@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>npm on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/npm/</link>
+    <description>Recent content in npm on Novemberde&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Wed, 16 May 2018 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/npm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CircleCI에서 Github private repository를 npm module로 사용하기</title>
+      <link>https://novemberde.github.io/post/2018/05/16/CircleCI-npm-private-github/</link>
+      <pubDate>Wed, 16 May 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2018/05/16/CircleCI-npm-private-github/</guid>
+      <description>Summary  현재 공통적인 모듈을 Git으로 따로 관리하여 npm private module로 사용한다. 또한 Webpack을 사용하여 Typescript로 작성된 서버를 번들링한다. 로컬에서는 모두 정상적으로 동작하지만 CircleCI에서 빌드할 경우에는 CircleCI의 권한이 해당 repository에 대한 권한만 가지고 있기 때문에 npm private module을 가져올 수가 없다.
+이와같은 문제를 해결하기 위해서 트러블 슈팅을 하였다.
+Problem  npm install을 할 때에 github에 있는 repository를 사용하는 방법은 두가지가 있다.
+ https ssh  ssh로 사용할 경우 관련 명령어는 다음과 같다.</description>
+    </item>
+    
+  </channel>
+</rss>

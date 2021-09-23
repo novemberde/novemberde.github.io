@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>scp on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/scp/</link>
+    <description>Recent content in scp on Novemberde&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Sat, 01 Jul 2017 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/scp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>다른 서버로 Mongodb 이전하기</title>
+      <link>https://novemberde.github.io/post/2017/07/01/Mongodb_transport/</link>
+      <pubDate>Sat, 01 Jul 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/07/01/Mongodb_transport/</guid>
+      <description>Summary  의뢰중에 호스팅 서버를 AWS로 옮겨달라는 요청이 있었다. MongoDB서버를 옮기기 위해서 DB를 백업하고 SCP를 사용하여 백업한 정보를 해당 인스턴스로 보내 백업을 진행하였다. 몇몇 간단한 명령어를 통하면 DB의 backup정보를 통해 복구할 수 있다. 과정을 살펴보자.
+ 현재 db정보를 dump로 만들어 SCP로 파일 전송하기  이전작업을 하기 전에 먼저 클라이언트에게 DB를 실제 서비스에서 분리하고 작업해야된다고 하였다.
+설정정보를 바꾼다면 DB를 재가동 해야하는 이유도 있었으며, mongodb dump파일을 생성한 시점부터는 추가되는 데이터가 없어야 하기 때문이다.</description>
+    </item>
+    
+  </channel>
+</rss>
