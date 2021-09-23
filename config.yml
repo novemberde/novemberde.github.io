@@ -1,0 +1,48 @@
+baseURL: https://novemberde.github.io/
+languageCode: ko-KR
+title: Novemberde's Blog
+theme: "PaperMod"
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+googleAnalytics: "286931502"
+minify:
+  disableXML: true
+  minifyOutput: true
+params:
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  title: Novemberde's Blog
+  description: "Developer novemberde's dev log"
+  keywords: [golang, aws, docker, serverless, registry, lambda, serverless]
+disqusShortname: novemberde-github-io
+menu:
+  main:
+    - identifier: post
+      name: Post
+      url: /post/
+      weight: 1
+    - identifier: about
+      name: About
+      url: /about
+      weight: 2
+    # - identifier: categories
+    #   name: Categories
+    #   url: /categories/
+    #   weight: 3
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 4
+    # - identifier: Linkedin
+    #   name: Linkedin
+    #   url: https://www.linkedin.com/in/woojung-lim-432973167/
+    #   weight: 30
+
+staticDir:
+- static
+
+disqusShortname: novemberde-github-io
+
+github: http://www.github.com/novemberde
+linkedin: https://www.linkedin.com/in/novemberde/
