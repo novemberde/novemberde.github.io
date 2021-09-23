@@ -53,6 +53,7 @@
   {{- if (.Param "comments") }}
   {{- partial "comments.html" . }}
   {{- end }}
+  {{ template "_internal/disqus.html" . }}
 </article>
 
 {{- end }}{{/* end main */}}
