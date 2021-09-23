@@ -17,9 +17,7 @@ The developer who enjoy riding a bicycle and playing judo & jiu-jitsu.
 - Currently working at Karrot🥕.
 - [AWS Serverless HERO](https://aws.amazon.com/ko/developer/community/heroes/kyuhyun-byun/)
 
-### Contact
-
----
+### Links
 
 - [Github](https://github.com/novemberde)
 - [Linkedin](https://www.linkedin.com/in/novemberde/)
