@@ -1009,5 +1009,7 @@
     <loc>https://novemberde.github.io/categories/</loc>
   </url><url>
     <loc>https://novemberde.github.io/rss/</loc>
+  </url><url>
+    <loc>https://novemberde.github.io/search/</loc>
   </url>
 </urlset>
