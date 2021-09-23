@@ -16,17 +16,31 @@ params:
   description: "Logs for troubleshooting, dev-experience"
   keywords: [golang, aws, docker, serverless, registry, lambda, serverless]
   enableDisqus: true
+  homeInfoParams:
+    Title: BYUN Kyuhyun
+    Content: Vivre comme si c’était le dernier jour de ça vie.
+  socialIcons: # optional
+    - name: "facebook"
+      url: "https://www.facebook.com/kyuhyun.byun"
+    - name: "github"
+      url: "https://github.com/novemberde"
+    - name: "linkedin"
+      url: "https://www.linkedin.com/in/novemberde/"
 disqusShortname: novemberde-github-io
 menu:
   main:
+    - identifier: search
+      name: Search
+      url: /search
+      weight: 1
     - identifier: post
       name: Post
       url: /post/
-      weight: 1
+      weight: 2
     - identifier: about
       name: About
       url: /about
-      weight: 2
+      weight: 3
     # - identifier: categories
     #   name: Categories
     #   url: /categories/
@@ -49,3 +63,9 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # is necessary
