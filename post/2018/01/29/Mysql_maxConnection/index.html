@@ -28,7 +28,7 @@ RDS를 사용하면 스케일 업이 될 때마다 Max connection 설정을 따�
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://novemberde.github.io/post/2018/01/29/Mysql_maxConnection/"><meta property="article:section" content="post">
 <meta property="article:published_time" content="2018-01-29T11:30:03+00:00">
-<meta property="article:modified_time" content="2018-01-29T11:30:03+00:00"><meta property="og:site_name" content="Novemberde's Blog">
+<meta property="article:modified_time" content="2018-01-29T11:30:03+00:00"><meta property="og:site_name" content="Novemberde dev logs">
 <meta name=twitter:card content="summary">
 <meta name=twitter:title content="AWS Lambda와 MySQL의 max connection 문제">
 <meta name=twitter:description content="Summary  MySQL에서 Max Connection에 대해서 알아보려고 한다. AWS Lambda container가 지속적으로 생성될 때 Database가 감당할 수 있는 Max connection이 얼마인지 알아야 대응할 수 있기 때문이다. 만약 Lambda container가 MySQL이 감당할 수 없을 정도로 계속 생성된다면 Database에 connection이 일어나지 않게 되고, too many connections error가 발생하여 웹서버 역할을 해야하는 Lambda가 동작하지 않을 수 있다. 물론 MySQL에 접속하는 다른 Worker들도 동작하지 않는다.
