@@ -31,10 +31,10 @@ menu:
     #   name: Categories
     #   url: /categories/
     #   weight: 3
-    - identifier: tags
-      name: Tags
-      url: /tags/
-      weight: 4
+    # - identifier: tags
+    #   name: Tags
+    #   url: /tags/
+    #   weight: 4
     # - identifier: Linkedin
     #   name: Linkedin
     #   url: https://www.linkedin.com/in/woojung-lim-432973167/
