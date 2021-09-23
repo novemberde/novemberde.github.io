@@ -18,12 +18,15 @@ params:
   enableDisqus: true
   homeInfoParams:
     Title: BYUN Kyuhyun
-    Content: Vivre comme si c’était le dernier jour de ça vie.
+    Content: |
+      Software engineer at Karrot🥕.
+
+      AWS Serverless Hero.
   socialIcons: # optional
-    - name: "facebook"
-      url: "https://www.facebook.com/kyuhyun.byun"
     - name: "github"
       url: "https://github.com/novemberde"
+    - name: "facebook"
+      url: "https://www.facebook.com/kyuhyun.byun"
     - name: "linkedin"
       url: "https://www.linkedin.com/in/novemberde/"
 disqusShortname: novemberde-github-io
