@@ -12,8 +12,8 @@ minify:
   minifyOutput: true
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
-  title: Novemberde's Blog
-  description: "Developer novemberde's dev log"
+  title: Novemberde dev logs
+  description: "Logs for troubleshooting, dev-experience"
   keywords: [golang, aws, docker, serverless, registry, lambda, serverless]
   enableDisqus: true
 disqusShortname: novemberde-github-io
