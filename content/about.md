@@ -6,13 +6,20 @@ aliases: ["/about.html"]
 enableDisqus: false
 ---
 
-## Byun Kyuhyun?
+### Byun Kyuhyun?
 
 ![Profile image](/images/profile.png)
 
 유도와 주짓수를 하며 로드바이크를 즐기는 개발자.
 
 The developer who enjoy riding a bicycle and playing judo & jiu-jitsu.
+
+- Currently working at Karrot🥕.
+- [AWS Serverless HERO](https://aws.amazon.com/ko/developer/community/heroes/kyuhyun-byun/)
+
+### Contact
+
+---
 
 - [Github](https://github.com/novemberde)
 - [Linkedin](https://www.linkedin.com/in/novemberde/)
