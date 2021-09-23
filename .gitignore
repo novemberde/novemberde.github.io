@@ -5,4 +5,4 @@ _site
 node_modules
 .envrc
 .jekyll-cache
-public
+public/*
