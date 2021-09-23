@@ -15,6 +15,7 @@ params:
   title: Novemberde's Blog
   description: "Developer novemberde's dev log"
   keywords: [golang, aws, docker, serverless, registry, lambda, serverless]
+  enableDisqus: true
 disqusShortname: novemberde-github-io
 menu:
   main:
@@ -41,11 +42,6 @@ menu:
 
 staticDir:
 - static
-
-disqusShortname: novemberde-github-io
-
-github: http://www.github.com/novemberde
-linkedin: https://www.linkedin.com/in/novemberde/
 
 disablePathToLower: true
 enableInlineShortcodes: true

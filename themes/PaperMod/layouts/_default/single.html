@@ -53,7 +53,9 @@
   {{- if (.Param "comments") }}
   {{- partial "comments.html" . }}
   {{- end }}
+  {{- if (.Param "enableDisqus") }}
   {{ template "_internal/disqus.html" . }}
+  {{- end }}
 </article>
 
 {{- end }}{{/* end main */}}
