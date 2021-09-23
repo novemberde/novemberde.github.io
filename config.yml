@@ -19,9 +19,11 @@ params:
   homeInfoParams:
     Title: BYUN Kyuhyun
     Content: |
-      Software engineer at Karrot🥕.
+      Software engineer at Karrot🥕
 
-      AWS Serverless Hero.
+      AWS Serverless Hero
+
+      Less is more!
   socialIcons: # optional
     - name: "github"
       url: "https://github.com/novemberde"
