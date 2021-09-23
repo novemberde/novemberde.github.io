@@ -1,8 +1,11 @@
 ---
 title: AWS에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기
 tags: [AWS, ec2, instance, ubuntu]
-date: "2017-03-31"
+date: "2017-03-31T11:30:03+00:00"
 aliases: ["/2017/03/31/Docker_1.html"]
+ShowBreadCrumbs: true
+ShowReadingTime: true
+ShowPostNavLinks: true
 ---
 
 ## Summary

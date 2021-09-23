@@ -1,0 +1,229 @@
+---
+title: Node js 라이브러리 및 유용한 자료
+tags: [Node, nodejs, js, lib, 라이브러리, library, 유용한, 정리, list, 자료]
+date: "2017-11-05T11:30:03+00:00"
+aliases: ["/node/2017/11/05/Node.JS_Library.html"]
+ShowBreadCrumbs: true
+ShowReadingTime: true
+ShowPostNavLinks: true
+---
+## Summary
+---
+Node JS의 라이브러리가 워낙 많다보니 자주쓰는 라이브러리를 정리해야될 필요성을 느꼈다.
+
+그리고 재밌는 라이브러리를 리스트로 관리하지 않다보니 잊게 되었다. 
+
+발견할 때마다 정리하고 라이브러리의 용도에 맞게 분류하여 나중에 필요할 경우 바로 사용할 수 있도록 한다.
+
+
+---
+## 자주 쓰는 패키지
+---
+
+- JavaScript utility library
+  - [underscore](http://underscorejs.org/)
+  - [lodash](https://lodash.com/)
+- Year, month, date, time
+  - [moment.js](https://momentjs.com/)
+- MarkDown
+  - [highlight.js](https://highlightjs.org/)
+  - [prismjs](http://prismjs.com/)
+- Ajax
+  - [request](https://www.npmjs.com/package/request)
+  - [request-promise](https://www.npmjs.com/package/request-promise)
+  - [superagent](https://www.npmjs.com/package/superagent)
+  - [axios](https://www.npmjs.com/package/axios)
+  - [got](https://www.npmjs.com/package/got)
+- Test
+  - [mocha](https://www.npmjs.com/package/mocha)
+  - [supertest](https://www.npmjs.com/package/supertest)
+  - [chai](https://www.npmjs.com/package/chai)
+  - [should](https://www.npmjs.com/package/should)
+  - [enzyme](https://www.npmjs.com/package/enzyme)
+- Logger
+  - [morgan](https://www.npmjs.com/package/morgan)
+- Task Runner & Bundler
+  - [gulp](https://gulpjs.com/)
+  - [grunt](https://gruntjs.com/)
+  - [webpack](https://webpack.github.io/)
+    - [webpack-dashboard](https://github.com/FormidableLabs/webpack-dashboard)
+- Database
+  - [sequelize](https://www.npmjs.com/package/sequelize)
+  - [graphql-sequelize](https://www.npmjs.com/package/graphql-sequelize)
+  - [sequelize-cli](https://www.npmjs.com/package/sequelize-cli)
+  - [mongodb](https://www.npmjs.com/package/mongodb)
+  - [mongoose](https://www.npmjs.com/package/mongoose)
+  - [AdminMongo](https://github.com/mrvautin/adminMongo)
+  - [waterline](https://www.npmjs.com/package/waterline)
+  - [sails-mongo](https://www.npmjs.com/package/sails-mongo)
+  - [redis](https://www.npmjs.com/package/redis)
+  - [cassandra-driver](https://www.npmjs.com/package/cassandra-driver)
+  - [realm](https://www.npmjs.com/package/realm)
+  - [oracledb](https://www.npmjs.com/package/oracledb)
+  - [mssql](https://www.npmjs.com/package/mssql)
+  - [tedious](https://www.npmjs.com/package/tedious)
+  - [pg-hstore](https://www.npmjs.com/package/pg-hstore)
+  - [influx](https://www.npmjs.com/package/influx)
+  - [mysql2](https://www.npmjs.com/package/mysql2)
+  - [sqlite3](https://www.npmjs.com/package/sqlite3)
+  - [elasticsearch](https://www.npmjs.com/package/elasticsearch)
+  - [http-aws-es](https://www.npmjs.com/package/http-aws-es)
+- Framework
+  - [sails](https://sailsjs.com/)
+  - [loopback](https://www.npmjs.com/package/loopback)
+  - [express](https://www.npmjs.com/package/express)
+  - [connect](https://www.npmjs.com/package/connect)
+  - [fastify](https://github.com/fastify/fastify)
+  - [js-data](https://www.npmjs.com/package/js-data)
+  - [vuejs](https://github.com/vuejs/vue)
+  - [micro](https://www.npmjs.com/package/micro)
+  - [next.js](https://github.com/zeit/next.js)
+  - [serverless](https://github.com/serverless/serverless)
+- Parser & Data binding
+  - [useragent](https://www.npmjs.com/package/useragent)
+  - [redux](https://reduxframework.com/)
+  - [flux](https://facebook.github.io/flux/)
+- [Express Middle ware](https://expressjs.com/en/resources/middleware.html)
+  - cors
+  - body-parser
+  - cookie-parser
+  - cookie-session
+  - compression
+  - csurf
+  - errorhandler
+  - method-override
+  - multer
+  - response-time
+  - serve-favicon
+  - serve-index
+  - serve-static
+  - session
+  - timeout
+  - vhost
+  - connect-rid
+  - connect-image-optimus
+  - express-debug
+  - express-partial-response
+  - express-simple-cdn
+  - express-slash
+  - express-stormpath
+  - express-uncapitalize
+  - helmet
+  - join-io
+  - passport
+  - static-expiry
+  - view-helpers
+  - sriracha-admin
+  - apicache: Api 호출에 대한 캐싱
+- SDK
+  - [aws](https://www.npmjs.com/package/aws-sdk)
+  - [alexa](https://www.npmjs.com/package/alexa-sdk)
+  - [cognito](https://www.npmjs.com/package/amazon-cognito-identity-js)
+  - [google](https://www.npmjs.com/package/googleapis)
+  - [paypal](https://www.npmjs.com/package/paypal-rest-sdk)
+  - [auth0](https://www.npmjs.com/package/auth0-js)
+  - [slack](https://www.npmjs.com/package/slack-node)
+  - [firebase](https://www.npmjs.com/package/firebase-admin)
+  - [dropbox](https://www.npmjs.com/package/dropbox)
+- React
+  - [react](https://www.npmjs.com/package/react)
+  - [react-dom](https://www.npmjs.com/package/react-dom)
+  - [react-router](https://www.npmjs.com/package/react-router)
+  - [react-redux](https://www.npmjs.com/package/react-redux)
+  - [react-hot-loader](https://www.npmjs.com/package/react-hot-loader)
+  - [create-react-app](https://github.com/facebookincubator/create-react-app)
+  - [create-react-kotlin-app](https://github.com/JetBrains/create-react-kotlin-app)
+  - [semantic-ui-react](https://www.npmjs.com/package/semantic-ui-react)
+  - [react-static](https://github.com/nozzle/react-static)
+  - [react-native](https://github.com/facebook/react-native)
+  - [react-pwa](https://github.com/Atyantik/react-pwa)
+  - [react-json-tree](https://github.com/alexkuz/react-json-tree)
+  - [preact](https://github.com/developit/preact)
+  - [pepperoni-app-kit](https://github.com/futurice/pepperoni-app-kit)
+  - React boilerplate.
+    - [ant-design-pro](https://github.com/ant-design/ant-design-pro)
+- UI
+  - [egjs-flicking](https://github.com/naver/egjs-flicking)
+  - [egjs-axes](https://naver.github.io/egjs-axes/)
+  - [egjs-visible](https://naver.github.io/egjs-visible/)
+  - [egjs-infinitegrid](https://github.com/naver/egjs-infinitegrid)
+  - [picturefill](https://github.com/scottjehl/picturefill)
+- Node.js native addon build tool
+  - [node-gyp](https://www.npmjs.com/package/node-gyp)
+- Crypto
+  - [scrypt](https://www.npmjs.com/package/scrypt)
+  - [bcrypt](https://www.npmjs.com/package/bcrypt)
+  - [bcryptjs](https://www.npmjs.com/package/bcryptjs)
+  - [crypto-js](https://www.npmjs.com/package/crypto-js)
+  - [node-forge](https://www.npmjs.com/package/node-forge)
+- TAR and ZIP archives
+  - [archiver](https://www.npmjs.com/package/archiver)
+- Create uuid
+  - [uuid](https://www.npmjs.com/package/uuid)
+- Socket
+  - [socket.io](https://socket.io/)
+  - [socket.io-client](https://www.npmjs.com/package/socket.io-client)
+  - [ws](https://www.npmjs.com/package/ws)
+  - [socket.io-redis](https://www.npmjs.com/package/socket.io-redis)
+- A simple visual editor for creating commutative diagrams
+  - [tikzcd-editor](https://github.com/yishn/tikzcd-editor)
+- Chart
+  - [Frappé Charts](https://github.com/frappe/charts)
+  - [billboard.js](https://github.com/naver/billboard.js)
+- Design Block
+  - [froala](https://www.froala.com/)
+- Drag and drop behaviour
+  - [draggable](https://shopify.github.io/draggable/)
+- An opinionated code formatter
+  - [prettier](https://github.com/prettier/prettier)
+- Flash OS images to SD cards & USB drives, safely and easily.
+  - [etcher](https://github.com/resin-io/etcher)
+- Markup language for building responsive email.
+  - [heml](https://github.com/SparkPost/heml)
+- Image-to-Image Translation with Conditional Adversarial Nets
+  - [pix2pix](https://github.com/phillipi/pix2pix)
+- OCR
+  - [ocr](https://www.npmjs.com/package/ocr)
+- Uplod
+  - [uppy](https://uppy.io/)
+- Ip to Geolocation
+  - [geoip-lite](https://github.com/bluesmoon/node-geoip)
+  - [geoip2](https://www.npmjs.com/package/geoip2)
+- DynamoDB
+  - [dynamoose](https://github.com/automategreen/dynamoose)
+  - [vogels](https://www.npmjs.com/package/vogels)
+- Child_process
+  - [execa](https://www.npmjs.com/package/execa)
+- Image resizer
+  - [sharp](https://www.npmjs.com/package/sharp)
+- Headless browser
+  - [puppeteer](https://github.com/GoogleChrome/puppeteer)
+- Hackable console logger
+  - [signale](https://github.com/klauscfhq/signale)
+- Presentations from your Markdown files.
+  - [reveal-md](https://github.com/webpro/reveal-md)
+- Fake data in the browser and node.js
+  - [faker.js](https://github.com/marak/Faker.js/)
+- A browser based code editor
+  - [monaco-editor](https://github.com/Microsoft/monaco-editor)
+- Tesla Model S node.js apps and javascript libraries using Tesla's HTTP interfaces
+  - [teslams](https://github.com/hjespers/teslams)
+- Game server framework
+  - [colyseus](https://github.com/gamestdio/colyseus.js)
+- [wscat](https://github.com/novemberde/wscat)
+- guppy
+- node-fetch
+- CodeceptJS
+- clipboard.js
+- aws-amplify/amplify-js
+- commanderjs
+- del
+- [Skeleton](https://github.com/dhg/Skeleton.git)
+
+
+
+- [Node.js Best Practices](https://github.com/i0natan/nodebestpractices)
+- [Front-End Checklist](https://github.com/thedaviddias/Front-End-Checklist)
+- [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
+- [Developer-roadmap](https://github.com/kamranahmedse/developer-roadmap)
+- [https://devhints.io/](https://devhints.io/)

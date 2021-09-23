@@ -1,8 +1,11 @@
 ---
 title: Java에서 String, StringBuilder, StringBuffer의 차이
 tags: [java, string, stringbuilder, stringbuffer]
-date: "2017-04-15"
+date: "2017-04-15T11:30:03+00:00"
 aliases: ["/2017/04/15/String_0.html"]
+ShowBreadCrumbs: true
+ShowReadingTime: true
+ShowPostNavLinks: true
 ---
 
 ## Summary

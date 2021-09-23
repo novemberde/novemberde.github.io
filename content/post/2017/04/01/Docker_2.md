@@ -1,8 +1,11 @@
 ---
 title: 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기
 tags: [ssh, ec2, ubuntu, create, user, 유저, 생성]
-date: "2017-04-01"
+date: "2017-04-01T11:30:03+00:00"
 aliases: ["/2017/04/01/Docker_2.html"]
+ShowBreadCrumbs: true
+ShowReadingTime: true
+ShowPostNavLinks: true
 ---
 
 ## Summary

@@ -1,8 +1,11 @@
 ---
 title: 나만의 private docker registry 구성하기.
 tags: [docker, registry, private, ec2, s3]
-date: "2017-04-09"
+date: "2017-04-09T11:30:03+00:00"
 aliases: ["/2017/04/09/Docker_Registry_0.html"]
+ShowBreadCrumbs: true
+ShowReadingTime: true
+ShowPostNavLinks: true
 ---
 
 ## Summary

@@ -1,8 +1,11 @@
 ---
 title: Docker Hub의 automated build를 사용하여 Docker image를 만들기
 tags: [docker, hub, dockerhub, automated, build, image, 만들기]
-date: "2017-04-02"
+date: "2017-04-02T11:30:03+00:00"
 aliases: ["/2017/04/02/Docker_8.html"]
+ShowBreadCrumbs: true
+ShowReadingTime: true
+ShowPostNavLinks: true
 ---
 
 ## Summary

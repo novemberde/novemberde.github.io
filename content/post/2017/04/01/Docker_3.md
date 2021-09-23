@@ -1,8 +1,11 @@
 ---
 title: EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기
 tags: [ec2, docker, 도커, 설치, 유저, 권한]
-date: "2017-04-01"
+date: "2017-04-01T11:30:03+00:00"
 aliases: ["/2017/04/01/Docker_3.html"]
+ShowBreadCrumbs: true
+ShowReadingTime: true
+ShowPostNavLinks: true
 ---
 
 ## Summary

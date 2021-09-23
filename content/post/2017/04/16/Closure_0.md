@@ -1,8 +1,11 @@
 ---
 title: Javascript에서 Closure와 Constructor
 tags: [javascript, closure, constructor, performance]
-date: "2017-04-16"
+date: "2017-04-16T11:30:03+00:00"
 aliases: ["/2017/04/16/Closure_0.html"]
+ShowBreadCrumbs: true
+ShowReadingTime: true
+ShowPostNavLinks: true
 ---
 
 ## Summary

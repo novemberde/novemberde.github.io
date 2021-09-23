@@ -1,8 +1,11 @@
 ---
 title: Bitbucket을 사용하여 git repository 생성하기
 tags: [bitbucket, git, repository]
-date: "2017-04-01"
+date: "2017-04-01T11:30:03+00:00"
 aliases: ["/2017/04/01/Docker_4.html"]
+ShowBreadCrumbs: true
+ShowReadingTime: true
+ShowPostNavLinks: true
 ---
 
 ## Summary

@@ -1,8 +1,11 @@
 ---
 title: Express JS를 사용하여 Node 서버 구축하기
 tags: [expressjs, nodejs]
-date: "2017-04-01"
+date: "2017-04-01T11:30:03+00:00"
 aliases: ["/2017/04/01/Docker_5.html"]
+ShowBreadCrumbs: true
+ShowReadingTime: true
+ShowPostNavLinks: true
 ---
 
 ## Summary

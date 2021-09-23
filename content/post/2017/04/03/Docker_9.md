@@ -1,8 +1,11 @@
 ---
 title: 만들어진 Docker image를 EC2 인스턴스에 배포하기
 tags: [docker, ec2, deploy, image, ubuntu, 배포]
-date: "2017-04-03"
+date: "2017-04-03T11:30:03+00:00"
 aliases: ["/2017/04/03/Docker_9.html"]
+ShowBreadCrumbs: true
+ShowReadingTime: true
+ShowPostNavLinks: true
 ---
 
 ## Summary

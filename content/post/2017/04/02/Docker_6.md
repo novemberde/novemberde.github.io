@@ -1,8 +1,11 @@
 ---
 title: PM2를 사용하여 EC2에 Node 서버 배포하기
 tags: [pm2, ec2, nodejs, 서버, 배포]
-date: "2017-04-02"
+date: "2017-04-02T11:30:03+00:00"
 aliases: ["/2017/04/02/Docker_6.html"]
+ShowBreadCrumbs: true
+ShowReadingTime: true
+ShowPostNavLinks: true
 ---
 
 ## Summary

@@ -1,8 +1,11 @@
 ---
 title: Docker로 EC2에 Node 배포하기
 tags: [docker, ec2, ubuntu, node, nodejs, 배포, deploy]
-date: "2017-03-31"
+date: "2017-03-31T11:30:03+00:00"
 aliases: ["/2017/03/31/Docker_0.html"]
+ShowBreadCrumbs: true
+ShowReadingTime: true
+ShowPostNavLinks: true
 ---
 
 ## 소개
