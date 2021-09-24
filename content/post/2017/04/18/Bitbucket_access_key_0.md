@@ -92,14 +92,14 @@ USERNAME@ip-172-31-14-07
 
 Bitbucket에서 별도의 access key를 발급하고 싶은 repository 에 들어가서 setting 화면으로 넘어가자.
 
-![access_key]({{ site.baseurl }}/images/bitbucket/access_key.png)
+![access_key](/images/bitbucket/access_key.png)
 
 
 ---
 
 add key를 누르면 아래와 같은 화면이 나온다. label에는 구분하고 싶은 이름을 넣어주고, key에는 아까 복사한 ssh-rsa로 시작하는 공개키를 붙여넣어주자.
 
-![add_key]({{ site.baseurl }}/images/bitbucket/add_key.png)
+![add_key](/images/bitbucket/add_key.png)
 
 ---
 

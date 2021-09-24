@@ -42,7 +42,7 @@ VS code를 사용하는 이유는 아래 사진에서 보이는 것과 같이 �
 
 Ctrl + `(~) 단축키를 누르면 터미널이 열린다.
 
-![vs_code]({{ site.baseurl }}/images/aws/ec2/vs_code.png)
+![vs_code](/images/aws/ec2/vs_code.png)
 
 ---------------------
 
@@ -138,7 +138,7 @@ Commit 메시지는 코드를 추후에 추적하기 편하게 하기 위해 상
 
 커밋한 후에 상단의 푸시 버튼을 눌러 repository에 현재 버전 정보를 올리자.
 
-![source_tree_commit]({{ site.baseurl }}/images/aws/ec2/source_tree_commit.png)
+![source_tree_commit](/images/aws/ec2/source_tree_commit.png)
 
 ## References
 - [http://webframeworks.kr/](http://webframeworks.kr/)

@@ -23,14 +23,14 @@ Let's take a look at the java.lang package on [Java API](http://docs.oracle.com/
 
 Among them, we are going to look into String, StringBuffer, and StringBuilder.
 
-![java.lang]({{ site.baseurl }}/images/java/string/java.lang.png)
+![java.lang](/images/java/string/java.lang.png)
 
 ---
 
 String class is inherited from Serializable, CharSequence, Comparable<String> interfaces, and configured as 'public final class'.
 In other words, String class is a sequence of characters, a comparable value, and is able to be serialized. Also, it cannot be used for the inherited class.
 
-![String]({{ site.baseurl }}/images/java/string/String.png)
+![String](/images/java/string/String.png)
 
 ---
 
@@ -77,7 +77,7 @@ On the following image, you can see an array 'value[]' consist of character type
 A string value is saved as an array of characters, and this private array cannot be accessed from other classes. Also, 'value[]' is a final type, cannot be changed since initialized.
 
 
- ![String2]({{ site.baseurl }}/images/java/string/String2.png)
+ ![String2](/images/java/string/String2.png)
 
 ---
 
@@ -86,9 +86,9 @@ Let's take a look at StringBuilder and StringBuffer that uses 'append' method fo
 On the following image, StringBuilder class is a mutable sequence of characters, but has no guarantee of syncronization.
 StringBuffer can also by safely used in multi-thread environments. This is the main difference between StringBuilder and StringBuffer classes.
 
- ![StringBuilder]({{ site.baseurl }}/images/java/string/StringBuilder.png)
+ ![StringBuilder](/images/java/string/StringBuilder.png)
 
- ![StringBuffer]({{ site.baseurl }}/images/java/string/StringBuffer.png)
+ ![StringBuffer](/images/java/string/StringBuffer.png)
 
  ---
 
