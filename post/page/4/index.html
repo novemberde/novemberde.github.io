@@ -16,7 +16,7 @@
 <link rel=mask-icon href=https://novemberde.github.io/safari-pinned-tab.svg>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.88.1">
+<meta name=generator content="Hugo 0.92.0">
 <link rel=alternate type=application/rss+xml href=https://novemberde.github.io/post/index.xml>
 <noscript>
 <style>#theme-toggle,.top-link{display:none}</style>
@@ -65,6 +65,19 @@
 <header class=page-header>
 <h1>Posts</h1>
 </header>
+<article class=post-entry>
+<header class=entry-header>
+<h2>Serverless + AWS Lambda + AWS CloudWatch + Slack 를 활용한 Web crawler 만들기
+</h2>
+</header>
+<section class=entry-content>
+<p>Summary 우리는 매일 각 웹사이트를 확인하여 뉴스를 취합한다. 별다른 요구사항 없이 직접 업무를 진행하시지만 이건 자동화해야된다는 생각이 들었다. 하루에 한 번 이뤄지는 일이니 주기적으로 슬랙에 최신 뉴스를 보내도록 자동화한다면 업무의 작은 시간도 아낄 수 있을 것이다. 그래서 이번에 크롤링 자동화 방법에 대해서 정리하려고 한다.
+Serverless framework를 활용하면 빠른 배포 및 관리가 가능하니 기술 스택을 다음과 같이 정했다.
+AWS Lambda: javascript로 작성. got, cheerio를 사용하여 crawler 설계 got: Request 모듈....</p>
+</section>
+<footer class=entry-footer>December 31, 2017&nbsp;·&nbsp;3 min</footer>
+<a class=entry-link aria-label="post link to Serverless + AWS Lambda + AWS CloudWatch + Slack 를 활용한  Web crawler 만들기" href=https://novemberde.github.io/post/2017/12/31/Node-crawler/></a>
+</article>
 <article class=post-entry>
 <header class=entry-header>
 <h2>Android Webview에서 Javascript에러로 인해 뷰가 안나올 경우
@@ -194,18 +207,6 @@ Repository name: test Description: CodeCommit with SourceTree Local에 Git repos
 <footer class=entry-footer>October 20, 2017&nbsp;·&nbsp;2 min</footer>
 <a class=entry-link aria-label="post link to CodeCommit 과 SourceTree 연동" href=https://novemberde.github.io/post/2017/10/20/CodeCommit/></a>
 </article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>Git pull all sub repository of certain directory.
-</h2>
-</header>
-<section class=entry-content>
-<p>Summary 여러 프로젝트를 동시에 진행하다보니 여러 repository를 한번에 갱신할 필요성이 생겼다. 일일이 하나씩 들어가서 git pull을 하려니 은근 귀찮았다. 그렇기 때문에 특정 디렉터리에 있는 all repositories(sub directories)에 대해서 git을 갱신해주는 코드를 개발하였다. 코드는 github에 공개되어 있으며 사용 방법은 아래와 같다.
-$ npm install -g git-puller Usage Usage: git-puller [options] Options: -V, --version output the version number -d, --directory [value] Target directory -r, --remote [value] Git Remote (default: origin) -b, --branch [value] Git branch (default: master) -h, --help output usage information examples: git-puller -d ....</p>
-</section>
-<footer class=entry-footer>September 26, 2017&nbsp;·&nbsp;1 min</footer>
-<a class=entry-link aria-label="post link to Git pull all sub repository of certain directory." href=https://novemberde.github.io/post/2017/09/26/git_puller/></a>
-</article>
 <footer class=page-footer>
 <nav class=pagination>
 <a class=prev href=https://novemberde.github.io/post/page/3/>« Prev Page</a>
@@ -214,7 +215,7 @@ $ npm install -g git-puller Usage Usage: git-puller [options] Options: -V, --ver
 </footer>
 </main>
 <footer class=footer>
-<span>&copy; 2021 <a href=https://novemberde.github.io/>Novemberde's Blog</a></span>
+<span>&copy; 2022 <a href=https://novemberde.github.io/>Novemberde's Blog</a></span>
 <span>
 Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &

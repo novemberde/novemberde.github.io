@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://novemberde.github.io/tags/athena/</loc>
+    <lastmod>2021-10-25T11:30:03+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/post/2021/10/25/athena-step-function/</loc>
+    <lastmod>2021-10-25T11:30:03+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/AWS/</loc>
+    <lastmod>2021-10-25T11:30:03+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/</loc>
+    <lastmod>2021-10-25T11:30:03+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/post/</loc>
+    <lastmod>2021-10-25T11:30:03+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/stepfunctions/</loc>
+    <lastmod>2021-10-25T11:30:03+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/</loc>
+    <lastmod>2021-10-25T11:30:03+00:00</lastmod>
+  </url><url>
     <loc>https://novemberde.github.io/about/</loc>
     <lastmod>2021-09-19T00:00:00+00:00</lastmod>
   </url><url>
@@ -9,12 +30,6 @@
     <lastmod>2021-09-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/me/</loc>
-    <lastmod>2021-09-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/</loc>
-    <lastmod>2021-09-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/tags/</loc>
     <lastmod>2021-09-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/docker/</loc>
@@ -27,9 +42,6 @@
     <lastmod>2021-09-12T11:30:03+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/podman/</loc>
-    <lastmod>2021-09-12T11:30:03+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/post/</loc>
     <lastmod>2021-09-12T11:30:03+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/jandi/</loc>
@@ -60,9 +72,6 @@
     <lastmod>2021-04-05T11:30:03+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/analysis/</loc>
-    <lastmod>2021-01-15T11:30:03+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/tags/AWS/</loc>
     <lastmod>2021-01-15T11:30:03+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/post/2021/01/15/AWS-Glue-DataBrew/</loc>
@@ -264,9 +273,6 @@
     <lastmod>2018-11-02T11:30:03+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/post/2018/10/29/Potal-Analysis/</loc>
-    <lastmod>2018-10-29T11:30:03+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/tags/athena/</loc>
     <lastmod>2018-10-29T11:30:03+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/quicksight/</loc>

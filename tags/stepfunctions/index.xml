@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>stepfunctions on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/stepfunctions/</link>
+    <description>Recent content in stepfunctions on Novemberde&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Mon, 25 Oct 2021 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/stepfunctions/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Athena &amp; Step Functions 로 통계 파이프라인 구축하기</title>
+      <link>https://novemberde.github.io/post/2021/10/25/athena-step-function/</link>
+      <pubDate>Mon, 25 Oct 2021 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2021/10/25/athena-step-function/</guid>
+      <description>보통 Airflow 와 EMR 조합으로 통계 파이프라인을 관리하곤 한다. 사내에서 빠르게 통계를 구축하고 관리하기 위해 불필요한 인프라 관리를 제외하고 pipeline에 대해서만 집중할 수 있도록 step functions를 도입하고, 이 경험에 대해서 공유해보았다.
+ Youtube  Slides   Athena &amp;amp; Step Function 으로 통계 파이프라인 구축하기 - 변규현 (당근마켓) :: AWS Community Day Online 2021  from AWSKRUG - AWS한국사용자모임  References  https://youtu.be/MS7CulWSc2g https://www.slideshare.net/awskr/athena-step-function-aws-community-day-online-2021  </description>
+    </item>
+    
+  </channel>
+</rss>
