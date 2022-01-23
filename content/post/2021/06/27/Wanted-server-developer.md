@@ -12,6 +12,10 @@ ShowPostNavLinks: true
 영상은 원티드 구독을 해야만 볼 수 있다.
 이때 들었던 분의 요약본도 있는데 이 블로그([https://covenant.tistory.com/248])(https://covenant.tistory.com/248)) 읽어봐도 좋다.
 
+## Slides
+
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/tZDriTUghFYOar" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/KyuhyunByun1/wanted-livetalk" title="성장하는 서버 개발자 되기 - Wanted Livetalk" target="_blank">성장하는 서버 개발자 되기 - Wanted Livetalk</a> </strong> from <strong><a href="//www.slideshare.net/KyuhyunByun1" target="_blank">Kyuhyun Byun</a></strong> </div>
+
 ---
 
 ## References
