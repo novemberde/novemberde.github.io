@@ -6,7 +6,17 @@
     <description>Recent content in developer on Novemberde&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-KR</language>
-    <lastBuildDate>Sun, 21 May 2017 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/developer/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 27 Jun 2021 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/developer/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Wanted livetalk: 성장하는 서버개발자 되기</title>
+      <link>https://novemberde.github.io/post/2021/06/27/Wanted-server-developer/</link>
+      <pubDate>Sun, 27 Jun 2021 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2021/06/27/Wanted-server-developer/</guid>
+      <description>여태까지 서버개발자로 성장하며 생각했던 바를 정리해보았다. 모두 똑같이 성장할 수는 없다. 이렇게 성장한 사람도 있다는 관점에서 봐주었으면 한다. 영상은 원티드 구독을 해야만 볼 수 있다. 이때 들었던 분의 요약본도 있는데 이 블로그([https://covenant.tistory.com/248])(https://covenant.tistory.com/248)) 읽어봐도 좋다.
+ References  요약정리: https://covenant.tistory.com/248 https://www.wanted.co.kr/events/livetalk28 https://www.wanted.co.kr/wantedplus/video/K7txZeA2?category=518  </description>
+    </item>
+    
     <item>
       <title>Code convention과 개발자가 지켜야할 수칙에 관하여</title>
       <link>https://novemberde.github.io/post/2017/05/21/Javascript_policy/</link>

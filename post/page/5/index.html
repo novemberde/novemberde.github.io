@@ -67,6 +67,21 @@
 </header>
 <article class=post-entry>
 <header class=entry-header>
+<h2>CodeCommit 과 SourceTree 연동
+</h2>
+</header>
+<section class=entry-content>
+<p>Summary AWS CodeCommit은 AWS 완전 관리형 private git repository로 인데, 콘솔화면이 조금 부실해서 콘솔화면에서 repository 관리가 좋아보이진 않았다.
+SourceTree라는 Atlassian의 Git GUI tool로 AWS CodeCommit을 연동해보자.
+AWS CodeCommit에서 Git repository 생성하기 AWS CodeCommit화면으로 들어가서 Create repository를 하면 아래와 같은 화면이 나오는데 각 항목에 내용을 입력하자.
+Repository name: test Description: CodeCommit with SourceTree Local에 Git repository 설정하기 Repository를 생성하면 다음과 같은 화면이 나타난다.
+주목해야 할 부분은 빨간 박스로 표시해놓았다....</p>
+</section>
+<footer class=entry-footer>October 20, 2017&nbsp;·&nbsp;2 min</footer>
+<a class=entry-link aria-label="post link to CodeCommit 과 SourceTree 연동" href=https://novemberde.github.io/post/2017/10/20/CodeCommit/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>Git pull all sub repository of certain directory.
 </h2>
 </header>
@@ -187,20 +202,6 @@ CR: Carriage Return LF: Line Feed CR은 커서의 위치를 가장 앞으로 옮
 </section>
 <footer class=entry-footer>August 3, 2017&nbsp;·&nbsp;4 min</footer>
 <a class=entry-link aria-label="post link to AWS CloudFormation을 활용한 Architecture" href=https://novemberde.github.io/post/2017/08/03/CloudFormation/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>Docker image를 EB(Elastic Beanstalk)를 통해 배포하기
-</h2>
-</header>
-<section class=entry-content>
-<p>Summary AWS에서 Elastic Beanstalk를 통해 docker image를 배포할 수 있다. 이번에는 기존에 만들었던 Dockerfile을 Elastic beanstalk에 배포해 보겠다.
-Dockerfile 준비하기 이전에 node js server를 하나의 Dockerfile로 만들어 놓았다. 테스트하고 싶으신 분들은 this repository를 참고하길 바란다.
-FROMnovemberde/node-pm2MAINTAINERKH BYUN "novemberde.github.io"ENV NODE_ENV productionEXPOSE3000COPY ./ /srcRUN npm install --prefix /srcCMD ["pm2-docker", "/src/app.js"] Elastic Beanstalk 설정하기 Elastic Beanstalk로 배포하는 경우에 아래와 같이 2가지 방법이 있다.
-Single instance Load balancing, auto scaling Single instance는 하나에 인스턴스에 해당 dockerfile로 구성된 인스턴스가 올라가는 경우를 발한다....</p>
-</section>
-<footer class=entry-footer>July 3, 2017&nbsp;·&nbsp;2 min</footer>
-<a class=entry-link aria-label="post link to Docker image를 EB(Elastic Beanstalk)를 통해 배포하기" href=https://novemberde.github.io/post/2017/07/03/Elastic_Beanstalk/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>

@@ -67,6 +67,19 @@
 </header>
 <article class=post-entry>
 <header class=entry-header>
+<h2>Circle CI에서 Docker Build 하기
+</h2>
+</header>
+<section class=entry-content>
+<p>Summary 현재 Terraform으로 ECS 인프라를 생성하고, CircleCI에서 docker image를 빌드하고 ECR에 푸시하는 과정을 자동화하고 있다. 이 과정에 있어서 docker image를 빌드하는 것에서 문제가 발생했다.
+CircleCI에서 script를 실행하는 환경은 Container 기반으로 되어 있기 때문이다. Docker image를 빌드하기 위해서는 docker가 설치되어 있는 환경이어야 했다.
+docker-in-docker라는 개념으로 docker hub에 “docker"라는 docker image가 있다. 하지만 이 이미지로는 프로덕션 이미지를 빌드하고 배포할 때 사용하는 기본 패키지가 없는데, 이러한 기본패키지를 추가하여 CircleCI에서 docker를 빌드할 수 있는 이미지 생성하는 방법 및 CircleCI 설정을 정리해보았다....</p>
+</section>
+<footer class=entry-footer>September 17, 2018&nbsp;·&nbsp;2 min</footer>
+<a class=entry-link aria-label="post link to Circle CI에서 Docker Build 하기" href=https://novemberde.github.io/post/2018/09/17/Circleci-docker/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>2018년 AWS Serverless Hands-on 1, 손쉽게 시작하는 Serverless Architecture
 </h2>
 </header>
@@ -181,18 +194,6 @@ RDS를 사용하면 스케일 업이 될 때마다 Max connection 설정을 따�
 </section>
 <footer class=entry-footer>January 29, 2018&nbsp;·&nbsp;2 min</footer>
 <a class=entry-link aria-label="post link to AWS Lambda와 MySQL의 max connection 문제" href=https://novemberde.github.io/post/2018/01/29/Mysql_maxConnection/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>ECS & Fargate Demo
-</h2>
-</header>
-<section class=entry-content>
-<p>Summary “ECS와 Fargate"라는 주제로 2018년 1월 20일에 AWSKRUG re:Invent recap 행사에서 발표한 자료입니다.
-발표자료 ECS/Fargate와 함께하는 간편한 Docker 사용법 - 트랙2, Community Day 2018 re:Invent 특집 from AWS Korea UserGroup (AWS한국사용자모임) 발표 영상 데모로 시연한 샘플코드는 아래와 같습니다. https://github.com/novemberde/aws-fargate-demo References https://www.slideshare.net/awskr/ecs-fargate-2018 https://www.meetup.com/ko-KR/awskrug/events/245940818/ https://github.com/novemberde/aws-fargate-demo </p>
-</section>
-<footer class=entry-footer>January 20, 2018&nbsp;·&nbsp;1 min</footer>
-<a class=entry-link aria-label="post link to ECS & Fargate Demo" href=https://novemberde.github.io/post/2018/01/20/ECS_Fargate/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
