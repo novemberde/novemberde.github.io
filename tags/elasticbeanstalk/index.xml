@@ -13,11 +13,11 @@
       <pubDate>Mon, 25 Sep 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/09/25/ALB_to_elasticbeanstalk/</guid>
-      <description>Summary  ElasticBeanstalk를 Docker로 배포하기 위해 살펴보았는데 문제점이 있었다. 기존의 사용하던 ALB와 연동하여 사용하고 싶었지만 설정화면에서는 Classic Load Balancer만 지원되었기 때문이다. eb-cli를 사용하여 AutoScaling Group을 생성하여 ALB의 Target Group에 설정하여 앱을 배포해보자.
- EB cli 설치하기  Install eb cli를 참고하여 로컬에 eb-cli를 설치하자.
+      <description>Summary ElasticBeanstalk를 Docker로 배포하기 위해 살펴보았는데 문제점이 있었다. 기존의 사용하던 ALB와 연동하여 사용하고 싶었지만 설정화면에서는 Classic Load Balancer만 지원되었기 때문이다. eb-cli를 사용하여 AutoScaling Group을 생성하여 ALB의 Target Group에 설정하여 앱을 배포해보자.
+EB cli 설치하기 Install eb cli를 참고하여 로컬에 eb-cli를 설치하자.
 사전에 python이 2.7 또는 3.4이상의 버전이 설치되어 있어야 한다.
 $ pip install awsebcli --upgrade --user 설치 후에 환경변수에 아래와 같은 path를 추가하자.
- Linux – ~/.local/bin macOS – ~/Library/Python/3.</description>
+Linux – ~/.local/bin macOS – ~/Library/Python/3.4/bin Windows – %USERPROFILE%\AppData\Roaming\Python\Scripts Python 3.</description>
     </item>
     
     <item>
@@ -26,10 +26,10 @@ $ pip install awsebcli --upgrade --user 설치 후에 환경변수에 아래와 
       <pubDate>Mon, 03 Jul 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/07/03/Elastic_Beanstalk/</guid>
-      <description>Summary  AWS에서 Elastic Beanstalk를 통해 docker image를 배포할 수 있다. 이번에는 기존에 만들었던 Dockerfile을 Elastic beanstalk에 배포해 보겠다.
- Dockerfile 준비하기  이전에 node js server를 하나의 Dockerfile로 만들어 놓았다. 테스트하고 싶으신 분들은 this repository를 참고하길 바란다.
-FROMnovemberde/node-pm2MAINTAINERKH BYUN &amp;#34;novemberde.github.io&amp;#34;ENV NODE_ENV productionEXPOSE3000COPY ./ /srcRUN npm install --prefix /srcCMD [&amp;#34;pm2-docker&amp;#34;, &amp;#34;/src/app.js&amp;#34;] Elastic Beanstalk 설정하기  Elastic Beanstalk로 배포하는 경우에 아래와 같이 2가지 방법이 있다.
- Single instance Load balancing, auto scaling  Single instance는 하나에 인스턴스에 해당 dockerfile로 구성된 인스턴스가 올라가는 경우를 발한다.</description>
+      <description>Summary AWS에서 Elastic Beanstalk를 통해 docker image를 배포할 수 있다. 이번에는 기존에 만들었던 Dockerfile을 Elastic beanstalk에 배포해 보겠다.
+Dockerfile 준비하기 이전에 node js server를 하나의 Dockerfile로 만들어 놓았다. 테스트하고 싶으신 분들은 this repository를 참고하길 바란다.
+FROM novemberde/node-pm2 MAINTAINER KH BYUN &amp;#34;novemberde.github.io&amp;#34; ENV NODE_ENV production EXPOSE 3000 COPY ./ /src RUN npm install --prefix /src CMD [&amp;#34;pm2-docker&amp;#34;, &amp;#34;/src/app.js&amp;#34;] Elastic Beanstalk 설정하기 Elastic Beanstalk로 배포하는 경우에 아래와 같이 2가지 방법이 있다.
+Single instance Load balancing, auto scaling Single instance는 하나에 인스턴스에 해당 dockerfile로 구성된 인스턴스가 올라가는 경우를 발한다.</description>
     </item>
     
   </channel>

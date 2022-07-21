@@ -13,10 +13,10 @@
       <pubDate>Wed, 06 Dec 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/11/06/Instance_metadata/</guid>
-      <description>Summary  Amazon EC2의 설정을 자동으로 하기 위해선 인스턴스의 정보를 받아와서 설정할 수 있어야 한다.
+      <description>Summary Amazon EC2의 설정을 자동으로 하기 위해선 인스턴스의 정보를 받아와서 설정할 수 있어야 한다.
 예를 들어 특정 태그로 묶인 그룹에게 재가동시 소스코드 갱신과 서버 재가동의 명령어를 init.d에 등록했을 때 인스턴스 정보를 얻어온다면 개별적으로 인스턴스의 역할에 맞는 work load를 할당할 수 있을 것이다.
- meta-data 확인하기  Metadata에 대해서 찾아보니 위키백과에 아래와 같이 쓰여 있었다.
- 메타데이터(metadata)는 데이터(data)에 대한 데이터이다. 이렇게 흔히들 간단히 정의하지만 엄격하게는, Karen Coyle에 의하면 &amp;ldquo;어떤 목적을 가지고 만들어진 데이터 (Constructed data with a purpose)&amp;ldquo;라고도 정의한다.</description>
+meta-data 확인하기 Metadata에 대해서 찾아보니 위키백과에 아래와 같이 쓰여 있었다.
+메타데이터(metadata)는 데이터(data)에 대한 데이터이다. 이렇게 흔히들 간단히 정의하지만 엄격하게는, Karen Coyle에 의하면 &amp;ldquo;어떤 목적을 가지고 만들어진 데이터 (Constructed data with a purpose)&amp;ldquo;라고도 정의한다.</description>
     </item>
     
     <item>
@@ -25,9 +25,9 @@
       <pubDate>Sun, 22 Oct 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/10/22/OS-Command/</guid>
-      <description>Summary  개발을 하다가 명령어를 모두 기억하고 싶어도 잠깐 다른 업무를 하다가 다시하면 잊게되는 명령어들이 있다. 특히 OS 관련 명령어는 서버에 문제가 생겼을 때 사용하기 때문에 더욱 그렇다. 이번에는 자주 사용하지 않았으면 하는 명령어들을 정리해본다.
- OS 명령어  sar
- 리소스 사용 내역을 볼 수 있다. CPU 사용율 Idle 상태 상태 확인 I/O 의 사용율 메모리 사용율  $ sudo apt-get install sysstat $ sudo vi /etc/default/sysstat ENABLED=&amp;#34;true&amp;#34; $ sar -u 1 5 Linux 4.</description>
+      <description>Summary 개발을 하다가 명령어를 모두 기억하고 싶어도 잠깐 다른 업무를 하다가 다시하면 잊게되는 명령어들이 있다. 특히 OS 관련 명령어는 서버에 문제가 생겼을 때 사용하기 때문에 더욱 그렇다. 이번에는 자주 사용하지 않았으면 하는 명령어들을 정리해본다.
+OS 명령어 sar
+리소스 사용 내역을 볼 수 있다. CPU 사용율 Idle 상태 상태 확인 I/O 의 사용율 메모리 사용율 $ sudo apt-get install sysstat $ sudo vi /etc/default/sysstat ENABLED=&amp;#34;true&amp;#34; $ sar -u 1 5 Linux 4.</description>
     </item>
     
   </channel>

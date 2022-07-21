@@ -13,8 +13,8 @@
       <pubDate>Mon, 13 May 2019 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2019/05/13/CircleCI-1st-Meetup/</guid>
-      <description>Summary  CircleCI Korea User Group 첫번째 밋업에서 서버리스 앱을 배포하기 위해 CircleCI 상에서 어떻게 빌드하는지 알아보았다. 또한, CircleCI의 기본적인 기능 및 특징에 대해서 살펴본다.
- 발표자료  발표 슬라이드    CircleCI로 Serverless API의 CI/CD 환경 구축하기  from Kyuhyun Byun  </description>
+      <description>Summary CircleCI Korea User Group 첫번째 밋업에서 서버리스 앱을 배포하기 위해 CircleCI 상에서 어떻게 빌드하는지 알아보았다. 또한, CircleCI의 기본적인 기능 및 특징에 대해서 살펴본다.
+발표자료 발표 슬라이드 CircleCI로 Serverless API의 CI/CD 환경 구축하기 from Kyuhyun Byun </description>
     </item>
     
     <item>
@@ -23,7 +23,7 @@
       <pubDate>Mon, 17 Sep 2018 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2018/09/17/Circleci-docker/</guid>
-      <description>Summary  현재 Terraform으로 ECS 인프라를 생성하고, CircleCI에서 docker image를 빌드하고 ECR에 푸시하는 과정을 자동화하고 있다. 이 과정에 있어서 docker image를 빌드하는 것에서 문제가 발생했다.
+      <description>Summary 현재 Terraform으로 ECS 인프라를 생성하고, CircleCI에서 docker image를 빌드하고 ECR에 푸시하는 과정을 자동화하고 있다. 이 과정에 있어서 docker image를 빌드하는 것에서 문제가 발생했다.
 CircleCI에서 script를 실행하는 환경은 Container 기반으로 되어 있기 때문이다. Docker image를 빌드하기 위해서는 docker가 설치되어 있는 환경이어야 했다.
 docker-in-docker라는 개념으로 docker hub에 &amp;ldquo;docker&amp;quot;라는 docker image가 있다. 하지만 이 이미지로는 프로덕션 이미지를 빌드하고 배포할 때 사용하는 기본 패키지가 없는데, 이러한 기본패키지를 추가하여 CircleCI에서 docker를 빌드할 수 있는 이미지 생성하는 방법 및 CircleCI 설정을 정리해보았다.</description>
     </item>
@@ -34,10 +34,11 @@ docker-in-docker라는 개념으로 docker hub에 &amp;ldquo;docker&amp;quot;라
       <pubDate>Wed, 16 May 2018 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2018/05/16/CircleCI-npm-private-github/</guid>
-      <description>Summary  현재 공통적인 모듈을 Git으로 따로 관리하여 npm private module로 사용한다. 또한 Webpack을 사용하여 Typescript로 작성된 서버를 번들링한다. 로컬에서는 모두 정상적으로 동작하지만 CircleCI에서 빌드할 경우에는 CircleCI의 권한이 해당 repository에 대한 권한만 가지고 있기 때문에 npm private module을 가져올 수가 없다.
+      <description>Summary 현재 공통적인 모듈을 Git으로 따로 관리하여 npm private module로 사용한다. 또한 Webpack을 사용하여 Typescript로 작성된 서버를 번들링한다. 로컬에서는 모두 정상적으로 동작하지만 CircleCI에서 빌드할 경우에는 CircleCI의 권한이 해당 repository에 대한 권한만 가지고 있기 때문에 npm private module을 가져올 수가 없다.
 이와같은 문제를 해결하기 위해서 트러블 슈팅을 하였다.
-Problem  npm install을 할 때에 github에 있는 repository를 사용하는 방법은 두가지가 있다.
- https ssh  ssh로 사용할 경우 관련 명령어는 다음과 같다.</description>
+Problem npm install을 할 때에 github에 있는 repository를 사용하는 방법은 두가지가 있다.
+https ssh ssh로 사용할 경우 관련 명령어는 다음과 같다.
+# ssh 키 생성하기 $ ssh-keygen -f id_rsa_kh -C &amp;#34;&amp;#34; # 생성한 키를 ~/.</description>
     </item>
     
   </channel>

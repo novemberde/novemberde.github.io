@@ -13,11 +13,11 @@
       <pubDate>Mon, 25 Sep 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/09/25/ALB_to_elasticbeanstalk/</guid>
-      <description>Summary  ElasticBeanstalk를 Docker로 배포하기 위해 살펴보았는데 문제점이 있었다. 기존의 사용하던 ALB와 연동하여 사용하고 싶었지만 설정화면에서는 Classic Load Balancer만 지원되었기 때문이다. eb-cli를 사용하여 AutoScaling Group을 생성하여 ALB의 Target Group에 설정하여 앱을 배포해보자.
- EB cli 설치하기  Install eb cli를 참고하여 로컬에 eb-cli를 설치하자.
+      <description>Summary ElasticBeanstalk를 Docker로 배포하기 위해 살펴보았는데 문제점이 있었다. 기존의 사용하던 ALB와 연동하여 사용하고 싶었지만 설정화면에서는 Classic Load Balancer만 지원되었기 때문이다. eb-cli를 사용하여 AutoScaling Group을 생성하여 ALB의 Target Group에 설정하여 앱을 배포해보자.
+EB cli 설치하기 Install eb cli를 참고하여 로컬에 eb-cli를 설치하자.
 사전에 python이 2.7 또는 3.4이상의 버전이 설치되어 있어야 한다.
 $ pip install awsebcli --upgrade --user 설치 후에 환경변수에 아래와 같은 path를 추가하자.
- Linux – ~/.local/bin macOS – ~/Library/Python/3.</description>
+Linux – ~/.local/bin macOS – ~/Library/Python/3.4/bin Windows – %USERPROFILE%\AppData\Roaming\Python\Scripts Python 3.</description>
     </item>
     
   </channel>

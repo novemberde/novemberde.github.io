@@ -14,7 +14,7 @@
       
       <guid>https://novemberde.github.io/post/2020/10/17/RDS-to-aurora/</guid>
       <description>RDS PostgreSQL에서 Aurora PostgreSQL을 도입한 후기
-Presentation   RDS에서 Aurora PostgreSQL Migration한 후기  from Kyuhyun Byun  Youtube  Reference  AWS Community Day 2020 소개 링크 https://pages.awscloud.com/aws-community-day-online-2020.html  </description>
+Presentation RDS에서 Aurora PostgreSQL Migration한 후기 from Kyuhyun Byun Youtube Reference AWS Community Day 2020 소개 링크 https://pages.awscloud.com/aws-community-day-online-2020.html </description>
     </item>
     
     <item>
@@ -25,7 +25,7 @@ Presentation   RDS에서 Aurora PostgreSQL Migration한 후기  from Kyuhyun Byu
       <guid>https://novemberde.github.io/post/2019/06/10/MySQL-Desgin-cheatsheet/</guid>
       <description>신규프로젝트를 진행할 경우 디비 스키마를 설계를 해야한다. 데이터의 타입부터 외래키 설정등 신경써야하는 부분들이 생각보다 자잘하게 있다. 이 경우에 주의해야하는 점들을 정리해보았다. 이 문서는 지속적으로 수정될 예정이다.
 Datatype MySQL에서 사용하는 데이터 타입은 다음과 같다.
-Numeric Type  BIT[(M)] - A bit-value type. M indicates the number of bits per value, from 1 to 64. The default is 1 if M is omitted. TINYINT[(M)] [UNSIGNED] [ZEROFILL] - A very small integer. The signed range is -128 to 127.</description>
+Numeric Type BIT[(M)] - A bit-value type. M indicates the number of bits per value, from 1 to 64. The default is 1 if M is omitted. TINYINT[(M)] [UNSIGNED] [ZEROFILL] - A very small integer. The signed range is -128 to 127.</description>
     </item>
     
     <item>
@@ -35,7 +35,7 @@ Numeric Type  BIT[(M)] - A bit-value type. M indicates the number of bits per va
       
       <guid>https://novemberde.github.io/post/2019/01/25/Timestream/</guid>
       <description>&amp;ldquo;시계열 데이터 전용 DB 소개&amp;quot;라는 주제로 2019년 1월 25일에 AWSKRUG re:Invent recap 행사에서 발표한 자료입니다.
-발표자료   Amazon Timestream 시계열 데이터 전용 DB 소개 :: 변규현 - AWS Community Day 2019  from AWS Korea UserGroup (AWS한국사용자모임)  References  https://www.slideshare.net/awskr/amazon-timestream-db https://pages.awscloud.com/aws-community-day-seoul-2019.html  </description>
+발표자료 Amazon Timestream 시계열 데이터 전용 DB 소개 :: 변규현 - AWS Community Day 2019 from AWS Korea UserGroup (AWS한국사용자모임) References https://www.slideshare.net/awskr/amazon-timestream-db https://pages.awscloud.com/aws-community-day-seoul-2019.html </description>
     </item>
     
     <item>
@@ -44,8 +44,8 @@ Numeric Type  BIT[(M)] - A bit-value type. M indicates the number of bits per va
       <pubDate>Thu, 12 Apr 2018 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2018/04/12/Neo4j/</guid>
-      <description>Summary  각 사용자들의 연관 관계 분석을 위하여 GraphDB를 도입하려한다. 시작하기에 앞서서 GraphDB에 대해서 이해가 필요했다. 다음에서 GraphDB의 기본 내용을 담았다.
-Graph Database란?  In computing, a graph database is a database that uses graph structures for semantic queries with nodes, edges and properties to represent and store data. A key concept of the system is the graph (or edge or relationship), which directly relates data items in the store. The relationships allow data in the store to be linked together directly, and in many cases retrieved with one operation.</description>
+      <description>Summary 각 사용자들의 연관 관계 분석을 위하여 GraphDB를 도입하려한다. 시작하기에 앞서서 GraphDB에 대해서 이해가 필요했다. 다음에서 GraphDB의 기본 내용을 담았다.
+Graph Database란? In computing, a graph database is a database that uses graph structures for semantic queries with nodes, edges and properties to represent and store data. A key concept of the system is the graph (or edge or relationship), which directly relates data items in the store. The relationships allow data in the store to be linked together directly, and in many cases retrieved with one operation.</description>
     </item>
     
     <item>
@@ -54,7 +54,7 @@ Graph Database란?  In computing, a graph database is a database that uses graph
       <pubDate>Mon, 29 Jan 2018 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2018/01/29/Mysql_maxConnection/</guid>
-      <description>Summary  MySQL에서 Max Connection에 대해서 알아보려고 한다. AWS Lambda container가 지속적으로 생성될 때 Database가 감당할 수 있는 Max connection이 얼마인지 알아야 대응할 수 있기 때문이다. 만약 Lambda container가 MySQL이 감당할 수 없을 정도로 계속 생성된다면 Database에 connection이 일어나지 않게 되고, too many connections error가 발생하여 웹서버 역할을 해야하는 Lambda가 동작하지 않을 수 있다. 물론 MySQL에 접속하는 다른 Worker들도 동작하지 않는다.
+      <description>Summary MySQL에서 Max Connection에 대해서 알아보려고 한다. AWS Lambda container가 지속적으로 생성될 때 Database가 감당할 수 있는 Max connection이 얼마인지 알아야 대응할 수 있기 때문이다. 만약 Lambda container가 MySQL이 감당할 수 없을 정도로 계속 생성된다면 Database에 connection이 일어나지 않게 되고, too many connections error가 발생하여 웹서버 역할을 해야하는 Lambda가 동작하지 않을 수 있다. 물론 MySQL에 접속하는 다른 Worker들도 동작하지 않는다.
 RDS를 사용하면 스케일 업이 될 때마다 Max connection 설정을 따로 하지 않더라도 알아서 늘어난다.</description>
     </item>
     
@@ -64,9 +64,10 @@ RDS를 사용하면 스케일 업이 될 때마다 Max connection 설정을 따�
       <pubDate>Sat, 01 Jul 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/07/01/Mongodb_transport/</guid>
-      <description>Summary  의뢰중에 호스팅 서버를 AWS로 옮겨달라는 요청이 있었다. MongoDB서버를 옮기기 위해서 DB를 백업하고 SCP를 사용하여 백업한 정보를 해당 인스턴스로 보내 백업을 진행하였다. 몇몇 간단한 명령어를 통하면 DB의 backup정보를 통해 복구할 수 있다. 과정을 살펴보자.
- 현재 db정보를 dump로 만들어 SCP로 파일 전송하기  이전작업을 하기 전에 먼저 클라이언트에게 DB를 실제 서비스에서 분리하고 작업해야된다고 하였다.
-설정정보를 바꾼다면 DB를 재가동 해야하는 이유도 있었으며, mongodb dump파일을 생성한 시점부터는 추가되는 데이터가 없어야 하기 때문이다.</description>
+      <description>Summary 의뢰중에 호스팅 서버를 AWS로 옮겨달라는 요청이 있었다. MongoDB서버를 옮기기 위해서 DB를 백업하고 SCP를 사용하여 백업한 정보를 해당 인스턴스로 보내 백업을 진행하였다. 몇몇 간단한 명령어를 통하면 DB의 backup정보를 통해 복구할 수 있다. 과정을 살펴보자.
+현재 db정보를 dump로 만들어 SCP로 파일 전송하기 이전작업을 하기 전에 먼저 클라이언트에게 DB를 실제 서비스에서 분리하고 작업해야된다고 하였다.
+설정정보를 바꾼다면 DB를 재가동 해야하는 이유도 있었으며, mongodb dump파일을 생성한 시점부터는 추가되는 데이터가 없어야 하기 때문이다.
+먼저 외부와의 접속을 차단하고 mongodump파일을 생성해 보자.</description>
     </item>
     
   </channel>

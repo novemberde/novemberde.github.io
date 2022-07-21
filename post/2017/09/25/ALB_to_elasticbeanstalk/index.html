@@ -1,306 +1,121 @@
-<!doctype html><html lang=en dir=auto>
-<head><meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<meta name=robots content="index, follow">
-<title>AWS ALB로 ElasticBeanstalk 배포하기 | Novemberde's Blog</title>
-<meta name=keywords content="ALB,ELB,eb,elasticbeanstalk,elastic,beanstalk,application,load,balancer,연동,docker,multicontainer,container,배포">
-<meta name=description content="Summary  ElasticBeanstalk를 Docker로 배포하기 위해 살펴보았는데 문제점이 있었다. 기존의 사용하던 ALB와 연동하여 사용하고 싶었지만 설정화면에서는 Classic Load Balancer만 지원되었기 때문이다. eb-cli를 사용하여 AutoScaling Group을 생성하여 ALB의 Target Group에 설정하여 앱을 배포해보자.
- EB cli 설치하기  Install eb cli를 참고하여 로컬에 eb-cli를 설치하자.
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>AWS ALB로 ElasticBeanstalk 배포하기 | Novemberde's Blog</title><meta name=keywords content="ALB,ELB,eb,elasticbeanstalk,elastic,beanstalk,application,load,balancer,연동,docker,multicontainer,container,배포"><meta name=description content="Summary ElasticBeanstalk를 Docker로 배포하기 위해 살펴보았는데 문제점이 있었다. 기존의 사용하던 ALB와 연동하여 사용하고 싶었지만 설정화면에서는 Classic Load Balancer만 지원되었기 때문이다. eb-cli를 사용하여 AutoScaling Group을 생성하여 ALB의 Target Group에 설정하여 앱을 배포해보자.
+EB cli 설치하기 Install eb cli를 참고하여 로컬에 eb-cli를 설치하자.
 사전에 python이 2.7 또는 3.4이상의 버전이 설치되어 있어야 한다.
 $ pip install awsebcli --upgrade --user 설치 후에 환경변수에 아래와 같은 path를 추가하자.
- Linux – ~/.local/bin macOS – ~/Library/Python/3.">
-<meta name=author content>
-<link rel=canonical href=https://novemberde.github.io/post/2017/09/25/ALB_to_elasticbeanstalk/>
-<link crossorigin=anonymous href=/assets/css/stylesheet.min.9f1d947375927e9847272b1f4e9be81336f539e513bf04d52cade31f81cad1af.css integrity="sha256-nx2Uc3WSfphHJysfTpvoEzb1OeUTvwTVLK3jH4HK0a8=" rel="preload stylesheet" as=style>
-<script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
-<link rel=icon href=https://novemberde.github.io/favicon.ico>
-<link rel=icon type=image/png sizes=16x16 href=https://novemberde.github.io/favicon-16x16.png>
-<link rel=icon type=image/png sizes=32x32 href=https://novemberde.github.io/favicon-32x32.png>
-<link rel=apple-touch-icon href=https://novemberde.github.io/apple-touch-icon.png>
-<link rel=mask-icon href=https://novemberde.github.io/safari-pinned-tab.svg>
-<meta name=theme-color content="#2e2e33">
-<meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.92.0">
-<noscript>
-<style>#theme-toggle,.top-link{display:none}</style>
-<style>@media(prefers-color-scheme:dark){:root{--theme:#1d1e20;--entry:#2e2e33;--primary:rgba(255, 255, 255, 0.84);--secondary:rgba(255, 255, 255, 0.56);--tertiary:rgba(255, 255, 255, 0.16);--content:rgba(255, 255, 255, 0.74);--hljs-bg:#2e2e33;--code-bg:#37383e;--border:#333}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
-</noscript>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-97433460-1','auto'),ga('send','pageview'))</script><meta property="og:title" content="AWS ALB로 ElasticBeanstalk 배포하기">
-<meta property="og:description" content="Summary  ElasticBeanstalk를 Docker로 배포하기 위해 살펴보았는데 문제점이 있었다. 기존의 사용하던 ALB와 연동하여 사용하고 싶었지만 설정화면에서는 Classic Load Balancer만 지원되었기 때문이다. eb-cli를 사용하여 AutoScaling Group을 생성하여 ALB의 Target Group에 설정하여 앱을 배포해보자.
- EB cli 설치하기  Install eb cli를 참고하여 로컬에 eb-cli를 설치하자.
+Linux – ~/.local/bin macOS – ~/Library/Python/3.4/bin Windows – %USERPROFILE%\AppData\Roaming\Python\Scripts Python 3."><meta name=author content><link rel=canonical href=https://novemberde.github.io/post/2017/09/25/ALB_to_elasticbeanstalk/><link crossorigin=anonymous href=/assets/css/stylesheet.min.9f1d947375927e9847272b1f4e9be81336f539e513bf04d52cade31f81cad1af.css integrity="sha256-nx2Uc3WSfphHJysfTpvoEzb1OeUTvwTVLK3jH4HK0a8=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/assets/js/highlight.min.e85ad0406048e8176e1c7661b25d5c69297ddfe41dc4124cf75ecb99a4f7b3d1.js integrity="sha256-6FrQQGBI6BduHHZhsl1caSl93+QdxBJM917LmaT3s9E=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://novemberde.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://novemberde.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://novemberde.github.io/favicon-32x32.png><link rel=apple-touch-icon href=https://novemberde.github.io/apple-touch-icon.png><link rel=mask-icon href=https://novemberde.github.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><meta name=generator content="Hugo 0.101.0"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:#1d1e20;--entry:#2e2e33;--primary:rgba(255, 255, 255, 0.84);--secondary:rgba(255, 255, 255, 0.56);--tertiary:rgba(255, 255, 255, 0.16);--content:rgba(255, 255, 255, 0.74);--hljs-bg:#2e2e33;--code-bg:#37383e;--border:#333}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,i=t.createElement(n),a=t.getElementsByTagName(n)[0],i.async=1,i.src=s,a.parentNode.insertBefore(i,a)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-97433460-1","auto"),ga("send","pageview"))</script><meta property="og:title" content="AWS ALB로 ElasticBeanstalk 배포하기"><meta property="og:description" content="Summary ElasticBeanstalk를 Docker로 배포하기 위해 살펴보았는데 문제점이 있었다. 기존의 사용하던 ALB와 연동하여 사용하고 싶었지만 설정화면에서는 Classic Load Balancer만 지원되었기 때문이다. eb-cli를 사용하여 AutoScaling Group을 생성하여 ALB의 Target Group에 설정하여 앱을 배포해보자.
+EB cli 설치하기 Install eb cli를 참고하여 로컬에 eb-cli를 설치하자.
 사전에 python이 2.7 또는 3.4이상의 버전이 설치되어 있어야 한다.
 $ pip install awsebcli --upgrade --user 설치 후에 환경변수에 아래와 같은 path를 추가하자.
- Linux – ~/.local/bin macOS – ~/Library/Python/3.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://novemberde.github.io/post/2017/09/25/ALB_to_elasticbeanstalk/"><meta property="article:section" content="post">
-<meta property="article:published_time" content="2017-09-25T11:30:03+00:00">
-<meta property="article:modified_time" content="2017-09-25T11:30:03+00:00"><meta property="og:site_name" content="Novemberde dev logs">
-<meta name=twitter:card content="summary">
-<meta name=twitter:title content="AWS ALB로 ElasticBeanstalk 배포하기">
-<meta name=twitter:description content="Summary  ElasticBeanstalk를 Docker로 배포하기 위해 살펴보았는데 문제점이 있었다. 기존의 사용하던 ALB와 연동하여 사용하고 싶었지만 설정화면에서는 Classic Load Balancer만 지원되었기 때문이다. eb-cli를 사용하여 AutoScaling Group을 생성하여 ALB의 Target Group에 설정하여 앱을 배포해보자.
- EB cli 설치하기  Install eb cli를 참고하여 로컬에 eb-cli를 설치하자.
+Linux – ~/.local/bin macOS – ~/Library/Python/3.4/bin Windows – %USERPROFILE%\AppData\Roaming\Python\Scripts Python 3."><meta property="og:type" content="article"><meta property="og:url" content="https://novemberde.github.io/post/2017/09/25/ALB_to_elasticbeanstalk/"><meta property="article:section" content="post"><meta property="article:published_time" content="2017-09-25T11:30:03+00:00"><meta property="article:modified_time" content="2017-09-25T11:30:03+00:00"><meta property="og:site_name" content="Novemberde dev logs"><meta name=twitter:card content="summary"><meta name=twitter:title content="AWS ALB로 ElasticBeanstalk 배포하기"><meta name=twitter:description content="Summary ElasticBeanstalk를 Docker로 배포하기 위해 살펴보았는데 문제점이 있었다. 기존의 사용하던 ALB와 연동하여 사용하고 싶었지만 설정화면에서는 Classic Load Balancer만 지원되었기 때문이다. eb-cli를 사용하여 AutoScaling Group을 생성하여 ALB의 Target Group에 설정하여 앱을 배포해보자.
+EB cli 설치하기 Install eb cli를 참고하여 로컬에 eb-cli를 설치하자.
 사전에 python이 2.7 또는 3.4이상의 버전이 설치되어 있어야 한다.
 $ pip install awsebcli --upgrade --user 설치 후에 환경변수에 아래와 같은 path를 추가하자.
- Linux – ~/.local/bin macOS – ~/Library/Python/3.">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://novemberde.github.io/post/"},{"@type":"ListItem","position":2,"name":"AWS ALB로 ElasticBeanstalk 배포하기","item":"https://novemberde.github.io/post/2017/09/25/ALB_to_elasticbeanstalk/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"AWS ALB로 ElasticBeanstalk 배포하기","name":"AWS ALB로 ElasticBeanstalk 배포하기","description":"Summary  ElasticBeanstalk를 Docker로 배포하기 위해 살펴보았는데 문제점이 있었다. 기존의 사용하던 ALB와 연동하여 사용하고 싶었지만 설정화면에서는 Classic Load Balancer만 지원되었기 때문이다. eb-cli를 사용하여 AutoScaling Group을 생성하여 ALB의 Target Group에 설정하여 앱을 배포해보자.\n EB cli 설치하기  Install eb cli를 참고하여 로컬에 eb-cli를 설치하자.\n사전에 python이 2.7 또는 3.4이상의 버전이 설치되어 있어야 한다.\n$ pip install awsebcli --upgrade --user 설치 후에 환경변수에 아래와 같은 path를 추가하자.\n Linux – ~/.local/bin macOS – ~/Library/Python/3.","keywords":["ALB","ELB","eb","elasticbeanstalk","elastic","beanstalk","application","load","balancer","연동","docker","multicontainer","container","배포"],"articleBody":"Summary  ElasticBeanstalk를 Docker로 배포하기 위해 살펴보았는데 문제점이 있었다. 기존의 사용하던 ALB와 연동하여 사용하고 싶었지만 설정화면에서는 Classic Load Balancer만 지원되었기 때문이다. eb-cli를 사용하여 AutoScaling Group을 생성하여 ALB의 Target Group에 설정하여 앱을 배포해보자.\n EB cli 설치하기  Install eb cli를 참고하여 로컬에 eb-cli를 설치하자.\n사전에 python이 2.7 또는 3.4이상의 버전이 설치되어 있어야 한다.\n$ pip install awsebcli --upgrade --user 설치 후에 환경변수에 아래와 같은 path를 추가하자.\n Linux – ~/.local/bin macOS – ~/Library/Python/3.4/bin Windows – %USERPROFILE%\\AppData\\Roaming\\Python\\Scripts  Python 3.5 on Windows – %USERPROFILE%\\AppData\\Roaming\\Python\\Python3.5\\Scripts Python 3.6 on Windows – %USERPROFILE%\\AppData\\Local\\Programs\\Python\\Python36\\Scripts    올바르게 입력했다면 eb의 version을 확인할 수 있을 것이다.\n$ eb --version  EB Command Line Interface로 AutoScaling Group 생성하기  AutoScaling Group을 생성하기 위해선 아래와 같은 과정이 필요하다.\n ElasticBeanstalk Application 생성하기 ElasticBeanstalk Environment 생성하기(여기서 AutoScaling Group을 설정한다)  그럼 위 과정에 대해서 eb-cli를 통해 생성해본다.\n# 먼저 eb init을 통해 배포할 region을 지정해준다. $ eb init Select a default region 1) us-east-1 : US East (N. Virginia) 2) us-west-1 : US West (N. California) 3) us-west-2 : US West (Oregon) 4) eu-west-1 : EU (Ireland) 5) eu-central-1 : EU (Frankfurt) 6) ap-south-1 : Asia Pacific (Mumbai) 7) ap-southeast-1 : Asia Pacific (Singapore) 8) ap-southeast-2 : Asia Pacific (Sydney) 9) ap-northeast-1 : Asia Pacific (Tokyo) 10) ap-northeast-2 : Asia Pacific (Seoul) 11) sa-east-1 : South America (Sao Paulo) 12) cn-north-1 : China (Beijing) 13) us-east-2 : US East (Ohio) 14) ca-central-1 : Canada (Central) 15) eu-west-2 : EU (London) (default is 3): 10 # region을 선택했으면 아래와 같은 내용이 나타난다. 여기서 사용할 Application을 생성해주자 Select an application to use 1) legacyEBApplication 2) [ Create new Application ] (default is 2): 2 # 사용할 Application name을 입력하자. Enter Application Name (default is \"novem\"): TestApp Application TestApp has been created. # 사용할 Platform을 선택해주자. 여기서 Docker로 배포하기 때문에 Docker를 선택한다. Select a platform. 1) Ruby 2) Go 3) Java 4) Tomcat 5) PHP 6) Python 7) Node.js 8) IIS 9) Docker 10) GlassFish 11) Packer (default is 1): 9 # Platform version은 Community Edition을 선택해주도록 하자. Select a platform version. 1) Docker 17.03.1-ce 2) Docker 1.12.6 3) Docker 1.11.2 4) Docker 1.9.1 (default is 1): 1 # SSH로 접근할 수 있도록 할지 선택할 수 있다. Cannot setup CodeCommit because there is no Source Control setup, continuing with initialization Do you want to set up SSH for your instances? (Y/n): Y # SSH 접근을 허용했다면 사용할 KeyPair를 선택해주자. Select a keypair. 1) RootKeyPair 2) OtherUserKeyPair 3) [ Create new KeyPair ] (default is 1): 1 ElasticBeanstalk Application을 생성하였다.\n 다음으로 ElasticBeanstalk environment를 생성하자.\n이때 윈도우 환경이라면 CMD창을 Administrator권한으로 실행해야 올바르게 동작한다.\n$ eb create # Environment Name을 입력한다. Default로 [ApplicationName-dev] 로 잡힌다. Enter Environment Name (default is TestApp-dev): # DNS Name을 입력한다. Default로 [ApplicationName-dev] 로 잡힌다. Enter DNS CNAME prefix (default is TestApp-dev): # Load balancer type을 입력한다. Default로 [Classic Load Balancer] 로 잡힌다. Select a load balancer type 1) classic 2) application (default is 1): 2 Creating application version archive \"app-170926_015406\". Uploading TestApp/app-170926_015406.zip to S3. This may take a while. Upload Complete. Environment details for: TestApp-dev Application name: TestApp Region: ap-northeast-2 Deployed Version: app-170926_015406 Environment ID: e-mdj25dyzuu Platform: arn:aws:elasticbeanstalk:ap-northeast-2::platform/Docker running on 64bit Amazon Linux/2.7.4 Tier: WebServer-Standard CNAME: TestApp-dev.ap-northeast-2.elasticbeanstalk.com Updated: 2017-09-26 01:54:09.941000+00:00 Printing Status: ... 이제 모두 생성되었다.\n소스코드를 배포해 보자. 로컬에 아래와 같은 예제 git repository를 가져와서 배포하자.\n# 로컬에 소스코드를 가져온다. $ git clone https://kyuhyun@bitbucket.org/kyuhyun/docker_node_server.git  해당 폴더를 zip 파일로 압축한다. AWS console에서 ElasticBeanstalk로 접속하여 해당 Environment로 이동한다. 압축한 파일을 업로드하여 Deploy 한다.  이 과정을 eb cli로 진행하려 하였지만 EB-cli 문서에 codecommit의 repository만 지정할 수 있게 나와있다. 내부적으로는 S3에 업로드하지만 S3 주소를 따로 가리키는 option이 없기 때문에 eb-cli로만 진행할 수는 없었다.\n Default로 생성된 ALB를 삭제하고 TargetGroup 재지정 후 상태 확인  이 글을 쓰게된 계기는 기존에 사용하던 ALB에서 TargetGroup만 지정하여 사용할 수 있는지가 궁금해서 시작한 것이다.\n하지만 Default로 EB를 AutoScalingGroup과 TargetGroup만 생성해서 만들지는 못하기 때문에 ALB와 함께 생성하였다.\n이제 궁금한 부분은 같이 생성된 ALB를 삭제하였을 때 지속적으로 다시 ALB가 살아나는지 확인하고 기존의 TargetGroup을 엮어줘도 괜찮은가이다.\n아래와 같은 프로세스로 진행해보았다.\n EB와 생성된 ALB를 삭제한다. 새로 ALB를 생성하고 ALB의 Security Group을 인스턴스들의 SecurityGroup으로 열어준다. 동작 확인!  문제없이 동작은 하였지만 살짝 마음에 걸리는 부분은 있다.\nEB는 아직 ALB가 삭제되었다고 표시되는 부분이 없다. 또한 아래와 같이 url이 나타나있지만 실제로는 ALB가 사라졌기 때문에 동작하지 않는다. 나중에 전체 구조를 다시 파악할 때 큰 어려움이 있을 것으로 보인다.\n References   http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install.html http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb3-deploy.html  ","wordCount":"700","inLanguage":"en","datePublished":"2017-09-25T11:30:03Z","dateModified":"2017-09-25T11:30:03Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://novemberde.github.io/post/2017/09/25/ALB_to_elasticbeanstalk/"},"publisher":{"@type":"Organization","name":"Novemberde's Blog","logo":{"@type":"ImageObject","url":"https://novemberde.github.io/favicon.ico"}}}</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8620431066400094" crossorigin=anonymous></script>
-</head>
-<body id=top>
-<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
-<header class=header>
-<nav class=nav>
-<div class=logo>
-<a href=https://novemberde.github.io/ accesskey=h title="Novemberde's Blog (Alt + H)">Novemberde's Blog</a>
-<span class=logo-switches>
-<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-</button>
-</span>
-</div>
-<ul id=menu>
-<li>
-<a href=https://novemberde.github.io/search title="Search (Alt + /)" accesskey=/>
-<span>Search</span>
-</a>
-</li>
-<li>
-<a href=https://novemberde.github.io/post/ title=Post>
-<span>Post</span>
-</a>
-</li>
-<li>
-<a href=https://novemberde.github.io/about title=About>
-<span>About</span>
-</a>
-</li>
-</ul>
-</nav>
-</header>
-<main class=main>
-<article class=post-single>
-<header class=post-header>
-<div class=breadcrumbs><a href=https://novemberde.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://novemberde.github.io/post/>Posts</a></div>
-<h1 class=post-title>
-AWS ALB로 ElasticBeanstalk 배포하기
-</h1>
-<div class=post-meta>September 25, 2017&nbsp;·&nbsp;4 min
-</div>
-</header>
-<div class=post-content><h2 id=summary>Summary<a hidden class=anchor aria-hidden=true href=#summary>#</a></h2>
-<hr>
-<p>ElasticBeanstalk를 Docker로 배포하기 위해 살펴보았는데 문제점이 있었다.
+Linux – ~/.local/bin macOS – ~/Library/Python/3.4/bin Windows – %USERPROFILE%\AppData\Roaming\Python\Scripts Python 3."><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://novemberde.github.io/post/"},{"@type":"ListItem","position":2,"name":"AWS ALB로 ElasticBeanstalk 배포하기","item":"https://novemberde.github.io/post/2017/09/25/ALB_to_elasticbeanstalk/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"AWS ALB로 ElasticBeanstalk 배포하기","name":"AWS ALB로 ElasticBeanstalk 배포하기","description":"Summary ElasticBeanstalk를 Docker로 배포하기 위해 살펴보았는데 문제점이 있었다. 기존의 사용하던 ALB와 연동하여 사용하고 싶었지만 설정화면에서는 Classic Load Balancer만 지원되었기 때문이다. eb-cli를 사용하여 AutoScaling Group을 생성하여 ALB의 Target Group에 설정하여 앱을 배포해보자.\nEB cli 설치하기 Install eb cli를 참고하여 로컬에 eb-cli를 설치하자.\n사전에 python이 2.7 또는 3.4이상의 버전이 설치되어 있어야 한다.\n$ pip install awsebcli --upgrade --user 설치 후에 환경변수에 아래와 같은 path를 추가하자.\nLinux – ~/.local/bin macOS – ~/Library/Python/3.4/bin Windows – %USERPROFILE%\\AppData\\Roaming\\Python\\Scripts Python 3.","keywords":["ALB","ELB","eb","elasticbeanstalk","elastic","beanstalk","application","load","balancer","연동","docker","multicontainer","container","배포"],"articleBody":"Summary ElasticBeanstalk를 Docker로 배포하기 위해 살펴보았는데 문제점이 있었다. 기존의 사용하던 ALB와 연동하여 사용하고 싶었지만 설정화면에서는 Classic Load Balancer만 지원되었기 때문이다. eb-cli를 사용하여 AutoScaling Group을 생성하여 ALB의 Target Group에 설정하여 앱을 배포해보자.\nEB cli 설치하기 Install eb cli를 참고하여 로컬에 eb-cli를 설치하자.\n사전에 python이 2.7 또는 3.4이상의 버전이 설치되어 있어야 한다.\n$ pip install awsebcli --upgrade --user 설치 후에 환경변수에 아래와 같은 path를 추가하자.\nLinux – ~/.local/bin macOS – ~/Library/Python/3.4/bin Windows – %USERPROFILE%\\AppData\\Roaming\\Python\\Scripts Python 3.5 on Windows – %USERPROFILE%\\AppData\\Roaming\\Python\\Python3.5\\Scripts Python 3.6 on Windows – %USERPROFILE%\\AppData\\Local\\Programs\\Python\\Python36\\Scripts 올바르게 입력했다면 eb의 version을 확인할 수 있을 것이다.\n$ eb --version EB Command Line Interface로 AutoScaling Group 생성하기 AutoScaling Group을 생성하기 위해선 아래와 같은 과정이 필요하다.\nElasticBeanstalk Application 생성하기 ElasticBeanstalk Environment 생성하기(여기서 AutoScaling Group을 설정한다) 그럼 위 과정에 대해서 eb-cli를 통해 생성해본다.\n# 먼저 eb init을 통해 배포할 region을 지정해준다. $ eb init Select a default region 1) us-east-1 : US East (N. Virginia) 2) us-west-1 : US West (N. California) 3) us-west-2 : US West (Oregon) 4) eu-west-1 : EU (Ireland) 5) eu-central-1 : EU (Frankfurt) 6) ap-south-1 : Asia Pacific (Mumbai) 7) ap-southeast-1 : Asia Pacific (Singapore) 8) ap-southeast-2 : Asia Pacific (Sydney) 9) ap-northeast-1 : Asia Pacific (Tokyo) 10) ap-northeast-2 : Asia Pacific (Seoul) 11) sa-east-1 : South America (Sao Paulo) 12) cn-north-1 : China (Beijing) 13) us-east-2 : US East (Ohio) 14) ca-central-1 : Canada (Central) 15) eu-west-2 : EU (London) (default is 3): 10 # region을 선택했으면 아래와 같은 내용이 나타난다. 여기서 사용할 Application을 생성해주자 Select an application to use 1) legacyEBApplication 2) [ Create new Application ] (default is 2): 2 # 사용할 Application name을 입력하자. Enter Application Name (default is \"novem\"): TestApp Application TestApp has been created. # 사용할 Platform을 선택해주자. 여기서 Docker로 배포하기 때문에 Docker를 선택한다. Select a platform. 1) Ruby 2) Go 3) Java 4) Tomcat 5) PHP 6) Python 7) Node.js 8) IIS 9) Docker 10) GlassFish 11) Packer (default is 1): 9 # Platform version은 Community Edition을 선택해주도록 하자. Select a platform version. 1) Docker 17.03.1-ce 2) Docker 1.12.6 3) Docker 1.11.2 4) Docker 1.9.1 (default is 1): 1 # SSH로 접근할 수 있도록 할지 선택할 수 있다. Cannot setup CodeCommit because there is no Source Control setup, continuing with initialization Do you want to set up SSH for your instances? (Y/n): Y # SSH 접근을 허용했다면 사용할 KeyPair를 선택해주자. Select a keypair. 1) RootKeyPair 2) OtherUserKeyPair 3) [ Create new KeyPair ] (default is 1): 1 ElasticBeanstalk Application을 생성하였다.\n다음으로 ElasticBeanstalk environment를 생성하자.\n이때 윈도우 환경이라면 CMD창을 Administrator권한으로 실행해야 올바르게 동작한다.\n$ eb create # Environment Name을 입력한다. Default로 [ApplicationName-dev] 로 잡힌다. Enter Environment Name (default is TestApp-dev): # DNS Name을 입력한다. Default로 [ApplicationName-dev] 로 잡힌다. Enter DNS CNAME prefix (default is TestApp-dev): # Load balancer type을 입력한다. Default로 [Classic Load Balancer] 로 잡힌다. Select a load balancer type 1) classic 2) application (default is 1): 2 Creating application version archive \"app-170926_015406\". Uploading TestApp/app-170926_015406.zip to S3. This may take a while. Upload Complete. Environment details for: TestApp-dev Application name: TestApp Region: ap-northeast-2 Deployed Version: app-170926_015406 Environment ID: e-mdj25dyzuu Platform: arn:aws:elasticbeanstalk:ap-northeast-2::platform/Docker running on 64bit Amazon Linux/2.7.4 Tier: WebServer-Standard CNAME: TestApp-dev.ap-northeast-2.elasticbeanstalk.com Updated: 2017-09-26 01:54:09.941000+00:00 Printing Status: ... 이제 모두 생성되었다.\n소스코드를 배포해 보자. 로컬에 아래와 같은 예제 git repository를 가져와서 배포하자.\n# 로컬에 소스코드를 가져온다. $ git clone https://kyuhyun@bitbucket.org/kyuhyun/docker_node_server.git 해당 폴더를 zip 파일로 압축한다. AWS console에서 ElasticBeanstalk로 접속하여 해당 Environment로 이동한다. 압축한 파일을 업로드하여 Deploy 한다. 이 과정을 eb cli로 진행하려 하였지만 EB-cli 문서에 codecommit의 repository만 지정할 수 있게 나와있다. 내부적으로는 S3에 업로드하지만 S3 주소를 따로 가리키는 option이 없기 때문에 eb-cli로만 진행할 수는 없었다.\nDefault로 생성된 ALB를 삭제하고 TargetGroup 재지정 후 상태 확인 이 글을 쓰게된 계기는 기존에 사용하던 ALB에서 TargetGroup만 지정하여 사용할 수 있는지가 궁금해서 시작한 것이다.\n하지만 Default로 EB를 AutoScalingGroup과 TargetGroup만 생성해서 만들지는 못하기 때문에 ALB와 함께 생성하였다.\n이제 궁금한 부분은 같이 생성된 ALB를 삭제하였을 때 지속적으로 다시 ALB가 살아나는지 확인하고 기존의 TargetGroup을 엮어줘도 괜찮은가이다.\n아래와 같은 프로세스로 진행해보았다.\nEB와 생성된 ALB를 삭제한다. 새로 ALB를 생성하고 ALB의 Security Group을 인스턴스들의 SecurityGroup으로 열어준다. 동작 확인! 문제없이 동작은 하였지만 살짝 마음에 걸리는 부분은 있다.\nEB는 아직 ALB가 삭제되었다고 표시되는 부분이 없다. 또한 아래와 같이 url이 나타나있지만 실제로는 ALB가 사라졌기 때문에 동작하지 않는다. 나중에 전체 구조를 다시 파악할 때 큰 어려움이 있을 것으로 보인다.\nReferences http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install.html http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb3-deploy.html ","wordCount":"700","inLanguage":"en","datePublished":"2017-09-25T11:30:03Z","dateModified":"2017-09-25T11:30:03Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://novemberde.github.io/post/2017/09/25/ALB_to_elasticbeanstalk/"},"publisher":{"@type":"Organization","name":"Novemberde's Blog","logo":{"@type":"ImageObject","url":"https://novemberde.github.io/favicon.ico"}}}</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8620431066400094" crossorigin=anonymous></script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://novemberde.github.io/ accesskey=h title="Novemberde's Blog (Alt + H)">Novemberde's Blog</a>
+<span class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></span></div><ul id=menu><li><a href=https://novemberde.github.io/search title="Search (Alt + /)" accesskey=/><span>Search</span></a></li><li><a href=https://novemberde.github.io/post/ title=Post><span>Post</span></a></li><li><a href=https://novemberde.github.io/about title=About><span>About</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://novemberde.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://novemberde.github.io/post/>Posts</a></div><h1 class=post-title>AWS ALB로 ElasticBeanstalk 배포하기</h1><div class=post-meta>September 25, 2017&nbsp;·&nbsp;4 min</div></header><div class=post-content><h2 id=summary>Summary<a hidden class=anchor aria-hidden=true href=#summary>#</a></h2><hr><p>ElasticBeanstalk를 Docker로 배포하기 위해 살펴보았는데 문제점이 있었다.
 기존의 사용하던 ALB와 연동하여 사용하고 싶었지만 설정화면에서는 Classic Load Balancer만 지원되었기 때문이다.
-eb-cli를 사용하여 AutoScaling Group을 생성하여 ALB의 Target Group에 설정하여 앱을 배포해보자.</p>
-<hr>
-<h3 id=eb-cli-설치하기>EB cli 설치하기<a hidden class=anchor aria-hidden=true href=#eb-cli-설치하기>#</a></h3>
-<hr>
-<p><a href=http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install.html>Install eb cli</a>를 참고하여 로컬에 eb-cli를 설치하자.</p>
-<p>사전에 python이 2.7 또는 3.4이상의 버전이 설치되어 있어야 한다.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>$ pip install awsebcli --upgrade --user
-</code></pre></div><p>설치 후에 환경변수에 아래와 같은 path를 추가하자.</p>
-<ul>
-<li>Linux – ~/.local/bin</li>
-<li>macOS – ~/Library/Python/3.4/bin</li>
-<li>Windows – %USERPROFILE%\AppData\Roaming\Python\Scripts
-<ul>
-<li>Python 3.5 on Windows – %USERPROFILE%\AppData\Roaming\Python\Python3.5\Scripts</li>
-<li>Python 3.6 on Windows – %USERPROFILE%\AppData\Local\Programs\Python\Python36\Scripts</li>
-</ul>
-</li>
-</ul>
-<p>올바르게 입력했다면 eb의 version을 확인할 수 있을 것이다.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>$ eb --version
-</code></pre></div><hr>
-<h3 id=eb-command-line-interface로-autoscaling-group-생성하기>EB Command Line Interface로 AutoScaling Group 생성하기<a hidden class=anchor aria-hidden=true href=#eb-command-line-interface로-autoscaling-group-생성하기>#</a></h3>
-<hr>
-<p>AutoScaling Group을 생성하기 위해선 아래와 같은 과정이 필요하다.</p>
-<ol>
-<li>ElasticBeanstalk Application 생성하기</li>
-<li>ElasticBeanstalk Environment 생성하기(여기서 AutoScaling Group을 설정한다)</li>
-</ol>
-<p>그럼 위 과정에 대해서 eb-cli를 통해 생성해본다.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=color:#75715e># 먼저 eb init을 통해 배포할 region을 지정해준다.</span>
-$ eb init
-
-Select a default region
-1<span style=color:#f92672>)</span> us-east-1 : US East <span style=color:#f92672>(</span>N. Virginia<span style=color:#f92672>)</span>
-2<span style=color:#f92672>)</span> us-west-1 : US West <span style=color:#f92672>(</span>N. California<span style=color:#f92672>)</span>
-3<span style=color:#f92672>)</span> us-west-2 : US West <span style=color:#f92672>(</span>Oregon<span style=color:#f92672>)</span>
-4<span style=color:#f92672>)</span> eu-west-1 : EU <span style=color:#f92672>(</span>Ireland<span style=color:#f92672>)</span>
-5<span style=color:#f92672>)</span> eu-central-1 : EU <span style=color:#f92672>(</span>Frankfurt<span style=color:#f92672>)</span>
-6<span style=color:#f92672>)</span> ap-south-1 : Asia Pacific <span style=color:#f92672>(</span>Mumbai<span style=color:#f92672>)</span>
-7<span style=color:#f92672>)</span> ap-southeast-1 : Asia Pacific <span style=color:#f92672>(</span>Singapore<span style=color:#f92672>)</span>
-8<span style=color:#f92672>)</span> ap-southeast-2 : Asia Pacific <span style=color:#f92672>(</span>Sydney<span style=color:#f92672>)</span>
-9<span style=color:#f92672>)</span> ap-northeast-1 : Asia Pacific <span style=color:#f92672>(</span>Tokyo<span style=color:#f92672>)</span>
-10<span style=color:#f92672>)</span> ap-northeast-2 : Asia Pacific <span style=color:#f92672>(</span>Seoul<span style=color:#f92672>)</span>
-11<span style=color:#f92672>)</span> sa-east-1 : South America <span style=color:#f92672>(</span>Sao Paulo<span style=color:#f92672>)</span>
-12<span style=color:#f92672>)</span> cn-north-1 : China <span style=color:#f92672>(</span>Beijing<span style=color:#f92672>)</span>
-13<span style=color:#f92672>)</span> us-east-2 : US East <span style=color:#f92672>(</span>Ohio<span style=color:#f92672>)</span>
-14<span style=color:#f92672>)</span> ca-central-1 : Canada <span style=color:#f92672>(</span>Central<span style=color:#f92672>)</span>
-15<span style=color:#f92672>)</span> eu-west-2 : EU <span style=color:#f92672>(</span>London<span style=color:#f92672>)</span>
-<span style=color:#f92672>(</span>default is 3<span style=color:#f92672>)</span>: <span style=color:#ae81ff>10</span>
-
-<span style=color:#75715e># region을 선택했으면 아래와 같은 내용이 나타난다. 여기서 사용할 Application을 생성해주자</span>
-Select an application to use
-1<span style=color:#f92672>)</span> legacyEBApplication
-2<span style=color:#f92672>)</span> <span style=color:#f92672>[</span> Create new Application <span style=color:#f92672>]</span>
-<span style=color:#f92672>(</span>default is 2<span style=color:#f92672>)</span>: <span style=color:#ae81ff>2</span>
-
-<span style=color:#75715e># 사용할 Application name을 입력하자.</span>
-Enter Application Name
-<span style=color:#f92672>(</span>default is <span style=color:#e6db74>&#34;novem&#34;</span><span style=color:#f92672>)</span>: TestApp
-Application TestApp has been created.
-
-<span style=color:#75715e># 사용할 Platform을 선택해주자. 여기서 Docker로 배포하기 때문에 Docker를 선택한다.</span>
-Select a platform.
-1<span style=color:#f92672>)</span> Ruby
-2<span style=color:#f92672>)</span> Go
-3<span style=color:#f92672>)</span> Java
-4<span style=color:#f92672>)</span> Tomcat
-5<span style=color:#f92672>)</span> PHP
-6<span style=color:#f92672>)</span> Python
-7<span style=color:#f92672>)</span> Node.js
-8<span style=color:#f92672>)</span> IIS
-9<span style=color:#f92672>)</span> Docker
-10<span style=color:#f92672>)</span> GlassFish
-11<span style=color:#f92672>)</span> Packer
-<span style=color:#f92672>(</span>default is 1<span style=color:#f92672>)</span>: <span style=color:#ae81ff>9</span>
-
-<span style=color:#75715e># Platform version은 Community Edition을 선택해주도록 하자.</span>
-Select a platform version.
-1<span style=color:#f92672>)</span> Docker 17.03.1-ce
-2<span style=color:#f92672>)</span> Docker 1.12.6
-3<span style=color:#f92672>)</span> Docker 1.11.2
-4<span style=color:#f92672>)</span> Docker 1.9.1
-<span style=color:#f92672>(</span>default is 1<span style=color:#f92672>)</span>: <span style=color:#ae81ff>1</span>
-
-<span style=color:#75715e># SSH로 접근할 수 있도록 할지 선택할 수 있다.</span>
-Cannot setup CodeCommit because there is no Source Control setup, continuing with initialization
-Do you want to set up SSH <span style=color:#66d9ef>for</span> your instances?
-<span style=color:#f92672>(</span>Y/n<span style=color:#f92672>)</span>: Y
-
-<span style=color:#75715e># SSH 접근을 허용했다면 사용할 KeyPair를 선택해주자.</span>
-Select a keypair.
-1<span style=color:#f92672>)</span> RootKeyPair
-2<span style=color:#f92672>)</span> OtherUserKeyPair
-3<span style=color:#f92672>)</span> <span style=color:#f92672>[</span> Create new KeyPair <span style=color:#f92672>]</span>
-<span style=color:#f92672>(</span>default is 1<span style=color:#f92672>)</span>: <span style=color:#ae81ff>1</span>
-</code></pre></div><p>ElasticBeanstalk Application을 생성하였다.</p>
-<hr>
-<p>다음으로 ElasticBeanstalk environment를 생성하자.</p>
-<p>이때 윈도우 환경이라면 CMD창을 Administrator권한으로 실행해야 올바르게 동작한다.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh>$ eb create
-<span style=color:#75715e># Environment Name을 입력한다. Default로 [ApplicationName-dev] 로 잡힌다.</span>
-Enter Environment Name
-<span style=color:#f92672>(</span>default is TestApp-dev<span style=color:#f92672>)</span>:
-<span style=color:#75715e># DNS Name을 입력한다. Default로 [ApplicationName-dev] 로 잡힌다.</span>
-Enter DNS CNAME prefix
-<span style=color:#f92672>(</span>default is TestApp-dev<span style=color:#f92672>)</span>:
-
-<span style=color:#75715e># Load balancer type을 입력한다. Default로 [Classic Load Balancer] 로 잡힌다.</span>
-Select a load balancer type
-1<span style=color:#f92672>)</span> classic
-2<span style=color:#f92672>)</span> application
-<span style=color:#f92672>(</span>default is 1<span style=color:#f92672>)</span>: <span style=color:#ae81ff>2</span>
-Creating application version archive <span style=color:#e6db74>&#34;app-170926_015406&#34;</span>.
-Uploading TestApp/app-170926_015406.zip to S3. This may take a <span style=color:#66d9ef>while</span>.
-Upload Complete.
-Environment details <span style=color:#66d9ef>for</span>: TestApp-dev
-  Application name: TestApp
-  Region: ap-northeast-2
-  Deployed Version: app-170926_015406
-  Environment ID: e-mdj25dyzuu
-  Platform: arn:aws:elasticbeanstalk:ap-northeast-2::platform/Docker running on 64bit Amazon Linux/2.7.4
-  Tier: WebServer-Standard
-  CNAME: TestApp-dev.ap-northeast-2.elasticbeanstalk.com
-  Updated: 2017-09-26 01:54:09.941000+00:00
-Printing Status:
-...
-</code></pre></div><p>이제 모두 생성되었다.</p>
-<p>소스코드를 배포해 보자. 로컬에 아래와 같은 예제 git repository를 가져와서 배포하자.</p>
-<pre tabindex=0><code># 로컬에 소스코드를 가져온다.
+eb-cli를 사용하여 AutoScaling Group을 생성하여 ALB의 Target Group에 설정하여 앱을 배포해보자.</p><hr><h3 id=eb-cli-설치하기>EB cli 설치하기<a hidden class=anchor aria-hidden=true href=#eb-cli-설치하기>#</a></h3><hr><p><a href=http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install.html>Install eb cli</a>를 참고하여 로컬에 eb-cli를 설치하자.</p><p>사전에 python이 2.7 또는 3.4이상의 버전이 설치되어 있어야 한다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>$ pip install awsebcli --upgrade --user
+</span></span></code></pre></div><p>설치 후에 환경변수에 아래와 같은 path를 추가하자.</p><ul><li>Linux – ~/.local/bin</li><li>macOS – ~/Library/Python/3.4/bin</li><li>Windows – %USERPROFILE%\AppData\Roaming\Python\Scripts<ul><li>Python 3.5 on Windows – %USERPROFILE%\AppData\Roaming\Python\Python3.5\Scripts</li><li>Python 3.6 on Windows – %USERPROFILE%\AppData\Local\Programs\Python\Python36\Scripts</li></ul></li></ul><p>올바르게 입력했다면 eb의 version을 확인할 수 있을 것이다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>$ eb --version
+</span></span></code></pre></div><hr><h3 id=eb-command-line-interface로-autoscaling-group-생성하기>EB Command Line Interface로 AutoScaling Group 생성하기<a hidden class=anchor aria-hidden=true href=#eb-command-line-interface로-autoscaling-group-생성하기>#</a></h3><hr><p>AutoScaling Group을 생성하기 위해선 아래와 같은 과정이 필요하다.</p><ol><li>ElasticBeanstalk Application 생성하기</li><li>ElasticBeanstalk Environment 생성하기(여기서 AutoScaling Group을 설정한다)</li></ol><p>그럼 위 과정에 대해서 eb-cli를 통해 생성해본다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span><span style=color:#75715e># 먼저 eb init을 통해 배포할 region을 지정해준다.</span>
+</span></span><span style=display:flex><span>$ eb init
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Select a default region
+</span></span><span style=display:flex><span>1<span style=color:#f92672>)</span> us-east-1 : US East <span style=color:#f92672>(</span>N. Virginia<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>2<span style=color:#f92672>)</span> us-west-1 : US West <span style=color:#f92672>(</span>N. California<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>3<span style=color:#f92672>)</span> us-west-2 : US West <span style=color:#f92672>(</span>Oregon<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>4<span style=color:#f92672>)</span> eu-west-1 : EU <span style=color:#f92672>(</span>Ireland<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>5<span style=color:#f92672>)</span> eu-central-1 : EU <span style=color:#f92672>(</span>Frankfurt<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>6<span style=color:#f92672>)</span> ap-south-1 : Asia Pacific <span style=color:#f92672>(</span>Mumbai<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>7<span style=color:#f92672>)</span> ap-southeast-1 : Asia Pacific <span style=color:#f92672>(</span>Singapore<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>8<span style=color:#f92672>)</span> ap-southeast-2 : Asia Pacific <span style=color:#f92672>(</span>Sydney<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>9<span style=color:#f92672>)</span> ap-northeast-1 : Asia Pacific <span style=color:#f92672>(</span>Tokyo<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>10<span style=color:#f92672>)</span> ap-northeast-2 : Asia Pacific <span style=color:#f92672>(</span>Seoul<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>11<span style=color:#f92672>)</span> sa-east-1 : South America <span style=color:#f92672>(</span>Sao Paulo<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>12<span style=color:#f92672>)</span> cn-north-1 : China <span style=color:#f92672>(</span>Beijing<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>13<span style=color:#f92672>)</span> us-east-2 : US East <span style=color:#f92672>(</span>Ohio<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>14<span style=color:#f92672>)</span> ca-central-1 : Canada <span style=color:#f92672>(</span>Central<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>15<span style=color:#f92672>)</span> eu-west-2 : EU <span style=color:#f92672>(</span>London<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>(</span>default is 3<span style=color:#f92672>)</span>: <span style=color:#ae81ff>10</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># region을 선택했으면 아래와 같은 내용이 나타난다. 여기서 사용할 Application을 생성해주자</span>
+</span></span><span style=display:flex><span>Select an application to use
+</span></span><span style=display:flex><span>1<span style=color:#f92672>)</span> legacyEBApplication
+</span></span><span style=display:flex><span>2<span style=color:#f92672>)</span> <span style=color:#f92672>[</span> Create new Application <span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>(</span>default is 2<span style=color:#f92672>)</span>: <span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 사용할 Application name을 입력하자.</span>
+</span></span><span style=display:flex><span>Enter Application Name
+</span></span><span style=display:flex><span><span style=color:#f92672>(</span>default is <span style=color:#e6db74>&#34;novem&#34;</span><span style=color:#f92672>)</span>: TestApp
+</span></span><span style=display:flex><span>Application TestApp has been created.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 사용할 Platform을 선택해주자. 여기서 Docker로 배포하기 때문에 Docker를 선택한다.</span>
+</span></span><span style=display:flex><span>Select a platform.
+</span></span><span style=display:flex><span>1<span style=color:#f92672>)</span> Ruby
+</span></span><span style=display:flex><span>2<span style=color:#f92672>)</span> Go
+</span></span><span style=display:flex><span>3<span style=color:#f92672>)</span> Java
+</span></span><span style=display:flex><span>4<span style=color:#f92672>)</span> Tomcat
+</span></span><span style=display:flex><span>5<span style=color:#f92672>)</span> PHP
+</span></span><span style=display:flex><span>6<span style=color:#f92672>)</span> Python
+</span></span><span style=display:flex><span>7<span style=color:#f92672>)</span> Node.js
+</span></span><span style=display:flex><span>8<span style=color:#f92672>)</span> IIS
+</span></span><span style=display:flex><span>9<span style=color:#f92672>)</span> Docker
+</span></span><span style=display:flex><span>10<span style=color:#f92672>)</span> GlassFish
+</span></span><span style=display:flex><span>11<span style=color:#f92672>)</span> Packer
+</span></span><span style=display:flex><span><span style=color:#f92672>(</span>default is 1<span style=color:#f92672>)</span>: <span style=color:#ae81ff>9</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Platform version은 Community Edition을 선택해주도록 하자.</span>
+</span></span><span style=display:flex><span>Select a platform version.
+</span></span><span style=display:flex><span>1<span style=color:#f92672>)</span> Docker 17.03.1-ce
+</span></span><span style=display:flex><span>2<span style=color:#f92672>)</span> Docker 1.12.6
+</span></span><span style=display:flex><span>3<span style=color:#f92672>)</span> Docker 1.11.2
+</span></span><span style=display:flex><span>4<span style=color:#f92672>)</span> Docker 1.9.1
+</span></span><span style=display:flex><span><span style=color:#f92672>(</span>default is 1<span style=color:#f92672>)</span>: <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># SSH로 접근할 수 있도록 할지 선택할 수 있다.</span>
+</span></span><span style=display:flex><span>Cannot setup CodeCommit because there is no Source Control setup, continuing with initialization
+</span></span><span style=display:flex><span>Do you want to set up SSH <span style=color:#66d9ef>for</span> your instances?
+</span></span><span style=display:flex><span><span style=color:#f92672>(</span>Y/n<span style=color:#f92672>)</span>: Y
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># SSH 접근을 허용했다면 사용할 KeyPair를 선택해주자.</span>
+</span></span><span style=display:flex><span>Select a keypair.
+</span></span><span style=display:flex><span>1<span style=color:#f92672>)</span> RootKeyPair
+</span></span><span style=display:flex><span>2<span style=color:#f92672>)</span> OtherUserKeyPair
+</span></span><span style=display:flex><span>3<span style=color:#f92672>)</span> <span style=color:#f92672>[</span> Create new KeyPair <span style=color:#f92672>]</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>(</span>default is 1<span style=color:#f92672>)</span>: <span style=color:#ae81ff>1</span>
+</span></span></code></pre></div><p>ElasticBeanstalk Application을 생성하였다.</p><hr><p>다음으로 ElasticBeanstalk environment를 생성하자.</p><p>이때 윈도우 환경이라면 CMD창을 Administrator권한으로 실행해야 올바르게 동작한다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>$ eb create
+</span></span><span style=display:flex><span><span style=color:#75715e># Environment Name을 입력한다. Default로 [ApplicationName-dev] 로 잡힌다.</span>
+</span></span><span style=display:flex><span>Enter Environment Name
+</span></span><span style=display:flex><span><span style=color:#f92672>(</span>default is TestApp-dev<span style=color:#f92672>)</span>:
+</span></span><span style=display:flex><span><span style=color:#75715e># DNS Name을 입력한다. Default로 [ApplicationName-dev] 로 잡힌다.</span>
+</span></span><span style=display:flex><span>Enter DNS CNAME prefix
+</span></span><span style=display:flex><span><span style=color:#f92672>(</span>default is TestApp-dev<span style=color:#f92672>)</span>:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Load balancer type을 입력한다. Default로 [Classic Load Balancer] 로 잡힌다.</span>
+</span></span><span style=display:flex><span>Select a load balancer type
+</span></span><span style=display:flex><span>1<span style=color:#f92672>)</span> classic
+</span></span><span style=display:flex><span>2<span style=color:#f92672>)</span> application
+</span></span><span style=display:flex><span><span style=color:#f92672>(</span>default is 1<span style=color:#f92672>)</span>: <span style=color:#ae81ff>2</span>
+</span></span><span style=display:flex><span>Creating application version archive <span style=color:#e6db74>&#34;app-170926_015406&#34;</span>.
+</span></span><span style=display:flex><span>Uploading TestApp/app-170926_015406.zip to S3. This may take a <span style=color:#66d9ef>while</span>.
+</span></span><span style=display:flex><span>Upload Complete.
+</span></span><span style=display:flex><span>Environment details <span style=color:#66d9ef>for</span>: TestApp-dev
+</span></span><span style=display:flex><span>  Application name: TestApp
+</span></span><span style=display:flex><span>  Region: ap-northeast-2
+</span></span><span style=display:flex><span>  Deployed Version: app-170926_015406
+</span></span><span style=display:flex><span>  Environment ID: e-mdj25dyzuu
+</span></span><span style=display:flex><span>  Platform: arn:aws:elasticbeanstalk:ap-northeast-2::platform/Docker running on 64bit Amazon Linux/2.7.4
+</span></span><span style=display:flex><span>  Tier: WebServer-Standard
+</span></span><span style=display:flex><span>  CNAME: TestApp-dev.ap-northeast-2.elasticbeanstalk.com
+</span></span><span style=display:flex><span>  Updated: 2017-09-26 01:54:09.941000+00:00
+</span></span><span style=display:flex><span>Printing Status:
+</span></span><span style=display:flex><span>...
+</span></span></code></pre></div><p>이제 모두 생성되었다.</p><p>소스코드를 배포해 보자. 로컬에 아래와 같은 예제 git repository를 가져와서 배포하자.</p><pre tabindex=0><code># 로컬에 소스코드를 가져온다.
 $ git clone https://kyuhyun@bitbucket.org/kyuhyun/docker_node_server.git
-</code></pre><ol>
-<li>해당 폴더를 zip 파일로 압축한다.</li>
-<li>AWS console에서 ElasticBeanstalk로 접속하여 해당 Environment로 이동한다.</li>
-<li>압축한 파일을 업로드하여 Deploy 한다.</li>
-</ol>
-<p>이 과정을 eb cli로 진행하려 하였지만 <a href=http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb3-deploy.html>EB-cli 문서</a>에
+</code></pre><ol><li>해당 폴더를 zip 파일로 압축한다.</li><li>AWS console에서 ElasticBeanstalk로 접속하여 해당 Environment로 이동한다.</li><li>압축한 파일을 업로드하여 Deploy 한다.</li></ol><p>이 과정을 eb cli로 진행하려 하였지만 <a href=http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb3-deploy.html>EB-cli 문서</a>에
 codecommit의 repository만 지정할 수 있게 나와있다. 내부적으로는 S3에 업로드하지만 S3 주소를 따로 가리키는 option이 없기 때문에
-eb-cli로만 진행할 수는 없었다.</p>
-<hr>
-<h3 id=default로-생성된-alb를-삭제하고-targetgroup-재지정-후-상태-확인>Default로 생성된 ALB를 삭제하고 TargetGroup 재지정 후 상태 확인<a hidden class=anchor aria-hidden=true href=#default로-생성된-alb를-삭제하고-targetgroup-재지정-후-상태-확인>#</a></h3>
-<hr>
-<p>이 글을 쓰게된 계기는 기존에 사용하던 ALB에서 TargetGroup만 지정하여 사용할 수 있는지가 궁금해서 시작한 것이다.</p>
-<p>하지만 Default로 EB를 AutoScalingGroup과 TargetGroup만 생성해서 만들지는 못하기 때문에 ALB와 함께 생성하였다.</p>
-<p>이제 궁금한 부분은 같이 생성된 ALB를 삭제하였을 때 지속적으로 다시 ALB가 살아나는지 확인하고 기존의 TargetGroup을 엮어줘도 괜찮은가이다.</p>
-<p>아래와 같은 프로세스로 진행해보았다.</p>
-<ol>
-<li>EB와 생성된 ALB를 삭제한다.</li>
-<li>새로 ALB를 생성하고 ALB의 Security Group을 인스턴스들의 SecurityGroup으로 열어준다.</li>
-<li>동작 확인!</li>
-</ol>
-<p>문제없이 동작은 하였지만 살짝 마음에 걸리는 부분은 있다.</p>
-<p>EB는 아직 ALB가 삭제되었다고 표시되는 부분이 없다. 또한 아래와 같이 url이 나타나있지만 실제로는 ALB가 사라졌기 때문에 동작하지 않는다.
-나중에 전체 구조를 다시 파악할 때 큰 어려움이 있을 것으로 보인다.</p>
-<p><img loading=lazy src=/images/aws/eb/url.png alt=eb_url>
-</p>
-<hr>
-<h3 id=references>References<a hidden class=anchor aria-hidden=true href=#references>#</a></h3>
-<hr>
-<ul>
-<li><a href=http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install.html>http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install.html</a></li>
-<li><a href=http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb3-deploy.html>http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb3-deploy.html</a></li>
-</ul>
-</div>
-<footer class=post-footer>
-<ul class=post-tags>
-<li><a href=https://novemberde.github.io/tags/ALB/>ALB</a></li>
-<li><a href=https://novemberde.github.io/tags/ELB/>ELB</a></li>
-<li><a href=https://novemberde.github.io/tags/eb/>eb</a></li>
-<li><a href=https://novemberde.github.io/tags/elasticbeanstalk/>elasticbeanstalk</a></li>
-<li><a href=https://novemberde.github.io/tags/elastic/>elastic</a></li>
-<li><a href=https://novemberde.github.io/tags/beanstalk/>beanstalk</a></li>
-<li><a href=https://novemberde.github.io/tags/application/>application</a></li>
-<li><a href=https://novemberde.github.io/tags/load/>load</a></li>
-<li><a href=https://novemberde.github.io/tags/balancer/>balancer</a></li>
-<li><a href=https://novemberde.github.io/tags/%EC%97%B0%EB%8F%99/>연동</a></li>
-<li><a href=https://novemberde.github.io/tags/docker/>docker</a></li>
-<li><a href=https://novemberde.github.io/tags/multicontainer/>multicontainer</a></li>
-<li><a href=https://novemberde.github.io/tags/container/>container</a></li>
-<li><a href=https://novemberde.github.io/tags/%EB%B0%B0%ED%8F%AC/>배포</a></li>
-</ul>
-<nav class=paginav>
-<a class=prev href=https://novemberde.github.io/post/2017/09/26/dragon_ball_game/>
-<span class=title>« Prev Page</span>
-<br>
-<span>프로그래밍을 막 시작했을 때 만든 Dragon ball 게임</span>
-</a>
-<a class=next href=https://novemberde.github.io/post/2017/09/14/public_data_athena/>
-<span class=title>Next Page »</span>
-<br>
-<span>Athena, QuickSight를 활용한 공공데이터 분석</span>
-</a>
-</nav>
-</footer>
-<div id=disqus_thread></div>
-<script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return}var b=document,a=b.createElement('script');a.async=!0,a.src='//novemberde-github-io.disqus.com/embed.js',a.setAttribute('data-timestamp',+new Date),(b.head||b.body).appendChild(a)})()</script>
-<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript>
-<a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a>
-</article>
-</main>
-<footer class=footer>
-<span>&copy; 2022 <a href=https://novemberde.github.io/>Novemberde's Blog</a></span>
-<span>
-Powered by
+eb-cli로만 진행할 수는 없었다.</p><hr><h3 id=default로-생성된-alb를-삭제하고-targetgroup-재지정-후-상태-확인>Default로 생성된 ALB를 삭제하고 TargetGroup 재지정 후 상태 확인<a hidden class=anchor aria-hidden=true href=#default로-생성된-alb를-삭제하고-targetgroup-재지정-후-상태-확인>#</a></h3><hr><p>이 글을 쓰게된 계기는 기존에 사용하던 ALB에서 TargetGroup만 지정하여 사용할 수 있는지가 궁금해서 시작한 것이다.</p><p>하지만 Default로 EB를 AutoScalingGroup과 TargetGroup만 생성해서 만들지는 못하기 때문에 ALB와 함께 생성하였다.</p><p>이제 궁금한 부분은 같이 생성된 ALB를 삭제하였을 때 지속적으로 다시 ALB가 살아나는지 확인하고 기존의 TargetGroup을 엮어줘도 괜찮은가이다.</p><p>아래와 같은 프로세스로 진행해보았다.</p><ol><li>EB와 생성된 ALB를 삭제한다.</li><li>새로 ALB를 생성하고 ALB의 Security Group을 인스턴스들의 SecurityGroup으로 열어준다.</li><li>동작 확인!</li></ol><p>문제없이 동작은 하였지만 살짝 마음에 걸리는 부분은 있다.</p><p>EB는 아직 ALB가 삭제되었다고 표시되는 부분이 없다. 또한 아래와 같이 url이 나타나있지만 실제로는 ALB가 사라졌기 때문에 동작하지 않는다.
+나중에 전체 구조를 다시 파악할 때 큰 어려움이 있을 것으로 보인다.</p><p><img loading=lazy src=/images/aws/eb/url.png alt=eb_url></p><hr><h3 id=references>References<a hidden class=anchor aria-hidden=true href=#references>#</a></h3><hr><ul><li><a href=http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install.html>http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install.html</a></li><li><a href=http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb3-deploy.html>http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb3-deploy.html</a></li></ul></div><footer class=post-footer><ul class=post-tags><li><a href=https://novemberde.github.io/tags/ALB/>ALB</a></li><li><a href=https://novemberde.github.io/tags/ELB/>ELB</a></li><li><a href=https://novemberde.github.io/tags/eb/>eb</a></li><li><a href=https://novemberde.github.io/tags/elasticbeanstalk/>elasticbeanstalk</a></li><li><a href=https://novemberde.github.io/tags/elastic/>elastic</a></li><li><a href=https://novemberde.github.io/tags/beanstalk/>beanstalk</a></li><li><a href=https://novemberde.github.io/tags/application/>application</a></li><li><a href=https://novemberde.github.io/tags/load/>load</a></li><li><a href=https://novemberde.github.io/tags/balancer/>balancer</a></li><li><a href=https://novemberde.github.io/tags/%EC%97%B0%EB%8F%99/>연동</a></li><li><a href=https://novemberde.github.io/tags/docker/>docker</a></li><li><a href=https://novemberde.github.io/tags/multicontainer/>multicontainer</a></li><li><a href=https://novemberde.github.io/tags/container/>container</a></li><li><a href=https://novemberde.github.io/tags/%EB%B0%B0%ED%8F%AC/>배포</a></li></ul><nav class=paginav><a class=prev href=https://novemberde.github.io/post/2017/09/26/dragon_ball_game/><span class=title>« Prev Page</span><br><span>프로그래밍을 막 시작했을 때 만든 Dragon ball 게임</span></a>
+<a class=next href=https://novemberde.github.io/post/2017/09/14/public_data_athena/><span class=title>Next Page »</span><br><span>Athena, QuickSight를 활용한 공공데이터 분석</span></a></nav></footer><div id=disqus_thread></div><script type=application/javascript>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//novemberde-github-io.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></article></main><footer class=footer><span>&copy; 2022 <a href=https://novemberde.github.io/>Novemberde's Blog</a></span>
+<span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
-        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
-</span>
-</footer>
-<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
-</a>
-<script>let menu=document.getElementById('menu');menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)},document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
-<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
-<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
-</body>
-</html>
+        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)},document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script></body></html>

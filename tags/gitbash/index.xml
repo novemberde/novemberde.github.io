@@ -18,7 +18,7 @@
 Visual Studio Code에서 git bash를 기본 터미널로 설정하면 편하게 작업할 수 있을 것이다.
 방법은 설정에서 사용자 정의 부분을 아래와 같이 덮어씌우면 된다.
 { &amp;#34;terminal.integrated.shell.windows&amp;#34;: &amp;#34;C:\\Program Files\\Git\\bin\\bash.exe&amp;#34; } 이제 linux 명령어를 편하게 사용하면서 작업하자.
- Reference   https://code.visualstudio.com/docs/editor/integrated-terminal  </description>
+Reference https://code.visualstudio.com/docs/editor/integrated-terminal </description>
     </item>
     
   </channel>

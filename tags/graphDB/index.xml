@@ -13,8 +13,8 @@
       <pubDate>Thu, 12 Apr 2018 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2018/04/12/Neo4j/</guid>
-      <description>Summary  각 사용자들의 연관 관계 분석을 위하여 GraphDB를 도입하려한다. 시작하기에 앞서서 GraphDB에 대해서 이해가 필요했다. 다음에서 GraphDB의 기본 내용을 담았다.
-Graph Database란?  In computing, a graph database is a database that uses graph structures for semantic queries with nodes, edges and properties to represent and store data. A key concept of the system is the graph (or edge or relationship), which directly relates data items in the store. The relationships allow data in the store to be linked together directly, and in many cases retrieved with one operation.</description>
+      <description>Summary 각 사용자들의 연관 관계 분석을 위하여 GraphDB를 도입하려한다. 시작하기에 앞서서 GraphDB에 대해서 이해가 필요했다. 다음에서 GraphDB의 기본 내용을 담았다.
+Graph Database란? In computing, a graph database is a database that uses graph structures for semantic queries with nodes, edges and properties to represent and store data. A key concept of the system is the graph (or edge or relationship), which directly relates data items in the store. The relationships allow data in the store to be linked together directly, and in many cases retrieved with one operation.</description>
     </item>
     
   </channel>

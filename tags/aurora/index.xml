@@ -14,7 +14,7 @@
       
       <guid>https://novemberde.github.io/post/2020/10/17/RDS-to-aurora/</guid>
       <description>RDS PostgreSQL에서 Aurora PostgreSQL을 도입한 후기
-Presentation   RDS에서 Aurora PostgreSQL Migration한 후기  from Kyuhyun Byun  Youtube  Reference  AWS Community Day 2020 소개 링크 https://pages.awscloud.com/aws-community-day-online-2020.html  </description>
+Presentation RDS에서 Aurora PostgreSQL Migration한 후기 from Kyuhyun Byun Youtube Reference AWS Community Day 2020 소개 링크 https://pages.awscloud.com/aws-community-day-online-2020.html </description>
     </item>
     
     <item>
@@ -23,8 +23,8 @@ Presentation   RDS에서 Aurora PostgreSQL Migration한 후기  from Kyuhyun Byu
       <pubDate>Tue, 09 May 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/05/09/Aurora_sequelize_0/</guid>
-      <description>Summary  최근에 글 중에서 aurora와 sequelize가 과연 연동이 가능할까라는 글을 본적이 있다. aurora는 MySQL과 호환이 가능한 DB라고 하기 때문에 나 또한 궁금증이 생겼다. 직접 aurora와 sequelize를 연동해보고, MySQL workbench로 aurora를 사용할 수 있는지까지 확인해보겠다.
- Aurora instance 생성하기  이전까지 사용할 때는 MySQL이나 MariaDB위주로 사용했다. 스타트업은 라이센스 비용에 민감하기 때문에 Open Source를 주로 선택했기 때문이다.
+      <description>Summary 최근에 글 중에서 aurora와 sequelize가 과연 연동이 가능할까라는 글을 본적이 있다. aurora는 MySQL과 호환이 가능한 DB라고 하기 때문에 나 또한 궁금증이 생겼다. 직접 aurora와 sequelize를 연동해보고, MySQL workbench로 aurora를 사용할 수 있는지까지 확인해보겠다.
+Aurora instance 생성하기 이전까지 사용할 때는 MySQL이나 MariaDB위주로 사용했다. 스타트업은 라이센스 비용에 민감하기 때문에 Open Source를 주로 선택했기 때문이다.
 또한 아래 리스트를 보면 RDS 이름에서 추측할 수 있듯이 RDS에서는 관계형 DB만 사용할 수 있는 것을 알 수 있다.</description>
     </item>
     

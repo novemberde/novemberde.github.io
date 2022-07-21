@@ -2,31 +2,49 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://novemberde.github.io/post/2022/05/12/karrot-chat-system/</loc>
+    <lastmod>2022-05-12T11:30:03+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/AWS/</loc>
+    <lastmod>2022-05-12T11:30:03+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/chatting/</loc>
+    <lastmod>2022-05-12T11:30:03+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/karrot/</loc>
+    <lastmod>2022-05-12T11:30:03+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/microservice/</loc>
+    <lastmod>2022-05-12T11:30:03+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/</loc>
+    <lastmod>2022-05-12T11:30:03+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/post/</loc>
+    <lastmod>2022-05-12T11:30:03+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/</loc>
+    <lastmod>2022-05-12T11:30:03+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/%EB%8B%B9%EA%B7%BC%EB%A7%88%EC%BC%93/</loc>
+    <lastmod>2022-05-12T11:30:03+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/%EC%B1%84%ED%8C%85/</loc>
+    <lastmod>2022-05-12T11:30:03+00:00</lastmod>
+  </url><url>
     <loc>https://novemberde.github.io/tags/athena/</loc>
     <lastmod>2021-10-25T11:30:03+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/post/2021/10/25/athena-step-function/</loc>
     <lastmod>2021-10-25T11:30:03+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/AWS/</loc>
-    <lastmod>2021-10-25T11:30:03+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/</loc>
-    <lastmod>2021-10-25T11:30:03+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/post/</loc>
-    <lastmod>2021-10-25T11:30:03+00:00</lastmod>
-  </url><url>
     <loc>https://novemberde.github.io/tags/stepfunctions/</loc>
     <lastmod>2021-10-25T11:30:03+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/</loc>
-    <lastmod>2021-10-25T11:30:03+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/about/</loc>
+    <loc>https://novemberde.github.io/tags/about/</loc>
     <lastmod>2021-09-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/about/</loc>
+    <loc>https://novemberde.github.io/about/</loc>
     <lastmod>2021-09-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/me/</loc>
@@ -45,9 +63,6 @@
     <lastmod>2021-09-12T11:30:03+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/jandi/</loc>
-    <lastmod>2021-08-31T11:30:03+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/tags/karrot/</loc>
     <lastmod>2021-08-31T11:30:03+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/work/</loc>

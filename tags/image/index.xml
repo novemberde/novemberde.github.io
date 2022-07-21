@@ -13,8 +13,8 @@
       <pubDate>Mon, 03 Apr 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/04/03/Docker_9/</guid>
-      <description>Summary  이제 모든 준비는 끝났다. Docker image를 EC2 인스턴스에 배포하자.
- 순서   Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기 EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기 Bitbucket을 사용하여 git repository 생성하기 Express JS를 사용하여 Node 서버 구축하기 PM2를 사용하여 EC2에 Node 서버 배포하기 Node 서버를 바탕으로 Dockerfile로 만들기 Docker Hub의 automated build를 사용하여 Docker image를 만들기 만들어진 Docker image를 EC2 인스턴스에 배포하기   Docker image를 받아오기  EC2 인스턴스에 SSH로 접속하자.</description>
+      <description>Summary 이제 모든 준비는 끝났다. Docker image를 EC2 인스턴스에 배포하자.
+순서 Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기 EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기 Bitbucket을 사용하여 git repository 생성하기 Express JS를 사용하여 Node 서버 구축하기 PM2를 사용하여 EC2에 Node 서버 배포하기 Node 서버를 바탕으로 Dockerfile로 만들기 Docker Hub의 automated build를 사용하여 Docker image를 만들기 만들어진 Docker image를 EC2 인스턴스에 배포하기 Docker image를 받아오기 EC2 인스턴스에 SSH로 접속하자.</description>
     </item>
     
     <item>
@@ -23,8 +23,8 @@
       <pubDate>Sun, 02 Apr 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/04/02/Docker_8/</guid>
-      <description>Summary  이전에는 Dockerfile을 만들었다. 하지만 매번 build하는 것은 소모적인 시간이라고 생각한다. 그럼 만들어진 Dockerfile을 git repository에 push하면 Dockerfile이 빌드되는지 확인하는 것은 어떨까. docker hub의 automated_build기능을 사용하면 간단히 구현된다.
- 순서   Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기 EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기 Bitbucket을 사용하여 git repository 생성하기 Express JS를 사용하여 Node 서버 구축하기 PM2를 사용하여 EC2에 Node 서버 배포하기 Node 서버를 바탕으로 Dockerfile로 만들기 Docker Hub의 automated build를 사용하여 Docker image를 만들기 만들어진 Docker image를 EC2 인스턴스에 배포하기   Automated_build  Docker hub에서 지원해주는 이미지 빌딩시스템이다.</description>
+      <description>Summary 이전에는 Dockerfile을 만들었다. 하지만 매번 build하는 것은 소모적인 시간이라고 생각한다. 그럼 만들어진 Dockerfile을 git repository에 push하면 Dockerfile이 빌드되는지 확인하는 것은 어떨까. docker hub의 automated_build기능을 사용하면 간단히 구현된다.
+순서 Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기 EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기 Bitbucket을 사용하여 git repository 생성하기 Express JS를 사용하여 Node 서버 구축하기 PM2를 사용하여 EC2에 Node 서버 배포하기 Node 서버를 바탕으로 Dockerfile로 만들기 Docker Hub의 automated build를 사용하여 Docker image를 만들기 만들어진 Docker image를 EC2 인스턴스에 배포하기 Automated_build Docker hub에서 지원해주는 이미지 빌딩시스템이다.</description>
     </item>
     
   </channel>

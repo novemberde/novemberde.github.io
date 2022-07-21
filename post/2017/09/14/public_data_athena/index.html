@@ -1,367 +1,52 @@
-<!doctype html><html lang=en dir=auto>
-<head><meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<meta name=robots content="index, follow">
-<title>Athena, QuickSight를 활용한 공공데이터 분석 | Novemberde's Blog</title>
-<meta name=keywords content="athena,quicksight,공공데이터,public,data,publicdata,분석,활용,analytics">
-<meta name=description content="빅데이터를 직접 모으는 방법이 있지만, 공공데이터 포털과 네이버 데이터랩처럼 정해진 API를 통해 접근하거나 데이터를 JSON, XML, CSV와 같은 형식으로 지원해주는 사이트들을 적극 활용해볼 수 있습니다.
- AWSKRUG 류한진 님과 함께 준비한 Athena, QuickSight Hands-on lab입니다. 아래 링크는 발표자료 및 Hands-on 문서입니다.
- 발표자료 Hands-on  아래는 류한진 님과 함께 작성한 <공공데이터 + Athena + QuickSight> 튜토리얼입니다.
- 공공데이터를 이용한 데이터 만들기부터 분석까지  개요 빅데이터를 직접 모으는 방법이 있지만, 공공데이터 포털과 네이버 데이터랩처럼 정해진 API를 통해 접근하거나 데이터를 JSON, XML, CSV와 같은 형식으로 지원해주는 사이트들을 적극 활용해볼 수 있다.">
-<meta name=author content>
-<link rel=canonical href=https://novemberde.github.io/post/2017/09/14/public_data_athena/>
-<link crossorigin=anonymous href=/assets/css/stylesheet.min.9f1d947375927e9847272b1f4e9be81336f539e513bf04d52cade31f81cad1af.css integrity="sha256-nx2Uc3WSfphHJysfTpvoEzb1OeUTvwTVLK3jH4HK0a8=" rel="preload stylesheet" as=style>
-<script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
-<link rel=icon href=https://novemberde.github.io/favicon.ico>
-<link rel=icon type=image/png sizes=16x16 href=https://novemberde.github.io/favicon-16x16.png>
-<link rel=icon type=image/png sizes=32x32 href=https://novemberde.github.io/favicon-32x32.png>
-<link rel=apple-touch-icon href=https://novemberde.github.io/apple-touch-icon.png>
-<link rel=mask-icon href=https://novemberde.github.io/safari-pinned-tab.svg>
-<meta name=theme-color content="#2e2e33">
-<meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.92.0">
-<noscript>
-<style>#theme-toggle,.top-link{display:none}</style>
-<style>@media(prefers-color-scheme:dark){:root{--theme:#1d1e20;--entry:#2e2e33;--primary:rgba(255, 255, 255, 0.84);--secondary:rgba(255, 255, 255, 0.56);--tertiary:rgba(255, 255, 255, 0.16);--content:rgba(255, 255, 255, 0.74);--hljs-bg:#2e2e33;--code-bg:#37383e;--border:#333}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
-</noscript>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-97433460-1','auto'),ga('send','pageview'))</script><meta property="og:title" content="Athena, QuickSight를 활용한 공공데이터 분석">
-<meta property="og:description" content="빅데이터를 직접 모으는 방법이 있지만, 공공데이터 포털과 네이버 데이터랩처럼 정해진 API를 통해 접근하거나 데이터를 JSON, XML, CSV와 같은 형식으로 지원해주는 사이트들을 적극 활용해볼 수 있습니다.
- AWSKRUG 류한진 님과 함께 준비한 Athena, QuickSight Hands-on lab입니다. 아래 링크는 발표자료 및 Hands-on 문서입니다.
- 발표자료 Hands-on  아래는 류한진 님과 함께 작성한 <공공데이터 + Athena + QuickSight> 튜토리얼입니다.
- 공공데이터를 이용한 데이터 만들기부터 분석까지  개요 빅데이터를 직접 모으는 방법이 있지만, 공공데이터 포털과 네이버 데이터랩처럼 정해진 API를 통해 접근하거나 데이터를 JSON, XML, CSV와 같은 형식으로 지원해주는 사이트들을 적극 활용해볼 수 있다.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://novemberde.github.io/post/2017/09/14/public_data_athena/"><meta property="article:section" content="post">
-<meta property="article:published_time" content="2017-09-14T11:30:03+00:00">
-<meta property="article:modified_time" content="2017-09-14T11:30:03+00:00"><meta property="og:site_name" content="Novemberde dev logs">
-<meta name=twitter:card content="summary">
-<meta name=twitter:title content="Athena, QuickSight를 활용한 공공데이터 분석">
-<meta name=twitter:description content="빅데이터를 직접 모으는 방법이 있지만, 공공데이터 포털과 네이버 데이터랩처럼 정해진 API를 통해 접근하거나 데이터를 JSON, XML, CSV와 같은 형식으로 지원해주는 사이트들을 적극 활용해볼 수 있습니다.
- AWSKRUG 류한진 님과 함께 준비한 Athena, QuickSight Hands-on lab입니다. 아래 링크는 발표자료 및 Hands-on 문서입니다.
- 발표자료 Hands-on  아래는 류한진 님과 함께 작성한 <공공데이터 + Athena + QuickSight> 튜토리얼입니다.
- 공공데이터를 이용한 데이터 만들기부터 분석까지  개요 빅데이터를 직접 모으는 방법이 있지만, 공공데이터 포털과 네이버 데이터랩처럼 정해진 API를 통해 접근하거나 데이터를 JSON, XML, CSV와 같은 형식으로 지원해주는 사이트들을 적극 활용해볼 수 있다.">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://novemberde.github.io/post/"},{"@type":"ListItem","position":2,"name":"Athena, QuickSight를 활용한 공공데이터 분석","item":"https://novemberde.github.io/post/2017/09/14/public_data_athena/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Athena, QuickSight를 활용한 공공데이터 분석","name":"Athena, QuickSight를 활용한 공공데이터 분석","description":"빅데이터를 직접 모으는 방법이 있지만, 공공데이터 포털과 네이버 데이터랩처럼 정해진 API를 통해 접근하거나 데이터를 JSON, XML, CSV와 같은 형식으로 지원해주는 사이트들을 적극 활용해볼 수 있습니다.\n AWSKRUG 류한진 님과 함께 준비한 Athena, QuickSight Hands-on lab입니다. 아래 링크는 발표자료 및 Hands-on 문서입니다.\n 발표자료 Hands-on  아래는 류한진 님과 함께 작성한 \u0026lt;공공데이터 + Athena + QuickSight\u0026gt; 튜토리얼입니다.\n 공공데이터를 이용한 데이터 만들기부터 분석까지  개요 빅데이터를 직접 모으는 방법이 있지만, 공공데이터 포털과 네이버 데이터랩처럼 정해진 API를 통해 접근하거나 데이터를 JSON, XML, CSV와 같은 형식으로 지원해주는 사이트들을 적극 활용해볼 수 있다.","keywords":["athena","quicksight","공공데이터","public","data","publicdata","분석","활용","analytics"],"articleBody":"빅데이터를 직접 모으는 방법이 있지만, 공공데이터 포털과 네이버 데이터랩처럼 정해진 API를 통해 접근하거나 데이터를 JSON, XML, CSV와 같은 형식으로 지원해주는 사이트들을 적극 활용해볼 수 있습니다.\n AWSKRUG 류한진 님과 함께 준비한 Athena, QuickSight Hands-on lab입니다. 아래 링크는 발표자료 및 Hands-on 문서입니다.\n 발표자료 Hands-on  아래는 류한진 님과 함께 작성한 튜토리얼입니다.\n 공공데이터를 이용한 데이터 만들기부터 분석까지  개요 빅데이터를 직접 모으는 방법이 있지만, 공공데이터 포털과 네이버 데이터랩처럼 정해진 API를 통해 접근하거나 데이터를 JSON, XML, CSV와 같은 형식으로 지원해주는 사이트들을 적극 활용해볼 수 있다.\n이번에는 공공데이터 포털에서 예제를 통해 전국무료와이파이 표준데이터에 대해서 AWS Athena로 쿼리하는 것을 진행한다. 또한, 결과에 대해 BI도구인 AWS QuickSight로 시각화해서 확인한다.\n서비스 소개  AWS Athena  표준 SQL을 사용해 Amazon S3에 저장된 데이터를 간편하게 분석할 수 있는 대화식 쿼리 서비스 서버리스 서비스이므로 관리할 인프라가 없으며 실행한 쿼리에 대해서만 과금 Amazon S3에 저장된 데이터를 지정하고 스키마를 정의한 후 표준 SQL을 사용하여 쿼리 Athena에서는 데이터 분석을 준비하기 위한 복잡한 ETL(Extract, transform, load) 작업이 필요없음 ANSI SQL을 지원하는 Presto를 사용하며, CSV, JSON, ORC, Avro, Parquet 등 표준 데이터 형식과 호환됨   AWS QuickSight  BI 도구 데이터 소스 접근  기존의 Redshift, RDS, Amazon Aurora, EMR, DynamoDB, Kinesis, S3 및 기존 파일도 가능하며 Salesforce 같은 서드파티에 저장된 데이터 접근 커넥터도 제공   빠른 데이터 연산  고속의 병렬 인메모리 최적화된 연산 엔진(Super-fast, Parallel, In-memory optimized Calculation Engine, SPICE)을 가지고 있으며, 클라우드 기반으로 더 빠른 상호 작용 기반으로 데이터 시각화를 위한 사용자 경험을 제공   손 쉬운 사용법  AWS 데이터 소스를 자동으로 발견하고 손쉽게 연결 테이블 및 항목을 선택하면 최적의 데이터 그래프 형태와 시각화 방법을 제공 이렇게 만들어진 리포트를 친구들에게 공유하거나, 몇몇 다른 리포트와 합쳐서 데이터가 말하는 바를 전달 할 수 있으며, 웹사이트에 임베딩해서 출력 가능   높은 확장성 지원  빠른 분석 및 시각화를 제공하는 데, 이를 위해 수백 및 수천 사용자와 기관별로 테라바이트 급 데이터를 높은 확장성을 기반으로 처리   저비용 구조  기존 온프레미스 환경의 1/10 비용 만으로 스마트한 BI를 구성   파트너 지원  ODBC 커넥터를 지원하여 파트너사의 기존 BI 도구를 연결 가능 SQL을 통해 SPICE 엔진이 기존 도구를 지원할 수 있으며, Domo, Qlik, Tableau 및 Tibo 같은 파트너와 협력      공공데이터 포털에서 데이터 가져오기 공공데이터포털에 계정이 있다면 전국무료와이파이 표준데이터에서 CSV파일을 다운받고, 자신의 Bucket에 업로드하면 된다.\n없다면 아래와 같은 명령어로 자신의 S3 bucket에 복사해와야 한다.\n$ aws s3 cp s3://awskrug-workshop-publicdata s3:// --recursive 버킷을 확인하면 아래와 같은 두 파일이 있을 것이다.\n 전국무료와이파이표준데이터.xls csv/전국무료와이파이표준데이터.csv  우리는 CSV파일을 통해 Athena로 쿼리를 던져 결과를 받아볼 것이다.\nAthena에서 테이블 생성하기 (여기서부터는 N.virginia 리전에서 진행 필수)\nAthena에서 S3저장소에 있는 CSV파일에 대해서 쿼리하기 위해서는 파일 형식에 대해 Athena가 이해하고 있어야 가능하다.\n이를 위해서는 DBMS처럼 Athena에 database를 생성하고 table을 생성해야 한다.\nQuery Editor 항목에서 아래와 같은 쿼리를 입력하고 Run query를 한다.\n# awskrug라는 database 생성 CREATE DATABASE IF NOT EXISTS awskrug database를 생성하였다. 다음은 Athena가 이해할 수 있도록 CSV파일의 따른 table을 생성해주어야 한다.\n# Catalog Manager로 생성 CREATE EXTERNAL TABLE IF NOT EXISTS awskrug.free_wifi_standard_data ( `name` string, `detail` string, `city` string, `gungu` string, `facility` string, `service_provider` string, `wifi_ssid` string, `installed_at` DATE, `road_name_address` string, `parcel_address` string, `management_agency` string, `management_agency_phone` string, `latitude` float, `longitude` float, `created_at` DATE ) ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe' WITH SERDEPROPERTIES ( 'serialization.format' = ',', 'field.delim' = ',', \"serialization.encoding\"='utf-8' ) LOCATION 's3:///csv/' TBLPROPERTIES ('has_encrypted_data'='false'); 제대로 생성했다면 아래와 같은 쿼리를 실행했을 때 결과가 나와야 한다.\nSELECT * FROM awskrug.free_wifi_standard_data LIMIT 100; QuickSight - Athena 로 확인하기  QuickSight 열기 Manage Data 클릭 New Data Set 클릭 Athena를 데이터 소스로 선택 데이터 소스명을 입력 awskrug Create Data Source 클릭 awskrug database 를 선택 free_wifi_standard_data 테이블 선택  실행 결과          - 시도별 와이파이 설치 - 시도별 와이파이 서비스 제공업체    상단의 Capture 버튼을 동해 스토리를 생성할 수 있다.\nQuickSight - uploaded file 로 확인하기 Manage Data 클릭 New Data Set 클릭 Upload a file 클릭 S3에 있는 CSV파일 다운로드 후 QuickSight에 업로드 데이터 소스명을 입력 awskrug-upload Create Data Source 클릭 Create Analysis로 전국무료와이파이표준데이터.csv 생성  이전과 같은 과정 반복하여 결과 확인\n고찰   Athena \u0026 공공데이터 포털\n 인코딩 문제  공공데이터 포털에서 제공해주는 CSV파일이 EUC-KR로 되어 있었음 별도로 EUC-KR에서 UTF-8로 수정하여 해결 변환작업하는 OS가 Window일 경우 줄 시퀀스가 CRLF로 되어 있다면 LF로 바꾸어 저장할 것(Linux기반 OS와 Windows의 줄바꿈의 기준이 다르기 때문)   공공데이터 포털의 대부분은 XML형식으로 이루어져 있기 때문에 만약 XML의 파일을 사용한다면 별도로 데이터 변환작업이 필요함  Python: https://github.com/hay/xml2json Javascript: https://github.com/Leonidas-from-XIV/node-xml2js   공공데이터 포털의 데이터는 각 시군구 데이터의 형식이 다를 경우도 있기 때문에 전국적인 데이터로 사용하기 위해서는 전처리 작업이 필요함    QuickSight\n QuickSight 계정에서 Account Setting  Account Permissions  Edit AWS permissions에서 문제가 발생했을 경우  AWS IAM에서 이전에 생성된 IAM Role 및 policy(QuickSight로 검색)을 삭제해주면 정상적으로 다시 권한을 부여할 수 있음   장점  별도로 BI툴을 운영하거나 관리할 필요가 없음 튜토리얼만 따라한다면 진입장벽이 높지 않음 Filter 기능을 통해 다양한 쿼리를 시각적으로 구현할 수 있음 스토리로 저장할 수 있기 때문에 차트 관리에 유리   단점  한글화된 문서가 거의 존재하지 않음 실제로 기업에서 사용한 사례가 많지 않기 때문에 도입하기가 쉽지 않음(보통은 Excel을 선호하기 때문에) Suggested를 보면 추천되는 모형이 있지만 정규화가 제대로 되어있지 않은 데이터에 대해서는 쓸모가 없음(별도로 필터링이 필요)      Cross-Region - S3-Athena는 다른 리전간에도 사용 가능. (현재 서울리전에서 가장 가까운 곳은 도쿄리전) - Athena-Quicksight는 같은 리전에서만 사용 가능.\n  사례 모음  Athena  https://aws.amazon.com/ko/blogs/korea/category/amazon-athena/ https://aws.amazon.com/ko/blogs/korea/top-10-performance-tuning-tips-for-amazon-athena/    샘플  Athena  https://github.com/awskrug/athena-workshop   QuickSight  https://aws.amazon.com/ko/blogs/aws/category/amazon-quicksight/    References  https://prestodb.io/ http://docs.aws.amazon.com/athena/latest/ug/json.html https://aws.amazon.com/ko/blogs/korea/amazon-quicksight-fast-easy-to-use-business-intelligence-for-big-data-at-110th-the-cost-of-traditional-solutions/ https://www.slideshare.net/awskorea/6-aws-bigdata-architecture-pattern-and-good-cases  ","wordCount":"819","inLanguage":"en","datePublished":"2017-09-14T11:30:03Z","dateModified":"2017-09-14T11:30:03Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://novemberde.github.io/post/2017/09/14/public_data_athena/"},"publisher":{"@type":"Organization","name":"Novemberde's Blog","logo":{"@type":"ImageObject","url":"https://novemberde.github.io/favicon.ico"}}}</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8620431066400094" crossorigin=anonymous></script>
-</head>
-<body id=top>
-<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
-<header class=header>
-<nav class=nav>
-<div class=logo>
-<a href=https://novemberde.github.io/ accesskey=h title="Novemberde's Blog (Alt + H)">Novemberde's Blog</a>
-<span class=logo-switches>
-<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-</button>
-</span>
-</div>
-<ul id=menu>
-<li>
-<a href=https://novemberde.github.io/search title="Search (Alt + /)" accesskey=/>
-<span>Search</span>
-</a>
-</li>
-<li>
-<a href=https://novemberde.github.io/post/ title=Post>
-<span>Post</span>
-</a>
-</li>
-<li>
-<a href=https://novemberde.github.io/about title=About>
-<span>About</span>
-</a>
-</li>
-</ul>
-</nav>
-</header>
-<main class=main>
-<article class=post-single>
-<header class=post-header>
-<div class=breadcrumbs><a href=https://novemberde.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://novemberde.github.io/post/>Posts</a></div>
-<h1 class=post-title>
-Athena, QuickSight를 활용한 공공데이터 분석
-</h1>
-<div class=post-meta>September 14, 2017&nbsp;·&nbsp;4 min
-</div>
-</header>
-<div class=post-content><p>빅데이터를 직접 모으는 방법이 있지만, <a href=https://www.data.go.kr/>공공데이터 포털</a>과 <a href=http://datalab.naver.com/>네이버 데이터랩</a>처럼
-정해진 API를 통해 접근하거나 데이터를 JSON, XML, CSV와 같은 형식으로 지원해주는 사이트들을 적극 활용해볼 수 있습니다.</p>
-<hr>
-<p>AWSKRUG 류한진 님과 함께 준비한 Athena, QuickSight Hands-on lab입니다.
-아래 링크는 발표자료 및 Hands-on 문서입니다.</p>
-<ul>
-<li><a href="https://docs.google.com/presentation/d/e/2PACX-1vQAxD_sJZMenjJWjz8ZuN8skf1w8DT3R5owMBsw4FohnIv-v3XltkI69Lxu0VctWhH3apP48vJsY-rH/pub?start=false&loop=false&delayms=3000&slide=id.p">발표자료</a></li>
-<li><a href=https://github.com/awskrug/datascience-lab/tree/master/public-data-analysis>Hands-on</a></li>
-</ul>
-<p>아래는 류한진 님과 함께 작성한 &lt;공공데이터 + Athena + QuickSight> 튜토리얼입니다.</p>
-<hr>
-<h1 id=공공데이터를-이용한-데이터-만들기부터-분석까지>공공데이터를 이용한 데이터 만들기부터 분석까지<a hidden class=anchor aria-hidden=true href=#공공데이터를-이용한-데이터-만들기부터-분석까지>#</a></h1>
-<hr>
-<h2 id=개요>개요<a hidden class=anchor aria-hidden=true href=#개요>#</a></h2>
-<p>빅데이터를 직접 모으는 방법이 있지만, <a href=https://www.data.go.kr/>공공데이터 포털</a>과 <a href=http://datalab.naver.com/>네이버 데이터랩</a>처럼
-정해진 API를 통해 접근하거나 데이터를 JSON, XML, CSV와 같은 형식으로 지원해주는 사이트들을 적극 활용해볼 수 있다.</p>
-<p>이번에는 <a href=https://www.data.go.kr/>공공데이터 포털</a>에서 예제를 통해 전국무료와이파이 표준데이터에 대해서 AWS Athena로 쿼리하는 것을 진행한다.
-또한, 결과에 대해 BI도구인 AWS QuickSight로 시각화해서 확인한다.</p>
-<h2 id=서비스-소개>서비스 소개<a hidden class=anchor aria-hidden=true href=#서비스-소개>#</a></h2>
-<ul>
-<li>AWS Athena
-<ul>
-<li>표준 SQL을 사용해 Amazon S3에 저장된 데이터를 간편하게 분석할 수 있는 대화식 쿼리 서비스</li>
-<li>서버리스 서비스이므로 관리할 인프라가 없으며 실행한 쿼리에 대해서만 과금</li>
-<li>Amazon S3에 저장된 데이터를 지정하고 스키마를 정의한 후 표준 SQL을 사용하여 쿼리</li>
-<li>Athena에서는 데이터 분석을 준비하기 위한 복잡한 ETL(Extract, transform, load) 작업이 필요없음</li>
-<li>ANSI SQL을 지원하는 <a href=https://prestodb.io/>Presto</a>를 사용하며, CSV, JSON, ORC, Avro, Parquet 등 표준 데이터 형식과 호환됨</li>
-</ul>
-</li>
-<li>AWS QuickSight
-<ul>
-<li>BI 도구</li>
-<li>데이터 소스 접근
-<ul>
-<li>기존의 Redshift, RDS, Amazon Aurora, EMR, DynamoDB, Kinesis, S3 및 기존 파일도 가능하며 Salesforce 같은 서드파티에 저장된 데이터 접근 커넥터도 제공</li>
-</ul>
-</li>
-<li>빠른 데이터 연산
-<ul>
-<li>고속의 병렬 인메모리 최적화된 연산 엔진(Super-fast, Parallel, In-memory optimized Calculation Engine, SPICE)을 가지고 있으며, 클라우드 기반으로 더 빠른 상호 작용 기반으로 데이터 시각화를 위한 사용자 경험을 제공</li>
-</ul>
-</li>
-<li>손 쉬운 사용법
-<ul>
-<li>AWS 데이터 소스를 자동으로 발견하고 손쉽게 연결</li>
-<li>테이블 및 항목을 선택하면 최적의 데이터 그래프 형태와 시각화 방법을 제공</li>
-<li>이렇게 만들어진 리포트를 친구들에게 공유하거나, 몇몇 다른 리포트와 합쳐서 데이터가 말하는 바를 전달 할 수 있으며, 웹사이트에 임베딩해서 출력 가능</li>
-</ul>
-</li>
-<li>높은 확장성 지원
-<ul>
-<li>빠른 분석 및 시각화를 제공하는 데, 이를 위해 수백 및 수천 사용자와 기관별로 테라바이트 급 데이터를 높은 확장성을 기반으로 처리</li>
-</ul>
-</li>
-<li>저비용 구조
-<ul>
-<li>기존 온프레미스 환경의 1/10 비용 만으로 스마트한 BI를 구성</li>
-</ul>
-</li>
-<li>파트너 지원
-<ul>
-<li>ODBC 커넥터를 지원하여 파트너사의 기존 BI 도구를 연결 가능</li>
-<li>SQL을 통해 SPICE 엔진이 기존 도구를 지원할 수 있으며, Domo, Qlik, Tableau 및 Tibo 같은 파트너와 협력</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id=공공데이터-포털에서-데이터-가져오기>공공데이터 포털에서 데이터 가져오기<a hidden class=anchor aria-hidden=true href=#공공데이터-포털에서-데이터-가져오기>#</a></h2>
-<p>공공데이터포털에 계정이 있다면 <a href=https://www.data.go.kr/dataset/15013116/standard.do>전국무료와이파이 표준데이터</a>에서 CSV파일을 다운받고,
-자신의 Bucket에 업로드하면 된다.</p>
-<p>없다면 아래와 같은 명령어로 자신의 S3 bucket에 복사해와야 한다.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>$ aws s3 cp s3://awskrug-workshop-publicdata s3://&lt;USER_BUCKET_NAME&gt; --recursive
-</code></pre></div><p>버킷을 확인하면 아래와 같은 두 파일이 있을 것이다.</p>
-<ul>
-<li>전국무료와이파이표준데이터.xls</li>
-<li>csv/전국무료와이파이표준데이터.csv</li>
-</ul>
-<p>우리는 CSV파일을 통해 Athena로 쿼리를 던져 결과를 받아볼 것이다.</p>
-<h2 id=athena에서-테이블-생성하기>Athena에서 테이블 생성하기<a hidden class=anchor aria-hidden=true href=#athena에서-테이블-생성하기>#</a></h2>
-<p>(여기서부터는 N.virginia 리전에서 진행 필수)</p>
-<p>Athena에서 S3저장소에 있는 CSV파일에 대해서 쿼리하기 위해서는 파일 형식에 대해 Athena가 이해하고 있어야 가능하다.</p>
-<p>이를 위해서는 DBMS처럼 Athena에 database를 생성하고 table을 생성해야 한다.</p>
-<p>Query Editor 항목에서 아래와 같은 쿼리를 입력하고 Run query를 한다.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#f92672>#</span> awskrug라는 <span style=color:#66d9ef>database</span> <span style=color:#960050;background-color:#1e0010>생성</span>
-<span style=color:#66d9ef>CREATE</span> <span style=color:#66d9ef>DATABASE</span> <span style=color:#66d9ef>IF</span> <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>EXISTS</span> awskrug
-</code></pre></div><p>database를 생성하였다. 다음은 Athena가 이해할 수 있도록 CSV파일의 따른 table을 생성해주어야 한다.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#f92672>#</span> <span style=color:#66d9ef>Catalog</span> Manager로 <span style=color:#960050;background-color:#1e0010>생성</span>
-<span style=color:#66d9ef>CREATE</span> <span style=color:#66d9ef>EXTERNAL</span> <span style=color:#66d9ef>TABLE</span> <span style=color:#66d9ef>IF</span> <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>EXISTS</span> awskrug.free_wifi_standard_data (
-  <span style=color:#f92672>`</span>name<span style=color:#f92672>`</span> string,
-  <span style=color:#f92672>`</span>detail<span style=color:#f92672>`</span> string,
-  <span style=color:#f92672>`</span>city<span style=color:#f92672>`</span> string,
-  <span style=color:#f92672>`</span>gungu<span style=color:#f92672>`</span> string,
-  <span style=color:#f92672>`</span>facility<span style=color:#f92672>`</span> string,
-  <span style=color:#f92672>`</span>service_provider<span style=color:#f92672>`</span> string,
-  <span style=color:#f92672>`</span>wifi_ssid<span style=color:#f92672>`</span> string,
-  <span style=color:#f92672>`</span>installed_at<span style=color:#f92672>`</span> DATE,
-  <span style=color:#f92672>`</span>road_name_address<span style=color:#f92672>`</span> string,
-  <span style=color:#f92672>`</span>parcel_address<span style=color:#f92672>`</span> string,
-  <span style=color:#f92672>`</span>management_agency<span style=color:#f92672>`</span> string,
-  <span style=color:#f92672>`</span>management_agency_phone<span style=color:#f92672>`</span> string,
-  <span style=color:#f92672>`</span>latitude<span style=color:#f92672>`</span> float,
-  <span style=color:#f92672>`</span>longitude<span style=color:#f92672>`</span> float,
-  <span style=color:#f92672>`</span>created_at<span style=color:#f92672>`</span> DATE
-)
-<span style=color:#66d9ef>ROW</span> FORMAT SERDE <span style=color:#e6db74>&#39;org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe&#39;</span>
-<span style=color:#66d9ef>WITH</span> SERDEPROPERTIES (
-  <span style=color:#e6db74>&#39;serialization.format&#39;</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;,&#39;</span>,
-  <span style=color:#e6db74>&#39;field.delim&#39;</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;,&#39;</span>,
-  <span style=color:#e6db74>&#34;serialization.encoding&#34;</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#39;utf-8&#39;</span>
-) <span style=color:#66d9ef>LOCATION</span> <span style=color:#e6db74>&#39;s3://&lt;USER_BUCKET_NAME&gt;/csv/&#39;</span>
-TBLPROPERTIES (<span style=color:#e6db74>&#39;has_encrypted_data&#39;</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#39;false&#39;</span>);
-</code></pre></div><p>제대로 생성했다면 아래와 같은 쿼리를 실행했을 때 결과가 나와야 한다.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=color:#66d9ef>SELECT</span> <span style=color:#f92672>*</span> <span style=color:#66d9ef>FROM</span> awskrug.free_wifi_standard_data <span style=color:#66d9ef>LIMIT</span> <span style=color:#ae81ff>100</span>;
-</code></pre></div><h2 id=quicksight---athena-로-확인하기>QuickSight - Athena 로 확인하기<a hidden class=anchor aria-hidden=true href=#quicksight---athena-로-확인하기>#</a></h2>
-<ol>
-<li>QuickSight 열기</li>
-<li>Manage Data 클릭</li>
-<li>New Data Set 클릭</li>
-<li>Athena를 데이터 소스로 선택</li>
-<li>데이터 소스명을 입력 awskrug</li>
-<li>Create Data Source 클릭</li>
-<li>awskrug database 를 선택</li>
-<li>free_wifi_standard_data 테이블 선택</li>
-</ol>
-<h3 id=실행-결과>실행 결과<a hidden class=anchor aria-hidden=true href=#실행-결과>#</a></h3>
-<table>
-<thead>
-<tr>
-<th><img loading=lazy src=/images/aws/quicksight/count_by_city.png alt="시도별 와이파이 설치">
-</th>
-<th><img loading=lazy src=/images/aws/quicksight/count_by_service.png alt="시도별 와이파이 서비스 제공업체">
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>- 시도별 와이파이 설치</td>
-<td>- 시도별 와이파이 서비스 제공업체</td>
-</tr>
-</tbody>
-</table>
-<p>상단의 Capture 버튼을 동해 스토리를 생성할 수 있다.</p>
-<h2 id=quicksight---uploaded-file-로-확인하기>QuickSight - uploaded file 로 확인하기<a hidden class=anchor aria-hidden=true href=#quicksight---uploaded-file-로-확인하기>#</a></h2>
-<ol start=2>
-<li>Manage Data 클릭</li>
-<li>New Data Set 클릭</li>
-<li>Upload a file 클릭</li>
-<li>S3에 있는 CSV파일 다운로드 후 QuickSight에 업로드</li>
-<li>데이터 소스명을 입력 awskrug-upload</li>
-<li>Create Data Source 클릭</li>
-<li>Create Analysis로 전국무료와이파이표준데이터.csv 생성</li>
-</ol>
-<p>이전과 같은 과정 반복하여 결과 확인</p>
-<h2 id=고찰>고찰<a hidden class=anchor aria-hidden=true href=#고찰>#</a></h2>
-<ul>
-<li>
-<p>Athena & 공공데이터 포털</p>
-<ul>
-<li>인코딩 문제
-<ul>
-<li>공공데이터 포털에서 제공해주는 CSV파일이 EUC-KR로 되어 있었음</li>
-<li>별도로 EUC-KR에서 UTF-8로 수정하여 해결</li>
-<li>변환작업하는 OS가 Window일 경우 줄 시퀀스가 CRLF로 되어 있다면 LF로 바꾸어 저장할 것(Linux기반 OS와 Windows의 줄바꿈의 기준이 다르기 때문)</li>
-</ul>
-</li>
-<li>공공데이터 포털의 대부분은 XML형식으로 이루어져 있기 때문에 만약 XML의 파일을 사용한다면 별도로 데이터 변환작업이 필요함
-<ul>
-<li>Python: <a href=https://github.com/hay/xml2json>https://github.com/hay/xml2json</a></li>
-<li>Javascript: <a href=https://github.com/Leonidas-from-XIV/node-xml2js>https://github.com/Leonidas-from-XIV/node-xml2js</a></li>
-</ul>
-</li>
-<li>공공데이터 포털의 데이터는 각 시군구 데이터의 형식이 다를 경우도 있기 때문에 전국적인 데이터로 사용하기 위해서는 전처리 작업이 필요함</li>
-</ul>
-</li>
-<li>
-<p>QuickSight</p>
-<ul>
-<li>QuickSight 계정에서 Account Setting > Account Permissions > Edit AWS permissions에서 문제가 발생했을 경우
-<ul>
-<li>AWS IAM에서 이전에 생성된 IAM Role 및 policy(QuickSight로 검색)을 삭제해주면 정상적으로 다시 권한을 부여할 수 있음</li>
-</ul>
-</li>
-<li>장점
-<ul>
-<li>별도로 BI툴을 운영하거나 관리할 필요가 없음</li>
-<li>튜토리얼만 따라한다면 진입장벽이 높지 않음</li>
-<li>Filter 기능을 통해 다양한 쿼리를 시각적으로 구현할 수 있음</li>
-<li>스토리로 저장할 수 있기 때문에 차트 관리에 유리</li>
-</ul>
-</li>
-<li>단점
-<ul>
-<li>한글화된 문서가 거의 존재하지 않음</li>
-<li>실제로 기업에서 사용한 사례가 많지 않기 때문에 도입하기가 쉽지 않음(보통은 Excel을 선호하기 때문에)</li>
-<li>Suggested를 보면 추천되는 모형이 있지만 정규화가 제대로 되어있지 않은 데이터에 대해서는 쓸모가 없음(별도로 필터링이 필요)</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>Cross-Region
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Athena, QuickSight를 활용한 공공데이터 분석 | Novemberde's Blog</title><meta name=keywords content="athena,quicksight,공공데이터,public,data,publicdata,분석,활용,analytics"><meta name=description content="빅데이터를 직접 모으는 방법이 있지만, 공공데이터 포털과 네이버 데이터랩처럼 정해진 API를 통해 접근하거나 데이터를 JSON, XML, CSV와 같은 형식으로 지원해주는 사이트들을 적극 활용해볼 수 있습니다.
+AWSKRUG 류한진 님과 함께 준비한 Athena, QuickSight Hands-on lab입니다. 아래 링크는 발표자료 및 Hands-on 문서입니다.
+발표자료 Hands-on 아래는 류한진 님과 함께 작성한 <공공데이터 + Athena + QuickSight> 튜토리얼입니다.
+공공데이터를 이용한 데이터 만들기부터 분석까지 개요 빅데이터를 직접 모으는 방법이 있지만, 공공데이터 포털과 네이버 데이터랩처럼 정해진 API를 통해 접근하거나 데이터를 JSON, XML, CSV와 같은 형식으로 지원해주는 사이트들을 적극 활용해볼 수 있다."><meta name=author content><link rel=canonical href=https://novemberde.github.io/post/2017/09/14/public_data_athena/><link crossorigin=anonymous href=/assets/css/stylesheet.min.9f1d947375927e9847272b1f4e9be81336f539e513bf04d52cade31f81cad1af.css integrity="sha256-nx2Uc3WSfphHJysfTpvoEzb1OeUTvwTVLK3jH4HK0a8=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/assets/js/highlight.min.e85ad0406048e8176e1c7661b25d5c69297ddfe41dc4124cf75ecb99a4f7b3d1.js integrity="sha256-6FrQQGBI6BduHHZhsl1caSl93+QdxBJM917LmaT3s9E=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://novemberde.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://novemberde.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://novemberde.github.io/favicon-32x32.png><link rel=apple-touch-icon href=https://novemberde.github.io/apple-touch-icon.png><link rel=mask-icon href=https://novemberde.github.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><meta name=generator content="Hugo 0.101.0"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:#1d1e20;--entry:#2e2e33;--primary:rgba(255, 255, 255, 0.84);--secondary:rgba(255, 255, 255, 0.56);--tertiary:rgba(255, 255, 255, 0.16);--content:rgba(255, 255, 255, 0.74);--hljs-bg:#2e2e33;--code-bg:#37383e;--border:#333}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,i=t.createElement(n),a=t.getElementsByTagName(n)[0],i.async=1,i.src=s,a.parentNode.insertBefore(i,a)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-97433460-1","auto"),ga("send","pageview"))</script><meta property="og:title" content="Athena, QuickSight를 활용한 공공데이터 분석"><meta property="og:description" content="빅데이터를 직접 모으는 방법이 있지만, 공공데이터 포털과 네이버 데이터랩처럼 정해진 API를 통해 접근하거나 데이터를 JSON, XML, CSV와 같은 형식으로 지원해주는 사이트들을 적극 활용해볼 수 있습니다.
+AWSKRUG 류한진 님과 함께 준비한 Athena, QuickSight Hands-on lab입니다. 아래 링크는 발표자료 및 Hands-on 문서입니다.
+발표자료 Hands-on 아래는 류한진 님과 함께 작성한 <공공데이터 + Athena + QuickSight> 튜토리얼입니다.
+공공데이터를 이용한 데이터 만들기부터 분석까지 개요 빅데이터를 직접 모으는 방법이 있지만, 공공데이터 포털과 네이버 데이터랩처럼 정해진 API를 통해 접근하거나 데이터를 JSON, XML, CSV와 같은 형식으로 지원해주는 사이트들을 적극 활용해볼 수 있다."><meta property="og:type" content="article"><meta property="og:url" content="https://novemberde.github.io/post/2017/09/14/public_data_athena/"><meta property="article:section" content="post"><meta property="article:published_time" content="2017-09-14T11:30:03+00:00"><meta property="article:modified_time" content="2017-09-14T11:30:03+00:00"><meta property="og:site_name" content="Novemberde dev logs"><meta name=twitter:card content="summary"><meta name=twitter:title content="Athena, QuickSight를 활용한 공공데이터 분석"><meta name=twitter:description content="빅데이터를 직접 모으는 방법이 있지만, 공공데이터 포털과 네이버 데이터랩처럼 정해진 API를 통해 접근하거나 데이터를 JSON, XML, CSV와 같은 형식으로 지원해주는 사이트들을 적극 활용해볼 수 있습니다.
+AWSKRUG 류한진 님과 함께 준비한 Athena, QuickSight Hands-on lab입니다. 아래 링크는 발표자료 및 Hands-on 문서입니다.
+발표자료 Hands-on 아래는 류한진 님과 함께 작성한 <공공데이터 + Athena + QuickSight> 튜토리얼입니다.
+공공데이터를 이용한 데이터 만들기부터 분석까지 개요 빅데이터를 직접 모으는 방법이 있지만, 공공데이터 포털과 네이버 데이터랩처럼 정해진 API를 통해 접근하거나 데이터를 JSON, XML, CSV와 같은 형식으로 지원해주는 사이트들을 적극 활용해볼 수 있다."><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://novemberde.github.io/post/"},{"@type":"ListItem","position":2,"name":"Athena, QuickSight를 활용한 공공데이터 분석","item":"https://novemberde.github.io/post/2017/09/14/public_data_athena/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Athena, QuickSight를 활용한 공공데이터 분석","name":"Athena, QuickSight를 활용한 공공데이터 분석","description":"빅데이터를 직접 모으는 방법이 있지만, 공공데이터 포털과 네이버 데이터랩처럼 정해진 API를 통해 접근하거나 데이터를 JSON, XML, CSV와 같은 형식으로 지원해주는 사이트들을 적극 활용해볼 수 있습니다.\nAWSKRUG 류한진 님과 함께 준비한 Athena, QuickSight Hands-on lab입니다. 아래 링크는 발표자료 및 Hands-on 문서입니다.\n발표자료 Hands-on 아래는 류한진 님과 함께 작성한 \u0026lt;공공데이터 + Athena + QuickSight\u0026gt; 튜토리얼입니다.\n공공데이터를 이용한 데이터 만들기부터 분석까지 개요 빅데이터를 직접 모으는 방법이 있지만, 공공데이터 포털과 네이버 데이터랩처럼 정해진 API를 통해 접근하거나 데이터를 JSON, XML, CSV와 같은 형식으로 지원해주는 사이트들을 적극 활용해볼 수 있다.","keywords":["athena","quicksight","공공데이터","public","data","publicdata","분석","활용","analytics"],"articleBody":"빅데이터를 직접 모으는 방법이 있지만, 공공데이터 포털과 네이버 데이터랩처럼 정해진 API를 통해 접근하거나 데이터를 JSON, XML, CSV와 같은 형식으로 지원해주는 사이트들을 적극 활용해볼 수 있습니다.\nAWSKRUG 류한진 님과 함께 준비한 Athena, QuickSight Hands-on lab입니다. 아래 링크는 발표자료 및 Hands-on 문서입니다.\n발표자료 Hands-on 아래는 류한진 님과 함께 작성한 \u003c공공데이터 + Athena + QuickSight\u003e 튜토리얼입니다.\n공공데이터를 이용한 데이터 만들기부터 분석까지 개요 빅데이터를 직접 모으는 방법이 있지만, 공공데이터 포털과 네이버 데이터랩처럼 정해진 API를 통해 접근하거나 데이터를 JSON, XML, CSV와 같은 형식으로 지원해주는 사이트들을 적극 활용해볼 수 있다.\n이번에는 공공데이터 포털에서 예제를 통해 전국무료와이파이 표준데이터에 대해서 AWS Athena로 쿼리하는 것을 진행한다. 또한, 결과에 대해 BI도구인 AWS QuickSight로 시각화해서 확인한다.\n서비스 소개 AWS Athena 표준 SQL을 사용해 Amazon S3에 저장된 데이터를 간편하게 분석할 수 있는 대화식 쿼리 서비스 서버리스 서비스이므로 관리할 인프라가 없으며 실행한 쿼리에 대해서만 과금 Amazon S3에 저장된 데이터를 지정하고 스키마를 정의한 후 표준 SQL을 사용하여 쿼리 Athena에서는 데이터 분석을 준비하기 위한 복잡한 ETL(Extract, transform, load) 작업이 필요없음 ANSI SQL을 지원하는 Presto를 사용하며, CSV, JSON, ORC, Avro, Parquet 등 표준 데이터 형식과 호환됨 AWS QuickSight BI 도구 데이터 소스 접근 기존의 Redshift, RDS, Amazon Aurora, EMR, DynamoDB, Kinesis, S3 및 기존 파일도 가능하며 Salesforce 같은 서드파티에 저장된 데이터 접근 커넥터도 제공 빠른 데이터 연산 고속의 병렬 인메모리 최적화된 연산 엔진(Super-fast, Parallel, In-memory optimized Calculation Engine, SPICE)을 가지고 있으며, 클라우드 기반으로 더 빠른 상호 작용 기반으로 데이터 시각화를 위한 사용자 경험을 제공 손 쉬운 사용법 AWS 데이터 소스를 자동으로 발견하고 손쉽게 연결 테이블 및 항목을 선택하면 최적의 데이터 그래프 형태와 시각화 방법을 제공 이렇게 만들어진 리포트를 친구들에게 공유하거나, 몇몇 다른 리포트와 합쳐서 데이터가 말하는 바를 전달 할 수 있으며, 웹사이트에 임베딩해서 출력 가능 높은 확장성 지원 빠른 분석 및 시각화를 제공하는 데, 이를 위해 수백 및 수천 사용자와 기관별로 테라바이트 급 데이터를 높은 확장성을 기반으로 처리 저비용 구조 기존 온프레미스 환경의 1/10 비용 만으로 스마트한 BI를 구성 파트너 지원 ODBC 커넥터를 지원하여 파트너사의 기존 BI 도구를 연결 가능 SQL을 통해 SPICE 엔진이 기존 도구를 지원할 수 있으며, Domo, Qlik, Tableau 및 Tibo 같은 파트너와 협력 공공데이터 포털에서 데이터 가져오기 공공데이터포털에 계정이 있다면 전국무료와이파이 표준데이터에서 CSV파일을 다운받고, 자신의 Bucket에 업로드하면 된다.\n없다면 아래와 같은 명령어로 자신의 S3 bucket에 복사해와야 한다.\n$ aws s3 cp s3://awskrug-workshop-publicdata s3:// --recursive 버킷을 확인하면 아래와 같은 두 파일이 있을 것이다.\n전국무료와이파이표준데이터.xls csv/전국무료와이파이표준데이터.csv 우리는 CSV파일을 통해 Athena로 쿼리를 던져 결과를 받아볼 것이다.\nAthena에서 테이블 생성하기 (여기서부터는 N.virginia 리전에서 진행 필수)\nAthena에서 S3저장소에 있는 CSV파일에 대해서 쿼리하기 위해서는 파일 형식에 대해 Athena가 이해하고 있어야 가능하다.\n이를 위해서는 DBMS처럼 Athena에 database를 생성하고 table을 생성해야 한다.\nQuery Editor 항목에서 아래와 같은 쿼리를 입력하고 Run query를 한다.\n# awskrug라는 database 생성 CREATE DATABASE IF NOT EXISTS awskrug database를 생성하였다. 다음은 Athena가 이해할 수 있도록 CSV파일의 따른 table을 생성해주어야 한다.\n# Catalog Manager로 생성 CREATE EXTERNAL TABLE IF NOT EXISTS awskrug.free_wifi_standard_data ( `name` string, `detail` string, `city` string, `gungu` string, `facility` string, `service_provider` string, `wifi_ssid` string, `installed_at` DATE, `road_name_address` string, `parcel_address` string, `management_agency` string, `management_agency_phone` string, `latitude` float, `longitude` float, `created_at` DATE ) ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe' WITH SERDEPROPERTIES ( 'serialization.format' = ',', 'field.delim' = ',', \"serialization.encoding\"='utf-8' ) LOCATION 's3:///csv/' TBLPROPERTIES ('has_encrypted_data'='false'); 제대로 생성했다면 아래와 같은 쿼리를 실행했을 때 결과가 나와야 한다.\nSELECT * FROM awskrug.free_wifi_standard_data LIMIT 100; QuickSight - Athena 로 확인하기 QuickSight 열기 Manage Data 클릭 New Data Set 클릭 Athena를 데이터 소스로 선택 데이터 소스명을 입력 awskrug Create Data Source 클릭 awskrug database 를 선택 free_wifi_standard_data 테이블 선택 실행 결과 - 시도별 와이파이 설치 - 시도별 와이파이 서비스 제공업체 상단의 Capture 버튼을 동해 스토리를 생성할 수 있다.\nQuickSight - uploaded file 로 확인하기 Manage Data 클릭 New Data Set 클릭 Upload a file 클릭 S3에 있는 CSV파일 다운로드 후 QuickSight에 업로드 데이터 소스명을 입력 awskrug-upload Create Data Source 클릭 Create Analysis로 전국무료와이파이표준데이터.csv 생성 이전과 같은 과정 반복하여 결과 확인\n고찰 Athena \u0026 공공데이터 포털\n인코딩 문제 공공데이터 포털에서 제공해주는 CSV파일이 EUC-KR로 되어 있었음 별도로 EUC-KR에서 UTF-8로 수정하여 해결 변환작업하는 OS가 Window일 경우 줄 시퀀스가 CRLF로 되어 있다면 LF로 바꾸어 저장할 것(Linux기반 OS와 Windows의 줄바꿈의 기준이 다르기 때문) 공공데이터 포털의 대부분은 XML형식으로 이루어져 있기 때문에 만약 XML의 파일을 사용한다면 별도로 데이터 변환작업이 필요함 Python: https://github.com/hay/xml2json Javascript: https://github.com/Leonidas-from-XIV/node-xml2js 공공데이터 포털의 데이터는 각 시군구 데이터의 형식이 다를 경우도 있기 때문에 전국적인 데이터로 사용하기 위해서는 전처리 작업이 필요함 QuickSight\nQuickSight 계정에서 Account Setting \u003e Account Permissions \u003e Edit AWS permissions에서 문제가 발생했을 경우 AWS IAM에서 이전에 생성된 IAM Role 및 policy(QuickSight로 검색)을 삭제해주면 정상적으로 다시 권한을 부여할 수 있음 장점 별도로 BI툴을 운영하거나 관리할 필요가 없음 튜토리얼만 따라한다면 진입장벽이 높지 않음 Filter 기능을 통해 다양한 쿼리를 시각적으로 구현할 수 있음 스토리로 저장할 수 있기 때문에 차트 관리에 유리 단점 한글화된 문서가 거의 존재하지 않음 실제로 기업에서 사용한 사례가 많지 않기 때문에 도입하기가 쉽지 않음(보통은 Excel을 선호하기 때문에) Suggested를 보면 추천되는 모형이 있지만 정규화가 제대로 되어있지 않은 데이터에 대해서는 쓸모가 없음(별도로 필터링이 필요) Cross-Region - S3-Athena는 다른 리전간에도 사용 가능. (현재 서울리전에서 가장 가까운 곳은 도쿄리전) - Athena-Quicksight는 같은 리전에서만 사용 가능.\n사례 모음 Athena https://aws.amazon.com/ko/blogs/korea/category/amazon-athena/ https://aws.amazon.com/ko/blogs/korea/top-10-performance-tuning-tips-for-amazon-athena/ 샘플 Athena https://github.com/awskrug/athena-workshop QuickSight https://aws.amazon.com/ko/blogs/aws/category/amazon-quicksight/ References https://prestodb.io/ http://docs.aws.amazon.com/athena/latest/ug/json.html https://aws.amazon.com/ko/blogs/korea/amazon-quicksight-fast-easy-to-use-business-intelligence-for-big-data-at-110th-the-cost-of-traditional-solutions/ https://www.slideshare.net/awskorea/6-aws-bigdata-architecture-pattern-and-good-cases ","wordCount":"819","inLanguage":"en","datePublished":"2017-09-14T11:30:03Z","dateModified":"2017-09-14T11:30:03Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://novemberde.github.io/post/2017/09/14/public_data_athena/"},"publisher":{"@type":"Organization","name":"Novemberde's Blog","logo":{"@type":"ImageObject","url":"https://novemberde.github.io/favicon.ico"}}}</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8620431066400094" crossorigin=anonymous></script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://novemberde.github.io/ accesskey=h title="Novemberde's Blog (Alt + H)">Novemberde's Blog</a>
+<span class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></span></div><ul id=menu><li><a href=https://novemberde.github.io/search title="Search (Alt + /)" accesskey=/><span>Search</span></a></li><li><a href=https://novemberde.github.io/post/ title=Post><span>Post</span></a></li><li><a href=https://novemberde.github.io/about title=About><span>About</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://novemberde.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://novemberde.github.io/post/>Posts</a></div><h1 class=post-title>Athena, QuickSight를 활용한 공공데이터 분석</h1><div class=post-meta>September 14, 2017&nbsp;·&nbsp;4 min</div></header><div class=post-content><p>빅데이터를 직접 모으는 방법이 있지만, <a href=https://www.data.go.kr/>공공데이터 포털</a>과 <a href=http://datalab.naver.com/>네이버 데이터랩</a>처럼
+정해진 API를 통해 접근하거나 데이터를 JSON, XML, CSV와 같은 형식으로 지원해주는 사이트들을 적극 활용해볼 수 있습니다.</p><hr><p>AWSKRUG 류한진 님과 함께 준비한 Athena, QuickSight Hands-on lab입니다.
+아래 링크는 발표자료 및 Hands-on 문서입니다.</p><ul><li><a href="https://docs.google.com/presentation/d/e/2PACX-1vQAxD_sJZMenjJWjz8ZuN8skf1w8DT3R5owMBsw4FohnIv-v3XltkI69Lxu0VctWhH3apP48vJsY-rH/pub?start=false&loop=false&delayms=3000&slide=id.p">발표자료</a></li><li><a href=https://github.com/awskrug/datascience-lab/tree/master/public-data-analysis>Hands-on</a></li></ul><p>아래는 류한진 님과 함께 작성한 &lt;공공데이터 + Athena + QuickSight> 튜토리얼입니다.</p><hr><h1 id=공공데이터를-이용한-데이터-만들기부터-분석까지>공공데이터를 이용한 데이터 만들기부터 분석까지<a hidden class=anchor aria-hidden=true href=#공공데이터를-이용한-데이터-만들기부터-분석까지>#</a></h1><hr><h2 id=개요>개요<a hidden class=anchor aria-hidden=true href=#개요>#</a></h2><p>빅데이터를 직접 모으는 방법이 있지만, <a href=https://www.data.go.kr/>공공데이터 포털</a>과 <a href=http://datalab.naver.com/>네이버 데이터랩</a>처럼
+정해진 API를 통해 접근하거나 데이터를 JSON, XML, CSV와 같은 형식으로 지원해주는 사이트들을 적극 활용해볼 수 있다.</p><p>이번에는 <a href=https://www.data.go.kr/>공공데이터 포털</a>에서 예제를 통해 전국무료와이파이 표준데이터에 대해서 AWS Athena로 쿼리하는 것을 진행한다.
+또한, 결과에 대해 BI도구인 AWS QuickSight로 시각화해서 확인한다.</p><h2 id=서비스-소개>서비스 소개<a hidden class=anchor aria-hidden=true href=#서비스-소개>#</a></h2><ul><li>AWS Athena<ul><li>표준 SQL을 사용해 Amazon S3에 저장된 데이터를 간편하게 분석할 수 있는 대화식 쿼리 서비스</li><li>서버리스 서비스이므로 관리할 인프라가 없으며 실행한 쿼리에 대해서만 과금</li><li>Amazon S3에 저장된 데이터를 지정하고 스키마를 정의한 후 표준 SQL을 사용하여 쿼리</li><li>Athena에서는 데이터 분석을 준비하기 위한 복잡한 ETL(Extract, transform, load) 작업이 필요없음</li><li>ANSI SQL을 지원하는 <a href=https://prestodb.io/>Presto</a>를 사용하며, CSV, JSON, ORC, Avro, Parquet 등 표준 데이터 형식과 호환됨</li></ul></li><li>AWS QuickSight<ul><li>BI 도구</li><li>데이터 소스 접근<ul><li>기존의 Redshift, RDS, Amazon Aurora, EMR, DynamoDB, Kinesis, S3 및 기존 파일도 가능하며 Salesforce 같은 서드파티에 저장된 데이터 접근 커넥터도 제공</li></ul></li><li>빠른 데이터 연산<ul><li>고속의 병렬 인메모리 최적화된 연산 엔진(Super-fast, Parallel, In-memory optimized Calculation Engine, SPICE)을 가지고 있으며, 클라우드 기반으로 더 빠른 상호 작용 기반으로 데이터 시각화를 위한 사용자 경험을 제공</li></ul></li><li>손 쉬운 사용법<ul><li>AWS 데이터 소스를 자동으로 발견하고 손쉽게 연결</li><li>테이블 및 항목을 선택하면 최적의 데이터 그래프 형태와 시각화 방법을 제공</li><li>이렇게 만들어진 리포트를 친구들에게 공유하거나, 몇몇 다른 리포트와 합쳐서 데이터가 말하는 바를 전달 할 수 있으며, 웹사이트에 임베딩해서 출력 가능</li></ul></li><li>높은 확장성 지원<ul><li>빠른 분석 및 시각화를 제공하는 데, 이를 위해 수백 및 수천 사용자와 기관별로 테라바이트 급 데이터를 높은 확장성을 기반으로 처리</li></ul></li><li>저비용 구조<ul><li>기존 온프레미스 환경의 1/10 비용 만으로 스마트한 BI를 구성</li></ul></li><li>파트너 지원<ul><li>ODBC 커넥터를 지원하여 파트너사의 기존 BI 도구를 연결 가능</li><li>SQL을 통해 SPICE 엔진이 기존 도구를 지원할 수 있으며, Domo, Qlik, Tableau 및 Tibo 같은 파트너와 협력</li></ul></li></ul></li></ul><h2 id=공공데이터-포털에서-데이터-가져오기>공공데이터 포털에서 데이터 가져오기<a hidden class=anchor aria-hidden=true href=#공공데이터-포털에서-데이터-가져오기>#</a></h2><p>공공데이터포털에 계정이 있다면 <a href=https://www.data.go.kr/dataset/15013116/standard.do>전국무료와이파이 표준데이터</a>에서 CSV파일을 다운받고,
+자신의 Bucket에 업로드하면 된다.</p><p>없다면 아래와 같은 명령어로 자신의 S3 bucket에 복사해와야 한다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>$ aws s3 cp s3://awskrug-workshop-publicdata s3://&lt;USER_BUCKET_NAME&gt; --recursive
+</span></span></code></pre></div><p>버킷을 확인하면 아래와 같은 두 파일이 있을 것이다.</p><ul><li>전국무료와이파이표준데이터.xls</li><li>csv/전국무료와이파이표준데이터.csv</li></ul><p>우리는 CSV파일을 통해 Athena로 쿼리를 던져 결과를 받아볼 것이다.</p><h2 id=athena에서-테이블-생성하기>Athena에서 테이블 생성하기<a hidden class=anchor aria-hidden=true href=#athena에서-테이블-생성하기>#</a></h2><p>(여기서부터는 N.virginia 리전에서 진행 필수)</p><p>Athena에서 S3저장소에 있는 CSV파일에 대해서 쿼리하기 위해서는 파일 형식에 대해 Athena가 이해하고 있어야 가능하다.</p><p>이를 위해서는 DBMS처럼 Athena에 database를 생성하고 table을 생성해야 한다.</p><p>Query Editor 항목에서 아래와 같은 쿼리를 입력하고 Run query를 한다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#f92672>#</span> awskrug라는 <span style=color:#66d9ef>database</span> <span style=color:#960050;background-color:#1e0010>생성</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>CREATE</span> <span style=color:#66d9ef>DATABASE</span> <span style=color:#66d9ef>IF</span> <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>EXISTS</span> awskrug
+</span></span></code></pre></div><p>database를 생성하였다. 다음은 Athena가 이해할 수 있도록 CSV파일의 따른 table을 생성해주어야 한다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#f92672>#</span> <span style=color:#66d9ef>Catalog</span> Manager로 <span style=color:#960050;background-color:#1e0010>생성</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>CREATE</span> <span style=color:#66d9ef>EXTERNAL</span> <span style=color:#66d9ef>TABLE</span> <span style=color:#66d9ef>IF</span> <span style=color:#66d9ef>NOT</span> <span style=color:#66d9ef>EXISTS</span> awskrug.free_wifi_standard_data (
+</span></span><span style=display:flex><span>  <span style=color:#f92672>`</span>name<span style=color:#f92672>`</span> string,
+</span></span><span style=display:flex><span>  <span style=color:#f92672>`</span>detail<span style=color:#f92672>`</span> string,
+</span></span><span style=display:flex><span>  <span style=color:#f92672>`</span>city<span style=color:#f92672>`</span> string,
+</span></span><span style=display:flex><span>  <span style=color:#f92672>`</span>gungu<span style=color:#f92672>`</span> string,
+</span></span><span style=display:flex><span>  <span style=color:#f92672>`</span>facility<span style=color:#f92672>`</span> string,
+</span></span><span style=display:flex><span>  <span style=color:#f92672>`</span>service_provider<span style=color:#f92672>`</span> string,
+</span></span><span style=display:flex><span>  <span style=color:#f92672>`</span>wifi_ssid<span style=color:#f92672>`</span> string,
+</span></span><span style=display:flex><span>  <span style=color:#f92672>`</span>installed_at<span style=color:#f92672>`</span> DATE,
+</span></span><span style=display:flex><span>  <span style=color:#f92672>`</span>road_name_address<span style=color:#f92672>`</span> string,
+</span></span><span style=display:flex><span>  <span style=color:#f92672>`</span>parcel_address<span style=color:#f92672>`</span> string,
+</span></span><span style=display:flex><span>  <span style=color:#f92672>`</span>management_agency<span style=color:#f92672>`</span> string,
+</span></span><span style=display:flex><span>  <span style=color:#f92672>`</span>management_agency_phone<span style=color:#f92672>`</span> string,
+</span></span><span style=display:flex><span>  <span style=color:#f92672>`</span>latitude<span style=color:#f92672>`</span> float,
+</span></span><span style=display:flex><span>  <span style=color:#f92672>`</span>longitude<span style=color:#f92672>`</span> float,
+</span></span><span style=display:flex><span>  <span style=color:#f92672>`</span>created_at<span style=color:#f92672>`</span> DATE
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span><span style=color:#66d9ef>ROW</span> FORMAT SERDE <span style=color:#e6db74>&#39;org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe&#39;</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>WITH</span> SERDEPROPERTIES (
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#39;serialization.format&#39;</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;,&#39;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#39;field.delim&#39;</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;,&#39;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;serialization.encoding&#34;</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#39;utf-8&#39;</span>
+</span></span><span style=display:flex><span>) <span style=color:#66d9ef>LOCATION</span> <span style=color:#e6db74>&#39;s3://&lt;USER_BUCKET_NAME&gt;/csv/&#39;</span>
+</span></span><span style=display:flex><span>TBLPROPERTIES (<span style=color:#e6db74>&#39;has_encrypted_data&#39;</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#39;false&#39;</span>);
+</span></span></code></pre></div><p>제대로 생성했다면 아래와 같은 쿼리를 실행했을 때 결과가 나와야 한다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#66d9ef>SELECT</span> <span style=color:#f92672>*</span> <span style=color:#66d9ef>FROM</span> awskrug.free_wifi_standard_data <span style=color:#66d9ef>LIMIT</span> <span style=color:#ae81ff>100</span>;
+</span></span></code></pre></div><h2 id=quicksight---athena-로-확인하기>QuickSight - Athena 로 확인하기<a hidden class=anchor aria-hidden=true href=#quicksight---athena-로-확인하기>#</a></h2><ol><li>QuickSight 열기</li><li>Manage Data 클릭</li><li>New Data Set 클릭</li><li>Athena를 데이터 소스로 선택</li><li>데이터 소스명을 입력 awskrug</li><li>Create Data Source 클릭</li><li>awskrug database 를 선택</li><li>free_wifi_standard_data 테이블 선택</li></ol><h3 id=실행-결과>실행 결과<a hidden class=anchor aria-hidden=true href=#실행-결과>#</a></h3><table><thead><tr><th><img loading=lazy src=/images/aws/quicksight/count_by_city.png alt="시도별 와이파이 설치"></th><th><img loading=lazy src=/images/aws/quicksight/count_by_service.png alt="시도별 와이파이 서비스 제공업체"></th></tr></thead><tbody><tr><td>- 시도별 와이파이 설치</td><td>- 시도별 와이파이 서비스 제공업체</td></tr></tbody></table><p>상단의 Capture 버튼을 동해 스토리를 생성할 수 있다.</p><h2 id=quicksight---uploaded-file-로-확인하기>QuickSight - uploaded file 로 확인하기<a hidden class=anchor aria-hidden=true href=#quicksight---uploaded-file-로-확인하기>#</a></h2><ol start=2><li>Manage Data 클릭</li><li>New Data Set 클릭</li><li>Upload a file 클릭</li><li>S3에 있는 CSV파일 다운로드 후 QuickSight에 업로드</li><li>데이터 소스명을 입력 awskrug-upload</li><li>Create Data Source 클릭</li><li>Create Analysis로 전국무료와이파이표준데이터.csv 생성</li></ol><p>이전과 같은 과정 반복하여 결과 확인</p><h2 id=고찰>고찰<a hidden class=anchor aria-hidden=true href=#고찰>#</a></h2><ul><li><p>Athena & 공공데이터 포털</p><ul><li>인코딩 문제<ul><li>공공데이터 포털에서 제공해주는 CSV파일이 EUC-KR로 되어 있었음</li><li>별도로 EUC-KR에서 UTF-8로 수정하여 해결</li><li>변환작업하는 OS가 Window일 경우 줄 시퀀스가 CRLF로 되어 있다면 LF로 바꾸어 저장할 것(Linux기반 OS와 Windows의 줄바꿈의 기준이 다르기 때문)</li></ul></li><li>공공데이터 포털의 대부분은 XML형식으로 이루어져 있기 때문에 만약 XML의 파일을 사용한다면 별도로 데이터 변환작업이 필요함<ul><li>Python: <a href=https://github.com/hay/xml2json>https://github.com/hay/xml2json</a></li><li>Javascript: <a href=https://github.com/Leonidas-from-XIV/node-xml2js>https://github.com/Leonidas-from-XIV/node-xml2js</a></li></ul></li><li>공공데이터 포털의 데이터는 각 시군구 데이터의 형식이 다를 경우도 있기 때문에 전국적인 데이터로 사용하기 위해서는 전처리 작업이 필요함</li></ul></li><li><p>QuickSight</p><ul><li>QuickSight 계정에서 Account Setting > Account Permissions > Edit AWS permissions에서 문제가 발생했을 경우<ul><li>AWS IAM에서 이전에 생성된 IAM Role 및 policy(QuickSight로 검색)을 삭제해주면 정상적으로 다시 권한을 부여할 수 있음</li></ul></li><li>장점<ul><li>별도로 BI툴을 운영하거나 관리할 필요가 없음</li><li>튜토리얼만 따라한다면 진입장벽이 높지 않음</li><li>Filter 기능을 통해 다양한 쿼리를 시각적으로 구현할 수 있음</li><li>스토리로 저장할 수 있기 때문에 차트 관리에 유리</li></ul></li><li>단점<ul><li>한글화된 문서가 거의 존재하지 않음</li><li>실제로 기업에서 사용한 사례가 많지 않기 때문에 도입하기가 쉽지 않음(보통은 Excel을 선호하기 때문에)</li><li>Suggested를 보면 추천되는 모형이 있지만 정규화가 제대로 되어있지 않은 데이터에 대해서는 쓸모가 없음(별도로 필터링이 필요)</li></ul></li></ul></li><li><p>Cross-Region
  - S3-Athena는 다른 리전간에도 사용 가능. (현재 서울리전에서 가장 가까운 곳은 도쿄리전)
- - Athena-Quicksight는 같은 리전에서만 사용 가능.</p>
-</li>
-</ul>
-<h2 id=사례-모음>사례 모음<a hidden class=anchor aria-hidden=true href=#사례-모음>#</a></h2>
-<ul>
-<li>Athena
-<ul>
-<li><a href=https://aws.amazon.com/ko/blogs/korea/category/amazon-athena/>https://aws.amazon.com/ko/blogs/korea/category/amazon-athena/</a></li>
-<li><a href=https://aws.amazon.com/ko/blogs/korea/top-10-performance-tuning-tips-for-amazon-athena/>https://aws.amazon.com/ko/blogs/korea/top-10-performance-tuning-tips-for-amazon-athena/</a></li>
-</ul>
-</li>
-</ul>
-<h2 id=샘플>샘플<a hidden class=anchor aria-hidden=true href=#샘플>#</a></h2>
-<ul>
-<li>Athena
-<ul>
-<li><a href=https://github.com/awskrug/athena-workshop>https://github.com/awskrug/athena-workshop</a></li>
-</ul>
-</li>
-<li>QuickSight
-<ul>
-<li><a href=https://aws.amazon.com/ko/blogs/aws/category/amazon-quicksight/>https://aws.amazon.com/ko/blogs/aws/category/amazon-quicksight/</a></li>
-</ul>
-</li>
-</ul>
-<h2 id=references>References<a hidden class=anchor aria-hidden=true href=#references>#</a></h2>
-<ul>
-<li><a href=https://prestodb.io/>https://prestodb.io/</a></li>
-<li><a href=http://docs.aws.amazon.com/athena/latest/ug/json.html>http://docs.aws.amazon.com/athena/latest/ug/json.html</a></li>
-<li><a href=https://aws.amazon.com/ko/blogs/korea/amazon-quicksight-fast-easy-to-use-business-intelligence-for-big-data-at-110th-the-cost-of-traditional-solutions/>https://aws.amazon.com/ko/blogs/korea/amazon-quicksight-fast-easy-to-use-business-intelligence-for-big-data-at-110th-the-cost-of-traditional-solutions/</a></li>
-<li><a href=https://www.slideshare.net/awskorea/6-aws-bigdata-architecture-pattern-and-good-cases>https://www.slideshare.net/awskorea/6-aws-bigdata-architecture-pattern-and-good-cases</a></li>
-</ul>
-</div>
-<footer class=post-footer>
-<ul class=post-tags>
-<li><a href=https://novemberde.github.io/tags/athena/>athena</a></li>
-<li><a href=https://novemberde.github.io/tags/quicksight/>quicksight</a></li>
-<li><a href=https://novemberde.github.io/tags/%EA%B3%B5%EA%B3%B5%EB%8D%B0%EC%9D%B4%ED%84%B0/>공공데이터</a></li>
-<li><a href=https://novemberde.github.io/tags/public/>public</a></li>
-<li><a href=https://novemberde.github.io/tags/data/>data</a></li>
-<li><a href=https://novemberde.github.io/tags/publicdata/>publicdata</a></li>
-<li><a href=https://novemberde.github.io/tags/%EB%B6%84%EC%84%9D/>분석</a></li>
-<li><a href=https://novemberde.github.io/tags/%ED%99%9C%EC%9A%A9/>활용</a></li>
-<li><a href=https://novemberde.github.io/tags/analytics/>analytics</a></li>
-</ul>
-<nav class=paginav>
-<a class=prev href=https://novemberde.github.io/post/2017/09/25/ALB_to_elasticbeanstalk/>
-<span class=title>« Prev Page</span>
-<br>
-<span>AWS ALB로 ElasticBeanstalk 배포하기</span>
-</a>
-<a class=next href=https://novemberde.github.io/post/2017/08/18/make_c9_app/>
-<span class=title>Next Page »</span>
-<br>
-<span>Electron으로 Cloud 9 (c9.io) desktop app 만들기</span>
-</a>
-</nav>
-</footer>
-<div id=disqus_thread></div>
-<script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return}var b=document,a=b.createElement('script');a.async=!0,a.src='//novemberde-github-io.disqus.com/embed.js',a.setAttribute('data-timestamp',+new Date),(b.head||b.body).appendChild(a)})()</script>
-<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript>
-<a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a>
-</article>
-</main>
-<footer class=footer>
-<span>&copy; 2022 <a href=https://novemberde.github.io/>Novemberde's Blog</a></span>
-<span>
-Powered by
+ - Athena-Quicksight는 같은 리전에서만 사용 가능.</p></li></ul><h2 id=사례-모음>사례 모음<a hidden class=anchor aria-hidden=true href=#사례-모음>#</a></h2><ul><li>Athena<ul><li><a href=https://aws.amazon.com/ko/blogs/korea/category/amazon-athena/>https://aws.amazon.com/ko/blogs/korea/category/amazon-athena/</a></li><li><a href=https://aws.amazon.com/ko/blogs/korea/top-10-performance-tuning-tips-for-amazon-athena/>https://aws.amazon.com/ko/blogs/korea/top-10-performance-tuning-tips-for-amazon-athena/</a></li></ul></li></ul><h2 id=샘플>샘플<a hidden class=anchor aria-hidden=true href=#샘플>#</a></h2><ul><li>Athena<ul><li><a href=https://github.com/awskrug/athena-workshop>https://github.com/awskrug/athena-workshop</a></li></ul></li><li>QuickSight<ul><li><a href=https://aws.amazon.com/ko/blogs/aws/category/amazon-quicksight/>https://aws.amazon.com/ko/blogs/aws/category/amazon-quicksight/</a></li></ul></li></ul><h2 id=references>References<a hidden class=anchor aria-hidden=true href=#references>#</a></h2><ul><li><a href=https://prestodb.io/>https://prestodb.io/</a></li><li><a href=http://docs.aws.amazon.com/athena/latest/ug/json.html>http://docs.aws.amazon.com/athena/latest/ug/json.html</a></li><li><a href=https://aws.amazon.com/ko/blogs/korea/amazon-quicksight-fast-easy-to-use-business-intelligence-for-big-data-at-110th-the-cost-of-traditional-solutions/>https://aws.amazon.com/ko/blogs/korea/amazon-quicksight-fast-easy-to-use-business-intelligence-for-big-data-at-110th-the-cost-of-traditional-solutions/</a></li><li><a href=https://www.slideshare.net/awskorea/6-aws-bigdata-architecture-pattern-and-good-cases>https://www.slideshare.net/awskorea/6-aws-bigdata-architecture-pattern-and-good-cases</a></li></ul></div><footer class=post-footer><ul class=post-tags><li><a href=https://novemberde.github.io/tags/athena/>athena</a></li><li><a href=https://novemberde.github.io/tags/quicksight/>quicksight</a></li><li><a href=https://novemberde.github.io/tags/%EA%B3%B5%EA%B3%B5%EB%8D%B0%EC%9D%B4%ED%84%B0/>공공데이터</a></li><li><a href=https://novemberde.github.io/tags/public/>public</a></li><li><a href=https://novemberde.github.io/tags/data/>data</a></li><li><a href=https://novemberde.github.io/tags/publicdata/>publicdata</a></li><li><a href=https://novemberde.github.io/tags/%EB%B6%84%EC%84%9D/>분석</a></li><li><a href=https://novemberde.github.io/tags/%ED%99%9C%EC%9A%A9/>활용</a></li><li><a href=https://novemberde.github.io/tags/analytics/>analytics</a></li></ul><nav class=paginav><a class=prev href=https://novemberde.github.io/post/2017/09/25/ALB_to_elasticbeanstalk/><span class=title>« Prev Page</span><br><span>AWS ALB로 ElasticBeanstalk 배포하기</span></a>
+<a class=next href=https://novemberde.github.io/post/2017/08/18/make_c9_app/><span class=title>Next Page »</span><br><span>Electron으로 Cloud 9 (c9.io) desktop app 만들기</span></a></nav></footer><div id=disqus_thread></div><script type=application/javascript>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//novemberde-github-io.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></article></main><footer class=footer><span>&copy; 2022 <a href=https://novemberde.github.io/>Novemberde's Blog</a></span>
+<span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
-        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
-</span>
-</footer>
-<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
-</a>
-<script>let menu=document.getElementById('menu');menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)},document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
-<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
-<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
-</body>
-</html>
+        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)},document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script></body></html>

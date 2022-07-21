@@ -14,7 +14,7 @@
       
       <guid>https://novemberde.github.io/post/2019/02/14/Ts-Serverless-Build/</guid>
       <description>AWSKRUG Serverless Group에서 발표한 자료입니다. C++로 빌드한 Native addon을 Serverless 환경에서 사용할 때 빌드 및 배포하는 방법을 다루었습니다.
-발표자료   Native addon을 포함하여 Node.js + Typescript + Serverless 빌드 및 배포하기  from Kyuhyun Byun  References  https://www.slideshare.net/KyuhyunByun1/native-addon-nodejs-typescript-serverless  </description>
+발표자료 Native addon을 포함하여 Node.js + Typescript + Serverless 빌드 및 배포하기 from Kyuhyun Byun References https://www.slideshare.net/KyuhyunByun1/native-addon-nodejs-typescript-serverless </description>
     </item>
     
   </channel>

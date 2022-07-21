@@ -1,217 +1,29 @@
-<!doctype html><html lang=en dir=auto>
-<head><meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<meta name=robots content="index, follow">
-<title>Jenkins의 Blue ocean을 활용하여 배포 관리하기 | Novemberde's Blog</title>
-<meta name=keywords content="jenkins,deployment,배포,관리,Blueocean,pipeline,cd,ci,cicd">
-<meta name=description content="Summary  Jenkins는 CD/CI로 가장 알려진 도구이다. 이번에는 Jenkins 설정부터 시작하여 Pipeline으로 배포관리하는 과정을 정리해본다.
- Jenkins로 기본 설정하기  Jenkins를 Install Jenkins를 참고하여 설치한다.
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Jenkins의 Blue ocean을 활용하여 배포 관리하기 | Novemberde's Blog</title><meta name=keywords content="jenkins,deployment,배포,관리,Blueocean,pipeline,cd,ci,cicd"><meta name=description content="Summary Jenkins는 CD/CI로 가장 알려진 도구이다. 이번에는 Jenkins 설정부터 시작하여 Pipeline으로 배포관리하는 과정을 정리해본다.
+Jenkins로 기본 설정하기 Jenkins를 Install Jenkins를 참고하여 설치한다.
 설치하여 맨처음 접속하면 아래와 같은 화면이 나타난다. 다음의 명령어로 나온 텍스트를 입력한다.
-$ cat /var/jenkins_home/secrets/initialAdminPassword  Customize Jenkins화면에서 여기서는 크게 설정할 필요없이 Install suggested plugins을 선택한다.
+$ cat /var/jenkins_home/secrets/initialAdminPassword Customize Jenkins화면에서 여기서는 크게 설정할 필요없이 Install suggested plugins을 선택한다.
 이후에 해당 플러그인을 설치하고 관리자 계정을 설정할 수 있다.
 테스트를 위해 계정 정보는 다음과 같이 설정한다.
- 계정명: admin 암호: 1234 이름: admin 이메일 주소: 본인 이메일 주소   Jenkins 관리 > 플러그인 관리 > 설치 가능 으로 들어가서 Blue ocean을 선택하여 재시작없이 설치하기 버튼을 클릭한다.">
-<meta name=author content>
-<link rel=canonical href=https://novemberde.github.io/post/2017/10/21/Jenkins/>
-<link crossorigin=anonymous href=/assets/css/stylesheet.min.9f1d947375927e9847272b1f4e9be81336f539e513bf04d52cade31f81cad1af.css integrity="sha256-nx2Uc3WSfphHJysfTpvoEzb1OeUTvwTVLK3jH4HK0a8=" rel="preload stylesheet" as=style>
-<script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
-<link rel=icon href=https://novemberde.github.io/favicon.ico>
-<link rel=icon type=image/png sizes=16x16 href=https://novemberde.github.io/favicon-16x16.png>
-<link rel=icon type=image/png sizes=32x32 href=https://novemberde.github.io/favicon-32x32.png>
-<link rel=apple-touch-icon href=https://novemberde.github.io/apple-touch-icon.png>
-<link rel=mask-icon href=https://novemberde.github.io/safari-pinned-tab.svg>
-<meta name=theme-color content="#2e2e33">
-<meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.92.0">
-<noscript>
-<style>#theme-toggle,.top-link{display:none}</style>
-<style>@media(prefers-color-scheme:dark){:root{--theme:#1d1e20;--entry:#2e2e33;--primary:rgba(255, 255, 255, 0.84);--secondary:rgba(255, 255, 255, 0.56);--tertiary:rgba(255, 255, 255, 0.16);--content:rgba(255, 255, 255, 0.74);--hljs-bg:#2e2e33;--code-bg:#37383e;--border:#333}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
-</noscript>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-97433460-1','auto'),ga('send','pageview'))</script><meta property="og:title" content="Jenkins의 Blue ocean을 활용하여 배포 관리하기">
-<meta property="og:description" content="Summary  Jenkins는 CD/CI로 가장 알려진 도구이다. 이번에는 Jenkins 설정부터 시작하여 Pipeline으로 배포관리하는 과정을 정리해본다.
- Jenkins로 기본 설정하기  Jenkins를 Install Jenkins를 참고하여 설치한다.
+계정명: admin 암호: 1234 이름: admin 이메일 주소: 본인 이메일 주소 Jenkins 관리 > 플러그인 관리 > 설치 가능 으로 들어가서 Blue ocean을 선택하여 재시작없이 설치하기 버튼을 클릭한다."><meta name=author content><link rel=canonical href=https://novemberde.github.io/post/2017/10/21/Jenkins/><link crossorigin=anonymous href=/assets/css/stylesheet.min.9f1d947375927e9847272b1f4e9be81336f539e513bf04d52cade31f81cad1af.css integrity="sha256-nx2Uc3WSfphHJysfTpvoEzb1OeUTvwTVLK3jH4HK0a8=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/assets/js/highlight.min.e85ad0406048e8176e1c7661b25d5c69297ddfe41dc4124cf75ecb99a4f7b3d1.js integrity="sha256-6FrQQGBI6BduHHZhsl1caSl93+QdxBJM917LmaT3s9E=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://novemberde.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://novemberde.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://novemberde.github.io/favicon-32x32.png><link rel=apple-touch-icon href=https://novemberde.github.io/apple-touch-icon.png><link rel=mask-icon href=https://novemberde.github.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><meta name=generator content="Hugo 0.101.0"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:#1d1e20;--entry:#2e2e33;--primary:rgba(255, 255, 255, 0.84);--secondary:rgba(255, 255, 255, 0.56);--tertiary:rgba(255, 255, 255, 0.16);--content:rgba(255, 255, 255, 0.74);--hljs-bg:#2e2e33;--code-bg:#37383e;--border:#333}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,i=t.createElement(n),a=t.getElementsByTagName(n)[0],i.async=1,i.src=s,a.parentNode.insertBefore(i,a)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-97433460-1","auto"),ga("send","pageview"))</script><meta property="og:title" content="Jenkins의 Blue ocean을 활용하여 배포 관리하기"><meta property="og:description" content="Summary Jenkins는 CD/CI로 가장 알려진 도구이다. 이번에는 Jenkins 설정부터 시작하여 Pipeline으로 배포관리하는 과정을 정리해본다.
+Jenkins로 기본 설정하기 Jenkins를 Install Jenkins를 참고하여 설치한다.
 설치하여 맨처음 접속하면 아래와 같은 화면이 나타난다. 다음의 명령어로 나온 텍스트를 입력한다.
-$ cat /var/jenkins_home/secrets/initialAdminPassword  Customize Jenkins화면에서 여기서는 크게 설정할 필요없이 Install suggested plugins을 선택한다.
+$ cat /var/jenkins_home/secrets/initialAdminPassword Customize Jenkins화면에서 여기서는 크게 설정할 필요없이 Install suggested plugins을 선택한다.
 이후에 해당 플러그인을 설치하고 관리자 계정을 설정할 수 있다.
 테스트를 위해 계정 정보는 다음과 같이 설정한다.
- 계정명: admin 암호: 1234 이름: admin 이메일 주소: 본인 이메일 주소   Jenkins 관리 > 플러그인 관리 > 설치 가능 으로 들어가서 Blue ocean을 선택하여 재시작없이 설치하기 버튼을 클릭한다.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://novemberde.github.io/post/2017/10/21/Jenkins/"><meta property="article:section" content="post">
-<meta property="article:published_time" content="2017-10-21T11:30:03+00:00">
-<meta property="article:modified_time" content="2017-10-21T11:30:03+00:00"><meta property="og:site_name" content="Novemberde dev logs">
-<meta name=twitter:card content="summary">
-<meta name=twitter:title content="Jenkins의 Blue ocean을 활용하여 배포 관리하기">
-<meta name=twitter:description content="Summary  Jenkins는 CD/CI로 가장 알려진 도구이다. 이번에는 Jenkins 설정부터 시작하여 Pipeline으로 배포관리하는 과정을 정리해본다.
- Jenkins로 기본 설정하기  Jenkins를 Install Jenkins를 참고하여 설치한다.
+계정명: admin 암호: 1234 이름: admin 이메일 주소: 본인 이메일 주소 Jenkins 관리 > 플러그인 관리 > 설치 가능 으로 들어가서 Blue ocean을 선택하여 재시작없이 설치하기 버튼을 클릭한다."><meta property="og:type" content="article"><meta property="og:url" content="https://novemberde.github.io/post/2017/10/21/Jenkins/"><meta property="article:section" content="post"><meta property="article:published_time" content="2017-10-21T11:30:03+00:00"><meta property="article:modified_time" content="2017-10-21T11:30:03+00:00"><meta property="og:site_name" content="Novemberde dev logs"><meta name=twitter:card content="summary"><meta name=twitter:title content="Jenkins의 Blue ocean을 활용하여 배포 관리하기"><meta name=twitter:description content="Summary Jenkins는 CD/CI로 가장 알려진 도구이다. 이번에는 Jenkins 설정부터 시작하여 Pipeline으로 배포관리하는 과정을 정리해본다.
+Jenkins로 기본 설정하기 Jenkins를 Install Jenkins를 참고하여 설치한다.
 설치하여 맨처음 접속하면 아래와 같은 화면이 나타난다. 다음의 명령어로 나온 텍스트를 입력한다.
-$ cat /var/jenkins_home/secrets/initialAdminPassword  Customize Jenkins화면에서 여기서는 크게 설정할 필요없이 Install suggested plugins을 선택한다.
+$ cat /var/jenkins_home/secrets/initialAdminPassword Customize Jenkins화면에서 여기서는 크게 설정할 필요없이 Install suggested plugins을 선택한다.
 이후에 해당 플러그인을 설치하고 관리자 계정을 설정할 수 있다.
 테스트를 위해 계정 정보는 다음과 같이 설정한다.
- 계정명: admin 암호: 1234 이름: admin 이메일 주소: 본인 이메일 주소   Jenkins 관리 > 플러그인 관리 > 설치 가능 으로 들어가서 Blue ocean을 선택하여 재시작없이 설치하기 버튼을 클릭한다.">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://novemberde.github.io/post/"},{"@type":"ListItem","position":2,"name":"Jenkins의 Blue ocean을 활용하여 배포 관리하기","item":"https://novemberde.github.io/post/2017/10/21/Jenkins/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Jenkins의 Blue ocean을 활용하여 배포 관리하기","name":"Jenkins의 Blue ocean을 활용하여 배포 관리하기","description":"Summary  Jenkins는 CD/CI로 가장 알려진 도구이다. 이번에는 Jenkins 설정부터 시작하여 Pipeline으로 배포관리하는 과정을 정리해본다.\n Jenkins로 기본 설정하기  Jenkins를 Install Jenkins를 참고하여 설치한다.\n설치하여 맨처음 접속하면 아래와 같은 화면이 나타난다. 다음의 명령어로 나온 텍스트를 입력한다.\n$ cat /var/jenkins_home/secrets/initialAdminPassword  Customize Jenkins화면에서 여기서는 크게 설정할 필요없이 Install suggested plugins을 선택한다.\n이후에 해당 플러그인을 설치하고 관리자 계정을 설정할 수 있다.\n테스트를 위해 계정 정보는 다음과 같이 설정한다.\n 계정명: admin 암호: 1234 이름: admin 이메일 주소: 본인 이메일 주소   Jenkins 관리 \u0026gt; 플러그인 관리 \u0026gt; 설치 가능 으로 들어가서 Blue ocean을 선택하여 재시작없이 설치하기 버튼을 클릭한다.","keywords":["jenkins","deployment","배포","관리","Blueocean","pipeline","cd","ci","cicd"],"articleBody":"Summary  Jenkins는 CD/CI로 가장 알려진 도구이다. 이번에는 Jenkins 설정부터 시작하여 Pipeline으로 배포관리하는 과정을 정리해본다.\n Jenkins로 기본 설정하기  Jenkins를 Install Jenkins를 참고하여 설치한다.\n설치하여 맨처음 접속하면 아래와 같은 화면이 나타난다. 다음의 명령어로 나온 텍스트를 입력한다.\n$ cat /var/jenkins_home/secrets/initialAdminPassword  Customize Jenkins화면에서 여기서는 크게 설정할 필요없이 Install suggested plugins을 선택한다.\n이후에 해당 플러그인을 설치하고 관리자 계정을 설정할 수 있다.\n테스트를 위해 계정 정보는 다음과 같이 설정한다.\n 계정명: admin 암호: 1234 이름: admin 이메일 주소: 본인 이메일 주소   Jenkins 관리  플러그인 관리  설치 가능 으로 들어가서 Blue ocean을 선택하여 재시작없이 설치하기 버튼을 클릭한다.\n설치 후에 메인으로 들어가면 아래와 같이 Open blue ocean이 생긴 것을 볼 수 있다.\n Blue Ocean 시작하기  Open blue ocean 을 클릭하고 create pipeline을 하면 아래와 같은 화면을 볼 수 있다.\nGithub를 선택하여 repository를 통한 Pipeline을 생성한다.\n 클릭후에 Github에서 Token을 Default로 선택된 옵션을 선택하여 발급한다.\n그 다음 pipeline으로 생성하고 싶은 repository를 선택한 후 pipeline을 생성한다.\n Pipeline setting하기  Pipeline을 생성하면 아래와 같은 화면을 확인할 수 있다.\n+ 버튼을 누르면 stage를 설정할 수 있는 화면이 나타난다.\n+ add steps를 통해 작업을 실행할 수 있다.\nShell script를 선택하여 ls 를 입력한다.\n 설정 후에 상단의 save 버튼을 누르면 아래와 같이 pipeline에 대한 commit을 할 수 있다.\nJenkinsfile을 repository에 반영하게 된다.\n 저장 완료 후에 Pipeline의 Stage에서 동작 로그를 확인해볼 수 있다.\n 고찰  요즘엔 AWS의 managed service를 쓰는 것을 좋아해서 AWS Code Pipeline을 사용하는 연습을 했었다.\n하지만 AWS의 종속적이지 않을 경우에 CD/CI를 구축한다면 어떻게 Pipeline을 구성할지 생각해보았다.\n기존의 서비스에서 Jenkins를 통한 배포 방식은 하나의 Project를 생성하여 직접 배포를 하였다. 현재처럼 각 단계를 두어 Pipeline으로 분리하지는 않았었다. 그래서 Pipeline으로 구성할 필요성을 느꼈었다. Pipeline으로 구성하면 어떤 곳에서 문제가 생겼는지 시각화되어 명확하게 디버깅을 할 수 있기 때문이다.\nBlue Ocean은 그런점에 있어서 적절한 대안이 된다. 또한, Blue Ocean이 기존의 Jenkins 대시보드 화면보다 훨씬 세련되기 때문에 사용하기 편리하기 때문이다.\n마지막으로, 직접 서비스를 구성한다면 AWS의 Code Pipeline을 사용하겠지만, AWS의 가치는 이번 포스팅처럼 꽤나 긴 여정을 지나야만 느낄 수 있기 때문에 Blue Ocean을 한 번 구성해보는 것도 좋을 것이다.\n References   https://jenkins.io/download/ https://jenkins.io/projects/blueocean/  ","wordCount":"320","inLanguage":"en","datePublished":"2017-10-21T11:30:03Z","dateModified":"2017-10-21T11:30:03Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://novemberde.github.io/post/2017/10/21/Jenkins/"},"publisher":{"@type":"Organization","name":"Novemberde's Blog","logo":{"@type":"ImageObject","url":"https://novemberde.github.io/favicon.ico"}}}</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8620431066400094" crossorigin=anonymous></script>
-</head>
-<body id=top>
-<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
-<header class=header>
-<nav class=nav>
-<div class=logo>
-<a href=https://novemberde.github.io/ accesskey=h title="Novemberde's Blog (Alt + H)">Novemberde's Blog</a>
-<span class=logo-switches>
-<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-</button>
-</span>
-</div>
-<ul id=menu>
-<li>
-<a href=https://novemberde.github.io/search title="Search (Alt + /)" accesskey=/>
-<span>Search</span>
-</a>
-</li>
-<li>
-<a href=https://novemberde.github.io/post/ title=Post>
-<span>Post</span>
-</a>
-</li>
-<li>
-<a href=https://novemberde.github.io/about title=About>
-<span>About</span>
-</a>
-</li>
-</ul>
-</nav>
-</header>
-<main class=main>
-<article class=post-single>
-<header class=post-header>
-<div class=breadcrumbs><a href=https://novemberde.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://novemberde.github.io/post/>Posts</a></div>
-<h1 class=post-title>
-Jenkins의 Blue ocean을 활용하여 배포 관리하기
-</h1>
-<div class=post-meta>October 21, 2017&nbsp;·&nbsp;2 min
-</div>
-</header>
-<div class=post-content><h2 id=summary>Summary<a hidden class=anchor aria-hidden=true href=#summary>#</a></h2>
-<hr>
-<p>Jenkins는 CD/CI로 가장 알려진 도구이다. 이번에는 Jenkins 설정부터 시작하여 Pipeline으로 배포관리하는 과정을 정리해본다.</p>
-<hr>
-<h2 id=jenkins로-기본-설정하기>Jenkins로 기본 설정하기<a hidden class=anchor aria-hidden=true href=#jenkins로-기본-설정하기>#</a></h2>
-<hr>
-<p>Jenkins를 <a href=https://jenkins.io/doc/book/installing/>Install Jenkins</a>를 참고하여 설치한다.</p>
-<p>설치하여 맨처음 접속하면 아래와 같은 화면이 나타난다.
-다음의 명령어로 나온 텍스트를 입력한다.</p>
-<pre tabindex=0><code>$ cat /var/jenkins_home/secrets/initialAdminPassword
-</code></pre><p><img loading=lazy src=/images/jenkins/gettingStarted.png alt=gettingStarted>
-</p>
-<hr>
-<p>Customize Jenkins화면에서 여기서는 크게 설정할 필요없이 Install suggested plugins을 선택한다.</p>
-<p>이후에 해당 플러그인을 설치하고 관리자 계정을 설정할 수 있다.</p>
-<p>테스트를 위해 계정 정보는 다음과 같이 설정한다.</p>
-<ul>
-<li>계정명: admin</li>
-<li>암호: 1234</li>
-<li>이름: admin</li>
-<li>이메일 주소: 본인 이메일 주소</li>
-</ul>
-<p><img loading=lazy src=/images/jenkins/main.png alt=main>
-</p>
-<hr>
-<p>Jenkins 관리 > 플러그인 관리 > 설치 가능 으로 들어가서 Blue ocean을 선택하여 재시작없이 설치하기 버튼을 클릭한다.</p>
-<p>설치 후에 메인으로 들어가면 아래와 같이 Open blue ocean이 생긴 것을 볼 수 있다.</p>
-<p><img loading=lazy src=/images/jenkins/mainBlueocean.png alt=mainBlueocean>
-</p>
-<hr>
-<h2 id=blue-ocean-시작하기>Blue Ocean 시작하기<a hidden class=anchor aria-hidden=true href=#blue-ocean-시작하기>#</a></h2>
-<hr>
-<p>Open blue ocean 을 클릭하고 create pipeline을 하면 아래와 같은 화면을 볼 수 있다.</p>
-<p>Github를 선택하여 repository를 통한 Pipeline을 생성한다.</p>
-<p><img loading=lazy src=/images/jenkins/createPipeline.png alt=createPipeline>
-</p>
-<hr>
-<p>클릭후에 Github에서 Token을 Default로 선택된 옵션을 선택하여 발급한다.</p>
-<p>그 다음 pipeline으로 생성하고 싶은 repository를 선택한 후 pipeline을 생성한다.</p>
-<p><img loading=lazy src=/images/jenkins/createAccessToken.png alt=createAccessToken>
-</p>
-<hr>
-<h2 id=pipeline-setting하기>Pipeline setting하기<a hidden class=anchor aria-hidden=true href=#pipeline-setting하기>#</a></h2>
-<hr>
-<p>Pipeline을 생성하면 아래와 같은 화면을 확인할 수 있다.</p>
-<p>+ 버튼을 누르면 stage를 설정할 수 있는 화면이 나타난다.</p>
-<p>+ add steps를 통해 작업을 실행할 수 있다.</p>
-<p>Shell script를 선택하여 ls 를 입력한다.</p>
-<p><img loading=lazy src=/images/jenkins/createdPipeline.png alt=createdPipeline>
-</p>
-<hr>
-<p>설정 후에 상단의 save 버튼을 누르면 아래와 같이 pipeline에 대한 commit을 할 수 있다.</p>
-<p>Jenkinsfile을 repository에 반영하게 된다.</p>
-<p><img loading=lazy src=/images/jenkins/save.png alt=save>
-</p>
-<hr>
-<p>저장 완료 후에 Pipeline의 Stage에서 동작 로그를 확인해볼 수 있다.</p>
-<p><img loading=lazy src=/images/jenkins/activity.png alt=activity>
-</p>
-<hr>
-<h2 id=고찰>고찰<a hidden class=anchor aria-hidden=true href=#고찰>#</a></h2>
-<hr>
-<p>요즘엔 AWS의 managed service를 쓰는 것을 좋아해서 AWS Code Pipeline을 사용하는 연습을 했었다.</p>
-<p>하지만 AWS의 종속적이지 않을 경우에 CD/CI를 구축한다면 어떻게 Pipeline을 구성할지 생각해보았다.</p>
-<p>기존의 서비스에서 Jenkins를 통한 배포 방식은 하나의 Project를 생성하여 직접 배포를 하였다. 현재처럼 각 단계를 두어 Pipeline으로 분리하지는 않았었다.
+계정명: admin 암호: 1234 이름: admin 이메일 주소: 본인 이메일 주소 Jenkins 관리 > 플러그인 관리 > 설치 가능 으로 들어가서 Blue ocean을 선택하여 재시작없이 설치하기 버튼을 클릭한다."><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://novemberde.github.io/post/"},{"@type":"ListItem","position":2,"name":"Jenkins의 Blue ocean을 활용하여 배포 관리하기","item":"https://novemberde.github.io/post/2017/10/21/Jenkins/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Jenkins의 Blue ocean을 활용하여 배포 관리하기","name":"Jenkins의 Blue ocean을 활용하여 배포 관리하기","description":"Summary Jenkins는 CD/CI로 가장 알려진 도구이다. 이번에는 Jenkins 설정부터 시작하여 Pipeline으로 배포관리하는 과정을 정리해본다.\nJenkins로 기본 설정하기 Jenkins를 Install Jenkins를 참고하여 설치한다.\n설치하여 맨처음 접속하면 아래와 같은 화면이 나타난다. 다음의 명령어로 나온 텍스트를 입력한다.\n$ cat /var/jenkins_home/secrets/initialAdminPassword Customize Jenkins화면에서 여기서는 크게 설정할 필요없이 Install suggested plugins을 선택한다.\n이후에 해당 플러그인을 설치하고 관리자 계정을 설정할 수 있다.\n테스트를 위해 계정 정보는 다음과 같이 설정한다.\n계정명: admin 암호: 1234 이름: admin 이메일 주소: 본인 이메일 주소 Jenkins 관리 \u0026gt; 플러그인 관리 \u0026gt; 설치 가능 으로 들어가서 Blue ocean을 선택하여 재시작없이 설치하기 버튼을 클릭한다.","keywords":["jenkins","deployment","배포","관리","Blueocean","pipeline","cd","ci","cicd"],"articleBody":"Summary Jenkins는 CD/CI로 가장 알려진 도구이다. 이번에는 Jenkins 설정부터 시작하여 Pipeline으로 배포관리하는 과정을 정리해본다.\nJenkins로 기본 설정하기 Jenkins를 Install Jenkins를 참고하여 설치한다.\n설치하여 맨처음 접속하면 아래와 같은 화면이 나타난다. 다음의 명령어로 나온 텍스트를 입력한다.\n$ cat /var/jenkins_home/secrets/initialAdminPassword Customize Jenkins화면에서 여기서는 크게 설정할 필요없이 Install suggested plugins을 선택한다.\n이후에 해당 플러그인을 설치하고 관리자 계정을 설정할 수 있다.\n테스트를 위해 계정 정보는 다음과 같이 설정한다.\n계정명: admin 암호: 1234 이름: admin 이메일 주소: 본인 이메일 주소 Jenkins 관리 \u003e 플러그인 관리 \u003e 설치 가능 으로 들어가서 Blue ocean을 선택하여 재시작없이 설치하기 버튼을 클릭한다.\n설치 후에 메인으로 들어가면 아래와 같이 Open blue ocean이 생긴 것을 볼 수 있다.\nBlue Ocean 시작하기 Open blue ocean 을 클릭하고 create pipeline을 하면 아래와 같은 화면을 볼 수 있다.\nGithub를 선택하여 repository를 통한 Pipeline을 생성한다.\n클릭후에 Github에서 Token을 Default로 선택된 옵션을 선택하여 발급한다.\n그 다음 pipeline으로 생성하고 싶은 repository를 선택한 후 pipeline을 생성한다.\nPipeline setting하기 Pipeline을 생성하면 아래와 같은 화면을 확인할 수 있다.\n+ 버튼을 누르면 stage를 설정할 수 있는 화면이 나타난다.\n+ add steps를 통해 작업을 실행할 수 있다.\nShell script를 선택하여 ls 를 입력한다.\n설정 후에 상단의 save 버튼을 누르면 아래와 같이 pipeline에 대한 commit을 할 수 있다.\nJenkinsfile을 repository에 반영하게 된다.\n저장 완료 후에 Pipeline의 Stage에서 동작 로그를 확인해볼 수 있다.\n고찰 요즘엔 AWS의 managed service를 쓰는 것을 좋아해서 AWS Code Pipeline을 사용하는 연습을 했었다.\n하지만 AWS의 종속적이지 않을 경우에 CD/CI를 구축한다면 어떻게 Pipeline을 구성할지 생각해보았다.\n기존의 서비스에서 Jenkins를 통한 배포 방식은 하나의 Project를 생성하여 직접 배포를 하였다. 현재처럼 각 단계를 두어 Pipeline으로 분리하지는 않았었다. 그래서 Pipeline으로 구성할 필요성을 느꼈었다. Pipeline으로 구성하면 어떤 곳에서 문제가 생겼는지 시각화되어 명확하게 디버깅을 할 수 있기 때문이다.\nBlue Ocean은 그런점에 있어서 적절한 대안이 된다. 또한, Blue Ocean이 기존의 Jenkins 대시보드 화면보다 훨씬 세련되기 때문에 사용하기 편리하기 때문이다.\n마지막으로, 직접 서비스를 구성한다면 AWS의 Code Pipeline을 사용하겠지만, AWS의 가치는 이번 포스팅처럼 꽤나 긴 여정을 지나야만 느낄 수 있기 때문에 Blue Ocean을 한 번 구성해보는 것도 좋을 것이다.\nReferences https://jenkins.io/download/ https://jenkins.io/projects/blueocean/ ","wordCount":"320","inLanguage":"en","datePublished":"2017-10-21T11:30:03Z","dateModified":"2017-10-21T11:30:03Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://novemberde.github.io/post/2017/10/21/Jenkins/"},"publisher":{"@type":"Organization","name":"Novemberde's Blog","logo":{"@type":"ImageObject","url":"https://novemberde.github.io/favicon.ico"}}}</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8620431066400094" crossorigin=anonymous></script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://novemberde.github.io/ accesskey=h title="Novemberde's Blog (Alt + H)">Novemberde's Blog</a>
+<span class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></span></div><ul id=menu><li><a href=https://novemberde.github.io/search title="Search (Alt + /)" accesskey=/><span>Search</span></a></li><li><a href=https://novemberde.github.io/post/ title=Post><span>Post</span></a></li><li><a href=https://novemberde.github.io/about title=About><span>About</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://novemberde.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://novemberde.github.io/post/>Posts</a></div><h1 class=post-title>Jenkins의 Blue ocean을 활용하여 배포 관리하기</h1><div class=post-meta>October 21, 2017&nbsp;·&nbsp;2 min</div></header><div class=post-content><h2 id=summary>Summary<a hidden class=anchor aria-hidden=true href=#summary>#</a></h2><hr><p>Jenkins는 CD/CI로 가장 알려진 도구이다. 이번에는 Jenkins 설정부터 시작하여 Pipeline으로 배포관리하는 과정을 정리해본다.</p><hr><h2 id=jenkins로-기본-설정하기>Jenkins로 기본 설정하기<a hidden class=anchor aria-hidden=true href=#jenkins로-기본-설정하기>#</a></h2><hr><p>Jenkins를 <a href=https://jenkins.io/doc/book/installing/>Install Jenkins</a>를 참고하여 설치한다.</p><p>설치하여 맨처음 접속하면 아래와 같은 화면이 나타난다.
+다음의 명령어로 나온 텍스트를 입력한다.</p><pre tabindex=0><code>$ cat /var/jenkins_home/secrets/initialAdminPassword
+</code></pre><p><img loading=lazy src=/images/jenkins/gettingStarted.png alt=gettingStarted></p><hr><p>Customize Jenkins화면에서 여기서는 크게 설정할 필요없이 Install suggested plugins을 선택한다.</p><p>이후에 해당 플러그인을 설치하고 관리자 계정을 설정할 수 있다.</p><p>테스트를 위해 계정 정보는 다음과 같이 설정한다.</p><ul><li>계정명: admin</li><li>암호: 1234</li><li>이름: admin</li><li>이메일 주소: 본인 이메일 주소</li></ul><p><img loading=lazy src=/images/jenkins/main.png alt=main></p><hr><p>Jenkins 관리 > 플러그인 관리 > 설치 가능 으로 들어가서 Blue ocean을 선택하여 재시작없이 설치하기 버튼을 클릭한다.</p><p>설치 후에 메인으로 들어가면 아래와 같이 Open blue ocean이 생긴 것을 볼 수 있다.</p><p><img loading=lazy src=/images/jenkins/mainBlueocean.png alt=mainBlueocean></p><hr><h2 id=blue-ocean-시작하기>Blue Ocean 시작하기<a hidden class=anchor aria-hidden=true href=#blue-ocean-시작하기>#</a></h2><hr><p>Open blue ocean 을 클릭하고 create pipeline을 하면 아래와 같은 화면을 볼 수 있다.</p><p>Github를 선택하여 repository를 통한 Pipeline을 생성한다.</p><p><img loading=lazy src=/images/jenkins/createPipeline.png alt=createPipeline></p><hr><p>클릭후에 Github에서 Token을 Default로 선택된 옵션을 선택하여 발급한다.</p><p>그 다음 pipeline으로 생성하고 싶은 repository를 선택한 후 pipeline을 생성한다.</p><p><img loading=lazy src=/images/jenkins/createAccessToken.png alt=createAccessToken></p><hr><h2 id=pipeline-setting하기>Pipeline setting하기<a hidden class=anchor aria-hidden=true href=#pipeline-setting하기>#</a></h2><hr><p>Pipeline을 생성하면 아래와 같은 화면을 확인할 수 있다.</p><p>+ 버튼을 누르면 stage를 설정할 수 있는 화면이 나타난다.</p><p>+ add steps를 통해 작업을 실행할 수 있다.</p><p>Shell script를 선택하여 ls 를 입력한다.</p><p><img loading=lazy src=/images/jenkins/createdPipeline.png alt=createdPipeline></p><hr><p>설정 후에 상단의 save 버튼을 누르면 아래와 같이 pipeline에 대한 commit을 할 수 있다.</p><p>Jenkinsfile을 repository에 반영하게 된다.</p><p><img loading=lazy src=/images/jenkins/save.png alt=save></p><hr><p>저장 완료 후에 Pipeline의 Stage에서 동작 로그를 확인해볼 수 있다.</p><p><img loading=lazy src=/images/jenkins/activity.png alt=activity></p><hr><h2 id=고찰>고찰<a hidden class=anchor aria-hidden=true href=#고찰>#</a></h2><hr><p>요즘엔 AWS의 managed service를 쓰는 것을 좋아해서 AWS Code Pipeline을 사용하는 연습을 했었다.</p><p>하지만 AWS의 종속적이지 않을 경우에 CD/CI를 구축한다면 어떻게 Pipeline을 구성할지 생각해보았다.</p><p>기존의 서비스에서 Jenkins를 통한 배포 방식은 하나의 Project를 생성하여 직접 배포를 하였다. 현재처럼 각 단계를 두어 Pipeline으로 분리하지는 않았었다.
 그래서 Pipeline으로 구성할 필요성을 느꼈었다.
-Pipeline으로 구성하면 어떤 곳에서 문제가 생겼는지 시각화되어 명확하게 디버깅을 할 수 있기 때문이다.</p>
-<p>Blue Ocean은 그런점에 있어서 적절한 대안이 된다. 또한, Blue Ocean이 기존의 Jenkins 대시보드 화면보다 훨씬 세련되기 때문에 사용하기 편리하기 때문이다.</p>
-<p>마지막으로, 직접 서비스를 구성한다면 AWS의 Code Pipeline을 사용하겠지만, AWS의 가치는 이번 포스팅처럼 꽤나 긴 여정을 지나야만 느낄 수 있기 때문에 Blue Ocean을 한 번 구성해보는 것도 좋을 것이다.</p>
-<hr>
-<h2 id=references>References<a hidden class=anchor aria-hidden=true href=#references>#</a></h2>
-<hr>
-<ul>
-<li><a href=https://jenkins.io/download/>https://jenkins.io/download/</a></li>
-<li><a href=https://jenkins.io/projects/blueocean/>https://jenkins.io/projects/blueocean/</a></li>
-</ul>
-</div>
-<footer class=post-footer>
-<ul class=post-tags>
-<li><a href=https://novemberde.github.io/tags/jenkins/>jenkins</a></li>
-<li><a href=https://novemberde.github.io/tags/deployment/>deployment</a></li>
-<li><a href=https://novemberde.github.io/tags/%EB%B0%B0%ED%8F%AC/>배포</a></li>
-<li><a href=https://novemberde.github.io/tags/%EA%B4%80%EB%A6%AC/>관리</a></li>
-<li><a href=https://novemberde.github.io/tags/Blueocean/>Blueocean</a></li>
-<li><a href=https://novemberde.github.io/tags/pipeline/>pipeline</a></li>
-<li><a href=https://novemberde.github.io/tags/cd/>cd</a></li>
-<li><a href=https://novemberde.github.io/tags/ci/>ci</a></li>
-<li><a href=https://novemberde.github.io/tags/cicd/>cicd</a></li>
-</ul>
-<nav class=paginav>
-<a class=prev href=https://novemberde.github.io/post/2017/10/22/OS-Command/>
-<span class=title>« Prev Page</span>
-<br>
-<span>유용한 OS 명령어 모음</span>
-</a>
-<a class=next href=https://novemberde.github.io/post/2017/10/20/Docker/>
-<span class=title>Next Page »</span>
-<br>
-<span>EC2에서 Docker와 Docker-compose 사용하기</span>
-</a>
-</nav>
-</footer>
-<div id=disqus_thread></div>
-<script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return}var b=document,a=b.createElement('script');a.async=!0,a.src='//novemberde-github-io.disqus.com/embed.js',a.setAttribute('data-timestamp',+new Date),(b.head||b.body).appendChild(a)})()</script>
-<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript>
-<a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a>
-</article>
-</main>
-<footer class=footer>
-<span>&copy; 2022 <a href=https://novemberde.github.io/>Novemberde's Blog</a></span>
-<span>
-Powered by
+Pipeline으로 구성하면 어떤 곳에서 문제가 생겼는지 시각화되어 명확하게 디버깅을 할 수 있기 때문이다.</p><p>Blue Ocean은 그런점에 있어서 적절한 대안이 된다. 또한, Blue Ocean이 기존의 Jenkins 대시보드 화면보다 훨씬 세련되기 때문에 사용하기 편리하기 때문이다.</p><p>마지막으로, 직접 서비스를 구성한다면 AWS의 Code Pipeline을 사용하겠지만, AWS의 가치는 이번 포스팅처럼 꽤나 긴 여정을 지나야만 느낄 수 있기 때문에 Blue Ocean을 한 번 구성해보는 것도 좋을 것이다.</p><hr><h2 id=references>References<a hidden class=anchor aria-hidden=true href=#references>#</a></h2><hr><ul><li><a href=https://jenkins.io/download/>https://jenkins.io/download/</a></li><li><a href=https://jenkins.io/projects/blueocean/>https://jenkins.io/projects/blueocean/</a></li></ul></div><footer class=post-footer><ul class=post-tags><li><a href=https://novemberde.github.io/tags/jenkins/>jenkins</a></li><li><a href=https://novemberde.github.io/tags/deployment/>deployment</a></li><li><a href=https://novemberde.github.io/tags/%EB%B0%B0%ED%8F%AC/>배포</a></li><li><a href=https://novemberde.github.io/tags/%EA%B4%80%EB%A6%AC/>관리</a></li><li><a href=https://novemberde.github.io/tags/Blueocean/>Blueocean</a></li><li><a href=https://novemberde.github.io/tags/pipeline/>pipeline</a></li><li><a href=https://novemberde.github.io/tags/cd/>cd</a></li><li><a href=https://novemberde.github.io/tags/ci/>ci</a></li><li><a href=https://novemberde.github.io/tags/cicd/>cicd</a></li></ul><nav class=paginav><a class=prev href=https://novemberde.github.io/post/2017/10/22/OS-Command/><span class=title>« Prev Page</span><br><span>유용한 OS 명령어 모음</span></a>
+<a class=next href=https://novemberde.github.io/post/2017/10/20/Docker/><span class=title>Next Page »</span><br><span>EC2에서 Docker와 Docker-compose 사용하기</span></a></nav></footer><div id=disqus_thread></div><script type=application/javascript>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//novemberde-github-io.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></article></main><footer class=footer><span>&copy; 2022 <a href=https://novemberde.github.io/>Novemberde's Blog</a></span>
+<span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
-        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
-</span>
-</footer>
-<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
-</a>
-<script>let menu=document.getElementById('menu');menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)},document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
-<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
-<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
-</body>
-</html>
+        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)},document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script></body></html>

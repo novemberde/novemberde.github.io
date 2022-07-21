@@ -15,7 +15,7 @@
       <guid>https://novemberde.github.io/post/2019/06/10/MySQL-Desgin-cheatsheet/</guid>
       <description>신규프로젝트를 진행할 경우 디비 스키마를 설계를 해야한다. 데이터의 타입부터 외래키 설정등 신경써야하는 부분들이 생각보다 자잘하게 있다. 이 경우에 주의해야하는 점들을 정리해보았다. 이 문서는 지속적으로 수정될 예정이다.
 Datatype MySQL에서 사용하는 데이터 타입은 다음과 같다.
-Numeric Type  BIT[(M)] - A bit-value type. M indicates the number of bits per value, from 1 to 64. The default is 1 if M is omitted. TINYINT[(M)] [UNSIGNED] [ZEROFILL] - A very small integer. The signed range is -128 to 127.</description>
+Numeric Type BIT[(M)] - A bit-value type. M indicates the number of bits per value, from 1 to 64. The default is 1 if M is omitted. TINYINT[(M)] [UNSIGNED] [ZEROFILL] - A very small integer. The signed range is -128 to 127.</description>
     </item>
     
   </channel>

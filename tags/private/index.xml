@@ -13,10 +13,11 @@
       <pubDate>Wed, 16 May 2018 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2018/05/16/CircleCI-npm-private-github/</guid>
-      <description>Summary  현재 공통적인 모듈을 Git으로 따로 관리하여 npm private module로 사용한다. 또한 Webpack을 사용하여 Typescript로 작성된 서버를 번들링한다. 로컬에서는 모두 정상적으로 동작하지만 CircleCI에서 빌드할 경우에는 CircleCI의 권한이 해당 repository에 대한 권한만 가지고 있기 때문에 npm private module을 가져올 수가 없다.
+      <description>Summary 현재 공통적인 모듈을 Git으로 따로 관리하여 npm private module로 사용한다. 또한 Webpack을 사용하여 Typescript로 작성된 서버를 번들링한다. 로컬에서는 모두 정상적으로 동작하지만 CircleCI에서 빌드할 경우에는 CircleCI의 권한이 해당 repository에 대한 권한만 가지고 있기 때문에 npm private module을 가져올 수가 없다.
 이와같은 문제를 해결하기 위해서 트러블 슈팅을 하였다.
-Problem  npm install을 할 때에 github에 있는 repository를 사용하는 방법은 두가지가 있다.
- https ssh  ssh로 사용할 경우 관련 명령어는 다음과 같다.</description>
+Problem npm install을 할 때에 github에 있는 repository를 사용하는 방법은 두가지가 있다.
+https ssh ssh로 사용할 경우 관련 명령어는 다음과 같다.
+# ssh 키 생성하기 $ ssh-keygen -f id_rsa_kh -C &amp;#34;&amp;#34; # 생성한 키를 ~/.</description>
     </item>
     
     <item>
@@ -25,10 +26,10 @@ Problem  npm install을 할 때에 github에 있는 repository를 사용하는 �
       <pubDate>Sun, 09 Apr 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/04/09/Docker_Registry_0/</guid>
-      <description>Summary  Docker hub에 private image를 올리는 것은 제한이 있다. 개인 사용자의 경우 하나의 이미지만 private이 가능하고 organization의 경우에는 비용을 지불해야만 사용이 가능하다. 이런점에 비추어 볼 때 우리는 private registry환경을 구축하고 싶다는 생각이 들 것이다.
+      <description>Summary Docker hub에 private image를 올리는 것은 제한이 있다. 개인 사용자의 경우 하나의 이미지만 private이 가능하고 organization의 경우에는 비용을 지불해야만 사용이 가능하다. 이런점에 비추어 볼 때 우리는 private registry환경을 구축하고 싶다는 생각이 들 것이다.
 EC2에 개인 registry를 구축하고 local 또는 다른 서버에서 접근하는 방법에 대해서 진행해보겠다. 그리고 Amazon S3 를 이미지 저장소로 사용하겠다.
-Docker registry 구축하기  docker가 설치되어 있는 EC2에 접근하여 registry 이미지를 pull 해보자.
- docker registry의 기본포트는 5000번이다.</description>
+Docker registry 구축하기 docker가 설치되어 있는 EC2에 접근하여 registry 이미지를 pull 해보자.
+docker registry의 기본포트는 5000번이다. # registry 이미지를 가져오기 $ docker pull registry # registry를 실행하기 $ docker run -dit --name docker-registry -p 5000:5000 registry Docker image를 push하기 도커허브를 사용할 때는 &amp;lt;계정아이디&amp;gt;/registry:latest 처럼 tag명에 내 아이디가 들어가는 모양이었다.</description>
     </item>
     
   </channel>

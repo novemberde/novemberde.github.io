@@ -13,11 +13,11 @@
       <pubDate>Sun, 22 Oct 2017 13:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/10/22/Express-Typescript/</guid>
-      <description>Summary  최근에 직방의 AWS Lambda 코드를 세미나에서 스쳐지나가는 것을 보았다. TypeScript로 짜여져 있었고 나중에 지속적인 프로젝트 관리적인 이점이 있을 것으로 생각이 되기 때문에 TypeScript로 프로젝트를 구성해보는 것을 정리해보기로 결심했다.
-node.js 프로젝트 생성하기  먼저 프로젝트를 생성한다. 기존에 npm과 nodejs가 설치되어 있다는 전제하에 시작한다.
+      <description>Summary 최근에 직방의 AWS Lambda 코드를 세미나에서 스쳐지나가는 것을 보았다. TypeScript로 짜여져 있었고 나중에 지속적인 프로젝트 관리적인 이점이 있을 것으로 생각이 되기 때문에 TypeScript로 프로젝트를 구성해보는 것을 정리해보기로 결심했다.
+node.js 프로젝트 생성하기 먼저 프로젝트를 생성한다. 기존에 npm과 nodejs가 설치되어 있다는 전제하에 시작한다.
 만약 설치되어 있지 않다면 다음의 링크를 참고한다. https://nodejs.org/ko/download/package-manager/
 $ mkdir node_typescript $ npm init -y 그리고 편의를 위해 사전에 설치되어 있어야 하는 패키지들이 있다.
- npx: global로 패키지를 설치하지 않더라도 프로젝트 내에서 사용할 수 있게 해준다.</description>
+npx: global로 패키지를 설치하지 않더라도 프로젝트 내에서 사용할 수 있게 해준다.</description>
     </item>
     
     <item>
@@ -26,8 +26,8 @@ $ mkdir node_typescript $ npm init -y 그리고 편의를 위해 사전에 설�
       <pubDate>Sun, 02 Apr 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/04/02/Docker_6/</guid>
-      <description>Summary  node js 패키지 중에서 PM2를 사용하여 웹서버를 배포하자.
- 순서   Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기 EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기 Bitbucket을 사용하여 git repository 생성하기 Express JS를 사용하여 Node 서버 구축하기 PM2를 사용하여 EC2에 Node 서버 배포하기 Node 서버를 바탕으로 Dockerfile로 만들기 Docker Hub의 automated build를 사용하여 Docker image를 만들기 만들어진 Docker image를 EC2 인스턴스에 배포하기   웹서버에 node js를 설치하고 PM2를 설치하기  이전에 생성한 EC2 인스턴스에 ubuntu계정으로 SSH 접속한 후 Node js를 설치하자.</description>
+      <description>Summary node js 패키지 중에서 PM2를 사용하여 웹서버를 배포하자.
+순서 Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기 EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기 Bitbucket을 사용하여 git repository 생성하기 Express JS를 사용하여 Node 서버 구축하기 PM2를 사용하여 EC2에 Node 서버 배포하기 Node 서버를 바탕으로 Dockerfile로 만들기 Docker Hub의 automated build를 사용하여 Docker image를 만들기 만들어진 Docker image를 EC2 인스턴스에 배포하기 웹서버에 node js를 설치하고 PM2를 설치하기 이전에 생성한 EC2 인스턴스에 ubuntu계정으로 SSH 접속한 후 Node js를 설치하자.</description>
     </item>
     
   </channel>

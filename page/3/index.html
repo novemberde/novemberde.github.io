@@ -1,217 +1,28 @@
-<!doctype html><html lang=en dir=auto>
-<head><meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<meta name=robots content="index, follow">
-<title>Novemberde's Blog</title>
-<meta name=keywords content="golang,aws,docker,serverless,registry,lambda,serverless">
-<meta name=description content="Logs for troubleshooting, dev-experience">
-<meta name=author content>
-<link rel=canonical href=https://novemberde.github.io/>
-<link crossorigin=anonymous href=/assets/css/stylesheet.min.9f1d947375927e9847272b1f4e9be81336f539e513bf04d52cade31f81cad1af.css integrity="sha256-nx2Uc3WSfphHJysfTpvoEzb1OeUTvwTVLK3jH4HK0a8=" rel="preload stylesheet" as=style>
-<link rel=icon href=https://novemberde.github.io/favicon.ico>
-<link rel=icon type=image/png sizes=16x16 href=https://novemberde.github.io/favicon-16x16.png>
-<link rel=icon type=image/png sizes=32x32 href=https://novemberde.github.io/favicon-32x32.png>
-<link rel=apple-touch-icon href=https://novemberde.github.io/apple-touch-icon.png>
-<link rel=mask-icon href=https://novemberde.github.io/safari-pinned-tab.svg>
-<meta name=theme-color content="#2e2e33">
-<meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.92.0">
-<link rel=alternate type=application/rss+xml href=https://novemberde.github.io/index.xml>
-<link rel=alternate type=application/json href=https://novemberde.github.io/index.json>
-<noscript>
-<style>#theme-toggle,.top-link{display:none}</style>
-<style>@media(prefers-color-scheme:dark){:root{--theme:#1d1e20;--entry:#2e2e33;--primary:rgba(255, 255, 255, 0.84);--secondary:rgba(255, 255, 255, 0.56);--tertiary:rgba(255, 255, 255, 0.16);--content:rgba(255, 255, 255, 0.74);--hljs-bg:#2e2e33;--code-bg:#37383e;--border:#333}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
-</noscript>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-97433460-1','auto'),ga('send','pageview'))</script><meta property="og:title" content="Novemberde's Blog">
-<meta property="og:description" content="Logs for troubleshooting, dev-experience">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://novemberde.github.io/"><meta property="og:site_name" content="Novemberde dev logs">
-<meta name=twitter:card content="summary">
-<meta name=twitter:title content="Novemberde's Blog">
-<meta name=twitter:description content="Logs for troubleshooting, dev-experience">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"Organization","name":"Novemberde's Blog","url":"https://novemberde.github.io/","description":"Logs for troubleshooting, dev-experience","thumbnailUrl":"https://novemberde.github.io/favicon.ico","sameAs":["https://github.com/novemberde","https://www.facebook.com/kyuhyun.byun","https://www.linkedin.com/in/novemberde/"]}</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8620431066400094" crossorigin=anonymous></script>
-</head>
-<body class=list id=top>
-<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
-<header class=header>
-<nav class=nav>
-<div class=logo>
-<a href=https://novemberde.github.io/ accesskey=h title="Novemberde's Blog (Alt + H)">Novemberde's Blog</a>
-<span class=logo-switches>
-<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-</button>
-</span>
-</div>
-<ul id=menu>
-<li>
-<a href=https://novemberde.github.io/search title="Search (Alt + /)" accesskey=/>
-<span>Search</span>
-</a>
-</li>
-<li>
-<a href=https://novemberde.github.io/post/ title=Post>
-<span>Post</span>
-</a>
-</li>
-<li>
-<a href=https://novemberde.github.io/about title=About>
-<span>About</span>
-</a>
-</li>
-</ul>
-</nav>
-</header>
-<main class=main>
-<article class=post-entry>
-<header class=entry-header>
-<h2>Circle CI에서 Docker Build 하기
-</h2>
-</header>
-<section class=entry-content>
-<p>Summary 현재 Terraform으로 ECS 인프라를 생성하고, CircleCI에서 docker image를 빌드하고 ECR에 푸시하는 과정을 자동화하고 있다. 이 과정에 있어서 docker image를 빌드하는 것에서 문제가 발생했다.
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Novemberde's Blog</title><meta name=keywords content="golang,aws,docker,serverless,registry,lambda,serverless"><meta name=description content="Logs for troubleshooting, dev-experience"><meta name=author content><link rel=canonical href=https://novemberde.github.io/><link crossorigin=anonymous href=/assets/css/stylesheet.min.9f1d947375927e9847272b1f4e9be81336f539e513bf04d52cade31f81cad1af.css integrity="sha256-nx2Uc3WSfphHJysfTpvoEzb1OeUTvwTVLK3jH4HK0a8=" rel="preload stylesheet" as=style><link rel=icon href=https://novemberde.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://novemberde.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://novemberde.github.io/favicon-32x32.png><link rel=apple-touch-icon href=https://novemberde.github.io/apple-touch-icon.png><link rel=mask-icon href=https://novemberde.github.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><meta name=generator content="Hugo 0.101.0"><link rel=alternate type=application/rss+xml href=https://novemberde.github.io/index.xml><link rel=alternate type=application/json href=https://novemberde.github.io/index.json><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:#1d1e20;--entry:#2e2e33;--primary:rgba(255, 255, 255, 0.84);--secondary:rgba(255, 255, 255, 0.56);--tertiary:rgba(255, 255, 255, 0.16);--content:rgba(255, 255, 255, 0.74);--hljs-bg:#2e2e33;--code-bg:#37383e;--border:#333}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,i=t.createElement(n),a=t.getElementsByTagName(n)[0],i.async=1,i.src=s,a.parentNode.insertBefore(i,a)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-97433460-1","auto"),ga("send","pageview"))</script><meta property="og:title" content="Novemberde's Blog"><meta property="og:description" content="Logs for troubleshooting, dev-experience"><meta property="og:type" content="website"><meta property="og:url" content="https://novemberde.github.io/"><meta property="og:site_name" content="Novemberde dev logs"><meta name=twitter:card content="summary"><meta name=twitter:title content="Novemberde's Blog"><meta name=twitter:description content="Logs for troubleshooting, dev-experience"><script type=application/ld+json>{"@context":"https://schema.org","@type":"Organization","name":"Novemberde's Blog","url":"https://novemberde.github.io/","description":"Logs for troubleshooting, dev-experience","thumbnailUrl":"https://novemberde.github.io/favicon.ico","sameAs":["https://github.com/novemberde","https://www.facebook.com/kyuhyun.byun","https://www.linkedin.com/in/novemberde/"]}</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8620431066400094" crossorigin=anonymous></script></head><body class=list id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://novemberde.github.io/ accesskey=h title="Novemberde's Blog (Alt + H)">Novemberde's Blog</a>
+<span class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></span></div><ul id=menu><li><a href=https://novemberde.github.io/search title="Search (Alt + /)" accesskey=/><span>Search</span></a></li><li><a href=https://novemberde.github.io/post/ title=Post><span>Post</span></a></li><li><a href=https://novemberde.github.io/about title=About><span>About</span></a></li></ul></nav></header><main class=main><article class=post-entry><header class=entry-header><h2>0원으로 시작하는 데이터 수집 및 분석</h2></header><section class=entry-content><p>Summary 부산 스마트 앱 개발자 포럼에서 서버리스를 활용하여 데이터를 수집 및 분석 후기를 공유하였다.
+발표자료 Github repo. 발표 슬라이드 0원으로 시작하는 서버리스 데이터 수집 및 분석 from Kyuhyun Byun 고찰 지난 여름부터 모아온 데이터를 분석하고 이 데이터를 기반으로 AWS의 데이터 처리 서비스들에 대해서 공부하는 계기였다. 실제로 현업에서 데이터를 분석할 일은 많다. 데이터를 쌓고 보기 쉽게 변환하는 과정 그리고 시각화까지 다양한 기술을 요구한다. 데이터를 다루는 역량 뿐만 아니라 전체적인 웹서비스 구축 역량을 요구한다....</p></section><footer class=entry-footer>October 29, 2018&nbsp;·&nbsp;1 min</footer><a class=entry-link aria-label="post link to 0원으로 시작하는 데이터 수집 및 분석" href=https://novemberde.github.io/post/2018/10/29/Potal-Analysis/></a></article><article class=post-entry><header class=entry-header><h2>Circle CI에서 Docker Build 하기</h2></header><section class=entry-content><p>Summary 현재 Terraform으로 ECS 인프라를 생성하고, CircleCI에서 docker image를 빌드하고 ECR에 푸시하는 과정을 자동화하고 있다. 이 과정에 있어서 docker image를 빌드하는 것에서 문제가 발생했다.
 CircleCI에서 script를 실행하는 환경은 Container 기반으로 되어 있기 때문이다. Docker image를 빌드하기 위해서는 docker가 설치되어 있는 환경이어야 했다.
-docker-in-docker라는 개념으로 docker hub에 “docker"라는 docker image가 있다. 하지만 이 이미지로는 프로덕션 이미지를 빌드하고 배포할 때 사용하는 기본 패키지가 없는데, 이러한 기본패키지를 추가하여 CircleCI에서 docker를 빌드할 수 있는 이미지 생성하는 방법 및 CircleCI 설정을 정리해보았다....</p>
-</section>
-<footer class=entry-footer>September 17, 2018&nbsp;·&nbsp;2 min</footer>
-<a class=entry-link aria-label="post link to Circle CI에서 Docker Build 하기" href=https://novemberde.github.io/post/2018/09/17/Circleci-docker/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>2018년 AWS Serverless Hands-on 1, 손쉽게 시작하는 Serverless Architecture
-</h2>
-</header>
-<section class=entry-content>
-<p>Summary 2018년 AWSKRUG에서 8회에 걸쳐 진행하는 핸즈온 중 하나인 Serverless Hands-on 입니다
+docker-in-docker라는 개념으로 docker hub에 “docker"라는 docker image가 있다. 하지만 이 이미지로는 프로덕션 이미지를 빌드하고 배포할 때 사용하는 기본 패키지가 없는데, 이러한 기본패키지를 추가하여 CircleCI에서 docker를 빌드할 수 있는 이미지 생성하는 방법 및 CircleCI 설정을 정리해보았다....</p></section><footer class=entry-footer>September 17, 2018&nbsp;·&nbsp;2 min</footer><a class=entry-link aria-label="post link to Circle CI에서 Docker Build 하기" href=https://novemberde.github.io/post/2018/09/17/Circleci-docker/></a></article><article class=post-entry><header class=entry-header><h2>2018년 AWS Serverless Hands-on 1, 손쉽게 시작하는 Serverless Architecture</h2></header><section class=entry-content><p>Summary 2018년 AWSKRUG에서 8회에 걸쳐 진행하는 핸즈온 중 하나인 Serverless Hands-on 입니다
 제목: 손쉽게 시작하는 Serverless Architecture
 내용: Serverless Architecture는 말그대로 서버를 올리지 않는 아키텍처를 의미합니다. 기존에는 각 서버에 운영하는 어플리케이션들을 배포했지만, Serverless Architecture를 적용하면 운영 부담없이 비지니스 로직에만 집중할 수 있습니다. 서버없이 Web Application과 Crawler를 만들어 운영이 필요없는 데모 서비스를 구성합니다.
 Serverless Group First Hands-on Part 1 AWSKRUG Serverless Group의 첫번째 핸즈온 Part.1 웹어플리케이션 만들기입니다.😁
 바로가기
-Serverless Group First Hands-on Part 2 AWSKRUG Serverless Group의 첫번째 핸즈온 Part....</p>
-</section>
-<footer class=entry-footer>July 2, 2018&nbsp;·&nbsp;1 min</footer>
-<a class=entry-link aria-label="post link to 2018년 AWS Serverless Hands-on 1, 손쉽게 시작하는 Serverless Architecture" href=https://novemberde.github.io/post/2018/07/02/Serverless-Handson-1/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>AWS Configure 여러 계정으로 스위칭하며 사용하기
-</h2>
-</header>
-<section class=entry-content>
-<p>Summary 개인용 개발계정, 회사계정, 워크샵 전용 계정 등등 여러 계정들을 사용하다보니 Default로 Access Key ID 와 Secret Access Key를 관리하고 싶어졌다. Default로 두고 사용하다가 잘못하면 회사계정에 잘못된 인프라를 생성 및 변경할 수도 있기 때문이다.
+Serverless Group First Hands-on Part 2 AWSKRUG Serverless Group의 첫번째 핸즈온 Part....</p></section><footer class=entry-footer>July 2, 2018&nbsp;·&nbsp;1 min</footer><a class=entry-link aria-label="post link to 2018년 AWS Serverless Hands-on 1, 손쉽게 시작하는 Serverless Architecture" href=https://novemberde.github.io/post/2018/07/02/Serverless-Handson-1/></a></article><article class=post-entry><header class=entry-header><h2>AWS Configure 여러 계정으로 스위칭하며 사용하기</h2></header><section class=entry-content><p>Summary 개인용 개발계정, 회사계정, 워크샵 전용 계정 등등 여러 계정들을 사용하다보니 Default로 Access Key ID 와 Secret Access Key를 관리하고 싶어졌다. Default로 두고 사용하다가 잘못하면 회사계정에 잘못된 인프라를 생성 및 변경할 수도 있기 때문이다.
 AWS Configure –profile 기본적인 aws cli를 설정하는 것은 어렵지 않다. AWS Console의 IAM에서 유저를 생성하고 Access Key를 생성하면 된다. 생성된 키를 통해 로컬이 AWS의 권한을 사용하도록 설정하는 것은 다음과 같다.
-# 생성된 키와 리전을 입력하면 된다....</p>
-</section>
-<footer class=entry-footer>June 20, 2018&nbsp;·&nbsp;2 min</footer>
-<a class=entry-link aria-label="post link to AWS Configure 여러 계정으로 스위칭하며 사용하기" href=https://novemberde.github.io/post/2018/06/20/AWS-config-switching/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>Legacy android application, Kotlin 적용기
-</h2>
-</header>
-<section class=entry-content>
-<p>Summary 안드로이드 개발 언어의 트렌드는 바뀌었다. 최근 Google I/O에서 나오는 샘플 코드들은 Kotlin으로 짜여져 있었다. 또한 안드로이드 개발 컨퍼런스의 주제는 Kotlin으로 개발한 경험담이 주를 이루고 있다.
+# 생성된 키와 리전을 입력하면 된다. $ aws configure AWS Access Key ID [****************aaaa]: AWS Secret Access Key [****************aaaa]: Default region name [ap-northeast-2]: Default output format [json]: 그렇다면 여러 계정을 관리하려면 어떻게 해야할까?...</p></section><footer class=entry-footer>June 20, 2018&nbsp;·&nbsp;2 min</footer><a class=entry-link aria-label="post link to AWS Configure 여러 계정으로 스위칭하며 사용하기" href=https://novemberde.github.io/post/2018/06/20/AWS-config-switching/></a></article><article class=post-entry><header class=entry-header><h2>Legacy android application, Kotlin 적용기</h2></header><section class=entry-content><p>Summary 안드로이드 개발 언어의 트렌드는 바뀌었다. 최근 Google I/O에서 나오는 샘플 코드들은 Kotlin으로 짜여져 있었다. 또한 안드로이드 개발 컨퍼런스의 주제는 Kotlin으로 개발한 경험담이 주를 이루고 있다.
 Kotlin으로 개발하는 것이 낫다는 내용을 많이 보기도 하였고 개발에 욕심이 있다보니, 이번에는 기존에 JAVA로 개발되어 있던 코드에 Kotlin을 적용하여 새로 구성하거나 변경하는 클래스를 Kotlin으로 구성해보았다.
 다음은 이런 과정을 거치면서 느낀 장점과 단점에 대한 고찰이다.
-고찰 Kotlin의 장점을 느끼기 전에는 치명적인 단점(?)과 싸워야만 한다....</p>
-</section>
-<footer class=entry-footer>May 28, 2018&nbsp;·&nbsp;3 min</footer>
-<a class=entry-link aria-label="post link to Legacy android application, Kotlin 적용기" href=https://novemberde.github.io/post/2018/05/28/kotlin/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>The difference among String, StringBuilder, and StringBuffer in JAVA
-</h2>
-</header>
-<section class=entry-content>
-<p>Summary If you’re a lazy JAVA developer, you concatenate Strings by using the plus sign (“Some text” + " added text") But if you want to level-up your skills as a JAVA developer, you should be more careful about the Class that you choose. Let’s take a glance at the use cases of String, StringBuilder and StringBuffer.
-Feature of Classes It’s necessary to be familiar with the Java API documents before getting your hands dirty....</p>
-</section>
-<footer class=entry-footer>May 24, 2018&nbsp;·&nbsp;3 min</footer>
-<a class=entry-link aria-label="post link to The difference among String, StringBuilder, and StringBuffer in JAVA" href=https://novemberde.github.io/post/2018/05/24/String/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>CircleCI에서 Github private repository를 npm module로 사용하기
-</h2>
-</header>
-<section class=entry-content>
-<p>Summary 현재 공통적인 모듈을 Git으로 따로 관리하여 npm private module로 사용한다. 또한 Webpack을 사용하여 Typescript로 작성된 서버를 번들링한다. 로컬에서는 모두 정상적으로 동작하지만 CircleCI에서 빌드할 경우에는 CircleCI의 권한이 해당 repository에 대한 권한만 가지고 있기 때문에 npm private module을 가져올 수가 없다.
+고찰 Kotlin의 장점을 느끼기 전에는 치명적인 단점(?)과 싸워야만 한다.
+무엇보다 가장 크게 힘들었던 점은 손에 익은 Java 대신에 인내하며 억지로 Kotlin으로 작성해야된다는 점이었다....</p></section><footer class=entry-footer>May 28, 2018&nbsp;·&nbsp;3 min</footer><a class=entry-link aria-label="post link to Legacy android application, Kotlin 적용기" href=https://novemberde.github.io/post/2018/05/28/kotlin/></a></article><article class=post-entry><header class=entry-header><h2>The difference among String, StringBuilder, and StringBuffer in JAVA</h2></header><section class=entry-content><p>Summary If you’re a lazy JAVA developer, you concatenate Strings by using the plus sign (“Some text” + " added text") But if you want to level-up your skills as a JAVA developer, you should be more careful about the Class that you choose. Let’s take a glance at the use cases of String, StringBuilder and StringBuffer.
+Feature of Classes It’s necessary to be familiar with the Java API documents before getting your hands dirty....</p></section><footer class=entry-footer>May 24, 2018&nbsp;·&nbsp;3 min</footer><a class=entry-link aria-label="post link to The difference among String, StringBuilder, and StringBuffer in JAVA" href=https://novemberde.github.io/post/2018/05/24/String/></a></article><article class=post-entry><header class=entry-header><h2>CircleCI에서 Github private repository를 npm module로 사용하기</h2></header><section class=entry-content><p>Summary 현재 공통적인 모듈을 Git으로 따로 관리하여 npm private module로 사용한다. 또한 Webpack을 사용하여 Typescript로 작성된 서버를 번들링한다. 로컬에서는 모두 정상적으로 동작하지만 CircleCI에서 빌드할 경우에는 CircleCI의 권한이 해당 repository에 대한 권한만 가지고 있기 때문에 npm private module을 가져올 수가 없다.
 이와같은 문제를 해결하기 위해서 트러블 슈팅을 하였다.
 Problem npm install을 할 때에 github에 있는 repository를 사용하는 방법은 두가지가 있다.
-https ssh ssh로 사용할 경우 관련 명령어는 다음과 같다....</p>
-</section>
-<footer class=entry-footer>May 16, 2018&nbsp;·&nbsp;2 min</footer>
-<a class=entry-link aria-label="post link to CircleCI에서 Github private repository를 npm module로 사용하기" href=https://novemberde.github.io/post/2018/05/16/CircleCI-npm-private-github/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>GraphDB 란?
-</h2>
-</header>
-<section class=entry-content>
-<p>Summary 각 사용자들의 연관 관계 분석을 위하여 GraphDB를 도입하려한다. 시작하기에 앞서서 GraphDB에 대해서 이해가 필요했다. 다음에서 GraphDB의 기본 내용을 담았다.
-Graph Database란? In computing, a graph database is a database that uses graph structures for semantic queries with nodes, edges and properties to represent and store data. A key concept of the system is the graph (or edge or relationship), which directly relates data items in the store. The relationships allow data in the store to be linked together directly, and in many cases retrieved with one operation....</p>
-</section>
-<footer class=entry-footer>April 12, 2018&nbsp;·&nbsp;6 min</footer>
-<a class=entry-link aria-label="post link to GraphDB 란?" href=https://novemberde.github.io/post/2018/04/12/Neo4j/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>NODE response를 apicache로 처리하기
-</h2>
-</header>
-<section class=entry-content>
-<p>문제인식 서비스가 성장해가면서 기존에는 보이지 않던 문제점들이 나타났다. 처음에는 Slow query의 최적화를 필요로하지도 않았고, DB에 부하가 몰려서 Bottle neck point가 되는 것을 상상만 했지 직접 경험하지는 못했었다. 하지만 점차 Query의 optimization이 필요한 경우가 생겼고, DB로 몰리는 부하를 분산하기 위해 어떻게 처리해야하는지 고민하기 시작했다.
-Cache me if you can 다행히도 AWSKRUG활동을 하면서 AWS re:Invent행사에 참석한 경험이 도움이 되었다. 들었던 세션중에서 가장 감명깊은 것중에 하나는 “Cache me if you can"이었다. 주된 내용은 점차 서비스가 커져감에 따라서 우린 Database로 몰리는 부하를 분산시켜야만 하고, 그것을 해결하기 위해서는 각 요청에 따라 Cache로 처리할 수 있는 부분은 모두 Cache로 해결해야 된다는 내용이었다....</p>
-</section>
-<footer class=entry-footer>March 1, 2018&nbsp;·&nbsp;3 min</footer>
-<a class=entry-link aria-label="post link to NODE response를 apicache로 처리하기" href=https://novemberde.github.io/post/2018/03/01/Node_apicache/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>AWS Lambda에서의 Cold Start 문제 해결하기(Golang + serverless framework)
-</h2>
-</header>
-<section class=entry-content>
-<p>Summary AWS Lambda와 API Gateway를 연동하여 웹서버를 Serverless architecture로 운영하고 있다. 관리할 서버가 없고 비지니스 로직에만 집중할 수 있어서 좋기도 하지만 항상 Lambda container가 대기중인 상태가 아니다 보니 Cold start관련하여 요청사항이 발생했다.
-일정시간이 경과된 후에 해당 페이지를 접속할 경우에 로딩이 3~4초이상 걸리기 때문에 사용이 불편하였다. 이를 해결하기 위해 5분마다 각 api를 health check하는 scheduler를 두기로 결정하였다. 그렇게되면 지속적인 lambda 호출로 인해 항상 하나이상의 lambda container가 대기하는 형태가 되어 lambda의 cold start의 가장 큰 시간을 소비하는 DB connection의 시간을 느낄 수 없다....</p>
-</section>
-<footer class=entry-footer>February 2, 2018&nbsp;·&nbsp;3 min</footer>
-<a class=entry-link aria-label="post link to AWS Lambda에서의 Cold Start 문제 해결하기(Golang + serverless framework)" href=https://novemberde.github.io/post/2018/02/02/Lambda_coldStart/></a>
-</article>
-<article class=post-entry>
-<header class=entry-header>
-<h2>AWS Lambda와 MySQL의 max connection 문제
-</h2>
-</header>
-<section class=entry-content>
-<p>Summary MySQL에서 Max Connection에 대해서 알아보려고 한다. AWS Lambda container가 지속적으로 생성될 때 Database가 감당할 수 있는 Max connection이 얼마인지 알아야 대응할 수 있기 때문이다. 만약 Lambda container가 MySQL이 감당할 수 없을 정도로 계속 생성된다면 Database에 connection이 일어나지 않게 되고, too many connections error가 발생하여 웹서버 역할을 해야하는 Lambda가 동작하지 않을 수 있다. 물론 MySQL에 접속하는 다른 Worker들도 동작하지 않는다.
-RDS를 사용하면 스케일 업이 될 때마다 Max connection 설정을 따로 하지 않더라도 알아서 늘어난다....</p>
-</section>
-<footer class=entry-footer>January 29, 2018&nbsp;·&nbsp;2 min</footer>
-<a class=entry-link aria-label="post link to AWS Lambda와 MySQL의 max connection 문제" href=https://novemberde.github.io/post/2018/01/29/Mysql_maxConnection/></a>
-</article>
-<footer class=page-footer>
-<nav class=pagination>
-<a class=prev href=https://novemberde.github.io/page/2/>« Prev Page</a>
-<a class=next href=https://novemberde.github.io/page/4/>Next Page »</a>
-</nav>
-</footer>
-</main>
-<footer class=footer>
-<span>&copy; 2022 <a href=https://novemberde.github.io/>Novemberde's Blog</a></span>
-<span>
-Powered by
+https ssh ssh로 사용할 경우 관련 명령어는 다음과 같다.
+# ssh 키 생성하기 $ ssh-keygen -f id_rsa_kh -C "" # 생성한 키를 ~/....</p></section><footer class=entry-footer>May 16, 2018&nbsp;·&nbsp;2 min</footer><a class=entry-link aria-label="post link to CircleCI에서 Github private repository를 npm module로 사용하기" href=https://novemberde.github.io/post/2018/05/16/CircleCI-npm-private-github/></a></article><article class=post-entry><header class=entry-header><h2>GraphDB 란?</h2></header><section class=entry-content><p>Summary 각 사용자들의 연관 관계 분석을 위하여 GraphDB를 도입하려한다. 시작하기에 앞서서 GraphDB에 대해서 이해가 필요했다. 다음에서 GraphDB의 기본 내용을 담았다.
+Graph Database란? In computing, a graph database is a database that uses graph structures for semantic queries with nodes, edges and properties to represent and store data. A key concept of the system is the graph (or edge or relationship), which directly relates data items in the store. The relationships allow data in the store to be linked together directly, and in many cases retrieved with one operation....</p></section><footer class=entry-footer>April 12, 2018&nbsp;·&nbsp;6 min</footer><a class=entry-link aria-label="post link to GraphDB 란?" href=https://novemberde.github.io/post/2018/04/12/Neo4j/></a></article><article class=post-entry><header class=entry-header><h2>NODE response를 apicache로 처리하기</h2></header><section class=entry-content><p>문제인식 서비스가 성장해가면서 기존에는 보이지 않던 문제점들이 나타났다. 처음에는 Slow query의 최적화를 필요로하지도 않았고, DB에 부하가 몰려서 Bottle neck point가 되는 것을 상상만 했지 직접 경험하지는 못했었다. 하지만 점차 Query의 optimization이 필요한 경우가 생겼고, DB로 몰리는 부하를 분산하기 위해 어떻게 처리해야하는지 고민하기 시작했다.
+Cache me if you can 다행히도 AWSKRUG활동을 하면서 AWS re:Invent행사에 참석한 경험이 도움이 되었다. 들었던 세션중에서 가장 감명깊은 것중에 하나는 “Cache me if you can"이었다. 주된 내용은 점차 서비스가 커져감에 따라서 우린 Database로 몰리는 부하를 분산시켜야만 하고, 그것을 해결하기 위해서는 각 요청에 따라 Cache로 처리할 수 있는 부분은 모두 Cache로 해결해야 된다는 내용이었다....</p></section><footer class=entry-footer>March 1, 2018&nbsp;·&nbsp;3 min</footer><a class=entry-link aria-label="post link to NODE response를 apicache로 처리하기" href=https://novemberde.github.io/post/2018/03/01/Node_apicache/></a></article><article class=post-entry><header class=entry-header><h2>AWS Lambda에서의 Cold Start 문제 해결하기(Golang + serverless framework)</h2></header><section class=entry-content><p>Summary AWS Lambda와 API Gateway를 연동하여 웹서버를 Serverless architecture로 운영하고 있다. 관리할 서버가 없고 비지니스 로직에만 집중할 수 있어서 좋기도 하지만 항상 Lambda container가 대기중인 상태가 아니다 보니 Cold start관련하여 요청사항이 발생했다.
+일정시간이 경과된 후에 해당 페이지를 접속할 경우에 로딩이 3~4초이상 걸리기 때문에 사용이 불편하였다. 이를 해결하기 위해 5분마다 각 api를 health check하는 scheduler를 두기로 결정하였다. 그렇게되면 지속적인 lambda 호출로 인해 항상 하나이상의 lambda container가 대기하는 형태가 되어 lambda의 cold start의 가장 큰 시간을 소비하는 DB connection의 시간을 느낄 수 없다....</p></section><footer class=entry-footer>February 2, 2018&nbsp;·&nbsp;3 min</footer><a class=entry-link aria-label="post link to AWS Lambda에서의 Cold Start 문제 해결하기(Golang + serverless framework)" href=https://novemberde.github.io/post/2018/02/02/Lambda_coldStart/></a></article><footer class=page-footer><nav class=pagination><a class=prev href=https://novemberde.github.io/page/2/>« Prev Page</a>
+<a class=next href=https://novemberde.github.io/page/4/>Next Page »</a></nav></footer></main><footer class=footer><span>&copy; 2022 <a href=https://novemberde.github.io/>Novemberde's Blog</a></span>
+<span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
-        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
-</span>
-</footer>
-<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
-</a>
-<script>let menu=document.getElementById('menu');menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)},document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
-<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
-<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
-</body>
-</html>
+        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)},document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script></body></html>

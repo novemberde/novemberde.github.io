@@ -1,204 +1,62 @@
-<!doctype html><html lang=en dir=auto>
-<head><meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<meta name=robots content="index, follow">
-<title>NODE response를 apicache로 처리하기 | Novemberde's Blog</title>
-<meta name=keywords content="nodejs,apicache,cache,캐시,caching">
-<meta name=description content="문제인식  서비스가 성장해가면서 기존에는 보이지 않던 문제점들이 나타났다. 처음에는 Slow query의 최적화를 필요로하지도 않았고, DB에 부하가 몰려서 Bottle neck point가 되는 것을 상상만 했지 직접 경험하지는 못했었다. 하지만 점차 Query의 optimization이 필요한 경우가 생겼고, DB로 몰리는 부하를 분산하기 위해 어떻게 처리해야하는지 고민하기 시작했다.
- Cache me if you can 다행히도 AWSKRUG활동을 하면서 AWS re:Invent행사에 참석한 경험이 도움이 되었다. 들었던 세션중에서 가장 감명깊은 것중에 하나는 &ldquo;Cache me if you can&#34;이었다. 주된 내용은 점차 서비스가 커져감에 따라서 우린 Database로 몰리는 부하를 분산시켜야만 하고, 그것을 해결하기 위해서는 각 요청에 따라 Cache로 처리할 수 있는 부분은 모두 Cache로 해결해야 된다는 내용이었다.">
-<meta name=author content>
-<link rel=canonical href=https://novemberde.github.io/post/2018/03/01/Node_apicache/>
-<link crossorigin=anonymous href=/assets/css/stylesheet.min.9f1d947375927e9847272b1f4e9be81336f539e513bf04d52cade31f81cad1af.css integrity="sha256-nx2Uc3WSfphHJysfTpvoEzb1OeUTvwTVLK3jH4HK0a8=" rel="preload stylesheet" as=style>
-<script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
-<link rel=icon href=https://novemberde.github.io/favicon.ico>
-<link rel=icon type=image/png sizes=16x16 href=https://novemberde.github.io/favicon-16x16.png>
-<link rel=icon type=image/png sizes=32x32 href=https://novemberde.github.io/favicon-32x32.png>
-<link rel=apple-touch-icon href=https://novemberde.github.io/apple-touch-icon.png>
-<link rel=mask-icon href=https://novemberde.github.io/safari-pinned-tab.svg>
-<meta name=theme-color content="#2e2e33">
-<meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.92.0">
-<noscript>
-<style>#theme-toggle,.top-link{display:none}</style>
-<style>@media(prefers-color-scheme:dark){:root{--theme:#1d1e20;--entry:#2e2e33;--primary:rgba(255, 255, 255, 0.84);--secondary:rgba(255, 255, 255, 0.56);--tertiary:rgba(255, 255, 255, 0.16);--content:rgba(255, 255, 255, 0.74);--hljs-bg:#2e2e33;--code-bg:#37383e;--border:#333}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
-</noscript>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-97433460-1','auto'),ga('send','pageview'))</script><meta property="og:title" content="NODE response를 apicache로 처리하기">
-<meta property="og:description" content="문제인식  서비스가 성장해가면서 기존에는 보이지 않던 문제점들이 나타났다. 처음에는 Slow query의 최적화를 필요로하지도 않았고, DB에 부하가 몰려서 Bottle neck point가 되는 것을 상상만 했지 직접 경험하지는 못했었다. 하지만 점차 Query의 optimization이 필요한 경우가 생겼고, DB로 몰리는 부하를 분산하기 위해 어떻게 처리해야하는지 고민하기 시작했다.
- Cache me if you can 다행히도 AWSKRUG활동을 하면서 AWS re:Invent행사에 참석한 경험이 도움이 되었다. 들었던 세션중에서 가장 감명깊은 것중에 하나는 &ldquo;Cache me if you can&#34;이었다. 주된 내용은 점차 서비스가 커져감에 따라서 우린 Database로 몰리는 부하를 분산시켜야만 하고, 그것을 해결하기 위해서는 각 요청에 따라 Cache로 처리할 수 있는 부분은 모두 Cache로 해결해야 된다는 내용이었다.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://novemberde.github.io/post/2018/03/01/Node_apicache/"><meta property="article:section" content="post">
-<meta property="article:published_time" content="2018-03-01T11:30:03+00:00">
-<meta property="article:modified_time" content="2018-03-01T11:30:03+00:00"><meta property="og:site_name" content="Novemberde dev logs">
-<meta name=twitter:card content="summary">
-<meta name=twitter:title content="NODE response를 apicache로 처리하기">
-<meta name=twitter:description content="문제인식  서비스가 성장해가면서 기존에는 보이지 않던 문제점들이 나타났다. 처음에는 Slow query의 최적화를 필요로하지도 않았고, DB에 부하가 몰려서 Bottle neck point가 되는 것을 상상만 했지 직접 경험하지는 못했었다. 하지만 점차 Query의 optimization이 필요한 경우가 생겼고, DB로 몰리는 부하를 분산하기 위해 어떻게 처리해야하는지 고민하기 시작했다.
- Cache me if you can 다행히도 AWSKRUG활동을 하면서 AWS re:Invent행사에 참석한 경험이 도움이 되었다. 들었던 세션중에서 가장 감명깊은 것중에 하나는 &ldquo;Cache me if you can&#34;이었다. 주된 내용은 점차 서비스가 커져감에 따라서 우린 Database로 몰리는 부하를 분산시켜야만 하고, 그것을 해결하기 위해서는 각 요청에 따라 Cache로 처리할 수 있는 부분은 모두 Cache로 해결해야 된다는 내용이었다.">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://novemberde.github.io/post/"},{"@type":"ListItem","position":2,"name":"NODE response를 apicache로 처리하기","item":"https://novemberde.github.io/post/2018/03/01/Node_apicache/"}]}</script>
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"NODE response를 apicache로 처리하기","name":"NODE response를 apicache로 처리하기","description":"문제인식  서비스가 성장해가면서 기존에는 보이지 않던 문제점들이 나타났다. 처음에는 Slow query의 최적화를 필요로하지도 않았고, DB에 부하가 몰려서 Bottle neck point가 되는 것을 상상만 했지 직접 경험하지는 못했었다. 하지만 점차 Query의 optimization이 필요한 경우가 생겼고, DB로 몰리는 부하를 분산하기 위해 어떻게 처리해야하는지 고민하기 시작했다.\n Cache me if you can 다행히도 AWSKRUG활동을 하면서 AWS re:Invent행사에 참석한 경험이 도움이 되었다. 들었던 세션중에서 가장 감명깊은 것중에 하나는 \u0026ldquo;Cache me if you can\u0026quot;이었다. 주된 내용은 점차 서비스가 커져감에 따라서 우린 Database로 몰리는 부하를 분산시켜야만 하고, 그것을 해결하기 위해서는 각 요청에 따라 Cache로 처리할 수 있는 부분은 모두 Cache로 해결해야 된다는 내용이었다.","keywords":["nodejs","apicache","cache","캐시","caching"],"articleBody":"문제인식  서비스가 성장해가면서 기존에는 보이지 않던 문제점들이 나타났다. 처음에는 Slow query의 최적화를 필요로하지도 않았고, DB에 부하가 몰려서 Bottle neck point가 되는 것을 상상만 했지 직접 경험하지는 못했었다. 하지만 점차 Query의 optimization이 필요한 경우가 생겼고, DB로 몰리는 부하를 분산하기 위해 어떻게 처리해야하는지 고민하기 시작했다.\n Cache me if you can 다행히도 AWSKRUG활동을 하면서 AWS re:Invent행사에 참석한 경험이 도움이 되었다. 들었던 세션중에서 가장 감명깊은 것중에 하나는 “Cache me if you can\"이었다. 주된 내용은 점차 서비스가 커져감에 따라서 우린 Database로 몰리는 부하를 분산시켜야만 하고, 그것을 해결하기 위해서는 각 요청에 따라 Cache로 처리할 수 있는 부분은 모두 Cache로 해결해야 된다는 내용이었다.\nhttps://www.youtube.com/watch?v=WFRIivS2mpo\n Apicache를 사용하여 문제 해결하기 물론 현재도 AWS ElasticCache Service를 쓰고 있다. 그렇지만 최대한 활용하여 쓰고 있다고 생각하지는 않는다. Client에 응답을 빠르게하기 위해 Redis를 사용하는데, DB 스키마와 형식이 다르기 때문에 막상 적용하려하면 처음에는 당혹스럽다. 또한 여러 전처리 과정이 들어가기 때문에 뭔가 아름답게 정리되지도 않는다. 그럼에도 불구하고 Redis를 사용해야만 했다. 회원마다 빠르게 처리해야하는 개인화 정보도 다르며, 실시간으로 많은 요청을 처리해야되기 때문에 최대한 데이터 유실이 없는 범위 내에서는 Redis를 사용했다.\n그래도 이것만으로는 부족했다. 하나하나 이렇게 변환해서 사용하기도 귀찮고 페이지 단위로 각 웹서버에서 처리하는 것도 괜찮다고 생각했다. 굳이 Redis에서 데이터를 가져오지 않고 Local memory에서 처리하는게 더 빠를 것이라 생각했고, 그 데이터의 양은 서비스 구조상 크지 않기 때문이었다.\n또한 AWS Lambda를 활용하여 서비스를 하고 있기 때문에 일정 시간(30분 미만) 후에 Container가 내려가고 새로운 Container가 올라가는 형식으로 메모리 누수에 비교적 자유로운 형태의 아키텍쳐였다.\n그래서 Redis를 연동하지 않고 local cache를 이용하는 것을 선택했다. 만일 Redis를 더 연동하면 점점 Redis에 의존성이 증가하기 때문에 이를 피하기 위한 점도 있었다.\nnode.js로 서버를 구성하고 있었기 때문에 library를 찾아보았고 apicache라는 사용법이 간단한 라이브러리를 찾을 수 있었다. express.js에서 사용법은 다음과 같다.\nlet cache = require(\"apicache\").middleware app.use(cache('5 minutes')) app.get('/will-be-cached', (req, res) = { res.json({ success: true }) }) 적용 방법은 매우 간단하지만 결과는 차원이 다르게 나타났다. 이전 평균 응답시간은 120~250ms 내외였다면 현재 평균 응답시간은 20~ 50ms로 성능 향상을 할 수 있었다.\n실제로 어플리케이션의 응답이 빨라져 사용자들이 더욱 쾌적하게 사용하게 되었다.\n이뿐만 아니라 근본적으로 Cache를 도입하게 된 배경인 Database의 관점에서도 눈에 띄는 성능 변화가 나타났다. 자주 Database의 CPU사용율이 70%를 쉽게 초과하고 그것에 대응하기 위해 Database의 Instance type을 두 배의 성능으로 증가시켰던 것에 비해 현재는 기존의 Instance type만으로도 버틸 수 있다.\n 고찰 서버개발자 또는 인프라엔지니어로만 일을 할 수도 있었다. 하지만 스타트업에서 일하다보니 웹개발, 어플리케이션 개발, DB tuninng, 인프라 관리 등등 할일이 너무 많았다. 처음에는 이런점이 아쉽기도 했다. ‘하나만 파도 모자를 판에 어떻게 여러 문제를 해결할까’라는 의문점이 들면서도 ‘모든게 다 경험이다’라고 생각하며 계속 문제를 해결하기 위한 방안들을 생각하고 잘 해결되지 않는 문제점에 대해서 방법을 바꿔가며 길을 찾았다.\n이것이 점점 쌓이다보니 다른 시각이 생겼다. Application 및 웹서버의 최적화를 진행하며 인프라에서만 해결하려는 것이 아닌 전방위적인 해결방법을 모색하게 되었다. 웹서버에 요청이 계속 몰리는 것을 보며 웹서버를 확장할 고민을 하기 전에 어떤 요청이 클라이언트에게 오는지 보고 Client에서 어지간한 요청에 대해서 캐싱한다던지, 아니면 정규식이 없는 곳이 정규식을 통해 적절한 요청만 서버에 올 수 있도록 수정하던지, 아니면 request queue를 통해 실시간성이 필요하지 않는 요청이나 반드시 필요한 데이터가 아닌 경우에는 시간을 두어 데이터를 한번에 보내던지, 다양한 방법을 통해 서버의 부하를 줄일 수 있었다.\n무작정 서버의 비용을 증가시키기 보다는 클라이언트에서 처리를 하고, 서버에서는 기본을 잘 지켜 Redis 및 ReadReplica를 활용하여 부하를 분산시키고, Monitoring의 습관화를 통해 이상 징후를 계속 확인하였다.\n이제는 문제가 발생하더라도 빠른 복구가 가능하며, 성능이 점점 최적화되어서 큰 문제없이 서비스가 운영되고 있다.\n지금처럼 엔터프라이즈급이 되는 상황을 상상하여 설계하여 큰부하가 몰리거나, 갑작스런 서비스의 성장에도 대비할 수 있도록 해야겠다.\n References  https://www.npmjs.com/package/apicache https://www.youtube.com/watch?v=WFRIivS2mpo  ","wordCount":"543","inLanguage":"en","datePublished":"2018-03-01T11:30:03Z","dateModified":"2018-03-01T11:30:03Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://novemberde.github.io/post/2018/03/01/Node_apicache/"},"publisher":{"@type":"Organization","name":"Novemberde's Blog","logo":{"@type":"ImageObject","url":"https://novemberde.github.io/favicon.ico"}}}</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8620431066400094" crossorigin=anonymous></script>
-</head>
-<body id=top>
-<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
-<header class=header>
-<nav class=nav>
-<div class=logo>
-<a href=https://novemberde.github.io/ accesskey=h title="Novemberde's Blog (Alt + H)">Novemberde's Blog</a>
-<span class=logo-switches>
-<button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-</button>
-</span>
-</div>
-<ul id=menu>
-<li>
-<a href=https://novemberde.github.io/search title="Search (Alt + /)" accesskey=/>
-<span>Search</span>
-</a>
-</li>
-<li>
-<a href=https://novemberde.github.io/post/ title=Post>
-<span>Post</span>
-</a>
-</li>
-<li>
-<a href=https://novemberde.github.io/about title=About>
-<span>About</span>
-</a>
-</li>
-</ul>
-</nav>
-</header>
-<main class=main>
-<article class=post-single>
-<header class=post-header>
-<div class=breadcrumbs><a href=https://novemberde.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://novemberde.github.io/post/>Posts</a></div>
-<h1 class=post-title>
-NODE response를 apicache로 처리하기
-</h1>
-<div class=post-meta>March 1, 2018&nbsp;·&nbsp;3 min
-</div>
-</header>
-<div class=post-content><h2 id=문제인식>문제인식<a hidden class=anchor aria-hidden=true href=#문제인식>#</a></h2>
-<hr>
-<p>서비스가 성장해가면서 기존에는 보이지 않던 문제점들이 나타났다.
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>NODE response를 apicache로 처리하기 | Novemberde's Blog</title><meta name=keywords content="nodejs,apicache,cache,캐시,caching"><meta name=description content="문제인식 서비스가 성장해가면서 기존에는 보이지 않던 문제점들이 나타났다. 처음에는 Slow query의 최적화를 필요로하지도 않았고, DB에 부하가 몰려서 Bottle neck point가 되는 것을 상상만 했지 직접 경험하지는 못했었다. 하지만 점차 Query의 optimization이 필요한 경우가 생겼고, DB로 몰리는 부하를 분산하기 위해 어떻게 처리해야하는지 고민하기 시작했다.
+Cache me if you can 다행히도 AWSKRUG활동을 하면서 AWS re:Invent행사에 참석한 경험이 도움이 되었다. 들었던 세션중에서 가장 감명깊은 것중에 하나는 &ldquo;Cache me if you can&#34;이었다. 주된 내용은 점차 서비스가 커져감에 따라서 우린 Database로 몰리는 부하를 분산시켜야만 하고, 그것을 해결하기 위해서는 각 요청에 따라 Cache로 처리할 수 있는 부분은 모두 Cache로 해결해야 된다는 내용이었다."><meta name=author content><link rel=canonical href=https://novemberde.github.io/post/2018/03/01/Node_apicache/><link crossorigin=anonymous href=/assets/css/stylesheet.min.9f1d947375927e9847272b1f4e9be81336f539e513bf04d52cade31f81cad1af.css integrity="sha256-nx2Uc3WSfphHJysfTpvoEzb1OeUTvwTVLK3jH4HK0a8=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/assets/js/highlight.min.e85ad0406048e8176e1c7661b25d5c69297ddfe41dc4124cf75ecb99a4f7b3d1.js integrity="sha256-6FrQQGBI6BduHHZhsl1caSl93+QdxBJM917LmaT3s9E=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://novemberde.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://novemberde.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://novemberde.github.io/favicon-32x32.png><link rel=apple-touch-icon href=https://novemberde.github.io/apple-touch-icon.png><link rel=mask-icon href=https://novemberde.github.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><meta name=generator content="Hugo 0.101.0"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:#1d1e20;--entry:#2e2e33;--primary:rgba(255, 255, 255, 0.84);--secondary:rgba(255, 255, 255, 0.56);--tertiary:rgba(255, 255, 255, 0.16);--content:rgba(255, 255, 255, 0.74);--hljs-bg:#2e2e33;--code-bg:#37383e;--border:#333}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,i=t.createElement(n),a=t.getElementsByTagName(n)[0],i.async=1,i.src=s,a.parentNode.insertBefore(i,a)}(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-97433460-1","auto"),ga("send","pageview"))</script><meta property="og:title" content="NODE response를 apicache로 처리하기"><meta property="og:description" content="문제인식 서비스가 성장해가면서 기존에는 보이지 않던 문제점들이 나타났다. 처음에는 Slow query의 최적화를 필요로하지도 않았고, DB에 부하가 몰려서 Bottle neck point가 되는 것을 상상만 했지 직접 경험하지는 못했었다. 하지만 점차 Query의 optimization이 필요한 경우가 생겼고, DB로 몰리는 부하를 분산하기 위해 어떻게 처리해야하는지 고민하기 시작했다.
+Cache me if you can 다행히도 AWSKRUG활동을 하면서 AWS re:Invent행사에 참석한 경험이 도움이 되었다. 들었던 세션중에서 가장 감명깊은 것중에 하나는 &ldquo;Cache me if you can&#34;이었다. 주된 내용은 점차 서비스가 커져감에 따라서 우린 Database로 몰리는 부하를 분산시켜야만 하고, 그것을 해결하기 위해서는 각 요청에 따라 Cache로 처리할 수 있는 부분은 모두 Cache로 해결해야 된다는 내용이었다."><meta property="og:type" content="article"><meta property="og:url" content="https://novemberde.github.io/post/2018/03/01/Node_apicache/"><meta property="article:section" content="post"><meta property="article:published_time" content="2018-03-01T11:30:03+00:00"><meta property="article:modified_time" content="2018-03-01T11:30:03+00:00"><meta property="og:site_name" content="Novemberde dev logs"><meta name=twitter:card content="summary"><meta name=twitter:title content="NODE response를 apicache로 처리하기"><meta name=twitter:description content="문제인식 서비스가 성장해가면서 기존에는 보이지 않던 문제점들이 나타났다. 처음에는 Slow query의 최적화를 필요로하지도 않았고, DB에 부하가 몰려서 Bottle neck point가 되는 것을 상상만 했지 직접 경험하지는 못했었다. 하지만 점차 Query의 optimization이 필요한 경우가 생겼고, DB로 몰리는 부하를 분산하기 위해 어떻게 처리해야하는지 고민하기 시작했다.
+Cache me if you can 다행히도 AWSKRUG활동을 하면서 AWS re:Invent행사에 참석한 경험이 도움이 되었다. 들었던 세션중에서 가장 감명깊은 것중에 하나는 &ldquo;Cache me if you can&#34;이었다. 주된 내용은 점차 서비스가 커져감에 따라서 우린 Database로 몰리는 부하를 분산시켜야만 하고, 그것을 해결하기 위해서는 각 요청에 따라 Cache로 처리할 수 있는 부분은 모두 Cache로 해결해야 된다는 내용이었다."><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://novemberde.github.io/post/"},{"@type":"ListItem","position":2,"name":"NODE response를 apicache로 처리하기","item":"https://novemberde.github.io/post/2018/03/01/Node_apicache/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"NODE response를 apicache로 처리하기","name":"NODE response를 apicache로 처리하기","description":"문제인식 서비스가 성장해가면서 기존에는 보이지 않던 문제점들이 나타났다. 처음에는 Slow query의 최적화를 필요로하지도 않았고, DB에 부하가 몰려서 Bottle neck point가 되는 것을 상상만 했지 직접 경험하지는 못했었다. 하지만 점차 Query의 optimization이 필요한 경우가 생겼고, DB로 몰리는 부하를 분산하기 위해 어떻게 처리해야하는지 고민하기 시작했다.\nCache me if you can 다행히도 AWSKRUG활동을 하면서 AWS re:Invent행사에 참석한 경험이 도움이 되었다. 들었던 세션중에서 가장 감명깊은 것중에 하나는 \u0026ldquo;Cache me if you can\u0026quot;이었다. 주된 내용은 점차 서비스가 커져감에 따라서 우린 Database로 몰리는 부하를 분산시켜야만 하고, 그것을 해결하기 위해서는 각 요청에 따라 Cache로 처리할 수 있는 부분은 모두 Cache로 해결해야 된다는 내용이었다.","keywords":["nodejs","apicache","cache","캐시","caching"],"articleBody":"문제인식 서비스가 성장해가면서 기존에는 보이지 않던 문제점들이 나타났다. 처음에는 Slow query의 최적화를 필요로하지도 않았고, DB에 부하가 몰려서 Bottle neck point가 되는 것을 상상만 했지 직접 경험하지는 못했었다. 하지만 점차 Query의 optimization이 필요한 경우가 생겼고, DB로 몰리는 부하를 분산하기 위해 어떻게 처리해야하는지 고민하기 시작했다.\nCache me if you can 다행히도 AWSKRUG활동을 하면서 AWS re:Invent행사에 참석한 경험이 도움이 되었다. 들었던 세션중에서 가장 감명깊은 것중에 하나는 “Cache me if you can\"이었다. 주된 내용은 점차 서비스가 커져감에 따라서 우린 Database로 몰리는 부하를 분산시켜야만 하고, 그것을 해결하기 위해서는 각 요청에 따라 Cache로 처리할 수 있는 부분은 모두 Cache로 해결해야 된다는 내용이었다.\nhttps://www.youtube.com/watch?v=WFRIivS2mpo\nApicache를 사용하여 문제 해결하기 물론 현재도 AWS ElasticCache Service를 쓰고 있다. 그렇지만 최대한 활용하여 쓰고 있다고 생각하지는 않는다. Client에 응답을 빠르게하기 위해 Redis를 사용하는데, DB 스키마와 형식이 다르기 때문에 막상 적용하려하면 처음에는 당혹스럽다. 또한 여러 전처리 과정이 들어가기 때문에 뭔가 아름답게 정리되지도 않는다. 그럼에도 불구하고 Redis를 사용해야만 했다. 회원마다 빠르게 처리해야하는 개인화 정보도 다르며, 실시간으로 많은 요청을 처리해야되기 때문에 최대한 데이터 유실이 없는 범위 내에서는 Redis를 사용했다.\n그래도 이것만으로는 부족했다. 하나하나 이렇게 변환해서 사용하기도 귀찮고 페이지 단위로 각 웹서버에서 처리하는 것도 괜찮다고 생각했다. 굳이 Redis에서 데이터를 가져오지 않고 Local memory에서 처리하는게 더 빠를 것이라 생각했고, 그 데이터의 양은 서비스 구조상 크지 않기 때문이었다.\n또한 AWS Lambda를 활용하여 서비스를 하고 있기 때문에 일정 시간(30분 미만) 후에 Container가 내려가고 새로운 Container가 올라가는 형식으로 메모리 누수에 비교적 자유로운 형태의 아키텍쳐였다.\n그래서 Redis를 연동하지 않고 local cache를 이용하는 것을 선택했다. 만일 Redis를 더 연동하면 점점 Redis에 의존성이 증가하기 때문에 이를 피하기 위한 점도 있었다.\nnode.js로 서버를 구성하고 있었기 때문에 library를 찾아보았고 apicache라는 사용법이 간단한 라이브러리를 찾을 수 있었다. express.js에서 사용법은 다음과 같다.\nlet cache = require(\"apicache\").middleware app.use(cache('5 minutes')) app.get('/will-be-cached', (req, res) =\u003e { res.json({ success: true }) }) 적용 방법은 매우 간단하지만 결과는 차원이 다르게 나타났다. 이전 평균 응답시간은 120~250ms 내외였다면 현재 평균 응답시간은 20~ 50ms로 성능 향상을 할 수 있었다.\n실제로 어플리케이션의 응답이 빨라져 사용자들이 더욱 쾌적하게 사용하게 되었다.\n이뿐만 아니라 근본적으로 Cache를 도입하게 된 배경인 Database의 관점에서도 눈에 띄는 성능 변화가 나타났다. 자주 Database의 CPU사용율이 70%를 쉽게 초과하고 그것에 대응하기 위해 Database의 Instance type을 두 배의 성능으로 증가시켰던 것에 비해 현재는 기존의 Instance type만으로도 버틸 수 있다.\n고찰 서버개발자 또는 인프라엔지니어로만 일을 할 수도 있었다. 하지만 스타트업에서 일하다보니 웹개발, 어플리케이션 개발, DB tuninng, 인프라 관리 등등 할일이 너무 많았다. 처음에는 이런점이 아쉽기도 했다. ‘하나만 파도 모자를 판에 어떻게 여러 문제를 해결할까’라는 의문점이 들면서도 ‘모든게 다 경험이다’라고 생각하며 계속 문제를 해결하기 위한 방안들을 생각하고 잘 해결되지 않는 문제점에 대해서 방법을 바꿔가며 길을 찾았다.\n이것이 점점 쌓이다보니 다른 시각이 생겼다. Application 및 웹서버의 최적화를 진행하며 인프라에서만 해결하려는 것이 아닌 전방위적인 해결방법을 모색하게 되었다. 웹서버에 요청이 계속 몰리는 것을 보며 웹서버를 확장할 고민을 하기 전에 어떤 요청이 클라이언트에게 오는지 보고 Client에서 어지간한 요청에 대해서 캐싱한다던지, 아니면 정규식이 없는 곳이 정규식을 통해 적절한 요청만 서버에 올 수 있도록 수정하던지, 아니면 request queue를 통해 실시간성이 필요하지 않는 요청이나 반드시 필요한 데이터가 아닌 경우에는 시간을 두어 데이터를 한번에 보내던지, 다양한 방법을 통해 서버의 부하를 줄일 수 있었다.\n무작정 서버의 비용을 증가시키기 보다는 클라이언트에서 처리를 하고, 서버에서는 기본을 잘 지켜 Redis 및 ReadReplica를 활용하여 부하를 분산시키고, Monitoring의 습관화를 통해 이상 징후를 계속 확인하였다.\n이제는 문제가 발생하더라도 빠른 복구가 가능하며, 성능이 점점 최적화되어서 큰 문제없이 서비스가 운영되고 있다.\n지금처럼 엔터프라이즈급이 되는 상황을 상상하여 설계하여 큰부하가 몰리거나, 갑작스런 서비스의 성장에도 대비할 수 있도록 해야겠다.\nReferences https://www.npmjs.com/package/apicache https://www.youtube.com/watch?v=WFRIivS2mpo ","wordCount":"543","inLanguage":"en","datePublished":"2018-03-01T11:30:03Z","dateModified":"2018-03-01T11:30:03Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://novemberde.github.io/post/2018/03/01/Node_apicache/"},"publisher":{"@type":"Organization","name":"Novemberde's Blog","logo":{"@type":"ImageObject","url":"https://novemberde.github.io/favicon.ico"}}}</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8620431066400094" crossorigin=anonymous></script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://novemberde.github.io/ accesskey=h title="Novemberde's Blog (Alt + H)">Novemberde's Blog</a>
+<span class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></span></div><ul id=menu><li><a href=https://novemberde.github.io/search title="Search (Alt + /)" accesskey=/><span>Search</span></a></li><li><a href=https://novemberde.github.io/post/ title=Post><span>Post</span></a></li><li><a href=https://novemberde.github.io/about title=About><span>About</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://novemberde.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://novemberde.github.io/post/>Posts</a></div><h1 class=post-title>NODE response를 apicache로 처리하기</h1><div class=post-meta>March 1, 2018&nbsp;·&nbsp;3 min</div></header><div class=post-content><h2 id=문제인식>문제인식<a hidden class=anchor aria-hidden=true href=#문제인식>#</a></h2><hr><p>서비스가 성장해가면서 기존에는 보이지 않던 문제점들이 나타났다.
 처음에는 Slow query의 최적화를 필요로하지도 않았고, DB에 부하가 몰려서
 Bottle neck point가 되는 것을 상상만 했지 직접 경험하지는 못했었다.
 하지만 점차 Query의 optimization이 필요한 경우가 생겼고,
-DB로 몰리는 부하를 분산하기 위해 어떻게 처리해야하는지 고민하기 시작했다.</p>
-<hr>
-<h2 id=cache-me-if-you-can>Cache me if you can<a hidden class=anchor aria-hidden=true href=#cache-me-if-you-can>#</a></h2>
-<p>다행히도 AWSKRUG활동을 하면서 AWS re:Invent행사에 참석한 경험이 도움이 되었다.
+DB로 몰리는 부하를 분산하기 위해 어떻게 처리해야하는지 고민하기 시작했다.</p><hr><h2 id=cache-me-if-you-can>Cache me if you can<a hidden class=anchor aria-hidden=true href=#cache-me-if-you-can>#</a></h2><p>다행히도 AWSKRUG활동을 하면서 AWS re:Invent행사에 참석한 경험이 도움이 되었다.
 들었던 세션중에서 가장 감명깊은 것중에 하나는 &ldquo;Cache me if you can"이었다.
 주된 내용은 점차 서비스가 커져감에 따라서 우린 Database로 몰리는 부하를 분산시켜야만 하고,
 그것을 해결하기 위해서는 각 요청에 따라 Cache로 처리할 수 있는 부분은 모두 Cache로
-해결해야 된다는 내용이었다.</p>
-<p><a href="https://www.youtube.com/watch?v=WFRIivS2mpo">https://www.youtube.com/watch?v=WFRIivS2mpo</a></p>
-<hr>
-<h2 id=apicache를-사용하여-문제-해결하기>Apicache를 사용하여 문제 해결하기<a hidden class=anchor aria-hidden=true href=#apicache를-사용하여-문제-해결하기>#</a></h2>
-<p>물론 현재도 AWS ElasticCache Service를 쓰고 있다.
+해결해야 된다는 내용이었다.</p><p><a href="https://www.youtube.com/watch?v=WFRIivS2mpo">https://www.youtube.com/watch?v=WFRIivS2mpo</a></p><hr><h2 id=apicache를-사용하여-문제-해결하기>Apicache를 사용하여 문제 해결하기<a hidden class=anchor aria-hidden=true href=#apicache를-사용하여-문제-해결하기>#</a></h2><p>물론 현재도 AWS ElasticCache Service를 쓰고 있다.
 그렇지만 최대한 활용하여 쓰고 있다고 생각하지는 않는다.
 Client에 응답을 빠르게하기 위해 Redis를 사용하는데,
 DB 스키마와 형식이 다르기 때문에 막상 적용하려하면 처음에는 당혹스럽다.
 또한 여러 전처리 과정이 들어가기 때문에 뭔가 아름답게 정리되지도 않는다.
 그럼에도 불구하고 Redis를 사용해야만 했다. 회원마다 빠르게 처리해야하는
 개인화 정보도 다르며, 실시간으로 많은 요청을 처리해야되기 때문에 최대한
-데이터 유실이 없는 범위 내에서는 Redis를 사용했다.</p>
-<p>그래도 이것만으로는 부족했다. 하나하나 이렇게 변환해서 사용하기도 귀찮고
+데이터 유실이 없는 범위 내에서는 Redis를 사용했다.</p><p>그래도 이것만으로는 부족했다. 하나하나 이렇게 변환해서 사용하기도 귀찮고
 페이지 단위로 각 웹서버에서 처리하는 것도 괜찮다고 생각했다.
 굳이 Redis에서 데이터를 가져오지 않고 Local memory에서 처리하는게
-더 빠를 것이라 생각했고, 그 데이터의 양은 서비스 구조상 크지 않기 때문이었다.</p>
-<p>또한 AWS Lambda를 활용하여 서비스를 하고 있기 때문에 일정 시간(30분 미만) 후에
+더 빠를 것이라 생각했고, 그 데이터의 양은 서비스 구조상 크지 않기 때문이었다.</p><p>또한 AWS Lambda를 활용하여 서비스를 하고 있기 때문에 일정 시간(30분 미만) 후에
 Container가 내려가고 새로운 Container가 올라가는 형식으로 메모리 누수에
-비교적 자유로운 형태의 아키텍쳐였다.</p>
-<p>그래서 Redis를 연동하지 않고 local cache를 이용하는 것을 선택했다.
+비교적 자유로운 형태의 아키텍쳐였다.</p><p>그래서 Redis를 연동하지 않고 local cache를 이용하는 것을 선택했다.
 만일 Redis를 더 연동하면 점점 Redis에 의존성이 증가하기 때문에 이를
-피하기 위한 점도 있었다.</p>
-<p>node.js로 서버를 구성하고 있었기 때문에 library를 찾아보았고
+피하기 위한 점도 있었다.</p><p>node.js로 서버를 구성하고 있었기 때문에 library를 찾아보았고
 apicache라는 사용법이 간단한 라이브러리를 찾을 수 있었다.
-express.js에서 사용법은 다음과 같다.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>cache</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>require</span>(<span style=color:#e6db74>&#34;apicache&#34;</span>).<span style=color:#a6e22e>middleware</span>
- 
-<span style=color:#a6e22e>app</span>.<span style=color:#a6e22e>use</span>(<span style=color:#a6e22e>cache</span>(<span style=color:#e6db74>&#39;5 minutes&#39;</span>))
-<span style=color:#a6e22e>app</span>.<span style=color:#a6e22e>get</span>(<span style=color:#e6db74>&#39;/will-be-cached&#39;</span>, (<span style=color:#a6e22e>req</span>, <span style=color:#a6e22e>res</span>) =&gt; {
-  <span style=color:#a6e22e>res</span>.<span style=color:#a6e22e>json</span>({ <span style=color:#a6e22e>success</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>true</span> })
-})
-</code></pre></div><p>적용 방법은 매우 간단하지만 결과는 차원이 다르게 나타났다.
+express.js에서 사용법은 다음과 같다.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>cache</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>require</span>(<span style=color:#e6db74>&#34;apicache&#34;</span>).<span style=color:#a6e22e>middleware</span>
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span><span style=color:#a6e22e>app</span>.<span style=color:#a6e22e>use</span>(<span style=color:#a6e22e>cache</span>(<span style=color:#e6db74>&#39;5 minutes&#39;</span>))
+</span></span><span style=display:flex><span><span style=color:#a6e22e>app</span>.<span style=color:#a6e22e>get</span>(<span style=color:#e6db74>&#39;/will-be-cached&#39;</span>, (<span style=color:#a6e22e>req</span>, <span style=color:#a6e22e>res</span>) =&gt; {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>res</span>.<span style=color:#a6e22e>json</span>({ <span style=color:#a6e22e>success</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>true</span> })
+</span></span><span style=display:flex><span>})
+</span></span></code></pre></div><p>적용 방법은 매우 간단하지만 결과는 차원이 다르게 나타났다.
 이전 평균 응답시간은 120~250ms 내외였다면
-현재 평균 응답시간은 20~ 50ms로 성능 향상을 할 수 있었다.</p>
-<p>실제로 어플리케이션의 응답이 빨라져 사용자들이 더욱 쾌적하게
-사용하게 되었다.</p>
-<p>이뿐만 아니라 근본적으로 Cache를 도입하게 된 배경인 Database의 관점에서도
+현재 평균 응답시간은 20~ 50ms로 성능 향상을 할 수 있었다.</p><p>실제로 어플리케이션의 응답이 빨라져 사용자들이 더욱 쾌적하게
+사용하게 되었다.</p><p>이뿐만 아니라 근본적으로 Cache를 도입하게 된 배경인 Database의 관점에서도
 눈에 띄는 성능 변화가 나타났다.
 자주 Database의 CPU사용율이 70%를 쉽게 초과하고 그것에 대응하기 위해
 Database의 Instance type을 두 배의 성능으로 증가시켰던 것에 비해
-현재는 기존의 Instance type만으로도 버틸 수 있다.</p>
-<hr>
-<h2 id=고찰>고찰<a hidden class=anchor aria-hidden=true href=#고찰>#</a></h2>
-<p>서버개발자 또는 인프라엔지니어로만 일을 할 수도 있었다. 하지만 스타트업에서 일하다보니
+현재는 기존의 Instance type만으로도 버틸 수 있다.</p><hr><h2 id=고찰>고찰<a hidden class=anchor aria-hidden=true href=#고찰>#</a></h2><p>서버개발자 또는 인프라엔지니어로만 일을 할 수도 있었다. 하지만 스타트업에서 일하다보니
 웹개발, 어플리케이션 개발, DB tuninng, 인프라 관리 등등 할일이 너무 많았다.
 처음에는 이런점이 아쉽기도 했다. &lsquo;하나만 파도 모자를 판에 어떻게 여러 문제를 해결할까&rsquo;라는
 의문점이 들면서도 &lsquo;모든게 다 경험이다&rsquo;라고 생각하며 계속 문제를 해결하기 위한 방안들을
-생각하고 잘 해결되지 않는 문제점에 대해서 방법을 바꿔가며 길을 찾았다.</p>
-<p>이것이 점점 쌓이다보니 다른 시각이 생겼다. Application 및 웹서버의 최적화를 진행하며
+생각하고 잘 해결되지 않는 문제점에 대해서 방법을 바꿔가며 길을 찾았다.</p><p>이것이 점점 쌓이다보니 다른 시각이 생겼다. Application 및 웹서버의 최적화를 진행하며
 인프라에서만 해결하려는 것이 아닌 전방위적인 해결방법을 모색하게 되었다.
 웹서버에 요청이 계속 몰리는 것을 보며 웹서버를 확장할 고민을 하기 전에 어떤
 요청이 클라이언트에게 오는지 보고 Client에서 어지간한 요청에 대해서 캐싱한다던지,
 아니면 정규식이 없는 곳이 정규식을 통해 적절한 요청만 서버에 올 수 있도록 수정하던지,
 아니면 request queue를 통해 실시간성이 필요하지 않는 요청이나 반드시 필요한 데이터가
 아닌 경우에는 시간을 두어 데이터를 한번에 보내던지,
-다양한 방법을 통해 서버의 부하를 줄일 수 있었다.</p>
-<p>무작정 서버의 비용을 증가시키기 보다는 클라이언트에서 처리를 하고, 서버에서는
+다양한 방법을 통해 서버의 부하를 줄일 수 있었다.</p><p>무작정 서버의 비용을 증가시키기 보다는 클라이언트에서 처리를 하고, 서버에서는
 기본을 잘 지켜 Redis 및 ReadReplica를 활용하여 부하를 분산시키고,
-Monitoring의 습관화를 통해 이상 징후를 계속 확인하였다.</p>
-<p>이제는 문제가 발생하더라도 빠른 복구가 가능하며,
-성능이 점점 최적화되어서 큰 문제없이 서비스가 운영되고 있다.</p>
-<p>지금처럼 엔터프라이즈급이 되는 상황을 상상하여 설계하여
-큰부하가 몰리거나, 갑작스런 서비스의 성장에도 대비할 수 있도록 해야겠다.</p>
-<hr>
-<h2 id=references>References<a hidden class=anchor aria-hidden=true href=#references>#</a></h2>
-<ul>
-<li><a href=https://www.npmjs.com/package/apicache>https://www.npmjs.com/package/apicache</a></li>
-<li><a href="https://www.youtube.com/watch?v=WFRIivS2mpo">https://www.youtube.com/watch?v=WFRIivS2mpo</a></li>
-</ul>
-</div>
-<footer class=post-footer>
-<ul class=post-tags>
-<li><a href=https://novemberde.github.io/tags/nodejs/>nodejs</a></li>
-<li><a href=https://novemberde.github.io/tags/apicache/>apicache</a></li>
-<li><a href=https://novemberde.github.io/tags/cache/>cache</a></li>
-<li><a href=https://novemberde.github.io/tags/%EC%BA%90%EC%8B%9C/>캐시</a></li>
-<li><a href=https://novemberde.github.io/tags/caching/>caching</a></li>
-</ul>
-<nav class=paginav>
-<a class=prev href=https://novemberde.github.io/post/2018/04/12/Neo4j/>
-<span class=title>« Prev Page</span>
-<br>
-<span>GraphDB 란?</span>
-</a>
-<a class=next href=https://novemberde.github.io/post/2018/02/02/Lambda_coldStart/>
-<span class=title>Next Page »</span>
-<br>
-<span>AWS Lambda에서의 Cold Start 문제 해결하기(Golang + serverless framework)</span>
-</a>
-</nav>
-</footer>
-<div id=disqus_thread></div>
-<script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return}var b=document,a=b.createElement('script');a.async=!0,a.src='//novemberde-github-io.disqus.com/embed.js',a.setAttribute('data-timestamp',+new Date),(b.head||b.body).appendChild(a)})()</script>
-<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript>
-<a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a>
-</article>
-</main>
-<footer class=footer>
-<span>&copy; 2022 <a href=https://novemberde.github.io/>Novemberde's Blog</a></span>
-<span>
-Powered by
+Monitoring의 습관화를 통해 이상 징후를 계속 확인하였다.</p><p>이제는 문제가 발생하더라도 빠른 복구가 가능하며,
+성능이 점점 최적화되어서 큰 문제없이 서비스가 운영되고 있다.</p><p>지금처럼 엔터프라이즈급이 되는 상황을 상상하여 설계하여
+큰부하가 몰리거나, 갑작스런 서비스의 성장에도 대비할 수 있도록 해야겠다.</p><hr><h2 id=references>References<a hidden class=anchor aria-hidden=true href=#references>#</a></h2><ul><li><a href=https://www.npmjs.com/package/apicache>https://www.npmjs.com/package/apicache</a></li><li><a href="https://www.youtube.com/watch?v=WFRIivS2mpo">https://www.youtube.com/watch?v=WFRIivS2mpo</a></li></ul></div><footer class=post-footer><ul class=post-tags><li><a href=https://novemberde.github.io/tags/nodejs/>nodejs</a></li><li><a href=https://novemberde.github.io/tags/apicache/>apicache</a></li><li><a href=https://novemberde.github.io/tags/cache/>cache</a></li><li><a href=https://novemberde.github.io/tags/%EC%BA%90%EC%8B%9C/>캐시</a></li><li><a href=https://novemberde.github.io/tags/caching/>caching</a></li></ul><nav class=paginav><a class=prev href=https://novemberde.github.io/post/2018/04/12/Neo4j/><span class=title>« Prev Page</span><br><span>GraphDB 란?</span></a>
+<a class=next href=https://novemberde.github.io/post/2018/02/02/Lambda_coldStart/><span class=title>Next Page »</span><br><span>AWS Lambda에서의 Cold Start 문제 해결하기(Golang + serverless framework)</span></a></nav></footer><div id=disqus_thread></div><script type=application/javascript>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//novemberde-github-io.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></article></main><footer class=footer><span>&copy; 2022 <a href=https://novemberde.github.io/>Novemberde's Blog</a></span>
+<span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
-        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
-</span>
-</footer>
-<a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
-</a>
-<script>let menu=document.getElementById('menu');menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)},document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
-<script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
-<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
-</body>
-</html>
+        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)},document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script></body></html>

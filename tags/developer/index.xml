@@ -14,7 +14,7 @@
       
       <guid>https://novemberde.github.io/post/2021/06/27/Wanted-server-developer/</guid>
       <description>여태까지 서버개발자로 성장하며 생각했던 바를 정리해보았다. 모두 똑같이 성장할 수는 없다. 이렇게 성장한 사람도 있다는 관점에서 봐주었으면 한다. 영상은 원티드 구독을 해야만 볼 수 있다. 이때 들었던 분의 요약본도 있는데 [이 블로그])(https://covenant.tistory.com/248) 읽어봐도 좋다.
-Slides   성장하는 서버 개발자 되기 - Wanted Livetalk  from Kyuhyun Byun   References  요약정리: https://covenant.tistory.com/248 https://www.wanted.co.kr/events/livetalk28 https://www.wanted.co.kr/wantedplus/video/K7txZeA2?category=518  </description>
+Slides 성장하는 서버 개발자 되기 - Wanted Livetalk from Kyuhyun Byun References 요약정리: https://covenant.tistory.com/248 https://www.wanted.co.kr/events/livetalk28 https://www.wanted.co.kr/wantedplus/video/K7txZeA2?category=518 </description>
     </item>
     
     <item>
@@ -23,9 +23,9 @@ Slides   성장하는 서버 개발자 되기 - Wanted Livetalk  from Kyuhyun By
       <pubDate>Sun, 21 May 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/05/21/Javascript_policy/</guid>
-      <description>Summary  요즘 서버 및 웹클라이언트 환경을 javascript로 대부분 진행하고 있다. 그러던 도중 최근 한 스타트업의 서버 최적화를 진행할 때 굉장히 문제가 많은 코드를 접하였다. 거의 난독증이 생길정도의 코드였고, 기본 수칙만 지켜도 나타나지 않을 오류들이 많았다.
+      <description>Summary 요즘 서버 및 웹클라이언트 환경을 javascript로 대부분 진행하고 있다. 그러던 도중 최근 한 스타트업의 서버 최적화를 진행할 때 굉장히 문제가 많은 코드를 접하였다. 거의 난독증이 생길정도의 코드였고, 기본 수칙만 지켜도 나타나지 않을 오류들이 많았다.
 이번에는 node js와 web framework를 개발하는 개발자들이 기본적으로 지켜주었으면 하는 내용을 담아보겠다.
- Javascript를 떠나 개발자가 코드를 짤 때 지켜야할 수칙  code를 짜다보면 대충 stackoverflow에서 복붙하고 넘어가고 싶고 그것을 으레 당연하게 여기는 개발자가 많음을 느끼고 있다.</description>
+Javascript를 떠나 개발자가 코드를 짤 때 지켜야할 수칙 code를 짜다보면 대충 stackoverflow에서 복붙하고 넘어가고 싶고 그것을 으레 당연하게 여기는 개발자가 많음을 느끼고 있다. 하지만 이는 개발자 자신의 발전에 커다란 걸림돌이 된다.</description>
     </item>
     
   </channel>

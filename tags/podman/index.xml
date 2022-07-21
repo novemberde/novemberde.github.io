@@ -15,7 +15,7 @@
       <guid>https://novemberde.github.io/post/2021/09/02/podman-minikube/</guid>
       <description>Docker desktop이 유료로 전환된다는 소식이 있다. (링크)
 이 소식을 들은 많은 개발자들은 당황했을거라 생각하는데 언제나 그랬듯이 대안은 있다. 사내에 이미 이런 내용에 대해서 대응하신 분이 있고, 그걸 글로 녹여보려고 한다.(Ian 감사해요) 아래 내용은 Mac에만 해당되며, Window는 별도의 방법을 찾아야할지도 모른다.
- Docker Desktop 삭제하기 이건 어렵지 않다. 다음 그림과 같이 docker desktop &amp;gt; Preferences &amp;gt; troubleshootings &amp;gt; uninstall 을 눌러 삭제한다.(그림참고)
+Docker Desktop 삭제하기 이건 어렵지 않다. 다음 그림과 같이 docker desktop &amp;gt; Preferences &amp;gt; troubleshootings &amp;gt; uninstall 을 눌러 삭제한다.(그림참고)
 그리고 말끔하게 Applications(응용프로그램)에 있는 docker desktop도 삭제한다.
 minikube 설치하기 m1 mac인 경우에는 &amp;ldquo;Disable all drivers except &amp;ldquo;docker&amp;rdquo; and &amp;ldquo;ssh&amp;rdquo; on darwin/arm64&amp;rdquo; PR의 내용을 요약하자면, minikube에서는 m1 mac을 사용할 수 없다는 내용이다.</description>
     </item>
