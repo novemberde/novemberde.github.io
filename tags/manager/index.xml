@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>engineer on Novemberde&#39;s Blog</title>
-    <link>https://novemberde.github.io/tags/engineer/</link>
-    <description>Recent content in engineer on Novemberde&#39;s Blog</description>
+    <title>manager on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/manager/</link>
+    <description>Recent content in manager on Novemberde&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-KR</language>
-    <lastBuildDate>Tue, 13 Dec 2022 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/engineer/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Dec 2022 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/manager/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>스포츠를 통해 배운 프로처럼 일하는 방법</title>
       <link>https://novemberde.github.io/post/2022/12/13/professional-player/</link>
@@ -16,16 +16,6 @@
       <description>Background 최근 많이 했던 고민이 있다. 하고 싶은 대로 하는 게 정말 좋은 것인지, 아니면 해야 할 일을 하는 게 좋은 것인지 답을 내리지 못했다. 다만 이전까지의 생각은 있었다.
 &amp;ldquo;하고 싶은 대로 하는 게 좋은 것이야.&amp;rdquo;
 그런데도 마음 한 켠에는 불안감이 있었다. 왜냐하면 하고 싶은 대로 했을 때 주변에서의 시선과 업무에서의 성과가 좋지 않은 경우가 여러 번 관찰되었다. 하고 싶은 대로 했을 때 모두가 임팩트가 있다고 느끼는 결과를 보기 어려웠다. 결과가 나왔을 때, 실제로 서비스에 긍정적인 영향을 주지 못했고, 장기적인 관점에서 서비스를 개선하거나, 고도화하는 데 어려움을 느꼈다.</description>
-    </item>
-    
-    <item>
-      <title>AWS re:Invent Recap For Data analyst</title>
-      <link>https://novemberde.github.io/post/2021/01/15/AWS-Glue-DataBrew/</link>
-      <pubDate>Fri, 15 Jan 2021 11:30:03 +0000</pubDate>
-      
-      <guid>https://novemberde.github.io/post/2021/01/15/AWS-Glue-DataBrew/</guid>
-      <description>AWS re:Invent 2020 에서 새로 출시한 AWS Glue DataBrew라는 서비스를 살펴보고, 기존의 Data engineer의 역할을 DataBrew로 어떻게 대체할 수 있는지 설명한다. 마지막으로 DataBrew를 통해 코드 한 줄 없이 ETL을 하는 과정을 데모로 확인한다.
-Slide Share 데이터 분석가를 위한 AWS 신규 서비스 소개 - 변규현 SW 엔지니어, 당근마켓 from Amazon Web Services Korea Youtube Reference AWS re:Invent recap 2020 행사 링크 https://pages.awscloud.com/aws-reinvent-recap-kr-reg.html </description>
     </item>
     
   </channel>
