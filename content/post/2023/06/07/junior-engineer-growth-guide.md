@@ -1,7 +1,7 @@
 ---
 title: "성장하는 엔지니어가 되는 법: 주니어편"
 tags: [engineer, growth, 성장, 주니어]
-date: "2023-06-08T11:30:03+00:00"
+date: "2023-06-07T11:30:03+00:00"
 ShowBreadCrumbs: true
 ShowReadingTime: true
 ShowPostNavLinks: true
