@@ -6,7 +6,18 @@
     <description>Recent content on Novemberde&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-KR</language>
-    <lastBuildDate>Wed, 07 Jun 2023 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 Nov 2023 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A career journey for serverless and container cloud developers: 소프트웨어 엔지니어의 덕목</title>
+      <link>https://novemberde.github.io/post/2023/11/29/career-journey/</link>
+      <pubDate>Wed, 29 Nov 2023 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2023/11/29/career-journey/</guid>
+      <description>배경 AWS re:Invent 2023에서 &amp;ldquo;A career journey for serverless and container cloud developers&amp;rdquo; 라는 공통주제로 발표를 준비했다. 여기서 중요하게 다루고자 했던 것은 소프트웨어 엔지니어가 이전의 프로그래머 시대와 어떤 부분에서 노력할 지에 대한 방향이었다.
+&amp;ldquo;소프트웨어 엔지니어의 덕목&amp;rdquo; 이라는 주제로 시장이 변화해감에 따라 엔지니어의 다른 역량들을 더욱 필요로 한다는 점을 표현하고 싶었고, 이런 관점을 공유함으로써 다양한 엔지니어의 성장에 조금이나마 기여하려 하였다.
+발표 자료 및 영상 References https://youtu.be/gdqgk17T2Xw?si=sPEVjrg7rIFmeI4S </description>
+    </item>
+    
     <item>
       <title>성장하는 엔지니어가 되는 법: 주니어편</title>
       <link>https://novemberde.github.io/post/2023/06/07/junior-engineer-growth-guide/</link>

@@ -6,13 +6,58 @@
     <description>Recent content in Tags on Novemberde&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-KR</language>
-    <lastBuildDate>Wed, 07 Jun 2023 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 Nov 2023 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>engineer</title>
       <link>https://novemberde.github.io/tags/engineer/</link>
-      <pubDate>Wed, 07 Jun 2023 11:30:03 +0000</pubDate>
+      <pubDate>Wed, 29 Nov 2023 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/tags/engineer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hero</title>
+      <link>https://novemberde.github.io/tags/hero/</link>
+      <pubDate>Wed, 29 Nov 2023 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/hero/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>serverless</title>
+      <link>https://novemberde.github.io/tags/serverless/</link>
+      <pubDate>Wed, 29 Nov 2023 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/serverless/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>덕목</title>
+      <link>https://novemberde.github.io/tags/%EB%8D%95%EB%AA%A9/</link>
+      <pubDate>Wed, 29 Nov 2023 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EB%8D%95%EB%AA%A9/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>성장</title>
+      <link>https://novemberde.github.io/tags/%EC%84%B1%EC%9E%A5/</link>
+      <pubDate>Wed, 29 Nov 2023 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EC%84%B1%EC%9E%A5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>소프트웨어엔지니어</title>
+      <link>https://novemberde.github.io/tags/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EC%97%94%EC%A7%80%EB%8B%88%EC%96%B4/</link>
+      <pubDate>Wed, 29 Nov 2023 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4%EC%97%94%EC%A7%80%EB%8B%88%EC%96%B4/</guid>
       <description></description>
     </item>
     
@@ -22,15 +67,6 @@
       <pubDate>Wed, 07 Jun 2023 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/tags/growth/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>성장</title>
-      <link>https://novemberde.github.io/tags/%EC%84%B1%EC%9E%A5/</link>
-      <pubDate>Wed, 07 Jun 2023 11:30:03 +0000</pubDate>
-      
-      <guid>https://novemberde.github.io/tags/%EC%84%B1%EC%9E%A5/</guid>
       <description></description>
     </item>
     
@@ -355,15 +391,6 @@
       <pubDate>Sat, 17 Oct 2020 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/tags/rds/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>serverless</title>
-      <link>https://novemberde.github.io/tags/serverless/</link>
-      <pubDate>Fri, 10 Jul 2020 11:30:03 +0000</pubDate>
-      
-      <guid>https://novemberde.github.io/tags/serverless/</guid>
       <description></description>
     </item>
     
