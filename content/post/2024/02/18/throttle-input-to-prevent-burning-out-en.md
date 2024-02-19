@@ -7,39 +7,21 @@ ShowReadingTime: true
 ShowPostNavLinks: true
 ---
 
-The word "burnout" is being heard everywhere. It is being used as a reason for quitting a job, changing jobs, taking a vacation, and expressing difficulties in life.
+The word "burnout" is being heard from all directions. It is being expressed as a reason for quitting, changing jobs, taking vacations, and as a way to express difficulties in life. I think everyone has heard it at least once, and I believe there have been times when you've wondered if you are experiencing burnout.
 
-I think everyone has heard it at least once, and I believe you have thought about whether you are in a state of burnout or not.
+When I hear people talking about burnout, I often feel a deep sense of sympathy, but I also feel that there is little I can do to help. I can suggest various things to try, but those who are experiencing burnout often don't seem to hear those suggestions. So, while contemplating what to do, I decided to write this.
 
-When I hear about burnout from others, I often feel a sense of sympathy, but I also feel helpless because there seems to be no way to help them.
+> "I have never experienced burnout."
 
-I have tried various approaches to address burnout, but it seems that those who are experiencing burnout cannot hear the advice.
+When I say this, people look at me with skeptical eyes and ask if I'm serious. But it's true, I have never experienced burnout. To be clear once again, I have never experienced burnout, and I believe I know how to deal with similar phenomena to burnout and overcome them.
 
-While pondering over what to do, I decided to write this piece.
+I usually prefer brevity, but for this story, I will write in a more elaborate manner. I hope that instead of reading this like a subject to memorize, you will understand burnout and hope that everyone can overcome it.
 
-"I have never experienced burnout."
+First, let's talk about the time before the internet developed significantly. I remember the news from the 1990s and 2000s. There was a phrase that circulated among numerous sports players, artists, and professionals like a trend. It was called a "slump" or "mannerism."
 
-When I say this, people look at me with suspicious eyes and ask if it's true.
+What I remember from the news is the stories of professional players like Park Chan-ho who fell into a slump where their skills didn't improve. I also heard about the reason why the Air Force had more vacation days as they approached their military service. It was said that they fell into mannerism because they repeated the same tasks, and to bring vitality to their daily lives, they introduced more frequent vacations.
 
-Actually, it is true. I have never experienced burnout. 
-
-To be clear, I have never experienced burnout, and I believe I know how to deal with similar phenomena to burnout and overcome them.
-
-I usually prefer a concise style, but I will write this piece in an uncondensed manner.
-
-Instead of treating it as a subject to memorize, I hope that people will understand burnout and find ways to overcome it as they read this article.
-
-First, let's talk about the era before the internet developed significantly.
-
-I remember the news from the 1990s and early 2000s. There was a phrase that circulated among many athletes, artists, and office workers like a trend. It was called a "slump" or "mannerism."
-
-I recall news stories about professional athletes like Chan Ho Park experiencing slumps where their performance did not improve.
-
-There were also stories about the Air Force, as they were about to enter military service, mentioning that they would fall into a state of mannerism due to repetitive tasks and that is why they were given more vacation time.
-
-As a result, I heard stories about extreme choices and individuals facing similar difficulties.
-
-But now, the term burnout is becoming even more prevalent. Why is that? What is different between then and now, and is it possible that slumps and mannerism no longer exist?
+But now, the word "burnout" is mentioned even more frequently. Why is that? What is different between then and now, and is it possible that there are no longer slumps and mannerisms?
 
 In the days of slumps and mannerism, the opportunities and teachings available in the surrounding were considered the limits of what a person could learn. It involved going to a good school, meeting good teachers, encountering good seniors, having a good mentor, and learning through the time spent with that person. You would learn what you needed from the one person you met during your journey. In other words, if you were in an environment where you couldn't meet such people or if you didn't have the means to learn (books, videos), you would remain stagnant. It was a time when even if you wanted to learn, there were no viable means to do so. Therefore, until a fortunate enlightenment came, you had to repeat similar actions in the same place.
 
