@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://novemberde.github.io/tags/Burnout/</loc>
+    <loc>https://novemberde.github.io/tags/burnout/</loc>
     <lastmod>2024-02-18T11:30:03+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/post/2024/02/18/throttle-input-to-prevent-burning-out-en/</loc>
@@ -875,6 +875,9 @@
     <loc>https://novemberde.github.io/tags/bad/</loc>
     <lastmod>2017-08-12T11:30:03+00:00</lastmod>
   </url><url>
+    <loc>https://novemberde.github.io/tags/bin/bash/</loc>
+    <lastmod>2017-08-12T11:30:03+00:00</lastmod>
+  </url><url>
     <loc>https://novemberde.github.io/tags/fileformat/</loc>
     <lastmod>2017-08-12T11:30:03+00:00</lastmod>
   </url><url>
@@ -1093,8 +1096,6 @@
   </url><url>
     <loc>https://novemberde.github.io/post/2017/03/31/Docker_0/</loc>
     <lastmod>2017-03-31T11:30:03+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/tags/bin/bash/</loc>
   </url><url>
     <loc>https://novemberde.github.io/categories/</loc>
   </url><url>
