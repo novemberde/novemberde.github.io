@@ -13,8 +13,16 @@
       <pubDate>Mon, 13 May 2019 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2019/05/13/CircleCI-1st-Meetup/</guid>
-      <description>Summary CircleCI Korea User Group 첫번째 밋업에서 서버리스 앱을 배포하기 위해 CircleCI 상에서 어떻게 빌드하는지 알아보았다. 또한, CircleCI의 기본적인 기능 및 특징에 대해서 살펴본다.
-발표자료 발표 슬라이드 CircleCI로 Serverless API의 CI/CD 환경 구축하기 from Kyuhyun Byun </description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;a href=&#34;https://festa.io/events/267&#34;&gt;CircleCI Korea User Group 첫번째 밋업&lt;/a&gt;에서 서버리스 앱을 배포하기 위해 CircleCI 상에서 어떻게 빌드하는지 알아보았다.
+또한, CircleCI의 기본적인 기능 및 특징에 대해서 살펴본다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.slideshare.net/KyuhyunByun1/circleci-serverless-api-cicd&#34;&gt;발표자료&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;발표-슬라이드&#34;&gt;발표 슬라이드&lt;/h2&gt;
+&lt;hr&gt;
+&lt;iframe src=&#34;//www.slideshare.net/slideshow/embed_code/key/Ed3VpRrY7tnH3U&#34; width=&#34;595&#34; height=&#34;485&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt; &lt;/iframe&gt; &lt;div style=&#34;margin-bottom:5px&#34;&gt; &lt;strong&gt; &lt;a href=&#34;//www.slideshare.net/KyuhyunByun1/circleci-serverless-api-cicd&#34; title=&#34;CircleCI로 Serverless API의 CI/CD 환경 구축하기&#34; target=&#34;_blank&#34;&gt;CircleCI로 Serverless API의 CI/CD 환경 구축하기&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href=&#34;https://www.slideshare.net/KyuhyunByun1&#34; target=&#34;_blank&#34;&gt;Kyuhyun Byun&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;</description>
     </item>
     
     <item>
@@ -23,9 +31,15 @@
       <pubDate>Mon, 17 Sep 2018 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2018/09/17/Circleci-docker/</guid>
-      <description>Summary 현재 Terraform으로 ECS 인프라를 생성하고, CircleCI에서 docker image를 빌드하고 ECR에 푸시하는 과정을 자동화하고 있다. 이 과정에 있어서 docker image를 빌드하는 것에서 문제가 발생했다.
-CircleCI에서 script를 실행하는 환경은 Container 기반으로 되어 있기 때문이다. Docker image를 빌드하기 위해서는 docker가 설치되어 있는 환경이어야 했다.
-docker-in-docker라는 개념으로 docker hub에 &amp;ldquo;docker&amp;quot;라는 docker image가 있다. 하지만 이 이미지로는 프로덕션 이미지를 빌드하고 배포할 때 사용하는 기본 패키지가 없는데, 이러한 기본패키지를 추가하여 CircleCI에서 docker를 빌드할 수 있는 이미지 생성하는 방법 및 CircleCI 설정을 정리해보았다.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;현재 Terraform으로 ECS 인프라를 생성하고, CircleCI에서 docker image를 빌드하고 ECR에 푸시하는 과정을 자동화하고 있다.
+이 과정에 있어서 docker image를 빌드하는 것에서 문제가 발생했다.&lt;/p&gt;
+&lt;p&gt;CircleCI에서 script를 실행하는 환경은 Container 기반으로 되어 있기 때문이다.
+Docker image를 빌드하기 위해서는 docker가 설치되어 있는 환경이어야 했다.&lt;/p&gt;
+&lt;p&gt;docker-in-docker라는 개념으로 docker hub에 &amp;ldquo;docker&amp;quot;라는 docker image가 있다.
+하지만 이 이미지로는 프로덕션 이미지를 빌드하고 배포할 때 사용하는 기본 패키지가 없는데, 이러한 기본패키지를 추가하여
+CircleCI에서 docker를 빌드할 수 있는 이미지 생성하는 방법 및 CircleCI 설정을 정리해보았다.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -34,11 +48,46 @@ docker-in-docker라는 개념으로 docker hub에 &amp;ldquo;docker&amp;quot;라
       <pubDate>Wed, 16 May 2018 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2018/05/16/CircleCI-npm-private-github/</guid>
-      <description>Summary 현재 공통적인 모듈을 Git으로 따로 관리하여 npm private module로 사용한다. 또한 Webpack을 사용하여 Typescript로 작성된 서버를 번들링한다. 로컬에서는 모두 정상적으로 동작하지만 CircleCI에서 빌드할 경우에는 CircleCI의 권한이 해당 repository에 대한 권한만 가지고 있기 때문에 npm private module을 가져올 수가 없다.
-이와같은 문제를 해결하기 위해서 트러블 슈팅을 하였다.
-Problem npm install을 할 때에 github에 있는 repository를 사용하는 방법은 두가지가 있다.
-https ssh ssh로 사용할 경우 관련 명령어는 다음과 같다.
-# ssh 키 생성하기 $ ssh-keygen -f id_rsa_kh -C &amp;#34;&amp;#34; # 생성한 키를 ~/.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;현재 공통적인 모듈을 Git으로 따로 관리하여 npm private module로 사용한다.
+또한 Webpack을 사용하여 Typescript로 작성된 서버를 번들링한다.
+로컬에서는 모두 정상적으로 동작하지만 CircleCI에서 빌드할 경우에는
+CircleCI의 권한이 해당 repository에 대한 권한만 가지고 있기 때문에
+npm private module을 가져올 수가 없다.&lt;/p&gt;
+&lt;p&gt;이와같은 문제를 해결하기 위해서 트러블 슈팅을 하였다.&lt;/p&gt;
+&lt;h3 id=&#34;problem&#34;&gt;Problem&lt;/h3&gt;
+&lt;hr&gt;
+&lt;p&gt;npm install을 할 때에 github에 있는 repository를 사용하는 방법은 두가지가 있다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;https&lt;/li&gt;
+&lt;li&gt;ssh&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;ssh로 사용할 경우 관련 명령어는 다음과 같다.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# ssh 키 생성하기&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ ssh-keygen -f id_rsa_kh -C &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 생성한 키를 ~/.ssh 에 추가하기&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ cp id_rsa_kh ~/.ssh/id_rsa_kh
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 생성한 키의 권한 수정하기&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ chmod &lt;span style=&#34;color:#ae81ff&#34;&gt;600&lt;/span&gt; ~/.ssh/id_rsa_kh
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 생성한 키의 퍼블릭 키를 출력하기. 이때 받은 키를 github private repo에 ssh키를 추가하여야 한다.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ cat id_rsa_kh.pub
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# ssh의 개인키 개수 확인하기&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ ls -al ~/.ssh/
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# ssh-agent 실행하기&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ eval &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;ssh-agent -s&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# ~/.ssh 디렉터리에 있는 개인키를 모두 ssh agent에 등록하기&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ grep -slR &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;PRIVATE&amp;#34;&lt;/span&gt; ~/.ssh/ | xargs ssh-add
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 현재 등록되어 있는 ssh key의 fingerprint 확인하기&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ ssh-add -l -E md5
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;위와 같이 키를 입력하였으면 이제 npm install을 해본다.&lt;/p&gt;</description>
     </item>
     
   </channel>

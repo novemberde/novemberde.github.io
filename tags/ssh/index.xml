@@ -13,10 +13,45 @@
       <pubDate>Tue, 09 May 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/04/18/Bitbucket_access_key_0/</guid>
-      <description>Summary 서버에 프로젝트를 배포할 경우 ftp로 파일을 옮기는 방식으로 사용할 수도 있다. 하지만 git repository를 사용하면 git 명령어만으로 간단히 서버코드를 갱신할 수 있다.
-로그인이 아닌 access key를 통해 git repository에 접근하는 방법에 대해 알아보자.
-Key pair 생성하기 먼저 배포하고 싶은 서버에 ssh로 접속한 후 key pair를 생성하자.
-# 이 커맨드는 현재 접속한 유저 directory에 .ssh폴더가 없으면 생성할 것이고, 있다면 .ssh directory에 key pair만 생성할 것이다. $ ssh-keygen Generating public/private rsa key pair.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;서버에 프로젝트를 배포할 경우 ftp로 파일을 옮기는 방식으로 사용할 수도 있다.
+하지만 git repository를 사용하면 git 명령어만으로 간단히 서버코드를 갱신할 수 있다.&lt;/p&gt;
+&lt;p&gt;로그인이 아닌 access key를 통해 git repository에 접근하는 방법에 대해 알아보자.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;key-pair-생성하기&#34;&gt;Key pair 생성하기&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;먼저 배포하고 싶은 서버에 ssh로 접속한 후 key pair를 생성하자.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 이 커맨드는 현재 접속한 유저 directory에 .ssh폴더가 없으면 생성할 것이고, 있다면 .ssh directory에 key pair만 생성할 것이다.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ ssh-keygen
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Generating public/private rsa key pair.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Enter file in which to save the key &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;/home/USERNAME/.ssh/id_rsa&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Enter passphrase &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;empty &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; no passphrase&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Enter same passphrase again:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Your identification has been saved in /home/USERNAME/.ssh/id_rsa.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Your public key has been saved in /home/USERNAME/.ssh/id_rsa.pub.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;The key fingerprint is:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;SHA256:L68PHdXfH2yfSUKraajtNLnm9ltO2HXtzk0y8Z76XUI USERNAME@localhost
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;The key&lt;span style=&#34;color:#ae81ff&#34;&gt;\&amp;#39;&lt;/span&gt;s randomart image is:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+---&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;RSA 2048&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;----+
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|                 |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|      . .    .   |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|     . &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;    ...  |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|      + + ... o.o|
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|       &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;So.  +E*+|
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|      o  o+.o.&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;+*|
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|       oo.o&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;  +oB|
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|      . .++    O&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;|
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|        .&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;+. .oo*|
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;+----&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;SHA256&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;-----+
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# ~/.ssh의 file을 확인해보자.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ ls -a ~/.ssh
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.  ..  authorized_keys  id_rsa  id_rsa.pub
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 파일을 확인했다면 권한설정을 해주자.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ chmod &lt;span style=&#34;color:#ae81ff&#34;&gt;700&lt;/span&gt; .ssh &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; chmod &lt;span style=&#34;color:#ae81ff&#34;&gt;600&lt;/span&gt; .ssh/id_rsa &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; chmod &lt;span style=&#34;color:#ae81ff&#34;&gt;600&lt;/span&gt; .ssh/id_rsa.pub
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;개인키와 공개키를 발급하였다. 이제 ssh-agent를 시작하고 keys를 load하자.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -25,9 +60,28 @@ Key pair 생성하기 먼저 배포하고 싶은 서버에 ssh로 접속한 후 
       <pubDate>Sat, 01 Apr 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/04/01/Docker_2/</guid>
-      <description>Summary 생성한 EC2 인스턴스에 docker라는 계정을 생성해 보려고 한다.
-또한 Security Group을 응용하여 접속포트는 80을 열어 사이트를 접근할 수 있도록 설정해주자.
-순서 Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기 EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기 Bitbucket을 사용하여 git repository 생성하기 Express JS를 사용하여 Node 서버 구축하기 테스트로 PM2를 사용하여 EC2에 Node 서버 배포하기 Node 서버를 바탕으로 Dockerfile로 만들기 Docker Hub의 automated build를 사용하여 Docker image를 만들기 만들어진 Docker image를 EC2 인스턴스에 배포하기 docker 라는 linux 계정을 생성해본다.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;생성한 EC2 인스턴스에 docker라는 계정을 생성해 보려고 한다.&lt;/p&gt;
+&lt;p&gt;또한 Security Group을 응용하여 접속포트는 80을 열어 사이트를 접근할 수 있도록 설정해주자.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;순서&#34;&gt;순서&lt;/h2&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li&gt;Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기&lt;/li&gt;
+&lt;li&gt;접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기&lt;/li&gt;
+&lt;li&gt;EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기&lt;/li&gt;
+&lt;li&gt;Bitbucket을 사용하여 git repository 생성하기&lt;/li&gt;
+&lt;li&gt;Express JS를 사용하여 Node 서버 구축하기&lt;/li&gt;
+&lt;li&gt;테스트로 PM2를 사용하여 EC2에 Node 서버 배포하기&lt;/li&gt;
+&lt;li&gt;Node 서버를 바탕으로 Dockerfile로 만들기&lt;/li&gt;
+&lt;li&gt;Docker Hub의 automated build를 사용하여 Docker image를 만들기&lt;/li&gt;
+&lt;li&gt;만들어진 Docker image를 EC2 인스턴스에 배포하기&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;docker-라는-linux-계정을-생성해본다&#34;&gt;docker 라는 linux 계정을 생성해본다.&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;먼저 docker 계정에서 사용할 Key pair를 생성해보자.&lt;/p&gt;</description>
     </item>
     
   </channel>

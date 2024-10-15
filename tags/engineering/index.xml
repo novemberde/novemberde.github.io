@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Engineering on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/engineering/</link>
+    <description>Recent content in Engineering on Novemberde&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Mon, 14 Oct 2024 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/engineering/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Golang Project Guide from A to Z: From Feature Development to Enterprise Application Design</title>
+      <link>https://novemberde.github.io/post/2024/10/15/2024-gophercon-golang-project-guide-a-z/</link>
+      <pubDate>Mon, 14 Oct 2024 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2024/10/15/2024-gophercon-golang-project-guide-a-z/</guid>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;p&gt;&amp;ldquo;고언어 프로젝트 가이드 A-Z&amp;quot;라는 주제로, 작은 프로젝트부터 엔터프라이즈 애플리케이션까지 Go 언어를 사용한 개발 방법론에 대해서 공유해보았습니다.&lt;/p&gt;
+&lt;p&gt;작은 프로젝트와 큰 프로젝트의 차이점을 설명하고, 작은 프로젝트에 적합한 간단한 코드 패턴을 소개하고, 기능 단위의 프로젝트를 위한 코드 패턴으로 Handler와 HandlerFunc 방식을 비교하고 각각의 장단점을 설명합니다.
+엔터프라이즈 애플리케이션을 위한 코드 패턴으로 Domain Driven Design (DDD) 접근 방식을 소개하고, 각 레이어(Presenter, Handler, Usecase, Service, Repository, Recorder)의 역할과 장점을 설명합니다.
+NoSQL 데이터베이스 (DynamoDB) 사용 시의 모델링 방법을 간략히 소개합니다. 그리고 각 레이어에서의 테스트 코드 작성 방법과 모킹 도구인 counterfeiter의 사용법을 설명합니다.
+애플리케이션 릴리즈를 위해 필요한 도구들(APM, 에러 모니터링, 메트릭 수집, 로그 서비스)을 소개하고 그 중요성을 강조합니다.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Go 도입 후 4년 간 기록</title>
+      <link>https://novemberde.github.io/post/2024/07/25/2023-gophercon-4-years-history-adopting-go/</link>
+      <pubDate>Thu, 25 Jul 2024 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2024/07/25/2023-gophercon-4-years-history-adopting-go/</guid>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;p&gt;Gophercon Korea 2023에서 발표한 &amp;ldquo;Go 도입 후, 4년 간의 기록&amp;quot;이라는 주제로 공유했습니다.
+Go를 도입하여 높은 트래픽을 처리하고 있으며, 주요 이슈와 해결 방법을 공유하고, Go를 통해 더 효율적이고 안정적인 서비스를 제공하기 위한 고민들을 공유합니다.&lt;/p&gt;
+&lt;h2 id=&#34;youtube&#34;&gt;Youtube&lt;/h2&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/75X_eBW0mog?si=2KfvBV3tjYlNkm4D&#34; title=&#34;YouTube video player&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;h2 id=&#34;slideshare&#34;&gt;Slideshare&lt;/h2&gt;
+&lt;iframe src=&#34;https://www.slideshare.net/slideshow/embed_code/key/zgtB2z4WZtK7Mo?startSlide=1&#34; width=&#34;597&#34; height=&#34;486&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px;max-width: 100%;&#34; allowfullscreen&gt;&lt;/iframe&gt;&lt;div style=&#34;margin-bottom:5px&#34;&gt;&lt;strong&gt;&lt;a href=&#34;https://www.slideshare.net/slideshow/go-4-259690740/259690740&#34; title=&#34;Go 도입 후 4년 간 기록&#34; target=&#34;_blank&#34;&gt;Go 도입 후 4년 간 기록&lt;/a&gt;&lt;/strong&gt; from &lt;strong&gt;&lt;a href=&#34;https://www.slideshare.net/KyuhyunByun1&#34; target=&#34;_blank&#34;&gt;Kyuhyun Byun&lt;/a&gt;&lt;/strong&gt;&lt;/div&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

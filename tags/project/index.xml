@@ -13,11 +13,19 @@
       <pubDate>Fri, 04 Oct 2019 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2019/10/04/Direnv/</guid>
-      <description>현재 Amazon EKS위에 컨테이너를 배포하기 위한 환경을 구축중이다. 각 운영되는 서비스 또는 Repository마다 환경들이 다르고, 개인으로 운영하는 서비스도 가끔 확인해야하는데 Global로 AWS 또는 K8s 환경 설정을 하면 귀찮아지기 때문에 폴더별로 모든 환경을 관리하고 싶어졌다.
-Direnv를 활용하면 directory마다 환경을 따로 관리할 수 있는데, 매번 같은 키를 넣고 관리하기도 귀찮아서 Direnv에서 사용하는 변수들도 따로 관리하고 있다. 다음은 현재 사용하는 패턴이다.
-Direnv 설치하기 다음은 참고한 문서이다.
-direnv로 디렉토리(프로젝트) 별 개발환경 구축하기
-AWS 설정 옮겨가며 편하게 사용하기 AWS CLI를 계정별로 관리하고 싶을 때 profile 옵션을 사용한다.</description>
+      <description>&lt;p&gt;현재 Amazon EKS위에 컨테이너를 배포하기 위한 환경을 구축중이다.
+각 운영되는 서비스 또는 Repository마다 환경들이 다르고,
+개인으로 운영하는 서비스도 가끔 확인해야하는데 Global로 AWS 또는 K8s 환경 설정을 하면
+귀찮아지기 때문에 폴더별로 모든 환경을 관리하고 싶어졌다.&lt;/p&gt;
+&lt;p&gt;Direnv를 활용하면 directory마다 환경을 따로 관리할 수 있는데, 매번 같은 키를 넣고 관리하기도 귀찮아서
+Direnv에서 사용하는 변수들도 따로 관리하고 있다.
+다음은 현재 사용하는 패턴이다.&lt;/p&gt;
+&lt;h2 id=&#34;direnv-설치하기&#34;&gt;Direnv 설치하기&lt;/h2&gt;
+&lt;p&gt;다음은 참고한 문서이다.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.44bits.io/ko/post/direnv_for_managing_directory_environment&#34;&gt;direnv로 디렉토리(프로젝트) 별 개발환경 구축하기&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;aws-설정-옮겨가며-편하게-사용하기&#34;&gt;AWS 설정 옮겨가며 편하게 사용하기&lt;/h2&gt;
+&lt;p&gt;AWS CLI를 계정별로 관리하고 싶을 때 profile 옵션을 사용한다. 하지만 이는 매번 profile을 입력해야하는 번거로움이 있다.
+위에 링크를 잘 살펴보면 &amp;ldquo;전역 설정 파일 .direnvrc&amp;quot;를 찾을 수 있다. 이걸 잘 활용하면 간편하게 디렉터리별 환경 설정을 한 곳에서 관리할 수 있다.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -26,9 +34,19 @@ AWS 설정 옮겨가며 편하게 사용하기 AWS CLI를 계정별로 관리하
       <pubDate>Tue, 26 Sep 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/09/26/dragon_ball_game/</guid>
-      <description>Summary When I first started programming, I went on a game project to familiarize myself with Javascript.
-I thought there would be a problem with the image license. If there&amp;rsquo;s a problem, please comment below. But, I decided to release this code on Github and hope to be helpful for juniors. Please enjoy this game. Thanks.
-References https://github.com/novemberde/js-game/tree/master/dragon_ball </description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;When I first started programming, I went on a game project to familiarize myself with Javascript.&lt;/p&gt;
+&lt;h2 id=&#34;but-i-decided-to-release-this-code-on-github-and-hope-to-be-helpful-for-juniors&#34;&gt;I thought there would be a problem with the image license. If there&amp;rsquo;s a problem, please comment below.
+But, I decided to release this code on Github and hope to be helpful for juniors.&lt;/h2&gt;
+&lt;iframe align=&#34;middle&#34; style=&#34;margin:0px&#34; frameborder=&#34;0&#34; position=&#34;relative&#34; width=&#34;750px&#34; height=&#34;700px&#34; scrolling=&#34;no&#34; src=&#34;https://s3.ap-northeast-2.amazonaws.com/archived-storage/dragon_ball/intro.html&#34;&gt;&lt;/iframe&gt;
+&lt;p&gt;Please enjoy this game. Thanks.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;references&#34;&gt;References&lt;/h3&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/novemberde/js-game/tree/master/dragon_ball&#34;&gt;https://github.com/novemberde/js-game/tree/master/dragon_ball&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
   </channel>

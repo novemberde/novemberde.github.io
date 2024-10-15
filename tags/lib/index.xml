@@ -13,17 +13,75 @@
       <pubDate>Sun, 05 Nov 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/11/05/Node.JS_Library/</guid>
-      <description>Summary Node JS의 라이브러리가 워낙 많다보니 자주쓰는 라이브러리를 정리해야될 필요성을 느꼈다.
-그리고 재밌는 라이브러리를 리스트로 관리하지 않다보니 잊게 되었다.
-발견할 때마다 정리하고 라이브러리의 용도에 맞게 분류하여 나중에 필요할 경우 바로 사용할 수 있도록 한다.
-자주 쓰는 패키지 JavaScript utility library
-underscore lodash Year, month, date, time
-moment.js MarkDown
-highlight.js prismjs Ajax
-request request-promise superagent axios got Test
-mocha supertest chai should enzyme Logger
-morgan Task Runner &amp;amp; Bundler
-gulp grunt webpack webpack-dashboard Database</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Node JS의 라이브러리가 워낙 많다보니 자주쓰는 라이브러리를 정리해야될 필요성을 느꼈다.&lt;/p&gt;
+&lt;p&gt;그리고 재밌는 라이브러리를 리스트로 관리하지 않다보니 잊게 되었다.&lt;/p&gt;
+&lt;p&gt;발견할 때마다 정리하고 라이브러리의 용도에 맞게 분류하여 나중에 필요할 경우 바로 사용할 수 있도록 한다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;자주-쓰는-패키지&#34;&gt;자주 쓰는 패키지&lt;/h2&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;JavaScript utility library&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://underscorejs.org/&#34;&gt;underscore&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://lodash.com/&#34;&gt;lodash&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Year, month, date, time&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://momentjs.com/&#34;&gt;moment.js&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;MarkDown&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://highlightjs.org/&#34;&gt;highlight.js&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://prismjs.com/&#34;&gt;prismjs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ajax&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.npmjs.com/package/request&#34;&gt;request&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.npmjs.com/package/request-promise&#34;&gt;request-promise&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.npmjs.com/package/superagent&#34;&gt;superagent&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.npmjs.com/package/axios&#34;&gt;axios&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.npmjs.com/package/got&#34;&gt;got&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Test&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.npmjs.com/package/mocha&#34;&gt;mocha&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.npmjs.com/package/supertest&#34;&gt;supertest&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.npmjs.com/package/chai&#34;&gt;chai&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.npmjs.com/package/should&#34;&gt;should&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.npmjs.com/package/enzyme&#34;&gt;enzyme&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Logger&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.npmjs.com/package/morgan&#34;&gt;morgan&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Task Runner &amp;amp; Bundler&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://gulpjs.com/&#34;&gt;gulp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gruntjs.com/&#34;&gt;grunt&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://webpack.github.io/&#34;&gt;webpack&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/FormidableLabs/webpack-dashboard&#34;&gt;webpack-dashboard&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Database&lt;/p&gt;</description>
     </item>
     
   </channel>

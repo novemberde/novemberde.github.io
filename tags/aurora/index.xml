@@ -13,8 +13,15 @@
       <pubDate>Sat, 17 Oct 2020 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2020/10/17/RDS-to-aurora/</guid>
-      <description>RDS PostgreSQL에서 Aurora PostgreSQL을 도입한 후기
-Presentation RDS에서 Aurora PostgreSQL Migration한 후기 from Kyuhyun Byun Youtube Reference AWS Community Day 2020 소개 링크 https://pages.awscloud.com/aws-community-day-online-2020.html </description>
+      <description>&lt;p&gt;RDS PostgreSQL에서 Aurora PostgreSQL을 도입한 후기&lt;/p&gt;
+&lt;h2 id=&#34;presentation&#34;&gt;Presentation&lt;/h2&gt;
+&lt;iframe src=&#34;//www.slideshare.net/slideshow/embed_code/key/MF3vow5382w3nT&#34; width=&#34;595&#34; height=&#34;485&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt; &lt;/iframe&gt; &lt;div style=&#34;margin-bottom:5px&#34;&gt; &lt;strong&gt; &lt;a href=&#34;//www.slideshare.net/KyuhyunByun1/rds-aurora-postgresql-migration&#34; title=&#34;RDS에서 Aurora PostgreSQL Migration한 후기&#34; target=&#34;_blank&#34;&gt;RDS에서 Aurora PostgreSQL Migration한 후기&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href=&#34;https://www.slideshare.net/KyuhyunByun1&#34; target=&#34;_blank&#34;&gt;Kyuhyun Byun&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;
+&lt;h2 id=&#34;youtube&#34;&gt;Youtube&lt;/h2&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/34F5KY9gY_Y&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;h2 id=&#34;reference&#34;&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;AWS Community Day 2020 소개 링크 &lt;a href=&#34;https://pages.awscloud.com/aws-community-day-online-2020.html&#34;&gt;https://pages.awscloud.com/aws-community-day-online-2020.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
     <item>
@@ -23,9 +30,18 @@ Presentation RDS에서 Aurora PostgreSQL Migration한 후기 from Kyuhyun Byun Y
       <pubDate>Tue, 09 May 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/05/09/Aurora_sequelize_0/</guid>
-      <description>Summary 최근에 글 중에서 aurora와 sequelize가 과연 연동이 가능할까라는 글을 본적이 있다. aurora는 MySQL과 호환이 가능한 DB라고 하기 때문에 나 또한 궁금증이 생겼다. 직접 aurora와 sequelize를 연동해보고, MySQL workbench로 aurora를 사용할 수 있는지까지 확인해보겠다.
-Aurora instance 생성하기 이전까지 사용할 때는 MySQL이나 MariaDB위주로 사용했다. 스타트업은 라이센스 비용에 민감하기 때문에 Open Source를 주로 선택했기 때문이다.
-또한 아래 리스트를 보면 RDS 이름에서 추측할 수 있듯이 RDS에서는 관계형 DB만 사용할 수 있는 것을 알 수 있다.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;최근에 글 중에서  aurora와 sequelize가 과연 연동이 가능할까라는 글을 본적이 있다.
+aurora는 MySQL과 호환이 가능한 DB라고 하기 때문에 나 또한 궁금증이 생겼다.
+직접 aurora와 sequelize를 연동해보고, MySQL workbench로 aurora를 사용할 수 있는지까지 확인해보겠다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;aurora-instance-생성하기&#34;&gt;Aurora instance 생성하기&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;이전까지 사용할 때는 MySQL이나 MariaDB위주로 사용했다.
+스타트업은 라이센스 비용에 민감하기 때문에 Open Source를 주로 선택했기 때문이다.&lt;/p&gt;
+&lt;p&gt;또한 아래 리스트를 보면 RDS 이름에서 추측할 수 있듯이 RDS에서는 관계형 DB만 사용할 수 있는 것을 알 수 있다.
+별도로 NoSQL을 사용하고 싶다면 AWS에서 지원하는 DynamoDB를 사용하거나 EC2에 DB를 올리는 방법이 있다.&lt;/p&gt;</description>
     </item>
     
   </channel>

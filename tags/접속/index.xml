@@ -13,9 +13,18 @@
       <pubDate>Tue, 09 May 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/04/30/VPC_Redis_0/</guid>
-      <description>Summary Localhost에서 elastic cache에는 원칙적으로 접근할 수 없다. 별도로 VPC내에 Virtual Private Gateways나 Customer Gateways를 사용하여 VPC내에 존재하는 Elasic Cache에 접근할 수 있다. 하지만 이는 별도의 설정과정이 들어가므로 귀찮았다. 그래서 바로 VPC내의 EC2 인스턴스에서 Elastic Cache에 접근하였다. Docker 이미지 중에서 Redis-cli가 있기 때문에 손쉽게 별도의 설치과정 없이 접근할 수 있다.
-이 과정은 이미 elastic cache를 사용하고 있고 인스턴스에 Docker가 설치되어 있다는 전제 하에 진행한다.
-Docker hub에서 redis-cli 이미지를 받아 접속하자. 아래와 같은 Dockerfile을 기반으로 redis client를 사용할 수 있다.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Localhost에서 elastic cache에는 원칙적으로 접근할 수 없다.
+별도로 VPC내에 Virtual Private Gateways나 Customer Gateways를 사용하여 VPC내에 존재하는 Elasic Cache에 접근할 수 있다.
+하지만 이는 별도의 설정과정이 들어가므로 귀찮았다.
+그래서 바로 VPC내의 EC2 인스턴스에서 Elastic Cache에 접근하였다.
+Docker 이미지 중에서 Redis-cli가 있기 때문에 손쉽게 별도의 설치과정 없이 접근할 수 있다.&lt;/p&gt;
+&lt;p&gt;이 과정은 이미 elastic cache를 사용하고 있고 인스턴스에 Docker가 설치되어 있다는 전제 하에 진행한다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;docker-hub에서-redis-cli-이미지를-받아-접속하자&#34;&gt;Docker hub에서 redis-cli 이미지를 받아 접속하자.&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;아래와 같은 Dockerfile을 기반으로 redis client를 사용할 수 있다.&lt;/p&gt;</description>
     </item>
     
   </channel>

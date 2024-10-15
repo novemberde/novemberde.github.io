@@ -13,9 +13,17 @@
       <pubDate>Wed, 29 Nov 2023 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2023/11/29/career-journey/</guid>
-      <description>배경 AWS re:Invent 2023에서 &amp;ldquo;A career journey for serverless and container cloud developers&amp;rdquo; 라는 공통주제로 발표를 준비했다. 여기서 중요하게 다루고자 했던 것은 소프트웨어 엔지니어가 이전의 프로그래머 시대와 어떤 부분에서 노력할 지에 대한 방향이었다.
-&amp;ldquo;소프트웨어 엔지니어의 덕목&amp;rdquo; 이라는 주제로 시장이 변화해감에 따라 엔지니어의 다른 역량들을 더욱 필요로 한다는 점을 표현하고 싶었고, 이런 관점을 공유함으로써 다양한 엔지니어의 성장에 조금이나마 기여하려 하였다.
-발표 자료 및 영상 References https://youtu.be/gdqgk17T2Xw?si=sPEVjrg7rIFmeI4S </description>
+      <description>&lt;h2 id=&#34;배경&#34;&gt;배경&lt;/h2&gt;
+&lt;p&gt;AWS re:Invent 2023에서 &amp;ldquo;A career journey for serverless and container cloud developers&amp;rdquo; 라는 공통주제로 발표를 준비했다.
+여기서 중요하게 다루고자 했던 것은 소프트웨어 엔지니어가 이전의 프로그래머 시대와 어떤 부분에서 노력할 지에 대한 방향이었다.&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;소프트웨어 엔지니어의 덕목&amp;rdquo; 이라는 주제로 시장이 변화해감에 따라 엔지니어의 다른 역량들을 더욱 필요로 한다는 점을 표현하고 싶었고,
+이런 관점을 공유함으로써 다양한 엔지니어의 성장에 조금이나마 기여하려 하였다.&lt;/p&gt;
+&lt;h2 id=&#34;발표-자료-및-영상&#34;&gt;발표 자료 및 영상&lt;/h2&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/gdqgk17T2Xw?si=De8zke28_6X9FuWB&amp;amp;start=1810&#34; title=&#34;YouTube video player&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/gdqgk17T2Xw?si=sPEVjrg7rIFmeI4S&#34;&gt;https://youtu.be/gdqgk17T2Xw?si=sPEVjrg7rIFmeI4S&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
     <item>
@@ -24,8 +32,9 @@
       <pubDate>Fri, 10 Jul 2020 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2020/07/10/Handle-massive-traffic-with-serverless/</guid>
-      <description>The journey to adopt the serverless architecture from beginning to advanced.
-Presentation Handle massive traffic with serverless from Kyuhyun Byun </description>
+      <description>&lt;p&gt;The journey to adopt the serverless architecture from beginning to advanced.&lt;/p&gt;
+&lt;h2 id=&#34;presentation&#34;&gt;Presentation&lt;/h2&gt;
+&lt;iframe src=&#34;//www.slideshare.net/slideshow/embed_code/key/85oFzzmGHvHF5P&#34; width=&#34;595&#34; height=&#34;485&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt; &lt;/iframe&gt; &lt;div style=&#34;margin-bottom:5px&#34;&gt; &lt;strong&gt; &lt;a href=&#34;//www.slideshare.net/KyuhyunByun1/handle-massive-traffic-with-serverless&#34; title=&#34;Handle massive traffic with serverless&#34; target=&#34;_blank&#34;&gt;Handle massive traffic with serverless&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href=&#34;https://www.slideshare.net/KyuhyunByun1&#34; target=&#34;_blank&#34;&gt;Kyuhyun Byun&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;</description>
     </item>
     
     <item>
@@ -34,8 +43,24 @@ Presentation Handle massive traffic with serverless from Kyuhyun Byun </descript
       <pubDate>Sun, 22 Dec 2019 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2019/12/22/Go-serverless/</guid>
-      <description>AWS에서 서버리스로 구현하는 앱은 보통 Javascript 또는 Python으로 작성된다. 그렇지만 AWS Lambda에서는 거의 모든 언어를 지원하고 있다. 더욱이 인프라 및 서버사이드에서 이뤄지는 프로젝트는 대부분 고언어로 작성되고 있다. 생산성 뿐만 아니라 배포시에도 이점을 가져가고 있기 때문이다. Serverless의 장단점에 대해서 이야기하고, Go 언어를 통해 서버리스 Todo 앱을 작성하고 배포하는 예제를 Golang Korea Meetup에서 발표하였다. 다음은 발표 때 사용했던 슬라이드 및 참고한 자료들이다.
-Presentation Start Serverless with Golang! from Kyuhyun Byun References https://github.com/awslabs/aws-lambda-go-api-proxy https://echo.</description>
+      <description>&lt;p&gt;AWS에서 서버리스로 구현하는 앱은 보통 Javascript 또는 Python으로 작성된다.
+그렇지만 AWS Lambda에서는 거의 모든 언어를 지원하고 있다.
+더욱이 인프라 및 서버사이드에서 이뤄지는 프로젝트는 대부분 고언어로 작성되고 있다.
+생산성 뿐만 아니라 배포시에도 이점을 가져가고 있기 때문이다.
+Serverless의 장단점에 대해서 이야기하고,
+Go 언어를 통해 서버리스 Todo 앱을 작성하고 배포하는 예제를 Golang Korea Meetup에서 발표하였다.
+다음은 발표 때 사용했던 슬라이드 및 참고한 자료들이다.&lt;/p&gt;
+&lt;h2 id=&#34;presentation&#34;&gt;Presentation&lt;/h2&gt;
+&lt;iframe src=&#34;//www.slideshare.net/slideshow/embed_code/key/ca6Q7hn0PKDAlA&#34; width=&#34;595&#34; height=&#34;485&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt; &lt;/iframe&gt; &lt;div style=&#34;margin-bottom:5px&#34;&gt; &lt;strong&gt; &lt;a href=&#34;//www.slideshare.net/KyuhyunByun1/start-serverless-with-golang&#34; title=&#34;Start Serverless with Golang!&#34; target=&#34;_blank&#34;&gt;Start Serverless with Golang!&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href=&#34;https://www.slideshare.net/KyuhyunByun1&#34; target=&#34;_blank&#34;&gt;Kyuhyun Byun&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/awslabs/aws-lambda-go-api-proxy&#34;&gt;https://github.com/awslabs/aws-lambda-go-api-proxy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://echo.labstack.com/guide&#34;&gt;https://echo.labstack.com/guide&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://serverless.com/&#34;&gt;https://serverless.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/novemberde/go-serverless-demo&#34;&gt;https://github.com/novemberde/go-serverless-demo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://novemberde.github.io/ppts/svelte/&#34;&gt;https://novemberde.github.io/ppts/svelte/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/spf13/cobra&#34;&gt;https://github.com/spf13/cobra&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
     <item>
@@ -44,8 +69,16 @@ Presentation Start Serverless with Golang! from Kyuhyun Byun References https://
       <pubDate>Mon, 13 May 2019 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2019/05/13/CircleCI-1st-Meetup/</guid>
-      <description>Summary CircleCI Korea User Group 첫번째 밋업에서 서버리스 앱을 배포하기 위해 CircleCI 상에서 어떻게 빌드하는지 알아보았다. 또한, CircleCI의 기본적인 기능 및 특징에 대해서 살펴본다.
-발표자료 발표 슬라이드 CircleCI로 Serverless API의 CI/CD 환경 구축하기 from Kyuhyun Byun </description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;a href=&#34;https://festa.io/events/267&#34;&gt;CircleCI Korea User Group 첫번째 밋업&lt;/a&gt;에서 서버리스 앱을 배포하기 위해 CircleCI 상에서 어떻게 빌드하는지 알아보았다.
+또한, CircleCI의 기본적인 기능 및 특징에 대해서 살펴본다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.slideshare.net/KyuhyunByun1/circleci-serverless-api-cicd&#34;&gt;발표자료&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;발표-슬라이드&#34;&gt;발표 슬라이드&lt;/h2&gt;
+&lt;hr&gt;
+&lt;iframe src=&#34;//www.slideshare.net/slideshow/embed_code/key/Ed3VpRrY7tnH3U&#34; width=&#34;595&#34; height=&#34;485&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt; &lt;/iframe&gt; &lt;div style=&#34;margin-bottom:5px&#34;&gt; &lt;strong&gt; &lt;a href=&#34;//www.slideshare.net/KyuhyunByun1/circleci-serverless-api-cicd&#34; title=&#34;CircleCI로 Serverless API의 CI/CD 환경 구축하기&#34; target=&#34;_blank&#34;&gt;CircleCI로 Serverless API의 CI/CD 환경 구축하기&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href=&#34;https://www.slideshare.net/KyuhyunByun1&#34; target=&#34;_blank&#34;&gt;Kyuhyun Byun&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;</description>
     </item>
     
     <item>
@@ -54,8 +87,16 @@ Presentation Start Serverless with Golang! from Kyuhyun Byun References https://
       <pubDate>Wed, 10 Apr 2019 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2019/04/10/Serverless-Websocket/</guid>
-      <description>Summary AWSKRUG 판교 밋업에서 서버리스 웹소켓에 대한 내용을 공유하였다.
-발표자료 DEMO 발표 슬라이드 Serverless websocket 톺아보기 from Kyuhyun Byun </description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/awskrug/pangyo-group/blob/master/meetups/20190410_meetup.md&#34;&gt;AWSKRUG 판교 밋업&lt;/a&gt;에서 서버리스 웹소켓에 대한 내용을 공유하였다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.slideshare.net/KyuhyunByun1/serverless-websocket&#34;&gt;발표자료&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://bit.ly/ws-sls-demo&#34;&gt;DEMO&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;발표-슬라이드&#34;&gt;발표 슬라이드&lt;/h2&gt;
+&lt;hr&gt;
+&lt;iframe src=&#34;//www.slideshare.net/slideshow/embed_code/key/2t3CPEH4R9hfI5&#34; width=&#34;595&#34; height=&#34;485&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt; &lt;/iframe&gt; &lt;div style=&#34;margin-bottom:5px&#34;&gt; &lt;strong&gt; &lt;a href=&#34;//www.slideshare.net/KyuhyunByun1/serverless-websocket&#34; title=&#34;Serverless websocket 톺아보기&#34; target=&#34;_blank&#34;&gt;Serverless websocket 톺아보기&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href=&#34;https://www.slideshare.net/KyuhyunByun1&#34; target=&#34;_blank&#34;&gt;Kyuhyun Byun&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;</description>
     </item>
     
     <item>
@@ -64,8 +105,14 @@ Presentation Start Serverless with Golang! from Kyuhyun Byun References https://
       <pubDate>Thu, 14 Feb 2019 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2019/02/14/Ts-Serverless-Build/</guid>
-      <description>AWSKRUG Serverless Group에서 발표한 자료입니다. C++로 빌드한 Native addon을 Serverless 환경에서 사용할 때 빌드 및 배포하는 방법을 다루었습니다.
-발표자료 Native addon을 포함하여 Node.js + Typescript + Serverless 빌드 및 배포하기 from Kyuhyun Byun References https://www.slideshare.net/KyuhyunByun1/native-addon-nodejs-typescript-serverless </description>
+      <description>&lt;p&gt;AWSKRUG Serverless Group에서 발표한 자료입니다.
+C++로 빌드한 Native addon을 Serverless 환경에서 사용할 때 빌드 및 배포하는 방법을 다루었습니다.&lt;/p&gt;
+&lt;h2 id=&#34;발표자료&#34;&gt;발표자료&lt;/h2&gt;
+&lt;iframe src=&#34;//www.slideshare.net/slideshow/embed_code/key/A5nT0LwxOtDw5T&#34; width=&#34;595&#34; height=&#34;485&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt; &lt;/iframe&gt; &lt;div style=&#34;margin-bottom:5px&#34;&gt; &lt;strong&gt; &lt;a href=&#34;//www.slideshare.net/KyuhyunByun1/native-addon-nodejs-typescript-serverless&#34; title=&#34;Native addon을 포함하여 Node.js + Typescript + Serverless 빌드 및 배포하기&#34; target=&#34;_blank&#34;&gt;Native addon을 포함하여 Node.js + Typescript + Serverless 빌드 및 배포하기&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href=&#34;https://www.slideshare.net/KyuhyunByun1&#34; target=&#34;_blank&#34;&gt;Kyuhyun Byun&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.slideshare.net/KyuhyunByun1/native-addon-nodejs-typescript-serverless&#34;&gt;https://www.slideshare.net/KyuhyunByun1/native-addon-nodejs-typescript-serverless&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
     <item>
@@ -74,8 +121,21 @@ Presentation Start Serverless with Golang! from Kyuhyun Byun References https://
       <pubDate>Mon, 29 Oct 2018 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2018/10/29/Potal-Analysis/</guid>
-      <description>Summary 부산 스마트 앱 개발자 포럼에서 서버리스를 활용하여 데이터를 수집 및 분석 후기를 공유하였다.
-발표자료 Github repo. 발표 슬라이드 0원으로 시작하는 서버리스 데이터 수집 및 분석 from Kyuhyun Byun 고찰 지난 여름부터 모아온 데이터를 분석하고 이 데이터를 기반으로 AWS의 데이터 처리 서비스들에 대해서 공부하는 계기였다. 실제로 현업에서 데이터를 분석할 일은 많다. 데이터를 쌓고 보기 쉽게 변환하는 과정 그리고 시각화까지 다양한 기술을 요구한다. 데이터를 다루는 역량 뿐만 아니라 전체적인 웹서비스 구축 역량을 요구한다.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.onoffmix.com/event/155396&#34;&gt;부산 스마트 앱 개발자 포럼&lt;/a&gt;에서 서버리스를 활용하여 데이터를 수집 및 분석 후기를 공유하였다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.slideshare.net/KyuhyunByun1/0-121022533&#34;&gt;발표자료&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/novemberde/serverless-crawler-demo&#34;&gt;Github repo.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;발표-슬라이드&#34;&gt;발표 슬라이드&lt;/h2&gt;
+&lt;hr&gt;
+&lt;iframe src=&#34;//www.slideshare.net/slideshow/embed_code/key/xrAl5GcoWdJ9pd&#34; width=&#34;595&#34; height=&#34;485&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt; &lt;/iframe&gt; &lt;div style=&#34;margin-bottom:5px&#34;&gt; &lt;strong&gt; &lt;a href=&#34;//www.slideshare.net/KyuhyunByun1/0-121022533&#34; title=&#34;0원으로 시작하는 서버리스 데이터 수집 및 분석&#34; target=&#34;_blank&#34;&gt;0원으로 시작하는 서버리스 데이터 수집 및 분석&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href=&#34;//www.slideshare.net/KyuhyunByun1&#34; target=&#34;_blank&#34;&gt;Kyuhyun Byun&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;
+&lt;h2 id=&#34;고찰&#34;&gt;고찰&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;지난 여름부터 모아온 데이터를 분석하고 이 데이터를 기반으로 AWS의 데이터 처리 서비스들에 대해서 공부하는 계기였다.
+실제로 현업에서 데이터를 분석할 일은 많다. 데이터를 쌓고 보기 쉽게 변환하는 과정 그리고 시각화까지 다양한 기술을 요구한다.
+데이터를 다루는 역량 뿐만 아니라 전체적인 웹서비스 구축 역량을 요구한다.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -84,12 +144,17 @@ Presentation Start Serverless with Golang! from Kyuhyun Byun References https://
       <pubDate>Mon, 02 Jul 2018 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2018/07/02/Serverless-Handson-1/</guid>
-      <description>Summary 2018년 AWSKRUG에서 8회에 걸쳐 진행하는 핸즈온 중 하나인 Serverless Hands-on 입니다
-제목: 손쉽게 시작하는 Serverless Architecture
-내용: Serverless Architecture는 말그대로 서버를 올리지 않는 아키텍처를 의미합니다. 기존에는 각 서버에 운영하는 어플리케이션들을 배포했지만, Serverless Architecture를 적용하면 운영 부담없이 비지니스 로직에만 집중할 수 있습니다. 서버없이 Web Application과 Crawler를 만들어 운영이 필요없는 데모 서비스를 구성합니다.
-Serverless Group First Hands-on Part 1 AWSKRUG Serverless Group의 첫번째 핸즈온 Part.1 웹어플리케이션 만들기입니다.😁
-바로가기
-Serverless Group First Hands-on Part 2 AWSKRUG Serverless Group의 첫번째 핸즈온 Part.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/awskrug/handson-labs-2018&#34;&gt;2018년 AWSKRUG에서 8회에 걸쳐 진행하는 핸즈온&lt;/a&gt; 중 하나인 Serverless Hands-on 입니다&lt;/p&gt;
+&lt;p&gt;제목: 손쉽게 시작하는 Serverless Architecture&lt;/p&gt;
+&lt;p&gt;내용: Serverless Architecture는 말그대로 서버를 올리지 않는 아키텍처를 의미합니다. 기존에는 각 서버에 운영하는 어플리케이션들을 배포했지만, Serverless Architecture를 적용하면 운영 부담없이 비지니스 로직에만 집중할 수 있습니다. 서버없이 Web Application과 Crawler를 만들어 운영이 필요없는 데모 서비스를 구성합니다.&lt;/p&gt;
+&lt;h2 id=&#34;serverless-group-first-hands-on-part-1&#34;&gt;Serverless Group First Hands-on Part 1&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;AWSKRUG Serverless Group의 첫번째 핸즈온 Part.1 웹어플리케이션 만들기입니다.😁&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/novemberde/serverless-todo-demo&#34;&gt;바로가기&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;serverless-group-first-hands-on-part-2&#34;&gt;Serverless Group First Hands-on Part 2&lt;/h2&gt;
+&lt;p&gt;AWSKRUG Serverless Group의 첫번째 핸즈온 Part.2 웹크롤러 만들기입니다.😁&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -98,8 +163,15 @@ Serverless Group First Hands-on Part 2 AWSKRUG Serverless Group의 첫번째 핸
       <pubDate>Fri, 02 Feb 2018 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2018/02/02/Lambda_coldStart/</guid>
-      <description>Summary AWS Lambda와 API Gateway를 연동하여 웹서버를 Serverless architecture로 운영하고 있다. 관리할 서버가 없고 비지니스 로직에만 집중할 수 있어서 좋기도 하지만 항상 Lambda container가 대기중인 상태가 아니다 보니 Cold start관련하여 요청사항이 발생했다.
-일정시간이 경과된 후에 해당 페이지를 접속할 경우에 로딩이 3~4초이상 걸리기 때문에 사용이 불편하였다. 이를 해결하기 위해 5분마다 각 api를 health check하는 scheduler를 두기로 결정하였다. 그렇게되면 지속적인 lambda 호출로 인해 항상 하나이상의 lambda container가 대기하는 형태가 되어 lambda의 cold start의 가장 큰 시간을 소비하는 DB connection의 시간을 느낄 수 없다.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;AWS Lambda와 API Gateway를 연동하여 웹서버를 Serverless architecture로 운영하고 있다.
+관리할 서버가 없고 비지니스 로직에만 집중할 수 있어서 좋기도 하지만 항상 Lambda container가
+대기중인 상태가 아니다 보니 Cold start관련하여 요청사항이 발생했다.&lt;/p&gt;
+&lt;p&gt;일정시간이 경과된 후에 해당 페이지를 접속할 경우에 로딩이 3~4초이상 걸리기 때문에 사용이 불편하였다.
+이를 해결하기 위해 5분마다 각 api를 health check하는 scheduler를 두기로 결정하였다.
+그렇게되면 지속적인 lambda 호출로 인해 항상 하나이상의 lambda container가 대기하는 형태가 되어
+lambda의 cold start의 가장 큰 시간을 소비하는 DB connection의 시간을 느낄 수 없다.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -108,9 +180,29 @@ Serverless Group First Hands-on Part 2 AWSKRUG Serverless Group의 첫번째 핸
       <pubDate>Sun, 31 Dec 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/12/31/Node-crawler/</guid>
-      <description>Summary 우리는 매일 각 웹사이트를 확인하여 뉴스를 취합한다. 별다른 요구사항 없이 직접 업무를 진행하시지만 이건 자동화해야된다는 생각이 들었다. 하루에 한 번 이뤄지는 일이니 주기적으로 슬랙에 최신 뉴스를 보내도록 자동화한다면 업무의 작은 시간도 아낄 수 있을 것이다. 그래서 이번에 크롤링 자동화 방법에 대해서 정리하려고 한다.
-Serverless framework를 활용하면 빠른 배포 및 관리가 가능하니 기술 스택을 다음과 같이 정했다.
-AWS Lambda: javascript로 작성. got, cheerio를 사용하여 crawler 설계 got: Request 모듈. 우리나라에는 많이 알려져있지 않지만 해외에서는 주로 got을 사용.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;우리는 매일 각 웹사이트를 확인하여 뉴스를 취합한다. 별다른 요구사항 없이 직접 업무를 진행하시지만 이건 자동화해야된다는 생각이 들었다.
+하루에 한 번 이뤄지는 일이니 주기적으로 슬랙에 최신 뉴스를 보내도록 자동화한다면 업무의 작은 시간도 아낄 수 있을 것이다.
+그래서 이번에 크롤링 자동화 방법에 대해서 정리하려고 한다.&lt;/p&gt;
+&lt;p&gt;Serverless framework를 활용하면 빠른 배포 및 관리가 가능하니 기술 스택을 다음과 같이 정했다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;AWS Lambda: javascript로 작성. got, cheerio를 사용하여 crawler 설계
+&lt;ul&gt;
+&lt;li&gt;got: Request 모듈. 우리나라에는 많이 알려져있지 않지만 해외에서는 주로 got을 사용. npm에서 download 수가 압도적으로 많다. 사용법이 간단하다.&lt;/li&gt;
+&lt;li&gt;cheerio: jQuery형식으로 서버에서 사용하는 모듈&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;AWS CloudWatch: 주기적으로 Lambda 함수를 실행하기 위함&lt;/li&gt;
+&lt;li&gt;Serverless framework: 내부적으로 Serverless Application Model 파일을 생성하여 CloudFormation으로 배포하는 것을 자동화&lt;/li&gt;
+&lt;li&gt;Slack bot: 정해진 시간이 지나고 다시 뉴스정보를 불러오고 싶을 때 사용한다. Lambda를 trigger하는 방법으로 사용&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;개발-환경-설정&#34;&gt;개발 환경 설정&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;이 과정은 npm version 5 이상을 사용하고 있다고 가정하고 시작한다.
+만일 사용하고 있지 않다면 npm install -g npx 를 실행한다.
+npx는 해당 패키지 내에서 node_modules/.bin에 있는 명령어를 바로 사용할 수 있게 해준다.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -119,8 +211,21 @@ AWS Lambda: javascript로 작성. got, cheerio를 사용하여 crawler 설계 go
       <pubDate>Wed, 06 Dec 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/12/06/Docker-to-serverless/</guid>
-      <description>Summary &amp;ldquo;Docker와 DevOps에서 Serverless와 NoOps로의 여정&amp;quot;이라는 주제로 2017년 12월 06일에 W3C Conference에서 발표한 자료입니다.
-Docker와 DevOps에서 Serverless와 NoOps로의 여정 from Kyuhyun Byun 데모로 시연한 샘플코드는 아래와 같습니다. https://github.com/novemberde/serverless-webapp-demo References https://www.slideshare.net/KyuhyunByun1/docker-devops-serverless-noops https://onoffmix.com/event/119375 https://github.com/novemberde/serverless-webapp-demo </description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;&amp;ldquo;Docker와 DevOps에서 Serverless와 NoOps로의 여정&amp;quot;이라는 주제로 2017년 12월 06일에 &lt;a href=&#34;https://onoffmix.com/event/119375&#34;&gt;W3C Conference&lt;/a&gt;에서 발표한 자료입니다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;iframe src=&#34;//www.slideshare.net/slideshow/embed_code/key/BVtdqqJP0sX0xY&#34; width=&#34;595&#34; height=&#34;485&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt; &lt;/iframe&gt; &lt;div style=&#34;margin-bottom:5px&#34;&gt; &lt;strong&gt; &lt;a href=&#34;//www.slideshare.net/KyuhyunByun1/docker-devops-serverless-noops&#34; title=&#34;Docker와 DevOps에서 Serverless와 NoOps로의 여정&#34; target=&#34;_blank&#34;&gt;Docker와 DevOps에서 Serverless와 NoOps로의 여정&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href=&#34;https://www.slideshare.net/KyuhyunByun1&#34; target=&#34;_blank&#34;&gt;Kyuhyun Byun&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;
+&lt;div&gt;데모로 시연한 샘플코드는 아래와 같습니다.&lt;/div&gt;
+&lt;div&gt;https://github.com/novemberde/serverless-webapp-demo&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.slideshare.net/KyuhyunByun1/docker-devops-serverless-noops&#34;&gt;https://www.slideshare.net/KyuhyunByun1/docker-devops-serverless-noops&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://onoffmix.com/event/119375&#34;&gt;https://onoffmix.com/event/119375&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/novemberde/serverless-webapp-demo&#34;&gt;https://github.com/novemberde/serverless-webapp-demo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
     <item>
@@ -129,9 +234,18 @@ Docker와 DevOps에서 Serverless와 NoOps로의 여정 from Kyuhyun Byun 데모
       <pubDate>Mon, 14 Aug 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/08/14/Serverless/</guid>
-      <description>Summary AWS Lambda와 api gateway를 사용하여 작업하면 배포하는 부분에서 상당부분 시간을 사용한다. 또한 API Gateway와 lambda를 엮는 것은 별도의 설정 과정이 필요하며, Resource &amp;amp; Stage 개념이 있어서 변경사항이 생길 경우에 API배포를 매번 해주어야 한다.
-Serverless framework는 이 모든 것을 자동화해주며, 내부적으로 CloudFormation을 사용하기 때문에 API gateway에서 api변동사항을 더욱 쉽게 반영해줄 수 있다.
-Serverless framework 란? The open-source, application framework to easily build serverless architectures on AWS Lambda &amp;amp; more. Startups and Fortune 500 companies are using it to build incredibly efficient applications.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;AWS Lambda와 api gateway를 사용하여 작업하면 배포하는 부분에서 상당부분 시간을 사용한다.
+또한 API Gateway와 lambda를 엮는 것은 별도의 설정 과정이 필요하며, Resource &amp;amp; Stage 개념이 있어서
+변경사항이 생길 경우에 API배포를 매번 해주어야 한다.&lt;/p&gt;
+&lt;p&gt;Serverless framework는 이 모든 것을 자동화해주며, 내부적으로 CloudFormation을 사용하기 때문에
+API gateway에서 api변동사항을 더욱 쉽게 반영해줄 수 있다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;serverless-framework-란&#34;&gt;Serverless framework 란?&lt;/h3&gt;
+&lt;hr&gt;
+&lt;p&gt;The open-source, application framework to easily build serverless architectures on AWS Lambda &amp;amp; more.
+Startups and Fortune 500 companies are using it to build incredibly efficient applications.&lt;/p&gt;</description>
     </item>
     
   </channel>

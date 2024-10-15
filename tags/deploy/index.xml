@@ -13,9 +13,18 @@
       <pubDate>Mon, 14 Aug 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/08/14/Serverless/</guid>
-      <description>Summary AWS Lambda와 api gateway를 사용하여 작업하면 배포하는 부분에서 상당부분 시간을 사용한다. 또한 API Gateway와 lambda를 엮는 것은 별도의 설정 과정이 필요하며, Resource &amp;amp; Stage 개념이 있어서 변경사항이 생길 경우에 API배포를 매번 해주어야 한다.
-Serverless framework는 이 모든 것을 자동화해주며, 내부적으로 CloudFormation을 사용하기 때문에 API gateway에서 api변동사항을 더욱 쉽게 반영해줄 수 있다.
-Serverless framework 란? The open-source, application framework to easily build serverless architectures on AWS Lambda &amp;amp; more. Startups and Fortune 500 companies are using it to build incredibly efficient applications.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;AWS Lambda와 api gateway를 사용하여 작업하면 배포하는 부분에서 상당부분 시간을 사용한다.
+또한 API Gateway와 lambda를 엮는 것은 별도의 설정 과정이 필요하며, Resource &amp;amp; Stage 개념이 있어서
+변경사항이 생길 경우에 API배포를 매번 해주어야 한다.&lt;/p&gt;
+&lt;p&gt;Serverless framework는 이 모든 것을 자동화해주며, 내부적으로 CloudFormation을 사용하기 때문에
+API gateway에서 api변동사항을 더욱 쉽게 반영해줄 수 있다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;serverless-framework-란&#34;&gt;Serverless framework 란?&lt;/h3&gt;
+&lt;hr&gt;
+&lt;p&gt;The open-source, application framework to easily build serverless architectures on AWS Lambda &amp;amp; more.
+Startups and Fortune 500 companies are using it to build incredibly efficient applications.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -24,10 +33,32 @@ Serverless framework 란? The open-source, application framework to easily build
       <pubDate>Mon, 03 Jul 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/07/03/Elastic_Beanstalk/</guid>
-      <description>Summary AWS에서 Elastic Beanstalk를 통해 docker image를 배포할 수 있다. 이번에는 기존에 만들었던 Dockerfile을 Elastic beanstalk에 배포해 보겠다.
-Dockerfile 준비하기 이전에 node js server를 하나의 Dockerfile로 만들어 놓았다. 테스트하고 싶으신 분들은 this repository를 참고하길 바란다.
-FROM novemberde/node-pm2 MAINTAINER KH BYUN &amp;#34;novemberde.github.io&amp;#34; ENV NODE_ENV production EXPOSE 3000 COPY ./ /src RUN npm install --prefix /src CMD [&amp;#34;pm2-docker&amp;#34;, &amp;#34;/src/app.js&amp;#34;] Elastic Beanstalk 설정하기 Elastic Beanstalk로 배포하는 경우에 아래와 같이 2가지 방법이 있다.
-Single instance Load balancing, auto scaling Single instance는 하나에 인스턴스에 해당 dockerfile로 구성된 인스턴스가 올라가는 경우를 발한다.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;AWS에서 Elastic Beanstalk를 통해 docker image를 배포할 수 있다.
+이번에는 기존에 만들었던 Dockerfile을 Elastic beanstalk에 배포해 보겠다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;dockerfile-준비하기&#34;&gt;Dockerfile 준비하기&lt;/h3&gt;
+&lt;hr&gt;
+&lt;p&gt;이전에 node js server를 하나의 Dockerfile로 만들어 놓았다.
+테스트하고 싶으신 분들은 &lt;a href=&#34;https://bitbucket.org/kyuhyun/docker_node_server&#34;&gt;this repository&lt;/a&gt;를 참고하길 바란다.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-dockerfile&#34; data-lang=&#34;dockerfile&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;FROM&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; novemberde/node-pm2&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;MAINTAINER&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; KH BYUN &amp;#34;novemberde.github.io&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;ENV&lt;/span&gt; NODE_ENV production&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;EXPOSE&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; 3000&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;COPY&lt;/span&gt; ./ /src&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;RUN&lt;/span&gt; npm install --prefix /src&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;CMD&lt;/span&gt; [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;pm2-docker&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/src/app.js&amp;#34;&lt;/span&gt;]&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h3 id=&#34;elastic-beanstalk-설정하기&#34;&gt;Elastic Beanstalk 설정하기&lt;/h3&gt;
+&lt;hr&gt;
+&lt;p&gt;Elastic Beanstalk로 배포하는 경우에 아래와 같이 2가지 방법이 있다.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -36,8 +67,27 @@ Single instance Load balancing, auto scaling Single instance는 하나에 인스
       <pubDate>Mon, 03 Apr 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/04/03/Docker_9/</guid>
-      <description>Summary 이제 모든 준비는 끝났다. Docker image를 EC2 인스턴스에 배포하자.
-순서 Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기 EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기 Bitbucket을 사용하여 git repository 생성하기 Express JS를 사용하여 Node 서버 구축하기 PM2를 사용하여 EC2에 Node 서버 배포하기 Node 서버를 바탕으로 Dockerfile로 만들기 Docker Hub의 automated build를 사용하여 Docker image를 만들기 만들어진 Docker image를 EC2 인스턴스에 배포하기 Docker image를 받아오기 EC2 인스턴스에 SSH로 접속하자.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;이제 모든 준비는 끝났다. Docker image를 EC2 인스턴스에 배포하자.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;순서&#34;&gt;순서&lt;/h2&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li&gt;Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기&lt;/li&gt;
+&lt;li&gt;접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기&lt;/li&gt;
+&lt;li&gt;EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기&lt;/li&gt;
+&lt;li&gt;Bitbucket을 사용하여 git repository 생성하기&lt;/li&gt;
+&lt;li&gt;Express JS를 사용하여 Node 서버 구축하기&lt;/li&gt;
+&lt;li&gt;PM2를 사용하여 EC2에 Node 서버 배포하기&lt;/li&gt;
+&lt;li&gt;Node 서버를 바탕으로 Dockerfile로 만들기&lt;/li&gt;
+&lt;li&gt;Docker Hub의 automated build를 사용하여 Docker image를 만들기&lt;/li&gt;
+&lt;li&gt;만들어진 Docker image를 EC2 인스턴스에 배포하기&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;docker-image를-받아오기&#34;&gt;Docker image를 받아오기&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;EC2 인스턴스에 SSH로 접속하자. 리눅스 계정은 이전에 만들었던 docker 로 로그인하자.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -46,8 +96,24 @@ Single instance Load balancing, auto scaling Single instance는 하나에 인스
       <pubDate>Fri, 31 Mar 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/03/31/Docker_0/</guid>
-      <description>소개 Node JS 서버를 배포하려고 한다. 매일 같이 하던 방식이지만 방법을 잊을 수도 있다는 생각이 들었다. 이것을 보고 사람들이 노드 서버를 간결하게 배포하였으면 한다.
-순서 Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기 EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기 Bitbucket을 사용하여 git repository 생성하기 Express JS를 사용하여 Node 서버 구축하기 테스트로 PM2를 사용하여 EC2에 Node 서버 배포하기 Node 서버를 바탕으로 Dockerfile로 만들기 Docker Hub의 automated build를 사용하여 Docker image를 만들기 만들어진 Docker image를 EC2 인스턴스에 배포하기 </description>
+      <description>&lt;h2 id=&#34;소개&#34;&gt;소개&lt;/h2&gt;
+&lt;p&gt;Node JS 서버를 배포하려고 한다.
+매일 같이 하던 방식이지만 방법을 잊을 수도 있다는 생각이 들었다.
+이것을 보고 사람들이 노드 서버를 간결하게 배포하였으면 한다.&lt;/p&gt;
+&lt;h2 id=&#34;순서&#34;&gt;순서&lt;/h2&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li&gt;Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기&lt;/li&gt;
+&lt;li&gt;접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기&lt;/li&gt;
+&lt;li&gt;EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기&lt;/li&gt;
+&lt;li&gt;Bitbucket을 사용하여 git repository 생성하기&lt;/li&gt;
+&lt;li&gt;Express JS를 사용하여 Node 서버 구축하기&lt;/li&gt;
+&lt;li&gt;테스트로 PM2를 사용하여 EC2에 Node 서버 배포하기&lt;/li&gt;
+&lt;li&gt;Node 서버를 바탕으로 Dockerfile로 만들기&lt;/li&gt;
+&lt;li&gt;Docker Hub의 automated build를 사용하여 Docker image를 만들기&lt;/li&gt;
+&lt;li&gt;만들어진 Docker image를 EC2 인스턴스에 배포하기&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;</description>
     </item>
     
   </channel>

@@ -13,21 +13,59 @@
       <pubDate>Fri, 02 Nov 2018 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2018/11/02/OWASP/</guid>
-      <description>Summary 보안 취약점의 종류를 이해하고 정리한다. 보안은 개발속도를 늦추는 경우도 있지만 제품의 안정성과 신뢰성에 기여하기 때문에 필수적인 요소이다. 다음은 OWASP(The Open Web Application Security Project)의 년도별 TOP 10 취약점의 종류이다.
-2017 Injection
-Broken Authentication
-Sensitivy Data Exposure
-XML External Entities(XXE)
-Broken Access Control
-Security Misconfiguration
-Cross-Site Scripting(XXS)
-Insecure Deserialization
-Using Component with Known Vulnerabilities
-Insufficient Logging &amp;amp; Monitoring
-2013 Injection
-Broken Authentication and Session Management
-Cross-Site Scripting
-Insecure Direct Object References</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;보안 취약점의 종류를 이해하고 정리한다.
+보안은 개발속도를 늦추는 경우도 있지만 제품의 안정성과 신뢰성에 기여하기 때문에 필수적인 요소이다.
+다음은 OWASP(The Open Web Application Security Project)의 년도별 TOP 10 취약점의 종류이다.&lt;/p&gt;
+&lt;h2 id=&#34;2017&#34;&gt;2017&lt;/h2&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Injection&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Broken Authentication&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Sensitivy Data Exposure&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;XML External Entities(XXE)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Broken Access Control&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Security Misconfiguration&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Cross-Site Scripting(XXS)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Insecure Deserialization&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Using Component with Known Vulnerabilities&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Insufficient Logging &amp;amp; Monitoring&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;2013&#34;&gt;2013&lt;/h2&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Injection&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Broken Authentication and Session Management&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Cross-Site Scripting&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Insecure Direct Object References&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -13,8 +13,14 @@
       <pubDate>Thu, 14 Feb 2019 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2019/02/14/Ts-Serverless-Build/</guid>
-      <description>AWSKRUG Serverless Group에서 발표한 자료입니다. C++로 빌드한 Native addon을 Serverless 환경에서 사용할 때 빌드 및 배포하는 방법을 다루었습니다.
-발표자료 Native addon을 포함하여 Node.js + Typescript + Serverless 빌드 및 배포하기 from Kyuhyun Byun References https://www.slideshare.net/KyuhyunByun1/native-addon-nodejs-typescript-serverless </description>
+      <description>&lt;p&gt;AWSKRUG Serverless Group에서 발표한 자료입니다.
+C++로 빌드한 Native addon을 Serverless 환경에서 사용할 때 빌드 및 배포하는 방법을 다루었습니다.&lt;/p&gt;
+&lt;h2 id=&#34;발표자료&#34;&gt;발표자료&lt;/h2&gt;
+&lt;iframe src=&#34;//www.slideshare.net/slideshow/embed_code/key/A5nT0LwxOtDw5T&#34; width=&#34;595&#34; height=&#34;485&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt; &lt;/iframe&gt; &lt;div style=&#34;margin-bottom:5px&#34;&gt; &lt;strong&gt; &lt;a href=&#34;//www.slideshare.net/KyuhyunByun1/native-addon-nodejs-typescript-serverless&#34; title=&#34;Native addon을 포함하여 Node.js + Typescript + Serverless 빌드 및 배포하기&#34; target=&#34;_blank&#34;&gt;Native addon을 포함하여 Node.js + Typescript + Serverless 빌드 및 배포하기&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href=&#34;https://www.slideshare.net/KyuhyunByun1&#34; target=&#34;_blank&#34;&gt;Kyuhyun Byun&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.slideshare.net/KyuhyunByun1/native-addon-nodejs-typescript-serverless&#34;&gt;https://www.slideshare.net/KyuhyunByun1/native-addon-nodejs-typescript-serverless&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
     <item>
@@ -23,9 +29,15 @@
       <pubDate>Mon, 17 Sep 2018 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2018/09/17/Circleci-docker/</guid>
-      <description>Summary 현재 Terraform으로 ECS 인프라를 생성하고, CircleCI에서 docker image를 빌드하고 ECR에 푸시하는 과정을 자동화하고 있다. 이 과정에 있어서 docker image를 빌드하는 것에서 문제가 발생했다.
-CircleCI에서 script를 실행하는 환경은 Container 기반으로 되어 있기 때문이다. Docker image를 빌드하기 위해서는 docker가 설치되어 있는 환경이어야 했다.
-docker-in-docker라는 개념으로 docker hub에 &amp;ldquo;docker&amp;quot;라는 docker image가 있다. 하지만 이 이미지로는 프로덕션 이미지를 빌드하고 배포할 때 사용하는 기본 패키지가 없는데, 이러한 기본패키지를 추가하여 CircleCI에서 docker를 빌드할 수 있는 이미지 생성하는 방법 및 CircleCI 설정을 정리해보았다.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;현재 Terraform으로 ECS 인프라를 생성하고, CircleCI에서 docker image를 빌드하고 ECR에 푸시하는 과정을 자동화하고 있다.
+이 과정에 있어서 docker image를 빌드하는 것에서 문제가 발생했다.&lt;/p&gt;
+&lt;p&gt;CircleCI에서 script를 실행하는 환경은 Container 기반으로 되어 있기 때문이다.
+Docker image를 빌드하기 위해서는 docker가 설치되어 있는 환경이어야 했다.&lt;/p&gt;
+&lt;p&gt;docker-in-docker라는 개념으로 docker hub에 &amp;ldquo;docker&amp;quot;라는 docker image가 있다.
+하지만 이 이미지로는 프로덕션 이미지를 빌드하고 배포할 때 사용하는 기본 패키지가 없는데, 이러한 기본패키지를 추가하여
+CircleCI에서 docker를 빌드할 수 있는 이미지 생성하는 방법 및 CircleCI 설정을 정리해보았다.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -34,8 +46,30 @@ docker-in-docker라는 개념으로 docker hub에 &amp;ldquo;docker&amp;quot;라
       <pubDate>Sun, 02 Apr 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/04/02/Docker_8/</guid>
-      <description>Summary 이전에는 Dockerfile을 만들었다. 하지만 매번 build하는 것은 소모적인 시간이라고 생각한다. 그럼 만들어진 Dockerfile을 git repository에 push하면 Dockerfile이 빌드되는지 확인하는 것은 어떨까. docker hub의 automated_build기능을 사용하면 간단히 구현된다.
-순서 Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기 EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기 Bitbucket을 사용하여 git repository 생성하기 Express JS를 사용하여 Node 서버 구축하기 PM2를 사용하여 EC2에 Node 서버 배포하기 Node 서버를 바탕으로 Dockerfile로 만들기 Docker Hub의 automated build를 사용하여 Docker image를 만들기 만들어진 Docker image를 EC2 인스턴스에 배포하기 Automated_build Docker hub에서 지원해주는 이미지 빌딩시스템이다.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;이전에는 Dockerfile을 만들었다. 하지만 매번 build하는 것은 소모적인 시간이라고 생각한다. 그럼 만들어진 Dockerfile을 git repository에 push하면 Dockerfile이 빌드되는지 확인하는 것은 어떨까. docker hub의 automated_build기능을 사용하면 간단히 구현된다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;순서&#34;&gt;순서&lt;/h2&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li&gt;Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기&lt;/li&gt;
+&lt;li&gt;접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기&lt;/li&gt;
+&lt;li&gt;EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기&lt;/li&gt;
+&lt;li&gt;Bitbucket을 사용하여 git repository 생성하기&lt;/li&gt;
+&lt;li&gt;Express JS를 사용하여 Node 서버 구축하기&lt;/li&gt;
+&lt;li&gt;PM2를 사용하여 EC2에 Node 서버 배포하기&lt;/li&gt;
+&lt;li&gt;Node 서버를 바탕으로 Dockerfile로 만들기&lt;/li&gt;
+&lt;li&gt;Docker Hub의 automated build를 사용하여 Docker image를 만들기&lt;/li&gt;
+&lt;li&gt;만들어진 Docker image를 EC2 인스턴스에 배포하기&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;automated_build&#34;&gt;Automated_build&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Docker hub에서 지원해주는 이미지 빌딩시스템이다. docker hub와 github나 bitbucket 계정은 단 하나만 연동이 가능하며 다른 계정과는 연동할 수 없다.
+또한 만능으로 항상 build를 해주는 것이 아닌 역시 limit 이 존재한다.
+이 링크를 참고하길 바란다.
+&lt;a href=&#34;https://forums.docker.com/t/automated-build-resource-restrictions/1413&#34;&gt;https://forums.docker.com/t/automated-build-resource-restrictions/1413&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

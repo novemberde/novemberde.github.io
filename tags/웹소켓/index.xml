@@ -13,8 +13,16 @@
       <pubDate>Wed, 10 Apr 2019 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2019/04/10/Serverless-Websocket/</guid>
-      <description>Summary AWSKRUG 판교 밋업에서 서버리스 웹소켓에 대한 내용을 공유하였다.
-발표자료 DEMO 발표 슬라이드 Serverless websocket 톺아보기 from Kyuhyun Byun </description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/awskrug/pangyo-group/blob/master/meetups/20190410_meetup.md&#34;&gt;AWSKRUG 판교 밋업&lt;/a&gt;에서 서버리스 웹소켓에 대한 내용을 공유하였다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.slideshare.net/KyuhyunByun1/serverless-websocket&#34;&gt;발표자료&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://bit.ly/ws-sls-demo&#34;&gt;DEMO&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;발표-슬라이드&#34;&gt;발표 슬라이드&lt;/h2&gt;
+&lt;hr&gt;
+&lt;iframe src=&#34;//www.slideshare.net/slideshow/embed_code/key/2t3CPEH4R9hfI5&#34; width=&#34;595&#34; height=&#34;485&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt; &lt;/iframe&gt; &lt;div style=&#34;margin-bottom:5px&#34;&gt; &lt;strong&gt; &lt;a href=&#34;//www.slideshare.net/KyuhyunByun1/serverless-websocket&#34; title=&#34;Serverless websocket 톺아보기&#34; target=&#34;_blank&#34;&gt;Serverless websocket 톺아보기&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href=&#34;https://www.slideshare.net/KyuhyunByun1&#34; target=&#34;_blank&#34;&gt;Kyuhyun Byun&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;</description>
     </item>
     
   </channel>

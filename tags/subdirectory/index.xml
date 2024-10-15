@@ -13,8 +13,38 @@
       <pubDate>Tue, 26 Sep 2017 13:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/09/26/git_puller/</guid>
-      <description>Summary 여러 프로젝트를 동시에 진행하다보니 여러 repository를 한번에 갱신할 필요성이 생겼다. 일일이 하나씩 들어가서 git pull을 하려니 은근 귀찮았다. 그렇기 때문에 특정 디렉터리에 있는 all repositories(sub directories)에 대해서 git을 갱신해주는 코드를 개발하였다. 코드는 github에 공개되어 있으며 사용 방법은 아래와 같다.
-$ npm install -g git-puller Usage Usage: git-puller [options] Options: -V, --version output the version number -d, --directory [value] Target directory -r, --remote [value] Git Remote (default: origin) -b, --branch [value] Git branch (default: master) -h, --help output usage information examples: git-puller -d .</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;여러 프로젝트를 동시에 진행하다보니 여러 repository를 한번에 갱신할 필요성이 생겼다. 일일이 하나씩 들어가서 git pull을 하려니 은근 귀찮았다.
+그렇기 때문에 특정 디렉터리에 있는 all repositories(sub directories)에 대해서 git을 갱신해주는 코드를 개발하였다.
+코드는 &lt;a href=&#34;https://github.com/novemberde/git-puller&#34;&gt;github&lt;/a&gt;에 공개되어 있으며 사용 방법은 아래와 같다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ npm install -g git-puller
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;usage&#34;&gt;Usage&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Usage: git-puller &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;options&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Options:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  -V, --version            output the version number
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  -d, --directory &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;value&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;  Target directory
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  -r, --remote &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;value&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;     Git Remote &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;default: origin&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  -b, --branch &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;value&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;     Git branch &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;default: master&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  -h, --help               output usage information
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;examples:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  git-puller -d ./                       &lt;span style=&#34;color:#75715e&#34;&gt;# Current directory&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  git-puller -d ../../_my_project        &lt;span style=&#34;color:#75715e&#34;&gt;# Other directory&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  git-puller -d ./ -r origin -b master   &lt;span style=&#34;color:#75715e&#34;&gt;# Specify remote and branch&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  gplr -d ./                             &lt;span style=&#34;color:#75715e&#34;&gt;# Current directory&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  gplr -d ../../_my_project              &lt;span style=&#34;color:#75715e&#34;&gt;# Other directory&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  gplr -d ./ -r origin -b master         &lt;span style=&#34;color:#75715e&#34;&gt;# Specify remote and branch&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h3 id=&#34;references&#34;&gt;References&lt;/h3&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/novemberde/git-puller&#34;&gt;https://github.com/novemberde/git-puller&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
   </channel>

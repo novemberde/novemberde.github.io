@@ -6,7 +6,52 @@
     <description>Recent content in Tags on Novemberde&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-KR</language>
-    <lastBuildDate>Mon, 03 Jun 2024 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 14 Oct 2024 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chatting</title>
+      <link>https://novemberde.github.io/tags/chatting/</link>
+      <pubDate>Mon, 14 Oct 2024 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/chatting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Engineering</title>
+      <link>https://novemberde.github.io/tags/engineering/</link>
+      <pubDate>Mon, 14 Oct 2024 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/engineering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Go</title>
+      <link>https://novemberde.github.io/tags/go/</link>
+      <pubDate>Mon, 14 Oct 2024 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Golang</title>
+      <link>https://novemberde.github.io/tags/golang/</link>
+      <pubDate>Mon, 14 Oct 2024 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gophercon</title>
+      <link>https://novemberde.github.io/tags/gophercon/</link>
+      <pubDate>Mon, 14 Oct 2024 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/gophercon/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Leadership</title>
       <link>https://novemberde.github.io/tags/Leadership/</link>
@@ -233,15 +278,6 @@
     </item>
     
     <item>
-      <title>Chatting</title>
-      <link>https://novemberde.github.io/tags/chatting/</link>
-      <pubDate>Thu, 12 May 2022 11:30:03 +0000</pubDate>
-      
-      <guid>https://novemberde.github.io/tags/chatting/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Karrot</title>
       <link>https://novemberde.github.io/tags/karrot/</link>
       <pubDate>Thu, 12 May 2022 11:30:03 +0000</pubDate>
@@ -386,15 +422,6 @@
     </item>
     
     <item>
-      <title>Golang</title>
-      <link>https://novemberde.github.io/tags/golang/</link>
-      <pubDate>Mon, 05 Apr 2021 11:30:03 +0000</pubDate>
-      
-      <guid>https://novemberde.github.io/tags/golang/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Haking</title>
       <link>https://novemberde.github.io/tags/haking/</link>
       <pubDate>Mon, 05 Apr 2021 11:30:03 +0000</pubDate>
@@ -445,15 +472,6 @@
       <pubDate>Fri, 15 Jan 2021 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/tags/glue/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Go</title>
-      <link>https://novemberde.github.io/tags/go/</link>
-      <pubDate>Tue, 24 Nov 2020 11:30:03 +0000</pubDate>
-      
-      <guid>https://novemberde.github.io/tags/go/</guid>
       <description></description>
     </item>
     

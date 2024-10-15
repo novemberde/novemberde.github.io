@@ -13,9 +13,38 @@
       <pubDate>Sun, 22 Oct 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/10/22/OS-Command/</guid>
-      <description>Summary 개발을 하다가 명령어를 모두 기억하고 싶어도 잠깐 다른 업무를 하다가 다시하면 잊게되는 명령어들이 있다. 특히 OS 관련 명령어는 서버에 문제가 생겼을 때 사용하기 때문에 더욱 그렇다. 이번에는 자주 사용하지 않았으면 하는 명령어들을 정리해본다.
-OS 명령어 sar
-리소스 사용 내역을 볼 수 있다. CPU 사용율 Idle 상태 상태 확인 I/O 의 사용율 메모리 사용율 $ sudo apt-get install sysstat $ sudo vi /etc/default/sysstat ENABLED=&amp;#34;true&amp;#34; $ sar -u 1 5 Linux 4.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;개발을 하다가 명령어를 모두 기억하고 싶어도 잠깐 다른 업무를 하다가 다시하면 잊게되는 명령어들이 있다.
+특히 OS 관련 명령어는 서버에 문제가 생겼을 때 사용하기 때문에 더욱 그렇다.
+이번에는 자주 사용하지 않았으면 하는 명령어들을 정리해본다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;os-명령어&#34;&gt;OS 명령어&lt;/h1&gt;
+&lt;hr&gt;
+&lt;p&gt;sar&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;리소스 사용 내역을 볼 수 있다.&lt;/li&gt;
+&lt;li&gt;CPU  사용율&lt;/li&gt;
+&lt;li&gt;Idle 상태 상태 확인&lt;/li&gt;
+&lt;li&gt;I/O 의 사용율&lt;/li&gt;
+&lt;li&gt;메모리 사용율&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ sudo apt-get install sysstat
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ sudo vi /etc/default/sysstat
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ENABLED&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ sar -u &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Linux 4.4.0-1013-aws &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;ip-172-31-55-55&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;         10/22/2017      _x86_64_        &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; CPU&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;05:52:57 AM     CPU     %user     %nice   %system   %iowait    %steal     %idle
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;05:52:58 AM     all      0.00      0.00      0.00      0.00      0.00    100.00
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;05:52:59 AM     all      0.00      0.00      0.00      0.00      0.00    100.00
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;05:53:00 AM     all      0.00      0.00      0.00      0.00      0.00    100.00
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;05:53:01 AM     all      0.00      0.00      0.00      0.00      0.00    100.00
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;05:53:02 AM     all      0.00      0.00      1.98      0.00      0.00     98.02
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Average:        all      0.00      0.00      0.40      0.00      0.00     99.60
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;p&gt;top&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -13,11 +13,46 @@
       <pubDate>Wed, 16 May 2018 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2018/05/16/CircleCI-npm-private-github/</guid>
-      <description>Summary 현재 공통적인 모듈을 Git으로 따로 관리하여 npm private module로 사용한다. 또한 Webpack을 사용하여 Typescript로 작성된 서버를 번들링한다. 로컬에서는 모두 정상적으로 동작하지만 CircleCI에서 빌드할 경우에는 CircleCI의 권한이 해당 repository에 대한 권한만 가지고 있기 때문에 npm private module을 가져올 수가 없다.
-이와같은 문제를 해결하기 위해서 트러블 슈팅을 하였다.
-Problem npm install을 할 때에 github에 있는 repository를 사용하는 방법은 두가지가 있다.
-https ssh ssh로 사용할 경우 관련 명령어는 다음과 같다.
-# ssh 키 생성하기 $ ssh-keygen -f id_rsa_kh -C &amp;#34;&amp;#34; # 생성한 키를 ~/.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;현재 공통적인 모듈을 Git으로 따로 관리하여 npm private module로 사용한다.
+또한 Webpack을 사용하여 Typescript로 작성된 서버를 번들링한다.
+로컬에서는 모두 정상적으로 동작하지만 CircleCI에서 빌드할 경우에는
+CircleCI의 권한이 해당 repository에 대한 권한만 가지고 있기 때문에
+npm private module을 가져올 수가 없다.&lt;/p&gt;
+&lt;p&gt;이와같은 문제를 해결하기 위해서 트러블 슈팅을 하였다.&lt;/p&gt;
+&lt;h3 id=&#34;problem&#34;&gt;Problem&lt;/h3&gt;
+&lt;hr&gt;
+&lt;p&gt;npm install을 할 때에 github에 있는 repository를 사용하는 방법은 두가지가 있다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;https&lt;/li&gt;
+&lt;li&gt;ssh&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;ssh로 사용할 경우 관련 명령어는 다음과 같다.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# ssh 키 생성하기&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ ssh-keygen -f id_rsa_kh -C &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 생성한 키를 ~/.ssh 에 추가하기&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ cp id_rsa_kh ~/.ssh/id_rsa_kh
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 생성한 키의 권한 수정하기&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ chmod &lt;span style=&#34;color:#ae81ff&#34;&gt;600&lt;/span&gt; ~/.ssh/id_rsa_kh
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 생성한 키의 퍼블릭 키를 출력하기. 이때 받은 키를 github private repo에 ssh키를 추가하여야 한다.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ cat id_rsa_kh.pub
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# ssh의 개인키 개수 확인하기&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ ls -al ~/.ssh/
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# ssh-agent 실행하기&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ eval &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;ssh-agent -s&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# ~/.ssh 디렉터리에 있는 개인키를 모두 ssh agent에 등록하기&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ grep -slR &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;PRIVATE&amp;#34;&lt;/span&gt; ~/.ssh/ | xargs ssh-add
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 현재 등록되어 있는 ssh key의 fingerprint 확인하기&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ ssh-add -l -E md5
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;위와 같이 키를 입력하였으면 이제 npm install을 해본다.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -26,8 +61,27 @@ https ssh ssh로 사용할 경우 관련 명령어는 다음과 같다.
       <pubDate>Sat, 01 Apr 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/04/01/Docker_4/</guid>
-      <description>Summary Bitbucket을 사용하여 git respository를 생성한다. 보통은 github로 관리하지만 github는 private한 repository를 사용하기 위해서는 사용료를 내야한다. 하지만 Bitbucket은 무제한적인 repository를 생성할 수 있으며 repository의 크기만 제한되어 있다. 2GB까지 사용이 가능한데 보통 코드로만 200MB도 사용하기 어려운 관계로 사실상 무제한이라고 볼 수 있다.
-순서 Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기 EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기 Bitbucket을 사용하여 git repository 생성하기 Express JS를 사용하여 Node 서버 구축하기 테스트로 PM2를 사용하여 EC2에 Node 서버 배포하기 Node 서버를 바탕으로 Dockerfile로 만들기 Docker Hub의 automated build를 사용하여 Docker image를 만들기 만들어진 Docker image를 EC2 인스턴스에 배포하기 Bitbucket Repository 생성하기 먼저 bitbucket.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Bitbucket을 사용하여 git respository를 생성한다. 보통은 github로 관리하지만 github는 private한 repository를 사용하기 위해서는 사용료를 내야한다. 하지만 Bitbucket은 무제한적인 repository를 생성할 수 있으며 repository의 크기만 제한되어 있다. 2GB까지 사용이 가능한데 보통 코드로만 200MB도 사용하기 어려운 관계로 사실상 무제한이라고 볼 수 있다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;순서&#34;&gt;순서&lt;/h2&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li&gt;Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기&lt;/li&gt;
+&lt;li&gt;접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기&lt;/li&gt;
+&lt;li&gt;EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기&lt;/li&gt;
+&lt;li&gt;Bitbucket을 사용하여 git repository 생성하기&lt;/li&gt;
+&lt;li&gt;Express JS를 사용하여 Node 서버 구축하기&lt;/li&gt;
+&lt;li&gt;테스트로 PM2를 사용하여 EC2에 Node 서버 배포하기&lt;/li&gt;
+&lt;li&gt;Node 서버를 바탕으로 Dockerfile로 만들기&lt;/li&gt;
+&lt;li&gt;Docker Hub의 automated build를 사용하여 Docker image를 만들기&lt;/li&gt;
+&lt;li&gt;만들어진 Docker image를 EC2 인스턴스에 배포하기&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;bitbucket-repository-생성하기&#34;&gt;Bitbucket Repository 생성하기&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;먼저 &lt;a href=&#34;https://bitbucket.org/&#34;&gt;bitbucket.org/&lt;/a&gt;에 접속하여 회원가입을 진행하고 로그인한다.&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -13,11 +13,20 @@
       <pubDate>Sun, 12 Sep 2021 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2021/09/02/podman-minikube/</guid>
-      <description>Docker desktop이 유료로 전환된다는 소식이 있다. (링크)
-이 소식을 들은 많은 개발자들은 당황했을거라 생각하는데 언제나 그랬듯이 대안은 있다. 사내에 이미 이런 내용에 대해서 대응하신 분이 있고, 그걸 글로 녹여보려고 한다.(Ian 감사해요) 아래 내용은 Mac에만 해당되며, Window는 별도의 방법을 찾아야할지도 모른다.
-Docker Desktop 삭제하기 이건 어렵지 않다. 다음 그림과 같이 docker desktop &amp;gt; Preferences &amp;gt; troubleshootings &amp;gt; uninstall 을 눌러 삭제한다.(그림참고)
-그리고 말끔하게 Applications(응용프로그램)에 있는 docker desktop도 삭제한다.
-minikube 설치하기 m1 mac인 경우에는 &amp;ldquo;Disable all drivers except &amp;ldquo;docker&amp;rdquo; and &amp;ldquo;ssh&amp;rdquo; on darwin/arm64&amp;rdquo; PR의 내용을 요약하자면, minikube에서는 m1 mac을 사용할 수 없다는 내용이다.</description>
+      <description>&lt;p&gt;Docker desktop이 유료로 전환된다는 소식이 있다. (&lt;a href=&#34;https://www.docker.com/blog/updating-product-subscriptions/&#34;&gt;링크&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;이 소식을 들은 많은 개발자들은 당황했을거라 생각하는데 언제나 그랬듯이 대안은 있다.
+사내에 이미 이런 내용에 대해서 대응하신 분이 있고, 그걸 글로 녹여보려고 한다.(Ian 감사해요)
+아래 내용은 Mac에만 해당되며, Window는 별도의 방법을 찾아야할지도 모른다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;docker-desktop-삭제하기&#34;&gt;Docker Desktop 삭제하기&lt;/h2&gt;
+&lt;p&gt;이건 어렵지 않다. 다음 그림과 같이 docker desktop &amp;gt; Preferences &amp;gt; troubleshootings &amp;gt; uninstall 을 눌러 삭제한다.(그림참고)&lt;/p&gt;
+&lt;p&gt;그리고 말끔하게 Applications(응용프로그램)에 있는 docker desktop도 삭제한다.&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://novemberde.github.io/images/docker/remove-docker-desktop.png&#34; alt=&#34;remove-docker-desktop&#34;  /&gt;
+&lt;/p&gt;
+&lt;h2 id=&#34;minikube-설치하기&#34;&gt;minikube 설치하기&lt;/h2&gt;
+&lt;p&gt;m1 mac인 경우에는 &lt;a href=&#34;https://github.com/kubernetes/minikube/pull/10452&#34;&gt;&amp;ldquo;Disable all drivers except &amp;ldquo;docker&amp;rdquo; and &amp;ldquo;ssh&amp;rdquo; on darwin/arm64&amp;rdquo; PR&lt;/a&gt;의 내용을 요약하자면,
+minikube에서는 m1 mac을 사용할 수 없다는 내용이다. docker를 사용하던지 아니면 ssh로 remote host를 써야한다.
+로컬에 virtualbox나 vmware로 띄우고 ssh를 써도 사용은 되겠지만, localhost에서 사용하기 위한 다른 설정을 하는 건 조금 수고스럽다고 생각된다.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -26,9 +35,15 @@ minikube 설치하기 m1 mac인 경우에는 &amp;ldquo;Disable all drivers exce
       <pubDate>Mon, 17 Sep 2018 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2018/09/17/Circleci-docker/</guid>
-      <description>Summary 현재 Terraform으로 ECS 인프라를 생성하고, CircleCI에서 docker image를 빌드하고 ECR에 푸시하는 과정을 자동화하고 있다. 이 과정에 있어서 docker image를 빌드하는 것에서 문제가 발생했다.
-CircleCI에서 script를 실행하는 환경은 Container 기반으로 되어 있기 때문이다. Docker image를 빌드하기 위해서는 docker가 설치되어 있는 환경이어야 했다.
-docker-in-docker라는 개념으로 docker hub에 &amp;ldquo;docker&amp;quot;라는 docker image가 있다. 하지만 이 이미지로는 프로덕션 이미지를 빌드하고 배포할 때 사용하는 기본 패키지가 없는데, 이러한 기본패키지를 추가하여 CircleCI에서 docker를 빌드할 수 있는 이미지 생성하는 방법 및 CircleCI 설정을 정리해보았다.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;현재 Terraform으로 ECS 인프라를 생성하고, CircleCI에서 docker image를 빌드하고 ECR에 푸시하는 과정을 자동화하고 있다.
+이 과정에 있어서 docker image를 빌드하는 것에서 문제가 발생했다.&lt;/p&gt;
+&lt;p&gt;CircleCI에서 script를 실행하는 환경은 Container 기반으로 되어 있기 때문이다.
+Docker image를 빌드하기 위해서는 docker가 설치되어 있는 환경이어야 했다.&lt;/p&gt;
+&lt;p&gt;docker-in-docker라는 개념으로 docker hub에 &amp;ldquo;docker&amp;quot;라는 docker image가 있다.
+하지만 이 이미지로는 프로덕션 이미지를 빌드하고 배포할 때 사용하는 기본 패키지가 없는데, 이러한 기본패키지를 추가하여
+CircleCI에서 docker를 빌드할 수 있는 이미지 생성하는 방법 및 CircleCI 설정을 정리해보았다.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -37,8 +52,21 @@ docker-in-docker라는 개념으로 docker hub에 &amp;ldquo;docker&amp;quot;라
       <pubDate>Wed, 06 Dec 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/12/06/Docker-to-serverless/</guid>
-      <description>Summary &amp;ldquo;Docker와 DevOps에서 Serverless와 NoOps로의 여정&amp;quot;이라는 주제로 2017년 12월 06일에 W3C Conference에서 발표한 자료입니다.
-Docker와 DevOps에서 Serverless와 NoOps로의 여정 from Kyuhyun Byun 데모로 시연한 샘플코드는 아래와 같습니다. https://github.com/novemberde/serverless-webapp-demo References https://www.slideshare.net/KyuhyunByun1/docker-devops-serverless-noops https://onoffmix.com/event/119375 https://github.com/novemberde/serverless-webapp-demo </description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;&amp;ldquo;Docker와 DevOps에서 Serverless와 NoOps로의 여정&amp;quot;이라는 주제로 2017년 12월 06일에 &lt;a href=&#34;https://onoffmix.com/event/119375&#34;&gt;W3C Conference&lt;/a&gt;에서 발표한 자료입니다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;iframe src=&#34;//www.slideshare.net/slideshow/embed_code/key/BVtdqqJP0sX0xY&#34; width=&#34;595&#34; height=&#34;485&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt; &lt;/iframe&gt; &lt;div style=&#34;margin-bottom:5px&#34;&gt; &lt;strong&gt; &lt;a href=&#34;//www.slideshare.net/KyuhyunByun1/docker-devops-serverless-noops&#34; title=&#34;Docker와 DevOps에서 Serverless와 NoOps로의 여정&#34; target=&#34;_blank&#34;&gt;Docker와 DevOps에서 Serverless와 NoOps로의 여정&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href=&#34;https://www.slideshare.net/KyuhyunByun1&#34; target=&#34;_blank&#34;&gt;Kyuhyun Byun&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;
+&lt;div&gt;데모로 시연한 샘플코드는 아래와 같습니다.&lt;/div&gt;
+&lt;div&gt;https://github.com/novemberde/serverless-webapp-demo&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.slideshare.net/KyuhyunByun1/docker-devops-serverless-noops&#34;&gt;https://www.slideshare.net/KyuhyunByun1/docker-devops-serverless-noops&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://onoffmix.com/event/119375&#34;&gt;https://onoffmix.com/event/119375&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/novemberde/serverless-webapp-demo&#34;&gt;https://github.com/novemberde/serverless-webapp-demo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
     <item>
@@ -47,7 +75,8 @@ Docker와 DevOps에서 Serverless와 NoOps로의 여정 from Kyuhyun Byun 데모
       <pubDate>Fri, 20 Oct 2017 13:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/10/20/Docker/</guid>
-      <description>2017.06.08에 AWSKRUG에서 EC2에서 Docker와 Docker-compose 사용하기라는 주제로 발표했던 자료입니다.</description>
+      <description>&lt;p&gt;2017.06.08에 AWSKRUG에서 EC2에서 Docker와 Docker-compose 사용하기라는 주제로 발표했던 자료입니다.&lt;/p&gt;
+&lt;iframe src=&#34;//slides.com/byunkyuhyun/ec2-docker-docker-compose/embed&#34; width=&#34;576&#34; height=&#34;420&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;</description>
     </item>
     
     <item>
@@ -56,11 +85,29 @@ Docker와 DevOps에서 Serverless와 NoOps로의 여정 from Kyuhyun Byun 데모
       <pubDate>Mon, 25 Sep 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/09/25/ALB_to_elasticbeanstalk/</guid>
-      <description>Summary ElasticBeanstalk를 Docker로 배포하기 위해 살펴보았는데 문제점이 있었다. 기존의 사용하던 ALB와 연동하여 사용하고 싶었지만 설정화면에서는 Classic Load Balancer만 지원되었기 때문이다. eb-cli를 사용하여 AutoScaling Group을 생성하여 ALB의 Target Group에 설정하여 앱을 배포해보자.
-EB cli 설치하기 Install eb cli를 참고하여 로컬에 eb-cli를 설치하자.
-사전에 python이 2.7 또는 3.4이상의 버전이 설치되어 있어야 한다.
-$ pip install awsebcli --upgrade --user 설치 후에 환경변수에 아래와 같은 path를 추가하자.
-Linux – ~/.local/bin macOS – ~/Library/Python/3.4/bin Windows – %USERPROFILE%\AppData\Roaming\Python\Scripts Python 3.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;ElasticBeanstalk를 Docker로 배포하기 위해 살펴보았는데 문제점이 있었다.
+기존의 사용하던 ALB와 연동하여 사용하고 싶었지만 설정화면에서는 Classic Load Balancer만 지원되었기 때문이다.
+eb-cli를 사용하여 AutoScaling Group을 생성하여 ALB의 Target Group에 설정하여 앱을 배포해보자.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;eb-cli-설치하기&#34;&gt;EB cli 설치하기&lt;/h3&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;a href=&#34;http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install.html&#34;&gt;Install eb cli&lt;/a&gt;를 참고하여 로컬에 eb-cli를 설치하자.&lt;/p&gt;
+&lt;p&gt;사전에 python이 2.7 또는 3.4이상의 버전이 설치되어 있어야 한다.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ pip install awsebcli --upgrade --user
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;설치 후에 환경변수에 아래와 같은 path를 추가하자.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Linux – ~/.local/bin&lt;/li&gt;
+&lt;li&gt;macOS – ~/Library/Python/3.4/bin&lt;/li&gt;
+&lt;li&gt;Windows – %USERPROFILE%\AppData\Roaming\Python\Scripts
+&lt;ul&gt;
+&lt;li&gt;Python 3.5 on Windows – %USERPROFILE%\AppData\Roaming\Python\Python3.5\Scripts&lt;/li&gt;
+&lt;li&gt;Python 3.6 on Windows – %USERPROFILE%\AppData\Local\Programs\Python\Python36\Scripts&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;올바르게 입력했다면 eb의 version을 확인할 수 있을 것이다.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -69,10 +116,32 @@ Linux – ~/.local/bin macOS – ~/Library/Python/3.4/bin Windows – %USERPROFI
       <pubDate>Mon, 03 Jul 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/07/03/Elastic_Beanstalk/</guid>
-      <description>Summary AWS에서 Elastic Beanstalk를 통해 docker image를 배포할 수 있다. 이번에는 기존에 만들었던 Dockerfile을 Elastic beanstalk에 배포해 보겠다.
-Dockerfile 준비하기 이전에 node js server를 하나의 Dockerfile로 만들어 놓았다. 테스트하고 싶으신 분들은 this repository를 참고하길 바란다.
-FROM novemberde/node-pm2 MAINTAINER KH BYUN &amp;#34;novemberde.github.io&amp;#34; ENV NODE_ENV production EXPOSE 3000 COPY ./ /src RUN npm install --prefix /src CMD [&amp;#34;pm2-docker&amp;#34;, &amp;#34;/src/app.js&amp;#34;] Elastic Beanstalk 설정하기 Elastic Beanstalk로 배포하는 경우에 아래와 같이 2가지 방법이 있다.
-Single instance Load balancing, auto scaling Single instance는 하나에 인스턴스에 해당 dockerfile로 구성된 인스턴스가 올라가는 경우를 발한다.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;AWS에서 Elastic Beanstalk를 통해 docker image를 배포할 수 있다.
+이번에는 기존에 만들었던 Dockerfile을 Elastic beanstalk에 배포해 보겠다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;dockerfile-준비하기&#34;&gt;Dockerfile 준비하기&lt;/h3&gt;
+&lt;hr&gt;
+&lt;p&gt;이전에 node js server를 하나의 Dockerfile로 만들어 놓았다.
+테스트하고 싶으신 분들은 &lt;a href=&#34;https://bitbucket.org/kyuhyun/docker_node_server&#34;&gt;this repository&lt;/a&gt;를 참고하길 바란다.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-dockerfile&#34; data-lang=&#34;dockerfile&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;FROM&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; novemberde/node-pm2&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;MAINTAINER&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; KH BYUN &amp;#34;novemberde.github.io&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;ENV&lt;/span&gt; NODE_ENV production&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;EXPOSE&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt; 3000&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;COPY&lt;/span&gt; ./ /src&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;RUN&lt;/span&gt; npm install --prefix /src&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;CMD&lt;/span&gt; [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;pm2-docker&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/src/app.js&amp;#34;&lt;/span&gt;]&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h3 id=&#34;elastic-beanstalk-설정하기&#34;&gt;Elastic Beanstalk 설정하기&lt;/h3&gt;
+&lt;hr&gt;
+&lt;p&gt;Elastic Beanstalk로 배포하는 경우에 아래와 같이 2가지 방법이 있다.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -81,9 +150,18 @@ Single instance Load balancing, auto scaling Single instance는 하나에 인스
       <pubDate>Tue, 09 May 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/04/30/VPC_Redis_0/</guid>
-      <description>Summary Localhost에서 elastic cache에는 원칙적으로 접근할 수 없다. 별도로 VPC내에 Virtual Private Gateways나 Customer Gateways를 사용하여 VPC내에 존재하는 Elasic Cache에 접근할 수 있다. 하지만 이는 별도의 설정과정이 들어가므로 귀찮았다. 그래서 바로 VPC내의 EC2 인스턴스에서 Elastic Cache에 접근하였다. Docker 이미지 중에서 Redis-cli가 있기 때문에 손쉽게 별도의 설치과정 없이 접근할 수 있다.
-이 과정은 이미 elastic cache를 사용하고 있고 인스턴스에 Docker가 설치되어 있다는 전제 하에 진행한다.
-Docker hub에서 redis-cli 이미지를 받아 접속하자. 아래와 같은 Dockerfile을 기반으로 redis client를 사용할 수 있다.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Localhost에서 elastic cache에는 원칙적으로 접근할 수 없다.
+별도로 VPC내에 Virtual Private Gateways나 Customer Gateways를 사용하여 VPC내에 존재하는 Elasic Cache에 접근할 수 있다.
+하지만 이는 별도의 설정과정이 들어가므로 귀찮았다.
+그래서 바로 VPC내의 EC2 인스턴스에서 Elastic Cache에 접근하였다.
+Docker 이미지 중에서 Redis-cli가 있기 때문에 손쉽게 별도의 설치과정 없이 접근할 수 있다.&lt;/p&gt;
+&lt;p&gt;이 과정은 이미 elastic cache를 사용하고 있고 인스턴스에 Docker가 설치되어 있다는 전제 하에 진행한다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;docker-hub에서-redis-cli-이미지를-받아-접속하자&#34;&gt;Docker hub에서 redis-cli 이미지를 받아 접속하자.&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;아래와 같은 Dockerfile을 기반으로 redis client를 사용할 수 있다.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -92,10 +170,26 @@ Docker hub에서 redis-cli 이미지를 받아 접속하자. 아래와 같은 Do
       <pubDate>Sun, 09 Apr 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/04/09/Docker_Registry_0/</guid>
-      <description>Summary Docker hub에 private image를 올리는 것은 제한이 있다. 개인 사용자의 경우 하나의 이미지만 private이 가능하고 organization의 경우에는 비용을 지불해야만 사용이 가능하다. 이런점에 비추어 볼 때 우리는 private registry환경을 구축하고 싶다는 생각이 들 것이다.
-EC2에 개인 registry를 구축하고 local 또는 다른 서버에서 접근하는 방법에 대해서 진행해보겠다. 그리고 Amazon S3 를 이미지 저장소로 사용하겠다.
-Docker registry 구축하기 docker가 설치되어 있는 EC2에 접근하여 registry 이미지를 pull 해보자.
-docker registry의 기본포트는 5000번이다. # registry 이미지를 가져오기 $ docker pull registry # registry를 실행하기 $ docker run -dit --name docker-registry -p 5000:5000 registry Docker image를 push하기 도커허브를 사용할 때는 &amp;lt;계정아이디&amp;gt;/registry:latest 처럼 tag명에 내 아이디가 들어가는 모양이었다.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Docker hub에 private image를 올리는 것은 제한이 있다.
+개인 사용자의 경우 하나의 이미지만 private이 가능하고 organization의 경우에는 비용을 지불해야만 사용이 가능하다.
+이런점에 비추어 볼 때 우리는 private registry환경을 구축하고 싶다는 생각이 들 것이다.&lt;/p&gt;
+&lt;p&gt;EC2에 개인 registry를 구축하고 local 또는 다른 서버에서 접근하는 방법에 대해서 진행해보겠다. 그리고 Amazon S3 를 이미지 저장소로 사용하겠다.&lt;/p&gt;
+&lt;h2 id=&#34;docker-registry-구축하기&#34;&gt;Docker registry 구축하기&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;docker가 설치되어 있는 EC2에 접근하여 registry  이미지를 pull 해보자.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;docker registry의 기본포트는 5000번이다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# registry 이미지를 가져오기&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ docker pull registry
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# registry를 실행하기&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ docker run -dit --name docker-registry -p 5000:5000 registry
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;docker-image를-push하기&#34;&gt;Docker image를 push하기&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;a href=&#34;https://hub.docker.com&#34;&gt;도커허브&lt;/a&gt;를 사용할 때는 &amp;lt;계정아이디&amp;gt;/registry:latest 처럼 tag명에 내 아이디가 들어가는 모양이었다.
+하지만 private registry를 사용할 때는 &amp;lt;계정아이디&amp;gt;부분에 내 registry의 url주소를 사용하여야 한다.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -104,8 +198,27 @@ docker registry의 기본포트는 5000번이다. # registry 이미지를 가져
       <pubDate>Mon, 03 Apr 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/04/03/Docker_9/</guid>
-      <description>Summary 이제 모든 준비는 끝났다. Docker image를 EC2 인스턴스에 배포하자.
-순서 Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기 EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기 Bitbucket을 사용하여 git repository 생성하기 Express JS를 사용하여 Node 서버 구축하기 PM2를 사용하여 EC2에 Node 서버 배포하기 Node 서버를 바탕으로 Dockerfile로 만들기 Docker Hub의 automated build를 사용하여 Docker image를 만들기 만들어진 Docker image를 EC2 인스턴스에 배포하기 Docker image를 받아오기 EC2 인스턴스에 SSH로 접속하자.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;이제 모든 준비는 끝났다. Docker image를 EC2 인스턴스에 배포하자.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;순서&#34;&gt;순서&lt;/h2&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li&gt;Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기&lt;/li&gt;
+&lt;li&gt;접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기&lt;/li&gt;
+&lt;li&gt;EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기&lt;/li&gt;
+&lt;li&gt;Bitbucket을 사용하여 git repository 생성하기&lt;/li&gt;
+&lt;li&gt;Express JS를 사용하여 Node 서버 구축하기&lt;/li&gt;
+&lt;li&gt;PM2를 사용하여 EC2에 Node 서버 배포하기&lt;/li&gt;
+&lt;li&gt;Node 서버를 바탕으로 Dockerfile로 만들기&lt;/li&gt;
+&lt;li&gt;Docker Hub의 automated build를 사용하여 Docker image를 만들기&lt;/li&gt;
+&lt;li&gt;만들어진 Docker image를 EC2 인스턴스에 배포하기&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;docker-image를-받아오기&#34;&gt;Docker image를 받아오기&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;EC2 인스턴스에 SSH로 접속하자. 리눅스 계정은 이전에 만들었던 docker 로 로그인하자.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -114,8 +227,30 @@ docker registry의 기본포트는 5000번이다. # registry 이미지를 가져
       <pubDate>Sun, 02 Apr 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/04/02/Docker_8/</guid>
-      <description>Summary 이전에는 Dockerfile을 만들었다. 하지만 매번 build하는 것은 소모적인 시간이라고 생각한다. 그럼 만들어진 Dockerfile을 git repository에 push하면 Dockerfile이 빌드되는지 확인하는 것은 어떨까. docker hub의 automated_build기능을 사용하면 간단히 구현된다.
-순서 Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기 EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기 Bitbucket을 사용하여 git repository 생성하기 Express JS를 사용하여 Node 서버 구축하기 PM2를 사용하여 EC2에 Node 서버 배포하기 Node 서버를 바탕으로 Dockerfile로 만들기 Docker Hub의 automated build를 사용하여 Docker image를 만들기 만들어진 Docker image를 EC2 인스턴스에 배포하기 Automated_build Docker hub에서 지원해주는 이미지 빌딩시스템이다.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;이전에는 Dockerfile을 만들었다. 하지만 매번 build하는 것은 소모적인 시간이라고 생각한다. 그럼 만들어진 Dockerfile을 git repository에 push하면 Dockerfile이 빌드되는지 확인하는 것은 어떨까. docker hub의 automated_build기능을 사용하면 간단히 구현된다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;순서&#34;&gt;순서&lt;/h2&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li&gt;Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기&lt;/li&gt;
+&lt;li&gt;접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기&lt;/li&gt;
+&lt;li&gt;EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기&lt;/li&gt;
+&lt;li&gt;Bitbucket을 사용하여 git repository 생성하기&lt;/li&gt;
+&lt;li&gt;Express JS를 사용하여 Node 서버 구축하기&lt;/li&gt;
+&lt;li&gt;PM2를 사용하여 EC2에 Node 서버 배포하기&lt;/li&gt;
+&lt;li&gt;Node 서버를 바탕으로 Dockerfile로 만들기&lt;/li&gt;
+&lt;li&gt;Docker Hub의 automated build를 사용하여 Docker image를 만들기&lt;/li&gt;
+&lt;li&gt;만들어진 Docker image를 EC2 인스턴스에 배포하기&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;automated_build&#34;&gt;Automated_build&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Docker hub에서 지원해주는 이미지 빌딩시스템이다. docker hub와 github나 bitbucket 계정은 단 하나만 연동이 가능하며 다른 계정과는 연동할 수 없다.
+또한 만능으로 항상 build를 해주는 것이 아닌 역시 limit 이 존재한다.
+이 링크를 참고하길 바란다.
+&lt;a href=&#34;https://forums.docker.com/t/automated-build-resource-restrictions/1413&#34;&gt;https://forums.docker.com/t/automated-build-resource-restrictions/1413&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -124,8 +259,32 @@ docker registry의 기본포트는 5000번이다. # registry 이미지를 가져
       <pubDate>Sun, 02 Apr 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/04/02/Docker_7/</guid>
-      <description>Summary Dockerfile로 이미지로 관리하면 배포 및 관리가 간편하게 가능하다. 여기서는 node를 베이스 이미지로하여 노드 서버를 배포할 수 있도록 준비한다.
-순서 Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기 EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기 Bitbucket을 사용하여 git repository 생성하기 Express JS를 사용하여 Node 서버 구축하기 PM2를 사용하여 EC2에 Node 서버 배포하기 Node 서버를 바탕으로 Dockerfile로 만들기 Docker Hub의 automated build를 사용하여 Docker image를 만들기 만들어진 Docker image를 EC2 인스턴스에 배포하기 Dockerfile 이란?</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Dockerfile로 이미지로 관리하면 배포 및 관리가 간편하게 가능하다.
+여기서는 node를 베이스 이미지로하여 노드 서버를 배포할 수 있도록 준비한다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;순서&#34;&gt;순서&lt;/h2&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li&gt;Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기&lt;/li&gt;
+&lt;li&gt;접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기&lt;/li&gt;
+&lt;li&gt;EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기&lt;/li&gt;
+&lt;li&gt;Bitbucket을 사용하여 git repository 생성하기&lt;/li&gt;
+&lt;li&gt;Express JS를 사용하여 Node 서버 구축하기&lt;/li&gt;
+&lt;li&gt;PM2를 사용하여 EC2에 Node 서버 배포하기&lt;/li&gt;
+&lt;li&gt;Node 서버를 바탕으로 Dockerfile로 만들기&lt;/li&gt;
+&lt;li&gt;Docker Hub의 automated build를 사용하여 Docker image를 만들기&lt;/li&gt;
+&lt;li&gt;만들어진 Docker image를 EC2 인스턴스에 배포하기&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;dockerfile-이란&#34;&gt;Dockerfile 이란?&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Docker image의 설정 정보를 담고 있는 파일이다.
+실제 운영 소프트웨어를 배포할 경우 node 베이스 이미지를 올린 다음 패키지를 설치하고 volume을 할당할 수도 있다.
+현재 이미지를 주기적으로 commit하여 백업하고 직접 docker exec를 하여 컨테이너 내에 실행명령어를 보내야하는 단점이 있었다.
+하지만 Dockerfile은 docker image를 생성할 때 source file을 가져와서 컨테이너 구동과 동시에 서버를 가동시킬 수 있다.
+이러한 docker container를 관리하는 방법으로는 docker-compose가 있는데 추후에 살펴볼 것이다.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -134,8 +293,27 @@ docker registry의 기본포트는 5000번이다. # registry 이미지를 가져
       <pubDate>Sat, 01 Apr 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/04/01/Docker_3/</guid>
-      <description>Summary Docker의 개념을 간단히 살펴보고 EC2 ubuntu instance에 Docker를 설치해보자.
-순서 Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기 EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기 Bitbucket을 사용하여 git repository 생성하기 Express JS를 사용하여 Node 서버 구축하기 테스트로 PM2를 사용하여 EC2에 Node 서버 배포하기 Node 서버를 바탕으로 Dockerfile로 만들기 Docker Hub의 automated build를 사용하여 Docker image를 만들기 만들어진 Docker image를 EC2 인스턴스에 배포하기 Docker 란?</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Docker의 개념을 간단히 살펴보고 EC2 ubuntu instance에 Docker를 설치해보자.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;순서&#34;&gt;순서&lt;/h2&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li&gt;Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기&lt;/li&gt;
+&lt;li&gt;접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기&lt;/li&gt;
+&lt;li&gt;EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기&lt;/li&gt;
+&lt;li&gt;Bitbucket을 사용하여 git repository 생성하기&lt;/li&gt;
+&lt;li&gt;Express JS를 사용하여 Node 서버 구축하기&lt;/li&gt;
+&lt;li&gt;테스트로 PM2를 사용하여 EC2에 Node 서버 배포하기&lt;/li&gt;
+&lt;li&gt;Node 서버를 바탕으로 Dockerfile로 만들기&lt;/li&gt;
+&lt;li&gt;Docker Hub의 automated build를 사용하여 Docker image를 만들기&lt;/li&gt;
+&lt;li&gt;만들어진 Docker image를 EC2 인스턴스에 배포하기&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;docker-란&#34;&gt;Docker 란?&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;공식사이트의 소개를 보면 이렇게 말한다.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -144,8 +322,24 @@ docker registry의 기본포트는 5000번이다. # registry 이미지를 가져
       <pubDate>Fri, 31 Mar 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/03/31/Docker_0/</guid>
-      <description>소개 Node JS 서버를 배포하려고 한다. 매일 같이 하던 방식이지만 방법을 잊을 수도 있다는 생각이 들었다. 이것을 보고 사람들이 노드 서버를 간결하게 배포하였으면 한다.
-순서 Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기 EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기 Bitbucket을 사용하여 git repository 생성하기 Express JS를 사용하여 Node 서버 구축하기 테스트로 PM2를 사용하여 EC2에 Node 서버 배포하기 Node 서버를 바탕으로 Dockerfile로 만들기 Docker Hub의 automated build를 사용하여 Docker image를 만들기 만들어진 Docker image를 EC2 인스턴스에 배포하기 </description>
+      <description>&lt;h2 id=&#34;소개&#34;&gt;소개&lt;/h2&gt;
+&lt;p&gt;Node JS 서버를 배포하려고 한다.
+매일 같이 하던 방식이지만 방법을 잊을 수도 있다는 생각이 들었다.
+이것을 보고 사람들이 노드 서버를 간결하게 배포하였으면 한다.&lt;/p&gt;
+&lt;h2 id=&#34;순서&#34;&gt;순서&lt;/h2&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li&gt;Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기&lt;/li&gt;
+&lt;li&gt;접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기&lt;/li&gt;
+&lt;li&gt;EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기&lt;/li&gt;
+&lt;li&gt;Bitbucket을 사용하여 git repository 생성하기&lt;/li&gt;
+&lt;li&gt;Express JS를 사용하여 Node 서버 구축하기&lt;/li&gt;
+&lt;li&gt;테스트로 PM2를 사용하여 EC2에 Node 서버 배포하기&lt;/li&gt;
+&lt;li&gt;Node 서버를 바탕으로 Dockerfile로 만들기&lt;/li&gt;
+&lt;li&gt;Docker Hub의 automated build를 사용하여 Docker image를 만들기&lt;/li&gt;
+&lt;li&gt;만들어진 Docker image를 EC2 인스턴스에 배포하기&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;</description>
     </item>
     
   </channel>

@@ -13,8 +13,14 @@
       <pubDate>Thu, 14 Feb 2019 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2019/02/14/Ts-Serverless-Build/</guid>
-      <description>AWSKRUG Serverless Group에서 발표한 자료입니다. C++로 빌드한 Native addon을 Serverless 환경에서 사용할 때 빌드 및 배포하는 방법을 다루었습니다.
-발표자료 Native addon을 포함하여 Node.js + Typescript + Serverless 빌드 및 배포하기 from Kyuhyun Byun References https://www.slideshare.net/KyuhyunByun1/native-addon-nodejs-typescript-serverless </description>
+      <description>&lt;p&gt;AWSKRUG Serverless Group에서 발표한 자료입니다.
+C++로 빌드한 Native addon을 Serverless 환경에서 사용할 때 빌드 및 배포하는 방법을 다루었습니다.&lt;/p&gt;
+&lt;h2 id=&#34;발표자료&#34;&gt;발표자료&lt;/h2&gt;
+&lt;iframe src=&#34;//www.slideshare.net/slideshow/embed_code/key/A5nT0LwxOtDw5T&#34; width=&#34;595&#34; height=&#34;485&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt; &lt;/iframe&gt; &lt;div style=&#34;margin-bottom:5px&#34;&gt; &lt;strong&gt; &lt;a href=&#34;//www.slideshare.net/KyuhyunByun1/native-addon-nodejs-typescript-serverless&#34; title=&#34;Native addon을 포함하여 Node.js + Typescript + Serverless 빌드 및 배포하기&#34; target=&#34;_blank&#34;&gt;Native addon을 포함하여 Node.js + Typescript + Serverless 빌드 및 배포하기&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href=&#34;https://www.slideshare.net/KyuhyunByun1&#34; target=&#34;_blank&#34;&gt;Kyuhyun Byun&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.slideshare.net/KyuhyunByun1/native-addon-nodejs-typescript-serverless&#34;&gt;https://www.slideshare.net/KyuhyunByun1/native-addon-nodejs-typescript-serverless&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
     <item>
@@ -23,11 +29,33 @@
       <pubDate>Sun, 22 Oct 2017 13:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/10/22/Express-Typescript/</guid>
-      <description>Summary 최근에 직방의 AWS Lambda 코드를 세미나에서 스쳐지나가는 것을 보았다. TypeScript로 짜여져 있었고 나중에 지속적인 프로젝트 관리적인 이점이 있을 것으로 생각이 되기 때문에 TypeScript로 프로젝트를 구성해보는 것을 정리해보기로 결심했다.
-node.js 프로젝트 생성하기 먼저 프로젝트를 생성한다. 기존에 npm과 nodejs가 설치되어 있다는 전제하에 시작한다.
-만약 설치되어 있지 않다면 다음의 링크를 참고한다. https://nodejs.org/ko/download/package-manager/
-$ mkdir node_typescript $ npm init -y 그리고 편의를 위해 사전에 설치되어 있어야 하는 패키지들이 있다.
-npx: global로 패키지를 설치하지 않더라도 프로젝트 내에서 사용할 수 있게 해준다.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;최근에 직방의 AWS Lambda 코드를 세미나에서 스쳐지나가는 것을 보았다.
+TypeScript로 짜여져 있었고 나중에 지속적인 프로젝트 관리적인 이점이 있을 것으로 생각이 되기 때문에 TypeScript로 프로젝트를 구성해보는 것을 정리해보기로 결심했다.&lt;/p&gt;
+&lt;h2 id=&#34;nodejs-프로젝트-생성하기&#34;&gt;node.js 프로젝트 생성하기&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;먼저 프로젝트를 생성한다. 기존에 npm과 nodejs가 설치되어 있다는 전제하에 시작한다.&lt;/p&gt;
+&lt;p&gt;만약 설치되어 있지 않다면 다음의 링크를 참고한다. &lt;a href=&#34;https://nodejs.org/ko/download/package-manager/&#34;&gt;https://nodejs.org/ko/download/package-manager/&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ mkdir node_typescript
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ npm init -y
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;그리고 편의를 위해 사전에 설치되어 있어야 하는 패키지들이 있다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;npx: global로 패키지를 설치하지 않더라도 프로젝트 내에서 사용할 수 있게 해준다.&lt;/li&gt;
+&lt;li&gt;nodemon: 파일이 변화될 때마다 재실행해준다.&lt;/li&gt;
+&lt;li&gt;typescript: typescript로 구성한 코드를 javascript로 트랜스파일링 해준다.&lt;/li&gt;
+&lt;li&gt;npm-run-all: 여러 npm 실행 명령을 병렬로 실행할 수 있게 해준다.&lt;/li&gt;
+&lt;li&gt;webpack: 요즘 각광받는 모듈 번들러&lt;/li&gt;
+&lt;li&gt;webpack-cli: webpack 명령을 사용하기 위한 CLI도구&lt;/li&gt;
+&lt;li&gt;source-map-support: typescript로 개발시 source-map을 지원해준다.&lt;/li&gt;
+&lt;li&gt;@types/express: express 모듈에 대한 type을 지원해준다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ npm install -g npx
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ npm install --save-dev typescript ts-loader npm-run-all webpack @types/express nodemon webpack-cli
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ npm install --save express source-map-support
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;기본-설정하기&#34;&gt;기본 설정하기&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;다음과 같이 typescript에 대한 기본 설정을 한다.&lt;/p&gt;</description>
     </item>
     
   </channel>

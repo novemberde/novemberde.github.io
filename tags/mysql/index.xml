@@ -13,9 +13,25 @@
       <pubDate>Mon, 10 Jun 2019 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2019/06/10/MySQL-Desgin-cheatsheet/</guid>
-      <description>신규프로젝트를 진행할 경우 디비 스키마를 설계를 해야한다. 데이터의 타입부터 외래키 설정등 신경써야하는 부분들이 생각보다 자잘하게 있다. 이 경우에 주의해야하는 점들을 정리해보았다. 이 문서는 지속적으로 수정될 예정이다.
-Datatype MySQL에서 사용하는 데이터 타입은 다음과 같다.
-Numeric Type BIT[(M)] - A bit-value type. M indicates the number of bits per value, from 1 to 64. The default is 1 if M is omitted. TINYINT[(M)] [UNSIGNED] [ZEROFILL] - A very small integer. The signed range is -128 to 127.</description>
+      <description>&lt;p&gt;신규프로젝트를 진행할 경우 디비 스키마를 설계를 해야한다.
+데이터의 타입부터 외래키 설정등 신경써야하는 부분들이 생각보다 자잘하게 있다.
+이 경우에 주의해야하는 점들을 정리해보았다.
+이 문서는 지속적으로 수정될 예정이다.&lt;/p&gt;
+&lt;h2 id=&#34;datatype&#34;&gt;Datatype&lt;/h2&gt;
+&lt;p&gt;MySQL에서 사용하는 데이터 타입은 다음과 같다.&lt;/p&gt;
+&lt;h3 id=&#34;numeric-type&#34;&gt;Numeric Type&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;BIT[(M)] - A bit-value type. M indicates the number of bits per value, from 1 to 64. The default is 1 if M is omitted.&lt;/li&gt;
+&lt;li&gt;TINYINT[(M)] [UNSIGNED] [ZEROFILL] - A very small integer. The signed range is -128 to 127. The unsigned range is 0 to 255.&lt;/li&gt;
+&lt;li&gt;BOOL, BOOLEAN - These types are synonyms for TINYINT(1). A value of zero is considered false. Nonzero values are considered true. However, the values TRUE and FALSE are merely aliases for 1 and 0, respectively, as shown here.&lt;/li&gt;
+&lt;li&gt;SMALLINT[(M)] [UNSIGNED] [ZEROFILL] - A small integer. The signed range is -32768 to 32767. The unsigned range is 0 to 65535.&lt;/li&gt;
+&lt;li&gt;MEDIUMINT[(M)] [UNSIGNED] [ZEROFILL] - A medium-sized integer. The signed range is -8388608 to 8388607. The unsigned range is 0 to 16777215.&lt;/li&gt;
+&lt;li&gt;INT[(M)] [UNSIGNED] [ZEROFILL] - A normal-size integer. The signed range is -2147483648 to 2147483647. The unsigned range is 0 to 4294967295.&lt;/li&gt;
+&lt;li&gt;INTEGER[(M)] [UNSIGNED] [ZEROFILL] - This type is a synonym for INT.&lt;/li&gt;
+&lt;li&gt;BIGINT[(M)] [UNSIGNED] [ZEROFILL] - A large integer. The signed range is -9223372036854775808 to 9223372036854775807. The unsigned range is 0 to 18446744073709551615. SERIAL is an alias for BIGINT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Some things you should be aware of with respect to BIGINT columns:&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -24,8 +40,16 @@ Numeric Type BIT[(M)] - A bit-value type. M indicates the number of bits per val
       <pubDate>Mon, 29 Jan 2018 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2018/01/29/Mysql_maxConnection/</guid>
-      <description>Summary MySQL에서 Max Connection에 대해서 알아보려고 한다. AWS Lambda container가 지속적으로 생성될 때 Database가 감당할 수 있는 Max connection이 얼마인지 알아야 대응할 수 있기 때문이다. 만약 Lambda container가 MySQL이 감당할 수 없을 정도로 계속 생성된다면 Database에 connection이 일어나지 않게 되고, too many connections error가 발생하여 웹서버 역할을 해야하는 Lambda가 동작하지 않을 수 있다. 물론 MySQL에 접속하는 다른 Worker들도 동작하지 않는다.
-RDS를 사용하면 스케일 업이 될 때마다 Max connection 설정을 따로 하지 않더라도 알아서 늘어난다.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;MySQL에서 Max Connection에 대해서 알아보려고 한다. AWS Lambda container가 지속적으로 생성될 때
+Database가 감당할 수 있는 Max connection이 얼마인지 알아야 대응할 수 있기 때문이다.
+만약 Lambda container가 MySQL이 감당할 수 없을 정도로 계속 생성된다면 Database에 connection이
+일어나지 않게 되고, too many connections error가 발생하여 웹서버 역할을 해야하는 Lambda가 동작하지 않을 수 있다.
+물론 MySQL에 접속하는 다른 Worker들도 동작하지 않는다.&lt;/p&gt;
+&lt;p&gt;RDS를 사용하면 스케일 업이 될 때마다 Max connection 설정을 따로 하지 않더라도 알아서 늘어난다.
+별다른 고민할 것 없이 Max connection이 생길 때마다 RDS를 scale up 해주어도 되겠지만 개발자이기 때문에
+더 Graceful하게 문제를 해결해야한다.&lt;/p&gt;</description>
     </item>
     
   </channel>

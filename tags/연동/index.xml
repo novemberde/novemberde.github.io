@@ -13,12 +13,28 @@
       <pubDate>Fri, 20 Oct 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/10/20/CodeCommit/</guid>
-      <description>Summary AWS CodeCommit은 AWS 완전 관리형 private git repository로 인데, 콘솔화면이 조금 부실해서 콘솔화면에서 repository 관리가 좋아보이진 않았다.
-SourceTree라는 Atlassian의 Git GUI tool로 AWS CodeCommit을 연동해보자.
-AWS CodeCommit에서 Git repository 생성하기 AWS CodeCommit화면으로 들어가서 Create repository를 하면 아래와 같은 화면이 나오는데 각 항목에 내용을 입력하자.
-Repository name: test Description: CodeCommit with SourceTree Local에 Git repository 설정하기 Repository를 생성하면 다음과 같은 화면이 나타난다.
-주목해야 할 부분은 빨간 박스로 표시해놓았다.
-현재 root계정으로 작업하고 있는데 이는 권장하지 않고, 별도의 IAM user를 통해 접근을 하는 것을 권장한다는 내용이다.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;AWS CodeCommit은 AWS 완전 관리형 private git repository로 인데, 콘솔화면이 조금 부실해서
+콘솔화면에서 repository 관리가 좋아보이진 않았다.&lt;/p&gt;
+&lt;p&gt;SourceTree라는 Atlassian의 Git GUI tool로 AWS CodeCommit을 연동해보자.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;aws-codecommit에서-git-repository-생성하기&#34;&gt;AWS CodeCommit에서 Git repository 생성하기&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;AWS CodeCommit화면으로 들어가서 Create repository를 하면 아래와 같은 화면이 나오는데 각 항목에 내용을 입력하자.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Repository name: test&lt;/li&gt;
+&lt;li&gt;Description: CodeCommit with SourceTree&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://novemberde.github.io/images/aws/codecommit/create.png&#34; alt=&#34;create repository&#34;  /&gt;
+&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;local에-git-repository-설정하기&#34;&gt;Local에 Git repository 설정하기&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Repository를 생성하면 다음과 같은 화면이 나타난다.&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://novemberde.github.io/images/aws/codecommit/created.png&#34; alt=&#34;created&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;주목해야 할 부분은 빨간 박스로 표시해놓았다.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -27,11 +43,29 @@ Repository name: test Description: CodeCommit with SourceTree Local에 Git repos
       <pubDate>Mon, 25 Sep 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/09/25/ALB_to_elasticbeanstalk/</guid>
-      <description>Summary ElasticBeanstalk를 Docker로 배포하기 위해 살펴보았는데 문제점이 있었다. 기존의 사용하던 ALB와 연동하여 사용하고 싶었지만 설정화면에서는 Classic Load Balancer만 지원되었기 때문이다. eb-cli를 사용하여 AutoScaling Group을 생성하여 ALB의 Target Group에 설정하여 앱을 배포해보자.
-EB cli 설치하기 Install eb cli를 참고하여 로컬에 eb-cli를 설치하자.
-사전에 python이 2.7 또는 3.4이상의 버전이 설치되어 있어야 한다.
-$ pip install awsebcli --upgrade --user 설치 후에 환경변수에 아래와 같은 path를 추가하자.
-Linux – ~/.local/bin macOS – ~/Library/Python/3.4/bin Windows – %USERPROFILE%\AppData\Roaming\Python\Scripts Python 3.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;ElasticBeanstalk를 Docker로 배포하기 위해 살펴보았는데 문제점이 있었다.
+기존의 사용하던 ALB와 연동하여 사용하고 싶었지만 설정화면에서는 Classic Load Balancer만 지원되었기 때문이다.
+eb-cli를 사용하여 AutoScaling Group을 생성하여 ALB의 Target Group에 설정하여 앱을 배포해보자.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;eb-cli-설치하기&#34;&gt;EB cli 설치하기&lt;/h3&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;a href=&#34;http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install.html&#34;&gt;Install eb cli&lt;/a&gt;를 참고하여 로컬에 eb-cli를 설치하자.&lt;/p&gt;
+&lt;p&gt;사전에 python이 2.7 또는 3.4이상의 버전이 설치되어 있어야 한다.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ pip install awsebcli --upgrade --user
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;설치 후에 환경변수에 아래와 같은 path를 추가하자.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Linux – ~/.local/bin&lt;/li&gt;
+&lt;li&gt;macOS – ~/Library/Python/3.4/bin&lt;/li&gt;
+&lt;li&gt;Windows – %USERPROFILE%\AppData\Roaming\Python\Scripts
+&lt;ul&gt;
+&lt;li&gt;Python 3.5 on Windows – %USERPROFILE%\AppData\Roaming\Python\Python3.5\Scripts&lt;/li&gt;
+&lt;li&gt;Python 3.6 on Windows – %USERPROFILE%\AppData\Local\Programs\Python\Python36\Scripts&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;올바르게 입력했다면 eb의 version을 확인할 수 있을 것이다.&lt;/p&gt;</description>
     </item>
     
   </channel>

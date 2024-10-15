@@ -13,8 +13,19 @@
       <pubDate>Mon, 25 Oct 2021 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2021/10/25/athena-step-function/</guid>
-      <description>보통 Airflow 와 EMR 조합으로 통계 파이프라인을 관리하곤 한다. 사내에서 빠르게 통계를 구축하고 관리하기 위해 불필요한 인프라 관리를 제외하고 pipeline에 대해서만 집중할 수 있도록 step functions를 도입하고, 이 경험에 대해서 공유해보았다.
-Youtube Slides Athena &amp;amp; Step Function 으로 통계 파이프라인 구축하기 - 변규현 (당근마켓) :: AWS Community Day Online 2021 from AWSKRUG - AWS한국사용자모임 References https://youtu.be/MS7CulWSc2g https://www.slideshare.net/awskr/athena-step-function-aws-community-day-online-2021 </description>
+      <description>&lt;p&gt;보통 Airflow 와 EMR 조합으로 통계 파이프라인을 관리하곤 한다.
+사내에서 빠르게 통계를 구축하고 관리하기 위해 불필요한 인프라 관리를 제외하고
+pipeline에 대해서만 집중할 수 있도록 step functions를 도입하고, 이 경험에 대해서 공유해보았다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;youtube&#34;&gt;Youtube&lt;/h2&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/MS7CulWSc2g&#34; title=&#34;YouTube video player&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;h2 id=&#34;slides&#34;&gt;Slides&lt;/h2&gt;
+&lt;iframe src=&#34;//www.slideshare.net/slideshow/embed_code/key/55KQbsx2fbDEqI&#34; width=&#34;595&#34; height=&#34;485&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt; &lt;/iframe&gt; &lt;div style=&#34;margin-bottom:5px&#34;&gt; &lt;strong&gt; &lt;a href=&#34;//www.slideshare.net/awskr/athena-step-function-aws-community-day-online-2021&#34; title=&#34;Athena &amp;amp; Step Function 으로 통계 파이프라인 구축하기 - 변규현 (당근마켓) :: AWS Community Day Online 2021&#34; target=&#34;_blank&#34;&gt;Athena &amp;amp; Step Function 으로 통계 파이프라인 구축하기 - 변규현 (당근마켓) :: AWS Community Day Online 2021&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href=&#34;//www.slideshare.net/awskr&#34; target=&#34;_blank&#34;&gt;AWSKRUG - AWS한국사용자모임&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/MS7CulWSc2g&#34;&gt;https://youtu.be/MS7CulWSc2g&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.slideshare.net/awskr/athena-step-function-aws-community-day-online-2021&#34;&gt;https://www.slideshare.net/awskr/athena-step-function-aws-community-day-online-2021&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
     <item>
@@ -23,8 +34,21 @@ Youtube Slides Athena &amp;amp; Step Function 으로 통계 파이프라인 구�
       <pubDate>Mon, 29 Oct 2018 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2018/10/29/Potal-Analysis/</guid>
-      <description>Summary 부산 스마트 앱 개발자 포럼에서 서버리스를 활용하여 데이터를 수집 및 분석 후기를 공유하였다.
-발표자료 Github repo. 발표 슬라이드 0원으로 시작하는 서버리스 데이터 수집 및 분석 from Kyuhyun Byun 고찰 지난 여름부터 모아온 데이터를 분석하고 이 데이터를 기반으로 AWS의 데이터 처리 서비스들에 대해서 공부하는 계기였다. 실제로 현업에서 데이터를 분석할 일은 많다. 데이터를 쌓고 보기 쉽게 변환하는 과정 그리고 시각화까지 다양한 기술을 요구한다. 데이터를 다루는 역량 뿐만 아니라 전체적인 웹서비스 구축 역량을 요구한다.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.onoffmix.com/event/155396&#34;&gt;부산 스마트 앱 개발자 포럼&lt;/a&gt;에서 서버리스를 활용하여 데이터를 수집 및 분석 후기를 공유하였다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.slideshare.net/KyuhyunByun1/0-121022533&#34;&gt;발표자료&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/novemberde/serverless-crawler-demo&#34;&gt;Github repo.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;발표-슬라이드&#34;&gt;발표 슬라이드&lt;/h2&gt;
+&lt;hr&gt;
+&lt;iframe src=&#34;//www.slideshare.net/slideshow/embed_code/key/xrAl5GcoWdJ9pd&#34; width=&#34;595&#34; height=&#34;485&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt; &lt;/iframe&gt; &lt;div style=&#34;margin-bottom:5px&#34;&gt; &lt;strong&gt; &lt;a href=&#34;//www.slideshare.net/KyuhyunByun1/0-121022533&#34; title=&#34;0원으로 시작하는 서버리스 데이터 수집 및 분석&#34; target=&#34;_blank&#34;&gt;0원으로 시작하는 서버리스 데이터 수집 및 분석&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href=&#34;//www.slideshare.net/KyuhyunByun1&#34; target=&#34;_blank&#34;&gt;Kyuhyun Byun&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;
+&lt;h2 id=&#34;고찰&#34;&gt;고찰&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;지난 여름부터 모아온 데이터를 분석하고 이 데이터를 기반으로 AWS의 데이터 처리 서비스들에 대해서 공부하는 계기였다.
+실제로 현업에서 데이터를 분석할 일은 많다. 데이터를 쌓고 보기 쉽게 변환하는 과정 그리고 시각화까지 다양한 기술을 요구한다.
+데이터를 다루는 역량 뿐만 아니라 전체적인 웹서비스 구축 역량을 요구한다.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -33,10 +57,22 @@ Youtube Slides Athena &amp;amp; Step Function 으로 통계 파이프라인 구�
       <pubDate>Thu, 14 Sep 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/09/14/public_data_athena/</guid>
-      <description>빅데이터를 직접 모으는 방법이 있지만, 공공데이터 포털과 네이버 데이터랩처럼 정해진 API를 통해 접근하거나 데이터를 JSON, XML, CSV와 같은 형식으로 지원해주는 사이트들을 적극 활용해볼 수 있습니다.
-AWSKRUG 류한진 님과 함께 준비한 Athena, QuickSight Hands-on lab입니다. 아래 링크는 발표자료 및 Hands-on 문서입니다.
-발표자료 Hands-on 아래는 류한진 님과 함께 작성한 &amp;lt;공공데이터 + Athena + QuickSight&amp;gt; 튜토리얼입니다.
-공공데이터를 이용한 데이터 만들기부터 분석까지 개요 빅데이터를 직접 모으는 방법이 있지만, 공공데이터 포털과 네이버 데이터랩처럼 정해진 API를 통해 접근하거나 데이터를 JSON, XML, CSV와 같은 형식으로 지원해주는 사이트들을 적극 활용해볼 수 있다.</description>
+      <description>&lt;p&gt;빅데이터를 직접 모으는 방법이 있지만, &lt;a href=&#34;https://www.data.go.kr/&#34;&gt;공공데이터 포털&lt;/a&gt;과 &lt;a href=&#34;http://datalab.naver.com/&#34;&gt;네이버 데이터랩&lt;/a&gt;처럼
+정해진 API를 통해 접근하거나 데이터를 JSON, XML, CSV와 같은 형식으로 지원해주는 사이트들을 적극 활용해볼 수 있습니다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;AWSKRUG 류한진 님과 함께 준비한 Athena, QuickSight Hands-on lab입니다.
+아래 링크는 발표자료 및 Hands-on 문서입니다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.google.com/presentation/d/e/2PACX-1vQAxD_sJZMenjJWjz8ZuN8skf1w8DT3R5owMBsw4FohnIv-v3XltkI69Lxu0VctWhH3apP48vJsY-rH/pub?start=false&amp;amp;loop=false&amp;amp;delayms=3000&amp;amp;slide=id.p&#34;&gt;발표자료&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/awskrug/datascience-lab/tree/master/public-data-analysis&#34;&gt;Hands-on&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;아래는 류한진 님과 함께 작성한 &amp;lt;공공데이터 + Athena + QuickSight&amp;gt; 튜토리얼입니다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;공공데이터를-이용한-데이터-만들기부터-분석까지&#34;&gt;공공데이터를 이용한 데이터 만들기부터 분석까지&lt;/h1&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;개요&#34;&gt;개요&lt;/h2&gt;
+&lt;p&gt;빅데이터를 직접 모으는 방법이 있지만, &lt;a href=&#34;https://www.data.go.kr/&#34;&gt;공공데이터 포털&lt;/a&gt;과 &lt;a href=&#34;http://datalab.naver.com/&#34;&gt;네이버 데이터랩&lt;/a&gt;처럼
+정해진 API를 통해 접근하거나 데이터를 JSON, XML, CSV와 같은 형식으로 지원해주는 사이트들을 적극 활용해볼 수 있다.&lt;/p&gt;</description>
     </item>
     
   </channel>

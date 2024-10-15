@@ -13,12 +13,28 @@
       <pubDate>Fri, 20 Oct 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/10/20/CodeCommit/</guid>
-      <description>Summary AWS CodeCommit은 AWS 완전 관리형 private git repository로 인데, 콘솔화면이 조금 부실해서 콘솔화면에서 repository 관리가 좋아보이진 않았다.
-SourceTree라는 Atlassian의 Git GUI tool로 AWS CodeCommit을 연동해보자.
-AWS CodeCommit에서 Git repository 생성하기 AWS CodeCommit화면으로 들어가서 Create repository를 하면 아래와 같은 화면이 나오는데 각 항목에 내용을 입력하자.
-Repository name: test Description: CodeCommit with SourceTree Local에 Git repository 설정하기 Repository를 생성하면 다음과 같은 화면이 나타난다.
-주목해야 할 부분은 빨간 박스로 표시해놓았다.
-현재 root계정으로 작업하고 있는데 이는 권장하지 않고, 별도의 IAM user를 통해 접근을 하는 것을 권장한다는 내용이다.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;AWS CodeCommit은 AWS 완전 관리형 private git repository로 인데, 콘솔화면이 조금 부실해서
+콘솔화면에서 repository 관리가 좋아보이진 않았다.&lt;/p&gt;
+&lt;p&gt;SourceTree라는 Atlassian의 Git GUI tool로 AWS CodeCommit을 연동해보자.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;aws-codecommit에서-git-repository-생성하기&#34;&gt;AWS CodeCommit에서 Git repository 생성하기&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;AWS CodeCommit화면으로 들어가서 Create repository를 하면 아래와 같은 화면이 나오는데 각 항목에 내용을 입력하자.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Repository name: test&lt;/li&gt;
+&lt;li&gt;Description: CodeCommit with SourceTree&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://novemberde.github.io/images/aws/codecommit/create.png&#34; alt=&#34;create repository&#34;  /&gt;
+&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;local에-git-repository-설정하기&#34;&gt;Local에 Git repository 설정하기&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Repository를 생성하면 다음과 같은 화면이 나타난다.&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://novemberde.github.io/images/aws/codecommit/created.png&#34; alt=&#34;created&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;주목해야 할 부분은 빨간 박스로 표시해놓았다.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -27,9 +43,18 @@ Repository name: test Description: CodeCommit with SourceTree Local에 Git repos
       <pubDate>Sun, 21 May 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/05/21/Javascript_policy/</guid>
-      <description>Summary 요즘 서버 및 웹클라이언트 환경을 javascript로 대부분 진행하고 있다. 그러던 도중 최근 한 스타트업의 서버 최적화를 진행할 때 굉장히 문제가 많은 코드를 접하였다. 거의 난독증이 생길정도의 코드였고, 기본 수칙만 지켜도 나타나지 않을 오류들이 많았다.
-이번에는 node js와 web framework를 개발하는 개발자들이 기본적으로 지켜주었으면 하는 내용을 담아보겠다.
-Javascript를 떠나 개발자가 코드를 짤 때 지켜야할 수칙 code를 짜다보면 대충 stackoverflow에서 복붙하고 넘어가고 싶고 그것을 으레 당연하게 여기는 개발자가 많음을 느끼고 있다. 하지만 이는 개발자 자신의 발전에 커다란 걸림돌이 된다.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;요즘 서버 및 웹클라이언트 환경을 javascript로 대부분 진행하고 있다.
+그러던 도중 최근 한 스타트업의 서버 최적화를 진행할 때 굉장히 문제가 많은 코드를 접하였다.
+거의 난독증이 생길정도의 코드였고, 기본 수칙만 지켜도 나타나지 않을 오류들이 많았다.&lt;/p&gt;
+&lt;p&gt;이번에는 node js와 web framework를 개발하는 개발자들이 기본적으로 지켜주었으면 하는 내용을 담아보겠다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;javascript를-떠나-개발자가-코드를-짤-때-지켜야할-수칙&#34;&gt;Javascript를 떠나 개발자가 코드를 짤 때 지켜야할 수칙&lt;/h3&gt;
+&lt;hr&gt;
+&lt;p&gt;code를 짜다보면 대충 stackoverflow에서 복붙하고 넘어가고 싶고 그것을 으레 당연하게 여기는 개발자가 많음을 느끼고 있다.
+하지만 이는 개발자 자신의 발전에 커다란 걸림돌이 된다. 또한 그 프로젝트가 점점 진행될수록 복붙한 코드가 발목을 잡을 것이다.
+궁금증이 생겼을 때 구글링으로 stackoverflow나 blog를 중심으로 검색한다면 그 또한 성장하지 못하는 이유가 될 수 있다.&lt;/p&gt;</description>
     </item>
     
   </channel>

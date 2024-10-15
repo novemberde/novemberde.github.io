@@ -1,18 +1,123 @@
 <!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>CircleCI에서 Github private repository를 npm module로 사용하기 | Novemberde's Blog</title>
-<meta name=keywords content="circleci,github,npm,private,repo,repository,module"><meta name=description content='Summary 현재 공통적인 모듈을 Git으로 따로 관리하여 npm private module로 사용한다. 또한 Webpack을 사용하여 Typescript로 작성된 서버를 번들링한다. 로컬에서는 모두 정상적으로 동작하지만 CircleCI에서 빌드할 경우에는 CircleCI의 권한이 해당 repository에 대한 권한만 가지고 있기 때문에 npm private module을 가져올 수가 없다.
+<meta name=keywords content="circleci,github,npm,private,repo,repository,module"><meta name=description content='Summary
+
+현재 공통적인 모듈을 Git으로 따로 관리하여 npm private module로 사용한다.
+또한 Webpack을 사용하여 Typescript로 작성된 서버를 번들링한다.
+로컬에서는 모두 정상적으로 동작하지만 CircleCI에서 빌드할 경우에는
+CircleCI의 권한이 해당 repository에 대한 권한만 가지고 있기 때문에
+npm private module을 가져올 수가 없다.
 이와같은 문제를 해결하기 위해서 트러블 슈팅을 하였다.
-Problem npm install을 할 때에 github에 있는 repository를 사용하는 방법은 두가지가 있다.
-https ssh ssh로 사용할 경우 관련 명령어는 다음과 같다.
-# ssh 키 생성하기 $ ssh-keygen -f id_rsa_kh -C "" # 생성한 키를 ~/.'><meta name=author content><link rel=canonical href=https://novemberde.github.io/post/2018/05/16/CircleCI-npm-private-github/><link crossorigin=anonymous href=/assets/css/stylesheet.min.9f1d947375927e9847272b1f4e9be81336f539e513bf04d52cade31f81cad1af.css integrity="sha256-nx2Uc3WSfphHJysfTpvoEzb1OeUTvwTVLK3jH4HK0a8=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/assets/js/highlight.min.2eadbb982468c11a433a3e291f01326f2ba43f065e256bf792dbd79640a92316.js integrity="sha256-Lq27mCRowRpDOj4pHwEybyukPwZeJWv3ktvXlkCpIxY=" onload=hljs.initHighlightingOnLoad()></script><link rel=icon href=https://novemberde.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://novemberde.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://novemberde.github.io/favicon-32x32.png><link rel=apple-touch-icon href=https://novemberde.github.io/apple-touch-icon.png><link rel=mask-icon href=https://novemberde.github.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><meta name=generator content="Hugo 0.126.3"><link rel=alternate hreflang=en href=https://novemberde.github.io/post/2018/05/16/CircleCI-npm-private-github/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:#1d1e20;--entry:#2e2e33;--primary:rgba(255, 255, 255, 0.84);--secondary:rgba(255, 255, 255, 0.56);--tertiary:rgba(255, 255, 255, 0.16);--content:rgba(255, 255, 255, 0.74);--hljs-bg:#2e2e33;--code-bg:#37383e;--border:#333}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script async src="https://www.googletagmanager.com/gtag/js?id=G-9SF4VDQ4N0"></script><script>var dnt,doNotTrack=!1;if(!1&&(dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes"),!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-9SF4VDQ4N0")}</script><meta property="og:title" content="CircleCI에서 Github private repository를 npm module로 사용하기"><meta property="og:description" content='Summary 현재 공통적인 모듈을 Git으로 따로 관리하여 npm private module로 사용한다. 또한 Webpack을 사용하여 Typescript로 작성된 서버를 번들링한다. 로컬에서는 모두 정상적으로 동작하지만 CircleCI에서 빌드할 경우에는 CircleCI의 권한이 해당 repository에 대한 권한만 가지고 있기 때문에 npm private module을 가져올 수가 없다.
+Problem
+
+npm install을 할 때에 github에 있는 repository를 사용하는 방법은 두가지가 있다.
+
+https
+ssh
+
+ssh로 사용할 경우 관련 명령어는 다음과 같다.
+# ssh 키 생성하기
+$ ssh-keygen -f id_rsa_kh -C ""
+
+# 생성한 키를 ~/.ssh 에 추가하기
+$ cp id_rsa_kh ~/.ssh/id_rsa_kh
+
+# 생성한 키의 권한 수정하기
+$ chmod 600 ~/.ssh/id_rsa_kh
+
+# 생성한 키의 퍼블릭 키를 출력하기. 이때 받은 키를 github private repo에 ssh키를 추가하여야 한다.
+$ cat id_rsa_kh.pub
+
+# ssh의 개인키 개수 확인하기
+$ ls -al ~/.ssh/
+
+# ssh-agent 실행하기
+$ eval "$(ssh-agent -s)"
+
+# ~/.ssh 디렉터리에 있는 개인키를 모두 ssh agent에 등록하기
+$ grep -slR "PRIVATE" ~/.ssh/ | xargs ssh-add
+
+# 현재 등록되어 있는 ssh key의 fingerprint 확인하기
+$ ssh-add -l -E md5
+위와 같이 키를 입력하였으면 이제 npm install을 해본다.'><meta name=author content><link rel=canonical href=https://novemberde.github.io/post/2018/05/16/CircleCI-npm-private-github/><link crossorigin=anonymous href=/assets/css/stylesheet.min.9f1d947375927e9847272b1f4e9be81336f539e513bf04d52cade31f81cad1af.css integrity="sha256-nx2Uc3WSfphHJysfTpvoEzb1OeUTvwTVLK3jH4HK0a8=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/assets/js/highlight.min.2eadbb982468c11a433a3e291f01326f2ba43f065e256bf792dbd79640a92316.js integrity="sha256-Lq27mCRowRpDOj4pHwEybyukPwZeJWv3ktvXlkCpIxY=" onload=hljs.initHighlightingOnLoad()></script><link rel=icon href=https://novemberde.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://novemberde.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://novemberde.github.io/favicon-32x32.png><link rel=apple-touch-icon href=https://novemberde.github.io/apple-touch-icon.png><link rel=mask-icon href=https://novemberde.github.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><meta name=generator content="Hugo 0.135.0"><link rel=alternate hreflang=en href=https://novemberde.github.io/post/2018/05/16/CircleCI-npm-private-github/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:#1d1e20;--entry:#2e2e33;--primary:rgba(255, 255, 255, 0.84);--secondary:rgba(255, 255, 255, 0.56);--tertiary:rgba(255, 255, 255, 0.16);--content:rgba(255, 255, 255, 0.74);--hljs-bg:#2e2e33;--code-bg:#37383e;--border:#333}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script async src="https://www.googletagmanager.com/gtag/js?id=G-9SF4VDQ4N0"></script><script>var dnt,doNotTrack=!1;if(!1&&(dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes"),!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-9SF4VDQ4N0")}</script><meta property="og:title" content="CircleCI에서 Github private repository를 npm module로 사용하기"><meta property="og:description" content='Summary
+
+현재 공통적인 모듈을 Git으로 따로 관리하여 npm private module로 사용한다.
+또한 Webpack을 사용하여 Typescript로 작성된 서버를 번들링한다.
+로컬에서는 모두 정상적으로 동작하지만 CircleCI에서 빌드할 경우에는
+CircleCI의 권한이 해당 repository에 대한 권한만 가지고 있기 때문에
+npm private module을 가져올 수가 없다.
 이와같은 문제를 해결하기 위해서 트러블 슈팅을 하였다.
-Problem npm install을 할 때에 github에 있는 repository를 사용하는 방법은 두가지가 있다.
-https ssh ssh로 사용할 경우 관련 명령어는 다음과 같다.
-# ssh 키 생성하기 $ ssh-keygen -f id_rsa_kh -C "" # 생성한 키를 ~/.'><meta property="og:type" content="article"><meta property="og:url" content="https://novemberde.github.io/post/2018/05/16/CircleCI-npm-private-github/"><meta property="article:section" content="post"><meta property="article:published_time" content="2018-05-16T11:30:03+00:00"><meta property="article:modified_time" content="2018-05-16T11:30:03+00:00"><meta property="og:site_name" content="Novemberde dev logs"><meta name=twitter:card content="summary"><meta name=twitter:title content="CircleCI에서 Github private repository를 npm module로 사용하기"><meta name=twitter:description content='Summary 현재 공통적인 모듈을 Git으로 따로 관리하여 npm private module로 사용한다. 또한 Webpack을 사용하여 Typescript로 작성된 서버를 번들링한다. 로컬에서는 모두 정상적으로 동작하지만 CircleCI에서 빌드할 경우에는 CircleCI의 권한이 해당 repository에 대한 권한만 가지고 있기 때문에 npm private module을 가져올 수가 없다.
+Problem
+
+npm install을 할 때에 github에 있는 repository를 사용하는 방법은 두가지가 있다.
+
+https
+ssh
+
+ssh로 사용할 경우 관련 명령어는 다음과 같다.
+# ssh 키 생성하기
+$ ssh-keygen -f id_rsa_kh -C ""
+
+# 생성한 키를 ~/.ssh 에 추가하기
+$ cp id_rsa_kh ~/.ssh/id_rsa_kh
+
+# 생성한 키의 권한 수정하기
+$ chmod 600 ~/.ssh/id_rsa_kh
+
+# 생성한 키의 퍼블릭 키를 출력하기. 이때 받은 키를 github private repo에 ssh키를 추가하여야 한다.
+$ cat id_rsa_kh.pub
+
+# ssh의 개인키 개수 확인하기
+$ ls -al ~/.ssh/
+
+# ssh-agent 실행하기
+$ eval "$(ssh-agent -s)"
+
+# ~/.ssh 디렉터리에 있는 개인키를 모두 ssh agent에 등록하기
+$ grep -slR "PRIVATE" ~/.ssh/ | xargs ssh-add
+
+# 현재 등록되어 있는 ssh key의 fingerprint 확인하기
+$ ssh-add -l -E md5
+위와 같이 키를 입력하였으면 이제 npm install을 해본다.'><meta property="og:type" content="article"><meta property="og:url" content="https://novemberde.github.io/post/2018/05/16/CircleCI-npm-private-github/"><meta property="article:section" content="post"><meta property="article:published_time" content="2018-05-16T11:30:03+00:00"><meta property="article:modified_time" content="2018-05-16T11:30:03+00:00"><meta property="og:site_name" content="Novemberde dev logs"><meta name=twitter:card content="summary"><meta name=twitter:title content="CircleCI에서 Github private repository를 npm module로 사용하기"><meta name=twitter:description content='Summary
+
+현재 공통적인 모듈을 Git으로 따로 관리하여 npm private module로 사용한다.
+또한 Webpack을 사용하여 Typescript로 작성된 서버를 번들링한다.
+로컬에서는 모두 정상적으로 동작하지만 CircleCI에서 빌드할 경우에는
+CircleCI의 권한이 해당 repository에 대한 권한만 가지고 있기 때문에
+npm private module을 가져올 수가 없다.
 이와같은 문제를 해결하기 위해서 트러블 슈팅을 하였다.
-Problem npm install을 할 때에 github에 있는 repository를 사용하는 방법은 두가지가 있다.
-https ssh ssh로 사용할 경우 관련 명령어는 다음과 같다.
-# ssh 키 생성하기 $ ssh-keygen -f id_rsa_kh -C "" # 생성한 키를 ~/.'><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://novemberde.github.io/post/"},{"@type":"ListItem","position":2,"name":"CircleCI에서 Github private repository를 npm module로 사용하기","item":"https://novemberde.github.io/post/2018/05/16/CircleCI-npm-private-github/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"CircleCI에서 Github private repository를 npm module로 사용하기","name":"CircleCI에서 Github private repository를 npm module로 사용하기","description":"Summary 현재 공통적인 모듈을 Git으로 따로 관리하여 npm private module로 사용한다. 또한 Webpack을 사용하여 Typescript로 작성된 서버를 번들링한다. 로컬에서는 모두 정상적으로 동작하지만 CircleCI에서 빌드할 경우에는 CircleCI의 권한이 해당 repository에 대한 권한만 가지고 있기 때문에 npm private module을 가져올 수가 없다.\n이와같은 문제를 해결하기 위해서 트러블 슈팅을 하였다.\nProblem npm install을 할 때에 github에 있는 repository를 사용하는 방법은 두가지가 있다.\nhttps ssh ssh로 사용할 경우 관련 명령어는 다음과 같다.\n# ssh 키 생성하기 $ ssh-keygen -f id_rsa_kh -C \u0026#34;\u0026#34; # 생성한 키를 ~/.","keywords":["circleci","github","npm","private","repo","repository","module"],"articleBody":"Summary 현재 공통적인 모듈을 Git으로 따로 관리하여 npm private module로 사용한다. 또한 Webpack을 사용하여 Typescript로 작성된 서버를 번들링한다. 로컬에서는 모두 정상적으로 동작하지만 CircleCI에서 빌드할 경우에는 CircleCI의 권한이 해당 repository에 대한 권한만 가지고 있기 때문에 npm private module을 가져올 수가 없다.\n이와같은 문제를 해결하기 위해서 트러블 슈팅을 하였다.\nProblem npm install을 할 때에 github에 있는 repository를 사용하는 방법은 두가지가 있다.\nhttps ssh ssh로 사용할 경우 관련 명령어는 다음과 같다.\n# ssh 키 생성하기 $ ssh-keygen -f id_rsa_kh -C \"\" # 생성한 키를 ~/.ssh 에 추가하기 $ cp id_rsa_kh ~/.ssh/id_rsa_kh # 생성한 키의 권한 수정하기 $ chmod 600 ~/.ssh/id_rsa_kh # 생성한 키의 퍼블릭 키를 출력하기. 이때 받은 키를 github private repo에 ssh키를 추가하여야 한다. $ cat id_rsa_kh.pub # ssh의 개인키 개수 확인하기 $ ls -al ~/.ssh/ # ssh-agent 실행하기 $ eval \"$(ssh-agent -s)\" # ~/.ssh 디렉터리에 있는 개인키를 모두 ssh agent에 등록하기 $ grep -slR \"PRIVATE\" ~/.ssh/ | xargs ssh-add # 현재 등록되어 있는 ssh key의 fingerprint 확인하기 $ ssh-add -l -E md5 위와 같이 키를 입력하였으면 이제 npm install을 해본다.\n# username, repository를 수정하여준다. $ npm i -S git+ssh://git@github.com:/.git # https의 경우 $ npm i -S https://github.com// $ npm i -S git+https://:x-oauth-basic@github.com//.git 로컬에서 사용시 여기까지는 문제없이 진행되었다. 하지만 CircleCI에서 ssh키를 추가하여 steps에 다음의 코드도 추가하였음에도 불구하고 npm install이 되지 않았다.\n- add_ssh_keys: fingerprints: - \"XX:XX:...\" 그래서 이전에 사용했던 명령어들을 통해 디버깅을 시작하였다. 다음의 명령어를 통해 fingerprint를 확인해보니 정상적으로 추가가 되어 있었다.\n$ ssh-add -l -E md5 2048 MD5:xx... (RSA) 2048 MD5:xx:yy... (RSA) 그렇다면 무엇이 문제일까? 해답은 다음과 같은 명령어를 통해 유추해낼 수 있었다.\n$ ssh -Tv git@github.com 이것은 ssh로 github에 인증이 되었는지 확인할 수 있는데, 위의 명령어를 입력하니 다음과 같은 것을 확인할 수 있었다.\nHi /! You’ve successfully authenticated, but GitHub does not provide shell access.\n이를 보니 CircleCI에서 빌드하는 repository의 ssh키로 Github에 접근하니 추가한 ssh-key가 있다하더라도 default로 가지고 있는 키로 ssh를 시도하였다.\nSolution 해결방법은 고민이 무색할 정도로 간단하게 결정하였다. Github에 접근하는 키에 대해 switching 을 하는 스크립트를 만들고 매번 실행하여 해결할까라는 고민도 하였지만 너무 불필요한 코드라고 여겨졌다. 그래서 Gmail 계정을 하나 더 생성하고, github에 가입한 다음 권한을 주었다.\n그 다음은 https로 private repo에 접근하면 된다.\n솔직히 제일 간단한 방법은 npm 에 private repository를 매달 비용을 지불하면서 사용하면 된다. 아니면 직접 npm repository를 운영하여 사용해도 좋다. 그런데 운영 리소스를 줄이고 싶은 마음이 제일 크기 때문에 직접 운영하는 배제하였고, npm private repo는 아직 크게 사용할 일이 없어서 하지 않았다.\n나중에 private repository가 많아진다면 npm에 지불해야 된다고 생각한다.\n","wordCount":"395","inLanguage":"en","datePublished":"2018-05-16T11:30:03Z","dateModified":"2018-05-16T11:30:03Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://novemberde.github.io/post/2018/05/16/CircleCI-npm-private-github/"},"publisher":{"@type":"Organization","name":"Novemberde's Blog","logo":{"@type":"ImageObject","url":"https://novemberde.github.io/favicon.ico"}}}</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8620431066400094" crossorigin=anonymous></script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://novemberde.github.io/ accesskey=h title="Novemberde's Blog (Alt + H)">Novemberde's Blog</a>
-<span class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button><ul class=lang-switch><li>|</li></ul></span></div><ul id=menu><li><a href=https://novemberde.github.io/search title="Search (Alt + /)" accesskey=/><span>Search</span></a></li><li><a href=https://novemberde.github.io/post/ title=Post><span>Post</span></a></li><li><a href=https://novemberde.github.io/about title=About><span>About</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://novemberde.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://novemberde.github.io/post/>Posts</a></div><h1 class=post-title>CircleCI에서 Github private repository를 npm module로 사용하기</h1><div class=post-meta>May 16, 2018 2 min</div></header><div class=post-content><h2 id=summary>Summary<a hidden class=anchor aria-hidden=true href=#summary>#</a></h2><hr><p>현재 공통적인 모듈을 Git으로 따로 관리하여 npm private module로 사용한다.
+Problem
+
+npm install을 할 때에 github에 있는 repository를 사용하는 방법은 두가지가 있다.
+
+https
+ssh
+
+ssh로 사용할 경우 관련 명령어는 다음과 같다.
+# ssh 키 생성하기
+$ ssh-keygen -f id_rsa_kh -C ""
+
+# 생성한 키를 ~/.ssh 에 추가하기
+$ cp id_rsa_kh ~/.ssh/id_rsa_kh
+
+# 생성한 키의 권한 수정하기
+$ chmod 600 ~/.ssh/id_rsa_kh
+
+# 생성한 키의 퍼블릭 키를 출력하기. 이때 받은 키를 github private repo에 ssh키를 추가하여야 한다.
+$ cat id_rsa_kh.pub
+
+# ssh의 개인키 개수 확인하기
+$ ls -al ~/.ssh/
+
+# ssh-agent 실행하기
+$ eval "$(ssh-agent -s)"
+
+# ~/.ssh 디렉터리에 있는 개인키를 모두 ssh agent에 등록하기
+$ grep -slR "PRIVATE" ~/.ssh/ | xargs ssh-add
+
+# 현재 등록되어 있는 ssh key의 fingerprint 확인하기
+$ ssh-add -l -E md5
+위와 같이 키를 입력하였으면 이제 npm install을 해본다.'><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://novemberde.github.io/post/"},{"@type":"ListItem","position":2,"name":"CircleCI에서 Github private repository를 npm module로 사용하기","item":"https://novemberde.github.io/post/2018/05/16/CircleCI-npm-private-github/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"CircleCI에서 Github private repository를 npm module로 사용하기","name":"CircleCI에서 Github private repository를 npm module로 사용하기","description":"Summary 현재 공통적인 모듈을 Git으로 따로 관리하여 npm private module로 사용한다. 또한 Webpack을 사용하여 Typescript로 작성된 서버를 번들링한다. 로컬에서는 모두 정상적으로 동작하지만 CircleCI에서 빌드할 경우에는 CircleCI의 권한이 해당 repository에 대한 권한만 가지고 있기 때문에 npm private module을 가져올 수가 없다.\n이와같은 문제를 해결하기 위해서 트러블 슈팅을 하였다.\nProblem npm install을 할 때에 github에 있는 repository를 사용하는 방법은 두가지가 있다.\nhttps ssh ssh로 사용할 경우 관련 명령어는 다음과 같다.\n# ssh 키 생성하기 $ ssh-keygen -f id_rsa_kh -C \u0026#34;\u0026#34; # 생성한 키를 ~/.ssh 에 추가하기 $ cp id_rsa_kh ~/.ssh/id_rsa_kh # 생성한 키의 권한 수정하기 $ chmod 600 ~/.ssh/id_rsa_kh # 생성한 키의 퍼블릭 키를 출력하기. 이때 받은 키를 github private repo에 ssh키를 추가하여야 한다. $ cat id_rsa_kh.pub # ssh의 개인키 개수 확인하기 $ ls -al ~/.ssh/ # ssh-agent 실행하기 $ eval \u0026#34;$(ssh-agent -s)\u0026#34; # ~/.ssh 디렉터리에 있는 개인키를 모두 ssh agent에 등록하기 $ grep -slR \u0026#34;PRIVATE\u0026#34; ~/.ssh/ | xargs ssh-add # 현재 등록되어 있는 ssh key의 fingerprint 확인하기 $ ssh-add -l -E md5 위와 같이 키를 입력하였으면 이제 npm install을 해본다.\n","keywords":["circleci","github","npm","private","repo","repository","module"],"articleBody":"Summary 현재 공통적인 모듈을 Git으로 따로 관리하여 npm private module로 사용한다. 또한 Webpack을 사용하여 Typescript로 작성된 서버를 번들링한다. 로컬에서는 모두 정상적으로 동작하지만 CircleCI에서 빌드할 경우에는 CircleCI의 권한이 해당 repository에 대한 권한만 가지고 있기 때문에 npm private module을 가져올 수가 없다.\n이와같은 문제를 해결하기 위해서 트러블 슈팅을 하였다.\nProblem npm install을 할 때에 github에 있는 repository를 사용하는 방법은 두가지가 있다.\nhttps ssh ssh로 사용할 경우 관련 명령어는 다음과 같다.\n# ssh 키 생성하기 $ ssh-keygen -f id_rsa_kh -C \"\" # 생성한 키를 ~/.ssh 에 추가하기 $ cp id_rsa_kh ~/.ssh/id_rsa_kh # 생성한 키의 권한 수정하기 $ chmod 600 ~/.ssh/id_rsa_kh # 생성한 키의 퍼블릭 키를 출력하기. 이때 받은 키를 github private repo에 ssh키를 추가하여야 한다. $ cat id_rsa_kh.pub # ssh의 개인키 개수 확인하기 $ ls -al ~/.ssh/ # ssh-agent 실행하기 $ eval \"$(ssh-agent -s)\" # ~/.ssh 디렉터리에 있는 개인키를 모두 ssh agent에 등록하기 $ grep -slR \"PRIVATE\" ~/.ssh/ | xargs ssh-add # 현재 등록되어 있는 ssh key의 fingerprint 확인하기 $ ssh-add -l -E md5 위와 같이 키를 입력하였으면 이제 npm install을 해본다.\n# username, repository를 수정하여준다. $ npm i -S git+ssh://git@github.com:/.git # https의 경우 $ npm i -S https://github.com// $ npm i -S git+https://:x-oauth-basic@github.com//.git 로컬에서 사용시 여기까지는 문제없이 진행되었다. 하지만 CircleCI에서 ssh키를 추가하여 steps에 다음의 코드도 추가하였음에도 불구하고 npm install이 되지 않았다.\n- add_ssh_keys: fingerprints: - \"XX:XX:...\" 그래서 이전에 사용했던 명령어들을 통해 디버깅을 시작하였다. 다음의 명령어를 통해 fingerprint를 확인해보니 정상적으로 추가가 되어 있었다.\n$ ssh-add -l -E md5 2048 MD5:xx... (RSA) 2048 MD5:xx:yy... (RSA) 그렇다면 무엇이 문제일까? 해답은 다음과 같은 명령어를 통해 유추해낼 수 있었다.\n$ ssh -Tv git@github.com 이것은 ssh로 github에 인증이 되었는지 확인할 수 있는데, 위의 명령어를 입력하니 다음과 같은 것을 확인할 수 있었다.\nHi /! You’ve successfully authenticated, but GitHub does not provide shell access.\n이를 보니 CircleCI에서 빌드하는 repository의 ssh키로 Github에 접근하니 추가한 ssh-key가 있다하더라도 default로 가지고 있는 키로 ssh를 시도하였다.\nSolution 해결방법은 고민이 무색할 정도로 간단하게 결정하였다. Github에 접근하는 키에 대해 switching 을 하는 스크립트를 만들고 매번 실행하여 해결할까라는 고민도 하였지만 너무 불필요한 코드라고 여겨졌다. 그래서 Gmail 계정을 하나 더 생성하고, github에 가입한 다음 권한을 주었다.\n그 다음은 https로 private repo에 접근하면 된다.\n솔직히 제일 간단한 방법은 npm 에 private repository를 매달 비용을 지불하면서 사용하면 된다. 아니면 직접 npm repository를 운영하여 사용해도 좋다. 그런데 운영 리소스를 줄이고 싶은 마음이 제일 크기 때문에 직접 운영하는 배제하였고, npm private repo는 아직 크게 사용할 일이 없어서 하지 않았다.\n나중에 private repository가 많아진다면 npm에 지불해야 된다고 생각한다.\n","wordCount":"395","inLanguage":"en","datePublished":"2018-05-16T11:30:03Z","dateModified":"2018-05-16T11:30:03Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://novemberde.github.io/post/2018/05/16/CircleCI-npm-private-github/"},"publisher":{"@type":"Organization","name":"Novemberde's Blog","logo":{"@type":"ImageObject","url":"https://novemberde.github.io/favicon.ico"}}}</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8620431066400094" crossorigin=anonymous></script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://novemberde.github.io/ accesskey=h title="Novemberde's Blog (Alt + H)">Novemberde's Blog</a>
+<span class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button><ul class=lang-switch><li>|</li></ul></span></div><ul id=menu><li><a href=https://novemberde.github.io/search title="Search (Alt + /)" accesskey=/><span>Search</span></a></li><li><a href=https://novemberde.github.io/post/ title=Post><span>Post</span></a></li><li><a href=https://novemberde.github.io/about title=About><span>About</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://novemberde.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://novemberde.github.io/post/>Posts</a></div><h1 class=post-title>CircleCI에서 Github private repository를 npm module로 사용하기</h1><div class=post-meta>May 16, 2018 2 min</div></header><div class=post-content><h2 id=summary>Summary<a hidden class=anchor aria-hidden=true href=#summary>#</a></h2><hr><p>현재 공통적인 모듈을 Git으로 따로 관리하여 npm private module로 사용한다.
 또한 Webpack을 사용하여 Typescript로 작성된 서버를 번들링한다.
 로컬에서는 모두 정상적으로 동작하지만 CircleCI에서 빌드할 경우에는
 CircleCI의 권한이 해당 repository에 대한 권한만 가지고 있기 때문에
@@ -63,5 +168,5 @@ ssh를 시도하였다.</p><h3 id=solution>Solution<a hidden class=anchor aria-h
 </a><a class=next href=https://novemberde.github.io/post/2018/04/12/Neo4j/><span class=title>Next Page »</span><br><span>GraphDB 란?</span></a></nav></footer><div id=disqus_thread></div><script>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//novemberde-github-io.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></article></main><footer class=footer><span>&copy; 2024 <a href=https://novemberde.github.io/>Novemberde's Blog</a></span>
 <span>Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
-        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
+        <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
 </a><script>let menu=document.getElementById("menu");menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)},document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script></body></html>

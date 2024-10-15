@@ -13,7 +13,8 @@
       <pubDate>Fri, 20 Oct 2017 13:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/10/20/Docker/</guid>
-      <description>2017.06.08에 AWSKRUG에서 EC2에서 Docker와 Docker-compose 사용하기라는 주제로 발표했던 자료입니다.</description>
+      <description>&lt;p&gt;2017.06.08에 AWSKRUG에서 EC2에서 Docker와 Docker-compose 사용하기라는 주제로 발표했던 자료입니다.&lt;/p&gt;
+&lt;iframe src=&#34;//slides.com/byunkyuhyun/ec2-docker-docker-compose/embed&#34; width=&#34;576&#34; height=&#34;420&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;</description>
     </item>
     
   </channel>

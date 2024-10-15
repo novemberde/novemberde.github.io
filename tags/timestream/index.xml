@@ -13,8 +13,14 @@
       <pubDate>Fri, 25 Jan 2019 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2019/01/25/Timestream/</guid>
-      <description>&amp;ldquo;시계열 데이터 전용 DB 소개&amp;quot;라는 주제로 2019년 1월 25일에 AWSKRUG re:Invent recap 행사에서 발표한 자료입니다.
-발표자료 Amazon Timestream 시계열 데이터 전용 DB 소개 :: 변규현 - AWS Community Day 2019 from AWS Korea UserGroup (AWS한국사용자모임) References https://www.slideshare.net/awskr/amazon-timestream-db https://pages.awscloud.com/aws-community-day-seoul-2019.html </description>
+      <description>&lt;p&gt;&amp;ldquo;시계열 데이터 전용 DB 소개&amp;quot;라는 주제로 2019년 1월 25일에 &lt;a href=&#34;https://pages.awscloud.com/aws-community-day-seoul-2019.html&#34;&gt;AWSKRUG re:Invent recap 행사&lt;/a&gt;에서 발표한 자료입니다.&lt;/p&gt;
+&lt;h2 id=&#34;발표자료&#34;&gt;발표자료&lt;/h2&gt;
+&lt;iframe src=&#34;//www.slideshare.net/slideshow/embed_code/key/F7GmlRSZZCQkKA&#34; width=&#34;595&#34; height=&#34;485&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt; &lt;/iframe&gt; &lt;div style=&#34;margin-bottom:5px&#34;&gt; &lt;strong&gt; &lt;a href=&#34;//www.slideshare.net/awskr/amazon-timestream-db&#34; title=&#34;Amazon Timestream 시계열 데이터 전용 DB 소개 :: 변규현 - AWS Community Day 2019&#34; target=&#34;_blank&#34;&gt;Amazon Timestream 시계열 데이터 전용 DB 소개 :: 변규현 - AWS Community Day 2019&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href=&#34;https://www.slideshare.net/awskr&#34; target=&#34;_blank&#34;&gt;AWS Korea UserGroup (AWS한국사용자모임)&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.slideshare.net/awskr/amazon-timestream-db&#34;&gt;https://www.slideshare.net/awskr/amazon-timestream-db&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://pages.awscloud.com/aws-community-day-seoul-2019.html&#34;&gt;https://pages.awscloud.com/aws-community-day-seoul-2019.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
   </channel>

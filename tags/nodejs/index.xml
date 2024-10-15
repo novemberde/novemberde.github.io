@@ -13,8 +13,14 @@
       <pubDate>Thu, 14 Feb 2019 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2019/02/14/Ts-Serverless-Build/</guid>
-      <description>AWSKRUG Serverless Group에서 발표한 자료입니다. C++로 빌드한 Native addon을 Serverless 환경에서 사용할 때 빌드 및 배포하는 방법을 다루었습니다.
-발표자료 Native addon을 포함하여 Node.js + Typescript + Serverless 빌드 및 배포하기 from Kyuhyun Byun References https://www.slideshare.net/KyuhyunByun1/native-addon-nodejs-typescript-serverless </description>
+      <description>&lt;p&gt;AWSKRUG Serverless Group에서 발표한 자료입니다.
+C++로 빌드한 Native addon을 Serverless 환경에서 사용할 때 빌드 및 배포하는 방법을 다루었습니다.&lt;/p&gt;
+&lt;h2 id=&#34;발표자료&#34;&gt;발표자료&lt;/h2&gt;
+&lt;iframe src=&#34;//www.slideshare.net/slideshow/embed_code/key/A5nT0LwxOtDw5T&#34; width=&#34;595&#34; height=&#34;485&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt; &lt;/iframe&gt; &lt;div style=&#34;margin-bottom:5px&#34;&gt; &lt;strong&gt; &lt;a href=&#34;//www.slideshare.net/KyuhyunByun1/native-addon-nodejs-typescript-serverless&#34; title=&#34;Native addon을 포함하여 Node.js + Typescript + Serverless 빌드 및 배포하기&#34; target=&#34;_blank&#34;&gt;Native addon을 포함하여 Node.js + Typescript + Serverless 빌드 및 배포하기&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href=&#34;https://www.slideshare.net/KyuhyunByun1&#34; target=&#34;_blank&#34;&gt;Kyuhyun Byun&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.slideshare.net/KyuhyunByun1/native-addon-nodejs-typescript-serverless&#34;&gt;https://www.slideshare.net/KyuhyunByun1/native-addon-nodejs-typescript-serverless&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
     <item>
@@ -23,8 +29,20 @@
       <pubDate>Thu, 01 Mar 2018 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2018/03/01/Node_apicache/</guid>
-      <description>문제인식 서비스가 성장해가면서 기존에는 보이지 않던 문제점들이 나타났다. 처음에는 Slow query의 최적화를 필요로하지도 않았고, DB에 부하가 몰려서 Bottle neck point가 되는 것을 상상만 했지 직접 경험하지는 못했었다. 하지만 점차 Query의 optimization이 필요한 경우가 생겼고, DB로 몰리는 부하를 분산하기 위해 어떻게 처리해야하는지 고민하기 시작했다.
-Cache me if you can 다행히도 AWSKRUG활동을 하면서 AWS re:Invent행사에 참석한 경험이 도움이 되었다. 들었던 세션중에서 가장 감명깊은 것중에 하나는 &amp;ldquo;Cache me if you can&amp;quot;이었다. 주된 내용은 점차 서비스가 커져감에 따라서 우린 Database로 몰리는 부하를 분산시켜야만 하고, 그것을 해결하기 위해서는 각 요청에 따라 Cache로 처리할 수 있는 부분은 모두 Cache로 해결해야 된다는 내용이었다.</description>
+      <description>&lt;h2 id=&#34;문제인식&#34;&gt;문제인식&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;서비스가 성장해가면서 기존에는 보이지 않던 문제점들이 나타났다.
+처음에는 Slow query의 최적화를 필요로하지도 않았고, DB에 부하가 몰려서
+Bottle neck point가 되는 것을 상상만 했지 직접 경험하지는 못했었다.
+하지만 점차 Query의 optimization이 필요한 경우가 생겼고,
+DB로 몰리는 부하를 분산하기 위해 어떻게 처리해야하는지 고민하기 시작했다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;cache-me-if-you-can&#34;&gt;Cache me if you can&lt;/h2&gt;
+&lt;p&gt;다행히도 AWSKRUG활동을 하면서 AWS re:Invent행사에 참석한 경험이 도움이 되었다.
+들었던 세션중에서 가장 감명깊은 것중에 하나는 &amp;ldquo;Cache me if you can&amp;quot;이었다.
+주된 내용은 점차 서비스가 커져감에 따라서 우린 Database로 몰리는 부하를 분산시켜야만 하고,
+그것을 해결하기 위해서는 각 요청에 따라 Cache로 처리할 수 있는 부분은 모두 Cache로
+해결해야 된다는 내용이었다.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -33,17 +51,75 @@ Cache me if you can 다행히도 AWSKRUG활동을 하면서 AWS re:Invent행사�
       <pubDate>Sun, 05 Nov 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/11/05/Node.JS_Library/</guid>
-      <description>Summary Node JS의 라이브러리가 워낙 많다보니 자주쓰는 라이브러리를 정리해야될 필요성을 느꼈다.
-그리고 재밌는 라이브러리를 리스트로 관리하지 않다보니 잊게 되었다.
-발견할 때마다 정리하고 라이브러리의 용도에 맞게 분류하여 나중에 필요할 경우 바로 사용할 수 있도록 한다.
-자주 쓰는 패키지 JavaScript utility library
-underscore lodash Year, month, date, time
-moment.js MarkDown
-highlight.js prismjs Ajax
-request request-promise superagent axios got Test
-mocha supertest chai should enzyme Logger
-morgan Task Runner &amp;amp; Bundler
-gulp grunt webpack webpack-dashboard Database</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Node JS의 라이브러리가 워낙 많다보니 자주쓰는 라이브러리를 정리해야될 필요성을 느꼈다.&lt;/p&gt;
+&lt;p&gt;그리고 재밌는 라이브러리를 리스트로 관리하지 않다보니 잊게 되었다.&lt;/p&gt;
+&lt;p&gt;발견할 때마다 정리하고 라이브러리의 용도에 맞게 분류하여 나중에 필요할 경우 바로 사용할 수 있도록 한다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;자주-쓰는-패키지&#34;&gt;자주 쓰는 패키지&lt;/h2&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;JavaScript utility library&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://underscorejs.org/&#34;&gt;underscore&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://lodash.com/&#34;&gt;lodash&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Year, month, date, time&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://momentjs.com/&#34;&gt;moment.js&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;MarkDown&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://highlightjs.org/&#34;&gt;highlight.js&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://prismjs.com/&#34;&gt;prismjs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ajax&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.npmjs.com/package/request&#34;&gt;request&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.npmjs.com/package/request-promise&#34;&gt;request-promise&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.npmjs.com/package/superagent&#34;&gt;superagent&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.npmjs.com/package/axios&#34;&gt;axios&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.npmjs.com/package/got&#34;&gt;got&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Test&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.npmjs.com/package/mocha&#34;&gt;mocha&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.npmjs.com/package/supertest&#34;&gt;supertest&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.npmjs.com/package/chai&#34;&gt;chai&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.npmjs.com/package/should&#34;&gt;should&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.npmjs.com/package/enzyme&#34;&gt;enzyme&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Logger&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.npmjs.com/package/morgan&#34;&gt;morgan&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Task Runner &amp;amp; Bundler&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://gulpjs.com/&#34;&gt;gulp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gruntjs.com/&#34;&gt;grunt&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://webpack.github.io/&#34;&gt;webpack&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/FormidableLabs/webpack-dashboard&#34;&gt;webpack-dashboard&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Database&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -52,11 +128,33 @@ gulp grunt webpack webpack-dashboard Database</description>
       <pubDate>Sun, 22 Oct 2017 13:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/10/22/Express-Typescript/</guid>
-      <description>Summary 최근에 직방의 AWS Lambda 코드를 세미나에서 스쳐지나가는 것을 보았다. TypeScript로 짜여져 있었고 나중에 지속적인 프로젝트 관리적인 이점이 있을 것으로 생각이 되기 때문에 TypeScript로 프로젝트를 구성해보는 것을 정리해보기로 결심했다.
-node.js 프로젝트 생성하기 먼저 프로젝트를 생성한다. 기존에 npm과 nodejs가 설치되어 있다는 전제하에 시작한다.
-만약 설치되어 있지 않다면 다음의 링크를 참고한다. https://nodejs.org/ko/download/package-manager/
-$ mkdir node_typescript $ npm init -y 그리고 편의를 위해 사전에 설치되어 있어야 하는 패키지들이 있다.
-npx: global로 패키지를 설치하지 않더라도 프로젝트 내에서 사용할 수 있게 해준다.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;최근에 직방의 AWS Lambda 코드를 세미나에서 스쳐지나가는 것을 보았다.
+TypeScript로 짜여져 있었고 나중에 지속적인 프로젝트 관리적인 이점이 있을 것으로 생각이 되기 때문에 TypeScript로 프로젝트를 구성해보는 것을 정리해보기로 결심했다.&lt;/p&gt;
+&lt;h2 id=&#34;nodejs-프로젝트-생성하기&#34;&gt;node.js 프로젝트 생성하기&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;먼저 프로젝트를 생성한다. 기존에 npm과 nodejs가 설치되어 있다는 전제하에 시작한다.&lt;/p&gt;
+&lt;p&gt;만약 설치되어 있지 않다면 다음의 링크를 참고한다. &lt;a href=&#34;https://nodejs.org/ko/download/package-manager/&#34;&gt;https://nodejs.org/ko/download/package-manager/&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ mkdir node_typescript
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ npm init -y
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;그리고 편의를 위해 사전에 설치되어 있어야 하는 패키지들이 있다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;npx: global로 패키지를 설치하지 않더라도 프로젝트 내에서 사용할 수 있게 해준다.&lt;/li&gt;
+&lt;li&gt;nodemon: 파일이 변화될 때마다 재실행해준다.&lt;/li&gt;
+&lt;li&gt;typescript: typescript로 구성한 코드를 javascript로 트랜스파일링 해준다.&lt;/li&gt;
+&lt;li&gt;npm-run-all: 여러 npm 실행 명령을 병렬로 실행할 수 있게 해준다.&lt;/li&gt;
+&lt;li&gt;webpack: 요즘 각광받는 모듈 번들러&lt;/li&gt;
+&lt;li&gt;webpack-cli: webpack 명령을 사용하기 위한 CLI도구&lt;/li&gt;
+&lt;li&gt;source-map-support: typescript로 개발시 source-map을 지원해준다.&lt;/li&gt;
+&lt;li&gt;@types/express: express 모듈에 대한 type을 지원해준다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ npm install -g npx
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ npm install --save-dev typescript ts-loader npm-run-all webpack @types/express nodemon webpack-cli
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ npm install --save express source-map-support
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;기본-설정하기&#34;&gt;기본 설정하기&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;다음과 같이 typescript에 대한 기본 설정을 한다.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -65,10 +163,19 @@ npx: global로 패키지를 설치하지 않더라도 프로젝트 내에서 사
       <pubDate>Sat, 01 Jul 2017 13:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/07/01/Sequelize_0/</guid>
-      <description>Summary node js로 서버를 구성할 때 ORM framework로 sequelize를 사용한다. 하지만 비동기로 모든 CRUD가 진행되다보니 동시에 여러 쿼리문의 결과가 요구될 때도 있다. serial execution과 parallel execution을 살표보자.
-parallel execution과 serial execution Promise pattern을 활용하여 절차적으로 함수를 실행하면 여러 트랜잭션 과정을 파악하기 쉽다. callback 패턴의 늪에서 벗어날 수 있는 Promise는 현재 서버사이드에서 사용되는 라이브러리들에서 적극 활용되어지고 있다.
-먼저 serial execution을 살펴보고 이에 대한 단점도 파악해 보자.
-아래의 예제는 User를 검색하고 관계가 형성되어 있지 않은 다른 테이블을 Select하는 경우이다.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;node js로 서버를 구성할 때 ORM framework로 sequelize를 사용한다.
+하지만 비동기로 모든 CRUD가 진행되다보니 동시에 여러 쿼리문의 결과가 요구될 때도 있다.
+serial execution과 parallel execution을 살표보자.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;parallel-execution과-serial-execution&#34;&gt;parallel execution과 serial execution&lt;/h3&gt;
+&lt;hr&gt;
+&lt;p&gt;Promise pattern을 활용하여 절차적으로 함수를 실행하면 여러 트랜잭션 과정을 파악하기 쉽다.
+callback 패턴의 늪에서 벗어날 수 있는 Promise는 현재 서버사이드에서 사용되는 라이브러리들에서
+적극 활용되어지고 있다.&lt;/p&gt;
+&lt;p&gt;먼저 serial execution을 살펴보고 이에 대한 단점도 파악해 보자.&lt;/p&gt;
+&lt;p&gt;아래의 예제는 User를 검색하고 관계가 형성되어 있지 않은 다른 테이블을 Select하는 경우이다.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -77,9 +184,18 @@ parallel execution과 serial execution Promise pattern을 활용하여 절차적
       <pubDate>Tue, 09 May 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/05/09/Aurora_sequelize_0/</guid>
-      <description>Summary 최근에 글 중에서 aurora와 sequelize가 과연 연동이 가능할까라는 글을 본적이 있다. aurora는 MySQL과 호환이 가능한 DB라고 하기 때문에 나 또한 궁금증이 생겼다. 직접 aurora와 sequelize를 연동해보고, MySQL workbench로 aurora를 사용할 수 있는지까지 확인해보겠다.
-Aurora instance 생성하기 이전까지 사용할 때는 MySQL이나 MariaDB위주로 사용했다. 스타트업은 라이센스 비용에 민감하기 때문에 Open Source를 주로 선택했기 때문이다.
-또한 아래 리스트를 보면 RDS 이름에서 추측할 수 있듯이 RDS에서는 관계형 DB만 사용할 수 있는 것을 알 수 있다.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;최근에 글 중에서  aurora와 sequelize가 과연 연동이 가능할까라는 글을 본적이 있다.
+aurora는 MySQL과 호환이 가능한 DB라고 하기 때문에 나 또한 궁금증이 생겼다.
+직접 aurora와 sequelize를 연동해보고, MySQL workbench로 aurora를 사용할 수 있는지까지 확인해보겠다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;aurora-instance-생성하기&#34;&gt;Aurora instance 생성하기&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;이전까지 사용할 때는 MySQL이나 MariaDB위주로 사용했다.
+스타트업은 라이센스 비용에 민감하기 때문에 Open Source를 주로 선택했기 때문이다.&lt;/p&gt;
+&lt;p&gt;또한 아래 리스트를 보면 RDS 이름에서 추측할 수 있듯이 RDS에서는 관계형 DB만 사용할 수 있는 것을 알 수 있다.
+별도로 NoSQL을 사용하고 싶다면 AWS에서 지원하는 DynamoDB를 사용하거나 EC2에 DB를 올리는 방법이 있다.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -88,8 +204,32 @@ Aurora instance 생성하기 이전까지 사용할 때는 MySQL이나 MariaDB�
       <pubDate>Sun, 02 Apr 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/04/02/Docker_7/</guid>
-      <description>Summary Dockerfile로 이미지로 관리하면 배포 및 관리가 간편하게 가능하다. 여기서는 node를 베이스 이미지로하여 노드 서버를 배포할 수 있도록 준비한다.
-순서 Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기 EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기 Bitbucket을 사용하여 git repository 생성하기 Express JS를 사용하여 Node 서버 구축하기 PM2를 사용하여 EC2에 Node 서버 배포하기 Node 서버를 바탕으로 Dockerfile로 만들기 Docker Hub의 automated build를 사용하여 Docker image를 만들기 만들어진 Docker image를 EC2 인스턴스에 배포하기 Dockerfile 이란?</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Dockerfile로 이미지로 관리하면 배포 및 관리가 간편하게 가능하다.
+여기서는 node를 베이스 이미지로하여 노드 서버를 배포할 수 있도록 준비한다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;순서&#34;&gt;순서&lt;/h2&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li&gt;Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기&lt;/li&gt;
+&lt;li&gt;접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기&lt;/li&gt;
+&lt;li&gt;EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기&lt;/li&gt;
+&lt;li&gt;Bitbucket을 사용하여 git repository 생성하기&lt;/li&gt;
+&lt;li&gt;Express JS를 사용하여 Node 서버 구축하기&lt;/li&gt;
+&lt;li&gt;PM2를 사용하여 EC2에 Node 서버 배포하기&lt;/li&gt;
+&lt;li&gt;Node 서버를 바탕으로 Dockerfile로 만들기&lt;/li&gt;
+&lt;li&gt;Docker Hub의 automated build를 사용하여 Docker image를 만들기&lt;/li&gt;
+&lt;li&gt;만들어진 Docker image를 EC2 인스턴스에 배포하기&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;dockerfile-이란&#34;&gt;Dockerfile 이란?&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Docker image의 설정 정보를 담고 있는 파일이다.
+실제 운영 소프트웨어를 배포할 경우 node 베이스 이미지를 올린 다음 패키지를 설치하고 volume을 할당할 수도 있다.
+현재 이미지를 주기적으로 commit하여 백업하고 직접 docker exec를 하여 컨테이너 내에 실행명령어를 보내야하는 단점이 있었다.
+하지만 Dockerfile은 docker image를 생성할 때 source file을 가져와서 컨테이너 구동과 동시에 서버를 가동시킬 수 있다.
+이러한 docker container를 관리하는 방법으로는 docker-compose가 있는데 추후에 살펴볼 것이다.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -98,8 +238,27 @@ Aurora instance 생성하기 이전까지 사용할 때는 MySQL이나 MariaDB�
       <pubDate>Sun, 02 Apr 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/04/02/Docker_6/</guid>
-      <description>Summary node js 패키지 중에서 PM2를 사용하여 웹서버를 배포하자.
-순서 Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기 EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기 Bitbucket을 사용하여 git repository 생성하기 Express JS를 사용하여 Node 서버 구축하기 PM2를 사용하여 EC2에 Node 서버 배포하기 Node 서버를 바탕으로 Dockerfile로 만들기 Docker Hub의 automated build를 사용하여 Docker image를 만들기 만들어진 Docker image를 EC2 인스턴스에 배포하기 웹서버에 node js를 설치하고 PM2를 설치하기 이전에 생성한 EC2 인스턴스에 ubuntu계정으로 SSH 접속한 후 Node js를 설치하자.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;node js 패키지 중에서 PM2를 사용하여 웹서버를 배포하자.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;순서&#34;&gt;순서&lt;/h2&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li&gt;Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기&lt;/li&gt;
+&lt;li&gt;접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기&lt;/li&gt;
+&lt;li&gt;EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기&lt;/li&gt;
+&lt;li&gt;Bitbucket을 사용하여 git repository 생성하기&lt;/li&gt;
+&lt;li&gt;Express JS를 사용하여 Node 서버 구축하기&lt;/li&gt;
+&lt;li&gt;PM2를 사용하여 EC2에 Node 서버 배포하기&lt;/li&gt;
+&lt;li&gt;Node 서버를 바탕으로 Dockerfile로 만들기&lt;/li&gt;
+&lt;li&gt;Docker Hub의 automated build를 사용하여 Docker image를 만들기&lt;/li&gt;
+&lt;li&gt;만들어진 Docker image를 EC2 인스턴스에 배포하기&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;웹서버에-node-js를-설치하고-pm2를-설치하기&#34;&gt;웹서버에 node js를 설치하고 PM2를 설치하기&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;이전에 생성한 EC2 인스턴스에 ubuntu계정으로 SSH 접속한 후 Node js를 설치하자.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -108,8 +267,30 @@ Aurora instance 생성하기 이전까지 사용할 때는 MySQL이나 MariaDB�
       <pubDate>Sat, 01 Apr 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/04/01/Docker_5/</guid>
-      <description>Summary Node JS의 Express framework를 사용하여 Node JS 서버를 구축해본다. 기본적으로는 http모듈을 사용하여 서버 리스너를 구동하는 것이 있다. http 모듈을 사용하여 서버를 가동하면 exception이 발생하는 동시에 서버가 정지하게 된다. 하지만 Express framework를 사용하면 error처리가 가능하다.
-순서 Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기 EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기 Bitbucket을 사용하여 git repository 생성하기 Express JS를 사용하여 Node 서버 구축하기 테스트로 PM2를 사용하여 EC2에 Node 서버 배포하기 Node 서버를 바탕으로 Dockerfile로 만들기 Docker Hub의 automated build를 사용하여 Docker image를 만들기 만들어진 Docker image를 EC2 인스턴스에 배포하기 Express JS 시작하기 편집기는 아무거나 사용해도 상관없다.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Node JS의 Express framework를 사용하여 Node JS 서버를 구축해본다.
+기본적으로는 http모듈을 사용하여 서버 리스너를 구동하는 것이 있다.
+http 모듈을 사용하여 서버를 가동하면 exception이 발생하는 동시에 서버가 정지하게 된다.
+하지만 Express framework를 사용하면 error처리가 가능하다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;순서&#34;&gt;순서&lt;/h2&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li&gt;Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기&lt;/li&gt;
+&lt;li&gt;접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기&lt;/li&gt;
+&lt;li&gt;EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기&lt;/li&gt;
+&lt;li&gt;Bitbucket을 사용하여 git repository 생성하기&lt;/li&gt;
+&lt;li&gt;Express JS를 사용하여 Node 서버 구축하기&lt;/li&gt;
+&lt;li&gt;테스트로 PM2를 사용하여 EC2에 Node 서버 배포하기&lt;/li&gt;
+&lt;li&gt;Node 서버를 바탕으로 Dockerfile로 만들기&lt;/li&gt;
+&lt;li&gt;Docker Hub의 automated build를 사용하여 Docker image를 만들기&lt;/li&gt;
+&lt;li&gt;만들어진 Docker image를 EC2 인스턴스에 배포하기&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;express-js-시작하기&#34;&gt;Express JS 시작하기&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;편집기는 아무거나 사용해도 상관없다. 손에 익은 VS code를 사용하여 편집하겠다.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -118,8 +299,24 @@ Aurora instance 생성하기 이전까지 사용할 때는 MySQL이나 MariaDB�
       <pubDate>Fri, 31 Mar 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/03/31/Docker_0/</guid>
-      <description>소개 Node JS 서버를 배포하려고 한다. 매일 같이 하던 방식이지만 방법을 잊을 수도 있다는 생각이 들었다. 이것을 보고 사람들이 노드 서버를 간결하게 배포하였으면 한다.
-순서 Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기 접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기 EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기 Bitbucket을 사용하여 git repository 생성하기 Express JS를 사용하여 Node 서버 구축하기 테스트로 PM2를 사용하여 EC2에 Node 서버 배포하기 Node 서버를 바탕으로 Dockerfile로 만들기 Docker Hub의 automated build를 사용하여 Docker image를 만들기 만들어진 Docker image를 EC2 인스턴스에 배포하기 </description>
+      <description>&lt;h2 id=&#34;소개&#34;&gt;소개&lt;/h2&gt;
+&lt;p&gt;Node JS 서버를 배포하려고 한다.
+매일 같이 하던 방식이지만 방법을 잊을 수도 있다는 생각이 들었다.
+이것을 보고 사람들이 노드 서버를 간결하게 배포하였으면 한다.&lt;/p&gt;
+&lt;h2 id=&#34;순서&#34;&gt;순서&lt;/h2&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li&gt;Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기&lt;/li&gt;
+&lt;li&gt;접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기&lt;/li&gt;
+&lt;li&gt;EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기&lt;/li&gt;
+&lt;li&gt;Bitbucket을 사용하여 git repository 생성하기&lt;/li&gt;
+&lt;li&gt;Express JS를 사용하여 Node 서버 구축하기&lt;/li&gt;
+&lt;li&gt;테스트로 PM2를 사용하여 EC2에 Node 서버 배포하기&lt;/li&gt;
+&lt;li&gt;Node 서버를 바탕으로 Dockerfile로 만들기&lt;/li&gt;
+&lt;li&gt;Docker Hub의 automated build를 사용하여 Docker image를 만들기&lt;/li&gt;
+&lt;li&gt;만들어진 Docker image를 EC2 인스턴스에 배포하기&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;</description>
     </item>
     
   </channel>

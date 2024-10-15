@@ -13,9 +13,18 @@
       <pubDate>Tue, 09 May 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/05/09/Aurora_sequelize_0/</guid>
-      <description>Summary 최근에 글 중에서 aurora와 sequelize가 과연 연동이 가능할까라는 글을 본적이 있다. aurora는 MySQL과 호환이 가능한 DB라고 하기 때문에 나 또한 궁금증이 생겼다. 직접 aurora와 sequelize를 연동해보고, MySQL workbench로 aurora를 사용할 수 있는지까지 확인해보겠다.
-Aurora instance 생성하기 이전까지 사용할 때는 MySQL이나 MariaDB위주로 사용했다. 스타트업은 라이센스 비용에 민감하기 때문에 Open Source를 주로 선택했기 때문이다.
-또한 아래 리스트를 보면 RDS 이름에서 추측할 수 있듯이 RDS에서는 관계형 DB만 사용할 수 있는 것을 알 수 있다.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;최근에 글 중에서  aurora와 sequelize가 과연 연동이 가능할까라는 글을 본적이 있다.
+aurora는 MySQL과 호환이 가능한 DB라고 하기 때문에 나 또한 궁금증이 생겼다.
+직접 aurora와 sequelize를 연동해보고, MySQL workbench로 aurora를 사용할 수 있는지까지 확인해보겠다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;aurora-instance-생성하기&#34;&gt;Aurora instance 생성하기&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;이전까지 사용할 때는 MySQL이나 MariaDB위주로 사용했다.
+스타트업은 라이센스 비용에 민감하기 때문에 Open Source를 주로 선택했기 때문이다.&lt;/p&gt;
+&lt;p&gt;또한 아래 리스트를 보면 RDS 이름에서 추측할 수 있듯이 RDS에서는 관계형 DB만 사용할 수 있는 것을 알 수 있다.
+별도로 NoSQL을 사용하고 싶다면 AWS에서 지원하는 DynamoDB를 사용하거나 EC2에 DB를 올리는 방법이 있다.&lt;/p&gt;</description>
     </item>
     
   </channel>

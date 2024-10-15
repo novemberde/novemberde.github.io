@@ -13,8 +13,14 @@
       <pubDate>Thu, 24 May 2018 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2018/05/24/String/</guid>
-      <description>Summary If you&amp;rsquo;re a lazy JAVA developer, you concatenate Strings by using the plus sign (&amp;ldquo;Some text&amp;rdquo; + &amp;quot; added text&amp;quot;) But if you want to level-up your skills as a JAVA developer, you should be more careful about the Class that you choose. Let&amp;rsquo;s take a glance at the use cases of String, StringBuilder and StringBuffer.
-Feature of Classes It&amp;rsquo;s necessary to be familiar with the Java API documents before getting your hands dirty.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;If you&amp;rsquo;re a lazy JAVA developer, you concatenate Strings by using the plus sign (&amp;ldquo;Some text&amp;rdquo; + &amp;quot; added text&amp;quot;)
+But if you want to level-up your skills as a JAVA developer, you should be more careful about the Class that you choose.
+Let&amp;rsquo;s take a glance at the use cases of String, StringBuilder and StringBuffer.&lt;/p&gt;
+&lt;h2 id=&#34;feature-of-classes&#34;&gt;Feature of Classes&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;It&amp;rsquo;s necessary to be familiar with the &lt;a href=&#34;http://docs.oracle.com/javase/8/docs/api/&#34;&gt;Java API&lt;/a&gt; documents before getting your hands dirty.&lt;/p&gt;</description>
     </item>
     
   </channel>

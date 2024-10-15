@@ -13,7 +13,21 @@
       <pubDate>Fri, 11 Oct 2019 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2019/10/11/Svelte-revealjs/</guid>
-      <description>W3C Conference Korea 2019 View presentation on new tab References https://www.44bits.io/ko/post/direnv_for_managing_directory_environment </description>
+      <description>&lt;h2 id=&#34;w3c-conference-korea-2019&#34;&gt;W3C Conference Korea 2019&lt;/h2&gt;
+&lt;iframe src=&#34;https://novemberde.github.io/ppts/svelte/index.html&#34;
+  width=&#34;595&#34;
+  height=&#34;485&#34;
+  frameborder=&#34;0&#34;
+  marginwidth=&#34;0&#34;
+  marginheight=&#34;0&#34;
+  scrolling=&#34;no&#34;
+  style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt;
+&lt;/iframe&gt;
+&lt;h3 id=&#34;view-presentation-on-new-tabpptssvelteindexhtml&#34;&gt;&lt;a href=&#34;https://novemberde.github.io/ppts/svelte/index.html&#34;&gt;View presentation on new tab&lt;/a&gt;&lt;/h3&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.44bits.io/ko/post/direnv_for_managing_directory_environment&#34;&gt;https://www.44bits.io/ko/post/direnv_for_managing_directory_environment&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
     <item>
@@ -22,8 +36,25 @@
       <pubDate>Sat, 20 Jan 2018 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2018/01/20/ECS_Fargate/</guid>
-      <description>Summary &amp;ldquo;ECS와 Fargate&amp;quot;라는 주제로 2018년 1월 20일에 AWSKRUG re:Invent recap 행사에서 발표한 자료입니다.
-발표자료 ECS/Fargate와 함께하는 간편한 Docker 사용법 - 트랙2, Community Day 2018 re:Invent 특집 from AWS Korea UserGroup (AWS한국사용자모임) 발표 영상 데모로 시연한 샘플코드는 아래와 같습니다. https://github.com/novemberde/aws-fargate-demo References https://www.slideshare.net/awskr/ecs-fargate-2018 https://www.meetup.com/ko-KR/awskrug/events/245940818/ https://github.com/novemberde/aws-fargate-demo </description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;&amp;ldquo;ECS와 Fargate&amp;quot;라는 주제로 2018년 1월 20일에 &lt;a href=&#34;https://www.meetup.com/ko-KR/awskrug/events/245940818/&#34;&gt;AWSKRUG re:Invent recap 행사&lt;/a&gt;에서 발표한 자료입니다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;발표자료&#34;&gt;발표자료&lt;/h2&gt;
+&lt;iframe src=&#34;//www.slideshare.net/slideshow/embed_code/key/dXhfGrVtpgh7Xq&#34; width=&#34;595&#34; height=&#34;485&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt; &lt;/iframe&gt; &lt;div style=&#34;margin-bottom:5px&#34;&gt; &lt;strong&gt; &lt;a href=&#34;//www.slideshare.net/awskr/ecs-fargate-2018&#34; title=&#34;ECS/Fargate와 함께하는 간편한 Docker 사용법 - 트랙2, Community Day 2018 re:Invent 특집&#34; target=&#34;_blank&#34;&gt;ECS/Fargate와 함께하는 간편한 Docker 사용법 - 트랙2, Community Day 2018 re:Invent 특집&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href=&#34;https://www.slideshare.net/awskr&#34; target=&#34;_blank&#34;&gt;AWS Korea UserGroup (AWS한국사용자모임)&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;발표-영상&#34;&gt;발표 영상&lt;/h2&gt;
+&lt;iframe width=&#34;595&#34; height=&#34;485&#34; src=&#34;https://www.youtube.com/embed/bEr_98NRlzc&#34; frameborder=&#34;0&#34; allow=&#34;autoplay; encrypted-media&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;div&gt;데모로 시연한 샘플코드는 아래와 같습니다.&lt;/div&gt;
+&lt;div&gt;https://github.com/novemberde/aws-fargate-demo&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.slideshare.net/awskr/ecs-fargate-2018&#34;&gt;https://www.slideshare.net/awskr/ecs-fargate-2018&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.meetup.com/ko-KR/awskrug/events/245940818/&#34;&gt;https://www.meetup.com/ko-KR/awskrug/events/245940818/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/novemberde/aws-fargate-demo&#34;&gt;https://github.com/novemberde/aws-fargate-demo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
   </channel>

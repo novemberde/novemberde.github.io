@@ -13,11 +13,27 @@
       <pubDate>Mon, 28 May 2018 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2018/05/28/kotlin/</guid>
-      <description>Summary 안드로이드 개발 언어의 트렌드는 바뀌었다. 최근 Google I/O에서 나오는 샘플 코드들은 Kotlin으로 짜여져 있었다. 또한 안드로이드 개발 컨퍼런스의 주제는 Kotlin으로 개발한 경험담이 주를 이루고 있다.
-Kotlin으로 개발하는 것이 낫다는 내용을 많이 보기도 하였고 개발에 욕심이 있다보니, 이번에는 기존에 JAVA로 개발되어 있던 코드에 Kotlin을 적용하여 새로 구성하거나 변경하는 클래스를 Kotlin으로 구성해보았다.
-다음은 이런 과정을 거치면서 느낀 장점과 단점에 대한 고찰이다.
-고찰 Kotlin의 장점을 느끼기 전에는 치명적인 단점(?)과 싸워야만 한다.
-무엇보다 가장 크게 힘들었던 점은 손에 익은 Java 대신에 인내하며 억지로 Kotlin으로 작성해야된다는 점이었다.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;안드로이드 개발 언어의 트렌드는 바뀌었다. 최근 Google I/O에서 나오는
+샘플 코드들은 Kotlin으로 짜여져 있었다. 또한 안드로이드 개발 컨퍼런스의
+주제는 Kotlin으로 개발한 경험담이 주를 이루고 있다.&lt;/p&gt;
+&lt;p&gt;Kotlin으로 개발하는 것이 낫다는 내용을 많이 보기도 하였고 개발에 욕심이 있다보니,
+이번에는 기존에 JAVA로 개발되어 있던 코드에 Kotlin을 적용하여 새로 구성하거나 변경하는
+클래스를 Kotlin으로 구성해보았다.&lt;/p&gt;
+&lt;p&gt;다음은 이런 과정을 거치면서 느낀 장점과 단점에 대한 고찰이다.&lt;/p&gt;
+&lt;h2 id=&#34;고찰&#34;&gt;고찰&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Kotlin의 장점을 느끼기 전에는 치명적인 단점(?)과 싸워야만 한다.&lt;/p&gt;
+&lt;p&gt;무엇보다 가장 크게 힘들었던 점은 손에 익은 Java 대신에 인내하며 억지로 Kotlin으로 작성해야된다는 점이었다.
+개발자가 새로운 기술을 받아들여야 할 때 나타나는 문제점이었다. 기존에 잘하는 것으로 개발하면 바로 끝낼 수 있지만
+새로운 것을 받아들이면 공부하고 적용하는데까지 시간이 몇배로 들기 때문이다.
+이런 경우에 기술을 받아들일지는 상황에 따라 결정하게 된다.
+상급자의 명령에 따라 빠른 퍼포먼스를 보여줘야하는 경우에는 기존의 기술을 택한다.
+반면에 중간중간에 공부를 해두어서 적용할 수 있는 단계가 된 경우이거나
+개발의 주체가 기술에 대한 욕심이 있고 새로운 것에 대해 무리없이 받아들이는 경우에는 새로운 기술을 택한다.
+솔직히 후자라고 주장하고 싶지만 지난 몇번의 시도를 하였지만 다시 Java로 개발했었다.
+편하게 살고싶은 마음을 이겨내는 것이 제일 힘들었다.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -26,9 +42,35 @@ Kotlin으로 개발하는 것이 낫다는 내용을 많이 보기도 하였고 
       <pubDate>Tue, 19 Dec 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/12/19/Android-Webview/</guid>
-      <description>Summary Javascript WebView로 특정 URL의 컨텐츠를 보여주는데 화면이 나오지 않았다. 현상은 배경색까지 나타나고 DOM이 뿌려지지 않는 문제였다. Webview에서 Unexpected token의 에러를 뿜었기 때문에 쉽게 Javascript 관련 오류라는 것을 알 수 있었고 Javascript error를 무시할 수 있도록 하는 메서드를 실행하였다.
-Webview의 Setting에 setDomStorageEnabled(true)를 추가하기 기존의 코드는 다음과 같다
-public class MyWebView extends AppCompatActivity { private WebView webView; @Override protected void onCreate(Bundle savedStateInstance){ super.onCreate(savedStateInstance); setContentView(R.layout.webview); webView = ( WebView )findViewById( R.id.webview); webView.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH); webView.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Javascript WebView로 특정 URL의 컨텐츠를 보여주는데 화면이 나오지 않았다.
+현상은 배경색까지 나타나고 DOM이 뿌려지지 않는 문제였다.
+Webview에서 Unexpected token의 에러를 뿜었기 때문에 쉽게 Javascript 관련 오류라는 것을 알 수 있었고
+Javascript error를 무시할 수 있도록 하는 메서드를 실행하였다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;webview의-setting에-setdomstorageenabledtrue를-추가하기&#34;&gt;Webview의 Setting에 setDomStorageEnabled(true)를 추가하기&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;기존의 코드는 다음과 같다&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;MyWebView&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;extends&lt;/span&gt; AppCompatActivity {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;private&lt;/span&gt; WebView webView;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;@Override&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;protected&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;onCreate&lt;/span&gt;(Bundle savedStateInstance){
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;super&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;onCreate&lt;/span&gt;(savedStateInstance);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        setContentView(R.&lt;span style=&#34;color:#a6e22e&#34;&gt;layout&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;webview&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        webView &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; ( WebView )findViewById( R.&lt;span style=&#34;color:#a6e22e&#34;&gt;id&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;webview&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        webView.&lt;span style=&#34;color:#a6e22e&#34;&gt;getSettings&lt;/span&gt;().&lt;span style=&#34;color:#a6e22e&#34;&gt;setRenderPriority&lt;/span&gt;(WebSettings.&lt;span style=&#34;color:#a6e22e&#34;&gt;RenderPriority&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;HIGH&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        webView.&lt;span style=&#34;color:#a6e22e&#34;&gt;setWebViewClient&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; WebViewClient());
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        webView.&lt;span style=&#34;color:#a6e22e&#34;&gt;setWebChromeClient&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; WebChromeClient());
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        webView.&lt;span style=&#34;color:#a6e22e&#34;&gt;setNetworkAvailable&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        webView.&lt;span style=&#34;color:#a6e22e&#34;&gt;getSettings&lt;/span&gt;().&lt;span style=&#34;color:#a6e22e&#34;&gt;setJavaScriptEnabled&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        webView.&lt;span style=&#34;color:#a6e22e&#34;&gt;loadUrl&lt;/span&gt;(url);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;변경한 코드는 다음과 같다.&lt;/p&gt;</description>
     </item>
     
   </channel>

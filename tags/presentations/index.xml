@@ -13,7 +13,21 @@
       <pubDate>Fri, 11 Oct 2019 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2019/10/11/Svelte-revealjs/</guid>
-      <description>W3C Conference Korea 2019 View presentation on new tab References https://www.44bits.io/ko/post/direnv_for_managing_directory_environment </description>
+      <description>&lt;h2 id=&#34;w3c-conference-korea-2019&#34;&gt;W3C Conference Korea 2019&lt;/h2&gt;
+&lt;iframe src=&#34;https://novemberde.github.io/ppts/svelte/index.html&#34;
+  width=&#34;595&#34;
+  height=&#34;485&#34;
+  frameborder=&#34;0&#34;
+  marginwidth=&#34;0&#34;
+  marginheight=&#34;0&#34;
+  scrolling=&#34;no&#34;
+  style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt;
+&lt;/iframe&gt;
+&lt;h3 id=&#34;view-presentation-on-new-tabpptssvelteindexhtml&#34;&gt;&lt;a href=&#34;https://novemberde.github.io/ppts/svelte/index.html&#34;&gt;View presentation on new tab&lt;/a&gt;&lt;/h3&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.44bits.io/ko/post/direnv_for_managing_directory_environment&#34;&gt;https://www.44bits.io/ko/post/direnv_for_managing_directory_environment&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
   </channel>

@@ -13,8 +13,15 @@
       <pubDate>Sat, 17 Oct 2020 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2020/10/17/RDS-to-aurora/</guid>
-      <description>RDS PostgreSQL에서 Aurora PostgreSQL을 도입한 후기
-Presentation RDS에서 Aurora PostgreSQL Migration한 후기 from Kyuhyun Byun Youtube Reference AWS Community Day 2020 소개 링크 https://pages.awscloud.com/aws-community-day-online-2020.html </description>
+      <description>&lt;p&gt;RDS PostgreSQL에서 Aurora PostgreSQL을 도입한 후기&lt;/p&gt;
+&lt;h2 id=&#34;presentation&#34;&gt;Presentation&lt;/h2&gt;
+&lt;iframe src=&#34;//www.slideshare.net/slideshow/embed_code/key/MF3vow5382w3nT&#34; width=&#34;595&#34; height=&#34;485&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt; &lt;/iframe&gt; &lt;div style=&#34;margin-bottom:5px&#34;&gt; &lt;strong&gt; &lt;a href=&#34;//www.slideshare.net/KyuhyunByun1/rds-aurora-postgresql-migration&#34; title=&#34;RDS에서 Aurora PostgreSQL Migration한 후기&#34; target=&#34;_blank&#34;&gt;RDS에서 Aurora PostgreSQL Migration한 후기&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href=&#34;https://www.slideshare.net/KyuhyunByun1&#34; target=&#34;_blank&#34;&gt;Kyuhyun Byun&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;
+&lt;h2 id=&#34;youtube&#34;&gt;Youtube&lt;/h2&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/34F5KY9gY_Y&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;h2 id=&#34;reference&#34;&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;AWS Community Day 2020 소개 링크 &lt;a href=&#34;https://pages.awscloud.com/aws-community-day-online-2020.html&#34;&gt;https://pages.awscloud.com/aws-community-day-online-2020.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
     <item>
@@ -23,9 +30,25 @@ Presentation RDS에서 Aurora PostgreSQL Migration한 후기 from Kyuhyun Byun Y
       <pubDate>Mon, 10 Jun 2019 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2019/06/10/MySQL-Desgin-cheatsheet/</guid>
-      <description>신규프로젝트를 진행할 경우 디비 스키마를 설계를 해야한다. 데이터의 타입부터 외래키 설정등 신경써야하는 부분들이 생각보다 자잘하게 있다. 이 경우에 주의해야하는 점들을 정리해보았다. 이 문서는 지속적으로 수정될 예정이다.
-Datatype MySQL에서 사용하는 데이터 타입은 다음과 같다.
-Numeric Type BIT[(M)] - A bit-value type. M indicates the number of bits per value, from 1 to 64. The default is 1 if M is omitted. TINYINT[(M)] [UNSIGNED] [ZEROFILL] - A very small integer. The signed range is -128 to 127.</description>
+      <description>&lt;p&gt;신규프로젝트를 진행할 경우 디비 스키마를 설계를 해야한다.
+데이터의 타입부터 외래키 설정등 신경써야하는 부분들이 생각보다 자잘하게 있다.
+이 경우에 주의해야하는 점들을 정리해보았다.
+이 문서는 지속적으로 수정될 예정이다.&lt;/p&gt;
+&lt;h2 id=&#34;datatype&#34;&gt;Datatype&lt;/h2&gt;
+&lt;p&gt;MySQL에서 사용하는 데이터 타입은 다음과 같다.&lt;/p&gt;
+&lt;h3 id=&#34;numeric-type&#34;&gt;Numeric Type&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;BIT[(M)] - A bit-value type. M indicates the number of bits per value, from 1 to 64. The default is 1 if M is omitted.&lt;/li&gt;
+&lt;li&gt;TINYINT[(M)] [UNSIGNED] [ZEROFILL] - A very small integer. The signed range is -128 to 127. The unsigned range is 0 to 255.&lt;/li&gt;
+&lt;li&gt;BOOL, BOOLEAN - These types are synonyms for TINYINT(1). A value of zero is considered false. Nonzero values are considered true. However, the values TRUE and FALSE are merely aliases for 1 and 0, respectively, as shown here.&lt;/li&gt;
+&lt;li&gt;SMALLINT[(M)] [UNSIGNED] [ZEROFILL] - A small integer. The signed range is -32768 to 32767. The unsigned range is 0 to 65535.&lt;/li&gt;
+&lt;li&gt;MEDIUMINT[(M)] [UNSIGNED] [ZEROFILL] - A medium-sized integer. The signed range is -8388608 to 8388607. The unsigned range is 0 to 16777215.&lt;/li&gt;
+&lt;li&gt;INT[(M)] [UNSIGNED] [ZEROFILL] - A normal-size integer. The signed range is -2147483648 to 2147483647. The unsigned range is 0 to 4294967295.&lt;/li&gt;
+&lt;li&gt;INTEGER[(M)] [UNSIGNED] [ZEROFILL] - This type is a synonym for INT.&lt;/li&gt;
+&lt;li&gt;BIGINT[(M)] [UNSIGNED] [ZEROFILL] - A large integer. The signed range is -9223372036854775808 to 9223372036854775807. The unsigned range is 0 to 18446744073709551615. SERIAL is an alias for BIGINT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Some things you should be aware of with respect to BIGINT columns:&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -34,8 +57,14 @@ Numeric Type BIT[(M)] - A bit-value type. M indicates the number of bits per val
       <pubDate>Fri, 25 Jan 2019 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2019/01/25/Timestream/</guid>
-      <description>&amp;ldquo;시계열 데이터 전용 DB 소개&amp;quot;라는 주제로 2019년 1월 25일에 AWSKRUG re:Invent recap 행사에서 발표한 자료입니다.
-발표자료 Amazon Timestream 시계열 데이터 전용 DB 소개 :: 변규현 - AWS Community Day 2019 from AWS Korea UserGroup (AWS한국사용자모임) References https://www.slideshare.net/awskr/amazon-timestream-db https://pages.awscloud.com/aws-community-day-seoul-2019.html </description>
+      <description>&lt;p&gt;&amp;ldquo;시계열 데이터 전용 DB 소개&amp;quot;라는 주제로 2019년 1월 25일에 &lt;a href=&#34;https://pages.awscloud.com/aws-community-day-seoul-2019.html&#34;&gt;AWSKRUG re:Invent recap 행사&lt;/a&gt;에서 발표한 자료입니다.&lt;/p&gt;
+&lt;h2 id=&#34;발표자료&#34;&gt;발표자료&lt;/h2&gt;
+&lt;iframe src=&#34;//www.slideshare.net/slideshow/embed_code/key/F7GmlRSZZCQkKA&#34; width=&#34;595&#34; height=&#34;485&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt; &lt;/iframe&gt; &lt;div style=&#34;margin-bottom:5px&#34;&gt; &lt;strong&gt; &lt;a href=&#34;//www.slideshare.net/awskr/amazon-timestream-db&#34; title=&#34;Amazon Timestream 시계열 데이터 전용 DB 소개 :: 변규현 - AWS Community Day 2019&#34; target=&#34;_blank&#34;&gt;Amazon Timestream 시계열 데이터 전용 DB 소개 :: 변규현 - AWS Community Day 2019&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href=&#34;https://www.slideshare.net/awskr&#34; target=&#34;_blank&#34;&gt;AWS Korea UserGroup (AWS한국사용자모임)&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.slideshare.net/awskr/amazon-timestream-db&#34;&gt;https://www.slideshare.net/awskr/amazon-timestream-db&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://pages.awscloud.com/aws-community-day-seoul-2019.html&#34;&gt;https://pages.awscloud.com/aws-community-day-seoul-2019.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
     <item>
@@ -44,8 +73,13 @@ Numeric Type BIT[(M)] - A bit-value type. M indicates the number of bits per val
       <pubDate>Thu, 12 Apr 2018 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2018/04/12/Neo4j/</guid>
-      <description>Summary 각 사용자들의 연관 관계 분석을 위하여 GraphDB를 도입하려한다. 시작하기에 앞서서 GraphDB에 대해서 이해가 필요했다. 다음에서 GraphDB의 기본 내용을 담았다.
-Graph Database란? In computing, a graph database is a database that uses graph structures for semantic queries with nodes, edges and properties to represent and store data. A key concept of the system is the graph (or edge or relationship), which directly relates data items in the store. The relationships allow data in the store to be linked together directly, and in many cases retrieved with one operation.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;각 사용자들의 연관 관계 분석을 위하여 GraphDB를 도입하려한다.
+시작하기에 앞서서 GraphDB에 대해서 이해가 필요했다. 다음에서 GraphDB의 기본 내용을 담았다.&lt;/p&gt;
+&lt;h3 id=&#34;graph-database란&#34;&gt;Graph Database란?&lt;/h3&gt;
+&lt;hr&gt;
+&lt;p&gt;In computing, a graph database is a database that uses graph structures for semantic queries with nodes, edges and properties to represent and store data. A key concept of the system is the graph (or edge or relationship), which directly relates data items in the store. The relationships allow data in the store to be linked together directly, and in many cases retrieved with one operation.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -54,8 +88,16 @@ Graph Database란? In computing, a graph database is a database that uses graph 
       <pubDate>Mon, 29 Jan 2018 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2018/01/29/Mysql_maxConnection/</guid>
-      <description>Summary MySQL에서 Max Connection에 대해서 알아보려고 한다. AWS Lambda container가 지속적으로 생성될 때 Database가 감당할 수 있는 Max connection이 얼마인지 알아야 대응할 수 있기 때문이다. 만약 Lambda container가 MySQL이 감당할 수 없을 정도로 계속 생성된다면 Database에 connection이 일어나지 않게 되고, too many connections error가 발생하여 웹서버 역할을 해야하는 Lambda가 동작하지 않을 수 있다. 물론 MySQL에 접속하는 다른 Worker들도 동작하지 않는다.
-RDS를 사용하면 스케일 업이 될 때마다 Max connection 설정을 따로 하지 않더라도 알아서 늘어난다.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;MySQL에서 Max Connection에 대해서 알아보려고 한다. AWS Lambda container가 지속적으로 생성될 때
+Database가 감당할 수 있는 Max connection이 얼마인지 알아야 대응할 수 있기 때문이다.
+만약 Lambda container가 MySQL이 감당할 수 없을 정도로 계속 생성된다면 Database에 connection이
+일어나지 않게 되고, too many connections error가 발생하여 웹서버 역할을 해야하는 Lambda가 동작하지 않을 수 있다.
+물론 MySQL에 접속하는 다른 Worker들도 동작하지 않는다.&lt;/p&gt;
+&lt;p&gt;RDS를 사용하면 스케일 업이 될 때마다 Max connection 설정을 따로 하지 않더라도 알아서 늘어난다.
+별다른 고민할 것 없이 Max connection이 생길 때마다 RDS를 scale up 해주어도 되겠지만 개발자이기 때문에
+더 Graceful하게 문제를 해결해야한다.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -64,10 +106,18 @@ RDS를 사용하면 스케일 업이 될 때마다 Max connection 설정을 따�
       <pubDate>Sat, 01 Jul 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/07/01/Mongodb_transport/</guid>
-      <description>Summary 의뢰중에 호스팅 서버를 AWS로 옮겨달라는 요청이 있었다. MongoDB서버를 옮기기 위해서 DB를 백업하고 SCP를 사용하여 백업한 정보를 해당 인스턴스로 보내 백업을 진행하였다. 몇몇 간단한 명령어를 통하면 DB의 backup정보를 통해 복구할 수 있다. 과정을 살펴보자.
-현재 db정보를 dump로 만들어 SCP로 파일 전송하기 이전작업을 하기 전에 먼저 클라이언트에게 DB를 실제 서비스에서 분리하고 작업해야된다고 하였다.
-설정정보를 바꾼다면 DB를 재가동 해야하는 이유도 있었으며, mongodb dump파일을 생성한 시점부터는 추가되는 데이터가 없어야 하기 때문이다.
-먼저 외부와의 접속을 차단하고 mongodump파일을 생성해 보자.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;의뢰중에 호스팅 서버를 AWS로 옮겨달라는 요청이 있었다.
+MongoDB서버를 옮기기 위해서 DB를 백업하고 SCP를 사용하여 백업한 정보를 해당 인스턴스로 보내 백업을 진행하였다.
+몇몇 간단한 명령어를 통하면 DB의 backup정보를 통해 복구할 수 있다.
+과정을 살펴보자.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;현재-db정보를-dump로-만들어-scp로-파일-전송하기&#34;&gt;현재 db정보를 dump로 만들어 SCP로 파일 전송하기&lt;/h3&gt;
+&lt;hr&gt;
+&lt;p&gt;이전작업을 하기 전에 먼저 클라이언트에게 DB를 실제 서비스에서 분리하고 작업해야된다고 하였다.&lt;/p&gt;
+&lt;p&gt;설정정보를 바꾼다면 DB를 재가동 해야하는 이유도 있었으며, mongodb dump파일을 생성한 시점부터는 추가되는 데이터가 없어야 하기 때문이다.&lt;/p&gt;
+&lt;p&gt;먼저 외부와의 접속을 차단하고 mongodump파일을 생성해 보자.&lt;/p&gt;</description>
     </item>
     
   </channel>

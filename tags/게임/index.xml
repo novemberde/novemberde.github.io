@@ -13,9 +13,19 @@
       <pubDate>Tue, 26 Sep 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/09/26/dragon_ball_game/</guid>
-      <description>Summary When I first started programming, I went on a game project to familiarize myself with Javascript.
-I thought there would be a problem with the image license. If there&amp;rsquo;s a problem, please comment below. But, I decided to release this code on Github and hope to be helpful for juniors. Please enjoy this game. Thanks.
-References https://github.com/novemberde/js-game/tree/master/dragon_ball </description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;When I first started programming, I went on a game project to familiarize myself with Javascript.&lt;/p&gt;
+&lt;h2 id=&#34;but-i-decided-to-release-this-code-on-github-and-hope-to-be-helpful-for-juniors&#34;&gt;I thought there would be a problem with the image license. If there&amp;rsquo;s a problem, please comment below.
+But, I decided to release this code on Github and hope to be helpful for juniors.&lt;/h2&gt;
+&lt;iframe align=&#34;middle&#34; style=&#34;margin:0px&#34; frameborder=&#34;0&#34; position=&#34;relative&#34; width=&#34;750px&#34; height=&#34;700px&#34; scrolling=&#34;no&#34; src=&#34;https://s3.ap-northeast-2.amazonaws.com/archived-storage/dragon_ball/intro.html&#34;&gt;&lt;/iframe&gt;
+&lt;p&gt;Please enjoy this game. Thanks.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;references&#34;&gt;References&lt;/h3&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/novemberde/js-game/tree/master/dragon_ball&#34;&gt;https://github.com/novemberde/js-game/tree/master/dragon_ball&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
   </channel>

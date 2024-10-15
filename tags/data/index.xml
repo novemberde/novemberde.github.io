@@ -13,8 +13,17 @@
       <pubDate>Fri, 15 Jan 2021 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2021/01/15/AWS-Glue-DataBrew/</guid>
-      <description>AWS re:Invent 2020 에서 새로 출시한 AWS Glue DataBrew라는 서비스를 살펴보고, 기존의 Data engineer의 역할을 DataBrew로 어떻게 대체할 수 있는지 설명한다. 마지막으로 DataBrew를 통해 코드 한 줄 없이 ETL을 하는 과정을 데모로 확인한다.
-Slide Share 데이터 분석가를 위한 AWS 신규 서비스 소개 - 변규현 SW 엔지니어, 당근마켓 from Amazon Web Services Korea Youtube Reference AWS re:Invent recap 2020 행사 링크 https://pages.awscloud.com/aws-reinvent-recap-kr-reg.html </description>
+      <description>&lt;p&gt;AWS re:Invent 2020 에서 새로 출시한 AWS Glue DataBrew라는 서비스를 살펴보고,
+기존의 Data engineer의 역할을 DataBrew로 어떻게 대체할 수 있는지 설명한다.
+마지막으로 DataBrew를 통해 코드 한 줄 없이 ETL을 하는 과정을 데모로 확인한다.&lt;/p&gt;
+&lt;h2 id=&#34;slide-share&#34;&gt;Slide Share&lt;/h2&gt;
+&lt;iframe src=&#34;//www.slideshare.net/slideshow/embed_code/key/ivp3aZx3xh7v7u&#34; width=&#34;595&#34; height=&#34;485&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt; &lt;/iframe&gt; &lt;div style=&#34;margin-bottom:5px&#34;&gt; &lt;strong&gt; &lt;a href=&#34;//www.slideshare.net/awskorea/reinvent2020-recap-for-analyst-kyuhyun&#34; title=&#34;데이터 분석가를 위한 AWS 신규 서비스 소개 - 변규현 SW 엔지니어, 당근마켓&#34; target=&#34;_blank&#34;&gt;데이터 분석가를 위한 AWS 신규 서비스 소개 - 변규현 SW 엔지니어, 당근마켓&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href=&#34;https://www.slideshare.net/awskorea&#34; target=&#34;_blank&#34;&gt;Amazon Web Services Korea&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;
+&lt;h2 id=&#34;youtube&#34;&gt;Youtube&lt;/h2&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/mgYyJRRUC2Q&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;h2 id=&#34;reference&#34;&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;AWS re:Invent recap 2020 행사 링크 &lt;a href=&#34;https://pages.awscloud.com/aws-reinvent-recap-kr-reg.html&#34;&gt;https://pages.awscloud.com/aws-reinvent-recap-kr-reg.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
     <item>
@@ -23,10 +32,19 @@ Slide Share 데이터 분석가를 위한 AWS 신규 서비스 소개 - 변규�
       <pubDate>Wed, 06 Dec 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/11/06/Instance_metadata/</guid>
-      <description>Summary Amazon EC2의 설정을 자동으로 하기 위해선 인스턴스의 정보를 받아와서 설정할 수 있어야 한다.
-예를 들어 특정 태그로 묶인 그룹에게 재가동시 소스코드 갱신과 서버 재가동의 명령어를 init.d에 등록했을 때 인스턴스 정보를 얻어온다면 개별적으로 인스턴스의 역할에 맞는 work load를 할당할 수 있을 것이다.
-meta-data 확인하기 Metadata에 대해서 찾아보니 위키백과에 아래와 같이 쓰여 있었다.
-메타데이터(metadata)는 데이터(data)에 대한 데이터이다. 이렇게 흔히들 간단히 정의하지만 엄격하게는, Karen Coyle에 의하면 &amp;ldquo;어떤 목적을 가지고 만들어진 데이터 (Constructed data with a purpose)&amp;ldquo;라고도 정의한다.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Amazon EC2의 설정을 자동으로 하기 위해선 인스턴스의 정보를 받아와서 설정할 수 있어야 한다.&lt;/p&gt;
+&lt;p&gt;예를 들어 특정 태그로 묶인 그룹에게 재가동시 소스코드 갱신과 서버 재가동의 명령어를 init.d에 등록했을 때
+인스턴스 정보를 얻어온다면 개별적으로 인스턴스의 역할에 맞는 work load를 할당할 수 있을 것이다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;meta-data-확인하기&#34;&gt;meta-data 확인하기&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Metadata에 대해서 찾아보니 위키백과에 아래와 같이 쓰여 있었다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;메타데이터(metadata)는 데이터(data)에 대한 데이터이다. 이렇게 흔히들 간단히 정의하지만 엄격하게는, Karen Coyle에 의하면 &amp;ldquo;어떤 목적을 가지고 만들어진 데이터 (Constructed data with a purpose)&amp;ldquo;라고도 정의한다. 가령 도서관에서 사용하는 서지기술용으로 만든 것이 그 대표적인 예이다. 지금은 온톨로지의 등장과 함께 기계가 읽고 이해할 수 있는 (Machine Actionable)한 형태의 메타데이터가 많이 사용되고 있다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;이 뜻을 인스턴스에 대입해보면, 인스턴스에 대한 데이터라고 생각해볼 수 있다.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -35,10 +53,22 @@ meta-data 확인하기 Metadata에 대해서 찾아보니 위키백과에 아래
       <pubDate>Thu, 14 Sep 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/09/14/public_data_athena/</guid>
-      <description>빅데이터를 직접 모으는 방법이 있지만, 공공데이터 포털과 네이버 데이터랩처럼 정해진 API를 통해 접근하거나 데이터를 JSON, XML, CSV와 같은 형식으로 지원해주는 사이트들을 적극 활용해볼 수 있습니다.
-AWSKRUG 류한진 님과 함께 준비한 Athena, QuickSight Hands-on lab입니다. 아래 링크는 발표자료 및 Hands-on 문서입니다.
-발표자료 Hands-on 아래는 류한진 님과 함께 작성한 &amp;lt;공공데이터 + Athena + QuickSight&amp;gt; 튜토리얼입니다.
-공공데이터를 이용한 데이터 만들기부터 분석까지 개요 빅데이터를 직접 모으는 방법이 있지만, 공공데이터 포털과 네이버 데이터랩처럼 정해진 API를 통해 접근하거나 데이터를 JSON, XML, CSV와 같은 형식으로 지원해주는 사이트들을 적극 활용해볼 수 있다.</description>
+      <description>&lt;p&gt;빅데이터를 직접 모으는 방법이 있지만, &lt;a href=&#34;https://www.data.go.kr/&#34;&gt;공공데이터 포털&lt;/a&gt;과 &lt;a href=&#34;http://datalab.naver.com/&#34;&gt;네이버 데이터랩&lt;/a&gt;처럼
+정해진 API를 통해 접근하거나 데이터를 JSON, XML, CSV와 같은 형식으로 지원해주는 사이트들을 적극 활용해볼 수 있습니다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;AWSKRUG 류한진 님과 함께 준비한 Athena, QuickSight Hands-on lab입니다.
+아래 링크는 발표자료 및 Hands-on 문서입니다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.google.com/presentation/d/e/2PACX-1vQAxD_sJZMenjJWjz8ZuN8skf1w8DT3R5owMBsw4FohnIv-v3XltkI69Lxu0VctWhH3apP48vJsY-rH/pub?start=false&amp;amp;loop=false&amp;amp;delayms=3000&amp;amp;slide=id.p&#34;&gt;발표자료&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/awskrug/datascience-lab/tree/master/public-data-analysis&#34;&gt;Hands-on&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;아래는 류한진 님과 함께 작성한 &amp;lt;공공데이터 + Athena + QuickSight&amp;gt; 튜토리얼입니다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;공공데이터를-이용한-데이터-만들기부터-분석까지&#34;&gt;공공데이터를 이용한 데이터 만들기부터 분석까지&lt;/h1&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;개요&#34;&gt;개요&lt;/h2&gt;
+&lt;p&gt;빅데이터를 직접 모으는 방법이 있지만, &lt;a href=&#34;https://www.data.go.kr/&#34;&gt;공공데이터 포털&lt;/a&gt;과 &lt;a href=&#34;http://datalab.naver.com/&#34;&gt;네이버 데이터랩&lt;/a&gt;처럼
+정해진 API를 통해 접근하거나 데이터를 JSON, XML, CSV와 같은 형식으로 지원해주는 사이트들을 적극 활용해볼 수 있다.&lt;/p&gt;</description>
     </item>
     
   </channel>

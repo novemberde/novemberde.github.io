@@ -6,15 +6,54 @@
     <description>Recent content in Go on Novemberde&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-KR</language>
-    <lastBuildDate>Tue, 24 Nov 2020 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 14 Oct 2024 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Golang Project Guide from A to Z: From Feature Development to Enterprise Application Design</title>
+      <link>https://novemberde.github.io/post/2024/10/15/2024-gophercon-golang-project-guide-a-z/</link>
+      <pubDate>Mon, 14 Oct 2024 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2024/10/15/2024-gophercon-golang-project-guide-a-z/</guid>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;p&gt;&amp;ldquo;고언어 프로젝트 가이드 A-Z&amp;quot;라는 주제로, 작은 프로젝트부터 엔터프라이즈 애플리케이션까지 Go 언어를 사용한 개발 방법론에 대해서 공유해보았습니다.&lt;/p&gt;
+&lt;p&gt;작은 프로젝트와 큰 프로젝트의 차이점을 설명하고, 작은 프로젝트에 적합한 간단한 코드 패턴을 소개하고, 기능 단위의 프로젝트를 위한 코드 패턴으로 Handler와 HandlerFunc 방식을 비교하고 각각의 장단점을 설명합니다.
+엔터프라이즈 애플리케이션을 위한 코드 패턴으로 Domain Driven Design (DDD) 접근 방식을 소개하고, 각 레이어(Presenter, Handler, Usecase, Service, Repository, Recorder)의 역할과 장점을 설명합니다.
+NoSQL 데이터베이스 (DynamoDB) 사용 시의 모델링 방법을 간략히 소개합니다. 그리고 각 레이어에서의 테스트 코드 작성 방법과 모킹 도구인 counterfeiter의 사용법을 설명합니다.
+애플리케이션 릴리즈를 위해 필요한 도구들(APM, 에러 모니터링, 메트릭 수집, 로그 서비스)을 소개하고 그 중요성을 강조합니다.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Go 도입 후 4년 간 기록</title>
+      <link>https://novemberde.github.io/post/2024/07/25/2023-gophercon-4-years-history-adopting-go/</link>
+      <pubDate>Thu, 25 Jul 2024 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2024/07/25/2023-gophercon-4-years-history-adopting-go/</guid>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;p&gt;Gophercon Korea 2023에서 발표한 &amp;ldquo;Go 도입 후, 4년 간의 기록&amp;quot;이라는 주제로 공유했습니다.
+Go를 도입하여 높은 트래픽을 처리하고 있으며, 주요 이슈와 해결 방법을 공유하고, Go를 통해 더 효율적이고 안정적인 서비스를 제공하기 위한 고민들을 공유합니다.&lt;/p&gt;
+&lt;h2 id=&#34;youtube&#34;&gt;Youtube&lt;/h2&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/75X_eBW0mog?si=2KfvBV3tjYlNkm4D&#34; title=&#34;YouTube video player&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;h2 id=&#34;slideshare&#34;&gt;Slideshare&lt;/h2&gt;
+&lt;iframe src=&#34;https://www.slideshare.net/slideshow/embed_code/key/zgtB2z4WZtK7Mo?startSlide=1&#34; width=&#34;597&#34; height=&#34;486&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px;max-width: 100%;&#34; allowfullscreen&gt;&lt;/iframe&gt;&lt;div style=&#34;margin-bottom:5px&#34;&gt;&lt;strong&gt;&lt;a href=&#34;https://www.slideshare.net/slideshow/go-4-259690740/259690740&#34; title=&#34;Go 도입 후 4년 간 기록&#34; target=&#34;_blank&#34;&gt;Go 도입 후 4년 간 기록&lt;/a&gt;&lt;/strong&gt; from &lt;strong&gt;&lt;a href=&#34;https://www.slideshare.net/KyuhyunByun1&#34; target=&#34;_blank&#34;&gt;Kyuhyun Byun&lt;/a&gt;&lt;/strong&gt;&lt;/div&gt;</description>
+    </item>
+    
     <item>
       <title>당근마켓의 고언어 도입기, 그리고 활용법</title>
       <link>https://novemberde.github.io/post/2020/11/24/Golang-use-case-in-karrot/</link>
       <pubDate>Tue, 24 Nov 2020 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2020/11/24/Golang-use-case-in-karrot/</guid>
-      <description>당근마켓에 들어와서 고언어를 어떻게 도입하고, 어떻게 활용했는지에 대해서 정리해보았다. 서비스가 성장함에 따라서 요구하는 조건은 달라지고 이에 최적화된 언어를 도입하고, 기존 서비스에서 필요한 곳만 하나씩 고언어를 통해 플랫폼화하는 방법을 정리했다.
-Slide Share 당근마켓 고언어 도입기, 그리고 활용법 from Kyuhyun Byun Youtube Reference 어쩌다 밋업 링크 https://www.facebook.com/1512494142177634/posts/3692166177543742/ </description>
+      <description>&lt;p&gt;당근마켓에 들어와서 고언어를 어떻게 도입하고, 어떻게 활용했는지에 대해서 정리해보았다.
+서비스가 성장함에 따라서 요구하는 조건은 달라지고 이에 최적화된 언어를 도입하고,
+기존 서비스에서 필요한 곳만 하나씩 고언어를 통해 플랫폼화하는 방법을
+정리했다.&lt;/p&gt;
+&lt;h2 id=&#34;slide-share&#34;&gt;Slide Share&lt;/h2&gt;
+&lt;iframe src=&#34;//www.slideshare.net/slideshow/embed_code/key/AkDNqWZTmxnxVA&#34; width=&#34;595&#34; height=&#34;485&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt; &lt;/iframe&gt; &lt;div style=&#34;margin-bottom:5px&#34;&gt; &lt;strong&gt; &lt;a href=&#34;//www.slideshare.net/KyuhyunByun1/ss-239755306&#34; title=&#34;당근마켓 고언어 도입기, 그리고 활용법&#34; target=&#34;_blank&#34;&gt;당근마켓 고언어 도입기, 그리고 활용법&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href=&#34;https://www.slideshare.net/KyuhyunByun1&#34; target=&#34;_blank&#34;&gt;Kyuhyun Byun&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;
+&lt;h2 id=&#34;youtube&#34;&gt;Youtube&lt;/h2&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/mLIthm96u2Q&#34; title=&#34;YouTube video player&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;h2 id=&#34;reference&#34;&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;어쩌다 밋업 링크 &lt;a href=&#34;https://www.facebook.com/1512494142177634/posts/3692166177543742/&#34;&gt;https://www.facebook.com/1512494142177634/posts/3692166177543742/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
     <item>
@@ -23,8 +62,9 @@ Slide Share 당근마켓 고언어 도입기, 그리고 활용법 from Kyuhyun B
       <pubDate>Fri, 10 Jul 2020 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2020/07/10/Handle-massive-traffic-with-serverless/</guid>
-      <description>The journey to adopt the serverless architecture from beginning to advanced.
-Presentation Handle massive traffic with serverless from Kyuhyun Byun </description>
+      <description>&lt;p&gt;The journey to adopt the serverless architecture from beginning to advanced.&lt;/p&gt;
+&lt;h2 id=&#34;presentation&#34;&gt;Presentation&lt;/h2&gt;
+&lt;iframe src=&#34;//www.slideshare.net/slideshow/embed_code/key/85oFzzmGHvHF5P&#34; width=&#34;595&#34; height=&#34;485&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt; &lt;/iframe&gt; &lt;div style=&#34;margin-bottom:5px&#34;&gt; &lt;strong&gt; &lt;a href=&#34;//www.slideshare.net/KyuhyunByun1/handle-massive-traffic-with-serverless&#34; title=&#34;Handle massive traffic with serverless&#34; target=&#34;_blank&#34;&gt;Handle massive traffic with serverless&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href=&#34;https://www.slideshare.net/KyuhyunByun1&#34; target=&#34;_blank&#34;&gt;Kyuhyun Byun&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;</description>
     </item>
     
     <item>
@@ -33,8 +73,24 @@ Presentation Handle massive traffic with serverless from Kyuhyun Byun </descript
       <pubDate>Sun, 22 Dec 2019 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2019/12/22/Go-serverless/</guid>
-      <description>AWS에서 서버리스로 구현하는 앱은 보통 Javascript 또는 Python으로 작성된다. 그렇지만 AWS Lambda에서는 거의 모든 언어를 지원하고 있다. 더욱이 인프라 및 서버사이드에서 이뤄지는 프로젝트는 대부분 고언어로 작성되고 있다. 생산성 뿐만 아니라 배포시에도 이점을 가져가고 있기 때문이다. Serverless의 장단점에 대해서 이야기하고, Go 언어를 통해 서버리스 Todo 앱을 작성하고 배포하는 예제를 Golang Korea Meetup에서 발표하였다. 다음은 발표 때 사용했던 슬라이드 및 참고한 자료들이다.
-Presentation Start Serverless with Golang! from Kyuhyun Byun References https://github.com/awslabs/aws-lambda-go-api-proxy https://echo.</description>
+      <description>&lt;p&gt;AWS에서 서버리스로 구현하는 앱은 보통 Javascript 또는 Python으로 작성된다.
+그렇지만 AWS Lambda에서는 거의 모든 언어를 지원하고 있다.
+더욱이 인프라 및 서버사이드에서 이뤄지는 프로젝트는 대부분 고언어로 작성되고 있다.
+생산성 뿐만 아니라 배포시에도 이점을 가져가고 있기 때문이다.
+Serverless의 장단점에 대해서 이야기하고,
+Go 언어를 통해 서버리스 Todo 앱을 작성하고 배포하는 예제를 Golang Korea Meetup에서 발표하였다.
+다음은 발표 때 사용했던 슬라이드 및 참고한 자료들이다.&lt;/p&gt;
+&lt;h2 id=&#34;presentation&#34;&gt;Presentation&lt;/h2&gt;
+&lt;iframe src=&#34;//www.slideshare.net/slideshow/embed_code/key/ca6Q7hn0PKDAlA&#34; width=&#34;595&#34; height=&#34;485&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt; &lt;/iframe&gt; &lt;div style=&#34;margin-bottom:5px&#34;&gt; &lt;strong&gt; &lt;a href=&#34;//www.slideshare.net/KyuhyunByun1/start-serverless-with-golang&#34; title=&#34;Start Serverless with Golang!&#34; target=&#34;_blank&#34;&gt;Start Serverless with Golang!&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href=&#34;https://www.slideshare.net/KyuhyunByun1&#34; target=&#34;_blank&#34;&gt;Kyuhyun Byun&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/awslabs/aws-lambda-go-api-proxy&#34;&gt;https://github.com/awslabs/aws-lambda-go-api-proxy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://echo.labstack.com/guide&#34;&gt;https://echo.labstack.com/guide&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://serverless.com/&#34;&gt;https://serverless.com/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/novemberde/go-serverless-demo&#34;&gt;https://github.com/novemberde/go-serverless-demo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://novemberde.github.io/ppts/svelte/&#34;&gt;https://novemberde.github.io/ppts/svelte/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/spf13/cobra&#34;&gt;https://github.com/spf13/cobra&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
     <item>
@@ -43,8 +99,15 @@ Presentation Start Serverless with Golang! from Kyuhyun Byun References https://
       <pubDate>Fri, 02 Feb 2018 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2018/02/02/Lambda_coldStart/</guid>
-      <description>Summary AWS Lambda와 API Gateway를 연동하여 웹서버를 Serverless architecture로 운영하고 있다. 관리할 서버가 없고 비지니스 로직에만 집중할 수 있어서 좋기도 하지만 항상 Lambda container가 대기중인 상태가 아니다 보니 Cold start관련하여 요청사항이 발생했다.
-일정시간이 경과된 후에 해당 페이지를 접속할 경우에 로딩이 3~4초이상 걸리기 때문에 사용이 불편하였다. 이를 해결하기 위해 5분마다 각 api를 health check하는 scheduler를 두기로 결정하였다. 그렇게되면 지속적인 lambda 호출로 인해 항상 하나이상의 lambda container가 대기하는 형태가 되어 lambda의 cold start의 가장 큰 시간을 소비하는 DB connection의 시간을 느낄 수 없다.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;AWS Lambda와 API Gateway를 연동하여 웹서버를 Serverless architecture로 운영하고 있다.
+관리할 서버가 없고 비지니스 로직에만 집중할 수 있어서 좋기도 하지만 항상 Lambda container가
+대기중인 상태가 아니다 보니 Cold start관련하여 요청사항이 발생했다.&lt;/p&gt;
+&lt;p&gt;일정시간이 경과된 후에 해당 페이지를 접속할 경우에 로딩이 3~4초이상 걸리기 때문에 사용이 불편하였다.
+이를 해결하기 위해 5분마다 각 api를 health check하는 scheduler를 두기로 결정하였다.
+그렇게되면 지속적인 lambda 호출로 인해 항상 하나이상의 lambda container가 대기하는 형태가 되어
+lambda의 cold start의 가장 큰 시간을 소비하는 DB connection의 시간을 느낄 수 없다.&lt;/p&gt;</description>
     </item>
     
   </channel>

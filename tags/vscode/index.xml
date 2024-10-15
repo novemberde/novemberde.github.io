@@ -13,12 +13,20 @@
       <pubDate>Sun, 13 Aug 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/08/13/Git_Bash/</guid>
-      <description>Windows에서 Power shell이나 CMD로 작업하면 linux 명령어를 사용하기 불편하다.
-그렇기 때문에 종종 git bash를 사용했는데 매번 git bash를 켜서 작업하는 것도 귀찮았다.
-Visual Studio Code에서 git bash를 기본 터미널로 설정하면 편하게 작업할 수 있을 것이다.
-방법은 설정에서 사용자 정의 부분을 아래와 같이 덮어씌우면 된다.
-{ &amp;#34;terminal.integrated.shell.windows&amp;#34;: &amp;#34;C:\\Program Files\\Git\\bin\\bash.exe&amp;#34; } 이제 linux 명령어를 편하게 사용하면서 작업하자.
-Reference https://code.visualstudio.com/docs/editor/integrated-terminal </description>
+      <description>&lt;p&gt;Windows에서 Power shell이나 CMD로 작업하면 linux 명령어를 사용하기 불편하다.&lt;/p&gt;
+&lt;p&gt;그렇기 때문에 종종 git bash를 사용했는데 매번 git bash를 켜서 작업하는 것도 귀찮았다.&lt;/p&gt;
+&lt;p&gt;Visual Studio Code에서 git bash를 기본 터미널로 설정하면 편하게 작업할 수 있을 것이다.&lt;/p&gt;
+&lt;p&gt;방법은 설정에서 사용자 정의 부분을 아래와 같이 덮어씌우면 된다.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;terminal.integrated.shell.windows&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;C:\\Program Files\\Git\\bin\\bash.exe&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;이제 linux 명령어를 편하게 사용하면서 작업하자.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;reference&#34;&gt;Reference&lt;/h3&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://code.visualstudio.com/docs/editor/integrated-terminal&#34;&gt;https://code.visualstudio.com/docs/editor/integrated-terminal&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
   </channel>

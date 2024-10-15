@@ -13,11 +13,46 @@
       <pubDate>Wed, 16 May 2018 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2018/05/16/CircleCI-npm-private-github/</guid>
-      <description>Summary 현재 공통적인 모듈을 Git으로 따로 관리하여 npm private module로 사용한다. 또한 Webpack을 사용하여 Typescript로 작성된 서버를 번들링한다. 로컬에서는 모두 정상적으로 동작하지만 CircleCI에서 빌드할 경우에는 CircleCI의 권한이 해당 repository에 대한 권한만 가지고 있기 때문에 npm private module을 가져올 수가 없다.
-이와같은 문제를 해결하기 위해서 트러블 슈팅을 하였다.
-Problem npm install을 할 때에 github에 있는 repository를 사용하는 방법은 두가지가 있다.
-https ssh ssh로 사용할 경우 관련 명령어는 다음과 같다.
-# ssh 키 생성하기 $ ssh-keygen -f id_rsa_kh -C &amp;#34;&amp;#34; # 생성한 키를 ~/.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;현재 공통적인 모듈을 Git으로 따로 관리하여 npm private module로 사용한다.
+또한 Webpack을 사용하여 Typescript로 작성된 서버를 번들링한다.
+로컬에서는 모두 정상적으로 동작하지만 CircleCI에서 빌드할 경우에는
+CircleCI의 권한이 해당 repository에 대한 권한만 가지고 있기 때문에
+npm private module을 가져올 수가 없다.&lt;/p&gt;
+&lt;p&gt;이와같은 문제를 해결하기 위해서 트러블 슈팅을 하였다.&lt;/p&gt;
+&lt;h3 id=&#34;problem&#34;&gt;Problem&lt;/h3&gt;
+&lt;hr&gt;
+&lt;p&gt;npm install을 할 때에 github에 있는 repository를 사용하는 방법은 두가지가 있다.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;https&lt;/li&gt;
+&lt;li&gt;ssh&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;ssh로 사용할 경우 관련 명령어는 다음과 같다.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# ssh 키 생성하기&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ ssh-keygen -f id_rsa_kh -C &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 생성한 키를 ~/.ssh 에 추가하기&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ cp id_rsa_kh ~/.ssh/id_rsa_kh
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 생성한 키의 권한 수정하기&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ chmod &lt;span style=&#34;color:#ae81ff&#34;&gt;600&lt;/span&gt; ~/.ssh/id_rsa_kh
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 생성한 키의 퍼블릭 키를 출력하기. 이때 받은 키를 github private repo에 ssh키를 추가하여야 한다.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ cat id_rsa_kh.pub
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# ssh의 개인키 개수 확인하기&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ ls -al ~/.ssh/
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# ssh-agent 실행하기&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ eval &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;ssh-agent -s&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# ~/.ssh 디렉터리에 있는 개인키를 모두 ssh agent에 등록하기&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ grep -slR &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;PRIVATE&amp;#34;&lt;/span&gt; ~/.ssh/ | xargs ssh-add
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 현재 등록되어 있는 ssh key의 fingerprint 확인하기&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ ssh-add -l -E md5
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;위와 같이 키를 입력하였으면 이제 npm install을 해본다.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -26,10 +61,26 @@ https ssh ssh로 사용할 경우 관련 명령어는 다음과 같다.
       <pubDate>Sun, 09 Apr 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/04/09/Docker_Registry_0/</guid>
-      <description>Summary Docker hub에 private image를 올리는 것은 제한이 있다. 개인 사용자의 경우 하나의 이미지만 private이 가능하고 organization의 경우에는 비용을 지불해야만 사용이 가능하다. 이런점에 비추어 볼 때 우리는 private registry환경을 구축하고 싶다는 생각이 들 것이다.
-EC2에 개인 registry를 구축하고 local 또는 다른 서버에서 접근하는 방법에 대해서 진행해보겠다. 그리고 Amazon S3 를 이미지 저장소로 사용하겠다.
-Docker registry 구축하기 docker가 설치되어 있는 EC2에 접근하여 registry 이미지를 pull 해보자.
-docker registry의 기본포트는 5000번이다. # registry 이미지를 가져오기 $ docker pull registry # registry를 실행하기 $ docker run -dit --name docker-registry -p 5000:5000 registry Docker image를 push하기 도커허브를 사용할 때는 &amp;lt;계정아이디&amp;gt;/registry:latest 처럼 tag명에 내 아이디가 들어가는 모양이었다.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Docker hub에 private image를 올리는 것은 제한이 있다.
+개인 사용자의 경우 하나의 이미지만 private이 가능하고 organization의 경우에는 비용을 지불해야만 사용이 가능하다.
+이런점에 비추어 볼 때 우리는 private registry환경을 구축하고 싶다는 생각이 들 것이다.&lt;/p&gt;
+&lt;p&gt;EC2에 개인 registry를 구축하고 local 또는 다른 서버에서 접근하는 방법에 대해서 진행해보겠다. 그리고 Amazon S3 를 이미지 저장소로 사용하겠다.&lt;/p&gt;
+&lt;h2 id=&#34;docker-registry-구축하기&#34;&gt;Docker registry 구축하기&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;docker가 설치되어 있는 EC2에 접근하여 registry  이미지를 pull 해보자.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;docker registry의 기본포트는 5000번이다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# registry 이미지를 가져오기&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ docker pull registry
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# registry를 실행하기&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ docker run -dit --name docker-registry -p 5000:5000 registry
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;docker-image를-push하기&#34;&gt;Docker image를 push하기&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;a href=&#34;https://hub.docker.com&#34;&gt;도커허브&lt;/a&gt;를 사용할 때는 &amp;lt;계정아이디&amp;gt;/registry:latest 처럼 tag명에 내 아이디가 들어가는 모양이었다.
+하지만 private registry를 사용할 때는 &amp;lt;계정아이디&amp;gt;부분에 내 registry의 url주소를 사용하여야 한다.&lt;/p&gt;</description>
     </item>
     
   </channel>

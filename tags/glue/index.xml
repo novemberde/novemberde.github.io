@@ -13,8 +13,17 @@
       <pubDate>Fri, 15 Jan 2021 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2021/01/15/AWS-Glue-DataBrew/</guid>
-      <description>AWS re:Invent 2020 에서 새로 출시한 AWS Glue DataBrew라는 서비스를 살펴보고, 기존의 Data engineer의 역할을 DataBrew로 어떻게 대체할 수 있는지 설명한다. 마지막으로 DataBrew를 통해 코드 한 줄 없이 ETL을 하는 과정을 데모로 확인한다.
-Slide Share 데이터 분석가를 위한 AWS 신규 서비스 소개 - 변규현 SW 엔지니어, 당근마켓 from Amazon Web Services Korea Youtube Reference AWS re:Invent recap 2020 행사 링크 https://pages.awscloud.com/aws-reinvent-recap-kr-reg.html </description>
+      <description>&lt;p&gt;AWS re:Invent 2020 에서 새로 출시한 AWS Glue DataBrew라는 서비스를 살펴보고,
+기존의 Data engineer의 역할을 DataBrew로 어떻게 대체할 수 있는지 설명한다.
+마지막으로 DataBrew를 통해 코드 한 줄 없이 ETL을 하는 과정을 데모로 확인한다.&lt;/p&gt;
+&lt;h2 id=&#34;slide-share&#34;&gt;Slide Share&lt;/h2&gt;
+&lt;iframe src=&#34;//www.slideshare.net/slideshow/embed_code/key/ivp3aZx3xh7v7u&#34; width=&#34;595&#34; height=&#34;485&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt; &lt;/iframe&gt; &lt;div style=&#34;margin-bottom:5px&#34;&gt; &lt;strong&gt; &lt;a href=&#34;//www.slideshare.net/awskorea/reinvent2020-recap-for-analyst-kyuhyun&#34; title=&#34;데이터 분석가를 위한 AWS 신규 서비스 소개 - 변규현 SW 엔지니어, 당근마켓&#34; target=&#34;_blank&#34;&gt;데이터 분석가를 위한 AWS 신규 서비스 소개 - 변규현 SW 엔지니어, 당근마켓&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href=&#34;https://www.slideshare.net/awskorea&#34; target=&#34;_blank&#34;&gt;Amazon Web Services Korea&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;
+&lt;h2 id=&#34;youtube&#34;&gt;Youtube&lt;/h2&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/mgYyJRRUC2Q&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;h2 id=&#34;reference&#34;&gt;Reference&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;AWS re:Invent recap 2020 행사 링크 &lt;a href=&#34;https://pages.awscloud.com/aws-reinvent-recap-kr-reg.html&#34;&gt;https://pages.awscloud.com/aws-reinvent-recap-kr-reg.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
     <item>
@@ -23,8 +32,21 @@ Slide Share 데이터 분석가를 위한 AWS 신규 서비스 소개 - 변규�
       <pubDate>Mon, 29 Oct 2018 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2018/10/29/Potal-Analysis/</guid>
-      <description>Summary 부산 스마트 앱 개발자 포럼에서 서버리스를 활용하여 데이터를 수집 및 분석 후기를 공유하였다.
-발표자료 Github repo. 발표 슬라이드 0원으로 시작하는 서버리스 데이터 수집 및 분석 from Kyuhyun Byun 고찰 지난 여름부터 모아온 데이터를 분석하고 이 데이터를 기반으로 AWS의 데이터 처리 서비스들에 대해서 공부하는 계기였다. 실제로 현업에서 데이터를 분석할 일은 많다. 데이터를 쌓고 보기 쉽게 변환하는 과정 그리고 시각화까지 다양한 기술을 요구한다. 데이터를 다루는 역량 뿐만 아니라 전체적인 웹서비스 구축 역량을 요구한다.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.onoffmix.com/event/155396&#34;&gt;부산 스마트 앱 개발자 포럼&lt;/a&gt;에서 서버리스를 활용하여 데이터를 수집 및 분석 후기를 공유하였다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.slideshare.net/KyuhyunByun1/0-121022533&#34;&gt;발표자료&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/novemberde/serverless-crawler-demo&#34;&gt;Github repo.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;발표-슬라이드&#34;&gt;발표 슬라이드&lt;/h2&gt;
+&lt;hr&gt;
+&lt;iframe src=&#34;//www.slideshare.net/slideshow/embed_code/key/xrAl5GcoWdJ9pd&#34; width=&#34;595&#34; height=&#34;485&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt; &lt;/iframe&gt; &lt;div style=&#34;margin-bottom:5px&#34;&gt; &lt;strong&gt; &lt;a href=&#34;//www.slideshare.net/KyuhyunByun1/0-121022533&#34; title=&#34;0원으로 시작하는 서버리스 데이터 수집 및 분석&#34; target=&#34;_blank&#34;&gt;0원으로 시작하는 서버리스 데이터 수집 및 분석&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href=&#34;//www.slideshare.net/KyuhyunByun1&#34; target=&#34;_blank&#34;&gt;Kyuhyun Byun&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;
+&lt;h2 id=&#34;고찰&#34;&gt;고찰&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;지난 여름부터 모아온 데이터를 분석하고 이 데이터를 기반으로 AWS의 데이터 처리 서비스들에 대해서 공부하는 계기였다.
+실제로 현업에서 데이터를 분석할 일은 많다. 데이터를 쌓고 보기 쉽게 변환하는 과정 그리고 시각화까지 다양한 기술을 요구한다.
+데이터를 다루는 역량 뿐만 아니라 전체적인 웹서비스 구축 역량을 요구한다.&lt;/p&gt;</description>
     </item>
     
   </channel>

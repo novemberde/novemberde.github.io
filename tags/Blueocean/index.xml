@@ -13,13 +13,30 @@
       <pubDate>Sat, 21 Oct 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2017/10/21/Jenkins/</guid>
-      <description>Summary Jenkins는 CD/CI로 가장 알려진 도구이다. 이번에는 Jenkins 설정부터 시작하여 Pipeline으로 배포관리하는 과정을 정리해본다.
-Jenkins로 기본 설정하기 Jenkins를 Install Jenkins를 참고하여 설치한다.
-설치하여 맨처음 접속하면 아래와 같은 화면이 나타난다. 다음의 명령어로 나온 텍스트를 입력한다.
-$ cat /var/jenkins_home/secrets/initialAdminPassword Customize Jenkins화면에서 여기서는 크게 설정할 필요없이 Install suggested plugins을 선택한다.
-이후에 해당 플러그인을 설치하고 관리자 계정을 설정할 수 있다.
-테스트를 위해 계정 정보는 다음과 같이 설정한다.
-계정명: admin 암호: 1234 이름: admin 이메일 주소: 본인 이메일 주소 Jenkins 관리 &amp;gt; 플러그인 관리 &amp;gt; 설치 가능 으로 들어가서 Blue ocean을 선택하여 재시작없이 설치하기 버튼을 클릭한다.</description>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Jenkins는 CD/CI로 가장 알려진 도구이다. 이번에는 Jenkins 설정부터 시작하여 Pipeline으로 배포관리하는 과정을 정리해본다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;jenkins로-기본-설정하기&#34;&gt;Jenkins로 기본 설정하기&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Jenkins를 &lt;a href=&#34;https://jenkins.io/doc/book/installing/&#34;&gt;Install Jenkins&lt;/a&gt;를 참고하여 설치한다.&lt;/p&gt;
+&lt;p&gt;설치하여 맨처음 접속하면 아래와 같은 화면이 나타난다.
+다음의 명령어로 나온 텍스트를 입력한다.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ cat /var/jenkins_home/secrets/initialAdminPassword
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://novemberde.github.io/images/jenkins/gettingStarted.png&#34; alt=&#34;gettingStarted&#34;  /&gt;
+&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Customize Jenkins화면에서 여기서는 크게 설정할 필요없이 Install suggested plugins을 선택한다.&lt;/p&gt;
+&lt;p&gt;이후에 해당 플러그인을 설치하고 관리자 계정을 설정할 수 있다.&lt;/p&gt;
+&lt;p&gt;테스트를 위해 계정 정보는 다음과 같이 설정한다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;계정명: admin&lt;/li&gt;
+&lt;li&gt;암호: 1234&lt;/li&gt;
+&lt;li&gt;이름: admin&lt;/li&gt;
+&lt;li&gt;이메일 주소: 본인 이메일 주소&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://novemberde.github.io/images/jenkins/main.png&#34; alt=&#34;main&#34;  /&gt;
+&lt;/p&gt;</description>
     </item>
     
   </channel>
