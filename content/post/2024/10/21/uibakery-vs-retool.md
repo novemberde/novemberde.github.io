@@ -1,7 +1,7 @@
 ---
 title: "UI Bakery vs. Retool: A Comprehensive Comparison"
 tags: [UI Bakery, Retool, comparison, dashboard, charts, data handling]
-date: "2024-10-22T11:30:03+00:00"
+date: "2024-10-21T10:30:00+00:00"
 ShowBreadCrumbs: true
 ShowReadingTime: true
 ShowPostNavLinks: true

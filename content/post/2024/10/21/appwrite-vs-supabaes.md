@@ -1,7 +1,7 @@
 ---
 title: "AppWrite vs. Supabase: A Comprehensive Comparison"
 tags: [AppWrite, Supabase, comparison, backend, database, serverless]
-date: "2024-10-21T11:30:03+00:00"
+date: "2024-10-21T09:30:00+00:00"
 ShowBreadCrumbs: true
 ShowReadingTime: true
 ShowPostNavLinks: true
