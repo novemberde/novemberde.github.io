@@ -54,6 +54,18 @@ ShowPostNavLinks: true
 
 When choosing between these modes, consider your application's specific requirements, the nature of your database interactions, and the need for scalability versus feature compatibility.
 
+## Opinions
+
+- **Connection Mode**:
+    - Better for applications that require persistent connections or use session-level features.
+    - Safer and more compatible with all PostgreSQL clients.
+    - Supports all PostgreSQL features and mechanisms.
+
+- **Transaction Mode**:
+    - Ideal for applications with many short-lived database interactions or those that primarily use transactional operations.
+    - More efficient in terms of resource utilization.
+    - Allows for a higher number of client connections with a smaller pool size.
+
 ## Citations
 
 - [1] https://docs.digitalocean.com/products/databases/postgresql/how-to/manage-connection-pools/
