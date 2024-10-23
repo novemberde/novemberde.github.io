@@ -77,6 +77,22 @@ The best choice depends on your specific needs:
 I'm going to use UI Bakery for my project because I prefer its user-friendly interface and modern design.
 And also, it is more useful to share the dashboard with not only my team members but also with other stakeholders.
 
+## UI Bakery Review
+
+UI Bakery is a great experience. I used Supabase as the underlying project and connected it to the PostgreSQL database created in Supabase, allowing me to perform admin visualization tasks.
+It took me two days to create a service and deploy it to the admin. I created CRUD operations for each service component in the admin and even added business metrics.
+I accomplished all of this using Supabase and UI Bakery.
+
+Here are my thoughts on using UI Bakery:
+
+UI Bakery makes it easy to create, update, and delete rows and columns related to each table. This makes it easy to implement CRUD operations, which is a significant advantage for admin use cases. I believe this feature covers all the drawbacks.
+
+UI Bakery has some limitations when it comes to using it for free. However, by upgrading to the pro mode, you gain more freedom to create your admin. You can create pages with public URLs and easily control user access for each screen. However, I had some reservations about this aspect. I questioned whether it was necessary to be locked into a paid plan to access these features. If the project becomes more complex or has specific requirements, it might be more beneficial to build a separate admin or utilize open-source admin solutions.
+
+UI Bakery offers a range of components, but it may require additional effort to ensure visibility of metrics and dynamically create charts. To visualize the desired data, separate queries and integrations may be necessary. However, creating charts that fully meet specific needs, such as grouping by a single column in a stacked bar chart, may require customization using ECharts functionality. While achievable, this level of customization may cause some challenges when using UI Bakery.
+
+But overall, I am satisfied with the results. I was able to create a service and deploy it to the admin in two days. I was able to create CRUD operations for each service component in the admin and even add business metrics. I accomplished all of this using Supabase and UI Bakery.
+
 ## Citations
 
 - [1] https://uibakery.io/ui-bakery-vs-retool
