@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Backend on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/backend/</link>
+    <description>Recent content in Backend on Novemberde&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Mon, 21 Oct 2024 09:30:00 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/backend/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AppWrite vs. Supabase: A Comprehensive Comparison</title>
+      <link>https://novemberde.github.io/post/2024/10/21/appwrite-vs-supabaes/</link>
+      <pubDate>Mon, 21 Oct 2024 09:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2024/10/21/appwrite-vs-supabaes/</guid>
+      <description>&lt;h1 id=&#34;appwrite-vs-supabase-a-comprehensive-comparison&#34;&gt;AppWrite vs. Supabase: A Comprehensive Comparison&lt;/h1&gt;
+&lt;p&gt;It&amp;rsquo;s difficult to definitively say one is &amp;ldquo;better&amp;rdquo; than the other, as each has its strengths and is suited for different use cases. However, I can provide a comparison of their key features and performance to help you make an informed decision:&lt;/p&gt;
+&lt;h2 id=&#34;performance-and-scalability&#34;&gt;Performance and Scalability&lt;/h2&gt;
+&lt;p&gt;Appwrite consistently outperformed Supabase in stress tests, especially when scaling up to handle more users[1][4]. For example:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;On a €5/month self-hosted server, Appwrite handled up to 2,000 users per day comfortably, while Supabase struggled with larger loads[1].&lt;/li&gt;
+&lt;li&gt;On a more powerful €30/month server, Appwrite managed up to 250 simultaneous users, while Supabase hit its limit at only 45 users[1].&lt;/li&gt;
+&lt;li&gt;In breakpoint tests, Appwrite reached 6,800 virtual users, processing 100,000 requests with an average 3-second response time. Supabase reached its breakpoint at 3,000 virtual users, with 59,000 requests and a 6-second average response time[4].&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ease-of-use&#34;&gt;Ease of Use&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Appwrite offers a smoother self-hosting experience with fewer restrictions and less setup complexity[1][3].&lt;/li&gt;
+&lt;li&gt;Supabase can be more challenging to configure in a self-hosted environment and has some features restricted or limited when self-hosted[1][3].&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
+&lt;p&gt;Both platforms offer similar core features, including authentication, databases, storage, and serverless functions. However, there are some differences:&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

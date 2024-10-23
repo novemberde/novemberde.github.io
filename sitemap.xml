@@ -2,6 +2,63 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://novemberde.github.io/tags/charts/</loc>
+    <lastmod>2024-10-21T10:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/comparison/</loc>
+    <lastmod>2024-10-21T10:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/dashboard/</loc>
+    <lastmod>2024-10-21T10:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/data-handling/</loc>
+    <lastmod>2024-10-21T10:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/</loc>
+    <lastmod>2024-10-21T10:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/post/</loc>
+    <lastmod>2024-10-21T10:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/Retool/</loc>
+    <lastmod>2024-10-21T10:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/</loc>
+    <lastmod>2024-10-21T10:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/UI-Bakery/</loc>
+    <lastmod>2024-10-21T10:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/post/2024/10/21/uibakery-vs-retool/</loc>
+    <lastmod>2024-10-21T10:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/AppWrite/</loc>
+    <lastmod>2024-10-21T09:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/post/2024/10/21/appwrite-vs-supabaes/</loc>
+    <lastmod>2024-10-21T09:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/backend/</loc>
+    <lastmod>2024-10-21T09:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/database/</loc>
+    <lastmod>2024-10-21T09:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/serverless/</loc>
+    <lastmod>2024-10-21T09:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/Supabase/</loc>
+    <lastmod>2024-10-21T09:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/connection-modes/</loc>
+    <lastmod>2024-10-21T08:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/postgresql/</loc>
+    <lastmod>2024-10-21T08:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/post/2024/10/21/postgres-connection-mode-session-mode/</loc>
+    <lastmod>2024-10-21T08:30:00+00:00</lastmod>
+  </url><url>
     <loc>https://novemberde.github.io/tags/chatting/</loc>
     <lastmod>2024-10-14T11:30:03+00:00</lastmod>
   </url><url>
@@ -18,15 +75,6 @@
     <lastmod>2024-10-14T11:30:03+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/gophercon/</loc>
-    <lastmod>2024-10-14T11:30:03+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/</loc>
-    <lastmod>2024-10-14T11:30:03+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/post/</loc>
-    <lastmod>2024-10-14T11:30:03+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/tags/</loc>
     <lastmod>2024-10-14T11:30:03+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/post/2024/07/25/2023-gophercon-4-years-history-adopting-go/</loc>
@@ -90,9 +138,6 @@
     <lastmod>2023-11-29T11:30:03+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/hero/</loc>
-    <lastmod>2023-11-29T11:30:03+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/tags/serverless/</loc>
     <lastmod>2023-11-29T11:30:03+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/%EB%8D%95%EB%AA%A9/</loc>
@@ -227,13 +272,7 @@
     <loc>https://novemberde.github.io/tags/aurora/</loc>
     <lastmod>2020-10-17T11:30:03+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/database/</loc>
-    <lastmod>2020-10-17T11:30:03+00:00</lastmod>
-  </url><url>
     <loc>https://novemberde.github.io/tags/postgres/</loc>
-    <lastmod>2020-10-17T11:30:03+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/tags/postgresql/</loc>
     <lastmod>2020-10-17T11:30:03+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/rds/</loc>

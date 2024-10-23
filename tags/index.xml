@@ -6,7 +6,124 @@
     <description>Recent content in Tags on Novemberde&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-KR</language>
-    <lastBuildDate>Mon, 14 Oct 2024 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 21 Oct 2024 10:30:00 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Charts</title>
+      <link>https://novemberde.github.io/tags/charts/</link>
+      <pubDate>Mon, 21 Oct 2024 10:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/charts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Comparison</title>
+      <link>https://novemberde.github.io/tags/comparison/</link>
+      <pubDate>Mon, 21 Oct 2024 10:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/comparison/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dashboard</title>
+      <link>https://novemberde.github.io/tags/dashboard/</link>
+      <pubDate>Mon, 21 Oct 2024 10:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/dashboard/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Handling</title>
+      <link>https://novemberde.github.io/tags/data-handling/</link>
+      <pubDate>Mon, 21 Oct 2024 10:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/data-handling/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Retool</title>
+      <link>https://novemberde.github.io/tags/Retool/</link>
+      <pubDate>Mon, 21 Oct 2024 10:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/Retool/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>UI Bakery</title>
+      <link>https://novemberde.github.io/tags/UI-Bakery/</link>
+      <pubDate>Mon, 21 Oct 2024 10:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/UI-Bakery/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AppWrite</title>
+      <link>https://novemberde.github.io/tags/AppWrite/</link>
+      <pubDate>Mon, 21 Oct 2024 09:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/AppWrite/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Backend</title>
+      <link>https://novemberde.github.io/tags/backend/</link>
+      <pubDate>Mon, 21 Oct 2024 09:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/backend/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Database</title>
+      <link>https://novemberde.github.io/tags/database/</link>
+      <pubDate>Mon, 21 Oct 2024 09:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Serverless</title>
+      <link>https://novemberde.github.io/tags/serverless/</link>
+      <pubDate>Mon, 21 Oct 2024 09:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/serverless/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Supabase</title>
+      <link>https://novemberde.github.io/tags/Supabase/</link>
+      <pubDate>Mon, 21 Oct 2024 09:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/Supabase/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Connection Modes</title>
+      <link>https://novemberde.github.io/tags/connection-modes/</link>
+      <pubDate>Mon, 21 Oct 2024 08:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/connection-modes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PostgreSQL</title>
+      <link>https://novemberde.github.io/tags/postgresql/</link>
+      <pubDate>Mon, 21 Oct 2024 08:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/postgresql/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Chatting</title>
       <link>https://novemberde.github.io/tags/chatting/</link>
@@ -193,15 +310,6 @@
       <pubDate>Wed, 29 Nov 2023 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/tags/hero/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Serverless</title>
-      <link>https://novemberde.github.io/tags/serverless/</link>
-      <pubDate>Wed, 29 Nov 2023 11:30:03 +0000</pubDate>
-      
-      <guid>https://novemberde.github.io/tags/serverless/</guid>
       <description></description>
     </item>
     
@@ -503,29 +611,11 @@
     </item>
     
     <item>
-      <title>Database</title>
-      <link>https://novemberde.github.io/tags/database/</link>
-      <pubDate>Sat, 17 Oct 2020 11:30:03 +0000</pubDate>
-      
-      <guid>https://novemberde.github.io/tags/database/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Postgres</title>
       <link>https://novemberde.github.io/tags/postgres/</link>
       <pubDate>Sat, 17 Oct 2020 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/tags/postgres/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Postgresql</title>
-      <link>https://novemberde.github.io/tags/postgresql/</link>
-      <pubDate>Sat, 17 Oct 2020 11:30:03 +0000</pubDate>
-      
-      <guid>https://novemberde.github.io/tags/postgresql/</guid>
       <description></description>
     </item>
     

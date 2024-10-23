@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Dashboard on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/dashboard/</link>
+    <description>Recent content in Dashboard on Novemberde&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Mon, 21 Oct 2024 10:30:00 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/dashboard/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>UI Bakery vs. Retool: A Comprehensive Comparison</title>
+      <link>https://novemberde.github.io/post/2024/10/21/uibakery-vs-retool/</link>
+      <pubDate>Mon, 21 Oct 2024 10:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2024/10/21/uibakery-vs-retool/</guid>
+      <description>&lt;p&gt;When comparing UI Bakery and Retool for operating in-house data and creating dashboards with charts, both platforms offer strong capabilities but have some key differences. Let&amp;rsquo;s examine how they compare in these specific areas:&lt;/p&gt;
+&lt;h2 id=&#34;data-handling-and-integration&#34;&gt;Data Handling and Integration&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Retool&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Retool excels in data handling and integration, making it a strong choice for operating in-house data[1][4]. It offers:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Powerful integration with external data sources, including APIs, databases, and cloud services&lt;/li&gt;
+&lt;li&gt;Support for SQL/NoSQL databases and services like Firebase, MongoDB, and PostgreSQL&lt;/li&gt;
+&lt;li&gt;Real-time data syncing between the UI and data sources&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;UI Bakery&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
