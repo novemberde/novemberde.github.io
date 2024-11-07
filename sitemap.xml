@@ -2,11 +2,47 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://novemberde.github.io/tags/http/</loc>
+    <lastmod>2024-11-07T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/https/</loc>
+    <lastmod>2024-11-07T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/post/2024/11/07/http-https-hxxp-hxxps/</loc>
+    <lastmod>2024-11-07T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/hxxp/</loc>
+    <lastmod>2024-11-07T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/hxxps/</loc>
+    <lastmod>2024-11-07T00:30:00+00:00</lastmod>
+  </url><url>
     <loc>https://novemberde.github.io/</loc>
-    <lastmod>2024-11-07T10:30:00+00:00</lastmod>
+    <lastmod>2024-11-07T00:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/post/</loc>
-    <lastmod>2024-11-07T10:30:00+00:00</lastmod>
+    <lastmod>2024-11-07T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/</loc>
+    <lastmod>2024-11-07T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/URL/</loc>
+    <lastmod>2024-11-07T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/%EB%A7%81%ED%81%AC-%EC%B0%A8%EB%8B%A8-%EC%9A%B0%ED%9A%8C/</loc>
+    <lastmod>2024-11-07T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/%EB%B3%B4%EC%95%88/</loc>
+    <lastmod>2024-11-07T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/%EB%B3%B4%EC%95%88-%EC%9D%B8%EC%8B%9D/</loc>
+    <lastmod>2024-11-07T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/%ED%81%B4%EB%A6%AD-%EB%B0%A9%EC%A7%80/</loc>
+    <lastmod>2024-11-07T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/%ED%94%BC%EC%8B%B1-%EA%B3%B5%EA%B2%A9/</loc>
+    <lastmod>2024-11-07T00:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/post/2024/10/23/aws-serverless-computing/</loc>
     <lastmod>2024-10-23T10:30:00+00:00</lastmod>
@@ -66,9 +102,6 @@
     <lastmod>2024-10-23T10:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/Step-Functions/</loc>
-    <lastmod>2024-10-23T10:30:00+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/tags/</loc>
     <lastmod>2024-10-23T10:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/charts/</loc>
