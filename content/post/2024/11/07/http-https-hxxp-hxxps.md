@@ -1,7 +1,7 @@
 ---
 title: "http와 https 대신 hxxp와 hxxps를 사용하는 이유"
 tags: [http, https, hxxp, hxxps, URL, 보안, 클릭 방지, 피싱 공격, 보안 인식, 링크 차단 우회]
-date: "2024-11-07T10:30:00+00:00"
+date: "2024-11-07T00:30:00+00:00"
 ShowBreadCrumbs: true
 ShowReadingTime: true
 ShowPostNavLinks: true
@@ -42,8 +42,8 @@ URL을 수동으로 입력해야 하는 과정은 사용자의 보안 인식을 
 이 방식은 보안 커뮤니티에서 널리 사용되며, 특히 대규모 내부 커뮤니케이션에서 보안 인식을 높이는 데 효과적입니다[1]. 그러나 이는 완벽한 해결책은 아니며, 사용자 교육과 함께 사용되어야 가장 효과적입니다.
 
 Citations:
-[1] https://privacymatters.ubc.ca/node/223
-[2] https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/trusted-domain-hidden-danger-deceptive-url-redirections-in-email-phishing-attacks/
-[3] https://datatracker.ietf.org/doc/draft-salgado-hxxp/
-[4] https://malwaretips.com/threads/what-is-the-hxxp-prefix.31827/
-[5] https://www.reddit.com/r/TOR/comments/grd44r/why_do_people_write_hxxps_instead_of_https_when/
+- [1] https://privacymatters.ubc.ca/node/223
+- [2] https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/trusted-domain-hidden-danger-deceptive-url-redirections-in-email-phishing-attacks/
+- [3] https://datatracker.ietf.org/doc/draft-salgado-hxxp/
+- [4] https://malwaretips.com/threads/what-is-the-hxxp-prefix.31827/
+- [5] https://www.reddit.com/r/TOR/comments/grd44r/why_do_people_write_hxxps_instead_of_https_when/
