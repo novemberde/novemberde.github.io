@@ -3,9 +3,72 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://novemberde.github.io/</loc>
-    <lastmod>2024-10-23T10:30:00+00:00</lastmod>
+    <lastmod>2024-11-07T10:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/post/</loc>
+    <lastmod>2024-11-07T10:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/post/2024/10/23/aws-serverless-computing/</loc>
+    <lastmod>2024-10-23T10:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/API-Gateway/</loc>
+    <lastmod>2024-10-23T10:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/AppSync/</loc>
+    <lastmod>2024-10-23T10:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/aurora/</loc>
+    <lastmod>2024-10-23T10:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/AWS/</loc>
+    <lastmod>2024-10-23T10:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/computing/</loc>
+    <lastmod>2024-10-23T10:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/DynamoDB/</loc>
+    <lastmod>2024-10-23T10:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/EFS/</loc>
+    <lastmod>2024-10-23T10:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/ElastiCache/</loc>
+    <lastmod>2024-10-23T10:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/Eventbridge/</loc>
+    <lastmod>2024-10-23T10:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/fargate/</loc>
+    <lastmod>2024-10-23T10:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/lambda/</loc>
+    <lastmod>2024-10-23T10:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/Neptune/</loc>
+    <lastmod>2024-10-23T10:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/OpenSearch/</loc>
+    <lastmod>2024-10-23T10:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/Redshift/</loc>
+    <lastmod>2024-10-23T10:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/s3/</loc>
+    <lastmod>2024-10-23T10:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/serverless/</loc>
+    <lastmod>2024-10-23T10:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/SNS/</loc>
+    <lastmod>2024-10-23T10:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/SQS/</loc>
+    <lastmod>2024-10-23T10:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/Step-Functions/</loc>
+    <lastmod>2024-10-23T10:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/</loc>
     <lastmod>2024-10-23T10:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/charts/</loc>
@@ -21,9 +84,6 @@
     <lastmod>2024-10-21T10:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/Retool/</loc>
-    <lastmod>2024-10-21T10:30:00+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/tags/</loc>
     <lastmod>2024-10-21T10:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/UI-Bakery/</loc>
@@ -42,9 +102,6 @@
     <lastmod>2024-10-21T09:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/database/</loc>
-    <lastmod>2024-10-21T09:30:00+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/tags/serverless/</loc>
     <lastmod>2024-10-21T09:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/Supabase/</loc>
@@ -170,9 +227,6 @@
     <loc>https://novemberde.github.io/post/2022/05/12/karrot-chat-system/</loc>
     <lastmod>2022-05-12T11:30:03+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/AWS/</loc>
-    <lastmod>2022-05-12T11:30:03+00:00</lastmod>
-  </url><url>
     <loc>https://novemberde.github.io/tags/karrot/</loc>
     <lastmod>2022-05-12T11:30:03+00:00</lastmod>
   </url><url>
@@ -269,9 +323,6 @@
     <loc>https://novemberde.github.io/tags/%ED%99%9C%EC%9A%A9%EB%B2%95/</loc>
     <lastmod>2020-11-24T11:30:03+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/aurora/</loc>
-    <lastmod>2020-10-17T11:30:03+00:00</lastmod>
-  </url><url>
     <loc>https://novemberde.github.io/tags/postgres/</loc>
     <lastmod>2020-10-17T11:30:03+00:00</lastmod>
   </url><url>
@@ -354,9 +405,6 @@
     <lastmod>2019-05-13T11:30:03+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/circleci/</loc>
-    <lastmod>2019-05-13T11:30:03+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/tags/lambda/</loc>
     <lastmod>2019-05-13T11:30:03+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/post/2019/05/13/CircleCI-1st-Meetup/</loc>
@@ -606,9 +654,6 @@
     <lastmod>2018-01-20T11:30:03+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/post/2018/01/20/ECS_Fargate/</loc>
-    <lastmod>2018-01-20T11:30:03+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/tags/fargate/</loc>
     <lastmod>2018-01-20T11:30:03+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/%EB%8D%B0%EB%AA%A8/</loc>
@@ -1089,9 +1134,6 @@
     <lastmod>2017-04-15T11:30:03+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/registry/</loc>
-    <lastmod>2017-04-09T11:30:03+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/tags/s3/</loc>
     <lastmod>2017-04-09T11:30:03+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/post/2017/04/09/Docker_Registry_0/</loc>

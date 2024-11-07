@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>OpenSearch on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/OpenSearch/</link>
+    <description>Recent content in OpenSearch on Novemberde&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Wed, 23 Oct 2024 10:30:00 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/OpenSearch/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2024 AWS Serverless Computing 종류 정리</title>
+      <link>https://novemberde.github.io/post/2024/10/23/aws-serverless-computing/</link>
+      <pubDate>Wed, 23 Oct 2024 10:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2024/10/23/aws-serverless-computing/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;1. Computing &amp;amp; Application&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;AWS Lambda&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;소개: 이벤트 기반의 서버리스 컴퓨팅 서비스&lt;/li&gt;
+&lt;li&gt;해결문제: 짧은 실행 시간의 작업, 이벤트 처리, API 요청 처리&lt;/li&gt;
+&lt;li&gt;대체서비스: EC2, ECS, EKS&lt;/li&gt;
+&lt;li&gt;규모:
+&lt;ul&gt;
+&lt;li&gt;최소: 128MB 메모리, 실행시간 제한 15분&lt;/li&gt;
+&lt;li&gt;최대: 10GB 메모리, 동시실행 1000개 (증설 가능)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;AWS Fargate&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;소개: 컨테이너화된 애플리케이션을 위한 서버리스 컴퓨팅 엔진&lt;/li&gt;
+&lt;li&gt;해결문제: 컨테이너 운영에 따른 서버 관리 부담 제거&lt;/li&gt;
+&lt;li&gt;대체서비스: ECS/EKS with EC2&lt;/li&gt;
+&lt;li&gt;규모:
+&lt;ul&gt;
+&lt;li&gt;최소: vCPU 0.25개, 메모리 0.5GB&lt;/li&gt;
+&lt;li&gt;최대: vCPU 16개, 메모리 120GB&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;2. Integration &amp;amp; Orchestration&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,7 +6,178 @@
     <description>Recent content in Tags on Novemberde&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-KR</language>
-    <lastBuildDate>Mon, 21 Oct 2024 10:30:00 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Oct 2024 10:30:00 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>API Gateway</title>
+      <link>https://novemberde.github.io/tags/API-Gateway/</link>
+      <pubDate>Wed, 23 Oct 2024 10:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/API-Gateway/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AppSync</title>
+      <link>https://novemberde.github.io/tags/AppSync/</link>
+      <pubDate>Wed, 23 Oct 2024 10:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/AppSync/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Aurora</title>
+      <link>https://novemberde.github.io/tags/aurora/</link>
+      <pubDate>Wed, 23 Oct 2024 10:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/aurora/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AWS</title>
+      <link>https://novemberde.github.io/tags/AWS/</link>
+      <pubDate>Wed, 23 Oct 2024 10:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/AWS/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Computing</title>
+      <link>https://novemberde.github.io/tags/computing/</link>
+      <pubDate>Wed, 23 Oct 2024 10:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/computing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DynamoDB</title>
+      <link>https://novemberde.github.io/tags/DynamoDB/</link>
+      <pubDate>Wed, 23 Oct 2024 10:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/DynamoDB/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>EFS</title>
+      <link>https://novemberde.github.io/tags/EFS/</link>
+      <pubDate>Wed, 23 Oct 2024 10:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/EFS/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ElastiCache</title>
+      <link>https://novemberde.github.io/tags/ElastiCache/</link>
+      <pubDate>Wed, 23 Oct 2024 10:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/ElastiCache/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Eventbridge</title>
+      <link>https://novemberde.github.io/tags/Eventbridge/</link>
+      <pubDate>Wed, 23 Oct 2024 10:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/Eventbridge/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fargate</title>
+      <link>https://novemberde.github.io/tags/fargate/</link>
+      <pubDate>Wed, 23 Oct 2024 10:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/fargate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lambda</title>
+      <link>https://novemberde.github.io/tags/lambda/</link>
+      <pubDate>Wed, 23 Oct 2024 10:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/lambda/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Neptune</title>
+      <link>https://novemberde.github.io/tags/Neptune/</link>
+      <pubDate>Wed, 23 Oct 2024 10:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/Neptune/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OpenSearch</title>
+      <link>https://novemberde.github.io/tags/OpenSearch/</link>
+      <pubDate>Wed, 23 Oct 2024 10:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/OpenSearch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Redshift</title>
+      <link>https://novemberde.github.io/tags/Redshift/</link>
+      <pubDate>Wed, 23 Oct 2024 10:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/Redshift/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>S3</title>
+      <link>https://novemberde.github.io/tags/s3/</link>
+      <pubDate>Wed, 23 Oct 2024 10:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/s3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Serverless</title>
+      <link>https://novemberde.github.io/tags/serverless/</link>
+      <pubDate>Wed, 23 Oct 2024 10:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/serverless/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SNS</title>
+      <link>https://novemberde.github.io/tags/SNS/</link>
+      <pubDate>Wed, 23 Oct 2024 10:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/SNS/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SQS</title>
+      <link>https://novemberde.github.io/tags/SQS/</link>
+      <pubDate>Wed, 23 Oct 2024 10:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/SQS/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Step Functions</title>
+      <link>https://novemberde.github.io/tags/Step-Functions/</link>
+      <pubDate>Wed, 23 Oct 2024 10:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/Step-Functions/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Charts</title>
       <link>https://novemberde.github.io/tags/charts/</link>
@@ -85,15 +256,6 @@
       <pubDate>Mon, 21 Oct 2024 09:30:00 +0000</pubDate>
       
       <guid>https://novemberde.github.io/tags/database/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Serverless</title>
-      <link>https://novemberde.github.io/tags/serverless/</link>
-      <pubDate>Mon, 21 Oct 2024 09:30:00 +0000</pubDate>
-      
-      <guid>https://novemberde.github.io/tags/serverless/</guid>
       <description></description>
     </item>
     
@@ -377,15 +539,6 @@
     </item>
     
     <item>
-      <title>Aws</title>
-      <link>https://novemberde.github.io/tags/AWS/</link>
-      <pubDate>Thu, 12 May 2022 11:30:03 +0000</pubDate>
-      
-      <guid>https://novemberde.github.io/tags/AWS/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Karrot</title>
       <link>https://novemberde.github.io/tags/karrot/</link>
       <pubDate>Thu, 12 May 2022 11:30:03 +0000</pubDate>
@@ -602,15 +755,6 @@
     </item>
     
     <item>
-      <title>Aurora</title>
-      <link>https://novemberde.github.io/tags/aurora/</link>
-      <pubDate>Sat, 17 Oct 2020 11:30:03 +0000</pubDate>
-      
-      <guid>https://novemberde.github.io/tags/aurora/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Postgres</title>
       <link>https://novemberde.github.io/tags/postgres/</link>
       <pubDate>Sat, 17 Oct 2020 11:30:03 +0000</pubDate>
@@ -805,15 +949,6 @@
       <pubDate>Mon, 13 May 2019 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/tags/circleci/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Lambda</title>
-      <link>https://novemberde.github.io/tags/lambda/</link>
-      <pubDate>Mon, 13 May 2019 11:30:03 +0000</pubDate>
-      
-      <guid>https://novemberde.github.io/tags/lambda/</guid>
       <description></description>
     </item>
     
@@ -1399,15 +1534,6 @@
       <pubDate>Sat, 20 Jan 2018 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/tags/ecs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Fargate</title>
-      <link>https://novemberde.github.io/tags/fargate/</link>
-      <pubDate>Sat, 20 Jan 2018 11:30:03 +0000</pubDate>
-      
-      <guid>https://novemberde.github.io/tags/fargate/</guid>
       <description></description>
     </item>
     
@@ -2596,15 +2722,6 @@
       <pubDate>Sun, 09 Apr 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/tags/registry/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>S3</title>
-      <link>https://novemberde.github.io/tags/s3/</link>
-      <pubDate>Sun, 09 Apr 2017 11:30:03 +0000</pubDate>
-      
-      <guid>https://novemberde.github.io/tags/s3/</guid>
       <description></description>
     </item>
     
