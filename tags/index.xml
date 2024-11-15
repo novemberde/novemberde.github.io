@@ -6,11 +6,11 @@
     <description>Recent content in Tags on Novemberde&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-KR</language>
-    <lastBuildDate>Thu, 07 Nov 2024 00:30:00 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 15 Nov 2024 00:30:00 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AWS</title>
       <link>https://novemberde.github.io/tags/AWS/</link>
-      <pubDate>Thu, 07 Nov 2024 00:30:00 +0000</pubDate>
+      <pubDate>Fri, 15 Nov 2024 00:30:00 +0000</pubDate>
       
       <guid>https://novemberde.github.io/tags/AWS/</guid>
       <description></description>
@@ -19,7 +19,7 @@
     <item>
       <title>EBS</title>
       <link>https://novemberde.github.io/tags/EBS/</link>
-      <pubDate>Thu, 07 Nov 2024 00:30:00 +0000</pubDate>
+      <pubDate>Fri, 15 Nov 2024 00:30:00 +0000</pubDate>
       
       <guid>https://novemberde.github.io/tags/EBS/</guid>
       <description></description>
@@ -28,7 +28,7 @@
     <item>
       <title>EFS</title>
       <link>https://novemberde.github.io/tags/EFS/</link>
-      <pubDate>Thu, 07 Nov 2024 00:30:00 +0000</pubDate>
+      <pubDate>Fri, 15 Nov 2024 00:30:00 +0000</pubDate>
       
       <guid>https://novemberde.github.io/tags/EFS/</guid>
       <description></description>
@@ -37,9 +37,18 @@
     <item>
       <title>FSx</title>
       <link>https://novemberde.github.io/tags/FSx/</link>
-      <pubDate>Thu, 07 Nov 2024 00:30:00 +0000</pubDate>
+      <pubDate>Fri, 15 Nov 2024 00:30:00 +0000</pubDate>
       
       <guid>https://novemberde.github.io/tags/FSx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Storage</title>
+      <link>https://novemberde.github.io/tags/Storage/</link>
+      <pubDate>Fri, 15 Nov 2024 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/Storage/</guid>
       <description></description>
     </item>
     
@@ -76,15 +85,6 @@
       <pubDate>Thu, 07 Nov 2024 00:30:00 +0000</pubDate>
       
       <guid>https://novemberde.github.io/tags/hxxps/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Storage</title>
-      <link>https://novemberde.github.io/tags/Storage/</link>
-      <pubDate>Thu, 07 Nov 2024 00:30:00 +0000</pubDate>
-      
-      <guid>https://novemberde.github.io/tags/Storage/</guid>
       <description></description>
     </item>
     
