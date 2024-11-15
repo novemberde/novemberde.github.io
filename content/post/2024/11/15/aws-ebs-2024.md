@@ -1,5 +1,5 @@
 ---
-title: "AWS EBS, FSx, EFS: Storage Comparison"
+title: "AWS EBS, FSx, EFS: Storage Comparison (2024)"
 tags: ["AWS", "EBS", "FSx", "EFS", "Storage"]
 date: "2024-11-07T00:30:00+00:00"
 ShowBreadCrumbs: true
