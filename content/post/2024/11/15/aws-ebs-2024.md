@@ -267,6 +267,75 @@ FSx의 이러한 메커니즘들은 파일 시스템의 일관성을 유지하�
 - [3] https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-configuration.html
 - [4] https://www.youtube.com/watch?v=OsziLgOPeH8
 
+# IOPS에 대한 비용 관점에서 EBS, FSx, EFS를 비교
+
+EBS, FSx, EFS의 IOPS 비용을 비교해보겠습니다. 각 서비스마다 IOPS 과금 방식이 다르므로, 이를 고려하여 설명하겠습니다.
+
+## EBS (Elastic Block Store)
+
+1. gp3 볼륨:
+   - 기본 3,000 IOPS 무료 제공
+   - 3,000 IOPS 초과 시 $0.005 per provisioned IOPS-month 과금
+
+2. io2 볼륨:
+   - $0.065 per provisioned IOPS-month (32,000 IOPS까지)
+   - $0.046 per provisioned IOPS-month (32,001 - 64,000 IOPS)
+   - $0.032 per provisioned IOPS-month (64,000 IOPS 초과)
+
+## FSx (File System for NetApp ONTAP)
+
+- 기본적으로 SSD 스토리지 1GB당 3 IOPS 제공
+- 추가 IOPS 필요 시 $0.017 per IOPS-month 과금
+
+## EFS (Elastic File System)
+
+- EFS는 별도의 IOPS 과금 구조가 없음
+- 대신 처리량 모드에 따라 성능이 결정됨:
+  1. Bursting Throughput 모드: 스토리지 크기에 비례하여 기본 처리량 제공
+  2. Provisioned Throughput 모드: 추가 비용으로 더 높은 처리량 설정 가능
+
+## 비교 분석
+
+1. 비용 구조:
+   - EBS: IOPS에 대해 직접적인 과금 구조 (특히 io2)
+   - FSx: 기본 IOPS 제공 후 추가 IOPS에 대해 과금
+   - EFS: IOPS 대신 처리량 기반 과금
+
+2. 유연성:
+   - EBS: 볼륨 유형에 따라 다양한 IOPS 옵션 제공
+   - FSx: 추가 IOPS 프로비저닝 가능
+   - EFS: IOPS 대신 처리량으로 성능 조절
+
+3. 비용 효율성:
+   - 낮은 IOPS 요구사항: EBS gp3가 유리 (3,000 IOPS 무료)
+   - 높은 IOPS 요구사항:
+     - FSx가 상대적으로 저렴할 수 있음 ($0.017 per IOPS-month)
+     - EBS io2는 높은 IOPS에서 단계적 할인 제공
+
+4. 사용 사례:
+   - EBS: 높은 IOPS가 필요한 데이터베이스 워크로드에 적합
+   - FSx: 파일 공유와 높은 IOPS가 필요한 경우에 적합
+   - EFS: IOPS보다는 처리량이 중요한 워크로드에 적합
+
+
+결론적으로, IOPS 관점에서는 EBS와 FSx가 직접적인 비교가 가능하고, 필요한 IOPS 수준에 따라 비용 효율성이 달라진다. EFS는 IOPS 대신 처리량 기반으로 성능을 제공하므로, IOPS가 주요 고려사항이 아닌 경우에 적합하다.
+
+## Citations:
+
+- [1] https://www.vantage.sh/blog/amazon-efs-pricing
+- [2] https://aws.amazon.com/ebs/pricing/?nc2=type_a
+- [3] https://www.cloudbolt.io/guide-to-aws-cost-optimization/aws-ebs-pricing/
+- [4] https://aws.amazon.com/fsx/netapp-ontap/pricing/
+- [5] https://www.finout.io/blog/understanding-aws-pricing
+- [6] https://www.datafy.io/blog/ebs-costs-control-guide-to-locating-actual-ebs-costs
+- [7] https://aws.amazon.com/fsx/openzfs/pricing/
+- [8] https://aws.amazon.com/about-aws/whats-new/2024/01/higher-read-iops-amazon-elastic-file-system/
+- [9] https://cloudchipr.com/blog/minimizing-cost-for-aws-ebs
+- [10] https://aws.amazon.com/fsx/windows/pricing/?nc1=h_ls
+- [11] https://cuno.io/blog/making-the-right-choice-comparing-the-cost-performance-of-different-efs-options-and-alternatives/
+- [12] https://www.cloudforecast.io/blog/ebs-pricing/
+- [13] https://www.netapp.com/blog/amazon-fsx-ontap-pricing/
+
 
 # Conclusion
 
