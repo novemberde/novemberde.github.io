@@ -2,6 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://novemberde.github.io/tags/AWS/</loc>
+    <lastmod>2024-11-07T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/post/2024/11/15/aws-ebs-2024/</loc>
+    <lastmod>2024-11-07T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/EBS/</loc>
+    <lastmod>2024-11-07T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/EFS/</loc>
+    <lastmod>2024-11-07T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/FSx/</loc>
+    <lastmod>2024-11-07T00:30:00+00:00</lastmod>
+  </url><url>
     <loc>https://novemberde.github.io/tags/http/</loc>
     <lastmod>2024-11-07T00:30:00+00:00</lastmod>
   </url><url>
@@ -21,6 +36,9 @@
     <lastmod>2024-11-07T00:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/post/</loc>
+    <lastmod>2024-11-07T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/Storage/</loc>
     <lastmod>2024-11-07T00:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/</loc>
@@ -56,16 +74,10 @@
     <loc>https://novemberde.github.io/tags/aurora/</loc>
     <lastmod>2024-10-23T10:30:00+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/AWS/</loc>
-    <lastmod>2024-10-23T10:30:00+00:00</lastmod>
-  </url><url>
     <loc>https://novemberde.github.io/tags/computing/</loc>
     <lastmod>2024-10-23T10:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/DynamoDB/</loc>
-    <lastmod>2024-10-23T10:30:00+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/tags/EFS/</loc>
     <lastmod>2024-10-23T10:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/ElastiCache/</loc>

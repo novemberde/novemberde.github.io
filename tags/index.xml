@@ -8,6 +8,42 @@
     <language>ko-KR</language>
     <lastBuildDate>Thu, 07 Nov 2024 00:30:00 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>AWS</title>
+      <link>https://novemberde.github.io/tags/AWS/</link>
+      <pubDate>Thu, 07 Nov 2024 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/AWS/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>EBS</title>
+      <link>https://novemberde.github.io/tags/EBS/</link>
+      <pubDate>Thu, 07 Nov 2024 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/EBS/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>EFS</title>
+      <link>https://novemberde.github.io/tags/EFS/</link>
+      <pubDate>Thu, 07 Nov 2024 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/EFS/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>FSx</title>
+      <link>https://novemberde.github.io/tags/FSx/</link>
+      <pubDate>Thu, 07 Nov 2024 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/FSx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Http</title>
       <link>https://novemberde.github.io/tags/http/</link>
       <pubDate>Thu, 07 Nov 2024 00:30:00 +0000</pubDate>
@@ -40,6 +76,15 @@
       <pubDate>Thu, 07 Nov 2024 00:30:00 +0000</pubDate>
       
       <guid>https://novemberde.github.io/tags/hxxps/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Storage</title>
+      <link>https://novemberde.github.io/tags/Storage/</link>
+      <pubDate>Thu, 07 Nov 2024 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/Storage/</guid>
       <description></description>
     </item>
     
@@ -125,15 +170,6 @@
     </item>
     
     <item>
-      <title>AWS</title>
-      <link>https://novemberde.github.io/tags/AWS/</link>
-      <pubDate>Wed, 23 Oct 2024 10:30:00 +0000</pubDate>
-      
-      <guid>https://novemberde.github.io/tags/AWS/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Computing</title>
       <link>https://novemberde.github.io/tags/computing/</link>
       <pubDate>Wed, 23 Oct 2024 10:30:00 +0000</pubDate>
@@ -148,15 +184,6 @@
       <pubDate>Wed, 23 Oct 2024 10:30:00 +0000</pubDate>
       
       <guid>https://novemberde.github.io/tags/DynamoDB/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>EFS</title>
-      <link>https://novemberde.github.io/tags/EFS/</link>
-      <pubDate>Wed, 23 Oct 2024 10:30:00 +0000</pubDate>
-      
-      <guid>https://novemberde.github.io/tags/EFS/</guid>
       <description></description>
     </item>
     
