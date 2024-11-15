@@ -349,4 +349,4 @@ EBS, FSx, EFS의 IOPS 비용을 비교해보겠습니다. 각 서비스마다 IO
 다만 고려사항:
 - 단일 AZ에서만 사용 가능
 - 고가용성이 필요한 경우 추가 설계 필요
-- Nitro 기반 EC2 인스턴스에서만 최대 성능 발휘
+- Nitro 기반 EC2 인스턴스에서만 최대 성능 발휘(https://docs.aws.amazon.com/ko_kr/ec2/latest/instancetypes/ec2-nitro-instances.html)
