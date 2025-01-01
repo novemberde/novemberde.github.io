@@ -7,8 +7,6 @@ ShowReadingTime: true
 ShowPostNavLinks: true
 ---
 
-# 회고 방법론 (Retrospective Methods)
-
 회고를 진행할 때 활용할 수 있는 다양한 방법론들을 소개한다.
 각 방법의 특징과 장점을 참고하여 상황에 맞는 방법을 선택하여 회고를 진행할 수 있다.
 
