@@ -141,3 +141,16 @@ ShowPostNavLinks: true
 - 4L: 정기적인 성찰과 성장 점검에 더 적합
 
 이러한 차이점을 고려할 때, 일상적인 개인 회고에는 4L이 더 적합하고, 중요한 의사결정이나 문제 해결이 필요한 상황에는 ORID가 더 효과적일 수 있다.
+
+## References
+
+- https://www.theprojectgroup.com/blog/en/agile-retrospective/
+- https://omr.com/en/reviews/contenthub/retrospective-methods
+- https://www.mentimeter.com/blog/meetings/project-retrospective-meetings
+- https://www.getfishtank.com/insights/agile-retrospectives-for-best-practices-and-benefits
+- https://www.aha.io/roadmapping/guide/agile/what-is-an-agile-retrospective
+- https://boardmix.com/tips/retrospective-techniques/
+- https://www.atlassian.com/blog/teamwork/revitalize-retrospectives-fresh-techniques
+- https://www.neatro.io/blog/retrospective-ideas/
+- https://www.neatro.io/blog/free-retrospective-tools/
+- https://echometerapp.com/en/retrospective-methods-definition/
