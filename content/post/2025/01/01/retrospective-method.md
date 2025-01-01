@@ -37,7 +37,7 @@ ShowPostNavLinks: true
 
 
 ## 4. START, STOP, CONTINUE
-행동 중심적이고 실천적인 계획을 세우기 좋은 방법입니다.
+행동 중심적이고 실천적인 계획을 세우기 좋은 방법이다.
 
 - **Start**: 시작해야 할 것
 - **Stop**: 그만해야 할 것
@@ -56,7 +56,7 @@ ShowPostNavLinks: true
 빠른 의사결정이 필요한 경우, 간단한 일상적 회고, 즉각적인 행동 계획이 필요한 상황에 적합하지 않다.
 
 ## 6. 4L (Liked, Learned, Lacked, Longed for)
-긍정적인 관점과 개선점을 균형있게 살펴볼 수 있습니다.
+긍정적인 관점과 개선점을 균형있게 살펴볼 수 있다.
 
 - **Liked**: 좋았던 것들
 - **Learned**: 배운 것들
