@@ -8,18 +8,18 @@
     <language>ko-KR</language>
     <lastBuildDate>Thu, 07 Nov 2024 00:30:00 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/%EB%B3%B4%EC%95%88/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>http와 https 대신 hxxp와 hxxps를 사용하는 이유</title>
+      <title>hxxp와 hxxps: URL 무해화(Defanging)를 위한 http/https 대체 표기법 알아보기</title>
       <link>https://novemberde.github.io/post/2024/11/07/http-https-hxxp-hxxps/</link>
       <pubDate>Thu, 07 Nov 2024 00:30:00 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2024/11/07/http-https-hxxp-hxxps/</guid>
-      <description>&lt;h3 id=&#34;질문이-생기게-된-이유&#34;&gt;질문이 생기게 된 이유&lt;/h3&gt;
-&lt;p&gt;pm.me라는 도메인을 가진 이메일을 보았다. 이를 운영하는 회사는 &lt;a href=&#34;https://proton.me/mail&#34;&gt;proton mail&lt;/a&gt;이라는 회사인데, 여기에서 개발하는 방법에 대해서 찾아보니 모든 코드를 Github에서 공개하고 관리한다는 것을 보았다.&lt;/p&gt;
-&lt;p&gt;하필이면, &lt;a href=&#34;https://github.com/ProtonMail/WebClients/pull/405&#34;&gt;PR이 하나&lt;/a&gt; 열려있었고, 해당 PR의 제목은 &amp;ldquo;Add checks to prevent formatting hxxps&amp;quot;이었다.&lt;/p&gt;
-&lt;p&gt;이를 보고, hxxp와 hxxps가 무엇인지 궁금해졌다. http와 흡사한데 왜 이걸 활용하게 되는 것일까?&lt;/p&gt;
-&lt;p&gt;Perplexity에게 물어보니 가볍게 다음과 같이 답변이 나왔다. 이메일 보안을 위한 내용이니 알아두면 언젠가는 도움이 될 것 같다.&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;http와 https 대신 hxxp와 hxxps를 사용하는 주된 이유는 보안과 관련이 있습니다. 이 방식을 &amp;ldquo;URL 무해화(URL defanging)&amp;ldquo;라고 하며, 다음과 같은 목적으로 사용됩니다:&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;url-무해화defanging란&#34;&gt;URL 무해화(Defanging)란?&lt;/h2&gt;
+&lt;p&gt;보안 전문가들은 악성 URL을 공유할 때 특별한 표기법을 쓴다. http 대신 hxxp를, https 대신 hxxps를 쓰는 것이다. 이런 방식을 &amp;lsquo;URL 무해화(URL defanging)&amp;lsquo;라고 한다.&lt;/p&gt;
+&lt;h2 id=&#34;hxxphxxps-표기법을-알게-된-계기&#34;&gt;hxxp/hxxps 표기법을 알게 된 계기&lt;/h2&gt;
+&lt;p&gt;최근 ProtonMail(pm.me)의 이메일을 받아봤다. 이 회사의 개발 방식이 궁금해서 찾아보니 모든 코드를 GitHub에서 공개적으로 관리하고 있었다. 우연히 &lt;a href=&#34;https://github.com/ProtonMail/WebClients/pull/405&#34;&gt;&amp;ldquo;Add checks to prevent formatting hxxps&amp;rdquo;&lt;/a&gt;라는 제목의 PR을 발견했다.&lt;/p&gt;
+&lt;p&gt;이 PR을 보고 hxxp/hxxps 표기법이 무엇인지, 왜 쓰는지 궁금했다.&lt;/p&gt;
+&lt;h2 id=&#34;url-무해화defanging가-필요한-이유&#34;&gt;URL 무해화(Defanging)가 필요한 이유&lt;/h2&gt;
+&lt;p&gt;보안 전문가들이 hxxp/hxxps 표기법을 쓰는 주된 이유는 다음과 같다:&lt;/p&gt;</description>
     </item>
     
   </channel>

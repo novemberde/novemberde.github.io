@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>URL 무해화 on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/URL-%EB%AC%B4%ED%95%B4%ED%99%94/</link>
+    <description>Recent content in URL 무해화 on Novemberde&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Thu, 07 Nov 2024 00:30:00 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/URL-%EB%AC%B4%ED%95%B4%ED%99%94/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>hxxp와 hxxps: URL 무해화(Defanging)를 위한 http/https 대체 표기법 알아보기</title>
+      <link>https://novemberde.github.io/post/2024/11/07/http-https-hxxp-hxxps/</link>
+      <pubDate>Thu, 07 Nov 2024 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2024/11/07/http-https-hxxp-hxxps/</guid>
+      <description>&lt;h2 id=&#34;url-무해화defanging란&#34;&gt;URL 무해화(Defanging)란?&lt;/h2&gt;
+&lt;p&gt;보안 전문가들은 악성 URL을 공유할 때 특별한 표기법을 쓴다. http 대신 hxxp를, https 대신 hxxps를 쓰는 것이다. 이런 방식을 &amp;lsquo;URL 무해화(URL defanging)&amp;lsquo;라고 한다.&lt;/p&gt;
+&lt;h2 id=&#34;hxxphxxps-표기법을-알게-된-계기&#34;&gt;hxxp/hxxps 표기법을 알게 된 계기&lt;/h2&gt;
+&lt;p&gt;최근 ProtonMail(pm.me)의 이메일을 받아봤다. 이 회사의 개발 방식이 궁금해서 찾아보니 모든 코드를 GitHub에서 공개적으로 관리하고 있었다. 우연히 &lt;a href=&#34;https://github.com/ProtonMail/WebClients/pull/405&#34;&gt;&amp;ldquo;Add checks to prevent formatting hxxps&amp;rdquo;&lt;/a&gt;라는 제목의 PR을 발견했다.&lt;/p&gt;
+&lt;p&gt;이 PR을 보고 hxxp/hxxps 표기법이 무엇인지, 왜 쓰는지 궁금했다.&lt;/p&gt;
+&lt;h2 id=&#34;url-무해화defanging가-필요한-이유&#34;&gt;URL 무해화(Defanging)가 필요한 이유&lt;/h2&gt;
+&lt;p&gt;보안 전문가들이 hxxp/hxxps 표기법을 쓰는 주된 이유는 다음과 같다:&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

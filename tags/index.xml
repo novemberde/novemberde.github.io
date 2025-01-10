@@ -134,20 +134,20 @@
     </item>
     
     <item>
-      <title>URL</title>
-      <link>https://novemberde.github.io/tags/URL/</link>
+      <title>URL Defanging</title>
+      <link>https://novemberde.github.io/tags/URL-defanging/</link>
       <pubDate>Thu, 07 Nov 2024 00:30:00 +0000</pubDate>
       
-      <guid>https://novemberde.github.io/tags/URL/</guid>
+      <guid>https://novemberde.github.io/tags/URL-defanging/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>링크 차단 우회</title>
-      <link>https://novemberde.github.io/tags/%EB%A7%81%ED%81%AC-%EC%B0%A8%EB%8B%A8-%EC%9A%B0%ED%9A%8C/</link>
+      <title>URL 무해화</title>
+      <link>https://novemberde.github.io/tags/URL-%EB%AC%B4%ED%95%B4%ED%99%94/</link>
       <pubDate>Thu, 07 Nov 2024 00:30:00 +0000</pubDate>
       
-      <guid>https://novemberde.github.io/tags/%EB%A7%81%ED%81%AC-%EC%B0%A8%EB%8B%A8-%EC%9A%B0%ED%9A%8C/</guid>
+      <guid>https://novemberde.github.io/tags/URL-%EB%AC%B4%ED%95%B4%ED%99%94/</guid>
       <description></description>
     </item>
     
@@ -161,29 +161,20 @@
     </item>
     
     <item>
-      <title>보안 인식</title>
-      <link>https://novemberde.github.io/tags/%EB%B3%B4%EC%95%88-%EC%9D%B8%EC%8B%9D/</link>
+      <title>이메일 보안</title>
+      <link>https://novemberde.github.io/tags/%EC%9D%B4%EB%A9%94%EC%9D%BC-%EB%B3%B4%EC%95%88/</link>
       <pubDate>Thu, 07 Nov 2024 00:30:00 +0000</pubDate>
       
-      <guid>https://novemberde.github.io/tags/%EB%B3%B4%EC%95%88-%EC%9D%B8%EC%8B%9D/</guid>
+      <guid>https://novemberde.github.io/tags/%EC%9D%B4%EB%A9%94%EC%9D%BC-%EB%B3%B4%EC%95%88/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>클릭 방지</title>
-      <link>https://novemberde.github.io/tags/%ED%81%B4%EB%A6%AD-%EB%B0%A9%EC%A7%80/</link>
+      <title>피싱 방지</title>
+      <link>https://novemberde.github.io/tags/%ED%94%BC%EC%8B%B1-%EB%B0%A9%EC%A7%80/</link>
       <pubDate>Thu, 07 Nov 2024 00:30:00 +0000</pubDate>
       
-      <guid>https://novemberde.github.io/tags/%ED%81%B4%EB%A6%AD-%EB%B0%A9%EC%A7%80/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>피싱 공격</title>
-      <link>https://novemberde.github.io/tags/%ED%94%BC%EC%8B%B1-%EA%B3%B5%EA%B2%A9/</link>
-      <pubDate>Thu, 07 Nov 2024 00:30:00 +0000</pubDate>
-      
-      <guid>https://novemberde.github.io/tags/%ED%94%BC%EC%8B%B1-%EA%B3%B5%EA%B2%A9/</guid>
+      <guid>https://novemberde.github.io/tags/%ED%94%BC%EC%8B%B1-%EB%B0%A9%EC%A7%80/</guid>
       <description></description>
     </item>
     
@@ -341,38 +332,47 @@
     </item>
     
     <item>
-      <title>Charts</title>
-      <link>https://novemberde.github.io/tags/charts/</link>
+      <title>Admin Panel</title>
+      <link>https://novemberde.github.io/tags/admin-panel/</link>
       <pubDate>Mon, 21 Oct 2024 10:30:00 +0000</pubDate>
       
-      <guid>https://novemberde.github.io/tags/charts/</guid>
+      <guid>https://novemberde.github.io/tags/admin-panel/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Comparison</title>
-      <link>https://novemberde.github.io/tags/comparison/</link>
+      <title>Dashboard Builder</title>
+      <link>https://novemberde.github.io/tags/dashboard-builder/</link>
       <pubDate>Mon, 21 Oct 2024 10:30:00 +0000</pubDate>
       
-      <guid>https://novemberde.github.io/tags/comparison/</guid>
+      <guid>https://novemberde.github.io/tags/dashboard-builder/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Dashboard</title>
-      <link>https://novemberde.github.io/tags/dashboard/</link>
+      <title>Data Visualization</title>
+      <link>https://novemberde.github.io/tags/data-visualization/</link>
       <pubDate>Mon, 21 Oct 2024 10:30:00 +0000</pubDate>
       
-      <guid>https://novemberde.github.io/tags/dashboard/</guid>
+      <guid>https://novemberde.github.io/tags/data-visualization/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Data Handling</title>
-      <link>https://novemberde.github.io/tags/data-handling/</link>
+      <title>Internal Tools</title>
+      <link>https://novemberde.github.io/tags/internal-tools/</link>
       <pubDate>Mon, 21 Oct 2024 10:30:00 +0000</pubDate>
       
-      <guid>https://novemberde.github.io/tags/data-handling/</guid>
+      <guid>https://novemberde.github.io/tags/internal-tools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Low-Code Platforms</title>
+      <link>https://novemberde.github.io/tags/low-code-platforms/</link>
+      <pubDate>Mon, 21 Oct 2024 10:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/low-code-platforms/</guid>
       <description></description>
     </item>
     
@@ -404,11 +404,29 @@
     </item>
     
     <item>
-      <title>Backend</title>
-      <link>https://novemberde.github.io/tags/backend/</link>
+      <title>BaaS</title>
+      <link>https://novemberde.github.io/tags/BaaS/</link>
       <pubDate>Mon, 21 Oct 2024 09:30:00 +0000</pubDate>
       
-      <guid>https://novemberde.github.io/tags/backend/</guid>
+      <guid>https://novemberde.github.io/tags/BaaS/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Backend-as-a-Service</title>
+      <link>https://novemberde.github.io/tags/Backend-as-a-Service/</link>
+      <pubDate>Mon, 21 Oct 2024 09:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/Backend-as-a-Service/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cloud-Infrastructure</title>
+      <link>https://novemberde.github.io/tags/cloud-infrastructure/</link>
+      <pubDate>Mon, 21 Oct 2024 09:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/cloud-infrastructure/</guid>
       <description></description>
     </item>
     
@@ -418,6 +436,15 @@
       <pubDate>Mon, 21 Oct 2024 09:30:00 +0000</pubDate>
       
       <guid>https://novemberde.github.io/tags/database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Self-Hosting</title>
+      <link>https://novemberde.github.io/tags/self-hosting/</link>
+      <pubDate>Mon, 21 Oct 2024 09:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/self-hosting/</guid>
       <description></description>
     </item>
     
@@ -436,6 +463,33 @@
       <pubDate>Mon, 21 Oct 2024 08:30:00 +0000</pubDate>
       
       <guid>https://novemberde.github.io/tags/connection-modes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Connection Pooling</title>
+      <link>https://novemberde.github.io/tags/connection-pooling/</link>
+      <pubDate>Mon, 21 Oct 2024 08:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/connection-pooling/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Database Performance</title>
+      <link>https://novemberde.github.io/tags/database-performance/</link>
+      <pubDate>Mon, 21 Oct 2024 08:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/database-performance/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pgbouncer</title>
+      <link>https://novemberde.github.io/tags/pgbouncer/</link>
+      <pubDate>Mon, 21 Oct 2024 08:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/pgbouncer/</guid>
       <description></description>
     </item>
     
