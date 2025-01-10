@@ -1,49 +1,103 @@
 ---
-title: "http와 https 대신 hxxp와 hxxps를 사용하는 이유"
-tags: [http, https, hxxp, hxxps, URL, 보안, 클릭 방지, 피싱 공격, 보안 인식, 링크 차단 우회]
+title: "hxxp와 hxxps: URL 무해화(Defanging)를 위한 http/https 대체 표기법 알아보기"
+tags: [http, https, hxxp, hxxps, URL defanging, URL 무해화, 보안, 피싱 방지, 이메일 보안]
 date: "2024-11-07T00:30:00+00:00"
 ShowBreadCrumbs: true
 ShowReadingTime: true
 ShowPostNavLinks: true
 ---
 
-### 질문이 생기게 된 이유
+## URL 무해화(Defanging)란?
 
-pm.me라는 도메인을 가진 이메일을 보았다. 이를 운영하는 회사는 [proton mail](https://proton.me/mail)이라는 회사인데, 여기에서 개발하는 방법에 대해서 찾아보니 모든 코드를 Github에서 공개하고 관리한다는 것을 보았다.
+보안 전문가들은 악성 URL을 공유할 때 특별한 표기법을 쓴다. http 대신 hxxp를, https 대신 hxxps를 쓰는 것이다. 이런 방식을 'URL 무해화(URL defanging)'라고 한다.
 
-하필이면, [PR이 하나](https://github.com/ProtonMail/WebClients/pull/405) 열려있었고, 해당 PR의 제목은 "Add checks to prevent formatting hxxps"이었다.
+## hxxp/hxxps 표기법을 알게 된 계기
 
-이를 보고, hxxp와 hxxps가 무엇인지 궁금해졌다. http와 흡사한데 왜 이걸 활용하게 되는 것일까?
+최근 ProtonMail(pm.me)의 이메일을 받아봤다. 이 회사의 개발 방식이 궁금해서 찾아보니 모든 코드를 GitHub에서 공개적으로 관리하고 있었다. 우연히 ["Add checks to prevent formatting hxxps"](https://github.com/ProtonMail/WebClients/pull/405)라는 제목의 PR을 발견했다.
 
-Perplexity에게 물어보니 가볍게 다음과 같이 답변이 나왔다. 이메일 보안을 위한 내용이니 알아두면 언젠가는 도움이 될 것 같다.
+이 PR을 보고 hxxp/hxxps 표기법이 무엇인지, 왜 쓰는지 궁금했다.
 
----
+## URL 무해화(Defanging)가 필요한 이유
 
-http와 https 대신 hxxp와 hxxps를 사용하는 주된 이유는 보안과 관련이 있습니다. 이 방식을 "URL 무해화(URL defanging)"라고 하며, 다음과 같은 목적으로 사용됩니다:
+보안 전문가들이 hxxp/hxxps 표기법을 쓰는 주된 이유는 다음과 같다:
 
-1. 우발적인 클릭 방지
-hxxp나 hxxps로 시작하는 URL은 대부분의 이메일 클라이언트나 웹 브라우저에서 자동으로 클릭 가능한 링크로 변환되지 않습니다[1]. 이는 사용자가 실수로 링크를 클릭하는 것을 방지합니다.
+### 1. 의도하지 않은 클릭 방지
+- 이메일이나 문서에서 http(s)로 시작하는 URL은 자동으로 클릭 가능한 링크가 된다
+- hxxp(s)를 쓰면 자동 링크 생성을 막을 수 있다
 
-2. 피싱 공격 예방
-악의적인 이메일에서 종종 안전해 보이지만 실제로는 악성 웹사이트로 연결되는 URL을 사용합니다. hxxp를 사용하면 사용자가 URL을 직접 복사하여 브라우저에 붙여넣어야 하므로, URL의 실제 목적지를 확인할 수 있는 기회를 제공합니다[1].
+### 2. 피싱 공격 예방
+- 악성 URL을 분석하거나 공유할 때 실수로 클릭하는 것을 막는다
+- URL을 수동으로 입력해야 해서 목적지를 한 번 더 확인하게 된다
 
-3. 보안 인식 제고
-URL을 수동으로 입력해야 하는 과정은 사용자의 보안 인식을 높이는 데 도움이 됩니다[1].
+### 3. 보안 인식 향상
+- URL을 수동으로 처리하면서 보안 의식이 자연스럽게 높아진다
+- 특히 기업 내부 소통에서 효과적이다
 
-4. 자동 링크 생성 방지
-일부 플랫폼이나 포럼에서는 http나 https로 시작하는 텍스트를 자동으로 클릭 가능한 링크로 변환합니다. hxxp를 사용하면 이를 방지할 수 있습니다[5].
+### 4. 보안 시스템 오탐 방지
+- 정상적인 보안 문서가 악성으로 탐지되는 것을 막는다
+- 보안 시스템의 불필요한 경고를 줄인다
 
-5. 링크 차단 우회
-일부 웹사이트나 광고 플랫폼에서는 댓글이나 게시물에 링크를 포함하는 것을 금지합니다. hxxp를 사용하면 이러한 제한을 우회할 수 있습니다[5].
+## URL 무해화의 다양한 방법
 
-6. 웹사이트 관리자를 위한 메트릭 제어
-일부 웹사이트 관리자들은 자신의 사이트 링크가 어디에서 공유되는지, 얼마나 많은 트래픽을 생성하는지 등을 추적하기 위해 이 방법을 사용합니다[5].
+URL 무해화는 단순히 http를 hxxp로 바꾸는 것에만 국한되지 않는다. 일반적으로 다음과 같은 방법들을 함께 사용한다:
 
-이 방식은 보안 커뮤니티에서 널리 사용되며, 특히 대규모 내부 커뮤니케이션에서 보안 인식을 높이는 데 효과적입니다[1]. 그러나 이는 완벽한 해결책은 아니며, 사용자 교육과 함께 사용되어야 가장 효과적입니다.
+1. 프로토콜 변경
+   - http → hxxp
+   - https → hxxps
 
-Citations:
-- [1] https://privacymatters.ubc.ca/node/223
-- [2] https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/trusted-domain-hidden-danger-deceptive-url-redirections-in-email-phishing-attacks/
-- [3] https://datatracker.ietf.org/doc/draft-salgado-hxxp/
-- [4] https://malwaretips.com/threads/what-is-the-hxxp-prefix.31827/
-- [5] https://www.reddit.com/r/TOR/comments/grd44r/why_do_people_write_hxxps_instead_of_https_when/
+2. 도메인 점(.) 처리
+   - example.com → example[.]com
+   - 또는 example(.)com
+
+3. 특수문자 처리
+   - @ → [at]
+   - / → [/] 또는 [forward-slash]
+
+4. IP 주소 무해화
+   - 192.168.1.1 → 192[.]168[.]1[.]1
+
+## 무해화가 필요한 대상들
+
+URL 외에도 다음과 같은 정보들도 무해화가 필요하다:
+
+- IP 주소
+- 이메일 주소
+- 도메인 이름
+- 파일 확장자 (.exe, .bat 등)
+- 레지스트리 키
+
+## 활용 사례
+
+이 표기법은 다음과 같은 상황에서 주로 쓴다:
+
+1. 위협 인텔리전스 공유
+   - 보안팀 간 악성 URL 정보 공유
+   - 위협 보고서 작성
+
+2. 이메일 보안 시스템
+   - 스팸 필터 우회 방지
+   - 보안 경고 메시지 작성
+
+3. QR 코드 분석
+   - 악성 QR 코드 분석 보고서
+   - QR 코드 관련 보안 문서
+
+4. 보안 교육
+   - 보안 인식 교육 자료
+   - 피싱 대응 훈련
+
+5. 보안 문서 작성
+   - 보안 보고서
+   - 악성코드 분석 문서
+   - 보안 포럼 게시물
+
+## 결론
+
+URL 무해화(defanging)는 완벽한 보안 해결책은 아니다. 하지만 보안 인식을 높이고 실수로 인한 보안 사고를 막는 데 효과적이다. 특히 보안 전문가들 사이에서는 이미 표준적인 관행이 됐다.
+
+## 참고 자료
+- [Blocking Email Links: Why we use HXXP in emails](https://privacymatters.ubc.ca/node/223)
+- [URL Defanging Tool and Guide](https://trustifi.com/url-defang-tool/)
+- [URL Defanger: Securing URLs for Safe Examination](https://blackheathpoint.com/tools/defang-url.html)
+- [Threat Intelligence Sharing Best Practices](https://www.cyware.com/blog/dont-let-the-nuts-and-bolts-of-threat-intel-trip-you-up-defang-that-url-250e)
+- [Malicious QR Codes Analysis](https://blog.talosintelligence.com/malicious_qr_codes/)
