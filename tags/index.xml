@@ -6,7 +6,43 @@
     <description>Recent content in Tags on Novemberde&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-KR</language>
-    <lastBuildDate>Wed, 01 Jan 2025 00:30:00 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Jan 2025 00:30:00 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DevOps</title>
+      <link>https://novemberde.github.io/tags/devops/</link>
+      <pubDate>Mon, 13 Jan 2025 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/devops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DORA</title>
+      <link>https://novemberde.github.io/tags/DORA/</link>
+      <pubDate>Mon, 13 Jan 2025 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/DORA/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>개발문화</title>
+      <link>https://novemberde.github.io/tags/%EA%B0%9C%EB%B0%9C%EB%AC%B8%ED%99%94/</link>
+      <pubDate>Mon, 13 Jan 2025 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EA%B0%9C%EB%B0%9C%EB%AC%B8%ED%99%94/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>성과측정</title>
+      <link>https://novemberde.github.io/tags/%EC%84%B1%EA%B3%BC%EC%B8%A1%EC%A0%95/</link>
+      <pubDate>Mon, 13 Jan 2025 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EC%84%B1%EA%B3%BC%EC%B8%A1%EC%A0%95/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Agile</title>
       <link>https://novemberde.github.io/tags/agile/</link>
@@ -1327,15 +1363,6 @@
       <pubDate>Mon, 29 Oct 2018 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/tags/quicksight/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Devops</title>
-      <link>https://novemberde.github.io/tags/devops/</link>
-      <pubDate>Mon, 17 Sep 2018 11:30:03 +0000</pubDate>
-      
-      <guid>https://novemberde.github.io/tags/devops/</guid>
       <description></description>
     </item>
     
