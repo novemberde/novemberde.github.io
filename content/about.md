@@ -10,8 +10,6 @@ enableDisqus: false
 
 ![Profile image](/images/profile.png)
 
-유도와 주짓수를 하며 로드바이크를 즐기는 개발자.
-
 The developer who enjoy riding a bicycle and playing judo & jiu-jitsu.
 
 - Currently working at Karrot🥕.
