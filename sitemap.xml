@@ -2,6 +2,36 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://novemberde.github.io/tags/ai/</loc>
+    <lastmod>2025-01-28T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/AWS/</loc>
+    <lastmod>2025-01-28T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/post/2025/01/28/AWS-unified-studio/</loc>
+    <lastmod>2025-01-28T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/llm/</loc>
+    <lastmod>2025-01-28T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/ml/</loc>
+    <lastmod>2025-01-28T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/</loc>
+    <lastmod>2025-01-28T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/post/</loc>
+    <lastmod>2025-01-28T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/studio/</loc>
+    <lastmod>2025-01-28T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/</loc>
+    <lastmod>2025-01-28T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/unified-studio/</loc>
+    <lastmod>2025-01-28T00:30:00+00:00</lastmod>
+  </url><url>
     <loc>https://novemberde.github.io/tags/devops/</loc>
     <lastmod>2025-01-13T00:30:00+00:00</lastmod>
   </url><url>
@@ -9,15 +39,6 @@
     <lastmod>2025-01-13T00:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/post/2025/01/13/DORA-metrics/</loc>
-    <lastmod>2025-01-13T00:30:00+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/</loc>
-    <lastmod>2025-01-13T00:30:00+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/post/</loc>
-    <lastmod>2025-01-13T00:30:00+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/tags/</loc>
     <lastmod>2025-01-13T00:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/%EA%B0%9C%EB%B0%9C%EB%AC%B8%ED%99%94/</loc>
@@ -43,9 +64,6 @@
   </url><url>
     <loc>https://novemberde.github.io/post/2025/01/01/retrospective-method/</loc>
     <lastmod>2025-01-01T00:30:00+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/tags/AWS/</loc>
-    <lastmod>2024-11-15T00:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/post/2024/11/15/aws-ebs-2024/</loc>
     <lastmod>2024-11-15T00:30:00+00:00</lastmod>
