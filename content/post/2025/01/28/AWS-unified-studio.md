@@ -110,7 +110,8 @@ AWS에서 많은 회사들이 인프라를 운영하고 있는데, 이를 통해
 
 AWS에 많은 서비스가 있어서 시작하는 사람들에게 부담스러웠는데, 이번 SageMaker Unified Studio가 출시되면서 데이터 관련 플랫폼 구축하는 것이 좀 더 쉬워질 것으로 기대된다.
 
-만약 관심이 있다면 다음의 두 링크에서 자세히 살펴보길 바란다. 이걸 미리 봤으면 글을 쓰지 않았겠지만, 혹시나해서 다시 찾아보니 위에서 테스트해보지 못한 화면들을 확인할 수 있다.
+만약 관심이 있다면 다음의 두 링크에서 자세히 살펴보길 바란다. 이 글들을 미리 봤다면 이 글을 쓰지 않았을 텐데, 혹시나 해서 다시 찾아보니 위에서 테스트해보지 못한 화면들을 확인할 수 있었다.
+도메인 생성, 프로젝트 생성 등의 과정을 거쳐야 확인할 수 있는 화면들인데, 다음 글들을 통해 확인한다면 추후에 어떻게 활용할 수 있을지 참고할 수 있을 것이다.
 
 - 살펴보기: https://aws.amazon.com/blogs/aws/introducing-the-next-generation-of-amazon-sagemaker-the-center-for-all-your-data-analytics-and-ai/
 - Unified Studio 각 기능이 설명된 페이지 모음: https://github.com/aws/Unified-Studio-for-Amazon-Sagemaker?tab=readme-ov-file
