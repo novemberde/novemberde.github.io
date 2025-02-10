@@ -1,6 +1,6 @@
 ---
-title: "Becoming a 10x Leader: Learning from Negative Examples"
-tags: tags: ["leadership", "10x Leader", "-10x Leader"]
+title: "Becoming a 10x Leader: Learning from Inversion"
+tags: ["leadership", "10x Leader", "-10x Leader"]
 date: "2025-02-09T00:30:00+00:00"
 ShowBreadCrumbs: true
 ShowReadingTime: true
