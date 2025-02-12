@@ -9,7 +9,7 @@ ShowPostNavLinks: true
 
 I've been thinking about what makes a great leader - someone who can truly elevate their team's performance and potential. This led me to explore the concept of a "10x leader" - a leader who can multiply their team's effectiveness tenfold.
 
-I've long been fascinated by Charlie Munger's concept of "Inversion: The Power of Avoiding Stupidity" [Charlie Munger](https://fs.blog/inversion/). Drawing from this familiar principle, I'll begin by examining what makes a -10x leader, as understanding what to avoid is often more valuable than knowing what to pursue.
+I've long been fascinated by [Charlie Munger](https://fs.blog/inversion/)'s concept of "Inversion: The Power of Avoiding Stupidity". Drawing from this familiar principle, I'll begin by examining what makes a -10x leader, as understanding what to avoid is often more valuable than knowing what to pursue.
 
 ## -10x leader
 
