@@ -95,3 +95,7 @@ body:not(.dark) #sun {
 .logo-switches {
     flex-wrap: inherit;
 }
+
+div#disqus_thread iframe[sandbox] {
+    max-height: 0px !important;
+}
