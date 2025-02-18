@@ -541,7 +541,7 @@ Go 언어를 통해 서버리스 Todo 앱을 작성하고 배포하는 예제를
   scrolling=&#34;no&#34;
   style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt;
 &lt;/iframe&gt;
-&lt;h3 id=&#34;view-presentation-on-new-tabpptssvelteindexhtml&#34;&gt;&lt;a href=&#34;https://novemberde.github.io/ppts/svelte/index.html&#34;&gt;View presentation on new tab&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;view-presentation-on-new-tab&#34;&gt;&lt;a href=&#34;https://novemberde.github.io/ppts/svelte/index.html&#34;&gt;View presentation on new tab&lt;/a&gt;&lt;/h3&gt;
 &lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.44bits.io/ko/post/direnv_for_managing_directory_environment&#34;&gt;https://www.44bits.io/ko/post/direnv_for_managing_directory_environment&lt;/a&gt;&lt;/li&gt;
@@ -816,7 +816,7 @@ CircleCI에서 docker를 빌드할 수 있는 이미지 생성하는 방법 및 
 &lt;hr&gt;
 &lt;p&gt;개인용 개발계정, 회사계정, 워크샵 전용 계정 등등 여러 계정들을 사용하다보니 Default로 Access Key ID 와 Secret Access Key를
 관리하고 싶어졌다. Default로 두고 사용하다가 잘못하면 회사계정에 잘못된 인프라를 생성 및 변경할 수도 있기 때문이다.&lt;/p&gt;
-&lt;h2 id=&#34;aws-configure---profile&#34;&gt;AWS Configure &amp;ndash;profile&lt;/h2&gt;
+&lt;h2 id=&#34;aws-configure-profile&#34;&gt;AWS Configure &amp;ndash;profile&lt;/h2&gt;
 &lt;hr&gt;
 &lt;p&gt;기본적인 aws cli를 설정하는 것은 어렵지 않다.
 AWS Console의 IAM에서 유저를 생성하고 Access Key를 생성하면 된다.

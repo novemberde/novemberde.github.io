@@ -23,7 +23,7 @@
   scrolling=&#34;no&#34;
   style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt;
 &lt;/iframe&gt;
-&lt;h3 id=&#34;view-presentation-on-new-tabpptssvelteindexhtml&#34;&gt;&lt;a href=&#34;https://novemberde.github.io/ppts/svelte/index.html&#34;&gt;View presentation on new tab&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;view-presentation-on-new-tab&#34;&gt;&lt;a href=&#34;https://novemberde.github.io/ppts/svelte/index.html&#34;&gt;View presentation on new tab&lt;/a&gt;&lt;/h3&gt;
 &lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.44bits.io/ko/post/direnv_for_managing_directory_environment&#34;&gt;https://www.44bits.io/ko/post/direnv_for_managing_directory_environment&lt;/a&gt;&lt;/li&gt;
