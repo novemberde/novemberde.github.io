@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>ReCap on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/reCap/</link>
+    <description>Recent content in ReCap on Novemberde&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Fri, 07 Feb 2025 00:30:00 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/reCap/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AWS Hero가 선정한 2025년 클라우드 트렌드와 신규 서비스 - AWS re:Invent reCap 온라인 콘퍼런스</title>
+      <link>https://novemberde.github.io/post/2025/02/07/AWS-reinvent-recap-with-heroes/</link>
+      <pubDate>Fri, 07 Feb 2025 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2025/02/07/AWS-reinvent-recap-with-heroes/</guid>
+      <description>&lt;p&gt;&amp;ldquo;AWS Hero가 선정한 2025년 클라우드 트렌드와 신규 서비스 - AWS re:Invent reCap 온라인 콘퍼런스&amp;rdquo; 에서 공유한 내용을 정리했다.&lt;/p&gt;
+&lt;h1 id=&#34;youtube&#34;&gt;Youtube&lt;/h1&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/gvVp1E8eFcM?si=V9qth9x08G0iKUVI&#34; title=&#34;YouTube video player&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;h3 id=&#34;주요-발표-내용&#34;&gt;주요 발표 내용&lt;/h3&gt;
+&lt;p&gt;기본 빌딩 블록 강화: AWS는 컴퓨팅, 스토리지, 데이터베이스와 같은 기본적인 클라우드 서비스에 더욱 집중하는 모습을 보였습니다. 특히, 4세대 Graviton 칩을 예고하며 데이터베이스 및 웹 애플리케이션 구동 시 성능 향상을 강조했습니다. Amazon S3 테이블 기능 추가로 4K 데이터 처리를 위한 기능이 개선되었고, 글로벌 애플리케이션을 위한 멀티 리전 액티브-액티브 DB가 다수 발표되었습니다.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
