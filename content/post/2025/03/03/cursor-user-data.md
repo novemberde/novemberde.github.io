@@ -7,7 +7,7 @@ ShowReadingTime: true
 ShowPostNavLinks: true
 ---
 
-I've been using Cursor for a while and found it to be an excellent IDE. However, when working on projects that require multiple programming languages, I often need to switch between different IDE configurations. This can be inconvenient, so I've been searching for a way to use different IDE setups for each language.
+I've been using Cursor for a while and found it to be an excellent IDE. However, when working on projects that require multiple programming languages, I often experience performance issues with the IDE becoming sluggish. This reduces my productivity, so I've been searching for a way to use different IDE setups for each language.
 
 I discovered that you can accomplish this by using the `--user-data-dir` flag. This flag allows you to specify a different user data directory for each language configuration.
 
@@ -44,6 +44,6 @@ gcursor YOUR_DIRECTORY
 kcursor YOUR_DIRECTORY
 ```
 
-This solution allows you to use multiple Cursor or VSCode instances through the command line.
+This solution allows you to use multiple Cursor or VSCode instances through the command line, each optimized for a specific language.
 
-I've noticed that IDE performance often degrades when using multiple plugins for many languages in a single instance. This approach of maintaining separate configurations has significantly improved my productivity, and I hope it helps with yours as well.
+I've found that IDE performance often degrades when using multiple plugins for many languages in a single instance. This approach of maintaining separate configurations prevents the IDE from becoming slow, which has significantly improved my productivity. I hope it helps with yours as well.
