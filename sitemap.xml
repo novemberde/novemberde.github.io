@@ -2,6 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://novemberde.github.io/tags/cursor/</loc>
+    <lastmod>2025-03-03T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/post/2025/03/03/cursor-user-data/</loc>
+    <lastmod>2025-03-03T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/IDE/</loc>
+    <lastmod>2025-03-03T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/method/</loc>
+    <lastmod>2025-03-03T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/</loc>
+    <lastmod>2025-03-03T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/post/</loc>
+    <lastmod>2025-03-03T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/</loc>
+    <lastmod>2025-03-03T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/vscode/</loc>
+    <lastmod>2025-03-03T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/post/2025/03/03/cursor-user-data-ko/</loc>
+    <lastmod>2025-03-03T00:30:00+00:00</lastmod>
+  </url><url>
     <loc>https://novemberde.github.io/tags/-10x-Leader/</loc>
     <lastmod>2025-02-09T00:30:00+00:00</lastmod>
   </url><url>
@@ -27,15 +54,6 @@
     <lastmod>2025-02-09T00:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/Leadership/</loc>
-    <lastmod>2025-02-09T00:30:00+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/</loc>
-    <lastmod>2025-02-09T00:30:00+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/post/</loc>
-    <lastmod>2025-02-09T00:30:00+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/tags/</loc>
     <lastmod>2025-02-09T00:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/%EA%B0%9C%EB%B0%9C%EC%9E%90-%EB%A6%AC%EB%8D%94%EC%8B%AD/</loc>
@@ -96,9 +114,6 @@
     <lastmod>2025-01-13T00:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/agile/</loc>
-    <lastmod>2025-01-01T00:30:00+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/tags/method/</loc>
     <lastmod>2025-01-01T00:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/retrospective/</loc>
@@ -404,10 +419,10 @@
     <loc>https://novemberde.github.io/tags/stepfunctions/</loc>
     <lastmod>2021-10-25T11:30:03+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/about/</loc>
+    <loc>https://novemberde.github.io/about/</loc>
     <lastmod>2021-09-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/about/</loc>
+    <loc>https://novemberde.github.io/tags/about/</loc>
     <lastmod>2021-09-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/me/</loc>
@@ -1131,9 +1146,6 @@
     <lastmod>2017-08-13T11:30:03+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/post/2017/08/13/Git_Bash/</loc>
-    <lastmod>2017-08-13T11:30:03+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/tags/vscode/</loc>
     <lastmod>2017-08-13T11:30:03+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/post/2017/08/12/file_format_sh/</loc>

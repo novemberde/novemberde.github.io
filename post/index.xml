@@ -6,7 +6,37 @@
     <description>Recent content in Posts on Novemberde&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-KR</language>
-    <lastBuildDate>Sun, 09 Feb 2025 00:30:00 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 03 Mar 2025 00:30:00 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to use multiple Cursor or VSCode IDE by language</title>
+      <link>https://novemberde.github.io/post/2025/03/03/cursor-user-data/</link>
+      <pubDate>Mon, 03 Mar 2025 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2025/03/03/cursor-user-data/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve been using Cursor for a while and found it to be an excellent IDE. However, when working on projects that require multiple programming languages, I often experience performance issues with the IDE becoming sluggish. This reduces my productivity, so I&amp;rsquo;ve been searching for a way to use different IDE setups for each language.&lt;/p&gt;
+&lt;p&gt;I discovered that you can accomplish this by using the &lt;code&gt;--user-data-dir&lt;/code&gt; flag. This flag allows you to specify a different user data directory for each language configuration.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>언어별로 여러 Cursor 또는 VSCode IDE 사용하는 방법</title>
+      <link>https://novemberde.github.io/post/2025/03/03/cursor-user-data-ko/</link>
+      <pubDate>Mon, 03 Mar 2025 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2025/03/03/cursor-user-data-ko/</guid>
+      <description>&lt;p&gt;한동안 Cursor를 사용했고 이것이 훌륭한 IDE라고 생각한다. 하지만 여러 프로그래밍 언어가 필요한 프로젝트에서 작업할 때, 종종 IDE가 무거워지는 경우가 있었다. 이럴 때 생산성이 떨어져서 각 언어마다 다른 IDE 설정을 사용하는 방법을 찾고 있었다.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;--user-data-dir&lt;/code&gt; 플래그를 사용하면 이것이 가능하다. 이 플래그는 각 언어 구성에 대해 다른 사용자 데이터 디렉토리를 지정할 수 있게 한다.&lt;/p&gt;
+&lt;p&gt;예를 들어, 다른 프로그래밍 언어에 Cursor를 사용하고 싶다면 다음 명령어를 실행할 수 있다:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Python 사용&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cursor --user-data-dir&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;~/.cursor-python
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Go 사용&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cursor --user-data-dir&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;~/.cursor-go
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Kotlin 사용&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cursor --user-data-dir&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;~/.cursor-kotlin
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;이 방법은 언어별로 여러 IDE 구성을 사용하는 데 좋다. VSCode와도 호환된다.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>-10x 리더 되기, 그리고 10x 리더 되기</title>
       <link>https://novemberde.github.io/post/2025/02/09/Plus-minus-10x-leader-ko/</link>
