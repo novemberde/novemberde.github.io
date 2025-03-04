@@ -9,6 +9,19 @@ ShowPostNavLinks: true
 
 I've been using Cursor for a while and found it to be an excellent IDE. However, when working on projects that require multiple programming languages, I often experience performance issues with the IDE becoming sluggish. This reduces my productivity, so I've been searching for a way to use different IDE setups for each language.
 
+# Using Profiles
+
+In Cursor(VSCode based IDE), you can use Profiles to apply different settings for each language. This method doesn't involve using different settings for each language, but rather using different profiles for each language.
+
+Press `cmd+shift+p` and select `>Profiles: New Profile...` to create a profile:
+
+Once created, press `cmd+shift+p` again and select `>Profiles: Switch Profile...` to choose the profile you created:
+
+This allows you to set up an independent environment with a dedicated profile for your project.
+
+# Using user-data-dir
+
+
 I discovered that you can accomplish this by using the `--user-data-dir` flag. This flag allows you to specify a different user data directory for each language configuration.
 
 For example, if you want to use Cursor for different programming languages, you can run these commands:
@@ -39,9 +52,9 @@ alias kcursor="cursor --user-data-dir=~/.cursor-kotlin"
 Now I can use these commands to open Cursor with the appropriate configuration:
 
 ```bash
-pcursor YOUR_DIRECTORY
-gcursor YOUR_DIRECTORY
-kcursor YOUR_DIRECTORY
+cd YOUR_DIRECTORY && pcursor
+cd YOUR_DIRECTORY && gcursor
+cd YOUR_DIRECTORY && kcursor
 ```
 
 This solution allows you to use multiple Cursor or VSCode instances through the command line, each optimized for a specific language.
