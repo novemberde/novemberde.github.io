@@ -1,6 +1,6 @@
 ---
 title: "언어별로 여러 Cursor 또는 VSCode를 사용하는 방법"
-tags: ["cursor", "vscode", "editor", "method", "ide", "user-data-dir", "코드편집기]
+tags: ["cursor", "vscode", "editor", "method", "ide", "user-data-dir", "코드편집기"]
 date: "2025-03-03T00:30:00+00:00"
 ShowBreadCrumbs: true
 ShowReadingTime: true
