@@ -8,23 +8,23 @@
     <language>ko-KR</language>
     <lastBuildDate>Mon, 03 Mar 2025 00:30:00 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/vscode/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>How to use multiple Cursor or VSCode IDE by language</title>
+      <title>How to use multiple Cursor or VSCode by language</title>
       <link>https://novemberde.github.io/post/2025/03/03/cursor-user-data/</link>
       <pubDate>Mon, 03 Mar 2025 00:30:00 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2025/03/03/cursor-user-data/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve been using Cursor for a while and found it to be an excellent IDE. However, when working on projects that require multiple programming languages, I often experience performance issues with the IDE becoming sluggish. This reduces my productivity, so I&amp;rsquo;ve been searching for a way to use different IDE setups for each language.&lt;/p&gt;
+      <description>&lt;p&gt;I&amp;rsquo;ve been using Cursor for a while and found it to be an excellent editor. However, when working on projects that require multiple programming languages, I often experience performance issues with the editor becoming sluggish. This reduces my productivity, so I&amp;rsquo;ve been searching for a way to use different editor setups for each language.&lt;/p&gt;
 &lt;h1 id=&#34;using-profiles&#34;&gt;Using Profiles&lt;/h1&gt;
-&lt;p&gt;In Cursor(VSCode based IDE), you can use Profiles to apply different settings for each language. This method doesn&amp;rsquo;t involve using different settings for each language, but rather using different profiles for each language.&lt;/p&gt;</description>
+&lt;p&gt;In Cursor (an editor based on VSCode), you can use Profiles to apply different settings for each language. This method doesn&amp;rsquo;t involve using different settings for each language directly, but rather uses different profiles to manage settings for each language.&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>언어별로 여러 Cursor 또는 VSCode IDE 사용하는 방법</title>
+      <title>언어별로 여러 Cursor 또는 VSCode를 사용하는 방법</title>
       <link>https://novemberde.github.io/post/2025/03/03/cursor-user-data-ko/</link>
       <pubDate>Mon, 03 Mar 2025 00:30:00 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2025/03/03/cursor-user-data-ko/</guid>
-      <description>&lt;p&gt;한동안 Cursor를 사용했고 이것이 훌륭한 IDE라고 생각한다. 하지만 여러 프로그래밍 언어가 필요한 프로젝트에서 작업할 때, 종종 IDE가 무거워지는 경우가 있었다. 이럴 때 생산성이 떨어져서 각 언어마다 다른 IDE 설정을 사용하는 방법을 찾고 있었다.&lt;/p&gt;
+      <description>&lt;p&gt;한동안 Cursor를 사용했고 이것이 훌륭한 에디터라고 생각한다. 하지만 여러 프로그래밍 언어가 필요한 프로젝트에서 작업할 때, 종종 에디터가 무거워지는 경우가 있었다. 이럴 때 생산성이 떨어져서 각 언어마다 다른 에디터 설정을 사용하는 방법을 찾고 있었다.&lt;/p&gt;
 &lt;h1 id=&#34;profile을-이용하는-방법&#34;&gt;Profile을 이용하는 방법&lt;/h1&gt;
 &lt;p&gt;Cursor에서는 Profile을 이용해서 각 언어별로 다른 설정을 사용할 수 있다. 이 방법은 각 언어별로 다른 설정을 사용하는 것이 아니라, 각 언어별로 다른 프로필을 사용하는 것이다.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;cmd+shift+p&lt;/code&gt; 를 눌러서 &lt;code&gt;&amp;gt;Profiles: New Profile...&lt;/code&gt; 를 선택하면 profile을 생성할 수 있다:&lt;/p&gt;</description>

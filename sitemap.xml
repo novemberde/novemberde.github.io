@@ -2,31 +2,121 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://novemberde.github.io/post/2025/10/04/pycon-korea-2025-dataflow-at-karrot/</loc>
+    <lastmod>2025-10-04T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/Alerting/</loc>
+    <lastmod>2025-10-04T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/ANN/</loc>
+    <lastmod>2025-10-04T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/Apache-Beam/</loc>
+    <lastmod>2025-10-04T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/Data-Pipeline/</loc>
+    <lastmod>2025-10-04T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/devops/</loc>
+    <lastmod>2025-10-04T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/Embedding/</loc>
+    <lastmod>2025-10-04T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/GCP/</loc>
+    <lastmod>2025-10-04T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/Google-Cloud-Dataflow/</loc>
+    <lastmod>2025-10-04T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/GPU-Computing/</loc>
+    <lastmod>2025-10-04T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/Kafka/</loc>
+    <lastmod>2025-10-04T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/karrot/</loc>
+    <lastmod>2025-10-04T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/Kubeflow/</loc>
+    <lastmod>2025-10-04T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/llm/</loc>
+    <lastmod>2025-10-04T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/Machine-Learning/</loc>
+    <lastmod>2025-10-04T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/ML-Infrastructure/</loc>
+    <lastmod>2025-10-04T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/MLOps/</loc>
+    <lastmod>2025-10-04T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/Monitoring/</loc>
+    <lastmod>2025-10-04T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/</loc>
+    <lastmod>2025-10-04T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/post/</loc>
+    <lastmod>2025-10-04T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/Protobuf/</loc>
+    <lastmod>2025-10-04T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/PyConKR-2025/</loc>
+    <lastmod>2025-10-04T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/Python/</loc>
+    <lastmod>2025-10-04T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/SDK-Development/</loc>
+    <lastmod>2025-10-04T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/</loc>
+    <lastmod>2025-10-04T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/TFX/</loc>
+    <lastmod>2025-10-04T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/Vector-Search/</loc>
+    <lastmod>2025-10-04T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/Vertex-AI/</loc>
+    <lastmod>2025-10-04T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/vLLM/</loc>
+    <lastmod>2025-10-04T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/code-editor/</loc>
+    <lastmod>2025-03-03T00:30:00+00:00</lastmod>
+  </url><url>
     <loc>https://novemberde.github.io/tags/cursor/</loc>
+    <lastmod>2025-03-03T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/editor/</loc>
     <lastmod>2025-03-03T00:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/post/2025/03/03/cursor-user-data/</loc>
     <lastmod>2025-03-03T00:30:00+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/IDE/</loc>
+    <loc>https://novemberde.github.io/tags/ide/</loc>
     <lastmod>2025-03-03T00:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/method/</loc>
     <lastmod>2025-03-03T00:30:00+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/</loc>
-    <lastmod>2025-03-03T00:30:00+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/post/</loc>
-    <lastmod>2025-03-03T00:30:00+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/tags/</loc>
+    <loc>https://novemberde.github.io/tags/user-data-dir/</loc>
     <lastmod>2025-03-03T00:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/vscode/</loc>
     <lastmod>2025-03-03T00:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/post/2025/03/03/cursor-user-data-ko/</loc>
+    <lastmod>2025-03-03T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/%EC%BD%94%EB%93%9C%ED%8E%B8%EC%A7%91%EA%B8%B0/</loc>
     <lastmod>2025-03-03T00:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/-10x-Leader/</loc>
@@ -86,9 +176,6 @@
     <loc>https://novemberde.github.io/post/2025/01/28/AWS-unified-studio/</loc>
     <lastmod>2025-01-28T00:30:00+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/llm/</loc>
-    <lastmod>2025-01-28T00:30:00+00:00</lastmod>
-  </url><url>
     <loc>https://novemberde.github.io/tags/ml/</loc>
     <lastmod>2025-01-28T00:30:00+00:00</lastmod>
   </url><url>
@@ -97,9 +184,6 @@
   </url><url>
     <loc>https://novemberde.github.io/tags/unified-studio/</loc>
     <lastmod>2025-01-28T00:30:00+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/tags/devops/</loc>
-    <lastmod>2025-01-13T00:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/DORA/</loc>
     <lastmod>2025-01-13T00:30:00+00:00</lastmod>
@@ -396,9 +480,6 @@
     <lastmod>2022-12-13T11:30:03+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/post/2022/05/12/karrot-chat-system/</loc>
-    <lastmod>2022-05-12T11:30:03+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/tags/karrot/</loc>
     <lastmod>2022-05-12T11:30:03+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/microservice/</loc>

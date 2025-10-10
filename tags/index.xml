@@ -6,7 +6,241 @@
     <description>Recent content in Tags on Novemberde&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-KR</language>
-    <lastBuildDate>Mon, 03 Mar 2025 00:30:00 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 04 Oct 2025 00:30:00 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Alerting</title>
+      <link>https://novemberde.github.io/tags/Alerting/</link>
+      <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/Alerting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ANN</title>
+      <link>https://novemberde.github.io/tags/ANN/</link>
+      <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/ANN/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Apache Beam</title>
+      <link>https://novemberde.github.io/tags/Apache-Beam/</link>
+      <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/Apache-Beam/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Pipeline</title>
+      <link>https://novemberde.github.io/tags/Data-Pipeline/</link>
+      <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/Data-Pipeline/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DevOps</title>
+      <link>https://novemberde.github.io/tags/devops/</link>
+      <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/devops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Embedding</title>
+      <link>https://novemberde.github.io/tags/Embedding/</link>
+      <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/Embedding/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GCP</title>
+      <link>https://novemberde.github.io/tags/GCP/</link>
+      <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/GCP/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Google Cloud Dataflow</title>
+      <link>https://novemberde.github.io/tags/Google-Cloud-Dataflow/</link>
+      <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/Google-Cloud-Dataflow/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GPU Computing</title>
+      <link>https://novemberde.github.io/tags/GPU-Computing/</link>
+      <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/GPU-Computing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kafka</title>
+      <link>https://novemberde.github.io/tags/Kafka/</link>
+      <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/Kafka/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Karrot</title>
+      <link>https://novemberde.github.io/tags/karrot/</link>
+      <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/karrot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kubeflow</title>
+      <link>https://novemberde.github.io/tags/Kubeflow/</link>
+      <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/Kubeflow/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>LLM</title>
+      <link>https://novemberde.github.io/tags/llm/</link>
+      <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/llm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Machine Learning</title>
+      <link>https://novemberde.github.io/tags/Machine-Learning/</link>
+      <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/Machine-Learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ML Infrastructure</title>
+      <link>https://novemberde.github.io/tags/ML-Infrastructure/</link>
+      <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/ML-Infrastructure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MLOps</title>
+      <link>https://novemberde.github.io/tags/MLOps/</link>
+      <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/MLOps/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Monitoring</title>
+      <link>https://novemberde.github.io/tags/Monitoring/</link>
+      <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/Monitoring/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Protobuf</title>
+      <link>https://novemberde.github.io/tags/Protobuf/</link>
+      <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/Protobuf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PyConKR 2025</title>
+      <link>https://novemberde.github.io/tags/PyConKR-2025/</link>
+      <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/PyConKR-2025/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://novemberde.github.io/tags/Python/</link>
+      <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/Python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SDK Development</title>
+      <link>https://novemberde.github.io/tags/SDK-Development/</link>
+      <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/SDK-Development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TFX</title>
+      <link>https://novemberde.github.io/tags/TFX/</link>
+      <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/TFX/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vector Search</title>
+      <link>https://novemberde.github.io/tags/Vector-Search/</link>
+      <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/Vector-Search/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vertex AI</title>
+      <link>https://novemberde.github.io/tags/Vertex-AI/</link>
+      <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/Vertex-AI/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VLLM</title>
+      <link>https://novemberde.github.io/tags/vLLM/</link>
+      <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/vLLM/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Code Editor</title>
+      <link>https://novemberde.github.io/tags/code-editor/</link>
+      <pubDate>Mon, 03 Mar 2025 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/code-editor/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Cursor</title>
       <link>https://novemberde.github.io/tags/cursor/</link>
@@ -17,11 +251,20 @@
     </item>
     
     <item>
-      <title>IDE</title>
-      <link>https://novemberde.github.io/tags/IDE/</link>
+      <title>Editor</title>
+      <link>https://novemberde.github.io/tags/editor/</link>
       <pubDate>Mon, 03 Mar 2025 00:30:00 +0000</pubDate>
       
-      <guid>https://novemberde.github.io/tags/IDE/</guid>
+      <guid>https://novemberde.github.io/tags/editor/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ide</title>
+      <link>https://novemberde.github.io/tags/ide/</link>
+      <pubDate>Mon, 03 Mar 2025 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/ide/</guid>
       <description></description>
     </item>
     
@@ -35,11 +278,29 @@
     </item>
     
     <item>
+      <title>User-Data-Dir</title>
+      <link>https://novemberde.github.io/tags/user-data-dir/</link>
+      <pubDate>Mon, 03 Mar 2025 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/user-data-dir/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Vscode</title>
       <link>https://novemberde.github.io/tags/vscode/</link>
       <pubDate>Mon, 03 Mar 2025 00:30:00 +0000</pubDate>
       
       <guid>https://novemberde.github.io/tags/vscode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>코드편집기</title>
+      <link>https://novemberde.github.io/tags/%EC%BD%94%EB%93%9C%ED%8E%B8%EC%A7%91%EA%B8%B0/</link>
+      <pubDate>Mon, 03 Mar 2025 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EC%BD%94%EB%93%9C%ED%8E%B8%EC%A7%91%EA%B8%B0/</guid>
       <description></description>
     </item>
     
@@ -179,15 +440,6 @@
     </item>
     
     <item>
-      <title>Llm</title>
-      <link>https://novemberde.github.io/tags/llm/</link>
-      <pubDate>Tue, 28 Jan 2025 00:30:00 +0000</pubDate>
-      
-      <guid>https://novemberde.github.io/tags/llm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Ml</title>
       <link>https://novemberde.github.io/tags/ml/</link>
       <pubDate>Tue, 28 Jan 2025 00:30:00 +0000</pubDate>
@@ -211,15 +463,6 @@
       <pubDate>Tue, 28 Jan 2025 00:30:00 +0000</pubDate>
       
       <guid>https://novemberde.github.io/tags/unified-studio/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>DevOps</title>
-      <link>https://novemberde.github.io/tags/devops/</link>
-      <pubDate>Mon, 13 Jan 2025 00:30:00 +0000</pubDate>
-      
-      <guid>https://novemberde.github.io/tags/devops/</guid>
       <description></description>
     </item>
     
@@ -958,15 +1201,6 @@
       <pubDate>Tue, 13 Dec 2022 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/tags/manager/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Karrot</title>
-      <link>https://novemberde.github.io/tags/karrot/</link>
-      <pubDate>Thu, 12 May 2022 11:30:03 +0000</pubDate>
-      
-      <guid>https://novemberde.github.io/tags/karrot/</guid>
       <description></description>
     </item>
     

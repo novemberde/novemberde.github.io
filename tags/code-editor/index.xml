@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Code Editor on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/code-editor/</link>
+    <description>Recent content in Code Editor on Novemberde&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Mon, 03 Mar 2025 00:30:00 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/code-editor/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to use multiple Cursor or VSCode by language</title>
+      <link>https://novemberde.github.io/post/2025/03/03/cursor-user-data/</link>
+      <pubDate>Mon, 03 Mar 2025 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2025/03/03/cursor-user-data/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve been using Cursor for a while and found it to be an excellent editor. However, when working on projects that require multiple programming languages, I often experience performance issues with the editor becoming sluggish. This reduces my productivity, so I&amp;rsquo;ve been searching for a way to use different editor setups for each language.&lt;/p&gt;
+&lt;h1 id=&#34;using-profiles&#34;&gt;Using Profiles&lt;/h1&gt;
+&lt;p&gt;In Cursor (an editor based on VSCode), you can use Profiles to apply different settings for each language. This method doesn&amp;rsquo;t involve using different settings for each language directly, but rather uses different profiles to manage settings for each language.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

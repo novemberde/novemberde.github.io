@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Machine Learning on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/Machine-Learning/</link>
+    <description>Recent content in Machine Learning on Novemberde&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Sat, 04 Oct 2025 00:30:00 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/Machine-Learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI Platform with Python at Karrot - Inference Pipeline Part(Pycon Korea 2025)</title>
+      <link>https://novemberde.github.io/post/2025/10/04/pycon-korea-2025-dataflow-at-karrot/</link>
+      <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2025/10/04/pycon-korea-2025-dataflow-at-karrot/</guid>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+&lt;p&gt;This article covers our journey building a large-scale ML inference pipeline at Karrot (당근) using Python, Apache Beam, and Google Cloud Dataflow. The presentation was given at PyConKR 2025 by Park JunSeong and Byun Kyuhyun from the ML Infrastructure and ML Data Platform teams.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://novemberde.github.io/pdfs/AI%20Platform%20with%20Python.pdf&#34;&gt;AI Platform with Python (PDF)&lt;/a&gt;&lt;/p&gt;
+&lt;iframe src=&#34;https://novemberde.github.io/pdfs/AI%20Platform%20with%20Python.pdf&#34; width=&#34;100%&#34; height=&#34;600px&#34; style=&#34;border: none;&#34;&gt;
+    This browser does not support PDFs. Please download the PDF to view it: &lt;a href=&#34;https://novemberde.github.io/pdfs/AI%20Platform%20with%20Python.pdf&#34;&gt;Download PDF&lt;/a&gt;
+&lt;/iframe&gt;
+&lt;h2 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h2&gt;
+&lt;h3 id=&#34;part-1-ml-infrastructure-with-python-by-park-junseong&#34;&gt;Part 1: ML Infrastructure with Python (by Park JunSeong)&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Service Growth with AI Models&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
