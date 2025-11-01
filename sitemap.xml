@@ -41,7 +41,7 @@
     <loc>https://novemberde.github.io/tags/Kubeflow/</loc>
     <lastmod>2025-10-04T00:30:00+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/llm/</loc>
+    <loc>https://novemberde.github.io/tags/LLM/</loc>
     <lastmod>2025-10-04T00:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/Machine-Learning/</loc>
@@ -50,7 +50,7 @@
     <loc>https://novemberde.github.io/tags/ML-Infrastructure/</loc>
     <lastmod>2025-10-04T00:30:00+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/MLOps/</loc>
+    <loc>https://novemberde.github.io/tags/mlops/</loc>
     <lastmod>2025-10-04T00:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/Monitoring/</loc>
@@ -173,16 +173,22 @@
     <loc>https://novemberde.github.io/tags/ai/</loc>
     <lastmod>2025-01-28T00:30:00+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/post/2025/01/28/AWS-unified-studio/</loc>
+    <loc>https://novemberde.github.io/tags/data-platform/</loc>
     <lastmod>2025-01-28T00:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/ml/</loc>
     <lastmod>2025-01-28T00:30:00+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/studio/</loc>
+    <loc>https://novemberde.github.io/tags/ml-platform/</loc>
+    <lastmod>2025-01-28T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/platform-engineering/</loc>
     <lastmod>2025-01-28T00:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/unified-studio/</loc>
+    <lastmod>2025-01-28T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/post/2025/01/28/AWS-unified-studio/</loc>
     <lastmod>2025-01-28T00:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/DORA/</loc>

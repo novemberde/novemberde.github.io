@@ -87,14 +87,15 @@
     </item>
     
     <item>
-      <title>AWS Unified Studio 소개</title>
+      <title>머신러닝 플랫폼의 진화: AWS Unified Studio 심층 분석</title>
       <link>https://novemberde.github.io/post/2025/01/28/AWS-unified-studio/</link>
       <pubDate>Tue, 28 Jan 2025 00:30:00 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2025/01/28/AWS-unified-studio/</guid>
-      <description>&lt;p&gt;Amazon SageMaker Unified Studio는 데이터 분석과 AI 도구를 단일 플랫폼으로 통합한 포괄적인 개발 환경이다.&lt;/p&gt;
-&lt;p&gt;Unified Studio는 기존 SageMaker Studio의 단순한 진화가 아닌, AWS의 분석 및 AI/ML 서비스를 통합한 완전히 새로운 환경이다. Amazon Athena, Amazon EMR, AWS Glue, Amazon Redshift, Amazon MWAA 등 AWS의 친숙한 분석 도구들이 하나의 인터페이스로 통합되어 있다.&lt;/p&gt;
-&lt;p&gt;또한 Amazon Bedrock IDE가 통합되어 있어 생성형 AI 개발이 용이하며, Amazon Q Developer를 통해 개발 수명주기 전반의 작업을 가속화할 수 있다. 이를 통해 데이터 분석부터 AI/ML 모델 개발, 배포까지 전체 과정을 단일 환경에서 수행할 수 있다.&lt;/p&gt;</description>
+      <description>&lt;h2 id=&#34;들어가며-왜-통합-ml-플랫폼인가&#34;&gt;들어가며: 왜 통합 ML 플랫폼인가&lt;/h2&gt;
+&lt;p&gt;머신러닝 플랫폼을 구축하고 운영하다 보면 공통적으로 마주치는 문제들이 있다. 데이터 엔지니어는 Athena와 Glue를 사용하고, ML 엔지니어는 SageMaker를 사용하며, 애플리케이션 개발자는 Bedrock을 사용한다. 각 팀은 서로 다른 도구와 워크플로우를 가지고 있고, 이는 협업의 마찰을 증가시킨다.&lt;/p&gt;
+&lt;p&gt;더 근본적인 문제는 &lt;strong&gt;도구의 파편화&lt;/strong&gt;가 조직의 인지 부하를 증가시킨다는 점이다. 새로운 팀원이 합류하면 여러 콘솔을 배워야 하고, 권한 관리는 서비스마다 다른 방식으로 이루어지며, 비용 추적은 복잡하고 불투명하다.&lt;/p&gt;
+&lt;p&gt;Amazon SageMaker Unified Studio는 이러한 문제에 대한 AWS의 답이다. 단순히 UI를 통합한 것이 아니라, &lt;strong&gt;데이터-AI-ML의 전체 라이프사이클을 하나의 일관된 추상화&lt;/strong&gt;로 제공하려는 시도다.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -352,7 +353,8 @@ Go를 도입하여 높은 트래픽을 처리하고 있으며, 주요 이슈와 
 &lt;p&gt;최근 많이 했던 고민이 있다. 하고 싶은 대로 하는 게 정말 좋은 것인지, 아니면 해야 할 일을 하는 게 좋은 것인지 답을 내리지 못했다.
 다만 이전까지의 생각은 있었다.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&amp;ldquo;하고 싶은 대로 하는 게 좋은 것이야.&amp;rdquo;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;&amp;ldquo;하고 싶은 대로 하는 게 좋은 것이야.&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;그런데도 마음 한 켠에는 불안감이 있었다. 왜냐하면 하고 싶은 대로 했을 때 주변에서의 시선과 업무에서의 성과가 좋지 않은 경우가 여러 번 관찰되었다.
 하고 싶은 대로 했을 때 모두가 임팩트가 있다고 느끼는 결과를 보기 어려웠다. 결과가 나왔을 때, 실제로 서비스에 긍정적인 영향을 주지 못했고,
 장기적인 관점에서 서비스를 개선하거나, 고도화하는 데 어려움을 느꼈다.&lt;/p&gt;</description>

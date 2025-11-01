@@ -117,10 +117,10 @@
     
     <item>
       <title>LLM</title>
-      <link>https://novemberde.github.io/tags/llm/</link>
+      <link>https://novemberde.github.io/tags/LLM/</link>
       <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
       
-      <guid>https://novemberde.github.io/tags/llm/</guid>
+      <guid>https://novemberde.github.io/tags/LLM/</guid>
       <description></description>
     </item>
     
@@ -144,10 +144,10 @@
     
     <item>
       <title>MLOps</title>
-      <link>https://novemberde.github.io/tags/MLOps/</link>
+      <link>https://novemberde.github.io/tags/mlops/</link>
       <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
       
-      <guid>https://novemberde.github.io/tags/MLOps/</guid>
+      <guid>https://novemberde.github.io/tags/mlops/</guid>
       <description></description>
     </item>
     
@@ -440,6 +440,15 @@
     </item>
     
     <item>
+      <title>Data-Platform</title>
+      <link>https://novemberde.github.io/tags/data-platform/</link>
+      <pubDate>Tue, 28 Jan 2025 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/data-platform/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Ml</title>
       <link>https://novemberde.github.io/tags/ml/</link>
       <pubDate>Tue, 28 Jan 2025 00:30:00 +0000</pubDate>
@@ -449,11 +458,20 @@
     </item>
     
     <item>
-      <title>Studio</title>
-      <link>https://novemberde.github.io/tags/studio/</link>
+      <title>Ml-Platform</title>
+      <link>https://novemberde.github.io/tags/ml-platform/</link>
       <pubDate>Tue, 28 Jan 2025 00:30:00 +0000</pubDate>
       
-      <guid>https://novemberde.github.io/tags/studio/</guid>
+      <guid>https://novemberde.github.io/tags/ml-platform/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Platform-Engineering</title>
+      <link>https://novemberde.github.io/tags/platform-engineering/</link>
+      <pubDate>Tue, 28 Jan 2025 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/platform-engineering/</guid>
       <description></description>
     </item>
     

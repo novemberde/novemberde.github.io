@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>MLOps on Novemberde&#39;s Blog</title>
-    <link>https://novemberde.github.io/tags/MLOps/</link>
+    <link>https://novemberde.github.io/tags/mlops/</link>
     <description>Recent content in MLOps on Novemberde&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-KR</language>
-    <lastBuildDate>Sat, 04 Oct 2025 00:30:00 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/MLOps/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 04 Oct 2025 00:30:00 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/mlops/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AI Platform with Python at Karrot - Inference Pipeline Part(Pycon Korea 2025)</title>
       <link>https://novemberde.github.io/post/2025/10/04/pycon-korea-2025-dataflow-at-karrot/</link>
@@ -24,6 +24,18 @@
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Service Growth with AI Models&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>머신러닝 플랫폼의 진화: AWS Unified Studio 심층 분석</title>
+      <link>https://novemberde.github.io/post/2025/01/28/AWS-unified-studio/</link>
+      <pubDate>Tue, 28 Jan 2025 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2025/01/28/AWS-unified-studio/</guid>
+      <description>&lt;h2 id=&#34;들어가며-왜-통합-ml-플랫폼인가&#34;&gt;들어가며: 왜 통합 ML 플랫폼인가&lt;/h2&gt;
+&lt;p&gt;머신러닝 플랫폼을 구축하고 운영하다 보면 공통적으로 마주치는 문제들이 있다. 데이터 엔지니어는 Athena와 Glue를 사용하고, ML 엔지니어는 SageMaker를 사용하며, 애플리케이션 개발자는 Bedrock을 사용한다. 각 팀은 서로 다른 도구와 워크플로우를 가지고 있고, 이는 협업의 마찰을 증가시킨다.&lt;/p&gt;
+&lt;p&gt;더 근본적인 문제는 &lt;strong&gt;도구의 파편화&lt;/strong&gt;가 조직의 인지 부하를 증가시킨다는 점이다. 새로운 팀원이 합류하면 여러 콘솔을 배워야 하고, 권한 관리는 서비스마다 다른 방식으로 이루어지며, 비용 추적은 복잡하고 불투명하다.&lt;/p&gt;
+&lt;p&gt;Amazon SageMaker Unified Studio는 이러한 문제에 대한 AWS의 답이다. 단순히 UI를 통합한 것이 아니라, &lt;strong&gt;데이터-AI-ML의 전체 라이프사이클을 하나의 일관된 추상화&lt;/strong&gt;로 제공하려는 시도다.&lt;/p&gt;</description>
     </item>
     
   </channel>
