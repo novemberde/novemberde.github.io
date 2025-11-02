@@ -870,22 +870,10 @@ CircleCI에서 docker를 빌드할 수 있는 이미지 생성하는 방법 및 
       <pubDate>Wed, 20 Jun 2018 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2018/06/20/AWS-config-switching/</guid>
-      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
-&lt;hr&gt;
-&lt;p&gt;개인용 개발계정, 회사계정, 워크샵 전용 계정 등등 여러 계정들을 사용하다보니 Default로 Access Key ID 와 Secret Access Key를
-관리하고 싶어졌다. Default로 두고 사용하다가 잘못하면 회사계정에 잘못된 인프라를 생성 및 변경할 수도 있기 때문이다.&lt;/p&gt;
-&lt;h2 id=&#34;aws-configure-profile&#34;&gt;AWS Configure &amp;ndash;profile&lt;/h2&gt;
-&lt;hr&gt;
-&lt;p&gt;기본적인 aws cli를 설정하는 것은 어렵지 않다.
-AWS Console의 IAM에서 유저를 생성하고 Access Key를 생성하면 된다.
-생성된 키를 통해 로컬이 AWS의 권한을 사용하도록 설정하는 것은 다음과 같다.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 생성된 키와 리전을 입력하면 된다.&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ aws configure
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;AWS Access Key ID &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;****************aaaa&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;AWS Secret Access Key &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;****************aaaa&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Default region name &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;ap-northeast-2&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Default output format &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt;json&lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;:
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;그렇다면 여러 계정을 관리하려면 어떻게 해야할까?&lt;/p&gt;</description>
+      <description>&lt;p&gt;개인 프로젝트, 회사 업무, 클라이언트 작업 등 여러 AWS 계정을 동시에 관리하다 보면 계정 전환이 일상적인 작업이 됩니다. 실수로 프로덕션 계정에서 개발용 리소스를 생성하거나, 반대로 개발 계정에 운영 데이터를 배포하는 사고를 방지하려면 계정 전환을 체계적으로 관리해야 합니다.&lt;/p&gt;
+&lt;p&gt;이 글에서는 AWS CLI를 사용한 계정 전환의 다양한 방법을 실제 사용 사례와 함께 살펴보겠습니다.&lt;/p&gt;
+&lt;h2 id=&#34;기본적인-profile-설정&#34;&gt;기본적인 Profile 설정&lt;/h2&gt;
+&lt;p&gt;AWS CLI를 처음 설정할 때는 &lt;code&gt;aws configure&lt;/code&gt; 명령어를 사용합니다. IAM에서 사용자를 생성하고 Access Key를 발급받은 후, 다음과 같이 설정합니다:&lt;/p&gt;</description>
     </item>
     
     <item>
