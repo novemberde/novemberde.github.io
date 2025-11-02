@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Ssh on Novemberde&#39;s Blog</title>
-    <link>https://novemberde.github.io/tags/ssh/</link>
-    <description>Recent content in Ssh on Novemberde&#39;s Blog</description>
+    <title>App-Password on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/app-password/</link>
+    <description>Recent content in App-Password on Novemberde&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-KR</language>
-    <lastBuildDate>Tue, 09 May 2017 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 May 2017 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/app-password/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bitbucket access key 발급하기</title>
       <link>https://novemberde.github.io/post/2017/04/18/Bitbucket_access_key_0/</link>
@@ -25,36 +25,6 @@
 &lt;li&gt;&lt;strong&gt;Personal Access Tokens&lt;/strong&gt;: API 접근 및 자동화 스크립트용&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;각 방법을 언제, 어떻게 사용하는지 자세히 알아보자.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기</title>
-      <link>https://novemberde.github.io/post/2017/04/01/Docker_2/</link>
-      <pubDate>Sat, 01 Apr 2017 11:30:03 +0000</pubDate>
-      
-      <guid>https://novemberde.github.io/post/2017/04/01/Docker_2/</guid>
-      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
-&lt;hr&gt;
-&lt;p&gt;생성한 EC2 인스턴스에 docker라는 계정을 생성해 보려고 한다.&lt;/p&gt;
-&lt;p&gt;또한 Security Group을 응용하여 접속포트는 80을 열어 사이트를 접근할 수 있도록 설정해주자.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;순서&#34;&gt;순서&lt;/h2&gt;
-&lt;hr&gt;
-&lt;ol&gt;
-&lt;li&gt;Amazon web service에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기&lt;/li&gt;
-&lt;li&gt;접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기&lt;/li&gt;
-&lt;li&gt;EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기&lt;/li&gt;
-&lt;li&gt;Bitbucket을 사용하여 git repository 생성하기&lt;/li&gt;
-&lt;li&gt;Express JS를 사용하여 Node 서버 구축하기&lt;/li&gt;
-&lt;li&gt;테스트로 PM2를 사용하여 EC2에 Node 서버 배포하기&lt;/li&gt;
-&lt;li&gt;Node 서버를 바탕으로 Dockerfile로 만들기&lt;/li&gt;
-&lt;li&gt;Docker Hub의 automated build를 사용하여 Docker image를 만들기&lt;/li&gt;
-&lt;li&gt;만들어진 Docker image를 EC2 인스턴스에 배포하기&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;docker-라는-linux-계정을-생성해본다&#34;&gt;docker 라는 linux 계정을 생성해본다.&lt;/h2&gt;
-&lt;hr&gt;
-&lt;p&gt;먼저 docker 계정에서 사용할 Key pair를 생성해보자.&lt;/p&gt;</description>
     </item>
     
   </channel>

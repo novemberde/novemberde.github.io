@@ -3257,11 +3257,29 @@
     </item>
     
     <item>
+      <title>App-Password</title>
+      <link>https://novemberde.github.io/tags/app-password/</link>
+      <pubDate>Tue, 09 May 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/app-password/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Bitbucket</title>
       <link>https://novemberde.github.io/tags/bitbucket/</link>
       <pubDate>Tue, 09 May 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/tags/bitbucket/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Deploy-Key</title>
+      <link>https://novemberde.github.io/tags/deploy-key/</link>
+      <pubDate>Tue, 09 May 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/deploy-key/</guid>
       <description></description>
     </item>
     
@@ -3298,6 +3316,15 @@
       <pubDate>Tue, 09 May 2017 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/tags/orm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Personal-Access-Token</title>
+      <link>https://novemberde.github.io/tags/personal-access-token/</link>
+      <pubDate>Tue, 09 May 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/personal-access-token/</guid>
       <description></description>
     </item>
     
