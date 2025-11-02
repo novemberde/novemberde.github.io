@@ -13,20 +13,19 @@
       <pubDate>Sun, 12 Sep 2021 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2021/09/02/podman-minikube/</guid>
-      <description>&lt;p&gt;Docker desktop이 유료로 전환된다는 소식이 있다. (&lt;a href=&#34;https://www.docker.com/blog/updating-product-subscriptions/&#34;&gt;링크&lt;/a&gt;)&lt;/p&gt;
-&lt;p&gt;이 소식을 들은 많은 개발자들은 당황했을거라 생각하는데 언제나 그랬듯이 대안은 있다.
-사내에 이미 이런 내용에 대해서 대응하신 분이 있고, 그걸 글로 녹여보려고 한다.(Ian 감사해요)
-아래 내용은 Mac에만 해당되며, Window는 별도의 방법을 찾아야할지도 모른다.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;docker-desktop-삭제하기&#34;&gt;Docker Desktop 삭제하기&lt;/h2&gt;
-&lt;p&gt;이건 어렵지 않다. 다음 그림과 같이 docker desktop &amp;gt; Preferences &amp;gt; troubleshootings &amp;gt; uninstall 을 눌러 삭제한다.(그림참고)&lt;/p&gt;
-&lt;p&gt;그리고 말끔하게 Applications(응용프로그램)에 있는 docker desktop도 삭제한다.&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://novemberde.github.io/images/docker/remove-docker-desktop.png&#34; alt=&#34;remove-docker-desktop&#34;  /&gt;
-&lt;/p&gt;
-&lt;h2 id=&#34;minikube-설치하기&#34;&gt;minikube 설치하기&lt;/h2&gt;
-&lt;p&gt;m1 mac인 경우에는 &lt;a href=&#34;https://github.com/kubernetes/minikube/pull/10452&#34;&gt;&amp;ldquo;Disable all drivers except &amp;ldquo;docker&amp;rdquo; and &amp;ldquo;ssh&amp;rdquo; on darwin/arm64&amp;rdquo; PR&lt;/a&gt;의 내용을 요약하자면,
-minikube에서는 m1 mac을 사용할 수 없다는 내용이다. docker를 사용하던지 아니면 ssh로 remote host를 써야한다.
-로컬에 virtualbox나 vmware로 띄우고 ssh를 써도 사용은 되겠지만, localhost에서 사용하기 위한 다른 설정을 하는 건 조금 수고스럽다고 생각된다.&lt;/p&gt;</description>
+      <description>&lt;p&gt;2021년 8월, Docker Desktop이 대기업(직원 250명 이상 또는 연매출 1천만 달러 이상)에 대해 유료화된다는 발표가 나왔다. 많은 개발자들이 당황했지만, 이는 오히려 로컬 개발 환경을 재평가하고 쿠버네티스 기반 워크플로우로 전환할 좋은 기회가 되었다.&lt;/p&gt;
+&lt;p&gt;이 글에서는 단순히 Docker Desktop을 대체하는 것을 넘어, 로컬 개발 환경을 프로덕션과 더 가깝게 만들고 쿠버네티스 생태계에 자연스럽게 적응하는 방법을 다룬다.&lt;/p&gt;
+&lt;h2 id=&#34;docker-desktop이-필요했던-이유&#34;&gt;Docker Desktop이 필요했던 이유&lt;/h2&gt;
+&lt;p&gt;먼저 Docker Desktop이 무엇을 제공했는지 이해해야 한다:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Docker Engine&lt;/strong&gt;: 컨테이너를 실행하는 핵심 엔진&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;VM 통합&lt;/strong&gt;: macOS/Windows에서 Linux 컨테이너를 실행하기 위한 경량 VM&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Docker Compose&lt;/strong&gt;: 멀티 컨테이너 애플리케이션 정의 및 실행&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GUI&lt;/strong&gt;: 컨테이너 관리를 위한 시각적 인터페이스&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Kubernetes&lt;/strong&gt;: 로컬 쿠버네티스 클러스터 (옵션)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;편의 기능&lt;/strong&gt;: 파일 공유, 네트워크 자동 설정, 자동 업데이트&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;이 중 많은 부분이 오픈소스 도구들로 대체 가능하다. 문제는 &amp;ldquo;어떻게&amp;quot;가 아니라 &amp;ldquo;왜&amp;quot;와 &amp;ldquo;무엇으로&amp;quot;다.&lt;/p&gt;</description>
     </item>
     
     <item>

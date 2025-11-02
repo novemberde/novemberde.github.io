@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Podman on Novemberde&#39;s Blog</title>
-    <link>https://novemberde.github.io/tags/podman/</link>
-    <description>Recent content in Podman on Novemberde&#39;s Blog</description>
+    <title>Kubernetes on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/kubernetes/</link>
+    <description>Recent content in Kubernetes on Novemberde&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-KR</language>
-    <lastBuildDate>Sun, 12 Sep 2021 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/podman/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 Sep 2021 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>minikube로 docker와 docker-compose를 대체하기</title>
       <link>https://novemberde.github.io/post/2021/09/02/podman-minikube/</link>

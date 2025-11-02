@@ -1286,11 +1286,38 @@
     </item>
     
     <item>
+      <title>Colima</title>
+      <link>https://novemberde.github.io/tags/colima/</link>
+      <pubDate>Sun, 12 Sep 2021 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/colima/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Docker</title>
       <link>https://novemberde.github.io/tags/docker/</link>
       <pubDate>Sun, 12 Sep 2021 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Docker-Desktop</title>
+      <link>https://novemberde.github.io/tags/docker-desktop/</link>
+      <pubDate>Sun, 12 Sep 2021 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/docker-desktop/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kubernetes</title>
+      <link>https://novemberde.github.io/tags/kubernetes/</link>
+      <pubDate>Sun, 12 Sep 2021 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/kubernetes/</guid>
       <description></description>
     </item>
     
@@ -1309,6 +1336,15 @@
       <pubDate>Sun, 12 Sep 2021 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/tags/podman/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rancher-Desktop</title>
+      <link>https://novemberde.github.io/tags/rancher-desktop/</link>
+      <pubDate>Sun, 12 Sep 2021 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/rancher-desktop/</guid>
       <description></description>
     </item>
     
