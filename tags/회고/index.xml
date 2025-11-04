@@ -8,24 +8,21 @@
     <language>ko-KR</language>
     <lastBuildDate>Wed, 01 Jan 2025 00:30:00 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/%ED%9A%8C%EA%B3%A0/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>회고 방법론 (Retrospective Methods)</title>
+      <title>회고 방법론: 효과적인 성찰을 위한 실천 가이드 (Retrospective Methods)</title>
       <link>https://novemberde.github.io/post/2025/01/01/retrospective-method/</link>
       <pubDate>Wed, 01 Jan 2025 00:30:00 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2025/01/01/retrospective-method/</guid>
-      <description>&lt;p&gt;회고를 진행할 때 활용할 수 있는 다양한 방법론들을 소개한다.
-각 방법의 특징과 장점을 참고하여 상황에 맞는 방법을 선택하여 회고를 진행할 수 있다.&lt;/p&gt;
-&lt;h2 id=&#34;1-kpt-keep-problem-try&#34;&gt;1. KPT (Keep, Problem, Try)&lt;/h2&gt;
-&lt;p&gt;간단하면서도 실용적인 회고 방식으로, 개인 회고에 매우 적합하다.
-때로는 가볍게 프로젝트 회고를 진행할 때도 유용하다.&lt;/p&gt;
+      <description>&lt;h2 id=&#34;executive-summary&#34;&gt;Executive Summary&lt;/h2&gt;
+&lt;p&gt;회고(retrospective)는 개인과 팀의 지속적인 성장을 위한 필수적인 실천 방법이다. 이 문서는 실무에서 활용할 수 있는 6가지 회고 방법론을 체계적으로 소개하고, 각 방법론의 특징, 적용 시나리오, 그리고 선택 기준을 제시한다.&lt;/p&gt;
+&lt;p&gt;핵심 통찰은 다음과 같다:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Keep&lt;/strong&gt;: 잘했던 것, 유지하고 싶은 것&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Problem&lt;/strong&gt;: 문제점, 개선이 필요한 것&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Try&lt;/strong&gt;: 앞으로 시도해볼 것, 개선 방안&lt;/li&gt;
+&lt;li&gt;단순한 일상 회고에는 KPT, YWT, Start/Stop/Continue가 효과적이다&lt;/li&gt;
+&lt;li&gt;복잡한 상황이나 깊이 있는 성찰에는 ORID 또는 4L이 적합하다&lt;/li&gt;
+&lt;li&gt;회고의 목적(문제 해결 vs 학습 vs 행동 변화)에 따라 방법론을 선택해야 한다&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;2-5f-fact-feeling-finding-future-feedback&#34;&gt;2. 5F (Fact, Feeling, Finding, Future, Feedback)&lt;/h2&gt;
-&lt;p&gt;감정적인 부분까지 깊이 있게 돌아볼 수 있는 방법이라고 한다.
-실제 업무에서 사용해본 적은 없다. 다만 감정을 느낀다는 측면에서 개인 회고에 적합하다고 한다.&lt;/p&gt;</description>
+&lt;h2 id=&#34;introduction-왜-회고가-중요한가&#34;&gt;Introduction: 왜 회고가 중요한가&lt;/h2&gt;
+&lt;p&gt;회고는 단순한 과거 돌아보기가 아니다. 이는 경험을 체계적으로 분석하고, 교훈을 추출하며, 미래의 행동을 개선하기 위한 구조화된 프로세스다. 많은 조직과 개인이 회고의 중요성을 인식하고 있지만, 적절한 방법론을 선택하지 못해 회고의 효과를 충분히 누리지 못하는 경우가 많다.&lt;/p&gt;</description>
     </item>
     
     <item>
