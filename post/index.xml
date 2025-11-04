@@ -6,7 +6,18 @@
     <description>Recent content in Posts on Novemberde&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-KR</language>
-    <lastBuildDate>Sat, 04 Oct 2025 00:30:00 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 04 Nov 2025 00:30:00 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>어린 왕자의 장미꽃에 대한 고찰</title>
+      <link>https://novemberde.github.io/post/2025/11/04/talk-about-le-petit-prince/</link>
+      <pubDate>Tue, 04 Nov 2025 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2025/11/04/talk-about-le-petit-prince/</guid>
+      <description>&lt;h2 id=&#34;들어가며-하나의-장미를-둘러싼-고민&#34;&gt;들어가며: 하나의 장미를 둘러싼 고민&lt;/h2&gt;
+&lt;p&gt;생텍쥐페리의 &amp;lsquo;어린 왕자&amp;rsquo;를 읽으며 나는 계속해서 한 가지 질문에 사로잡혔다. 어린 왕자의 장미는 정말 특별한 것일까, 아니면 그가 시간을 들였기에 특별하다고 믿게 된 것일까? 이 질문은 단순해 보이지만, 깊이 파고들수록 우리 삶의 근본적인 가치 판단 문제와 맞닿아 있다는 것을 깨닫게 된다.&lt;/p&gt;
+&lt;p&gt;나는 이 글에서 명확한 답을 제시하려 하지 않는다. 오히려 여러 관점에서 이 문제를 바라보고, 각 관점이 어떤 통찰을 주는지, 또 어떤 한계를 가지는지 함께 고민해보고자 한다. 어쩌면 내 생각이 틀릴 수도 있고, 독자 여러분은 전혀 다른 결론에 도달할 수도 있다. 그것이 철학적 사유의 본질이 아닐까.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>AI Platform with Python at Karrot - Inference Pipeline Part(Pycon Korea 2025)</title>
       <link>https://novemberde.github.io/post/2025/10/04/pycon-korea-2025-dataflow-at-karrot/</link>

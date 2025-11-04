@@ -2,6 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://novemberde.github.io/</loc>
+    <lastmod>2025-11-04T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/post/</loc>
+    <lastmod>2025-11-04T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/</loc>
+    <lastmod>2025-11-04T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/%EA%B0%80%EC%B9%98%EB%A1%A0/</loc>
+    <lastmod>2025-11-04T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/%EC%82%AC%EC%9C%A0/</loc>
+    <lastmod>2025-11-04T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/post/2025/11/04/talk-about-le-petit-prince/</loc>
+    <lastmod>2025-11-04T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/%EC%96%B4%EB%A6%B0%EC%99%95%EC%9E%90/</loc>
+    <lastmod>2025-11-04T00:30:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/%EC%B2%A0%ED%95%99/</loc>
+    <lastmod>2025-11-04T00:30:00+00:00</lastmod>
+  </url><url>
     <loc>https://novemberde.github.io/post/2025/10/04/pycon-korea-2025-dataflow-at-karrot/</loc>
     <lastmod>2025-10-04T00:30:00+00:00</lastmod>
   </url><url>
@@ -56,12 +80,6 @@
     <loc>https://novemberde.github.io/tags/Monitoring/</loc>
     <lastmod>2025-10-04T00:30:00+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/</loc>
-    <lastmod>2025-10-04T00:30:00+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/post/</loc>
-    <lastmod>2025-10-04T00:30:00+00:00</lastmod>
-  </url><url>
     <loc>https://novemberde.github.io/tags/Protobuf/</loc>
     <lastmod>2025-10-04T00:30:00+00:00</lastmod>
   </url><url>
@@ -72,9 +90,6 @@
     <lastmod>2025-10-04T00:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/SDK-Development/</loc>
-    <lastmod>2025-10-04T00:30:00+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/tags/</loc>
     <lastmod>2025-10-04T00:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/TFX/</loc>
