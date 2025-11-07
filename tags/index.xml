@@ -6,7 +6,97 @@
     <description>Recent content in Tags on Novemberde&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-KR</language>
-    <lastBuildDate>Tue, 04 Nov 2025 00:30:00 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 05 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Apache Beam</title>
+      <link>https://novemberde.github.io/tags/Apache-Beam/</link>
+      <pubDate>Wed, 05 Nov 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/Apache-Beam/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Pipeline</title>
+      <link>https://novemberde.github.io/tags/Data-Pipeline/</link>
+      <pubDate>Wed, 05 Nov 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/Data-Pipeline/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Distributed Computing</title>
+      <link>https://novemberde.github.io/tags/Distributed-Computing/</link>
+      <pubDate>Wed, 05 Nov 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/Distributed-Computing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Google Cloud Dataflow</title>
+      <link>https://novemberde.github.io/tags/Google-Cloud-Dataflow/</link>
+      <pubDate>Wed, 05 Nov 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/Google-Cloud-Dataflow/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GPU</title>
+      <link>https://novemberde.github.io/tags/GPU/</link>
+      <pubDate>Wed, 05 Nov 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/GPU/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Machine Learning</title>
+      <link>https://novemberde.github.io/tags/Machine-Learning/</link>
+      <pubDate>Wed, 05 Nov 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/Machine-Learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Memory Management</title>
+      <link>https://novemberde.github.io/tags/Memory-Management/</link>
+      <pubDate>Wed, 05 Nov 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/Memory-Management/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ML Infrastructure</title>
+      <link>https://novemberde.github.io/tags/ML-Infrastructure/</link>
+      <pubDate>Wed, 05 Nov 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/ML-Infrastructure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Performance Optimization</title>
+      <link>https://novemberde.github.io/tags/Performance-Optimization/</link>
+      <pubDate>Wed, 05 Nov 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/Performance-Optimization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://novemberde.github.io/tags/Python/</link>
+      <pubDate>Wed, 05 Nov 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/Python/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>가치론</title>
       <link>https://novemberde.github.io/tags/%EA%B0%80%EC%B9%98%EB%A1%A0/</link>
@@ -62,24 +152,6 @@
     </item>
     
     <item>
-      <title>Apache Beam</title>
-      <link>https://novemberde.github.io/tags/Apache-Beam/</link>
-      <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
-      
-      <guid>https://novemberde.github.io/tags/Apache-Beam/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Data Pipeline</title>
-      <link>https://novemberde.github.io/tags/Data-Pipeline/</link>
-      <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
-      
-      <guid>https://novemberde.github.io/tags/Data-Pipeline/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>DevOps</title>
       <link>https://novemberde.github.io/tags/devops/</link>
       <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
@@ -103,15 +175,6 @@
       <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
       
       <guid>https://novemberde.github.io/tags/GCP/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Google Cloud Dataflow</title>
-      <link>https://novemberde.github.io/tags/Google-Cloud-Dataflow/</link>
-      <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
-      
-      <guid>https://novemberde.github.io/tags/Google-Cloud-Dataflow/</guid>
       <description></description>
     </item>
     
@@ -161,24 +224,6 @@
     </item>
     
     <item>
-      <title>Machine Learning</title>
-      <link>https://novemberde.github.io/tags/Machine-Learning/</link>
-      <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
-      
-      <guid>https://novemberde.github.io/tags/Machine-Learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ML Infrastructure</title>
-      <link>https://novemberde.github.io/tags/ML-Infrastructure/</link>
-      <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
-      
-      <guid>https://novemberde.github.io/tags/ML-Infrastructure/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>MLOps</title>
       <link>https://novemberde.github.io/tags/mlops/</link>
       <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
@@ -211,15 +256,6 @@
       <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
       
       <guid>https://novemberde.github.io/tags/PyConKR-2025/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://novemberde.github.io/tags/Python/</link>
-      <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
-      
-      <guid>https://novemberde.github.io/tags/Python/</guid>
       <description></description>
     </item>
     
