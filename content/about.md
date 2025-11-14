@@ -10,10 +10,10 @@ enableDisqus: false
 
 ![Profile image](/images/profile.png)
 
-The developer who enjoy riding a bicycle and playing judo & jiu-jitsu.
+A software engineer who enjoys cycling and practicing judo and jiu-jitsu.
 
-- Currently working at Karrot🥕.
-- [AWS Serverless HERO](https://aws.amazon.com/ko/developer/community/heroes/kyuhyun-byun/)
+- Currently working at Karrot 🥕.
+- [AWS Serverless HERO](https://builder.aws.com/community/@bien)
 
 ### Links
 
