@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Ecr on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/ecr/</link>
+    <description>Recent content in Ecr on Novemberde&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Sun, 09 Apr 2017 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/ecr/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>나만의 private docker registry 구성하기.</title>
+      <link>https://novemberde.github.io/post/2017/04/09/Docker_Registry_0/</link>
+      <pubDate>Sun, 09 Apr 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/04/09/Docker_Registry_0/</guid>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;Docker hub에 private image를 올리는 것은 제한이 있다.
+개인 사용자의 경우 하나의 이미지만 private이 가능하고 organization의 경우에는 비용을 지불해야만 사용이 가능하다.
+이러한 제약은 여러 개의 private 이미지를 관리해야 하는 개발 환경에서 큰 불편함으로 다가온다. 따라서 우리만의 private registry 환경을 직접 구축할 필요성이 생긴다.&lt;/p&gt;
+&lt;p&gt;이 글에서는 EC2에 개인 registry를 구축하고, local 또는 다른 원격 서버에서 접근하는 방법을 단계별로 살펴보겠다. 또한 이미지 저장소로 Amazon S3를 연동하여 확장 가능한 구조를 만들어볼 것이다.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
