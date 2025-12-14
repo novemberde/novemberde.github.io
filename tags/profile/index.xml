@@ -13,10 +13,10 @@
       <pubDate>Wed, 20 Jun 2018 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/post/2018/06/20/AWS-config-switching/</guid>
-      <description>&lt;p&gt;개인 프로젝트, 회사 업무, 클라이언트 작업 등 여러 AWS 계정을 동시에 관리하다 보면 계정 전환이 일상적인 작업이 됩니다. 실수로 프로덕션 계정에서 개발용 리소스를 생성하거나, 반대로 개발 계정에 운영 데이터를 배포하는 사고를 방지하려면 계정 전환을 체계적으로 관리해야 합니다.&lt;/p&gt;
-&lt;p&gt;이 글에서는 AWS CLI를 사용한 계정 전환의 다양한 방법을 실제 사용 사례와 함께 살펴보겠습니다.&lt;/p&gt;
+      <description>&lt;p&gt;개인 프로젝트, 회사 업무, 클라이언트 작업 등 여러 AWS 계정을 동시에 관리하다 보면 계정 전환이 일상적인 작업이 된다. 실수로 프로덕션 계정에서 개발용 리소스를 생성하거나, 반대로 개발 계정에 운영 데이터를 배포하는 사고를 방지하려면 계정 전환을 체계적으로 관리해야 한다.&lt;/p&gt;
+&lt;p&gt;이 글에서는 AWS CLI를 사용한 계정 전환의 다양한 방법을 실제 사용 사례와 함께 살펴본다.&lt;/p&gt;
 &lt;h2 id=&#34;기본적인-profile-설정&#34;&gt;기본적인 Profile 설정&lt;/h2&gt;
-&lt;p&gt;AWS CLI를 처음 설정할 때는 &lt;code&gt;aws configure&lt;/code&gt; 명령어를 사용합니다. IAM에서 사용자를 생성하고 Access Key를 발급받은 후, 다음과 같이 설정합니다:&lt;/p&gt;</description>
+&lt;p&gt;AWS CLI를 처음 설정할 때는 &lt;code&gt;aws configure&lt;/code&gt; 명령어를 사용한다. IAM에서 사용자를 생성하고 Access Key를 발급받은 후, 다음과 같이 설정한다:&lt;/p&gt;</description>
     </item>
     
   </channel>
