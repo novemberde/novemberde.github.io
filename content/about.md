@@ -19,4 +19,4 @@ A software engineer who enjoys cycling and practicing judo and jiu-jitsu.
 
 - [Github](https://github.com/novemberde)
 - [Linkedin](https://www.linkedin.com/in/novemberde/)
-
+- [AWS Builder](https://builder.aws.com/community/heroes/KyuhyunByun)

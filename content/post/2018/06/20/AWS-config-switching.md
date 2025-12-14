@@ -8,13 +8,13 @@ ShowReadingTime: true
 ShowPostNavLinks: true
 ---
 
-개인 프로젝트, 회사 업무, 클라이언트 작업 등 여러 AWS 계정을 동시에 관리하다 보면 계정 전환이 일상적인 작업이 됩니다. 실수로 프로덕션 계정에서 개발용 리소스를 생성하거나, 반대로 개발 계정에 운영 데이터를 배포하는 사고를 방지하려면 계정 전환을 체계적으로 관리해야 합니다.
+개인 프로젝트, 회사 업무, 클라이언트 작업 등 여러 AWS 계정을 동시에 관리하다 보면 계정 전환이 일상적인 작업이 된다. 실수로 프로덕션 계정에서 개발용 리소스를 생성하거나, 반대로 개발 계정에 운영 데이터를 배포하는 사고를 방지하려면 계정 전환을 체계적으로 관리해야 한다.
 
-이 글에서는 AWS CLI를 사용한 계정 전환의 다양한 방법을 실제 사용 사례와 함께 살펴보겠습니다.
+이 글에서는 AWS CLI를 사용한 계정 전환의 다양한 방법을 실제 사용 사례와 함께 살펴본다.
 
 ## 기본적인 Profile 설정
 
-AWS CLI를 처음 설정할 때는 `aws configure` 명령어를 사용합니다. IAM에서 사용자를 생성하고 Access Key를 발급받은 후, 다음과 같이 설정합니다:
+AWS CLI를 처음 설정할 때는 `aws configure` 명령어를 사용한다. IAM에서 사용자를 생성하고 Access Key를 발급받은 후, 다음과 같이 설정한다:
 
 ```sh
 $ aws configure
@@ -24,11 +24,11 @@ Default region name [ap-northeast-2]:
 Default output format [json]:
 ```
 
-이렇게 설정하면 `~/.aws/credentials`와 `~/.aws/config` 파일에 default 프로필이 생성됩니다. 하지만 여러 계정을 사용한다면 default 프로필만으로는 부족합니다.
+이렇게 설정하면 `~/.aws/credentials`와 `~/.aws/config` 파일에 default 프로필이 생성된다. 하지만 여러 계정을 사용한다면 default 프로필만으로는 부족하다.
 
 ## 방법 1: Profile 옵션 사용하기
 
-가장 기본적이면서도 안전한 방법은 `--profile` 옵션을 명시적으로 사용하는 것입니다.
+가장 기본적이면서도 안전한 방법은 `--profile` 옵션을 명시적으로 사용하는 것이다.
 
 ```sh
 # 회사 계정용 프로필 생성
@@ -46,7 +46,7 @@ Default region name [None]: us-east-1
 Default output format [None]: json
 ```
 
-프로필별로 명령어를 실행할 때는 다음과 같이 사용합니다:
+프로필별로 명령어를 실행할 때는 다음과 같이 사용한다:
 
 ```sh
 # 회사 계정의 S3 버킷 목록 조회
@@ -56,7 +56,7 @@ $ aws s3 ls --profile company
 $ aws ec2 describe-instances --profile personal
 ```
 
-이 방법의 장점은 명확합니다. 매번 어떤 계정을 사용하는지 명시하기 때문에 실수할 여지가 적습니다. 단점은 매번 `--profile` 옵션을 입력해야 한다는 번거로움이 있습니다.
+이 방법의 장점은 명확하다. 매번 어떤 계정을 사용하는지 명시하기 때문에 실수할 여지가 적다. 단점은 매번 `--profile` 옵션을 입력해야 한다는 번거로움이 있다.
 
 ### 현재 프로필 확인하기
 
@@ -74,7 +74,7 @@ secret_key     ****************XXXX shared-credentials-file
 
 ## 방법 2: 환경변수로 전환하기
 
-특정 작업을 하는 동안 하나의 프로필을 계속 사용한다면, 환경변수로 설정하는 것이 편리합니다.
+특정 작업을 하는 동안 하나의 프로필을 계속 사용한다면, 환경변수로 설정하는 것이 편리하다.
 
 ```sh
 # Linux/macOS
@@ -88,12 +88,12 @@ $ set AWS_PROFILE=company
 $ $env:AWS_PROFILE="company"
 ```
 
-이제 `--profile` 옵션 없이도 지정한 프로필이 사용됩니다. 하지만 주의할 점이 있습니다:
+이제 `--profile` 옵션 없이도 지정한 프로필이 사용된다. 하지만 주의할 점이 있다:
 
 **주의사항:**
-- 환경변수는 현재 터미널 세션에만 적용됩니다
-- 새 터미널을 열면 다시 설정해야 합니다
-- 실수로 다른 계정을 사용할 수 있으므로 작업 전 항상 확인하세요
+- 환경변수는 현재 터미널 세션에만 적용된다
+- 새 터미널을 열면 다시 설정해야 한다
+- 실수로 다른 계정을 사용할 수 있으므로 작업 전 항상 확인하자
 
 ```sh
 # 현재 사용 중인 프로필 확인
@@ -106,17 +106,17 @@ $ unset AWS_PROFILE
 
 ### Shell 설정 파일에 추가하기 (권장하지 않음)
 
-`~/.bashrc`나 `~/.zshrc`에 다음을 추가할 수도 있습니다:
+`~/.bashrc`나 `~/.zshrc`에 다음을 추가할 수도 있다:
 
 ```sh
 export AWS_PROFILE=company
 ```
 
-하지만 이 방법은 권장하지 않습니다. 모든 터미널에서 자동으로 해당 프로필이 활성화되어, 다른 계정을 사용하려고 할 때 혼란을 일으킬 수 있습니다. 명시적으로 설정하는 것이 더 안전합니다.
+하지만 이 방법은 권장하지 않는다. 모든 터미널에서 자동으로 해당 프로필이 활성화되어, 다른 계정을 사용하려고 할 때 혼란을 일으킬 수 있다. 명시적으로 설정하는 것이 더 안전하다.
 
 ## 방법 3: AWS SSO (Single Sign-On) 사용하기
 
-여러 AWS 계정을 관리하는 조직이라면 AWS SSO가 가장 현대적이고 안전한 방법입니다. Access Key를 직접 관리하지 않고, 임시 자격 증명을 자동으로 발급받습니다.
+여러 AWS 계정을 관리하는 조직이라면 AWS SSO가 가장 현대적이고 안전한 방법이다. Access Key를 직접 관리하지 않고, 임시 자격 증명을 자동으로 발급받는다.
 
 ### SSO 프로필 설정
 
@@ -128,7 +128,7 @@ SSO region [None]: ap-northeast-2
 SSO registration scopes [None]: sso:account:access
 ```
 
-브라우저가 열리면 로그인하고, 사용할 계정과 권한을 선택합니다:
+브라우저가 열리면 로그인하고, 사용할 계정과 권한을 선택한다:
 
 ```sh
 There are 3 AWS accounts available to you.
@@ -146,7 +146,7 @@ CLI default output format [json]:
 CLI profile name [AdministratorAccess-123456789012]: dev-admin
 ```
 
-이렇게 설정하면 `~/.aws/config`에 다음과 같은 프로필이 생성됩니다:
+이렇게 설정하면 `~/.aws/config`에 다음과 같은 프로필이 생성된다:
 
 ```ini
 [profile dev-admin]
@@ -184,17 +184,17 @@ SSO의 장점:
 
 ## 방법 4: AssumeRole을 통한 역할 전환
 
-하나의 계정에서 다른 계정의 역할을 일시적으로 맡아야 할 때 사용합니다. 예를 들어, 개발 계정에서 프로덕션 계정의 리소스에 접근해야 하는 경우입니다.
+하나의 계정에서 다른 계정의 역할을 일시적으로 맡아야 할 때 사용한다. 예를 들어, 개발 계정에서 프로덕션 계정의 리소스에 접근해야 하는 경우다.
 
 ### AssumeRole 프로필 설정
 
-먼저 기본 프로필을 설정합니다:
+먼저 기본 프로필을 설정한다:
 
 ```sh
 $ aws configure --profile base-account
 ```
 
-그 다음 `~/.aws/config` 파일을 편집하여 역할 전환 설정을 추가합니다:
+그 다음 `~/.aws/config` 파일을 편집하여 역할 전환 설정을 추가한다:
 
 ```ini
 [profile base-account]
@@ -207,7 +207,7 @@ source_profile = base-account
 region = ap-northeast-2
 ```
 
-이제 `production-role` 프로필을 사용하면 자동으로 AssumeRole이 실행됩니다:
+이제 `production-role` 프로필을 사용하면 자동으로 AssumeRole이 실행된다:
 
 ```sh
 $ aws s3 ls --profile production-role
@@ -215,7 +215,7 @@ $ aws s3 ls --profile production-role
 
 ### MFA를 요구하는 AssumeRole
 
-보안을 강화하기 위해 역할 전환 시 MFA를 요구할 수 있습니다:
+보안을 강화하기 위해 역할 전환 시 MFA를 요구할 수 있다:
 
 ```ini
 [profile production-role-mfa]
@@ -225,7 +225,7 @@ mfa_serial = arn:aws:iam::123456789012:mfa/myuser
 region = ap-northeast-2
 ```
 
-명령어 실행 시 MFA 토큰을 입력하라는 프롬프트가 나타납니다:
+명령어 실행 시 MFA 토큰을 입력하라는 프롬프트가 나타난다:
 
 ```sh
 $ aws s3 ls --profile production-role-mfa
@@ -234,7 +234,7 @@ Enter MFA code for arn:aws:iam::123456789012:mfa/myuser:
 
 ## 방법 5: 프로필 전환 헬퍼 스크립트
 
-자주 프로필을 전환한다면, 간단한 shell 함수를 만들어 사용할 수 있습니다.
+자주 프로필을 전환한다면, 간단한 shell 함수를 만들어 사용할 수 있다.
 
 ### ~/.zshrc 또는 ~/.bashrc에 추가
 
@@ -248,7 +248,7 @@ awsp() {
         grep '^\[' ~/.aws/credentials | sed 's/\[\(.*\)\]/  - \1/' | grep -v 'default'
     else
         export AWS_PROFILE=$1
-        echo "프로필이 '$1'(으)로 변경되었습니다"
+        echo "프로필이 '$1'(으)로 변경되었다"
         aws configure list
     fi
 }
@@ -256,7 +256,7 @@ awsp() {
 # AWS 프로필 해제 함수
 awsp-clear() {
     unset AWS_PROFILE
-    echo "AWS_PROFILE 환경변수가 해제되었습니다"
+    echo "AWS_PROFILE 환경변수가 해제되었다"
 }
 ```
 
@@ -274,19 +274,19 @@ $ awsp
 
 # 프로필 전환
 $ awsp personal
-프로필이 'personal'(으)로 변경되었습니다
+프로필이 'personal'(으)로 변경되었다
       Name                    Value             Type    Location
       ----                    -----             ----    --------
    profile                 personal environment    AWS_PROFILE
 
 # 프로필 해제
 $ awsp-clear
-AWS_PROFILE 환경변수가 해제되었습니다
+AWS_PROFILE 환경변수가 해제되었다
 ```
 
 ## 방법 6: direnv를 활용한 프로젝트별 자동 전환
 
-프로젝트마다 다른 AWS 계정을 사용한다면, `direnv`를 사용하여 디렉토리 진입 시 자동으로 프로필을 전환할 수 있습니다.
+프로젝트마다 다른 AWS 계정을 사용한다면, `direnv`를 사용하여 디렉토리 진입 시 자동으로 프로필을 전환할 수 있다.
 
 ### direnv 설치 및 설정
 
@@ -305,7 +305,7 @@ eval "$(direnv hook bash)" # bash 사용자
 
 ### 프로젝트별 설정
 
-각 프로젝트 디렉토리에 `.envrc` 파일을 생성합니다:
+각 프로젝트 디렉토리에 `.envrc` 파일을 생성한다:
 
 ```sh
 # ~/projects/company-project/.envrc
@@ -317,7 +317,7 @@ export AWS_PROFILE=personal
 export AWS_REGION=us-east-1
 ```
 
-디렉토리에 진입하면 자동으로 환경변수가 설정됩니다:
+디렉토리에 진입하면 자동으로 환경변수가 설정된다:
 
 ```sh
 $ cd ~/projects/company-project
@@ -335,7 +335,7 @@ $ echo $AWS_PROFILE
 personal
 ```
 
-처음 사용할 때는 보안을 위해 명시적으로 허용해야 합니다:
+처음 사용할 때는 보안을 위해 명시적으로 허용해야 한다:
 
 ```sh
 $ direnv allow .
@@ -364,7 +364,7 @@ export AWS_PROFILE=client-a
 export AWS_PROFILE=client-b
 ```
 
-이렇게 하면 프로젝트 디렉토리로 이동만 하면 자동으로 올바른 계정이 활성화됩니다.
+이렇게 하면 프로젝트 디렉토리로 이동만 하면 자동으로 올바른 계정이 활성화된다.
 
 ### 시나리오 2: 스타트업 개발자
 
@@ -409,26 +409,26 @@ source_profile = base
 mfa_serial = arn:aws:iam::123456789012:mfa/myuser
 ```
 
-개발은 자유롭게, 프로덕션은 조회만, 긴급 상황 시 MFA로 관리자 권한 획득하는 구조입니다.
+개발은 자유롭게, 프로덕션은 조회만, 긴급 상황 시 MFA로 관리자 권한 획득하는 구조다.
 
 ## 보안 모범 사례
 
 1. **Access Key 관리**
-   - Access Key를 코드에 하드코딩하지 마세요
-   - 주기적으로 키를 로테이션하세요
-   - 가능하면 SSO나 AssumeRole을 사용하세요
+   - Access Key를 코드에 하드코딩하지 말자
+   - 주기적으로 키를 로테이션하자
+   - 가능하면 SSO나 AssumeRole을 사용하자
 
 2. **프로필 사용**
-   - 프로덕션 계정은 절대 default 프로필로 설정하지 마세요
-   - 명시적으로 `--profile` 옵션을 사용하거나 환경변수를 설정하세요
+   - 프로덕션 계정은 절대 default 프로필로 설정하지 말자
+   - 명시적으로 `--profile` 옵션을 사용하거나 환경변수를 설정하자
 
 3. **권한 최소화**
-   - 필요한 권한만 부여하세요
-   - 읽기 전용 작업에는 읽기 전용 역할을 사용하세요
+   - 필요한 권한만 부여하자
+   - 읽기 전용 작업에는 읽기 전용 역할을 사용하자
 
 4. **MFA 활성화**
-   - 중요한 계정이나 역할에는 MFA를 필수로 설정하세요
-   - 특히 프로덕션 환경 접근 시 MFA를 요구하세요
+   - 중요한 계정이나 역할에는 MFA를 필수로 설정하자
+   - 특히 프로덕션 환경 접근 시 MFA를 요구하자
 
 5. **작업 전 확인**
    ```sh
@@ -481,7 +481,7 @@ An error occurred (AccessDenied) when calling the AssumeRole operation
 - 역할의 신뢰 정책에 사용자가 포함되지 않음
 - MFA가 필요한데 제공하지 않음
 
-해결: IAM 콘솔에서 역할의 신뢰 관계를 확인하고 수정하세요.
+해결: IAM 콘솔에서 역할의 신뢰 관계를 확인하고 수정하자.
 
 ### 4. 프로필을 찾을 수 없음
 
@@ -501,7 +501,7 @@ $ cat ~/.aws/credentials
 
 ## 정리
 
-AWS 계정을 전환하는 방법은 다양하며, 각 방법은 특정 상황에 적합합니다:
+AWS 계정을 전환하는 방법은 다양하며, 각 방법은 특정 상황에 적합하다:
 
 - **`--profile` 옵션**: 가장 안전하고 명시적, 일회성 작업에 적합
 - **환경변수 (`AWS_PROFILE`)**: 한 세션 동안 여러 명령어 실행 시 편리
@@ -516,7 +516,7 @@ AWS 계정을 전환하는 방법은 다양하며, 각 방법은 특정 상황�
 3. 가능하면 SSO나 임시 자격 증명 사용
 4. 중요한 작업에는 MFA 활성화
 
-이러한 방법들을 조합하여 자신의 워크플로우에 맞는 계정 관리 전략을 구축하세요. 안전하고 효율적인 AWS 환경 관리의 첫 걸음은 올바른 계정 전환에서 시작됩니다.
+이러한 방법들을 조합하여 자신의 워크플로우에 맞는 계정 관리 전략을 구축하자. 안전하고 효율적인 AWS 환경 관리의 첫 걸음은 올바른 계정 전환에서 시작된다.
 
 ## References
 
