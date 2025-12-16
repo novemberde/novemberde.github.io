@@ -1,5 +1,5 @@
 ---
-title: "머신러닝 플랫폼의 진화: AWS Unified Studio 심층 분석"
+title: "AWS Unified Studio 살펴보기"
 tags: ["aws", "unified-studio", "ml-platform", "mlops", "ai", "ml", "data-platform", "platform-engineering"]
 date: "2025-01-28T00:30:00+00:00"
 ShowBreadCrumbs: true
