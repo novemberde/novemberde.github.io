@@ -6,7 +6,70 @@
     <description>Recent content in Tags on Novemberde&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-KR</language>
-    <lastBuildDate>Wed, 05 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 29 Dec 2025 10:00:00 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deep-Dive</title>
+      <link>https://novemberde.github.io/tags/deep-dive/</link>
+      <pubDate>Mon, 29 Dec 2025 10:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/deep-dive/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Learning</title>
+      <link>https://novemberde.github.io/tags/learning/</link>
+      <pubDate>Mon, 29 Dec 2025 10:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mental-Models</title>
+      <link>https://novemberde.github.io/tags/mental-models/</link>
+      <pubDate>Mon, 29 Dec 2025 10:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/mental-models/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Problem-Solving</title>
+      <link>https://novemberde.github.io/tags/problem-solving/</link>
+      <pubDate>Mon, 29 Dec 2025 10:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/problem-solving/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Product-Management</title>
+      <link>https://novemberde.github.io/tags/product-management/</link>
+      <pubDate>Mon, 29 Dec 2025 10:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/product-management/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Root-Cause-Analysis</title>
+      <link>https://novemberde.github.io/tags/root-cause-analysis/</link>
+      <pubDate>Mon, 29 Dec 2025 10:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/root-cause-analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>개발자 성장</title>
+      <link>https://novemberde.github.io/tags/%EA%B0%9C%EB%B0%9C%EC%9E%90-%EC%84%B1%EC%9E%A5/</link>
+      <pubDate>Mon, 29 Dec 2025 10:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EA%B0%9C%EB%B0%9C%EC%9E%90-%EC%84%B1%EC%9E%A5/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Apache Beam</title>
       <link>https://novemberde.github.io/tags/Apache-Beam/</link>
@@ -152,11 +215,11 @@
     </item>
     
     <item>
-      <title>Devops</title>
-      <link>https://novemberde.github.io/tags/devops/</link>
+      <title>DevOps</title>
+      <link>https://novemberde.github.io/tags/DevOps/</link>
       <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
       
-      <guid>https://novemberde.github.io/tags/devops/</guid>
+      <guid>https://novemberde.github.io/tags/DevOps/</guid>
       <description></description>
     </item>
     
@@ -224,11 +287,11 @@
     </item>
     
     <item>
-      <title>Mlops</title>
-      <link>https://novemberde.github.io/tags/mlops/</link>
+      <title>MLOps</title>
+      <link>https://novemberde.github.io/tags/MLOps/</link>
       <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
       
-      <guid>https://novemberde.github.io/tags/mlops/</guid>
+      <guid>https://novemberde.github.io/tags/MLOps/</guid>
       <description></description>
     </item>
     
@@ -432,10 +495,10 @@
     
     <item>
       <title>Leadership</title>
-      <link>https://novemberde.github.io/tags/leadership/</link>
+      <link>https://novemberde.github.io/tags/Leadership/</link>
       <pubDate>Sun, 09 Feb 2025 00:30:00 +0000</pubDate>
       
-      <guid>https://novemberde.github.io/tags/leadership/</guid>
+      <guid>https://novemberde.github.io/tags/Leadership/</guid>
       <description></description>
     </item>
     
@@ -1070,11 +1133,11 @@
     </item>
     
     <item>
-      <title>Postgresql</title>
-      <link>https://novemberde.github.io/tags/postgresql/</link>
+      <title>PostgreSQL</title>
+      <link>https://novemberde.github.io/tags/PostgreSQL/</link>
       <pubDate>Mon, 21 Oct 2024 08:30:00 +0000</pubDate>
       
-      <guid>https://novemberde.github.io/tags/postgresql/</guid>
+      <guid>https://novemberde.github.io/tags/PostgreSQL/</guid>
       <description></description>
     </item>
     

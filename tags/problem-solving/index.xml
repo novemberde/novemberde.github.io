@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Problem-Solving on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/problem-solving/</link>
+    <description>Recent content in Problem-Solving on Novemberde&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Mon, 29 Dec 2025 10:00:00 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/problem-solving/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>한 층 더 깊은 지식을 쌓기 위한 Deep Dive 방법들</title>
+      <link>https://novemberde.github.io/post/2025/12/29/Deep-Dive-Methods-ko/</link>
+      <pubDate>Mon, 29 Dec 2025 10:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2025/12/29/Deep-Dive-Methods-ko/</guid>
+      <description>&lt;h2 id=&#34;들어가며&#34;&gt;들어가며&lt;/h2&gt;
+&lt;p&gt;문제를 해결하거나 새로운 것을 학습할 때, 표면적인 이해에 그치지 않고 깊이 있는 지식을 쌓는 것이 중요하다. 이 글에서는 문제의 본질을 파악하고 깊이 있게 탐구하기 위한 다양한 Deep Dive 방법들을 **우선순위(꼭 알아야 하는 순서)**대로 정리했다.&lt;/p&gt;
+&lt;p&gt;Charlie Munger는 &amp;ldquo;고립된 사실만 기억해서는 아무것도 진정으로 알 수 없다. 사실들이 이론의 격자(Latticework) 위에 매달려 있지 않으면, 사용 가능한 형태로 가지고 있지 않은 것이다&amp;quot;라고 했다. 이 글이 여러분의 Mental Model Latticework를 구축하는 데 도움이 되길 바란다.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
