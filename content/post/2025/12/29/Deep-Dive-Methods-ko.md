@@ -543,18 +543,17 @@ flowchart TD
 ### 📋 상황 예시: 프로모션 리스크 점검
 
 ```mermaid
-quadrantChart
-    title 리스크 우선순위 매트릭스
-    x-axis 발생 가능성 낮음 --> 발생 가능성 높음
-    y-axis 심각도 낮음 --> 심각도 높음
-    quadrant-1 즉시 대응 필요
-    quadrant-2 모니터링
-    quadrant-3 수용 가능
-    quadrant-4 예방 조치
-    "정가 전환 실패": [0.78, 0.90]
-    "저품질 유입": [0.70, 0.70]
-    "트래픽 폭주": [0.60, 0.90]
-    "CS 응답 지연": [0.80, 0.55]
+block-beta
+    columns 3
+    space:1 HIGH["심각도 높음"] space:1
+    Q2["📊 모니터링\n\n• 트래픽 폭주"]:1 space:1 Q1["🚨 즉시 대응 필요\n\n• 정가 전환 실패\n• 저품질 유입"]:1
+    Q3["✅ 수용 가능"]:1 space:1 Q4["⚠️ 예방 조치\n\n• CS 응답 지연"]:1
+    space:1 LOW["심각도 낮음"] space:1
+
+    style Q1 fill:#ffcccc
+    style Q2 fill:#fff3cd
+    style Q3 fill:#ccffcc
+    style Q4 fill:#cce5ff
 ```
 
 **RPN (Risk Priority Number) = Severity × Occurrence × Detection**
