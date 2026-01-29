@@ -2,6 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://novemberde.github.io/tags/GTD/</loc>
+    <lastmod>2026-01-28T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/leadership/</loc>
+    <lastmod>2026-01-28T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/</loc>
+    <lastmod>2026-01-28T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/post/</loc>
+    <lastmod>2026-01-28T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/productivity/</loc>
+    <lastmod>2026-01-28T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/</loc>
+    <lastmod>2026-01-28T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/%EA%B8%B0%EC%88%A0-%EB%B6%80%EC%B1%84/</loc>
+    <lastmod>2026-01-28T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/%EB%A6%AC%EB%8D%94%EC%8B%AD/</loc>
+    <lastmod>2026-01-28T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/%EC%83%9D%EC%82%B0%EC%84%B1/</loc>
+    <lastmod>2026-01-28T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/%EC%97%94%EC%A7%80%EB%8B%88%EC%96%B4-%EC%83%9D%EC%82%B0%EC%84%B1/</loc>
+    <lastmod>2026-01-28T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/%EC%9D%B8%EC%A7%80-%EB%B6%80%ED%95%98/</loc>
+    <lastmod>2026-01-28T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/post/2026/01/29/Impact-Paradox-ko/</loc>
+    <lastmod>2026-01-28T10:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://novemberde.github.io/tags/deep-dive/</loc>
     <lastmod>2025-12-29T10:00:00+00:00</lastmod>
   </url><url>
@@ -11,12 +47,6 @@
     <loc>https://novemberde.github.io/tags/mental-models/</loc>
     <lastmod>2025-12-29T10:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/</loc>
-    <lastmod>2025-12-29T10:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/post/</loc>
-    <lastmod>2025-12-29T10:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://novemberde.github.io/tags/problem-solving/</loc>
     <lastmod>2025-12-29T10:00:00+00:00</lastmod>
   </url><url>
@@ -24,9 +54,6 @@
     <lastmod>2025-12-29T10:00:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/root-cause-analysis/</loc>
-    <lastmod>2025-12-29T10:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/tags/</loc>
     <lastmod>2025-12-29T10:00:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/%EA%B0%9C%EB%B0%9C%EC%9E%90-%EC%84%B1%EC%9E%A5/</loc>
@@ -197,13 +224,7 @@
     <loc>https://novemberde.github.io/post/2025/02/09/Plus-Minus-10x-leader/</loc>
     <lastmod>2025-02-09T00:30:00+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/Leadership/</loc>
-    <lastmod>2025-02-09T00:30:00+00:00</lastmod>
-  </url><url>
     <loc>https://novemberde.github.io/tags/%EA%B0%9C%EB%B0%9C%EC%9E%90-%EB%A6%AC%EB%8D%94%EC%8B%AD/</loc>
-    <lastmod>2025-02-09T00:30:00+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/tags/%EB%A6%AC%EB%8D%94%EC%8B%AD/</loc>
     <lastmod>2025-02-09T00:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/%EC%97%94%EC%A7%80%EB%8B%88%EC%96%B4-%EB%A6%AC%EB%8D%94%EC%8B%AD/</loc>
@@ -362,7 +383,7 @@
     <loc>https://novemberde.github.io/tags/Redshift/</loc>
     <lastmod>2024-10-23T10:30:00+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/S3/</loc>
+    <loc>https://novemberde.github.io/tags/s3/</loc>
     <lastmod>2024-10-23T10:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/serverless/</loc>
@@ -437,7 +458,7 @@
     <loc>https://novemberde.github.io/tags/pgbouncer/</loc>
     <lastmod>2024-10-21T08:30:00+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/postgresql/</loc>
+    <loc>https://novemberde.github.io/tags/PostgreSQL/</loc>
     <lastmod>2024-10-21T08:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/post/2024/10/21/postgres-connection-mode-session-mode/</loc>
