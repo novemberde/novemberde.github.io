@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Mpp on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/mpp/</link>
+    <description>Recent content in Mpp on Novemberde&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Sun, 08 Feb 2026 15:00:00 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/mpp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Amazon Redshift의 내부 Architecture: ParAccel에서 Serverless까지</title>
+      <link>https://novemberde.github.io/post/2026/02/08/Redshift-Internals-Architecture-ko/</link>
+      <pubDate>Sun, 08 Feb 2026 15:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2026/02/08/Redshift-Internals-Architecture-ko/</guid>
+      <description>&lt;h2 id=&#34;용어-사전&#34;&gt;용어 사전&lt;/h2&gt;
+&lt;p&gt;이 글에서 자주 등장하는 핵심 용어를 먼저 정리한다.&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;용어&lt;/th&gt;
+          &lt;th&gt;설명&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;MPP&lt;/strong&gt; (Massively Parallel Processing)&lt;/td&gt;
+          &lt;td&gt;다수의 Node가 Query를 분할하여 동시에 처리하는 Architecture&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Leader Node&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Client 요청을 받아 SQL Parsing, Query Planning, Code Generation을 수행하고 결과를 집계하는 Coordinator&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Compute Node&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;실제 데이터를 저장하고 Query Segment를 병렬 실행하는 Worker Node&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Slice&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Compute Node 내부의 병렬 처리 단위. 독립적인 CPU, Memory, Disk Partition을 가짐&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;RMS&lt;/strong&gt; (Redshift Managed Storage)&lt;/td&gt;
+          &lt;td&gt;S3 기반 Tiered Storage. Local SSD Cache + S3 Cold Storage로 구성&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;AQUA&lt;/strong&gt; (Advanced Query Accelerator)&lt;/td&gt;
+          &lt;td&gt;Storage Layer에서 FPGA/Nitro Processor로 Filtering과 Aggregation을 사전 수행하는 가속기&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Zone Map&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;각 1MB Block의 Min/Max 값을 Memory에 보관하는 Metadata. Block Skipping에 사용&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;AZ64&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Amazon이 자체 개발한 SIMD 기반 Compression Algorithm. Numeric/Date Type에 특화&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;WLM&lt;/strong&gt; (Workload Management)&lt;/td&gt;
+          &lt;td&gt;Query Queue별 Memory, Concurrency Slot을 배분하는 Resource Management 시스템&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;ATO&lt;/strong&gt; (Automatic Table Optimization)&lt;/td&gt;
+          &lt;td&gt;Query Pattern을 분석하여 Distribution Key/Sort Key를 자동 최적화하는 AI 기반 기능&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;RPU&lt;/strong&gt; (Redshift Processing Unit)&lt;/td&gt;
+          &lt;td&gt;Redshift Serverless의 Compute 단위. 1 RPU = 16GB Memory&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Concurrency Scaling&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Workload 급증 시 Transient Cluster를 자동 추가하여 Throughput을 확장하는 기능&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;SQA&lt;/strong&gt; (Short Query Acceleration)&lt;/td&gt;
+          &lt;td&gt;짧은 Query를 전용 Queue(Service Class 14)에서 우선 실행하여 긴 Query에 Block되지 않게 하는 기능&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;MVCC&lt;/strong&gt; (Multi-Version Concurrency Control)&lt;/td&gt;
+          &lt;td&gt;각 Transaction이 데이터의 Snapshot을 기반으로 동작하여 Read/Write Blocking을 최소화하는 동시성 제어&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;들어가며&#34;&gt;들어가며&lt;/h2&gt;
+&lt;p&gt;Amazon Redshift는 2012년 re:Invent에서 발표되어 2013년 2월 15일 GA(General Availability)된 이후, Cloud Data Warehouse 시장의 판도를 바꾸어 놓았다. 2025년 기준 수만 개의 조직이 Petabyte 규모의 데이터를 Redshift 위에서 분석하고 있다.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

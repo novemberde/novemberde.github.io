@@ -1,0 +1,570 @@
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>BigQuery vs Redshift: Cloud Data Warehouse 선택을 위한 비교 | Novemberde's Blog</title><meta name=keywords content="bigquery,redshift,gcp,aws,data-warehouse,cloud,data-engineering"><meta name=description content="용어 사전
+이 글에서 자주 등장하는 핵심 용어를 먼저 정리한다.
+
+  
+      
+          용어
+          설명
+      
+  
+  
+      
+          MPP (Massively Parallel Processing)
+          다수의 Node가 Query를 분할하여 동시에 처리하는 Architecture
+      
+      
+          Slot
+          BigQuery의 Compute 단위. 가상 CPU + Memory + I/O를 추상화한 Resource Unit
+      
+      
+          RPU (Redshift Processing Unit)
+          Redshift Serverless의 Compute 단위. 1 RPU = 16GB Memory
+      
+      
+          Columnar Storage
+          데이터를 Row가 아닌 Column 단위로 저장하는 방식. 분석 Query에서 필요한 Column만 읽어 I/O 절감
+      
+      
+          Distribution Key
+          Redshift에서 데이터를 Node 간에 분산하는 기준 Column. JOIN Performance에 직접 영향
+      
+      
+          Sort Key
+          Redshift에서 데이터를 디스크에 물리적으로 정렬하는 기준 Column. Filter Performance에 직접 영향
+      
+      
+          Partitioning
+          BigQuery에서 Table을 날짜/정수 범위 등으로 논리 분할. Scan 범위를 제한하여 비용과 속도 모두 개선
+      
+      
+          Clustering
+          BigQuery에서 Partition 내 데이터를 특정 Column 기준으로 정렬. 최대 4개 Column 지정 가능
+      
+      
+          WLM (Workload Management)
+          Redshift의 Query Queue 관리 시스템. Query 종류별 Memory/Concurrency 배분
+      
+      
+          ATO (Automatic Table Optimization)
+          Redshift가 Query Pattern을 분석하여 Distribution Key/Sort Key를 자동 최적화하는 기능
+      
+      
+          Zero-ETL
+          Source Database → Data Warehouse로 데이터를 ETL Pipeline 없이 자동 복제하는 기능
+      
+      
+          Dry Run
+          BigQuery에서 Query를 실행하지 않고 Scan량과 예상 비용만 미리 확인하는 기능. 무료
+      
+      
+          AQUA (Advanced Query Accelerator)
+          Redshift RA3 Node에서 Storage Layer의 AWS 전용 Processor/FPGA로 사전 Filtering/Aggregation을 수행하는 가속기
+      
+      
+          Materialized View
+          Query 결과를 사전 계산하여 저장한 View. 반복 Query의 속도를 크게 개선
+      
+      
+          BI Engine
+          BigQuery의 In-memory Analysis Layer. Sub-second Response로 Dashboard를 가속
+      
+  
+
+
+들어가며
+Cloud Data Warehouse를 선택하는 일은 단순한 기술 비교가 아니다. 조직의 데이터 전략, 운영 문화, 그리고 장기적인 Cloud Roadmap에 깊이 관여하는 의사결정이다."><meta name=author content><link rel=canonical href=https://novemberde.github.io/post/2026/02/08/BigQuery-vs-Redshift-Deep-Dive-ko/><link crossorigin=anonymous href=/assets/css/stylesheet.min.5e0daff49f7f1352e101ab098a8b29f6c409e7846773104e7f0426bf6ab65ad9.css integrity="sha256-Xg2v9J9/E1LhAasJiosp9sQJ54RncxBOfwQmv2q2Wtk=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/assets/js/highlight.min.555af97124d54bb1457985dd081b8f5616a48103aafeb30ac89fde835d65aa6c.js integrity="sha256-VVr5cSTVS7FFeYXdCBuPVhakgQOq/rMKyJ/eg11lqmw=" onload=hljs.initHighlightingOnLoad()></script><link rel=icon href=https://novemberde.github.io/favicon.ico><link rel=icon type=image/png sizes=16x16 href=https://novemberde.github.io/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=https://novemberde.github.io/favicon-32x32.png><link rel=apple-touch-icon href=https://novemberde.github.io/apple-touch-icon.png><link rel=mask-icon href=https://novemberde.github.io/safari-pinned-tab.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><meta name=generator content="Hugo 0.155.3"><link rel=alternate hreflang=en href=https://novemberde.github.io/post/2026/02/08/BigQuery-vs-Redshift-Deep-Dive-ko/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:#1d1e20;--entry:#2e2e33;--primary:rgba(255, 255, 255, 0.84);--secondary:rgba(255, 255, 255, 0.56);--tertiary:rgba(255, 255, 255, 0.16);--content:rgba(255, 255, 255, 0.74);--hljs-bg:#2e2e33;--code-bg:#37383e;--border:#333}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><script type=module>
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+
+  
+  const isDark = document.body.classList.contains('dark');
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: isDark ? 'dark' : 'default'
+  });
+
+  
+  window.addEventListener('DOMContentLoaded', () => {
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.attributeName === 'class') {
+          const isDark = document.body.classList.contains('dark');
+          mermaid.initialize({
+            startOnLoad: true,
+            theme: isDark ? 'dark' : 'default'
+          });
+          
+          document.querySelectorAll('.mermaid').forEach((element) => {
+            element.removeAttribute('data-processed');
+          });
+          mermaid.run();
+        }
+      });
+    });
+
+    observer.observe(document.body, { attributes: true });
+  });
+</script><script async src="https://www.googletagmanager.com/gtag/js?id=G-9SF4VDQ4N0"></script><script>var doNotTrack=!1,dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes";if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-9SF4VDQ4N0")}</script><meta property="og:title" content="BigQuery vs Redshift: Cloud Data Warehouse 선택을 위한 비교"><meta property="og:description" content="용어 사전
+이 글에서 자주 등장하는 핵심 용어를 먼저 정리한다.
+
+  
+      
+          용어
+          설명
+      
+  
+  
+      
+          MPP (Massively Parallel Processing)
+          다수의 Node가 Query를 분할하여 동시에 처리하는 Architecture
+      
+      
+          Slot
+          BigQuery의 Compute 단위. 가상 CPU + Memory + I/O를 추상화한 Resource Unit
+      
+      
+          RPU (Redshift Processing Unit)
+          Redshift Serverless의 Compute 단위. 1 RPU = 16GB Memory
+      
+      
+          Columnar Storage
+          데이터를 Row가 아닌 Column 단위로 저장하는 방식. 분석 Query에서 필요한 Column만 읽어 I/O 절감
+      
+      
+          Distribution Key
+          Redshift에서 데이터를 Node 간에 분산하는 기준 Column. JOIN Performance에 직접 영향
+      
+      
+          Sort Key
+          Redshift에서 데이터를 디스크에 물리적으로 정렬하는 기준 Column. Filter Performance에 직접 영향
+      
+      
+          Partitioning
+          BigQuery에서 Table을 날짜/정수 범위 등으로 논리 분할. Scan 범위를 제한하여 비용과 속도 모두 개선
+      
+      
+          Clustering
+          BigQuery에서 Partition 내 데이터를 특정 Column 기준으로 정렬. 최대 4개 Column 지정 가능
+      
+      
+          WLM (Workload Management)
+          Redshift의 Query Queue 관리 시스템. Query 종류별 Memory/Concurrency 배분
+      
+      
+          ATO (Automatic Table Optimization)
+          Redshift가 Query Pattern을 분석하여 Distribution Key/Sort Key를 자동 최적화하는 기능
+      
+      
+          Zero-ETL
+          Source Database → Data Warehouse로 데이터를 ETL Pipeline 없이 자동 복제하는 기능
+      
+      
+          Dry Run
+          BigQuery에서 Query를 실행하지 않고 Scan량과 예상 비용만 미리 확인하는 기능. 무료
+      
+      
+          AQUA (Advanced Query Accelerator)
+          Redshift RA3 Node에서 Storage Layer의 AWS 전용 Processor/FPGA로 사전 Filtering/Aggregation을 수행하는 가속기
+      
+      
+          Materialized View
+          Query 결과를 사전 계산하여 저장한 View. 반복 Query의 속도를 크게 개선
+      
+      
+          BI Engine
+          BigQuery의 In-memory Analysis Layer. Sub-second Response로 Dashboard를 가속
+      
+  
+
+
+들어가며
+Cloud Data Warehouse를 선택하는 일은 단순한 기술 비교가 아니다. 조직의 데이터 전략, 운영 문화, 그리고 장기적인 Cloud Roadmap에 깊이 관여하는 의사결정이다."><meta property="og:type" content="article"><meta property="og:url" content="https://novemberde.github.io/post/2026/02/08/BigQuery-vs-Redshift-Deep-Dive-ko/"><meta property="article:section" content="post"><meta property="article:published_time" content="2026-02-08T10:00:00+00:00"><meta property="article:modified_time" content="2026-02-08T10:00:00+00:00"><meta property="og:site_name" content="Novemberde dev logs"><meta name=twitter:card content="summary"><meta name=twitter:title content="BigQuery vs Redshift: Cloud Data Warehouse 선택을 위한 비교"><meta name=twitter:description content="용어 사전
+이 글에서 자주 등장하는 핵심 용어를 먼저 정리한다.
+
+  
+      
+          용어
+          설명
+      
+  
+  
+      
+          MPP (Massively Parallel Processing)
+          다수의 Node가 Query를 분할하여 동시에 처리하는 Architecture
+      
+      
+          Slot
+          BigQuery의 Compute 단위. 가상 CPU + Memory + I/O를 추상화한 Resource Unit
+      
+      
+          RPU (Redshift Processing Unit)
+          Redshift Serverless의 Compute 단위. 1 RPU = 16GB Memory
+      
+      
+          Columnar Storage
+          데이터를 Row가 아닌 Column 단위로 저장하는 방식. 분석 Query에서 필요한 Column만 읽어 I/O 절감
+      
+      
+          Distribution Key
+          Redshift에서 데이터를 Node 간에 분산하는 기준 Column. JOIN Performance에 직접 영향
+      
+      
+          Sort Key
+          Redshift에서 데이터를 디스크에 물리적으로 정렬하는 기준 Column. Filter Performance에 직접 영향
+      
+      
+          Partitioning
+          BigQuery에서 Table을 날짜/정수 범위 등으로 논리 분할. Scan 범위를 제한하여 비용과 속도 모두 개선
+      
+      
+          Clustering
+          BigQuery에서 Partition 내 데이터를 특정 Column 기준으로 정렬. 최대 4개 Column 지정 가능
+      
+      
+          WLM (Workload Management)
+          Redshift의 Query Queue 관리 시스템. Query 종류별 Memory/Concurrency 배분
+      
+      
+          ATO (Automatic Table Optimization)
+          Redshift가 Query Pattern을 분석하여 Distribution Key/Sort Key를 자동 최적화하는 기능
+      
+      
+          Zero-ETL
+          Source Database → Data Warehouse로 데이터를 ETL Pipeline 없이 자동 복제하는 기능
+      
+      
+          Dry Run
+          BigQuery에서 Query를 실행하지 않고 Scan량과 예상 비용만 미리 확인하는 기능. 무료
+      
+      
+          AQUA (Advanced Query Accelerator)
+          Redshift RA3 Node에서 Storage Layer의 AWS 전용 Processor/FPGA로 사전 Filtering/Aggregation을 수행하는 가속기
+      
+      
+          Materialized View
+          Query 결과를 사전 계산하여 저장한 View. 반복 Query의 속도를 크게 개선
+      
+      
+          BI Engine
+          BigQuery의 In-memory Analysis Layer. Sub-second Response로 Dashboard를 가속
+      
+  
+
+
+들어가며
+Cloud Data Warehouse를 선택하는 일은 단순한 기술 비교가 아니다. 조직의 데이터 전략, 운영 문화, 그리고 장기적인 Cloud Roadmap에 깊이 관여하는 의사결정이다."><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://novemberde.github.io/post/"},{"@type":"ListItem","position":2,"name":"BigQuery vs Redshift: Cloud Data Warehouse 선택을 위한 비교","item":"https://novemberde.github.io/post/2026/02/08/BigQuery-vs-Redshift-Deep-Dive-ko/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"BigQuery vs Redshift: Cloud Data Warehouse 선택을 위한 비교","name":"BigQuery vs Redshift: Cloud Data Warehouse 선택을 위한 비교","description":"용어 사전 이 글에서 자주 등장하는 핵심 용어를 먼저 정리한다.\n용어 설명 MPP (Massively Parallel Processing) 다수의 Node가 Query를 분할하여 동시에 처리하는 Architecture Slot BigQuery의 Compute 단위. 가상 CPU + Memory + I/O를 추상화한 Resource Unit RPU (Redshift Processing Unit) Redshift Serverless의 Compute 단위. 1 RPU = 16GB Memory Columnar Storage 데이터를 Row가 아닌 Column 단위로 저장하는 방식. 분석 Query에서 필요한 Column만 읽어 I/O 절감 Distribution Key Redshift에서 데이터를 Node 간에 분산하는 기준 Column. JOIN Performance에 직접 영향 Sort Key Redshift에서 데이터를 디스크에 물리적으로 정렬하는 기준 Column. Filter Performance에 직접 영향 Partitioning BigQuery에서 Table을 날짜/정수 범위 등으로 논리 분할. Scan 범위를 제한하여 비용과 속도 모두 개선 Clustering BigQuery에서 Partition 내 데이터를 특정 Column 기준으로 정렬. 최대 4개 Column 지정 가능 WLM (Workload Management) Redshift의 Query Queue 관리 시스템. Query 종류별 Memory/Concurrency 배분 ATO (Automatic Table Optimization) Redshift가 Query Pattern을 분석하여 Distribution Key/Sort Key를 자동 최적화하는 기능 Zero-ETL Source Database → Data Warehouse로 데이터를 ETL Pipeline 없이 자동 복제하는 기능 Dry Run BigQuery에서 Query를 실행하지 않고 Scan량과 예상 비용만 미리 확인하는 기능. 무료 AQUA (Advanced Query Accelerator) Redshift RA3 Node에서 Storage Layer의 AWS 전용 Processor/FPGA로 사전 Filtering/Aggregation을 수행하는 가속기 Materialized View Query 결과를 사전 계산하여 저장한 View. 반복 Query의 속도를 크게 개선 BI Engine BigQuery의 In-memory Analysis Layer. Sub-second Response로 Dashboard를 가속 들어가며 Cloud Data Warehouse를 선택하는 일은 단순한 기술 비교가 아니다. 조직의 데이터 전략, 운영 문화, 그리고 장기적인 Cloud Roadmap에 깊이 관여하는 의사결정이다.\n","keywords":["bigquery","redshift","gcp","aws","data-warehouse","cloud","data-engineering"],"articleBody":"용어 사전 이 글에서 자주 등장하는 핵심 용어를 먼저 정리한다.\n용어 설명 MPP (Massively Parallel Processing) 다수의 Node가 Query를 분할하여 동시에 처리하는 Architecture Slot BigQuery의 Compute 단위. 가상 CPU + Memory + I/O를 추상화한 Resource Unit RPU (Redshift Processing Unit) Redshift Serverless의 Compute 단위. 1 RPU = 16GB Memory Columnar Storage 데이터를 Row가 아닌 Column 단위로 저장하는 방식. 분석 Query에서 필요한 Column만 읽어 I/O 절감 Distribution Key Redshift에서 데이터를 Node 간에 분산하는 기준 Column. JOIN Performance에 직접 영향 Sort Key Redshift에서 데이터를 디스크에 물리적으로 정렬하는 기준 Column. Filter Performance에 직접 영향 Partitioning BigQuery에서 Table을 날짜/정수 범위 등으로 논리 분할. Scan 범위를 제한하여 비용과 속도 모두 개선 Clustering BigQuery에서 Partition 내 데이터를 특정 Column 기준으로 정렬. 최대 4개 Column 지정 가능 WLM (Workload Management) Redshift의 Query Queue 관리 시스템. Query 종류별 Memory/Concurrency 배분 ATO (Automatic Table Optimization) Redshift가 Query Pattern을 분석하여 Distribution Key/Sort Key를 자동 최적화하는 기능 Zero-ETL Source Database → Data Warehouse로 데이터를 ETL Pipeline 없이 자동 복제하는 기능 Dry Run BigQuery에서 Query를 실행하지 않고 Scan량과 예상 비용만 미리 확인하는 기능. 무료 AQUA (Advanced Query Accelerator) Redshift RA3 Node에서 Storage Layer의 AWS 전용 Processor/FPGA로 사전 Filtering/Aggregation을 수행하는 가속기 Materialized View Query 결과를 사전 계산하여 저장한 View. 반복 Query의 속도를 크게 개선 BI Engine BigQuery의 In-memory Analysis Layer. Sub-second Response로 Dashboard를 가속 들어가며 Cloud Data Warehouse를 선택하는 일은 단순한 기술 비교가 아니다. 조직의 데이터 전략, 운영 문화, 그리고 장기적인 Cloud Roadmap에 깊이 관여하는 의사결정이다.\nGoogle Cloud의 BigQuery와 AWS의 Amazon Redshift는 각각 근본적으로 다른 설계 철학에서 출발했다. BigQuery는 Google 내부의 Dremel 논문에서 탄생한 Serverless 분석 엔진이고, Redshift는 ParAccel 기반의 MPP(Massively Parallel Processing) Cluster Architecture를 진화시킨 결과물이다.\n이 글에서는 두 시스템의 Architecture, Storage, Pricing, Performance, Scalability, Ecosystem, Security, ML/AI Integration은 물론, Operational Complexity와 Console/Developer Experience까지 깊이 있게 비교한다. 단순히 “어느 것이 더 좋은가\"가 아니라, 어떤 상황에서 어떤 선택이 합리적인가를 판단할 수 있는 Framework를 제시하고자 한다.\n1. Architecture: Serverless vs Cluster BigQuery: 완전 Serverless BigQuery의 Architecture를 이해하려면 먼저 Storage와 Compute의 완전 분리라는 핵심 원칙을 알아야 한다.\ngraph TB subgraph \"BigQuery Architecture\" direction TB A[User Query] --\u003e B[Query Orchestrator] B --\u003e C[Dremel Execution Engine] C --\u003e D1[Slot 1] C --\u003e D2[Slot 2] C --\u003e D3[Slot N...] D1 --\u003e E[Colossus Distributed Storage] D2 --\u003e E D3 --\u003e E end style B fill:#4285F4,color:#fff style C fill:#34A853,color:#fff style E fill:#FBBC04,color:#000 Dremel Execution Engine: Query를 Tree 구조로 분해하여 수천 개의 Worker에서 병렬 실행 Colossus: Google의 Distributed File System 위에 Capacitor Format으로 데이터 저장 Jupiter Network: 5세대 기준 13 Petabits/sec의 Bisectional Bandwidth로 Storage-Compute 간 데이터 이동 Borg: Cluster Management System이 Slot을 동적 할당 사용자는 Infrastructure를 전혀 인식하지 않는다. Query를 제출하면 BigQuery가 필요한 Compute Resource를 즉시 계산하고 할당한다.\nRedshift: MPP Cluster Redshift는 전통적인 MPP Architecture를 기반으로 하되, 최근 RA3 Node와 Serverless 옵션으로 유연성을 크게 개선했다.\ngraph TB subgraph \"Redshift Architecture\" direction TB A[User Query] --\u003e B[Leader Node] B --\u003e C1[Compute Node 1] B --\u003e C2[Compute Node 2] B --\u003e C3[Compute Node N] C1 --\u003e D[Redshift Managed Storage / S3] C2 --\u003e D C3 --\u003e D end subgraph \"Node Types\" E[DC2: Local SSD⚠ 2026.04 EOL] F[RA3: Managed Storage] G[Serverless: RPU Based] end style B fill:#FF9900,color:#000 style D fill:#232F3E,color:#fff Leader Node: Query Parsing, Execution Plan 수립, 결과 집계 Compute Node: 실제 데이터 처리. Node 유형에 따라 Local SSD(DC2) 또는 Managed Storage(RA3) 사용 RA3 Node: Storage-Compute 분리. 자주 접근하는 데이터는 Local SSD에 Cache Redshift Serverless: RPU(Redshift Processing Unit) 기반, Idle 시 비용 없음 Architecture 비교 요약 구분 BigQuery Redshift 기본 Model 완전 Serverless Cluster 기반 (+ Serverless 옵션) Storage-Compute 분리 태생적 분리 RA3 Node에서 분리 Resource 관리 자동 (Slot 기반) 수동 (Node 선택) 또는 자동 (Serverless) Query 최적화 Dynamic Execution Plan Static Execution Plan Infrastructure 가시성 없음 (Black Box) 높음 (Node, Cluster 직접 관리) 핵심 차이: BigQuery는 “얼마나 많은 데이터를 Scan하느냐\"가 비용의 핵심이고, Redshift는 “어떤 크기의 Cluster를 얼마나 오래 운영하느냐\"가 비용의 핵심이다.\n2. Internal Component 대칭 비교 두 시스템은 내부적으로 비슷한 역할의 Component를 전혀 다른 방식으로 구현하고 있다. 각 Layer를 1:1로 대응시키면 설계 철학의 차이가 선명하게 드러난다.\nColossus와 Capacitor의 상세 구조는 별도 글 “Colossus와 Capacitor: BigQuery를 지탱하는 Storage의 구조”에서 다룬다. Redshift의 내부 Architecture 상세 분석은 “Amazon Redshift의 내부 Architecture: ParAccel에서 Serverless까지”를 참고한다.\nComponent Map graph LR subgraph \"BigQuery\" direction TB A1[DremelExecution Engine] A2[BorgCluster Management] A3[JupiterNetwork Fabric] A4[ColossusDistributed File System] A5[CapacitorColumnar Format] end subgraph \"Redshift\" direction TB B1[Leader + Compute NodeMPP Engine] B2[Serverless RPU Allocatoror Manual Node Provisioning] B3[Nitro / ENAInstance Networking] B4[Managed Storage RMSS3-backed + SSD Cache] B5[Proprietary Columnar1MB Block + AZ64] end A1 -.-\u003e|대응| B1 A2 -.-\u003e|대응| B2 A3 -.-\u003e|대응| B3 A4 -.-\u003e|대응| B4 A5 -.-\u003e|대응| B5 style A1 fill:#4285F4,color:#fff style A4 fill:#34A853,color:#fff style B1 fill:#FF9900,color:#000 style B4 fill:#232F3E,color:#fff Layer 1: Execution Engine 구분 BigQuery (Dremel) Redshift (MPP Engine) 실행 구조 Tree 구조 (Root → Mixer → Leaf) 2-tier (Leader → Compute Node/Slice) 중간 집계 Mixer Node가 Streaming Merge 중간 Layer 없음. Leader가 최종 집계 Query Plan Dynamic (실행 중 재조정) Static (실행 전 확정) Code Generation 내부 실행 엔진 C++ 코드 생성 → GCC 컴파일 → Compute Node에 배포 SIMD 활용 내부 Vectorized Processing AVX2 Intrinsic 직접 작성 Compilation Cache - Local + Global Cache. 전용 Compilation Node 분리 Hardware 가속 - AQUA: RA3 전용 FPGA/Custom Silicon. Storage Layer에서 Scan/Filter/Aggregation 사전 처리 비용/성능 관점:\nDremel은 Tree 구조로 Aggregation을 분산하므로 대규모 Concurrent Query에 강하다. Mixer가 중간 집계를 담당하여 Root에 부하가 집중되지 않는다. Redshift는 Leader Node가 Single Point of Bottleneck이 될 수 있다. 반면 AQUA가 Storage Layer에서 사전 처리하여 데이터를 5%까지 줄인 후 Compute에 전달하므로, Scan-heavy Query에서는 큰 이점이 있다. Layer 2: Resource Management 구분 BigQuery (Borg) Redshift 할당 단위 Slot (가상 CPU) Slice (Provisioned) / RPU (Serverless) RPU 정의 - 1 RPU = 16GB Memory + 2 vCPU Scheduling Fair Scheduling (Project 간 균등 배분) WLM Queue (Priority 기반) Scaling 완전 자동. Query 단위로 Slot 할당/반환 Serverless: AI-driven 자동 / Provisioned: 수동 최소 단위 On-Demand: 공유 Pool / Edition: 100 Slot Serverless: 4 RPU (64GB) Fault Tolerance Borg가 자동 복구 Leader Node 장애 시 Cluster 재시작 필요 비용/성능 관점:\nBigQuery는 Query가 끝나면 Slot이 즉시 반환되므로 Idle 비용이 0이다 (On-Demand). Redshift Provisioned는 Cluster가 켜져 있는 동안 계속 과금된다. Serverless는 Idle 시 Compute 비용 0이지만, Cold Start Latency가 있다. Layer 3: Network 구분 BigQuery (Jupiter) Redshift (Nitro/ENA) Bandwidth Data Center Fabric: 13 Pb/s Instance Level: 최대 100 Gbps Scale 10만 Machine 간 All-to-all 통신 Node 간 통신 세대 5세대 Jupiter. OCS(Optical Circuit Switch)로 Spine 제거 Nitro System. ENA Express로 Single Flow 25 Gbps Storage 통신 Colossus D Server와 RDMA-like Direct 통신 S3 기반 Managed Storage와 HTTP/S3 API 비용/성능 관점:\nJupiter의 13 Pb/s는 Data Center 전체 Fabric 대역폭으로, BigQuery Slot이 Colossus에서 데이터를 읽을 때 Network이 Bottleneck이 되지 않는다. Redshift RA3의 Network은 Instance 수준이므로, 대량 Data Redistribution(잘못된 Distribution Key) 시 Network이 병목이 될 수 있다. Layer 4: Storage System 구분 BigQuery (Colossus) Redshift (Managed Storage/RMS) 기반 Google Distributed File System (GFS 후속) Amazon S3 + Local SSD Cache Scale Exabyte (단일 Cluster) RA3: 16PB, Serverless: 8PB Durability Zone 내 11 nines S3: 11 nines Replication Reed-Solomon RS(6,3) — 1.5x Overhead S3 내부 Replication (사용자 비가시) Caching Colossus가 자체 관리 RA3 Local SSD에 Hot Data 자동 Cache 비용 Active: $20/TB, Long-term: $10/TB $24.58/TB (Hot/Cold 구분 없이 동일) 비용/성능 관점:\nBigQuery는 90일 이상 미변경 데이터가 자동으로 **Long-term Storage($10/TB)**로 전환되어 Storage 비용이 절반이 된다. Redshift RMS는 Hot/Cold 구분 없이 동일 가격이므로, 대량의 Historical Data를 보관할 때 BigQuery가 유리하다. Layer 5: Columnar Format 구분 BigQuery (Capacitor) Redshift (Proprietary Columnar) Block Size 가변 고정 1MB Compressed Query ✅ Mini Query Processor로 직접 실행 제한적 (BYTEDICT Encoded String만) Row Reordering ✅ Approximation Algorithm. 평균 17% 절감 ❌ (Sort Key로 사용자가 수동 지정) 주요 Encoding Dictionary, RLE, Delta, Bit-Vector (자동 선택) AZ64, ZSTD, LZO, BYTEDICT (자동 또는 수동) AZ64 특징 - XOR Delta + SIMD 가속. 숫자/날짜에 최적화 Block Metadata Min/Max Statistics Zone Map (Min/Max per 1MB Block) Compression Ratio 일반적으로 3:1 ~ 10:1 일반적으로 2:1 ~ 6:1 Open Format ❌ ❌ 비용/성능 관점:\nCapacitor의 Compressed Query는 I/O와 CPU를 모두 절약한다. BigQuery On-Demand에서 Scan량 기반 과금이므로, 높은 Compression은 직접적인 비용 절감으로 이어진다. Redshift의 AZ64은 SIMD를 활용한 빠른 Decompression에 초점을 맞춘다. Scan 속도는 빠르지만, Decompress 후 처리하므로 Memory 사용량이 더 크다. Redshift의 Zone Map은 Sort Key와 밀접하게 연결된다. Sort Key를 잘 선택하면 Zone Map Pruning 효과가 극대화되지만, 잘못 선택하면 효과가 거의 없다. 3. Storage Format BigQuery: Capacitor BigQuery는 자체 개발한 Capacitor Columnar Format을 사용한다. Capacitor의 핵심 혁신은 다음과 같다:\nCompressed 상태에서 직접 Query: 데이터를 Decompress하지 않고도 Query 실행 가능. I/O와 CPU 모두 절약 Row Reordering 최적화: Approximation Algorithm으로 행 순서를 재배치하여 Compression 효율 극대화 단일 파일 내 Column 분리: 각 Column은 별도 File Block에 저장되지만, 하나의 Capacitor 파일로 관리 자동 Encoding 선택: 데이터 특성에 따라 Dictionary, Run-Length, Delta 등 최적 Encoding 자동 적용 Redshift: Columnar Storage Redshift는 표준 Columnar Storage 방식을 사용하며, 다양한 Compression Encoding을 지원한다:\nAZ64: Amazon 자체 개발 Compression Algorithm. 숫자/날짜 타입에 최적화 ZSTD (Zstandard): 범용 High Compression Algorithm LZO, BYTEDICT, RUNLENGTH 등 다양한 Encoding 옵션 ANALYZE COMPRESSION: 데이터 특성에 맞는 최적 Encoding을 자동 추천 graph LR subgraph \"BigQuery Capacitor\" A[Single Capacitor File] --\u003e B[Column A Block] A --\u003e C[Column B Block] A --\u003e D[Column C Block] B --\u003e E[Query on Compressed Data] end subgraph \"Redshift Columnar\" F[Table] --\u003e G[Column A: AZ64] F --\u003e H[Column B: ZSTD] F --\u003e I[Column C: LZO] G --\u003e J[Distributed by Slice] end style E fill:#34A853,color:#fff style J fill:#FF9900,color:#000 Distribution Key와 Sort Key Redshift에서는 Distribution Key와 Sort Key를 직접 지정해야 한다. 이 선택이 Query Performance에 결정적 영향을 미친다:\nEVEN Distribution: Round-Robin 방식. JOIN이 없는 Table에 적합 KEY Distribution: 특정 Column 값 기준 분산. 자주 JOIN하는 Table 간 Co-location ALL Distribution: 모든 Node에 전체 복제. 작은 Dimension Table에 적합 AUTO Distribution: Redshift가 데이터 크기와 Query Pattern을 분석하여 자동 선택 BigQuery는 이런 물리적 데이터 배치를 사용자가 지정할 필요가 없다. 대신 Partitioning(날짜, 정수 범위, Ingestion Time)과 Clustering(최대 4개 Column)으로 Query Performance를 최적화한다.\n구분 BigQuery Redshift Tuning Point Partitioning + Clustering Distribution Key + Sort Key 복잡도 낮음 (2가지 선택) 높음 (Distribution/Sort 전략 조합) 실수 비용 낮음 (자동 최적화) 높음 (잘못된 Key 선택 시 Performance 급감) DBA 의존도 낮음 높음 4. Pricing Pricing은 두 서비스를 비교할 때 가장 복잡하고 중요한 영역이다. 두 서비스 모두 여러 Pricing Model을 제공하며, Workload Pattern에 따라 최적 선택이 달라진다.\nBigQuery Pricing On-Demand (종량제)\n항목 가격 Query 처리 $6.25 / TB Scanned Free Query 매월 1TB Active Storage $0.02 / GB·월 (~$20/TB) Long-term Storage (90일+) $0.01 / GB·월 (~$10/TB) Streaming Insert $0.05 / GB Free Storage 매월 10GB Editions (Slot 기반)\nEdition Pay-as-you-go (Slot·시간) 1년 Commitment 3년 Commitment Standard $0.04 - - Enterprise $0.06 $0.048 $0.036 Enterprise Plus $0.10 $0.080 $0.060 최소 100 Slot 단위 구매 Slot Autoscaling 지원 Project 간 Slot 공유 가능 Redshift Pricing Provisioned Cluster\nNode Type On-Demand (시간당) 특징 DC2.large $0.25 160GB SSD, 2 vCPU ⚠️ DC2.8xlarge $4.80 2.56TB SSD, 32 vCPU ⚠️ RA3.xlplus $1.086 32TB Managed Storage RA3.4xlarge $3.26 128TB Managed Storage RA3.16xlarge $13.04 128TB Managed Storage ⚠️ DC2 Node는 2026년 4월 24일 End-of-Life 예정. 2025년 5월 15일 이후 신규 DC2 Cluster 생성 불가. RA3 또는 Serverless로 Migration 필요.\nServerless\n항목 가격 Compute RPU-시간당 $0.375 ~ $0.494 (Region별) Managed Storage $0.024 / GB·월 (~$24.58/TB) Minimum Billing 60초 Idle 시 Compute 비용 없음 Reserved Instance (1년/3년)\nOn-Demand 대비 최대 75% 절감 All Upfront, Partial Upfront, No Upfront 옵션 비용 Scenario 비교 graph TB subgraph \"Workload Pattern별 비용 효율\" A[\"간헐적 Ad-hoc Query→ BigQuery On-Demand 유리\"] B[\"예측 가능한 상시 Workload→ Redshift RI 유리\"] C[\"야간 Batch + 주간 Dashboard→ 양쪽 모두 경쟁적\"] D[\"대규모 Concurrent Users→ BigQuery Edition 유리\"] end style A fill:#4285F4,color:#fff style B fill:#FF9900,color:#000 style C fill:#9C27B0,color:#fff style D fill:#4285F4,color:#fff 실무 팁:\nBigQuery On-Demand는 Scan량 기준 과금이므로, Partitioning과 Clustering으로 Scan량을 줄이는 것이 비용 절감의 핵심 Redshift는 Cluster가 켜져 있는 동안 계속 과금되므로, 사용하지 않을 때 Cluster를 Pause하거나 Serverless로 전환하는 것이 효과적 월 $10,000 이상 지출 시 양쪽 모두 Commitment Discount를 적극 검토해야 한다 5. Performance Query Execution Model BigQuery:\nQuery를 Execution Tree로 분해 Dynamic Execution Plan: 실행 중에도 Resource 재배분 가능 Shuffle 단계에서 중간 결과를 Colossus에 기록 → Fault Tolerance 높음 Slot 단위로 Parallelism 제어 Redshift:\nLeader Node에서 Static Execution Plan 생성 각 Compute Node의 Slice에서 병렬 실행 Network Redistribution 비용이 Performance에 큰 영향 AQUA(Advanced Query Accelerator)로 Storage Layer에서 사전 Filtering/Aggregation Benchmark 관점 TPC-DS 99개 Query 기준 (2025년 자료):\n구분 BigQuery Redshift 총 비용 ~$511 ~$111 Simple Query (≤100GB) 양쪽 유사 양쪽 유사 Complex JOIN Query 우위 보통 Large Scan 보통 우위 (RI 활용 시) ⚠️ Benchmark는 참고 자료일 뿐이다. 실제 Performance는 Data Model, Query Pattern, Table Design, Optimization 수준에 따라 크게 달라진다. 반드시 실제 Workload로 PoC를 진행해야 한다.\nPerformance Optimization 전략 BigQuery Optimization:\nPartitioning: 날짜 기반 Partitioning으로 Scan 범위 제한 Clustering: 자주 Filtering하는 Column으로 Clustering SELECT * 회피: 필요한 Column만 선택 (Columnar Format의 이점 활용) Materialized View: 반복 Query 결과 사전 계산 BI Engine: Sub-second Response가 필요한 Dashboard에 활용 Redshift Optimization:\nDistribution Key 선정: JOIN 빈도가 높은 Column을 Distribution Key로 Sort Key 선정: WHERE 절에 자주 등장하는 Column을 Sort Key로 VACUUM \u0026 ANALYZE: 정기적 실행으로 Statistics 갱신 Concurrency Scaling: Peak 시간대 자동 확장 Automated Materialized View: ML 기반 자동 생성/관리 6. Scalability graph LR subgraph \"BigQuery Scaling Model\" A[Query 제출] --\u003e B{Auto Slot Allocation} B --\u003e C[수천 Slot까지Auto Scale] B --\u003e D[사용 후즉시 반환] end subgraph \"Redshift Scaling Model\" E[Workload 증가] --\u003e F{Scaling 방식 선택} F --\u003e G[Elastic ResizeNode 추가/제거] F --\u003e H[Concurrency Scaling일시적 확장] F --\u003e I[Classic ResizeNode Type 변경] end style C fill:#34A853,color:#fff style G fill:#FF9900,color:#000 style H fill:#FF9900,color:#000 구분 BigQuery Redshift Scaling 방식 완전 자동 수동/반자동 Scaling 속도 즉시 Elastic: 수 분, Classic: 수십 분 Scale-down 자동 (사용 후 반환) 수동 Resize 필요 Max Storage 사실상 무제한 RA3: 16PB, Serverless: 8PB Concurrent Query Slot Pool 기반 자동 관리 WLM Queue + Concurrency Scaling Zero-downtime 기본 제공 Elastic Resize에서만 최소 Downtime BigQuery의 강점: 예측 불가능한 Workload에서 빛난다. 갑자기 100명의 Analyst가 동시에 Dashboard를 열어도 자동 대응한다.\nRedshift의 강점: 예측 가능한 Workload에서 비용 효율이 높다. 필요한 만큼만 Provisioning하고, Reserved Instance로 비용을 크게 절감할 수 있다.\n7. Workload Management와 Concurrency BigQuery: Slot 기반 BigQuery는 Slot이라는 가상 CPU 단위로 Compute Resource를 관리한다.\nOn-Demand: Google이 관리하는 공유 Slot Pool 사용. 별도 설정 불필요 Edition: 조직 전용 Slot Reservation. Project/팀 간 Slot 배분 가능 Query Priority: INTERACTIVE: 즉시 실행 (기본값) BATCH: Idle Resource가 있을 때 실행. 실행 시작 전 대기 Timeout 24시간 Redshift: WLM (Workload Management) Redshift는 Queue 기반의 Workload Management System을 제공한다.\nAutomatic WLM (권장):\nML이 Query 특성을 분석하여 Memory와 Concurrency를 자동 조정 최대 8개 Queue (Service Class 100~107) Queue 간 Priority 설정 가능 Manual WLM:\n직접 Concurrent Query 수와 Memory 비율 설정 세밀한 제어가 필요한 경우 graph TB subgraph \"BigQuery Concurrency\" A[Query A: Interactive] --\u003e B[Slot Pool] C[Query B: Interactive] --\u003e B D[Query C: Batch] --\u003e B B --\u003e E[Auto Slot Allocation] end subgraph \"Redshift Concurrency\" F[ETL Query] --\u003e G[Queue 1: High Priority] H[Dashboard Query] --\u003e I[Queue 2: Normal Priority] J[Ad-hoc Query] --\u003e K[Queue 3: Low Priority] G --\u003e L[WLM Scheduler] I --\u003e L K --\u003e L end style B fill:#4285F4,color:#fff style L fill:#FF9900,color:#000 구분 BigQuery Redshift Management Model Slot 기반 Auto Allocation Queue 기반 Scheduling 설정 복잡도 낮음 중간~높음 Priority Control Interactive / Batch Multi-Queue + Priority Weight Peak 대응 Auto Slot Scaling Concurrency Scaling (추가 과금) Fine-grained Control 제한적 매우 세밀함 8. Ecosystem Integration GCP + BigQuery Ecosystem graph TB subgraph \"Data Ingestion\" A[Cloud Pub/Sub] --\u003e BQ[BigQuery] B[Cloud Dataflow] --\u003e BQ C[Cloud Data Fusion] --\u003e BQ D[Transfer Service] --\u003e BQ end subgraph \"Processing \u0026 Analytics\" BQ --\u003e E[Looker / Looker Studio] BQ --\u003e F[Connected Sheets] BQ --\u003e G[Dataproc - Spark] end subgraph \"ML/AI\" BQ --\u003e H[BigQuery ML] BQ --\u003e I[Vertex AI] H --\u003e I end subgraph \"Multi-Cloud\" BQ --\u003e J[BigQuery OmniRun on AWS/Azure] end style BQ fill:#4285F4,color:#fff style J fill:#34A853,color:#fff BigQuery Ecosystem 특징:\nPub/Sub → BigQuery Direct Subscription: 중간 처리 없이 Streaming Data 직접 적재 BigQuery Omni: AWS S3나 Azure Blob에 있는 데이터를 BigQuery SQL로 직접 Query BI Engine: BigQuery 위에서 Sub-second Response의 In-memory Analytics Layer Looker Studio: 무료 Dashboard/Reporting 도구와 Native Integration AWS + Redshift Ecosystem graph TB subgraph \"Data Ingestion\" A[Amazon Data Firehose] --\u003e RS[Redshift] B[AWS Glue] --\u003e RS C[DMS - Database Migration] --\u003e RS D[Zero-ETLAurora/DynamoDB] --\u003e RS end subgraph \"Data Lake\" RS --\u003e E[S3 Data Lake] F[Redshift Spectrum] --\u003e E RS --\u003e F G[Lake Formation] --\u003e E end subgraph \"Analytics \u0026 ML\" RS --\u003e H[QuickSight] RS --\u003e I[SageMaker] RS --\u003e J[Redshift ML] J --\u003e I end subgraph \"Apache Iceberg\" RS --\u003e K[Iceberg TableRead/Write] end style RS fill:#FF9900,color:#000 style D fill:#232F3E,color:#fff style K fill:#232F3E,color:#fff Redshift Ecosystem 특징:\nZero-ETL: Aurora MySQL/PostgreSQL, RDS for MySQL, DynamoDB에서 ETL Pipeline 없이 자동 복제 (DB 소스는 15초 이내, SaaS 소스는 최소 1시간 Lag) Redshift Spectrum: S3의 데이터를 직접 Query. Parquet, ORC, JSON, Avro, CSV 지원 Apache Iceberg Integration: ACID Transaction 지원 Data Lake 운영 SageMaker Unified Studio: ML 개발과 Analytics 도구를 단일 Interface에서 통합 Ecosystem 비교 요약 영역 BigQuery (GCP) Redshift (AWS) Real-time Ingestion Pub/Sub Direct Subscription Kinesis / Data Firehose Streaming Ingestion ETL/ELT Dataflow (Apache Beam) Glue (Spark 기반) Zero-ETL 제한적 Aurora, RDS for MySQL, DynamoDB 등 풍부 Data Lake BigQuery Omni (Multi-cloud) Spectrum + Iceberg BI Tool Looker Studio (무료) QuickSight (유료) ML Integration BigQuery ML + Vertex AI Redshift ML + SageMaker Multi-cloud BigQuery Omni 제한적 9. Data Sharing BigQuery Analytics Hub GCP Organization 내 및 Organization 간 Dataset Publishing/Subscription Cross-region Query: BigQuery Omni Region과 Google Cloud Region 간 Cross Join 가능 Marketplace 형태의 Data Sharing Platform Redshift Data Sharing 같은 AWS Account 또는 Cross-account 간 Data Sharing RA3 Node 또는 Serverless 필수: DC2에서는 Data Sharing 불가 별도의 데이터 복사 없이 Live Data 접근 AWS Data Exchange와 연동하여 외부 Data Marketplace 참여 가능 구분 BigQuery Redshift Sharing 단위 Dataset Database/Schema/Table Cross-account 지원 지원 (RA3 / Serverless) Multi-cloud BigQuery Omni로 가능 제한적 Marketplace Analytics Hub AWS Data Exchange 비용 Subscriber가 Query 비용 부담 Consumer Cluster의 Compute 사용 10. ML/AI Integration Data Warehouse에서 직접 ML을 실행하는 것은 Data Movement 비용을 줄이는 핵심 전략이다.\nBigQuery ML + Vertex AI graph LR A[BigQuery Data] --\u003e B[BigQuery MLTrain Model with SQL] B --\u003e C[Model Deployment] A --\u003e D[Export to Vertex AI] D --\u003e E[Advanced TrainingAutoML / Custom] E --\u003e F[Inference in BigQuery] style B fill:#4285F4,color:#fff style E fill:#34A853,color:#fff BigQuery ML 지원 Model:\nLinear/Logistic Regression, K-means, Time Series (ARIMA_PLUS) XGBoost, DNN, Wide \u0026 Deep 외부 TensorFlow Model Import LLM Remote Call (Gemini 등) -- BigQuery ML 예시: Customer Churn Prediction CREATE OR REPLACE MODEL `project.dataset.churn_model` OPTIONS(model_type='LOGISTIC_REG', input_label_cols=['is_churned']) AS SELECT user_tenure_days, total_purchases, last_login_days_ago, support_tickets_count, is_churned FROM `project.dataset.user_features`; Redshift ML + SageMaker graph LR A[Redshift Data] --\u003e B[Redshift MLCreate Model with SQL] B --\u003e C[SageMaker AutopilotAuto Training] C --\u003e D[Deploy Model to Redshift] D --\u003e E[Inference with SQL] style B fill:#FF9900,color:#000 style C fill:#232F3E,color:#fff Redshift ML:\nCREATE MODEL SQL 문으로 Model 생성 SageMaker Autopilot이 자동으로 Preprocessing, Training, Tuning 학습된 Model을 Redshift 내에서 SQL Function으로 호출 데이터가 S3를 경유하므로 대용량 Training에 적합 -- Redshift ML 예시: Customer Churn Prediction CREATE MODEL churn_model FROM ( SELECT user_tenure_days, total_purchases, last_login_days_ago, support_tickets_count, is_churned FROM user_features ) TARGET is_churned FUNCTION predict_churn IAM_ROLE 'arn:aws:iam::role/RedshiftML' SETTINGS ( S3_BUCKET 'my-ml-bucket' ); 구분 BigQuery ML Redshift ML Training 위치 BigQuery 내부 SageMaker (S3 경유) SQL Interface CREATE MODEL CREATE MODEL Model 다양성 높음 (DNN, XGBoost, ARIMA 등) SageMaker Autopilot 의존 Custom Model TF Model Import, Vertex AI 연동 SageMaker 전체 기능 활용 LLM Integration Gemini Remote Call 가능 Bedrock 연동 Data Movement 없음 S3로 Export 필요 11. Security와 Compliance 두 서비스 모두 Enterprise급 Security를 제공하지만, 접근 방식에 차이가 있다.\n구분 BigQuery Redshift 기본 Encryption At-rest + In-transit 자동 Encryption At-rest AES-256 자동 (2019.07 이후 Default) Key Management Cloud KMS / CMEK AWS KMS Fine-grained Access Control Column/Row Level Security Column/Row Level Security Network Isolation VPC Service Controls VPC 내 배포 Data Masking Cloud DLP Integration Dynamic Data Masking HIPAA BAA로 전체 GCP Cover 지원 SOC SOC 1/2/3 SOC 1/2/3 FedRAMP 지원 Serverless도 지원 (2025~) PCI-DSS 지원 지원 12. 최신 주요 Feature (2025-2026) BigQuery 신기능 BigQuery Advanced Runtime: 개선된 Query Execution Engine. Slot 효율성 향상 Conversational Analytics API (Preview → 2026.01 전면 공개): 자연어로 데이터 Query Gemini in Looker: LookML Code 및 Visualization 자동 생성 Partition Skew Detection: 불균형한 Partition 자동 분석 Redshift 신기능 Zero-ETL 확장: Aurora MySQL/PostgreSQL, RDS for MySQL, DynamoDB 기본 지원. Application 연동(Salesforce, ServiceNow, Zendesk)은 최소 1시간 Lag으로 특성이 다름 Multidimensional Data Layouts: 최대 10배 Price-performance 개선 Apache Iceberg Read/Write: Data Lake Query Performance 2배 향상 Distributed Warehouse Architecture: Workload Isolation을 위한 독립 Compute Serverless Reservations: Serverless Compute 비용 최대 24% 절감 13. Operational Complexity: Redshift는 BigQuery만큼 편해질 수 있는가 Redshift를 처음 접하는 팀이 가장 부담스러워하는 것은 Distribution Key, Sort Key, WLM Tuning이다. BigQuery에서는 존재하지 않는 개념이기 때문에, 이 차이만으로 BigQuery를 선택하는 조직도 적지 않다.\n그렇다면 2026년 현재, Redshift는 이 Gap을 얼마나 줄였을까?\nRedshift의 자동화 진화 Redshift는 최근 몇 년간 **Automatic Table Optimization (ATO)**을 중심으로 DBA 의존도를 적극적으로 낮추고 있다.\ntimeline title Redshift Automation 진화 2019 : Auto ANALYZE : Automatic WLM 2020 : Automatic Table Optimization (ATO) : AUTO Distribution / Sort Key 2022 : Automated Materialized Views (AutoMV) 2024 : Redshift Serverless AI-driven Scaling : Price-performance Slider 2025 : Multi-cluster Autonomics : Zero-config Serverless 2026 : AI-driven Query Optimization AUTO Distribution Style (Default):\n작은 Table은 ALL Distribution, 데이터가 커지면 자동으로 KEY 또는 EVEN으로 전환 ATO가 Query Pattern을 지속적으로 분석하여 Distribution Strategy를 재조정 30TB Dataset 기준 수동 Tuning 대비 ~24% Performance 개선 달성 (AWS 내부 Benchmark) AUTO Sort Key (Default):\nFilter/JOIN Predicate에 자주 등장하는 Column을 자동으로 Sort Key로 지정 Workload 변화에 따라 동적으로 Sort Key를 재조정 Background에서 실행되어 User Query에 영향 없음 Automatic WLM (Default):\nML이 Query 특성을 분석하여 Memory와 Concurrency를 자동 조정 Heavy Query는 낮은 Concurrency + 많은 Memory, Light Query는 높은 Concurrency Short Query Acceleration (SQA)으로 경량 Query 우선 처리 Automated Materialized View (AutoMV):\nML이 Workload를 분석하여 Materialized View를 자동 생성/유지/삭제 Cost-benefit Analysis로 실제 효과가 있는 View만 유지 Database당 최대 200개 그래도 남아 있는 Gap 자동화가 많이 진전되었지만, Zero-config를 지향하는 BigQuery와 동일 수준은 아직 아니다.\n영역 BigQuery Redshift Serverless (2026) Redshift Provisioned Data Distribution 개념 자체가 없음 AUTO (권장 Default) AUTO 또는 수동 Sort/Ordering Clustering (자동 권장) AUTO (ATO 관리) AUTO 또는 수동 Workload Management 완전 자동 완전 자동 Automatic (Default) 또는 수동 Scaling 완전 자동 AI-driven 자동 수동 판단 필요 VACUUM 불필요 대부분 자동 대부분 자동 Statistics Update 완전 자동 대부분 자동 대부분 자동 DBA 부담 수준 Near-zero Low (~15%) Moderate (~30%) 주의해야 할 함정들 Redshift Auto Tuning에 대해 알아야 할 현실적인 제약:\n명시적으로 지정한 Key는 ATO가 건드리지 않는다: 기존 Table에 DISTKEY(user_id)를 수동 지정했다면, ATO가 더 나은 Key를 발견해도 변경하지 않는다. Legacy Table이 많은 조직은 이 함정에 빠지기 쉽다.\nTable Swap 시 최적화 History가 초기화된다: Blue-Green Deployment 등에서 Table을 Swap하면 ATO가 새 Table을 처음부터 학습해야 한다.\n충분한 Query Volume이 있어야 학습한다: Query가 적은 개발 환경에서는 ATO 효과가 미미하다. Production 수준의 Traffic이 필요하다.\nAdvisor 권장 ≠ 최적: Redshift Advisor가 변경을 제안하지 않아도 현재 상태가 최적이라는 의미는 아니다. 수동 EXPLAIN 분석이 여전히 가치 있다.\n결론: Serverless를 쓰면 Gap은 줄어든다 quadrantChart title Operational Complexity vs Control x-axis Low Control --\u003e High Control y-axis Low Complexity --\u003e High Complexity BigQuery: [0.2, 0.15] Redshift Serverless: [0.4, 0.3] Redshift Provisioned: [0.8, 0.7] Redshift Serverless + AUTO 전략을 채택하면 BigQuery에 근접한 운영 경험을 얻을 수 있다. 하지만 “근접\"이지 “동일\"은 아니다.\nBigQuery는 Distribution이라는 개념 자체가 없다. 사용자가 잘못된 선택을 할 수 있는 여지가 원천 차단된다. Redshift는 AUTO가 Default이지만, 수동 개입의 여지가 항상 존재한다. 이것이 장점(Fine-tuning 가능)이자 단점(잘못 건드리면 악화)이다. 팀에 전문 DBA가 없고, 최소한의 운영 부담을 원한다면 BigQuery가 여전히 더 안전한 선택이다. 반면 AWS Ecosystem에 묶여 있다면, Redshift Serverless + 모든 설정 AUTO로 시작하여, Bottleneck이 발견될 때만 수동 개입하는 전략이 현실적이다.\n14. Console \u0026 Developer Experience 기술 선택만큼 중요한 것이 매일 사용하는 Console의 경험이다. Query를 작성하고, 결과를 확인하고, 비용을 관리하는 일상적 워크플로우에서 두 서비스는 뚜렷한 차이를 보인다.\nBigQuery Console (BigQuery Studio) graph TB subgraph \"BigQuery Studio\" A[SQL Editor] --\u003e B[Dry Run Cost Estimation] A --\u003e C[Gemini SQL Assist] D[Python Notebook] --\u003e E[BigQuery DataFrames] F[Data Canvas] --\u003e G[Visual DAG Builder] F --\u003e H[Natural Language Query] I[Conversational Analytics] --\u003e J[Chat Interface] end style B fill:#34A853,color:#fff style C fill:#4285F4,color:#fff style H fill:#4285F4,color:#fff 핵심 강점: 실행 전 비용 확인\nBigQuery Console의 가장 강력한 UX Feature는 Dry Run이다. Query를 작성하면 실행하기 전에 Scan할 데이터 양과 예상 비용을 즉시 보여준다. On-Demand Pricing에서 이 기능은 실수로 수백 달러를 쓰는 사고를 원천 방지한다.\n주요 Feature:\nFeature 설명 Dry Run Query 실행 전 Scan량/비용 자동 표시. 무료 Gemini SQL Assist AI 기반 SQL Autocomplete, 자연어 → SQL 변환 Data Canvas Gemini 기반 Visual Query Builder. DAG로 Workflow 시각화 Conversational Analytics Chat Interface로 자연어 데이터 분석 (2026.01 Preview 전면 공개) BigQuery Studio Notebook SQL + Python을 같은 Interface에서 실행. Colab Enterprise 기반 Scheduled Query Console에서 직접 Cron-like Query Scheduling Query History INFORMATION_SCHEMA.JOBS로 6개월간 보관 Looker Studio 연동 Query 결과에서 바로 Visualization 생성 Conversational Analytics (2026년 1월 Preview 전면 공개):\n더 이상 Allowlist 없이 누구나 사용 가능 최신 Gemini Model 기반, Multi-turn 대화로 데이터 분석 SQL/Python Code + Chart + Text를 함께 생성 Verified Query로 Business Logic 반영 가능 Redshift Console (Query Editor v2 + SageMaker Unified Studio) graph TB subgraph \"Redshift Console\" A[Query Editor v2] --\u003e B[Multi-tab Execution] A --\u003e C[Visual Explain Plan] A --\u003e D[Amazon Q SQL Assist] E[SQL Notebook] --\u003e F[Annotated Query Docs] G[SageMaker Unified Studio] --\u003e H[One-click Onboarding] G --\u003e I[AI Agent Notebook] end style C fill:#FF9900,color:#000 style D fill:#232F3E,color:#fff style I fill:#232F3E,color:#fff 핵심 강점: Visual Explain Plan\nRedshift Query Editor v2의 Explain Graph는 Query Execution Plan을 시각적으로 보여준다. Distribution Key 기반의 Data Redistribution, Sort Key 활용 여부, Scan 범위를 한눈에 파악할 수 있어, Performance Tuning에 직접적으로 도움된다.\nBigQuery도 Execution Graph를 제공하지만 Stage 단위의 시각화인 반면, Redshift는 Node/Slice 수준의 물리적 실행 경로까지 보여주므로 Tuning 관점에서는 Redshift가 더 상세하다.\n주요 Feature:\nFeature 설명 Query Editor v2 Multi-tab, Autocomplete, Concurrent Execution Visual Explain Plan Query Execution Plan을 Graph로 시각화 Amazon Q Generative SQL 자연어 → SQL 변환 (2025.02 Seoul Region 지원) SQL Notebook Query + Annotation 결합. .ipynb Format Export Chart Wizard Query 결과에서 Histogram, Bar, Area Chart 생성 Glue Data Catalog External Table 자동 Mounting, 별도 Schema 생성 불필요 SageMaker Unified Studio ML + Analytics 통합 환경. AI Agent 내장 (2025.11) Monitoring Dashboard RPU 사용량, Query Runtime, Connection 수 실시간 확인 SageMaker Unified Studio (2025년 하반기):\nOne-click Onboarding: Redshift, Athena, S3에서 바로 진입 AI Agent가 내장된 Notebook: 자연어로 Code/SQL 생성 SQL → Python으로 자연스럽게 전환하며 ML Model까지 개발 Trusted Identity Propagation으로 Cross-service SSO Console Experience 직접 비교 영역 BigQuery Studio Redshift Query Editor v2 비용 가시성 ✅ Dry Run으로 실행 전 비용 표시 ❌ 사전 비용 추정 없음 AI SQL Assist Gemini (BigQuery 전용) Amazon Q (Preview, Region 제한) 자연어 분석 Conversational Analytics (전면 공개) Amazon Q SQL (Preview) Execution Plan 시각화 ✅ Execution Graph (Stage별 시각화) ✅ Visual Explain Graph (Node/Slice별) Notebook SQL + Python 통합 (Colab 기반) SQL Notebook (.ipynb) Visual Query Builder Data Canvas (DAG 형태) 없음 Visualization Looker Studio 연동 Chart Wizard (기본) Onboarding 경험 즉시 시작 (Serverless) Cluster 설정 또는 Serverless 선택 필요 Scheduled Query Console 내장 EventBridge 또는 외부 도구 필요 Schema 탐색 Explorer Panel + Preview Glue Data Catalog 자동 Mounting 각 Console이 빛나는 순간 BigQuery Console이 더 나은 경우:\n처음 시작할 때 — 아무 설정 없이 바로 Query 실행 비용 민감한 Ad-hoc 분석 — Dry Run으로 실수 방지 Data Analyst가 자연어로 분석하고 싶을 때 — Conversational Analytics SQL과 Python을 오가며 작업할 때 — BigQuery Studio Notebook Redshift Console이 더 나은 경우:\nQuery Performance Tuning — Visual Explain Plan으로 병목 즉시 파악 AWS 서비스 통합 Workflow — Glue Catalog, SageMaker로 자연스럽게 전환 ML Pipeline 구축 — SageMaker Unified Studio에서 분석부터 Model 배포까지 One-stop 여러 Cluster/Workgroup을 동시에 작업 — Multi-tab으로 각각 연결 알려진 Pain Point BigQuery Console:\nStruct Column에서 Field 추가/삭제 시 Console/SQL로 불가. bq CLI 또는 API 필요 간혹 INSERT INTO ... LIMIT 0에서도 1TB Billing 되는 Bug 보고 CTE가 많은 Complex Query에서 “Resources exceeded” Error 발생 가능 Redshift Console:\nSingle Leader Node Bottleneck: Compute Node를 아무리 늘려도 Leader Node가 병목이 되면 Query Queuing 발생 Serverless Cold Start: Traffic Burst 시 S3에서 데이터를 Fetch하는 I/O Overhead Python UDF: 2025.11 신규 생성 중단, 2026.06.30 기존 UDF 실행도 중단 예정. Lambda UDF로 Migration 필요 15. 선택 가이드: 어떤 상황에서 무엇을 선택할 것인가 BigQuery를 선택해야 하는 경우 mindmap root((BigQuery)) Serverless 선호 Infrastructure 관리 최소화 DBA Resource 부족 가변적 Workload Ad-hoc 분석 중심 비정기적 대량 Query GCP Ecosystem Vertex AI 활용 Looker 사용 중 Multi-cloud BigQuery Omni AWS/Azure Data 접근 빠른 시작 PoC / Startup 즉시 사용 가능 구체적 Scenario:\nStartup/중소 규모: Infrastructure 관리 없이 바로 분석 시작. 종량제로 초기 비용 최소화 DBA 없는 팀: Distribution Key, Sort Key 개념 자체가 없으므로 운영 실수 원천 차단 Data Science 팀: BigQuery ML로 SQL 기반 ML. Vertex AI로 고급 Model 전환 용이 비용 민감한 Ad-hoc 분석: Dry Run으로 실행 전 비용 확인. 실수로 대형 Query를 날리는 사고 방지 Multi-cloud 전략: BigQuery Omni로 AWS/Azure Data를 단일 SQL로 분석 Concurrent User가 많은 환경: Auto Scaling으로 수백 명의 Analyst 동시 지원 Redshift를 선택해야 하는 경우 mindmap root((Redshift)) AWS 올인 S3 Data Lake Aurora/DynamoDB 연동 예측 가능한 Workload 정기 ETL/ELT 고정 Dashboard 세밀한 제어 DBA 팀 존재 WLM Tuning 가능 Zero-ETL Aurora 실시간 동기화 DynamoDB 분석 Data Lake Integration Spectrum + Iceberg Open Format 선호 구체적 Scenario:\nAWS 중심 조직: Zero-ETL로 Aurora/DynamoDB Data를 Pipeline 없이 분석 전문 DBA가 있는 팀: Distribution Key, Sort Key, WLM Tuning으로 극한 Performance 달성 Performance Tuning이 핵심인 환경: Visual Explain Plan으로 Bottleneck을 정밀 분석 Data Lake 중심: Spectrum + Iceberg로 S3 기반 Lakehouse Architecture 구현 비용 예측이 중요한 기업: Reserved Instance로 장기 비용을 정확히 예측 DBA 없이 AWS에 묶인 경우: Redshift Serverless + 모든 설정 AUTO로 시작, Bottleneck 시에만 수동 개입 마치며 BigQuery와 Redshift는 각각의 영역에서 최고 수준의 Cloud Data Warehouse다. 기술적 우열보다 중요한 것은 조직의 맥락이다.\n첫째, 기존 Cloud Ecosystem을 존중하라. AWS를 주력으로 사용하는 조직이 BigQuery만을 위해 GCP를 도입하는 것은 운영 복잡성을 크게 높인다. 반대도 마찬가지다. Zero-ETL, Spectrum, BigQuery Omni 같은 기능들은 각자의 Ecosystem 안에서 빛을 발한다.\n둘째, 팀의 역량과 문화를 고려하라. Redshift는 세밀한 Tuning으로 극한 Performance를 끌어낼 수 있지만, 그만큼 전문 인력이 필요하다. BigQuery는 Serverless Model로 운영 부담을 줄이지만, Fine-grained Control을 포기해야 한다.\n셋째, Workload Pattern을 분석하라. 가변적이고 예측 불가능한 Pattern이면 BigQuery의 On-Demand가, 안정적이고 예측 가능한 Pattern이면 Redshift의 Reserved Instance가 비용 효율적이다.\n넷째, 운영 부담과 Developer Experience를 과소평가하지 마라. Distribution Key를 잘못 선택하면 Performance가 급감하고, Dry Run 없이 Query를 실행하면 예상치 못한 비용이 발생한다. 이런 일상적 마찰은 장기적으로 팀의 생산성에 큰 영향을 미친다. BigQuery는 이 마찰을 원천 차단하는 설계이고, Redshift Serverless + AUTO는 마찰을 최소화하되 완전히 제거하지는 못한다.\n어느 쪽을 선택하든, 결국 중요한 것은 데이터로부터 가치를 얼마나 빠르고 안정적으로 뽑아내느냐이다. 이 글이 그 판단에 도움이 되기를 바란다.\nReferences Inside Capacitor, BigQuery’s next-generation columnar storage format BigQuery pricing Amazon Redshift pricing BigQuery vs Redshift: A comprehensive comparison in 2025 Redshift vs BigQuery: Cloud Data Warehouse Comparison 2026 BigQuery vs. Redshift Comparison: 2026 Deep-Dive Amazon Redshift zero-ETL integrations Introduction to BigQuery Omni BigQuery ML documentation Amazon Redshift ML Automatic table optimization - Amazon Redshift Implementing automatic WLM - Amazon Redshift Amazon Redshift Serverless AI-driven scaling and optimization Amazon Redshift autonomics for multi-cluster environments Conversational Analytics in BigQuery BigQuery Data Canvas Amazon Q generative SQL for Amazon Redshift SageMaker Unified Studio notebooks with AI agent Estimate and control costs - BigQuery Jupiter network: 13 Petabits/sec Query plan and timeline - BigQuery DC2 End-of-Life notice - Amazon Redshift Amazon Data Firehose (formerly Kinesis Data Firehose) Zero-ETL latency characteristics Redshift encryption at rest (default since 2019) Python UDF end of support (June 2026) ","wordCount":"5110","inLanguage":"en","datePublished":"2026-02-08T10:00:00Z","dateModified":"2026-02-08T10:00:00Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://novemberde.github.io/post/2026/02/08/BigQuery-vs-Redshift-Deep-Dive-ko/"},"publisher":{"@type":"Organization","name":"Novemberde's Blog","logo":{"@type":"ImageObject","url":"https://novemberde.github.io/favicon.ico"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://novemberde.github.io/ accesskey=h title="Novemberde's Blog (Alt + H)">Novemberde's Blog</a>
+<span class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)">
+<svg id="moon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+<svg id="sun" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button><ul class=lang-switch><li>|</li></ul></span></div><ul id=menu><li><a href=https://novemberde.github.io/search title="Search (Alt + /)" accesskey=/><span>Search</span></a></li><li><a href=https://novemberde.github.io/post/ title=Post><span>Post</span></a></li><li><a href=https://novemberde.github.io/about title=About><span>About</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://novemberde.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://novemberde.github.io/post/>Posts</a></div><h1 class=post-title>BigQuery vs Redshift: Cloud Data Warehouse 선택을 위한 비교</h1><div class=post-meta>February 8, 2026 24 min</div></header><div class=post-content><h2 id=용어-사전>용어 사전<a hidden class=anchor aria-hidden=true href=#용어-사전>#</a></h2><p>이 글에서 자주 등장하는 핵심 용어를 먼저 정리한다.</p><table><thead><tr><th>용어</th><th>설명</th></tr></thead><tbody><tr><td><strong>MPP</strong> (Massively Parallel Processing)</td><td>다수의 Node가 Query를 분할하여 동시에 처리하는 Architecture</td></tr><tr><td><strong>Slot</strong></td><td>BigQuery의 Compute 단위. 가상 CPU + Memory + I/O를 추상화한 Resource Unit</td></tr><tr><td><strong>RPU</strong> (Redshift Processing Unit)</td><td>Redshift Serverless의 Compute 단위. 1 RPU = 16GB Memory</td></tr><tr><td><strong>Columnar Storage</strong></td><td>데이터를 Row가 아닌 Column 단위로 저장하는 방식. 분석 Query에서 필요한 Column만 읽어 I/O 절감</td></tr><tr><td><strong>Distribution Key</strong></td><td>Redshift에서 데이터를 Node 간에 분산하는 기준 Column. JOIN Performance에 직접 영향</td></tr><tr><td><strong>Sort Key</strong></td><td>Redshift에서 데이터를 디스크에 물리적으로 정렬하는 기준 Column. Filter Performance에 직접 영향</td></tr><tr><td><strong>Partitioning</strong></td><td>BigQuery에서 Table을 날짜/정수 범위 등으로 논리 분할. Scan 범위를 제한하여 비용과 속도 모두 개선</td></tr><tr><td><strong>Clustering</strong></td><td>BigQuery에서 Partition 내 데이터를 특정 Column 기준으로 정렬. 최대 4개 Column 지정 가능</td></tr><tr><td><strong>WLM</strong> (Workload Management)</td><td>Redshift의 Query Queue 관리 시스템. Query 종류별 Memory/Concurrency 배분</td></tr><tr><td><strong>ATO</strong> (Automatic Table Optimization)</td><td>Redshift가 Query Pattern을 분석하여 Distribution Key/Sort Key를 자동 최적화하는 기능</td></tr><tr><td><strong>Zero-ETL</strong></td><td>Source Database → Data Warehouse로 데이터를 ETL Pipeline 없이 자동 복제하는 기능</td></tr><tr><td><strong>Dry Run</strong></td><td>BigQuery에서 Query를 실행하지 않고 Scan량과 예상 비용만 미리 확인하는 기능. 무료</td></tr><tr><td><strong>AQUA</strong> (Advanced Query Accelerator)</td><td>Redshift RA3 Node에서 Storage Layer의 AWS 전용 Processor/FPGA로 사전 Filtering/Aggregation을 수행하는 가속기</td></tr><tr><td><strong>Materialized View</strong></td><td>Query 결과를 사전 계산하여 저장한 View. 반복 Query의 속도를 크게 개선</td></tr><tr><td><strong>BI Engine</strong></td><td>BigQuery의 In-memory Analysis Layer. Sub-second Response로 Dashboard를 가속</td></tr></tbody></table><hr><h2 id=들어가며>들어가며<a hidden class=anchor aria-hidden=true href=#들어가며>#</a></h2><p>Cloud Data Warehouse를 선택하는 일은 단순한 기술 비교가 아니다. 조직의 데이터 전략, 운영 문화, 그리고 장기적인 Cloud Roadmap에 깊이 관여하는 의사결정이다.</p><p>Google Cloud의 <strong>BigQuery</strong>와 AWS의 <strong>Amazon Redshift</strong>는 각각 근본적으로 다른 설계 철학에서 출발했다. BigQuery는 Google 내부의 Dremel 논문에서 탄생한 Serverless 분석 엔진이고, Redshift는 ParAccel 기반의 MPP(Massively Parallel Processing) Cluster Architecture를 진화시킨 결과물이다.</p><p>이 글에서는 두 시스템의 Architecture, Storage, Pricing, Performance, Scalability, Ecosystem, Security, ML/AI Integration은 물론, <strong>Operational Complexity</strong>와 <strong>Console/Developer Experience</strong>까지 깊이 있게 비교한다. 단순히 &ldquo;어느 것이 더 좋은가"가 아니라, <strong>어떤 상황에서 어떤 선택이 합리적인가</strong>를 판단할 수 있는 Framework를 제시하고자 한다.</p><hr><h2 id=1-architecture-serverless-vs-cluster>1. Architecture: Serverless vs Cluster<a hidden class=anchor aria-hidden=true href=#1-architecture-serverless-vs-cluster>#</a></h2><h3 id=bigquery-완전-serverless>BigQuery: 완전 Serverless<a hidden class=anchor aria-hidden=true href=#bigquery-완전-serverless>#</a></h3><p>BigQuery의 Architecture를 이해하려면 먼저 <strong>Storage와 Compute의 완전 분리</strong>라는 핵심 원칙을 알아야 한다.</p><pre class=mermaid>graph TB
+    subgraph &#34;BigQuery Architecture&#34;
+        direction TB
+        A[User Query] --&gt; B[Query Orchestrator]
+        B --&gt; C[Dremel Execution Engine]
+        C --&gt; D1[Slot 1]
+        C --&gt; D2[Slot 2]
+        C --&gt; D3[Slot N...]
+        D1 --&gt; E[Colossus Distributed Storage]
+        D2 --&gt; E
+        D3 --&gt; E
+    end
+
+    style B fill:#4285F4,color:#fff
+    style C fill:#34A853,color:#fff
+    style E fill:#FBBC04,color:#000
+</pre><ul><li><strong>Dremel Execution Engine</strong>: Query를 Tree 구조로 분해하여 수천 개의 Worker에서 병렬 실행</li><li><strong>Colossus</strong>: Google의 Distributed File System 위에 Capacitor Format으로 데이터 저장</li><li><strong>Jupiter Network</strong>: 5세대 기준 13 Petabits/sec의 Bisectional Bandwidth로 Storage-Compute 간 데이터 이동</li><li><strong>Borg</strong>: Cluster Management System이 Slot을 동적 할당</li></ul><p>사용자는 Infrastructure를 전혀 인식하지 않는다. Query를 제출하면 BigQuery가 필요한 Compute Resource를 즉시 계산하고 할당한다.</p><h3 id=redshift-mpp-cluster>Redshift: MPP Cluster<a hidden class=anchor aria-hidden=true href=#redshift-mpp-cluster>#</a></h3><p>Redshift는 전통적인 MPP Architecture를 기반으로 하되, 최근 <strong>RA3 Node</strong>와 <strong>Serverless</strong> 옵션으로 유연성을 크게 개선했다.</p><pre class=mermaid>graph TB
+    subgraph &#34;Redshift Architecture&#34;
+        direction TB
+        A[User Query] --&gt; B[Leader Node]
+        B --&gt; C1[Compute Node 1]
+        B --&gt; C2[Compute Node 2]
+        B --&gt; C3[Compute Node N]
+        C1 --&gt; D[Redshift Managed Storage / S3]
+        C2 --&gt; D
+        C3 --&gt; D
+    end
+
+    subgraph &#34;Node Types&#34;
+        E[DC2: Local SSD&lt;br/&gt;⚠ 2026.04 EOL]
+        F[RA3: Managed Storage]
+        G[Serverless: RPU Based]
+    end
+
+    style B fill:#FF9900,color:#000
+    style D fill:#232F3E,color:#fff
+</pre><ul><li><strong>Leader Node</strong>: Query Parsing, Execution Plan 수립, 결과 집계</li><li><strong>Compute Node</strong>: 실제 데이터 처리. Node 유형에 따라 Local SSD(DC2) 또는 Managed Storage(RA3) 사용</li><li><strong>RA3 Node</strong>: Storage-Compute 분리. 자주 접근하는 데이터는 Local SSD에 Cache</li><li><strong>Redshift Serverless</strong>: RPU(Redshift Processing Unit) 기반, Idle 시 비용 없음</li></ul><h3 id=architecture-비교-요약>Architecture 비교 요약<a hidden class=anchor aria-hidden=true href=#architecture-비교-요약>#</a></h3><table><thead><tr><th>구분</th><th>BigQuery</th><th>Redshift</th></tr></thead><tbody><tr><td>기본 Model</td><td>완전 Serverless</td><td>Cluster 기반 (+ Serverless 옵션)</td></tr><tr><td>Storage-Compute 분리</td><td>태생적 분리</td><td>RA3 Node에서 분리</td></tr><tr><td>Resource 관리</td><td>자동 (Slot 기반)</td><td>수동 (Node 선택) 또는 자동 (Serverless)</td></tr><tr><td>Query 최적화</td><td>Dynamic Execution Plan</td><td>Static Execution Plan</td></tr><tr><td>Infrastructure 가시성</td><td>없음 (Black Box)</td><td>높음 (Node, Cluster 직접 관리)</td></tr></tbody></table><p><strong>핵심 차이</strong>: BigQuery는 &ldquo;얼마나 많은 데이터를 Scan하느냐"가 비용의 핵심이고, Redshift는 &ldquo;어떤 크기의 Cluster를 얼마나 오래 운영하느냐"가 비용의 핵심이다.</p><hr><h2 id=2-internal-component-대칭-비교>2. Internal Component 대칭 비교<a hidden class=anchor aria-hidden=true href=#2-internal-component-대칭-비교>#</a></h2><p>두 시스템은 내부적으로 비슷한 역할의 Component를 전혀 다른 방식으로 구현하고 있다. 각 Layer를 1:1로 대응시키면 설계 철학의 차이가 선명하게 드러난다.</p><blockquote><p>Colossus와 Capacitor의 상세 구조는 별도 글 <a href=/post/2026/02/08/colossus-capacitor-bigquery-internals-ko/>&ldquo;Colossus와 Capacitor: BigQuery를 지탱하는 Storage의 구조&rdquo;</a>에서 다룬다. Redshift의 내부 Architecture 상세 분석은 <a href=/post/2026/02/08/redshift-internals-architecture-ko/>&ldquo;Amazon Redshift의 내부 Architecture: ParAccel에서 Serverless까지&rdquo;</a>를 참고한다.</p></blockquote><h3 id=component-map>Component Map<a hidden class=anchor aria-hidden=true href=#component-map>#</a></h3><pre class=mermaid>graph LR
+    subgraph &#34;BigQuery&#34;
+        direction TB
+        A1[Dremel&lt;br/&gt;Execution Engine]
+        A2[Borg&lt;br/&gt;Cluster Management]
+        A3[Jupiter&lt;br/&gt;Network Fabric]
+        A4[Colossus&lt;br/&gt;Distributed File System]
+        A5[Capacitor&lt;br/&gt;Columnar Format]
+    end
+
+    subgraph &#34;Redshift&#34;
+        direction TB
+        B1[Leader + Compute Node&lt;br/&gt;MPP Engine]
+        B2[Serverless RPU Allocator&lt;br/&gt;or Manual Node Provisioning]
+        B3[Nitro / ENA&lt;br/&gt;Instance Networking]
+        B4[Managed Storage RMS&lt;br/&gt;S3-backed + SSD Cache]
+        B5[Proprietary Columnar&lt;br/&gt;1MB Block + AZ64]
+    end
+
+    A1 -.-&gt;|대응| B1
+    A2 -.-&gt;|대응| B2
+    A3 -.-&gt;|대응| B3
+    A4 -.-&gt;|대응| B4
+    A5 -.-&gt;|대응| B5
+
+    style A1 fill:#4285F4,color:#fff
+    style A4 fill:#34A853,color:#fff
+    style B1 fill:#FF9900,color:#000
+    style B4 fill:#232F3E,color:#fff
+</pre><h3 id=layer-1-execution-engine>Layer 1: Execution Engine<a hidden class=anchor aria-hidden=true href=#layer-1-execution-engine>#</a></h3><table><thead><tr><th>구분</th><th>BigQuery (Dremel)</th><th>Redshift (MPP Engine)</th></tr></thead><tbody><tr><td>실행 구조</td><td><strong>Tree 구조</strong> (Root → Mixer → Leaf)</td><td><strong>2-tier</strong> (Leader → Compute Node/Slice)</td></tr><tr><td>중간 집계</td><td>Mixer Node가 Streaming Merge</td><td>중간 Layer 없음. Leader가 최종 집계</td></tr><tr><td>Query Plan</td><td><strong>Dynamic</strong> (실행 중 재조정)</td><td><strong>Static</strong> (실행 전 확정)</td></tr><tr><td>Code Generation</td><td>내부 실행 엔진</td><td><strong>C++ 코드 생성 → GCC 컴파일</strong> → Compute Node에 배포</td></tr><tr><td>SIMD 활용</td><td>내부 Vectorized Processing</td><td><strong>AVX2 Intrinsic</strong> 직접 작성</td></tr><tr><td>Compilation Cache</td><td>-</td><td>Local + Global Cache. 전용 Compilation Node 분리</td></tr><tr><td>Hardware 가속</td><td>-</td><td><strong>AQUA</strong>: RA3 전용 FPGA/Custom Silicon. Storage Layer에서 Scan/Filter/Aggregation 사전 처리</td></tr></tbody></table><p><strong>비용/성능 관점</strong>:</p><ul><li>Dremel은 Tree 구조로 Aggregation을 분산하므로 <strong>대규모 Concurrent Query에 강하다</strong>. Mixer가 중간 집계를 담당하여 Root에 부하가 집중되지 않는다.</li><li>Redshift는 Leader Node가 Single Point of Bottleneck이 될 수 있다. 반면 <strong>AQUA가 Storage Layer에서 사전 처리</strong>하여 데이터를 5%까지 줄인 후 Compute에 전달하므로, Scan-heavy Query에서는 큰 이점이 있다.</li></ul><h3 id=layer-2-resource-management>Layer 2: Resource Management<a hidden class=anchor aria-hidden=true href=#layer-2-resource-management>#</a></h3><table><thead><tr><th>구분</th><th>BigQuery (Borg)</th><th>Redshift</th></tr></thead><tbody><tr><td>할당 단위</td><td><strong>Slot</strong> (가상 CPU)</td><td><strong>Slice</strong> (Provisioned) / <strong>RPU</strong> (Serverless)</td></tr><tr><td>RPU 정의</td><td>-</td><td>1 RPU = 16GB Memory + 2 vCPU</td></tr><tr><td>Scheduling</td><td><strong>Fair Scheduling</strong> (Project 간 균등 배분)</td><td><strong>WLM Queue</strong> (Priority 기반)</td></tr><tr><td>Scaling</td><td>완전 자동. Query 단위로 Slot 할당/반환</td><td>Serverless: AI-driven 자동 / Provisioned: 수동</td></tr><tr><td>최소 단위</td><td>On-Demand: 공유 Pool / Edition: 100 Slot</td><td>Serverless: 4 RPU (64GB)</td></tr><tr><td>Fault Tolerance</td><td>Borg가 자동 복구</td><td>Leader Node 장애 시 Cluster 재시작 필요</td></tr></tbody></table><p><strong>비용/성능 관점</strong>:</p><ul><li>BigQuery는 Query가 끝나면 Slot이 즉시 반환되므로 <strong>Idle 비용이 0</strong>이다 (On-Demand).</li><li>Redshift Provisioned는 Cluster가 켜져 있는 동안 계속 과금된다. Serverless는 Idle 시 Compute 비용 0이지만, <strong>Cold Start Latency</strong>가 있다.</li></ul><h3 id=layer-3-network>Layer 3: Network<a hidden class=anchor aria-hidden=true href=#layer-3-network>#</a></h3><table><thead><tr><th>구분</th><th>BigQuery (Jupiter)</th><th>Redshift (Nitro/ENA)</th></tr></thead><tbody><tr><td>Bandwidth</td><td>Data Center Fabric: <strong>13 Pb/s</strong></td><td>Instance Level: 최대 <strong>100 Gbps</strong></td></tr><tr><td>Scale</td><td>10만 Machine 간 All-to-all 통신</td><td>Node 간 통신</td></tr><tr><td>세대</td><td>5세대 Jupiter. OCS(Optical Circuit Switch)로 Spine 제거</td><td>Nitro System. ENA Express로 Single Flow 25 Gbps</td></tr><tr><td>Storage 통신</td><td>Colossus D Server와 RDMA-like Direct 통신</td><td>S3 기반 Managed Storage와 HTTP/S3 API</td></tr></tbody></table><p><strong>비용/성능 관점</strong>:</p><ul><li>Jupiter의 <strong>13 Pb/s</strong>는 Data Center 전체 Fabric 대역폭으로, BigQuery Slot이 Colossus에서 데이터를 읽을 때 Network이 Bottleneck이 되지 않는다.</li><li>Redshift RA3의 Network은 Instance 수준이므로, <strong>대량 Data Redistribution(잘못된 Distribution Key) 시 Network이 병목</strong>이 될 수 있다.</li></ul><h3 id=layer-4-storage-system>Layer 4: Storage System<a hidden class=anchor aria-hidden=true href=#layer-4-storage-system>#</a></h3><table><thead><tr><th>구분</th><th>BigQuery (Colossus)</th><th>Redshift (Managed Storage/RMS)</th></tr></thead><tbody><tr><td>기반</td><td>Google Distributed File System (GFS 후속)</td><td><strong>Amazon S3</strong> + Local SSD Cache</td></tr><tr><td>Scale</td><td><strong>Exabyte</strong> (단일 Cluster)</td><td>RA3: 16PB, Serverless: 8PB</td></tr><tr><td>Durability</td><td>Zone 내 <strong>11 nines</strong></td><td>S3: <strong>11 nines</strong></td></tr><tr><td>Replication</td><td><strong>Reed-Solomon RS(6,3)</strong> — 1.5x Overhead</td><td>S3 내부 Replication (사용자 비가시)</td></tr><tr><td>Caching</td><td>Colossus가 자체 관리</td><td>RA3 Local SSD에 Hot Data 자동 Cache</td></tr><tr><td>비용</td><td>Active: $20/TB, Long-term: <strong>$10/TB</strong></td><td><strong>$24.58/TB</strong> (Hot/Cold 구분 없이 동일)</td></tr></tbody></table><p><strong>비용/성능 관점</strong>:</p><ul><li>BigQuery는 90일 이상 미변경 데이터가 자동으로 **Long-term Storage($10/TB)**로 전환되어 <strong>Storage 비용이 절반</strong>이 된다.</li><li>Redshift RMS는 Hot/Cold 구분 없이 동일 가격이므로, <strong>대량의 Historical Data를 보관할 때 BigQuery가 유리</strong>하다.</li></ul><h3 id=layer-5-columnar-format>Layer 5: Columnar Format<a hidden class=anchor aria-hidden=true href=#layer-5-columnar-format>#</a></h3><table><thead><tr><th>구분</th><th>BigQuery (Capacitor)</th><th>Redshift (Proprietary Columnar)</th></tr></thead><tbody><tr><td>Block Size</td><td>가변</td><td>고정 <strong>1MB</strong></td></tr><tr><td>Compressed Query</td><td>✅ Mini Query Processor로 직접 실행</td><td>제한적 (BYTEDICT Encoded String만)</td></tr><tr><td>Row Reordering</td><td>✅ Approximation Algorithm. 평균 17% 절감</td><td>❌ (Sort Key로 사용자가 수동 지정)</td></tr><tr><td>주요 Encoding</td><td>Dictionary, RLE, Delta, Bit-Vector (자동 선택)</td><td><strong>AZ64</strong>, ZSTD, LZO, BYTEDICT (자동 또는 수동)</td></tr><tr><td>AZ64 특징</td><td>-</td><td>XOR Delta + SIMD 가속. 숫자/날짜에 최적화</td></tr><tr><td>Block Metadata</td><td>Min/Max Statistics</td><td><strong>Zone Map</strong> (Min/Max per 1MB Block)</td></tr><tr><td>Compression Ratio</td><td>일반적으로 <strong>3:1 ~ 10:1</strong></td><td>일반적으로 <strong>2:1 ~ 6:1</strong></td></tr><tr><td>Open Format</td><td>❌</td><td>❌</td></tr></tbody></table><p><strong>비용/성능 관점</strong>:</p><ul><li>Capacitor의 <strong>Compressed Query</strong>는 I/O와 CPU를 모두 절약한다. BigQuery On-Demand에서 Scan량 기반 과금이므로, 높은 Compression은 <strong>직접적인 비용 절감</strong>으로 이어진다.</li><li>Redshift의 <strong>AZ64</strong>은 SIMD를 활용한 빠른 Decompression에 초점을 맞춘다. Scan 속도는 빠르지만, Decompress 후 처리하므로 Memory 사용량이 더 크다.</li><li>Redshift의 <strong>Zone Map</strong>은 Sort Key와 밀접하게 연결된다. Sort Key를 잘 선택하면 Zone Map Pruning 효과가 극대화되지만, 잘못 선택하면 효과가 거의 없다.</li></ul><hr><h2 id=3-storage-format>3. Storage Format<a hidden class=anchor aria-hidden=true href=#3-storage-format>#</a></h2><h3 id=bigquery-capacitor>BigQuery: Capacitor<a hidden class=anchor aria-hidden=true href=#bigquery-capacitor>#</a></h3><p>BigQuery는 자체 개발한 <strong>Capacitor</strong> Columnar Format을 사용한다. Capacitor의 핵심 혁신은 다음과 같다:</p><ul><li><strong>Compressed 상태에서 직접 Query</strong>: 데이터를 Decompress하지 않고도 Query 실행 가능. I/O와 CPU 모두 절약</li><li><strong>Row Reordering 최적화</strong>: Approximation Algorithm으로 행 순서를 재배치하여 Compression 효율 극대화</li><li><strong>단일 파일 내 Column 분리</strong>: 각 Column은 별도 File Block에 저장되지만, 하나의 Capacitor 파일로 관리</li><li><strong>자동 Encoding 선택</strong>: 데이터 특성에 따라 Dictionary, Run-Length, Delta 등 최적 Encoding 자동 적용</li></ul><h3 id=redshift-columnar-storage>Redshift: Columnar Storage<a hidden class=anchor aria-hidden=true href=#redshift-columnar-storage>#</a></h3><p>Redshift는 표준 Columnar Storage 방식을 사용하며, 다양한 Compression Encoding을 지원한다:</p><ul><li><strong>AZ64</strong>: Amazon 자체 개발 Compression Algorithm. 숫자/날짜 타입에 최적화</li><li><strong>ZSTD (Zstandard)</strong>: 범용 High Compression Algorithm</li><li><strong>LZO, BYTEDICT, RUNLENGTH</strong> 등 다양한 Encoding 옵션</li><li><strong>ANALYZE COMPRESSION</strong>: 데이터 특성에 맞는 최적 Encoding을 자동 추천</li></ul><pre class=mermaid>graph LR
+    subgraph &#34;BigQuery Capacitor&#34;
+        A[Single Capacitor File] --&gt; B[Column A Block]
+        A --&gt; C[Column B Block]
+        A --&gt; D[Column C Block]
+        B --&gt; E[Query on Compressed Data]
+    end
+
+    subgraph &#34;Redshift Columnar&#34;
+        F[Table] --&gt; G[Column A: AZ64]
+        F --&gt; H[Column B: ZSTD]
+        F --&gt; I[Column C: LZO]
+        G --&gt; J[Distributed by Slice]
+    end
+
+    style E fill:#34A853,color:#fff
+    style J fill:#FF9900,color:#000
+</pre><h3 id=distribution-key와-sort-key>Distribution Key와 Sort Key<a hidden class=anchor aria-hidden=true href=#distribution-key와-sort-key>#</a></h3><p>Redshift에서는 <strong>Distribution Key</strong>와 <strong>Sort Key</strong>를 직접 지정해야 한다. 이 선택이 Query Performance에 결정적 영향을 미친다:</p><ul><li><strong>EVEN Distribution</strong>: Round-Robin 방식. JOIN이 없는 Table에 적합</li><li><strong>KEY Distribution</strong>: 특정 Column 값 기준 분산. 자주 JOIN하는 Table 간 Co-location</li><li><strong>ALL Distribution</strong>: 모든 Node에 전체 복제. 작은 Dimension Table에 적합</li><li><strong>AUTO Distribution</strong>: Redshift가 데이터 크기와 Query Pattern을 분석하여 자동 선택</li></ul><p>BigQuery는 이런 물리적 데이터 배치를 사용자가 지정할 필요가 없다. 대신 <strong>Partitioning</strong>(날짜, 정수 범위, Ingestion Time)과 <strong>Clustering</strong>(최대 4개 Column)으로 Query Performance를 최적화한다.</p><table><thead><tr><th>구분</th><th>BigQuery</th><th>Redshift</th></tr></thead><tbody><tr><td>Tuning Point</td><td>Partitioning + Clustering</td><td>Distribution Key + Sort Key</td></tr><tr><td>복잡도</td><td>낮음 (2가지 선택)</td><td>높음 (Distribution/Sort 전략 조합)</td></tr><tr><td>실수 비용</td><td>낮음 (자동 최적화)</td><td>높음 (잘못된 Key 선택 시 Performance 급감)</td></tr><tr><td>DBA 의존도</td><td>낮음</td><td>높음</td></tr></tbody></table><hr><h2 id=4-pricing>4. Pricing<a hidden class=anchor aria-hidden=true href=#4-pricing>#</a></h2><p>Pricing은 두 서비스를 비교할 때 가장 복잡하고 중요한 영역이다. 두 서비스 모두 여러 Pricing Model을 제공하며, Workload Pattern에 따라 최적 선택이 달라진다.</p><h3 id=bigquery-pricing>BigQuery Pricing<a hidden class=anchor aria-hidden=true href=#bigquery-pricing>#</a></h3><p><strong>On-Demand (종량제)</strong></p><table><thead><tr><th>항목</th><th>가격</th></tr></thead><tbody><tr><td>Query 처리</td><td>$6.25 / TB Scanned</td></tr><tr><td>Free Query</td><td>매월 1TB</td></tr><tr><td>Active Storage</td><td>$0.02 / GB·월 (~$20/TB)</td></tr><tr><td>Long-term Storage (90일+)</td><td>$0.01 / GB·월 (~$10/TB)</td></tr><tr><td>Streaming Insert</td><td>$0.05 / GB</td></tr><tr><td>Free Storage</td><td>매월 10GB</td></tr></tbody></table><p><strong>Editions (Slot 기반)</strong></p><table><thead><tr><th>Edition</th><th>Pay-as-you-go (Slot·시간)</th><th>1년 Commitment</th><th>3년 Commitment</th></tr></thead><tbody><tr><td>Standard</td><td>$0.04</td><td>-</td><td>-</td></tr><tr><td>Enterprise</td><td>$0.06</td><td>$0.048</td><td>$0.036</td></tr><tr><td>Enterprise Plus</td><td>$0.10</td><td>$0.080</td><td>$0.060</td></tr></tbody></table><ul><li>최소 100 Slot 단위 구매</li><li>Slot Autoscaling 지원</li><li>Project 간 Slot 공유 가능</li></ul><h3 id=redshift-pricing>Redshift Pricing<a hidden class=anchor aria-hidden=true href=#redshift-pricing>#</a></h3><p><strong>Provisioned Cluster</strong></p><table><thead><tr><th>Node Type</th><th>On-Demand (시간당)</th><th>특징</th></tr></thead><tbody><tr><td>DC2.large</td><td>$0.25</td><td>160GB SSD, 2 vCPU ⚠️</td></tr><tr><td>DC2.8xlarge</td><td>$4.80</td><td>2.56TB SSD, 32 vCPU ⚠️</td></tr><tr><td>RA3.xlplus</td><td>$1.086</td><td>32TB Managed Storage</td></tr><tr><td>RA3.4xlarge</td><td>$3.26</td><td>128TB Managed Storage</td></tr><tr><td>RA3.16xlarge</td><td>$13.04</td><td>128TB Managed Storage</td></tr></tbody></table><blockquote><p>⚠️ DC2 Node는 <strong>2026년 4월 24일 End-of-Life</strong> 예정. 2025년 5월 15일 이후 신규 DC2 Cluster 생성 불가. RA3 또는 Serverless로 Migration 필요.</p></blockquote><p><strong>Serverless</strong></p><table><thead><tr><th>항목</th><th>가격</th></tr></thead><tbody><tr><td>Compute</td><td>RPU-시간당 $0.375 ~ $0.494 (Region별)</td></tr><tr><td>Managed Storage</td><td>$0.024 / GB·월 (~$24.58/TB)</td></tr><tr><td>Minimum Billing</td><td>60초</td></tr><tr><td>Idle 시</td><td>Compute 비용 없음</td></tr></tbody></table><p><strong>Reserved Instance (1년/3년)</strong></p><ul><li>On-Demand 대비 최대 75% 절감</li><li>All Upfront, Partial Upfront, No Upfront 옵션</li></ul><h3 id=비용-scenario-비교>비용 Scenario 비교<a hidden class=anchor aria-hidden=true href=#비용-scenario-비교>#</a></h3><pre class=mermaid>graph TB
+    subgraph &#34;Workload Pattern별 비용 효율&#34;
+        A[&#34;간헐적 Ad-hoc Query&lt;br/&gt;→ BigQuery On-Demand 유리&#34;]
+        B[&#34;예측 가능한 상시 Workload&lt;br/&gt;→ Redshift RI 유리&#34;]
+        C[&#34;야간 Batch + 주간 Dashboard&lt;br/&gt;→ 양쪽 모두 경쟁적&#34;]
+        D[&#34;대규모 Concurrent Users&lt;br/&gt;→ BigQuery Edition 유리&#34;]
+    end
+
+    style A fill:#4285F4,color:#fff
+    style B fill:#FF9900,color:#000
+    style C fill:#9C27B0,color:#fff
+    style D fill:#4285F4,color:#fff
+</pre><p><strong>실무 팁</strong>:</p><ul><li>BigQuery On-Demand는 Scan량 기준 과금이므로, <strong>Partitioning과 Clustering으로 Scan량을 줄이는 것</strong>이 비용 절감의 핵심</li><li>Redshift는 Cluster가 켜져 있는 동안 계속 과금되므로, <strong>사용하지 않을 때 Cluster를 Pause</strong>하거나 Serverless로 전환하는 것이 효과적</li><li>월 $10,000 이상 지출 시 양쪽 모두 Commitment Discount를 적극 검토해야 한다</li></ul><hr><h2 id=5-performance>5. Performance<a hidden class=anchor aria-hidden=true href=#5-performance>#</a></h2><h3 id=query-execution-model>Query Execution Model<a hidden class=anchor aria-hidden=true href=#query-execution-model>#</a></h3><p><strong>BigQuery</strong>:</p><ul><li>Query를 Execution Tree로 분해</li><li><strong>Dynamic Execution Plan</strong>: 실행 중에도 Resource 재배분 가능</li><li>Shuffle 단계에서 중간 결과를 Colossus에 기록 → Fault Tolerance 높음</li><li>Slot 단위로 Parallelism 제어</li></ul><p><strong>Redshift</strong>:</p><ul><li>Leader Node에서 <strong>Static Execution Plan</strong> 생성</li><li>각 Compute Node의 Slice에서 병렬 실행</li><li>Network Redistribution 비용이 Performance에 큰 영향</li><li>AQUA(Advanced Query Accelerator)로 Storage Layer에서 사전 Filtering/Aggregation</li></ul><h3 id=benchmark-관점>Benchmark 관점<a hidden class=anchor aria-hidden=true href=#benchmark-관점>#</a></h3><p>TPC-DS 99개 Query 기준 (2025년 자료):</p><table><thead><tr><th>구분</th><th>BigQuery</th><th>Redshift</th></tr></thead><tbody><tr><td>총 비용</td><td>~$511</td><td>~$111</td></tr><tr><td>Simple Query (≤100GB)</td><td>양쪽 유사</td><td>양쪽 유사</td></tr><tr><td>Complex JOIN Query</td><td>우위</td><td>보통</td></tr><tr><td>Large Scan</td><td>보통</td><td>우위 (RI 활용 시)</td></tr></tbody></table><blockquote><p>⚠️ Benchmark는 참고 자료일 뿐이다. 실제 Performance는 Data Model, Query Pattern, Table Design, Optimization 수준에 따라 크게 달라진다. <strong>반드시 실제 Workload로 PoC를 진행해야 한다.</strong></p></blockquote><h3 id=performance-optimization-전략>Performance Optimization 전략<a hidden class=anchor aria-hidden=true href=#performance-optimization-전략>#</a></h3><p><strong>BigQuery Optimization</strong>:</p><ol><li><strong>Partitioning</strong>: 날짜 기반 Partitioning으로 Scan 범위 제한</li><li><strong>Clustering</strong>: 자주 Filtering하는 Column으로 Clustering</li><li><strong>SELECT * 회피</strong>: 필요한 Column만 선택 (Columnar Format의 이점 활용)</li><li><strong>Materialized View</strong>: 반복 Query 결과 사전 계산</li><li><strong>BI Engine</strong>: Sub-second Response가 필요한 Dashboard에 활용</li></ol><p><strong>Redshift Optimization</strong>:</p><ol><li><strong>Distribution Key 선정</strong>: JOIN 빈도가 높은 Column을 Distribution Key로</li><li><strong>Sort Key 선정</strong>: WHERE 절에 자주 등장하는 Column을 Sort Key로</li><li><strong>VACUUM & ANALYZE</strong>: 정기적 실행으로 Statistics 갱신</li><li><strong>Concurrency Scaling</strong>: Peak 시간대 자동 확장</li><li><strong>Automated Materialized View</strong>: ML 기반 자동 생성/관리</li></ol><hr><h2 id=6-scalability>6. Scalability<a hidden class=anchor aria-hidden=true href=#6-scalability>#</a></h2><pre class=mermaid>graph LR
+    subgraph &#34;BigQuery Scaling Model&#34;
+        A[Query 제출] --&gt; B{Auto Slot Allocation}
+        B --&gt; C[수천 Slot까지&lt;br/&gt;Auto Scale]
+        B --&gt; D[사용 후&lt;br/&gt;즉시 반환]
+    end
+
+    subgraph &#34;Redshift Scaling Model&#34;
+        E[Workload 증가] --&gt; F{Scaling 방식 선택}
+        F --&gt; G[Elastic Resize&lt;br/&gt;Node 추가/제거]
+        F --&gt; H[Concurrency Scaling&lt;br/&gt;일시적 확장]
+        F --&gt; I[Classic Resize&lt;br/&gt;Node Type 변경]
+    end
+
+    style C fill:#34A853,color:#fff
+    style G fill:#FF9900,color:#000
+    style H fill:#FF9900,color:#000
+</pre><table><thead><tr><th>구분</th><th>BigQuery</th><th>Redshift</th></tr></thead><tbody><tr><td>Scaling 방식</td><td>완전 자동</td><td>수동/반자동</td></tr><tr><td>Scaling 속도</td><td>즉시</td><td>Elastic: 수 분, Classic: 수십 분</td></tr><tr><td>Scale-down</td><td>자동 (사용 후 반환)</td><td>수동 Resize 필요</td></tr><tr><td>Max Storage</td><td>사실상 무제한</td><td>RA3: 16PB, Serverless: 8PB</td></tr><tr><td>Concurrent Query</td><td>Slot Pool 기반 자동 관리</td><td>WLM Queue + Concurrency Scaling</td></tr><tr><td>Zero-downtime</td><td>기본 제공</td><td>Elastic Resize에서만 최소 Downtime</td></tr></tbody></table><p><strong>BigQuery의 강점</strong>: 예측 불가능한 Workload에서 빛난다. 갑자기 100명의 Analyst가 동시에 Dashboard를 열어도 자동 대응한다.</p><p><strong>Redshift의 강점</strong>: 예측 가능한 Workload에서 비용 효율이 높다. 필요한 만큼만 Provisioning하고, Reserved Instance로 비용을 크게 절감할 수 있다.</p><hr><h2 id=7-workload-management와-concurrency>7. Workload Management와 Concurrency<a hidden class=anchor aria-hidden=true href=#7-workload-management와-concurrency>#</a></h2><h3 id=bigquery-slot-기반>BigQuery: Slot 기반<a hidden class=anchor aria-hidden=true href=#bigquery-slot-기반>#</a></h3><p>BigQuery는 <strong>Slot</strong>이라는 가상 CPU 단위로 Compute Resource를 관리한다.</p><ul><li><strong>On-Demand</strong>: Google이 관리하는 공유 Slot Pool 사용. 별도 설정 불필요</li><li><strong>Edition</strong>: 조직 전용 Slot Reservation. Project/팀 간 Slot 배분 가능</li><li><strong>Query Priority</strong>:<ul><li><code>INTERACTIVE</code>: 즉시 실행 (기본값)</li><li><code>BATCH</code>: Idle Resource가 있을 때 실행. 실행 시작 전 대기 Timeout 24시간</li></ul></li></ul><h3 id=redshift-wlm-workload-management>Redshift: WLM (Workload Management)<a hidden class=anchor aria-hidden=true href=#redshift-wlm-workload-management>#</a></h3><p>Redshift는 <strong>Queue</strong> 기반의 Workload Management System을 제공한다.</p><p><strong>Automatic WLM</strong> (권장):</p><ul><li>ML이 Query 특성을 분석하여 Memory와 Concurrency를 자동 조정</li><li>최대 8개 Queue (Service Class 100~107)</li><li>Queue 간 Priority 설정 가능</li></ul><p><strong>Manual WLM</strong>:</p><ul><li>직접 Concurrent Query 수와 Memory 비율 설정</li><li>세밀한 제어가 필요한 경우</li></ul><pre class=mermaid>graph TB
+    subgraph &#34;BigQuery Concurrency&#34;
+        A[Query A: Interactive] --&gt; B[Slot Pool]
+        C[Query B: Interactive] --&gt; B
+        D[Query C: Batch] --&gt; B
+        B --&gt; E[Auto Slot Allocation]
+    end
+
+    subgraph &#34;Redshift Concurrency&#34;
+        F[ETL Query] --&gt; G[Queue 1: High Priority]
+        H[Dashboard Query] --&gt; I[Queue 2: Normal Priority]
+        J[Ad-hoc Query] --&gt; K[Queue 3: Low Priority]
+        G --&gt; L[WLM Scheduler]
+        I --&gt; L
+        K --&gt; L
+    end
+
+    style B fill:#4285F4,color:#fff
+    style L fill:#FF9900,color:#000
+</pre><table><thead><tr><th>구분</th><th>BigQuery</th><th>Redshift</th></tr></thead><tbody><tr><td>Management Model</td><td>Slot 기반 Auto Allocation</td><td>Queue 기반 Scheduling</td></tr><tr><td>설정 복잡도</td><td>낮음</td><td>중간~높음</td></tr><tr><td>Priority Control</td><td>Interactive / Batch</td><td>Multi-Queue + Priority Weight</td></tr><tr><td>Peak 대응</td><td>Auto Slot Scaling</td><td>Concurrency Scaling (추가 과금)</td></tr><tr><td>Fine-grained Control</td><td>제한적</td><td>매우 세밀함</td></tr></tbody></table><hr><h2 id=8-ecosystem-integration>8. Ecosystem Integration<a hidden class=anchor aria-hidden=true href=#8-ecosystem-integration>#</a></h2><h3 id=gcp--bigquery-ecosystem>GCP + BigQuery Ecosystem<a hidden class=anchor aria-hidden=true href=#gcp--bigquery-ecosystem>#</a></h3><pre class=mermaid>graph TB
+    subgraph &#34;Data Ingestion&#34;
+        A[Cloud Pub/Sub] --&gt; BQ[BigQuery]
+        B[Cloud Dataflow] --&gt; BQ
+        C[Cloud Data Fusion] --&gt; BQ
+        D[Transfer Service] --&gt; BQ
+    end
+
+    subgraph &#34;Processing &amp; Analytics&#34;
+        BQ --&gt; E[Looker / Looker Studio]
+        BQ --&gt; F[Connected Sheets]
+        BQ --&gt; G[Dataproc - Spark]
+    end
+
+    subgraph &#34;ML/AI&#34;
+        BQ --&gt; H[BigQuery ML]
+        BQ --&gt; I[Vertex AI]
+        H --&gt; I
+    end
+
+    subgraph &#34;Multi-Cloud&#34;
+        BQ --&gt; J[BigQuery Omni&lt;br/&gt;Run on AWS/Azure]
+    end
+
+    style BQ fill:#4285F4,color:#fff
+    style J fill:#34A853,color:#fff
+</pre><p><strong>BigQuery Ecosystem 특징</strong>:</p><ul><li><strong>Pub/Sub → BigQuery Direct Subscription</strong>: 중간 처리 없이 Streaming Data 직접 적재</li><li><strong>BigQuery Omni</strong>: AWS S3나 Azure Blob에 있는 데이터를 BigQuery SQL로 직접 Query</li><li><strong>BI Engine</strong>: BigQuery 위에서 Sub-second Response의 In-memory Analytics Layer</li><li><strong>Looker Studio</strong>: 무료 Dashboard/Reporting 도구와 Native Integration</li></ul><h3 id=aws--redshift-ecosystem>AWS + Redshift Ecosystem<a hidden class=anchor aria-hidden=true href=#aws--redshift-ecosystem>#</a></h3><pre class=mermaid>graph TB
+    subgraph &#34;Data Ingestion&#34;
+        A[Amazon Data Firehose] --&gt; RS[Redshift]
+        B[AWS Glue] --&gt; RS
+        C[DMS - Database Migration] --&gt; RS
+        D[Zero-ETL&lt;br/&gt;Aurora/DynamoDB] --&gt; RS
+    end
+
+    subgraph &#34;Data Lake&#34;
+        RS --&gt; E[S3 Data Lake]
+        F[Redshift Spectrum] --&gt; E
+        RS --&gt; F
+        G[Lake Formation] --&gt; E
+    end
+
+    subgraph &#34;Analytics &amp; ML&#34;
+        RS --&gt; H[QuickSight]
+        RS --&gt; I[SageMaker]
+        RS --&gt; J[Redshift ML]
+        J --&gt; I
+    end
+
+    subgraph &#34;Apache Iceberg&#34;
+        RS --&gt; K[Iceberg Table&lt;br/&gt;Read/Write]
+    end
+
+    style RS fill:#FF9900,color:#000
+    style D fill:#232F3E,color:#fff
+    style K fill:#232F3E,color:#fff
+</pre><p><strong>Redshift Ecosystem 특징</strong>:</p><ul><li><strong>Zero-ETL</strong>: Aurora MySQL/PostgreSQL, RDS for MySQL, DynamoDB에서 ETL Pipeline 없이 자동 복제 (DB 소스는 15초 이내, SaaS 소스는 최소 1시간 Lag)</li><li><strong>Redshift Spectrum</strong>: S3의 데이터를 직접 Query. Parquet, ORC, JSON, Avro, CSV 지원</li><li><strong>Apache Iceberg Integration</strong>: ACID Transaction 지원 Data Lake 운영</li><li><strong>SageMaker Unified Studio</strong>: ML 개발과 Analytics 도구를 단일 Interface에서 통합</li></ul><h3 id=ecosystem-비교-요약>Ecosystem 비교 요약<a hidden class=anchor aria-hidden=true href=#ecosystem-비교-요약>#</a></h3><table><thead><tr><th>영역</th><th>BigQuery (GCP)</th><th>Redshift (AWS)</th></tr></thead><tbody><tr><td>Real-time Ingestion</td><td>Pub/Sub Direct Subscription</td><td>Kinesis / Data Firehose Streaming Ingestion</td></tr><tr><td>ETL/ELT</td><td>Dataflow (Apache Beam)</td><td>Glue (Spark 기반)</td></tr><tr><td>Zero-ETL</td><td>제한적</td><td>Aurora, RDS for MySQL, DynamoDB 등 풍부</td></tr><tr><td>Data Lake</td><td>BigQuery Omni (Multi-cloud)</td><td>Spectrum + Iceberg</td></tr><tr><td>BI Tool</td><td>Looker Studio (무료)</td><td>QuickSight (유료)</td></tr><tr><td>ML Integration</td><td>BigQuery ML + Vertex AI</td><td>Redshift ML + SageMaker</td></tr><tr><td>Multi-cloud</td><td>BigQuery Omni</td><td>제한적</td></tr></tbody></table><hr><h2 id=9-data-sharing>9. Data Sharing<a hidden class=anchor aria-hidden=true href=#9-data-sharing>#</a></h2><h3 id=bigquery-analytics-hub>BigQuery Analytics Hub<a hidden class=anchor aria-hidden=true href=#bigquery-analytics-hub>#</a></h3><ul><li>GCP Organization 내 및 Organization 간 Dataset Publishing/Subscription</li><li><strong>Cross-region Query</strong>: BigQuery Omni Region과 Google Cloud Region 간 Cross Join 가능</li><li>Marketplace 형태의 Data Sharing Platform</li></ul><h3 id=redshift-data-sharing>Redshift Data Sharing<a hidden class=anchor aria-hidden=true href=#redshift-data-sharing>#</a></h3><ul><li>같은 AWS Account 또는 Cross-account 간 Data Sharing</li><li><strong>RA3 Node 또는 Serverless 필수</strong>: DC2에서는 Data Sharing 불가</li><li>별도의 데이터 복사 없이 Live Data 접근</li><li>AWS Data Exchange와 연동하여 외부 Data Marketplace 참여 가능</li></ul><table><thead><tr><th>구분</th><th>BigQuery</th><th>Redshift</th></tr></thead><tbody><tr><td>Sharing 단위</td><td>Dataset</td><td>Database/Schema/Table</td></tr><tr><td>Cross-account</td><td>지원</td><td>지원 (RA3 / Serverless)</td></tr><tr><td>Multi-cloud</td><td>BigQuery Omni로 가능</td><td>제한적</td></tr><tr><td>Marketplace</td><td>Analytics Hub</td><td>AWS Data Exchange</td></tr><tr><td>비용</td><td>Subscriber가 Query 비용 부담</td><td>Consumer Cluster의 Compute 사용</td></tr></tbody></table><hr><h2 id=10-mlai-integration>10. ML/AI Integration<a hidden class=anchor aria-hidden=true href=#10-mlai-integration>#</a></h2><p>Data Warehouse에서 직접 ML을 실행하는 것은 Data Movement 비용을 줄이는 핵심 전략이다.</p><h3 id=bigquery-ml--vertex-ai>BigQuery ML + Vertex AI<a hidden class=anchor aria-hidden=true href=#bigquery-ml--vertex-ai>#</a></h3><pre class=mermaid>graph LR
+    A[BigQuery Data] --&gt; B[BigQuery ML&lt;br/&gt;Train Model with SQL]
+    B --&gt; C[Model Deployment]
+    A --&gt; D[Export to Vertex AI]
+    D --&gt; E[Advanced Training&lt;br/&gt;AutoML / Custom]
+    E --&gt; F[Inference in BigQuery]
+
+    style B fill:#4285F4,color:#fff
+    style E fill:#34A853,color:#fff
+</pre><p><strong>BigQuery ML 지원 Model</strong>:</p><ul><li>Linear/Logistic Regression, K-means, Time Series (ARIMA_PLUS)</li><li>XGBoost, DNN, Wide & Deep</li><li>외부 TensorFlow Model Import</li><li>LLM Remote Call (Gemini 등)</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#75715e>-- BigQuery ML 예시: Customer Churn Prediction
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>CREATE</span> <span style=color:#66d9ef>OR</span> <span style=color:#66d9ef>REPLACE</span> MODEL <span style=color:#f92672>`</span>project.dataset.churn_model<span style=color:#f92672>`</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>OPTIONS</span>(model_type<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;LOGISTIC_REG&#39;</span>,
+</span></span><span style=display:flex><span>        input_label_cols<span style=color:#f92672>=</span>[<span style=color:#e6db74>&#39;is_churned&#39;</span>]) <span style=color:#66d9ef>AS</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>SELECT</span>
+</span></span><span style=display:flex><span>  user_tenure_days,
+</span></span><span style=display:flex><span>  total_purchases,
+</span></span><span style=display:flex><span>  last_login_days_ago,
+</span></span><span style=display:flex><span>  support_tickets_count,
+</span></span><span style=display:flex><span>  is_churned
+</span></span><span style=display:flex><span><span style=color:#66d9ef>FROM</span> <span style=color:#f92672>`</span>project.dataset.user_features<span style=color:#f92672>`</span>;
+</span></span></code></pre></div><h3 id=redshift-ml--sagemaker>Redshift ML + SageMaker<a hidden class=anchor aria-hidden=true href=#redshift-ml--sagemaker>#</a></h3><pre class=mermaid>graph LR
+    A[Redshift Data] --&gt; B[Redshift ML&lt;br/&gt;Create Model with SQL]
+    B --&gt; C[SageMaker Autopilot&lt;br/&gt;Auto Training]
+    C --&gt; D[Deploy Model to Redshift]
+    D --&gt; E[Inference with SQL]
+
+    style B fill:#FF9900,color:#000
+    style C fill:#232F3E,color:#fff
+</pre><p><strong>Redshift ML</strong>:</p><ul><li><code>CREATE MODEL</code> SQL 문으로 Model 생성</li><li>SageMaker Autopilot이 자동으로 Preprocessing, Training, Tuning</li><li>학습된 Model을 Redshift 내에서 SQL Function으로 호출</li><li>데이터가 S3를 경유하므로 대용량 Training에 적합</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-sql data-lang=sql><span style=display:flex><span><span style=color:#75715e>-- Redshift ML 예시: Customer Churn Prediction
+</span></span></span><span style=display:flex><span><span style=color:#66d9ef>CREATE</span> MODEL churn_model
+</span></span><span style=display:flex><span><span style=color:#66d9ef>FROM</span> (
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>SELECT</span> user_tenure_days,
+</span></span><span style=display:flex><span>           total_purchases,
+</span></span><span style=display:flex><span>           last_login_days_ago,
+</span></span><span style=display:flex><span>           support_tickets_count,
+</span></span><span style=display:flex><span>           is_churned
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>FROM</span> user_features
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>TARGET is_churned
+</span></span><span style=display:flex><span><span style=color:#66d9ef>FUNCTION</span> predict_churn
+</span></span><span style=display:flex><span>IAM_ROLE <span style=color:#e6db74>&#39;arn:aws:iam::role/RedshiftML&#39;</span>
+</span></span><span style=display:flex><span>SETTINGS (
+</span></span><span style=display:flex><span>    S3_BUCKET <span style=color:#e6db74>&#39;my-ml-bucket&#39;</span>
+</span></span><span style=display:flex><span>);
+</span></span></code></pre></div><table><thead><tr><th>구분</th><th>BigQuery ML</th><th>Redshift ML</th></tr></thead><tbody><tr><td>Training 위치</td><td>BigQuery 내부</td><td>SageMaker (S3 경유)</td></tr><tr><td>SQL Interface</td><td>CREATE MODEL</td><td>CREATE MODEL</td></tr><tr><td>Model 다양성</td><td>높음 (DNN, XGBoost, ARIMA 등)</td><td>SageMaker Autopilot 의존</td></tr><tr><td>Custom Model</td><td>TF Model Import, Vertex AI 연동</td><td>SageMaker 전체 기능 활용</td></tr><tr><td>LLM Integration</td><td>Gemini Remote Call 가능</td><td>Bedrock 연동</td></tr><tr><td>Data Movement</td><td>없음</td><td>S3로 Export 필요</td></tr></tbody></table><hr><h2 id=11-security와-compliance>11. Security와 Compliance<a hidden class=anchor aria-hidden=true href=#11-security와-compliance>#</a></h2><p>두 서비스 모두 Enterprise급 Security를 제공하지만, 접근 방식에 차이가 있다.</p><table><thead><tr><th>구분</th><th>BigQuery</th><th>Redshift</th></tr></thead><tbody><tr><td>기본 Encryption</td><td>At-rest + In-transit 자동 Encryption</td><td>At-rest AES-256 자동 (2019.07 이후 Default)</td></tr><tr><td>Key Management</td><td>Cloud KMS / CMEK</td><td>AWS KMS</td></tr><tr><td>Fine-grained Access Control</td><td>Column/Row Level Security</td><td>Column/Row Level Security</td></tr><tr><td>Network Isolation</td><td>VPC Service Controls</td><td>VPC 내 배포</td></tr><tr><td>Data Masking</td><td>Cloud DLP Integration</td><td>Dynamic Data Masking</td></tr><tr><td>HIPAA</td><td>BAA로 전체 GCP Cover</td><td>지원</td></tr><tr><td>SOC</td><td>SOC 1/2/3</td><td>SOC 1/2/3</td></tr><tr><td>FedRAMP</td><td>지원</td><td>Serverless도 지원 (2025~)</td></tr><tr><td>PCI-DSS</td><td>지원</td><td>지원</td></tr></tbody></table><hr><h2 id=12-최신-주요-feature-2025-2026>12. 최신 주요 Feature (2025-2026)<a hidden class=anchor aria-hidden=true href=#12-최신-주요-feature-2025-2026>#</a></h2><h3 id=bigquery-신기능>BigQuery 신기능<a hidden class=anchor aria-hidden=true href=#bigquery-신기능>#</a></h3><ul><li><strong>BigQuery Advanced Runtime</strong>: 개선된 Query Execution Engine. Slot 효율성 향상</li><li><strong>Conversational Analytics API</strong> (Preview → 2026.01 전면 공개): 자연어로 데이터 Query</li><li><strong>Gemini in Looker</strong>: LookML Code 및 Visualization 자동 생성</li><li><strong>Partition Skew Detection</strong>: 불균형한 Partition 자동 분석</li></ul><h3 id=redshift-신기능>Redshift 신기능<a hidden class=anchor aria-hidden=true href=#redshift-신기능>#</a></h3><ul><li><strong>Zero-ETL 확장</strong>: Aurora MySQL/PostgreSQL, RDS for MySQL, DynamoDB 기본 지원. Application 연동(Salesforce, ServiceNow, Zendesk)은 최소 1시간 Lag으로 특성이 다름</li><li><strong>Multidimensional Data Layouts</strong>: 최대 10배 Price-performance 개선</li><li><strong>Apache Iceberg Read/Write</strong>: Data Lake Query Performance 2배 향상</li><li><strong>Distributed Warehouse Architecture</strong>: Workload Isolation을 위한 독립 Compute</li><li><strong>Serverless Reservations</strong>: Serverless Compute 비용 최대 24% 절감</li></ul><hr><h2 id=13-operational-complexity-redshift는-bigquery만큼-편해질-수-있는가>13. Operational Complexity: Redshift는 BigQuery만큼 편해질 수 있는가<a hidden class=anchor aria-hidden=true href=#13-operational-complexity-redshift는-bigquery만큼-편해질-수-있는가>#</a></h2><p>Redshift를 처음 접하는 팀이 가장 부담스러워하는 것은 <strong>Distribution Key, Sort Key, WLM Tuning</strong>이다. BigQuery에서는 존재하지 않는 개념이기 때문에, 이 차이만으로 BigQuery를 선택하는 조직도 적지 않다.</p><p>그렇다면 2026년 현재, Redshift는 이 Gap을 얼마나 줄였을까?</p><h3 id=redshift의-자동화-진화>Redshift의 자동화 진화<a hidden class=anchor aria-hidden=true href=#redshift의-자동화-진화>#</a></h3><p>Redshift는 최근 몇 년간 **Automatic Table Optimization (ATO)**을 중심으로 DBA 의존도를 적극적으로 낮추고 있다.</p><pre class=mermaid>timeline
+    title Redshift Automation 진화
+    2019 : Auto ANALYZE
+         : Automatic WLM
+    2020 : Automatic Table Optimization (ATO)
+         : AUTO Distribution / Sort Key
+    2022 : Automated Materialized Views (AutoMV)
+    2024 : Redshift Serverless AI-driven Scaling
+         : Price-performance Slider
+    2025 : Multi-cluster Autonomics
+         : Zero-config Serverless
+    2026 : AI-driven Query Optimization
+</pre><p><strong>AUTO Distribution Style</strong> (Default):</p><ul><li>작은 Table은 ALL Distribution, 데이터가 커지면 자동으로 KEY 또는 EVEN으로 전환</li><li>ATO가 Query Pattern을 지속적으로 분석하여 Distribution Strategy를 재조정</li><li>30TB Dataset 기준 수동 Tuning 대비 <strong>~24% Performance 개선</strong> 달성 (AWS 내부 Benchmark)</li></ul><p><strong>AUTO Sort Key</strong> (Default):</p><ul><li>Filter/JOIN Predicate에 자주 등장하는 Column을 자동으로 Sort Key로 지정</li><li>Workload 변화에 따라 동적으로 Sort Key를 재조정</li><li>Background에서 실행되어 User Query에 영향 없음</li></ul><p><strong>Automatic WLM</strong> (Default):</p><ul><li>ML이 Query 특성을 분석하여 Memory와 Concurrency를 자동 조정</li><li>Heavy Query는 낮은 Concurrency + 많은 Memory, Light Query는 높은 Concurrency</li><li>Short Query Acceleration (SQA)으로 경량 Query 우선 처리</li></ul><p><strong>Automated Materialized View (AutoMV)</strong>:</p><ul><li>ML이 Workload를 분석하여 Materialized View를 자동 생성/유지/삭제</li><li>Cost-benefit Analysis로 실제 효과가 있는 View만 유지</li><li>Database당 최대 200개</li></ul><h3 id=그래도-남아-있는-gap>그래도 남아 있는 Gap<a hidden class=anchor aria-hidden=true href=#그래도-남아-있는-gap>#</a></h3><p>자동화가 많이 진전되었지만, <strong>Zero-config를 지향하는 BigQuery와 동일 수준은 아직 아니다.</strong></p><table><thead><tr><th>영역</th><th>BigQuery</th><th>Redshift Serverless (2026)</th><th>Redshift Provisioned</th></tr></thead><tbody><tr><td>Data Distribution</td><td>개념 자체가 없음</td><td>AUTO (권장 Default)</td><td>AUTO 또는 수동</td></tr><tr><td>Sort/Ordering</td><td>Clustering (자동 권장)</td><td>AUTO (ATO 관리)</td><td>AUTO 또는 수동</td></tr><tr><td>Workload Management</td><td>완전 자동</td><td>완전 자동</td><td>Automatic (Default) 또는 수동</td></tr><tr><td>Scaling</td><td>완전 자동</td><td>AI-driven 자동</td><td>수동 판단 필요</td></tr><tr><td>VACUUM</td><td>불필요</td><td>대부분 자동</td><td>대부분 자동</td></tr><tr><td>Statistics Update</td><td>완전 자동</td><td>대부분 자동</td><td>대부분 자동</td></tr><tr><td><strong>DBA 부담 수준</strong></td><td><strong>Near-zero</strong></td><td><strong>Low (~15%)</strong></td><td><strong>Moderate (~30%)</strong></td></tr></tbody></table><h3 id=주의해야-할-함정들>주의해야 할 함정들<a hidden class=anchor aria-hidden=true href=#주의해야-할-함정들>#</a></h3><p>Redshift Auto Tuning에 대해 알아야 할 현실적인 제약:</p><ol><li><p><strong>명시적으로 지정한 Key는 ATO가 건드리지 않는다</strong>: 기존 Table에 <code>DISTKEY(user_id)</code>를 수동 지정했다면, ATO가 더 나은 Key를 발견해도 변경하지 않는다. Legacy Table이 많은 조직은 이 함정에 빠지기 쉽다.</p></li><li><p><strong>Table Swap 시 최적화 History가 초기화된다</strong>: Blue-Green Deployment 등에서 Table을 Swap하면 ATO가 새 Table을 처음부터 학습해야 한다.</p></li><li><p><strong>충분한 Query Volume이 있어야 학습한다</strong>: Query가 적은 개발 환경에서는 ATO 효과가 미미하다. Production 수준의 Traffic이 필요하다.</p></li><li><p><strong>Advisor 권장 ≠ 최적</strong>: Redshift Advisor가 변경을 제안하지 않아도 현재 상태가 최적이라는 의미는 아니다. 수동 EXPLAIN 분석이 여전히 가치 있다.</p></li></ol><h3 id=결론-serverless를-쓰면-gap은-줄어든다>결론: Serverless를 쓰면 Gap은 줄어든다<a hidden class=anchor aria-hidden=true href=#결론-serverless를-쓰면-gap은-줄어든다>#</a></h3><pre class=mermaid>quadrantChart
+    title Operational Complexity vs Control
+    x-axis Low Control --&gt; High Control
+    y-axis Low Complexity --&gt; High Complexity
+    BigQuery: [0.2, 0.15]
+    Redshift Serverless: [0.4, 0.3]
+    Redshift Provisioned: [0.8, 0.7]
+</pre><p><strong>Redshift Serverless + AUTO 전략</strong>을 채택하면 BigQuery에 근접한 운영 경험을 얻을 수 있다. 하지만 &ldquo;근접"이지 &ldquo;동일"은 아니다.</p><ul><li>BigQuery는 <strong>Distribution이라는 개념 자체가 없다</strong>. 사용자가 잘못된 선택을 할 수 있는 여지가 원천 차단된다.</li><li>Redshift는 AUTO가 Default이지만, <strong>수동 개입의 여지가 항상 존재한다</strong>. 이것이 장점(Fine-tuning 가능)이자 단점(잘못 건드리면 악화)이다.</li></ul><p>팀에 전문 DBA가 없고, 최소한의 운영 부담을 원한다면 BigQuery가 여전히 더 안전한 선택이다. 반면 AWS Ecosystem에 묶여 있다면, <strong>Redshift Serverless + 모든 설정 AUTO</strong>로 시작하여, Bottleneck이 발견될 때만 수동 개입하는 전략이 현실적이다.</p><hr><h2 id=14-console--developer-experience>14. Console & Developer Experience<a hidden class=anchor aria-hidden=true href=#14-console--developer-experience>#</a></h2><p>기술 선택만큼 중요한 것이 <strong>매일 사용하는 Console의 경험</strong>이다. Query를 작성하고, 결과를 확인하고, 비용을 관리하는 일상적 워크플로우에서 두 서비스는 뚜렷한 차이를 보인다.</p><h3 id=bigquery-console-bigquery-studio>BigQuery Console (BigQuery Studio)<a hidden class=anchor aria-hidden=true href=#bigquery-console-bigquery-studio>#</a></h3><pre class=mermaid>graph TB
+    subgraph &#34;BigQuery Studio&#34;
+        A[SQL Editor] --&gt; B[Dry Run Cost Estimation]
+        A --&gt; C[Gemini SQL Assist]
+        D[Python Notebook] --&gt; E[BigQuery DataFrames]
+        F[Data Canvas] --&gt; G[Visual DAG Builder]
+        F --&gt; H[Natural Language Query]
+        I[Conversational Analytics] --&gt; J[Chat Interface]
+    end
+
+    style B fill:#34A853,color:#fff
+    style C fill:#4285F4,color:#fff
+    style H fill:#4285F4,color:#fff
+</pre><p><strong>핵심 강점: 실행 전 비용 확인</strong></p><p>BigQuery Console의 가장 강력한 UX Feature는 <strong>Dry Run</strong>이다. Query를 작성하면 실행하기 전에 Scan할 데이터 양과 예상 비용을 즉시 보여준다. On-Demand Pricing에서 이 기능은 실수로 수백 달러를 쓰는 사고를 원천 방지한다.</p><p><strong>주요 Feature</strong>:</p><table><thead><tr><th>Feature</th><th>설명</th></tr></thead><tbody><tr><td><strong>Dry Run</strong></td><td>Query 실행 전 Scan량/비용 자동 표시. 무료</td></tr><tr><td><strong>Gemini SQL Assist</strong></td><td>AI 기반 SQL Autocomplete, 자연어 → SQL 변환</td></tr><tr><td><strong>Data Canvas</strong></td><td>Gemini 기반 Visual Query Builder. DAG로 Workflow 시각화</td></tr><tr><td><strong>Conversational Analytics</strong></td><td>Chat Interface로 자연어 데이터 분석 (2026.01 Preview 전면 공개)</td></tr><tr><td><strong>BigQuery Studio Notebook</strong></td><td>SQL + Python을 같은 Interface에서 실행. Colab Enterprise 기반</td></tr><tr><td><strong>Scheduled Query</strong></td><td>Console에서 직접 Cron-like Query Scheduling</td></tr><tr><td><strong>Query History</strong></td><td>INFORMATION_SCHEMA.JOBS로 6개월간 보관</td></tr><tr><td><strong>Looker Studio 연동</strong></td><td>Query 결과에서 바로 Visualization 생성</td></tr></tbody></table><p><strong>Conversational Analytics (2026년 1월 Preview 전면 공개)</strong>:</p><ul><li>더 이상 Allowlist 없이 누구나 사용 가능</li><li>최신 Gemini Model 기반, Multi-turn 대화로 데이터 분석</li><li>SQL/Python Code + Chart + Text를 함께 생성</li><li>Verified Query로 Business Logic 반영 가능</li></ul><h3 id=redshift-console-query-editor-v2--sagemaker-unified-studio>Redshift Console (Query Editor v2 + SageMaker Unified Studio)<a hidden class=anchor aria-hidden=true href=#redshift-console-query-editor-v2--sagemaker-unified-studio>#</a></h3><pre class=mermaid>graph TB
+    subgraph &#34;Redshift Console&#34;
+        A[Query Editor v2] --&gt; B[Multi-tab Execution]
+        A --&gt; C[Visual Explain Plan]
+        A --&gt; D[Amazon Q SQL Assist]
+        E[SQL Notebook] --&gt; F[Annotated Query Docs]
+        G[SageMaker Unified Studio] --&gt; H[One-click Onboarding]
+        G --&gt; I[AI Agent Notebook]
+    end
+
+    style C fill:#FF9900,color:#000
+    style D fill:#232F3E,color:#fff
+    style I fill:#232F3E,color:#fff
+</pre><p><strong>핵심 강점: Visual Explain Plan</strong></p><p>Redshift Query Editor v2의 <strong>Explain Graph</strong>는 Query Execution Plan을 시각적으로 보여준다. Distribution Key 기반의 Data Redistribution, Sort Key 활용 여부, Scan 범위를 한눈에 파악할 수 있어, Performance Tuning에 직접적으로 도움된다.</p><p>BigQuery도 <strong>Execution Graph</strong>를 제공하지만 Stage 단위의 시각화인 반면, Redshift는 Node/Slice 수준의 물리적 실행 경로까지 보여주므로 Tuning 관점에서는 Redshift가 더 상세하다.</p><p><strong>주요 Feature</strong>:</p><table><thead><tr><th>Feature</th><th>설명</th></tr></thead><tbody><tr><td><strong>Query Editor v2</strong></td><td>Multi-tab, Autocomplete, Concurrent Execution</td></tr><tr><td><strong>Visual Explain Plan</strong></td><td>Query Execution Plan을 Graph로 시각화</td></tr><tr><td><strong>Amazon Q Generative SQL</strong></td><td>자연어 → SQL 변환 (2025.02 Seoul Region 지원)</td></tr><tr><td><strong>SQL Notebook</strong></td><td>Query + Annotation 결합. .ipynb Format Export</td></tr><tr><td><strong>Chart Wizard</strong></td><td>Query 결과에서 Histogram, Bar, Area Chart 생성</td></tr><tr><td><strong>Glue Data Catalog</strong></td><td>External Table 자동 Mounting, 별도 Schema 생성 불필요</td></tr><tr><td><strong>SageMaker Unified Studio</strong></td><td>ML + Analytics 통합 환경. AI Agent 내장 (2025.11)</td></tr><tr><td><strong>Monitoring Dashboard</strong></td><td>RPU 사용량, Query Runtime, Connection 수 실시간 확인</td></tr></tbody></table><p><strong>SageMaker Unified Studio (2025년 하반기)</strong>:</p><ul><li>One-click Onboarding: Redshift, Athena, S3에서 바로 진입</li><li>AI Agent가 내장된 Notebook: 자연어로 Code/SQL 생성</li><li>SQL → Python으로 자연스럽게 전환하며 ML Model까지 개발</li><li>Trusted Identity Propagation으로 Cross-service SSO</li></ul><h3 id=console-experience-직접-비교>Console Experience 직접 비교<a hidden class=anchor aria-hidden=true href=#console-experience-직접-비교>#</a></h3><table><thead><tr><th>영역</th><th>BigQuery Studio</th><th>Redshift Query Editor v2</th></tr></thead><tbody><tr><td><strong>비용 가시성</strong></td><td>✅ Dry Run으로 실행 전 비용 표시</td><td>❌ 사전 비용 추정 없음</td></tr><tr><td><strong>AI SQL Assist</strong></td><td>Gemini (BigQuery 전용)</td><td>Amazon Q (Preview, Region 제한)</td></tr><tr><td><strong>자연어 분석</strong></td><td>Conversational Analytics (전면 공개)</td><td>Amazon Q SQL (Preview)</td></tr><tr><td><strong>Execution Plan 시각화</strong></td><td>✅ Execution Graph (Stage별 시각화)</td><td>✅ Visual Explain Graph (Node/Slice별)</td></tr><tr><td><strong>Notebook</strong></td><td>SQL + Python 통합 (Colab 기반)</td><td>SQL Notebook (.ipynb)</td></tr><tr><td><strong>Visual Query Builder</strong></td><td>Data Canvas (DAG 형태)</td><td>없음</td></tr><tr><td><strong>Visualization</strong></td><td>Looker Studio 연동</td><td>Chart Wizard (기본)</td></tr><tr><td><strong>Onboarding 경험</strong></td><td>즉시 시작 (Serverless)</td><td>Cluster 설정 또는 Serverless 선택 필요</td></tr><tr><td><strong>Scheduled Query</strong></td><td>Console 내장</td><td>EventBridge 또는 외부 도구 필요</td></tr><tr><td><strong>Schema 탐색</strong></td><td>Explorer Panel + Preview</td><td>Glue Data Catalog 자동 Mounting</td></tr></tbody></table><h3 id=각-console이-빛나는-순간>각 Console이 빛나는 순간<a hidden class=anchor aria-hidden=true href=#각-console이-빛나는-순간>#</a></h3><p><strong>BigQuery Console이 더 나은 경우</strong>:</p><ul><li>처음 시작할 때 — 아무 설정 없이 바로 Query 실행</li><li>비용 민감한 Ad-hoc 분석 — Dry Run으로 실수 방지</li><li>Data Analyst가 자연어로 분석하고 싶을 때 — Conversational Analytics</li><li>SQL과 Python을 오가며 작업할 때 — BigQuery Studio Notebook</li></ul><p><strong>Redshift Console이 더 나은 경우</strong>:</p><ul><li>Query Performance Tuning — Visual Explain Plan으로 병목 즉시 파악</li><li>AWS 서비스 통합 Workflow — Glue Catalog, SageMaker로 자연스럽게 전환</li><li>ML Pipeline 구축 — SageMaker Unified Studio에서 분석부터 Model 배포까지 One-stop</li><li>여러 Cluster/Workgroup을 동시에 작업 — Multi-tab으로 각각 연결</li></ul><h3 id=알려진-pain-point>알려진 Pain Point<a hidden class=anchor aria-hidden=true href=#알려진-pain-point>#</a></h3><p><strong>BigQuery Console</strong>:</p><ul><li>Struct Column에서 Field 추가/삭제 시 Console/SQL로 불가. bq CLI 또는 API 필요</li><li>간혹 <code>INSERT INTO ... LIMIT 0</code>에서도 1TB Billing 되는 Bug 보고</li><li>CTE가 많은 Complex Query에서 &ldquo;Resources exceeded&rdquo; Error 발생 가능</li></ul><p><strong>Redshift Console</strong>:</p><ul><li>Single Leader Node Bottleneck: Compute Node를 아무리 늘려도 Leader Node가 병목이 되면 Query Queuing 발생</li><li>Serverless Cold Start: Traffic Burst 시 S3에서 데이터를 Fetch하는 I/O Overhead</li><li>Python UDF: 2025.11 신규 생성 중단, <strong>2026.06.30 기존 UDF 실행도 중단</strong> 예정. Lambda UDF로 Migration 필요</li></ul><hr><h2 id=15-선택-가이드-어떤-상황에서-무엇을-선택할-것인가>15. 선택 가이드: 어떤 상황에서 무엇을 선택할 것인가<a hidden class=anchor aria-hidden=true href=#15-선택-가이드-어떤-상황에서-무엇을-선택할-것인가>#</a></h2><h3 id=bigquery를-선택해야-하는-경우>BigQuery를 선택해야 하는 경우<a hidden class=anchor aria-hidden=true href=#bigquery를-선택해야-하는-경우>#</a></h3><pre class=mermaid>mindmap
+  root((BigQuery))
+    Serverless 선호
+      Infrastructure 관리 최소화
+      DBA Resource 부족
+    가변적 Workload
+      Ad-hoc 분석 중심
+      비정기적 대량 Query
+    GCP Ecosystem
+      Vertex AI 활용
+      Looker 사용 중
+    Multi-cloud
+      BigQuery Omni
+      AWS/Azure Data 접근
+    빠른 시작
+      PoC / Startup
+      즉시 사용 가능
+</pre><p><strong>구체적 Scenario</strong>:</p><ol><li><strong>Startup/중소 규모</strong>: Infrastructure 관리 없이 바로 분석 시작. 종량제로 초기 비용 최소화</li><li><strong>DBA 없는 팀</strong>: Distribution Key, Sort Key 개념 자체가 없으므로 운영 실수 원천 차단</li><li><strong>Data Science 팀</strong>: BigQuery ML로 SQL 기반 ML. Vertex AI로 고급 Model 전환 용이</li><li><strong>비용 민감한 Ad-hoc 분석</strong>: Dry Run으로 실행 전 비용 확인. 실수로 대형 Query를 날리는 사고 방지</li><li><strong>Multi-cloud 전략</strong>: BigQuery Omni로 AWS/Azure Data를 단일 SQL로 분석</li><li><strong>Concurrent User가 많은 환경</strong>: Auto Scaling으로 수백 명의 Analyst 동시 지원</li></ol><h3 id=redshift를-선택해야-하는-경우>Redshift를 선택해야 하는 경우<a hidden class=anchor aria-hidden=true href=#redshift를-선택해야-하는-경우>#</a></h3><pre class=mermaid>mindmap
+  root((Redshift))
+    AWS 올인
+      S3 Data Lake
+      Aurora/DynamoDB 연동
+    예측 가능한 Workload
+      정기 ETL/ELT
+      고정 Dashboard
+    세밀한 제어
+      DBA 팀 존재
+      WLM Tuning 가능
+    Zero-ETL
+      Aurora 실시간 동기화
+      DynamoDB 분석
+    Data Lake Integration
+      Spectrum + Iceberg
+      Open Format 선호
+</pre><p><strong>구체적 Scenario</strong>:</p><ol><li><strong>AWS 중심 조직</strong>: Zero-ETL로 Aurora/DynamoDB Data를 Pipeline 없이 분석</li><li><strong>전문 DBA가 있는 팀</strong>: Distribution Key, Sort Key, WLM Tuning으로 극한 Performance 달성</li><li><strong>Performance Tuning이 핵심인 환경</strong>: Visual Explain Plan으로 Bottleneck을 정밀 분석</li><li><strong>Data Lake 중심</strong>: Spectrum + Iceberg로 S3 기반 Lakehouse Architecture 구현</li><li><strong>비용 예측이 중요한 기업</strong>: Reserved Instance로 장기 비용을 정확히 예측</li><li><strong>DBA 없이 AWS에 묶인 경우</strong>: Redshift Serverless + 모든 설정 AUTO로 시작, Bottleneck 시에만 수동 개입</li></ol><hr><h2 id=마치며>마치며<a hidden class=anchor aria-hidden=true href=#마치며>#</a></h2><p>BigQuery와 Redshift는 각각의 영역에서 최고 수준의 Cloud Data Warehouse다. 기술적 우열보다 중요한 것은 <strong>조직의 맥락</strong>이다.</p><p><strong>첫째, 기존 Cloud Ecosystem을 존중하라.</strong> AWS를 주력으로 사용하는 조직이 BigQuery만을 위해 GCP를 도입하는 것은 운영 복잡성을 크게 높인다. 반대도 마찬가지다. Zero-ETL, Spectrum, BigQuery Omni 같은 기능들은 각자의 Ecosystem 안에서 빛을 발한다.</p><p><strong>둘째, 팀의 역량과 문화를 고려하라.</strong> Redshift는 세밀한 Tuning으로 극한 Performance를 끌어낼 수 있지만, 그만큼 전문 인력이 필요하다. BigQuery는 Serverless Model로 운영 부담을 줄이지만, Fine-grained Control을 포기해야 한다.</p><p><strong>셋째, Workload Pattern을 분석하라.</strong> 가변적이고 예측 불가능한 Pattern이면 BigQuery의 On-Demand가, 안정적이고 예측 가능한 Pattern이면 Redshift의 Reserved Instance가 비용 효율적이다.</p><p><strong>넷째, 운영 부담과 Developer Experience를 과소평가하지 마라.</strong> Distribution Key를 잘못 선택하면 Performance가 급감하고, Dry Run 없이 Query를 실행하면 예상치 못한 비용이 발생한다. 이런 일상적 마찰은 장기적으로 팀의 생산성에 큰 영향을 미친다. BigQuery는 이 마찰을 원천 차단하는 설계이고, Redshift Serverless + AUTO는 마찰을 최소화하되 완전히 제거하지는 못한다.</p><p>어느 쪽을 선택하든, 결국 중요한 것은 <strong>데이터로부터 가치를 얼마나 빠르고 안정적으로 뽑아내느냐</strong>이다. 이 글이 그 판단에 도움이 되기를 바란다.</p><hr><h2 id=references>References<a hidden class=anchor aria-hidden=true href=#references>#</a></h2><ul><li><a href=https://cloud.google.com/blog/products/bigquery/inside-capacitor-bigquerys-next-generation-columnar-storage-format>Inside Capacitor, BigQuery&rsquo;s next-generation columnar storage format</a></li><li><a href=https://cloud.google.com/bigquery/pricing>BigQuery pricing</a></li><li><a href=https://aws.amazon.com/redshift/pricing/>Amazon Redshift pricing</a></li><li><a href=https://www.eesel.ai/blog/bigquery-vs-redshift>BigQuery vs Redshift: A comprehensive comparison in 2025</a></li><li><a href=https://www.luzmo.com/blog/bigquery-vs-redshift>Redshift vs BigQuery: Cloud Data Warehouse Comparison 2026</a></li><li><a href=https://portable.io/learn/bigquery-vs-redshift-comparison>BigQuery vs. Redshift Comparison: 2026 Deep-Dive</a></li><li><a href=https://docs.aws.amazon.com/redshift/latest/mgmt/zero-etl-using.html>Amazon Redshift zero-ETL integrations</a></li><li><a href=https://docs.cloud.google.com/bigquery/docs/omni-introduction>Introduction to BigQuery Omni</a></li><li><a href=https://cloud.google.com/bigquery/docs/bqml-introduction>BigQuery ML documentation</a></li><li><a href=https://docs.aws.amazon.com/redshift/latest/dg/machine_learning.html>Amazon Redshift ML</a></li><li><a href=https://docs.aws.amazon.com/redshift/latest/dg/t_Creating_tables.html>Automatic table optimization - Amazon Redshift</a></li><li><a href=https://docs.aws.amazon.com/redshift/latest/dg/automatic-wlm.html>Implementing automatic WLM - Amazon Redshift</a></li><li><a href=https://aws.amazon.com/about-aws/whats-new/2024/10/amazon-redshift-serverless-ai-driven-scaling-optimization/>Amazon Redshift Serverless AI-driven scaling and optimization</a></li><li><a href=https://aws.amazon.com/about-aws/whats-new/2026/02/amazon-redshift-autonomics-for-multi-cluster/>Amazon Redshift autonomics for multi-cluster environments</a></li><li><a href=https://cloud.google.com/blog/products/data-analytics/introducing-conversational-analytics-in-bigquery>Conversational Analytics in BigQuery</a></li><li><a href=https://cloud.google.com/blog/products/data-analytics/exploring-new-bigquery-data-canvas-ai-assistant-features/>BigQuery Data Canvas</a></li><li><a href=https://aws.amazon.com/blogs/big-data/write-queries-faster-with-amazon-q-generative-sql-for-amazon-redshift/>Amazon Q generative SQL for Amazon Redshift</a></li><li><a href=https://aws.amazon.com/blogs/aws/new-one-click-onboarding-and-notebooks-with-ai-agent-in-amazon-sagemaker-unified-studio/>SageMaker Unified Studio notebooks with AI agent</a></li><li><a href=https://cloud.google.com/bigquery/docs/best-practices-costs>Estimate and control costs - BigQuery</a></li><li><a href=https://cloud.google.com/blog/products/networking/speed-scale-reliability-25-years-of-data-center-networking>Jupiter network: 13 Petabits/sec</a></li><li><a href=https://cloud.google.com/bigquery/docs/query-plan-explanation>Query plan and timeline - BigQuery</a></li><li><a href=https://docs.aws.amazon.com/redshift/latest/mgmt/dc2-eol.html>DC2 End-of-Life notice - Amazon Redshift</a></li><li><a href=https://aws.amazon.com/about-aws/whats-new/2024/02/amazon-data-firehose-formerly-kinesis-data-firehose/>Amazon Data Firehose (formerly Kinesis Data Firehose)</a></li><li><a href=https://docs.aws.amazon.com/redshift/latest/mgmt/zero-etl-using.html>Zero-ETL latency characteristics</a></li><li><a href=https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html>Redshift encryption at rest (default since 2019)</a></li><li><a href=https://aws.amazon.com/blogs/big-data/amazon-redshift-python-user-defined-functions-will-reach-end-of-support-after-june-30-2026/>Python UDF end of support (June 2026)</a></li></ul></div><footer class=post-footer><ul class=post-tags><li><a href=https://novemberde.github.io/tags/bigquery/>Bigquery</a></li><li><a href=https://novemberde.github.io/tags/redshift/>Redshift</a></li><li><a href=https://novemberde.github.io/tags/GCP/>GCP</a></li><li><a href=https://novemberde.github.io/tags/aws/>Aws</a></li><li><a href=https://novemberde.github.io/tags/data-warehouse/>Data-Warehouse</a></li><li><a href=https://novemberde.github.io/tags/cloud/>Cloud</a></li><li><a href=https://novemberde.github.io/tags/data-engineering/>Data-Engineering</a></li></ul><nav class=paginav><a class=prev href=https://novemberde.github.io/post/2026/02/08/Colossus-Capacitor-BigQuery-Internals-ko/><span class=title>« Prev Page</span><br><span>Colossus와 Capacitor: BigQuery를 지탱하는 Storage의 구조</span>
+</a><a class=next href=https://novemberde.github.io/post/2026/01/29/Impact-Paradox-ko/><span class=title>Next Page »</span><br><span>임팩트의 역설: 작은 일이 큰 일을 가능하게 한다</span></a></nav></footer><div id=disqus_thread></div><script>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//novemberde-github-io.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></article></main><footer class=footer><span>&copy; 2026 <a href=https://novemberde.github.io/>Novemberde's Blog</a></span>
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+<a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentColor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>let menu=document.getElementById("menu");menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)},document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8620431066400094" crossorigin=anonymous></script></body></html>

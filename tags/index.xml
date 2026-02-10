@@ -6,7 +6,196 @@
     <description>Recent content in Tags on Novemberde&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-KR</language>
-    <lastBuildDate>Wed, 28 Jan 2026 10:00:00 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 10 Feb 2026 10:00:00 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ai</title>
+      <link>https://novemberde.github.io/tags/ai/</link>
+      <pubDate>Tue, 10 Feb 2026 10:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/ai/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fail-Fast</title>
+      <link>https://novemberde.github.io/tags/fail-fast/</link>
+      <pubDate>Tue, 10 Feb 2026 10:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/fail-fast/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MVP</title>
+      <link>https://novemberde.github.io/tags/MVP/</link>
+      <pubDate>Tue, 10 Feb 2026 10:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/MVP/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Product</title>
+      <link>https://novemberde.github.io/tags/product/</link>
+      <pubDate>Tue, 10 Feb 2026 10:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/product/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Startup</title>
+      <link>https://novemberde.github.io/tags/startup/</link>
+      <pubDate>Tue, 10 Feb 2026 10:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/startup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>스타트업</title>
+      <link>https://novemberde.github.io/tags/%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85/</link>
+      <pubDate>Tue, 10 Feb 2026 10:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>제품 개발</title>
+      <link>https://novemberde.github.io/tags/%EC%A0%9C%ED%92%88-%EA%B0%9C%EB%B0%9C/</link>
+      <pubDate>Tue, 10 Feb 2026 10:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EC%A0%9C%ED%92%88-%EA%B0%9C%EB%B0%9C/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>프로덕트</title>
+      <link>https://novemberde.github.io/tags/%ED%94%84%EB%A1%9C%EB%8D%95%ED%8A%B8/</link>
+      <pubDate>Tue, 10 Feb 2026 10:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%ED%94%84%EB%A1%9C%EB%8D%95%ED%8A%B8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Aws</title>
+      <link>https://novemberde.github.io/tags/aws/</link>
+      <pubDate>Sun, 08 Feb 2026 15:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Columnar-Storage</title>
+      <link>https://novemberde.github.io/tags/columnar-storage/</link>
+      <pubDate>Sun, 08 Feb 2026 15:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/columnar-storage/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data-Engineering</title>
+      <link>https://novemberde.github.io/tags/data-engineering/</link>
+      <pubDate>Sun, 08 Feb 2026 15:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/data-engineering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data-Warehouse</title>
+      <link>https://novemberde.github.io/tags/data-warehouse/</link>
+      <pubDate>Sun, 08 Feb 2026 15:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/data-warehouse/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Distributed-System</title>
+      <link>https://novemberde.github.io/tags/distributed-system/</link>
+      <pubDate>Sun, 08 Feb 2026 15:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/distributed-system/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mpp</title>
+      <link>https://novemberde.github.io/tags/mpp/</link>
+      <pubDate>Sun, 08 Feb 2026 15:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/mpp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Redshift</title>
+      <link>https://novemberde.github.io/tags/redshift/</link>
+      <pubDate>Sun, 08 Feb 2026 15:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/redshift/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bigquery</title>
+      <link>https://novemberde.github.io/tags/bigquery/</link>
+      <pubDate>Sun, 08 Feb 2026 14:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/bigquery/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Capacitor</title>
+      <link>https://novemberde.github.io/tags/capacitor/</link>
+      <pubDate>Sun, 08 Feb 2026 14:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/capacitor/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Colossus</title>
+      <link>https://novemberde.github.io/tags/colossus/</link>
+      <pubDate>Sun, 08 Feb 2026 14:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/colossus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GCP</title>
+      <link>https://novemberde.github.io/tags/GCP/</link>
+      <pubDate>Sun, 08 Feb 2026 14:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/GCP/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Storage</title>
+      <link>https://novemberde.github.io/tags/Storage/</link>
+      <pubDate>Sun, 08 Feb 2026 14:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/Storage/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cloud</title>
+      <link>https://novemberde.github.io/tags/cloud/</link>
+      <pubDate>Sun, 08 Feb 2026 10:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/cloud/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>GTD</title>
       <link>https://novemberde.github.io/tags/GTD/</link>
@@ -287,11 +476,11 @@
     </item>
     
     <item>
-      <title>DevOps</title>
-      <link>https://novemberde.github.io/tags/DevOps/</link>
+      <title>Devops</title>
+      <link>https://novemberde.github.io/tags/devops/</link>
       <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
       
-      <guid>https://novemberde.github.io/tags/DevOps/</guid>
+      <guid>https://novemberde.github.io/tags/devops/</guid>
       <description></description>
     </item>
     
@@ -301,15 +490,6 @@
       <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
       
       <guid>https://novemberde.github.io/tags/Embedding/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>GCP</title>
-      <link>https://novemberde.github.io/tags/GCP/</link>
-      <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
-      
-      <guid>https://novemberde.github.io/tags/GCP/</guid>
       <description></description>
     </item>
     
@@ -333,10 +513,10 @@
     
     <item>
       <title>Karrot</title>
-      <link>https://novemberde.github.io/tags/karrot/</link>
+      <link>https://novemberde.github.io/tags/Karrot/</link>
       <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
       
-      <guid>https://novemberde.github.io/tags/karrot/</guid>
+      <guid>https://novemberde.github.io/tags/Karrot/</guid>
       <description></description>
     </item>
     
@@ -359,11 +539,11 @@
     </item>
     
     <item>
-      <title>MLOps</title>
-      <link>https://novemberde.github.io/tags/MLOps/</link>
+      <title>Mlops</title>
+      <link>https://novemberde.github.io/tags/mlops/</link>
       <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
       
-      <guid>https://novemberde.github.io/tags/MLOps/</guid>
+      <guid>https://novemberde.github.io/tags/mlops/</guid>
       <description></description>
     </item>
     
@@ -584,15 +764,6 @@
     </item>
     
     <item>
-      <title>Aws</title>
-      <link>https://novemberde.github.io/tags/aws/</link>
-      <pubDate>Fri, 07 Feb 2025 00:30:00 +0000</pubDate>
-      
-      <guid>https://novemberde.github.io/tags/aws/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Re:Invent</title>
       <link>https://novemberde.github.io/tags/reInvent/</link>
       <pubDate>Fri, 07 Feb 2025 00:30:00 +0000</pubDate>
@@ -616,15 +787,6 @@
       <pubDate>Fri, 07 Feb 2025 00:30:00 +0000</pubDate>
       
       <guid>https://novemberde.github.io/tags/%EC%98%A8%EB%9D%BC%EC%9D%B8-%EC%BD%98%ED%8D%BC%EB%9F%B0%EC%8A%A4/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ai</title>
-      <link>https://novemberde.github.io/tags/ai/</link>
-      <pubDate>Tue, 28 Jan 2025 00:30:00 +0000</pubDate>
-      
-      <guid>https://novemberde.github.io/tags/ai/</guid>
       <description></description>
     </item>
     
@@ -782,15 +944,6 @@
     </item>
     
     <item>
-      <title>Storage</title>
-      <link>https://novemberde.github.io/tags/Storage/</link>
-      <pubDate>Fri, 15 Nov 2024 00:30:00 +0000</pubDate>
-      
-      <guid>https://novemberde.github.io/tags/Storage/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Http</title>
       <link>https://novemberde.github.io/tags/http/</link>
       <pubDate>Thu, 07 Nov 2024 00:30:00 +0000</pubDate>
@@ -891,10 +1044,10 @@
     
     <item>
       <title>Aurora</title>
-      <link>https://novemberde.github.io/tags/aurora/</link>
+      <link>https://novemberde.github.io/tags/Aurora/</link>
       <pubDate>Wed, 23 Oct 2024 10:30:00 +0000</pubDate>
       
-      <guid>https://novemberde.github.io/tags/aurora/</guid>
+      <guid>https://novemberde.github.io/tags/Aurora/</guid>
       <description></description>
     </item>
     
@@ -967,15 +1120,6 @@
       <pubDate>Wed, 23 Oct 2024 10:30:00 +0000</pubDate>
       
       <guid>https://novemberde.github.io/tags/OpenSearch/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Redshift</title>
-      <link>https://novemberde.github.io/tags/Redshift/</link>
-      <pubDate>Wed, 23 Oct 2024 10:30:00 +0000</pubDate>
-      
-      <guid>https://novemberde.github.io/tags/Redshift/</guid>
       <description></description>
     </item>
     
@@ -1187,11 +1331,11 @@
     </item>
     
     <item>
-      <title>PostgreSQL</title>
-      <link>https://novemberde.github.io/tags/PostgreSQL/</link>
+      <title>Postgresql</title>
+      <link>https://novemberde.github.io/tags/postgresql/</link>
       <pubDate>Mon, 21 Oct 2024 08:30:00 +0000</pubDate>
       
-      <guid>https://novemberde.github.io/tags/PostgreSQL/</guid>
+      <guid>https://novemberde.github.io/tags/postgresql/</guid>
       <description></description>
     </item>
     
@@ -1241,29 +1385,11 @@
     </item>
     
     <item>
-      <title>Startup</title>
-      <link>https://novemberde.github.io/tags/Startup/</link>
-      <pubDate>Mon, 03 Jun 2024 11:30:03 +0000</pubDate>
-      
-      <guid>https://novemberde.github.io/tags/Startup/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Teamwork</title>
       <link>https://novemberde.github.io/tags/Teamwork/</link>
       <pubDate>Mon, 03 Jun 2024 11:30:03 +0000</pubDate>
       
       <guid>https://novemberde.github.io/tags/Teamwork/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>스타트업</title>
-      <link>https://novemberde.github.io/tags/%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85/</link>
-      <pubDate>Mon, 03 Jun 2024 11:30:03 +0000</pubDate>
-      
-      <guid>https://novemberde.github.io/tags/%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85/</guid>
       <description></description>
     </item>
     

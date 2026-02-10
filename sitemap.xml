@@ -2,22 +2,97 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://novemberde.github.io/tags/ai/</loc>
+    <lastmod>2026-02-10T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/post/2026/02/10/AI-Fail-Fast-Product-Quality-ko/</loc>
+    <lastmod>2026-02-10T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/fail-fast/</loc>
+    <lastmod>2026-02-10T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/MVP/</loc>
+    <lastmod>2026-02-10T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/</loc>
+    <lastmod>2026-02-10T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/post/</loc>
+    <lastmod>2026-02-10T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/product/</loc>
+    <lastmod>2026-02-10T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/startup/</loc>
+    <lastmod>2026-02-10T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/</loc>
+    <lastmod>2026-02-10T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85/</loc>
+    <lastmod>2026-02-10T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/%EC%A0%9C%ED%92%88-%EA%B0%9C%EB%B0%9C/</loc>
+    <lastmod>2026-02-10T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/%ED%94%84%EB%A1%9C%EB%8D%95%ED%8A%B8/</loc>
+    <lastmod>2026-02-10T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/post/2026/02/08/Redshift-Internals-Architecture-ko/</loc>
+    <lastmod>2026-02-08T15:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/aws/</loc>
+    <lastmod>2026-02-08T15:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/columnar-storage/</loc>
+    <lastmod>2026-02-08T15:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/data-engineering/</loc>
+    <lastmod>2026-02-08T15:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/data-warehouse/</loc>
+    <lastmod>2026-02-08T15:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/distributed-system/</loc>
+    <lastmod>2026-02-08T15:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/mpp/</loc>
+    <lastmod>2026-02-08T15:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/redshift/</loc>
+    <lastmod>2026-02-08T15:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/bigquery/</loc>
+    <lastmod>2026-02-08T14:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/capacitor/</loc>
+    <lastmod>2026-02-08T14:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/colossus/</loc>
+    <lastmod>2026-02-08T14:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/post/2026/02/08/Colossus-Capacitor-BigQuery-Internals-ko/</loc>
+    <lastmod>2026-02-08T14:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/GCP/</loc>
+    <lastmod>2026-02-08T14:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/Storage/</loc>
+    <lastmod>2026-02-08T14:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/post/2026/02/08/BigQuery-vs-Redshift-Deep-Dive-ko/</loc>
+    <lastmod>2026-02-08T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/cloud/</loc>
+    <lastmod>2026-02-08T10:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://novemberde.github.io/tags/GTD/</loc>
     <lastmod>2026-01-28T10:00:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/leadership/</loc>
     <lastmod>2026-01-28T10:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/</loc>
-    <lastmod>2026-01-28T10:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/post/</loc>
-    <lastmod>2026-01-28T10:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://novemberde.github.io/tags/productivity/</loc>
-    <lastmod>2026-01-28T10:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/tags/</loc>
     <lastmod>2026-01-28T10:00:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/%EA%B8%B0%EC%88%A0-%EB%B6%80%EC%B1%84/</loc>
@@ -119,13 +194,10 @@
     <loc>https://novemberde.github.io/tags/ANN/</loc>
     <lastmod>2025-10-04T00:30:00+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/DevOps/</loc>
+    <loc>https://novemberde.github.io/tags/devops/</loc>
     <lastmod>2025-10-04T00:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/Embedding/</loc>
-    <lastmod>2025-10-04T00:30:00+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/tags/GCP/</loc>
     <lastmod>2025-10-04T00:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/GPU-Computing/</loc>
@@ -134,7 +206,7 @@
     <loc>https://novemberde.github.io/tags/Kafka/</loc>
     <lastmod>2025-10-04T00:30:00+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/karrot/</loc>
+    <loc>https://novemberde.github.io/tags/Karrot/</loc>
     <lastmod>2025-10-04T00:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/Kubeflow/</loc>
@@ -143,7 +215,7 @@
     <loc>https://novemberde.github.io/tags/LLM/</loc>
     <lastmod>2025-10-04T00:30:00+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/MLOps/</loc>
+    <loc>https://novemberde.github.io/tags/mlops/</loc>
     <lastmod>2025-10-04T00:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/Monitoring/</loc>
@@ -230,9 +302,6 @@
     <loc>https://novemberde.github.io/tags/%EC%97%94%EC%A7%80%EB%8B%88%EC%96%B4-%EB%A6%AC%EB%8D%94%EC%8B%AD/</loc>
     <lastmod>2025-02-09T00:30:00+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/aws/</loc>
-    <lastmod>2025-02-07T00:30:00+00:00</lastmod>
-  </url><url>
     <loc>https://novemberde.github.io/post/2025/02/07/AWS-reinvent-recap-with-heroes/</loc>
     <lastmod>2025-02-07T00:30:00+00:00</lastmod>
   </url><url>
@@ -244,9 +313,6 @@
   </url><url>
     <loc>https://novemberde.github.io/tags/%EC%98%A8%EB%9D%BC%EC%9D%B8-%EC%BD%98%ED%8D%BC%EB%9F%B0%EC%8A%A4/</loc>
     <lastmod>2025-02-07T00:30:00+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/tags/ai/</loc>
-    <lastmod>2025-01-28T00:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/post/2025/01/28/AWS-unified-studio/</loc>
     <lastmod>2025-01-28T00:30:00+00:00</lastmod>
@@ -311,9 +377,6 @@
     <loc>https://novemberde.github.io/tags/FSx/</loc>
     <lastmod>2024-11-15T00:30:00+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/Storage/</loc>
-    <lastmod>2024-11-15T00:30:00+00:00</lastmod>
-  </url><url>
     <loc>https://novemberde.github.io/tags/http/</loc>
     <lastmod>2024-11-07T00:30:00+00:00</lastmod>
   </url><url>
@@ -353,7 +416,7 @@
     <loc>https://novemberde.github.io/tags/AppSync/</loc>
     <lastmod>2024-10-23T10:30:00+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/aurora/</loc>
+    <loc>https://novemberde.github.io/tags/Aurora/</loc>
     <lastmod>2024-10-23T10:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/computing/</loc>
@@ -378,9 +441,6 @@
     <lastmod>2024-10-23T10:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/OpenSearch/</loc>
-    <lastmod>2024-10-23T10:30:00+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/tags/Redshift/</loc>
     <lastmod>2024-10-23T10:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/s3/</loc>
@@ -458,7 +518,7 @@
     <loc>https://novemberde.github.io/tags/pgbouncer/</loc>
     <lastmod>2024-10-21T08:30:00+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/PostgreSQL/</loc>
+    <loc>https://novemberde.github.io/tags/postgresql/</loc>
     <lastmod>2024-10-21T08:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/post/2024/10/21/postgres-connection-mode-session-mode/</loc>
@@ -485,13 +545,7 @@
     <loc>https://novemberde.github.io/post/2024/07/25/2023-gophercon-4-years-history-adopting-go/</loc>
     <lastmod>2024-07-25T11:30:03+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/Startup/</loc>
-    <lastmod>2024-06-03T11:30:03+00:00</lastmod>
-  </url><url>
     <loc>https://novemberde.github.io/tags/Teamwork/</loc>
-    <lastmod>2024-06-03T11:30:03+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/tags/%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85/</loc>
     <lastmod>2024-06-03T11:30:03+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/post/2024/06/04/simple-leadership-principles/</loc>

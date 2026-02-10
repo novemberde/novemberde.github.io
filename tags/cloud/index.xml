@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Cloud on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/cloud/</link>
+    <description>Recent content in Cloud on Novemberde&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Sun, 08 Feb 2026 10:00:00 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/cloud/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>BigQuery vs Redshift: Cloud Data Warehouse 선택을 위한 비교</title>
+      <link>https://novemberde.github.io/post/2026/02/08/BigQuery-vs-Redshift-Deep-Dive-ko/</link>
+      <pubDate>Sun, 08 Feb 2026 10:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2026/02/08/BigQuery-vs-Redshift-Deep-Dive-ko/</guid>
+      <description>&lt;h2 id=&#34;용어-사전&#34;&gt;용어 사전&lt;/h2&gt;
+&lt;p&gt;이 글에서 자주 등장하는 핵심 용어를 먼저 정리한다.&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;용어&lt;/th&gt;
+          &lt;th&gt;설명&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;MPP&lt;/strong&gt; (Massively Parallel Processing)&lt;/td&gt;
+          &lt;td&gt;다수의 Node가 Query를 분할하여 동시에 처리하는 Architecture&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Slot&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;BigQuery의 Compute 단위. 가상 CPU + Memory + I/O를 추상화한 Resource Unit&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;RPU&lt;/strong&gt; (Redshift Processing Unit)&lt;/td&gt;
+          &lt;td&gt;Redshift Serverless의 Compute 단위. 1 RPU = 16GB Memory&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Columnar Storage&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;데이터를 Row가 아닌 Column 단위로 저장하는 방식. 분석 Query에서 필요한 Column만 읽어 I/O 절감&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Distribution Key&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Redshift에서 데이터를 Node 간에 분산하는 기준 Column. JOIN Performance에 직접 영향&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Sort Key&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Redshift에서 데이터를 디스크에 물리적으로 정렬하는 기준 Column. Filter Performance에 직접 영향&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Partitioning&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;BigQuery에서 Table을 날짜/정수 범위 등으로 논리 분할. Scan 범위를 제한하여 비용과 속도 모두 개선&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Clustering&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;BigQuery에서 Partition 내 데이터를 특정 Column 기준으로 정렬. 최대 4개 Column 지정 가능&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;WLM&lt;/strong&gt; (Workload Management)&lt;/td&gt;
+          &lt;td&gt;Redshift의 Query Queue 관리 시스템. Query 종류별 Memory/Concurrency 배분&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;ATO&lt;/strong&gt; (Automatic Table Optimization)&lt;/td&gt;
+          &lt;td&gt;Redshift가 Query Pattern을 분석하여 Distribution Key/Sort Key를 자동 최적화하는 기능&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Zero-ETL&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Source Database → Data Warehouse로 데이터를 ETL Pipeline 없이 자동 복제하는 기능&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Dry Run&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;BigQuery에서 Query를 실행하지 않고 Scan량과 예상 비용만 미리 확인하는 기능. 무료&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;AQUA&lt;/strong&gt; (Advanced Query Accelerator)&lt;/td&gt;
+          &lt;td&gt;Redshift RA3 Node에서 Storage Layer의 AWS 전용 Processor/FPGA로 사전 Filtering/Aggregation을 수행하는 가속기&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Materialized View&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Query 결과를 사전 계산하여 저장한 View. 반복 Query의 속도를 크게 개선&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;BI Engine&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;BigQuery의 In-memory Analysis Layer. Sub-second Response로 Dashboard를 가속&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;들어가며&#34;&gt;들어가며&lt;/h2&gt;
+&lt;p&gt;Cloud Data Warehouse를 선택하는 일은 단순한 기술 비교가 아니다. 조직의 데이터 전략, 운영 문화, 그리고 장기적인 Cloud Roadmap에 깊이 관여하는 의사결정이다.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,7 +6,20 @@
     <description>Recent content in 스타트업 on Novemberde&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-KR</language>
-    <lastBuildDate>Mon, 03 Jun 2024 11:30:03 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 10 Feb 2026 10:00:00 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI 시대의 Fail Fast: 실패의 수준이 달라졌다</title>
+      <link>https://novemberde.github.io/post/2026/02/10/AI-Fail-Fast-Product-Quality-ko/</link>
+      <pubDate>Tue, 10 Feb 2026 10:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2026/02/10/AI-Fail-Fast-Product-Quality-ko/</guid>
+      <description>&lt;p&gt;&amp;ldquo;빠르게 실패하라(Fail Fast).&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;스타트업과 프로덕트 세계에서 가장 많이 들리는 조언 중 하나다. 아이디어를 빠르게 시장에 내놓고, 피드백을 받고, 방향을 수정하라. 틀린 말이 아니다. 하지만 현실은 종종 이랬다. 빠르게 만드느라 수준이 떨어지고, 수준이 떨어지니 피드백 자체가 왜곡되고, 왜곡된 피드백으로 잘못된 결론을 내린다.&lt;/p&gt;
+&lt;p&gt;AI가 이 공식을 근본적으로 바꾸고 있다.&lt;/p&gt;
+&lt;h2 id=&#34;과거의-fail-fast-속도와-수준의-트레이드오프&#34;&gt;과거의 Fail Fast: 속도와 수준의 트레이드오프&lt;/h2&gt;
+&lt;p&gt;전통적인 Fail Fast에는 구조적 한계가 있었다. 빠르게 만들려면 수준을 타협해야 했다. MVP(Minimum Viable Product)라는 이름 아래, &amp;ldquo;최소한으로 동작하는&amp;rdquo; 수준의 프로덕트를 만들어 시장에 내놓았다. 문제는 이 &amp;ldquo;최소한&amp;quot;의 수준이 너무 낮았다는 점이다.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>스타트업 팀이 지속적으로 움직이기 위한 리더십</title>
       <link>https://novemberde.github.io/post/2024/06/04/simple-leadership-principles/</link>
