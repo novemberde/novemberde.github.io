@@ -1,7 +1,7 @@
 ---
 title: "Colossus와 Capacitor: BigQuery를 지탱하는 Storage의 구조"
 tags: ["bigquery", "gcp", "colossus", "capacitor", "distributed-system", "storage", "data-engineering"]
-date: "2026-02-08T14:00:00+00:00"
+date: "2026-02-09T14:00:00+00:00"
 ShowBreadCrumbs: true
 ShowReadingTime: true
 ShowPostNavLinks: true

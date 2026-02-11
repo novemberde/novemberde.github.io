@@ -1,7 +1,7 @@
 ---
 title: "Amazon Redshift의 내부 Architecture: ParAccel에서 Serverless까지"
 tags: ["redshift", "aws", "data-warehouse", "mpp", "columnar-storage", "data-engineering", "distributed-system"]
-date: "2026-02-08T15:00:00+00:00"
+date: "2026-02-09T15:00:00+00:00"
 ShowBreadCrumbs: true
 ShowReadingTime: true
 ShowPostNavLinks: true
