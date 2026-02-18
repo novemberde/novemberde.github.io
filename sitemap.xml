@@ -3,7 +3,49 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://novemberde.github.io/tags/ai/</loc>
-    <lastmod>2026-02-10T10:00:00+00:00</lastmod>
+    <lastmod>2026-02-17T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/claude/</loc>
+    <lastmod>2026-02-17T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/claude-code/</loc>
+    <lastmod>2026-02-17T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/codex/</loc>
+    <lastmod>2026-02-17T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/engineering/</loc>
+    <lastmod>2026-02-17T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/post/2026/02/17/How-I-Use-Claude-Engineer-AI-Workflow/</loc>
+    <lastmod>2026-02-17T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/</loc>
+    <lastmod>2026-02-17T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/post/</loc>
+    <lastmod>2026-02-17T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/productivity/</loc>
+    <lastmod>2026-02-17T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/prompting/</loc>
+    <lastmod>2026-02-17T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/</loc>
+    <lastmod>2026-02-17T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/workflow/</loc>
+    <lastmod>2026-02-17T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/post/2026/02/17/How-I-Use-Claude-Engineer-AI-Workflow-ko/</loc>
+    <lastmod>2026-02-17T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/%EC%83%9D%EC%82%B0%EC%84%B1/</loc>
+    <lastmod>2026-02-17T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/%EC%97%94%EC%A7%80%EB%8B%88%EC%96%B4%EB%A7%81/</loc>
+    <lastmod>2026-02-17T10:00:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/post/2026/02/10/AI-Fail-Fast-Product-Quality-ko/</loc>
     <lastmod>2026-02-10T10:00:00+00:00</lastmod>
@@ -14,19 +56,10 @@
     <loc>https://novemberde.github.io/tags/MVP/</loc>
     <lastmod>2026-02-10T10:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/</loc>
-    <lastmod>2026-02-10T10:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/post/</loc>
-    <lastmod>2026-02-10T10:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://novemberde.github.io/tags/product/</loc>
     <lastmod>2026-02-10T10:00:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/startup/</loc>
-    <lastmod>2026-02-10T10:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/tags/</loc>
     <lastmod>2026-02-10T10:00:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85/</loc>
@@ -41,7 +74,7 @@
     <loc>https://novemberde.github.io/post/2026/02/09/Redshift-Internals-Architecture-ko/</loc>
     <lastmod>2026-02-09T15:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/aws/</loc>
+    <loc>https://novemberde.github.io/tags/AWS/</loc>
     <lastmod>2026-02-09T15:00:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/columnar-storage/</loc>
@@ -74,10 +107,10 @@
     <loc>https://novemberde.github.io/post/2026/02/09/Colossus-Capacitor-BigQuery-Internals-ko/</loc>
     <lastmod>2026-02-09T14:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/GCP/</loc>
+    <loc>https://novemberde.github.io/tags/gcp/</loc>
     <lastmod>2026-02-09T14:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/storage/</loc>
+    <loc>https://novemberde.github.io/tags/Storage/</loc>
     <lastmod>2026-02-09T14:00:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/post/2026/02/08/BigQuery-vs-Redshift-Deep-Dive-ko/</loc>
@@ -89,19 +122,13 @@
     <loc>https://novemberde.github.io/tags/GTD/</loc>
     <lastmod>2026-01-28T10:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/Leadership/</loc>
-    <lastmod>2026-01-28T10:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/tags/productivity/</loc>
+    <loc>https://novemberde.github.io/tags/leadership/</loc>
     <lastmod>2026-01-28T10:00:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/%EA%B8%B0%EC%88%A0-%EB%B6%80%EC%B1%84/</loc>
     <lastmod>2026-01-28T10:00:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/%EB%A6%AC%EB%8D%94%EC%8B%AD/</loc>
-    <lastmod>2026-01-28T10:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://novemberde.github.io/tags/%EC%83%9D%EC%82%B0%EC%84%B1/</loc>
     <lastmod>2026-01-28T10:00:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/%EC%97%94%EC%A7%80%EB%8B%88%EC%96%B4-%EC%83%9D%EC%82%B0%EC%84%B1/</loc>
@@ -443,7 +470,7 @@
     <loc>https://novemberde.github.io/tags/OpenSearch/</loc>
     <lastmod>2024-10-23T10:30:00+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/S3/</loc>
+    <loc>https://novemberde.github.io/tags/s3/</loc>
     <lastmod>2024-10-23T10:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/serverless/</loc>
@@ -527,9 +554,6 @@
     <loc>https://novemberde.github.io/tags/chatting/</loc>
     <lastmod>2024-10-14T11:30:03+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/engineering/</loc>
-    <lastmod>2024-10-14T11:30:03+00:00</lastmod>
-  </url><url>
     <loc>https://novemberde.github.io/tags/go/</loc>
     <lastmod>2024-10-14T11:30:03+00:00</lastmod>
   </url><url>
@@ -554,7 +578,7 @@
     <loc>https://novemberde.github.io/tags/%ED%8C%80%EC%9B%8C%ED%81%AC/</loc>
     <lastmod>2024-06-03T11:30:03+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/Burnout/</loc>
+    <loc>https://novemberde.github.io/tags/burnout/</loc>
     <lastmod>2024-02-18T11:30:03+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/post/2024/02/18/throttle-input-to-prevent-burning-out-en/</loc>

@@ -6,7 +6,18 @@
     <description>Recent content in Productivity on Novemberde&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-KR</language>
-    <lastBuildDate>Wed, 28 Jan 2026 10:00:00 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/productivity/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 17 Feb 2026 10:00:00 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/productivity/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How I Use Claude</title>
+      <link>https://novemberde.github.io/post/2026/02/17/How-I-Use-Claude-Engineer-AI-Workflow/</link>
+      <pubDate>Tue, 17 Feb 2026 10:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2026/02/17/How-I-Use-Claude-Engineer-AI-Workflow/</guid>
+      <description>&lt;p&gt;&amp;ldquo;What separates people who use AI well from those who don&amp;rsquo;t?&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s a question I get from colleagues often. It&amp;rsquo;s been three years since ChatGPT launched, and over a year since I started using Claude Code in earnest. In that time, the way I work has fundamentally changed. It&amp;rsquo;s no longer just &amp;ldquo;asking AI things&amp;rdquo;—&lt;strong&gt;the way I think alongside AI&lt;/strong&gt; has shifted.&lt;/p&gt;
+&lt;p&gt;In this post, I want to share honestly how I use Claude: how I ask questions, the patterns I follow to solve problems, and what I&amp;rsquo;ve discovered recently by combining it with Codex.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>임팩트의 역설: 작은 일이 큰 일을 가능하게 한다</title>
       <link>https://novemberde.github.io/post/2026/01/29/Impact-Paradox-ko/</link>

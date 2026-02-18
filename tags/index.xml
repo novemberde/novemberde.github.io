@@ -6,13 +6,94 @@
     <description>Recent content in Tags on Novemberde&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-KR</language>
-    <lastBuildDate>Tue, 10 Feb 2026 10:00:00 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 17 Feb 2026 10:00:00 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ai</title>
       <link>https://novemberde.github.io/tags/ai/</link>
-      <pubDate>Tue, 10 Feb 2026 10:00:00 +0000</pubDate>
+      <pubDate>Tue, 17 Feb 2026 10:00:00 +0000</pubDate>
       
       <guid>https://novemberde.github.io/tags/ai/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Claude</title>
+      <link>https://novemberde.github.io/tags/claude/</link>
+      <pubDate>Tue, 17 Feb 2026 10:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/claude/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Claude-Code</title>
+      <link>https://novemberde.github.io/tags/claude-code/</link>
+      <pubDate>Tue, 17 Feb 2026 10:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/claude-code/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Codex</title>
+      <link>https://novemberde.github.io/tags/codex/</link>
+      <pubDate>Tue, 17 Feb 2026 10:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/codex/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Engineering</title>
+      <link>https://novemberde.github.io/tags/engineering/</link>
+      <pubDate>Tue, 17 Feb 2026 10:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/engineering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Productivity</title>
+      <link>https://novemberde.github.io/tags/productivity/</link>
+      <pubDate>Tue, 17 Feb 2026 10:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/productivity/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Prompting</title>
+      <link>https://novemberde.github.io/tags/prompting/</link>
+      <pubDate>Tue, 17 Feb 2026 10:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/prompting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Workflow</title>
+      <link>https://novemberde.github.io/tags/workflow/</link>
+      <pubDate>Tue, 17 Feb 2026 10:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/workflow/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>생산성</title>
+      <link>https://novemberde.github.io/tags/%EC%83%9D%EC%82%B0%EC%84%B1/</link>
+      <pubDate>Tue, 17 Feb 2026 10:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EC%83%9D%EC%82%B0%EC%84%B1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>엔지니어링</title>
+      <link>https://novemberde.github.io/tags/%EC%97%94%EC%A7%80%EB%8B%88%EC%96%B4%EB%A7%81/</link>
+      <pubDate>Tue, 17 Feb 2026 10:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EC%97%94%EC%A7%80%EB%8B%88%EC%96%B4%EB%A7%81/</guid>
       <description></description>
     </item>
     
@@ -80,11 +161,11 @@
     </item>
     
     <item>
-      <title>Aws</title>
-      <link>https://novemberde.github.io/tags/aws/</link>
+      <title>AWS</title>
+      <link>https://novemberde.github.io/tags/AWS/</link>
       <pubDate>Mon, 09 Feb 2026 15:00:00 +0000</pubDate>
       
-      <guid>https://novemberde.github.io/tags/aws/</guid>
+      <guid>https://novemberde.github.io/tags/AWS/</guid>
       <description></description>
     </item>
     
@@ -170,20 +251,20 @@
     </item>
     
     <item>
-      <title>GCP</title>
-      <link>https://novemberde.github.io/tags/GCP/</link>
+      <title>Gcp</title>
+      <link>https://novemberde.github.io/tags/gcp/</link>
       <pubDate>Mon, 09 Feb 2026 14:00:00 +0000</pubDate>
       
-      <guid>https://novemberde.github.io/tags/GCP/</guid>
+      <guid>https://novemberde.github.io/tags/gcp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Storage</title>
-      <link>https://novemberde.github.io/tags/storage/</link>
+      <link>https://novemberde.github.io/tags/Storage/</link>
       <pubDate>Mon, 09 Feb 2026 14:00:00 +0000</pubDate>
       
-      <guid>https://novemberde.github.io/tags/storage/</guid>
+      <guid>https://novemberde.github.io/tags/Storage/</guid>
       <description></description>
     </item>
     
@@ -207,19 +288,10 @@
     
     <item>
       <title>Leadership</title>
-      <link>https://novemberde.github.io/tags/Leadership/</link>
+      <link>https://novemberde.github.io/tags/leadership/</link>
       <pubDate>Wed, 28 Jan 2026 10:00:00 +0000</pubDate>
       
-      <guid>https://novemberde.github.io/tags/Leadership/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Productivity</title>
-      <link>https://novemberde.github.io/tags/productivity/</link>
-      <pubDate>Wed, 28 Jan 2026 10:00:00 +0000</pubDate>
-      
-      <guid>https://novemberde.github.io/tags/productivity/</guid>
+      <guid>https://novemberde.github.io/tags/leadership/</guid>
       <description></description>
     </item>
     
@@ -238,15 +310,6 @@
       <pubDate>Wed, 28 Jan 2026 10:00:00 +0000</pubDate>
       
       <guid>https://novemberde.github.io/tags/%EB%A6%AC%EB%8D%94%EC%8B%AD/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>생산성</title>
-      <link>https://novemberde.github.io/tags/%EC%83%9D%EC%82%B0%EC%84%B1/</link>
-      <pubDate>Wed, 28 Jan 2026 10:00:00 +0000</pubDate>
-      
-      <guid>https://novemberde.github.io/tags/%EC%83%9D%EC%82%B0%EC%84%B1/</guid>
       <description></description>
     </item>
     
@@ -1125,10 +1188,10 @@
     
     <item>
       <title>S3</title>
-      <link>https://novemberde.github.io/tags/S3/</link>
+      <link>https://novemberde.github.io/tags/s3/</link>
       <pubDate>Wed, 23 Oct 2024 10:30:00 +0000</pubDate>
       
-      <guid>https://novemberde.github.io/tags/S3/</guid>
+      <guid>https://novemberde.github.io/tags/s3/</guid>
       <description></description>
     </item>
     
@@ -1349,15 +1412,6 @@
     </item>
     
     <item>
-      <title>Engineering</title>
-      <link>https://novemberde.github.io/tags/engineering/</link>
-      <pubDate>Mon, 14 Oct 2024 11:30:03 +0000</pubDate>
-      
-      <guid>https://novemberde.github.io/tags/engineering/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Go</title>
       <link>https://novemberde.github.io/tags/go/</link>
       <pubDate>Mon, 14 Oct 2024 11:30:03 +0000</pubDate>
@@ -1404,10 +1458,10 @@
     
     <item>
       <title>Burnout</title>
-      <link>https://novemberde.github.io/tags/Burnout/</link>
+      <link>https://novemberde.github.io/tags/burnout/</link>
       <pubDate>Sun, 18 Feb 2024 11:30:03 +0000</pubDate>
       
-      <guid>https://novemberde.github.io/tags/Burnout/</guid>
+      <guid>https://novemberde.github.io/tags/burnout/</guid>
       <description></description>
     </item>
     

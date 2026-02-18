@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>엔지니어링 on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/%EC%97%94%EC%A7%80%EB%8B%88%EC%96%B4%EB%A7%81/</link>
+    <description>Recent content in 엔지니어링 on Novemberde&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Tue, 17 Feb 2026 10:00:00 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/%EC%97%94%EC%A7%80%EB%8B%88%EC%96%B4%EB%A7%81/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>나는 Claude를 이렇게 쓴다</title>
+      <link>https://novemberde.github.io/post/2026/02/17/How-I-Use-Claude-Engineer-AI-Workflow-ko/</link>
+      <pubDate>Tue, 17 Feb 2026 10:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2026/02/17/How-I-Use-Claude-Engineer-AI-Workflow-ko/</guid>
+      <description>&lt;p&gt;&amp;ldquo;AI를 잘 쓰는 사람과 못 쓰는 사람의 차이는 뭘까?&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;동료들에게 자주 받는 질문이다. ChatGPT가 나온 지 3년, Claude Code를 본격적으로 쓴 지 1년이 넘었다. 그 사이에 내 작업 방식은 근본적으로 바뀌었다. 단순히 &amp;ldquo;AI에게 물어보는 것&amp;quot;이 아니라, &lt;strong&gt;AI와 함께 생각하는 방식&lt;/strong&gt; 자체가 달라졌다.&lt;/p&gt;
+&lt;p&gt;이 글에서는 내가 Claude를 어떻게 활용하고 있는지—질문하는 방식, 문제를 해결하는 패턴, 그리고 최근 Codex와 병용하면서 발견한 것들을 솔직하게 공유하려 한다.&lt;/p&gt;
+&lt;h2 id=&#34;질문의-진화-이거-해줘에서-같이-생각하자로&#34;&gt;질문의 진화: &amp;ldquo;이거 해줘&amp;quot;에서 &amp;ldquo;같이 생각하자&amp;quot;로&lt;/h2&gt;
+&lt;p&gt;처음 AI 도구를 쓸 때는 검색 엔진의 연장선이었다. &amp;ldquo;Go에서 map을 순회하면서 삭제하려면?&amp;rdquo; 같은 단답형 질문. Stack Overflow 대신 Claude에게 물어볼 뿐이었다.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
