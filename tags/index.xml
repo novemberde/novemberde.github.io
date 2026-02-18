@@ -125,11 +125,20 @@
     </item>
     
     <item>
-      <title>Startup</title>
-      <link>https://novemberde.github.io/tags/startup/</link>
+      <title>Product-Development</title>
+      <link>https://novemberde.github.io/tags/product-development/</link>
       <pubDate>Tue, 10 Feb 2026 10:00:00 +0000</pubDate>
       
-      <guid>https://novemberde.github.io/tags/startup/</guid>
+      <guid>https://novemberde.github.io/tags/product-development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Startup</title>
+      <link>https://novemberde.github.io/tags/Startup/</link>
+      <pubDate>Tue, 10 Feb 2026 10:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/Startup/</guid>
       <description></description>
     </item>
     
@@ -251,11 +260,11 @@
     </item>
     
     <item>
-      <title>Gcp</title>
-      <link>https://novemberde.github.io/tags/gcp/</link>
+      <title>GCP</title>
+      <link>https://novemberde.github.io/tags/GCP/</link>
       <pubDate>Mon, 09 Feb 2026 14:00:00 +0000</pubDate>
       
-      <guid>https://novemberde.github.io/tags/gcp/</guid>
+      <guid>https://novemberde.github.io/tags/GCP/</guid>
       <description></description>
     </item>
     
@@ -602,11 +611,11 @@
     </item>
     
     <item>
-      <title>MLOps</title>
-      <link>https://novemberde.github.io/tags/MLOps/</link>
+      <title>Mlops</title>
+      <link>https://novemberde.github.io/tags/mlops/</link>
       <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
       
-      <guid>https://novemberde.github.io/tags/MLOps/</guid>
+      <guid>https://novemberde.github.io/tags/mlops/</guid>
       <description></description>
     </item>
     
@@ -1107,10 +1116,10 @@
     
     <item>
       <title>Aurora</title>
-      <link>https://novemberde.github.io/tags/aurora/</link>
+      <link>https://novemberde.github.io/tags/Aurora/</link>
       <pubDate>Wed, 23 Oct 2024 10:30:00 +0000</pubDate>
       
-      <guid>https://novemberde.github.io/tags/aurora/</guid>
+      <guid>https://novemberde.github.io/tags/Aurora/</guid>
       <description></description>
     </item>
     
@@ -1161,10 +1170,10 @@
     
     <item>
       <title>Lambda</title>
-      <link>https://novemberde.github.io/tags/Lambda/</link>
+      <link>https://novemberde.github.io/tags/lambda/</link>
       <pubDate>Wed, 23 Oct 2024 10:30:00 +0000</pubDate>
       
-      <guid>https://novemberde.github.io/tags/Lambda/</guid>
+      <guid>https://novemberde.github.io/tags/lambda/</guid>
       <description></description>
     </item>
     
@@ -1188,10 +1197,10 @@
     
     <item>
       <title>S3</title>
-      <link>https://novemberde.github.io/tags/s3/</link>
+      <link>https://novemberde.github.io/tags/S3/</link>
       <pubDate>Wed, 23 Oct 2024 10:30:00 +0000</pubDate>
       
-      <guid>https://novemberde.github.io/tags/s3/</guid>
+      <guid>https://novemberde.github.io/tags/S3/</guid>
       <description></description>
     </item>
     
@@ -1394,11 +1403,11 @@
     </item>
     
     <item>
-      <title>PostgreSQL</title>
-      <link>https://novemberde.github.io/tags/PostgreSQL/</link>
+      <title>Postgresql</title>
+      <link>https://novemberde.github.io/tags/postgresql/</link>
       <pubDate>Mon, 21 Oct 2024 08:30:00 +0000</pubDate>
       
-      <guid>https://novemberde.github.io/tags/PostgreSQL/</guid>
+      <guid>https://novemberde.github.io/tags/postgresql/</guid>
       <description></description>
     </item>
     
@@ -1458,10 +1467,10 @@
     
     <item>
       <title>Burnout</title>
-      <link>https://novemberde.github.io/tags/burnout/</link>
+      <link>https://novemberde.github.io/tags/Burnout/</link>
       <pubDate>Sun, 18 Feb 2024 11:30:03 +0000</pubDate>
       
-      <guid>https://novemberde.github.io/tags/burnout/</guid>
+      <guid>https://novemberde.github.io/tags/Burnout/</guid>
       <description></description>
     </item>
     

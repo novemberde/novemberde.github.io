@@ -20,5 +20,18 @@
 &lt;p&gt;전통적인 Fail Fast에는 구조적 한계가 있었다. 빠르게 만들려면 수준을 타협해야 했다. MVP(Minimum Viable Product)라는 이름 아래, &amp;ldquo;최소한으로 동작하는&amp;rdquo; 수준의 프로덕트를 만들어 시장에 내놓았다. 문제는 이 &amp;ldquo;최소한&amp;quot;의 수준이 너무 낮았다는 점이다.&lt;/p&gt;</description>
     </item>
     
+    <item>
+      <title>Fail Fast in the Age of AI: The Bar for Failure Has Changed</title>
+      <link>https://novemberde.github.io/post/2026/02/10/AI-Fail-Fast-Product-Quality/</link>
+      <pubDate>Tue, 10 Feb 2026 10:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2026/02/10/AI-Fail-Fast-Product-Quality/</guid>
+      <description>&lt;p&gt;&amp;ldquo;Fail fast.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s one of the most common pieces of advice in the startup and product world. Ship your idea quickly, get feedback, adjust course. It&amp;rsquo;s not wrong. But reality often looked like this: building fast meant building poorly, building poorly meant distorted feedback, and distorted feedback led to wrong conclusions.&lt;/p&gt;
+&lt;p&gt;AI is fundamentally changing this equation.&lt;/p&gt;
+&lt;h2 id=&#34;the-old-fail-fast-the-trade-off-between-speed-and-quality&#34;&gt;The Old Fail Fast: The Trade-off Between Speed and Quality&lt;/h2&gt;
+&lt;p&gt;Traditional Fail Fast had a structural limitation. Building fast meant compromising quality. Under the banner of MVP—Minimum Viable Product—teams shipped products that were &amp;ldquo;minimally functional.&amp;rdquo; The problem was that the bar for &amp;ldquo;minimal&amp;rdquo; was too low.&lt;/p&gt;</description>
+    </item>
+    
   </channel>
 </rss>

@@ -50,6 +50,9 @@
     <loc>https://novemberde.github.io/post/2026/02/10/AI-Fail-Fast-Product-Quality-ko/</loc>
     <lastmod>2026-02-10T10:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://novemberde.github.io/post/2026/02/10/AI-Fail-Fast-Product-Quality/</loc>
+    <lastmod>2026-02-10T10:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://novemberde.github.io/tags/fail-fast/</loc>
     <lastmod>2026-02-10T10:00:00+00:00</lastmod>
   </url><url>
@@ -59,7 +62,10 @@
     <loc>https://novemberde.github.io/tags/product/</loc>
     <lastmod>2026-02-10T10:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/startup/</loc>
+    <loc>https://novemberde.github.io/tags/product-development/</loc>
+    <lastmod>2026-02-10T10:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://novemberde.github.io/tags/Startup/</loc>
     <lastmod>2026-02-10T10:00:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85/</loc>
@@ -107,7 +113,7 @@
     <loc>https://novemberde.github.io/post/2026/02/09/Colossus-Capacitor-BigQuery-Internals-ko/</loc>
     <lastmod>2026-02-09T14:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/gcp/</loc>
+    <loc>https://novemberde.github.io/tags/GCP/</loc>
     <lastmod>2026-02-09T14:00:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/Storage/</loc>
@@ -242,7 +248,7 @@
     <loc>https://novemberde.github.io/tags/LLM/</loc>
     <lastmod>2025-10-04T00:30:00+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/MLOps/</loc>
+    <loc>https://novemberde.github.io/tags/mlops/</loc>
     <lastmod>2025-10-04T00:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/Monitoring/</loc>
@@ -443,7 +449,7 @@
     <loc>https://novemberde.github.io/tags/AppSync/</loc>
     <lastmod>2024-10-23T10:30:00+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/aurora/</loc>
+    <loc>https://novemberde.github.io/tags/Aurora/</loc>
     <lastmod>2024-10-23T10:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/computing/</loc>
@@ -461,7 +467,7 @@
     <loc>https://novemberde.github.io/tags/fargate/</loc>
     <lastmod>2024-10-23T10:30:00+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/Lambda/</loc>
+    <loc>https://novemberde.github.io/tags/lambda/</loc>
     <lastmod>2024-10-23T10:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/Neptune/</loc>
@@ -470,7 +476,7 @@
     <loc>https://novemberde.github.io/tags/OpenSearch/</loc>
     <lastmod>2024-10-23T10:30:00+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/s3/</loc>
+    <loc>https://novemberde.github.io/tags/S3/</loc>
     <lastmod>2024-10-23T10:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/serverless/</loc>
@@ -545,7 +551,7 @@
     <loc>https://novemberde.github.io/tags/pgbouncer/</loc>
     <lastmod>2024-10-21T08:30:00+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/PostgreSQL/</loc>
+    <loc>https://novemberde.github.io/tags/postgresql/</loc>
     <lastmod>2024-10-21T08:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/post/2024/10/21/postgres-connection-mode-session-mode/</loc>
@@ -578,7 +584,7 @@
     <loc>https://novemberde.github.io/tags/%ED%8C%80%EC%9B%8C%ED%81%AC/</loc>
     <lastmod>2024-06-03T11:30:03+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/burnout/</loc>
+    <loc>https://novemberde.github.io/tags/Burnout/</loc>
     <lastmod>2024-02-18T11:30:03+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/post/2024/02/18/throttle-input-to-prevent-burning-out-en/</loc>

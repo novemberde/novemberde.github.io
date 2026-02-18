@@ -1,4 +1,3 @@
 User-agent: *
-Disallow: /tags/
-Allow: /
+Allow:/
 Sitemap: https://novemberde.github.io/sitemap.xml

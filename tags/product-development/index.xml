@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Product-Development on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/product-development/</link>
+    <description>Recent content in Product-Development on Novemberde&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Tue, 10 Feb 2026 10:00:00 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/product-development/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fail Fast in the Age of AI: The Bar for Failure Has Changed</title>
+      <link>https://novemberde.github.io/post/2026/02/10/AI-Fail-Fast-Product-Quality/</link>
+      <pubDate>Tue, 10 Feb 2026 10:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2026/02/10/AI-Fail-Fast-Product-Quality/</guid>
+      <description>&lt;p&gt;&amp;ldquo;Fail fast.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s one of the most common pieces of advice in the startup and product world. Ship your idea quickly, get feedback, adjust course. It&amp;rsquo;s not wrong. But reality often looked like this: building fast meant building poorly, building poorly meant distorted feedback, and distorted feedback led to wrong conclusions.&lt;/p&gt;
+&lt;p&gt;AI is fundamentally changing this equation.&lt;/p&gt;
+&lt;h2 id=&#34;the-old-fail-fast-the-trade-off-between-speed-and-quality&#34;&gt;The Old Fail Fast: The Trade-off Between Speed and Quality&lt;/h2&gt;
+&lt;p&gt;Traditional Fail Fast had a structural limitation. Building fast meant compromising quality. Under the banner of MVP—Minimum Viable Product—teams shipped products that were &amp;ldquo;minimally functional.&amp;rdquo; The problem was that the bar for &amp;ldquo;minimal&amp;rdquo; was too low.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
