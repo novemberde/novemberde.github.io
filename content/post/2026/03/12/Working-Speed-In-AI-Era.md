@@ -7,6 +7,8 @@ ShowReadingTime: true
 ShowPostNavLinks: true
 ---
 
+![working speed in ai era](/images/20260312_ai.png)
+
 ## The Age of the Horse Carriage Is Over
 
 In 1865, the British Parliament — in all seriousness — passed a law requiring **a person carrying a red flag to walk 60 yards ahead of every automobile.** Speed limits were set at 2 mph in towns and 4 mph in the countryside. The speed of the car was legally capped at horse-carriage levels. The reasons varied: "It's more dangerous than a horse carriage," "It scares the horses," "The roads were built for carriages." This **Red Flag Act** remained in force for over 30 years.
