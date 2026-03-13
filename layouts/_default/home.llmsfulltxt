@@ -1,0 +1,20 @@
+# {{ .Site.Title }}
+
+> {{ .Site.Params.description }}
+
+Author: {{ .Site.Params.author }}
+Site: {{ .Site.BaseURL }}
+
+{{ range where .Site.RegularPages "Section" "post" -}}
+---
+
+## {{ .Title }}
+
+URL: {{ .Permalink }}
+Date: {{ .Date.Format "2006-01-02" }}
+{{ with .Lastmod }}Last Modified: {{ .Format "2006-01-02" }}{{ end }}
+Tags: {{ delimit .Params.tags ", " }}
+
+{{ .RawContent }}
+
+{{ end }}

@@ -1,0 +1,12 @@
+# {{ .Site.Title }}
+
+> {{ .Site.Params.description }}
+
+Author: {{ .Site.Params.author }}
+Site: {{ .Site.BaseURL }}
+
+## Blog Posts
+
+{{ range where .Site.RegularPages "Section" "post" -}}
+- [{{ .Title }}]({{ .Permalink }}): {{ with .Description }}{{ . | plainify | htmlUnescape }}{{ else }}{{ .Summary | plainify | htmlUnescape | truncate 150 }}{{ end }}
+{{ end }}
