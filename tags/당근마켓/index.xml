@@ -11,7 +11,7 @@
       <title>2200만 사용자를 위한 채팅 시스템 아키텍처</title>
       <link>https://novemberde.github.io/post/2022/05/12/karrot-chat-system/</link>
       <pubDate>Thu, 12 May 2022 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2022/05/12/karrot-chat-system/</guid>
       <description>&lt;p&gt;채팅은 맨 처음 입사하고 나서 맡은 프로젝트였고, 지금까지도 운영하고 개선하는 서비스이다.
 처음에 Ruby on rails 로 개발하던 환경에서 처음으로 시작한 마이크로서비스다.

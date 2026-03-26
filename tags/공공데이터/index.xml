@@ -11,7 +11,7 @@
       <title>Athena, QuickSight를 활용한 공공데이터 분석</title>
       <link>https://novemberde.github.io/post/2017/09/14/public_data_athena/</link>
       <pubDate>Thu, 14 Sep 2017 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2017/09/14/public_data_athena/</guid>
       <description>&lt;p&gt;빅데이터를 직접 모으는 방법이 있지만, &lt;a href=&#34;https://www.data.go.kr/&#34;&gt;공공데이터 포털&lt;/a&gt;과 &lt;a href=&#34;http://datalab.naver.com/&#34;&gt;네이버 데이터랩&lt;/a&gt;처럼
 정해진 API를 통해 접근하거나 데이터를 JSON, XML, CSV와 같은 형식으로 지원해주는 사이트들을 적극 활용해볼 수 있습니다.&lt;/p&gt;

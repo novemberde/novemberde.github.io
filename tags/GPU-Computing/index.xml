@@ -11,7 +11,7 @@
       <title>AI Platform with Python at Karrot - Inference Pipeline Part(Pycon Korea 2025)</title>
       <link>https://novemberde.github.io/post/2025/10/04/pycon-korea-2025-dataflow-at-karrot/</link>
       <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2025/10/04/pycon-korea-2025-dataflow-at-karrot/</guid>
       <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;p&gt;This article covers our journey building a large-scale ML inference pipeline at Karrot (당근) using Python, Apache Beam, and Google Cloud Dataflow. The presentation was given at PyConKR 2025 by Park JunSeong and Byun Kyuhyun from the ML Infrastructure and ML Data Platform teams.&lt;/p&gt;

@@ -11,7 +11,7 @@
       <title>Serverless을 이용한 AWS Lambda의 배포 자동화</title>
       <link>https://novemberde.github.io/post/2017/08/14/Serverless/</link>
       <pubDate>Mon, 14 Aug 2017 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2017/08/14/Serverless/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;
@@ -31,7 +31,7 @@ Startups and Fortune 500 companies are using it to build incredibly efficient ap
       <title>Docker image를 EB(Elastic Beanstalk)를 통해 배포하기</title>
       <link>https://novemberde.github.io/post/2017/07/03/Elastic_Beanstalk/</link>
       <pubDate>Mon, 03 Jul 2017 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2017/07/03/Elastic_Beanstalk/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;
@@ -65,7 +65,7 @@ Startups and Fortune 500 companies are using it to build incredibly efficient ap
       <title>만들어진 Docker image를 EC2 인스턴스에 배포하기</title>
       <link>https://novemberde.github.io/post/2017/04/03/Docker_9/</link>
       <pubDate>Mon, 03 Apr 2017 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2017/04/03/Docker_9/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;
@@ -94,7 +94,7 @@ Startups and Fortune 500 companies are using it to build incredibly efficient ap
       <title>Docker로 EC2에 Node 배포하기</title>
       <link>https://novemberde.github.io/post/2017/03/31/Docker_0/</link>
       <pubDate>Fri, 31 Mar 2017 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2017/03/31/Docker_0/</guid>
       <description>&lt;h2 id=&#34;소개&#34;&gt;소개&lt;/h2&gt;
 &lt;p&gt;Node JS 서버를 배포하려고 한다.

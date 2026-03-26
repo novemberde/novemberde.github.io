@@ -11,7 +11,7 @@
       <title>Native addon을 포함하여 Node.js &#43; Typescript &#43; Serverless 빌드 및 배포하기</title>
       <link>https://novemberde.github.io/post/2019/02/14/Ts-Serverless-Build/</link>
       <pubDate>Thu, 14 Feb 2019 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2019/02/14/Ts-Serverless-Build/</guid>
       <description>&lt;p&gt;AWSKRUG Serverless Group에서 발표한 자료입니다.
 C++로 빌드한 Native addon을 Serverless 환경에서 사용할 때 빌드 및 배포하는 방법을 다루었습니다.&lt;/p&gt;
@@ -27,7 +27,7 @@ C++로 빌드한 Native addon을 Serverless 환경에서 사용할 때 빌드 �
       <title>NODE response를 apicache로 처리하기</title>
       <link>https://novemberde.github.io/post/2018/03/01/Node_apicache/</link>
       <pubDate>Thu, 01 Mar 2018 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2018/03/01/Node_apicache/</guid>
       <description>&lt;h2 id=&#34;문제인식&#34;&gt;문제인식&lt;/h2&gt;
 &lt;hr&gt;
@@ -49,7 +49,7 @@ DB로 몰리는 부하를 분산하기 위해 어떻게 처리해야하는지 �
       <title>Node js 라이브러리 및 유용한 자료</title>
       <link>https://novemberde.github.io/post/2017/11/05/Node.JS_Library/</link>
       <pubDate>Sun, 05 Nov 2017 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2017/11/05/Node.JS_Library/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;
@@ -126,7 +126,7 @@ DB로 몰리는 부하를 분산하기 위해 어떻게 처리해야하는지 �
       <title>TypeScript로 Node.js Express 서버 개발하기</title>
       <link>https://novemberde.github.io/post/2017/10/22/Express-Typescript/</link>
       <pubDate>Sun, 22 Oct 2017 13:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2017/10/22/Express-Typescript/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;
@@ -161,7 +161,7 @@ TypeScript로 짜여져 있었고 나중에 지속적인 프로젝트 관리적�
       <title>Sequelize에서 parallel execution과 serial execution</title>
       <link>https://novemberde.github.io/post/2017/07/01/Sequelize_0/</link>
       <pubDate>Sat, 01 Jul 2017 13:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2017/07/01/Sequelize_0/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;
@@ -182,7 +182,7 @@ callback 패턴의 늪에서 벗어날 수 있는 Promise는 현재 서버사이
       <title>Amazon Aurora와 sequelize 연동해보기.</title>
       <link>https://novemberde.github.io/post/2017/05/09/Aurora_sequelize_0/</link>
       <pubDate>Tue, 09 May 2017 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2017/05/09/Aurora_sequelize_0/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;
@@ -202,7 +202,7 @@ aurora는 MySQL과 호환이 가능한 DB라고 하기 때문에 나 또한 궁�
       <title>Node 서버를 바탕으로 Dockerfile로 만들기</title>
       <link>https://novemberde.github.io/post/2017/04/02/Docker_7/</link>
       <pubDate>Sun, 02 Apr 2017 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2017/04/02/Docker_7/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;
@@ -236,7 +236,7 @@ aurora는 MySQL과 호환이 가능한 DB라고 하기 때문에 나 또한 궁�
       <title>PM2를 사용하여 EC2에 Node 서버 배포하기</title>
       <link>https://novemberde.github.io/post/2017/04/02/Docker_6/</link>
       <pubDate>Sun, 02 Apr 2017 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2017/04/02/Docker_6/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;
@@ -265,7 +265,7 @@ aurora는 MySQL과 호환이 가능한 DB라고 하기 때문에 나 또한 궁�
       <title>Express JS를 사용하여 Node 서버 구축하기</title>
       <link>https://novemberde.github.io/post/2017/04/01/Docker_5/</link>
       <pubDate>Sat, 01 Apr 2017 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2017/04/01/Docker_5/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;
@@ -297,7 +297,7 @@ http 모듈을 사용하여 서버를 가동하면 exception이 발생하는 동
       <title>Docker로 EC2에 Node 배포하기</title>
       <link>https://novemberde.github.io/post/2017/03/31/Docker_0/</link>
       <pubDate>Fri, 31 Mar 2017 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2017/03/31/Docker_0/</guid>
       <description>&lt;h2 id=&#34;소개&#34;&gt;소개&lt;/h2&gt;
 &lt;p&gt;Node JS 서버를 배포하려고 한다.

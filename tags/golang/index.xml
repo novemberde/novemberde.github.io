@@ -11,7 +11,7 @@
       <title>Golang Project Guide from A to Z: From Feature Development to Enterprise Application Design</title>
       <link>https://novemberde.github.io/post/2024/10/15/2024-gophercon-golang-project-guide-a-z/</link>
       <pubDate>Mon, 14 Oct 2024 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2024/10/15/2024-gophercon-golang-project-guide-a-z/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;p&gt;&amp;ldquo;고언어 프로젝트 가이드 A-Z&amp;quot;라는 주제로, 작은 프로젝트부터 엔터프라이즈 애플리케이션까지 Go 언어를 사용한 개발 방법론에 대해서 공유해보았습니다.&lt;/p&gt;
@@ -25,7 +25,7 @@ NoSQL 데이터베이스 (DynamoDB) 사용 시의 모델링 방법을 간략히 
       <title>Go 도입 후 4년 간 기록</title>
       <link>https://novemberde.github.io/post/2024/07/25/2023-gophercon-4-years-history-adopting-go/</link>
       <pubDate>Thu, 25 Jul 2024 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2024/07/25/2023-gophercon-4-years-history-adopting-go/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;p&gt;Gophercon Korea 2023에서 발표한 &amp;ldquo;Go 도입 후, 4년 간의 기록&amp;quot;이라는 주제로 공유했습니다.
@@ -40,7 +40,7 @@ Go를 도입하여 높은 트래픽을 처리하고 있으며, 주요 이슈와 
       <title>고언어(Golang) HACKING.md 내용 정리</title>
       <link>https://novemberde.github.io/post/2021/04/05/Golang-HACKING/</link>
       <pubDate>Mon, 05 Apr 2021 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2021/04/05/Golang-HACKING/</guid>
       <description>&lt;p&gt;Golang은 Open source project 이며 모든 개발 내역이 Github에 코드로 구현되어 있다.
 하나하나의 구현 내용을 이해하고 싶다면 각 패키지를 읽어보며 이해할 수 있다.
@@ -56,7 +56,7 @@ Go를 도입하여 높은 트래픽을 처리하고 있으며, 주요 이슈와 
       <title>당근마켓의 고언어 도입기, 그리고 활용법</title>
       <link>https://novemberde.github.io/post/2020/11/24/Golang-use-case-in-karrot/</link>
       <pubDate>Tue, 24 Nov 2020 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2020/11/24/Golang-use-case-in-karrot/</guid>
       <description>&lt;p&gt;당근마켓에 들어와서 고언어를 어떻게 도입하고, 어떻게 활용했는지에 대해서 정리해보았다.
 서비스가 성장함에 따라서 요구하는 조건은 달라지고 이에 최적화된 언어를 도입하고,
@@ -76,7 +76,7 @@ Go를 도입하여 높은 트래픽을 처리하고 있으며, 주요 이슈와 
       <title>Handle massive traffic with serverless</title>
       <link>https://novemberde.github.io/post/2020/07/10/Handle-massive-traffic-with-serverless/</link>
       <pubDate>Fri, 10 Jul 2020 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2020/07/10/Handle-massive-traffic-with-serverless/</guid>
       <description>&lt;p&gt;The journey to adopt the serverless architecture from beginning to advanced.&lt;/p&gt;
 &lt;h2 id=&#34;presentation&#34;&gt;Presentation&lt;/h2&gt;
@@ -87,7 +87,7 @@ Go를 도입하여 높은 트래픽을 처리하고 있으며, 주요 이슈와 
       <title>Go언어로 서버리스 서비스 시작하기</title>
       <link>https://novemberde.github.io/post/2019/12/22/Go-serverless/</link>
       <pubDate>Sun, 22 Dec 2019 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2019/12/22/Go-serverless/</guid>
       <description>&lt;p&gt;AWS에서 서버리스로 구현하는 앱은 보통 Javascript 또는 Python으로 작성된다.
 그렇지만 AWS Lambda에서는 거의 모든 언어를 지원하고 있다.
@@ -113,7 +113,7 @@ Go 언어를 통해 서버리스 Todo 앱을 작성하고 배포하는 예제를
       <title>AWS Lambda에서의 Cold Start 문제 해결하기(Golang &#43; serverless framework)</title>
       <link>https://novemberde.github.io/post/2018/02/02/Lambda_coldStart/</link>
       <pubDate>Fri, 02 Feb 2018 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2018/02/02/Lambda_coldStart/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;

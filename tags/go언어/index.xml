@@ -11,7 +11,7 @@
       <title>AWS Lambda에서의 Cold Start 문제 해결하기(Golang &#43; serverless framework)</title>
       <link>https://novemberde.github.io/post/2018/02/02/Lambda_coldStart/</link>
       <pubDate>Fri, 02 Feb 2018 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2018/02/02/Lambda_coldStart/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;

@@ -2,7 +2,7 @@
 
 > Logs for troubleshooting, dev-experience
 
-Author: map[name:BYUN Kyuhyun]
+Author: BYUN Kyuhyun
 Site: https://novemberde.github.io/
 
 ## Blog Posts

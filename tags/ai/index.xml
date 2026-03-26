@@ -11,7 +11,7 @@
       <title>AI 시대의 일하는 속도: 자동차를 타고도 마차의 속도로 달리는 사람들</title>
       <link>https://novemberde.github.io/post/2026/03/12/Working-Speed-In-AI-Era-ko/</link>
       <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2026/03/12/Working-Speed-In-AI-Era-ko/</guid>
       <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://novemberde.github.io/images/20260312_ai.png&#34; alt=&#34;working speed in ai era&#34;  /&gt;
 &lt;/p&gt;
@@ -26,7 +26,7 @@
       <title>Working Speed in the AI Era: Driving a Car at Horse-Carriage Pace</title>
       <link>https://novemberde.github.io/post/2026/03/12/Working-Speed-In-AI-Era/</link>
       <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2026/03/12/Working-Speed-In-AI-Era/</guid>
       <description>&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;https://novemberde.github.io/images/20260312_ai.png&#34; alt=&#34;working speed in ai era&#34;  /&gt;
 &lt;/p&gt;
@@ -38,7 +38,7 @@
       <title>How I Use Claude</title>
       <link>https://novemberde.github.io/post/2026/02/17/How-I-Use-Claude-Engineer-AI-Workflow/</link>
       <pubDate>Tue, 17 Feb 2026 10:00:00 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2026/02/17/How-I-Use-Claude-Engineer-AI-Workflow/</guid>
       <description>&lt;p&gt;&amp;ldquo;What separates people who use AI well from those who don&amp;rsquo;t?&amp;rdquo;&lt;/p&gt;
 &lt;p&gt;It&amp;rsquo;s a question I get from colleagues often. It&amp;rsquo;s been three years since ChatGPT launched, and over a year since I started using Claude Code in earnest. In that time, the way I work has fundamentally changed. It&amp;rsquo;s no longer just &amp;ldquo;asking AI things&amp;rdquo;—&lt;strong&gt;the way I think alongside AI&lt;/strong&gt; has shifted.&lt;/p&gt;
@@ -49,7 +49,7 @@
       <title>나는 Claude를 이렇게 쓴다</title>
       <link>https://novemberde.github.io/post/2026/02/17/How-I-Use-Claude-Engineer-AI-Workflow-ko/</link>
       <pubDate>Tue, 17 Feb 2026 10:00:00 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2026/02/17/How-I-Use-Claude-Engineer-AI-Workflow-ko/</guid>
       <description>&lt;p&gt;&amp;ldquo;AI를 잘 쓰는 사람과 못 쓰는 사람의 차이는 뭘까?&amp;rdquo;&lt;/p&gt;
 &lt;p&gt;동료들에게 자주 받는 질문이다. ChatGPT가 나온 지 3년, Claude Code를 본격적으로 쓴 지 1년이 넘었다. 그 사이에 내 작업 방식은 근본적으로 바뀌었다. 단순히 &amp;ldquo;AI에게 물어보는 것&amp;quot;이 아니라, &lt;strong&gt;AI와 함께 생각하는 방식&lt;/strong&gt; 자체가 달라졌다.&lt;/p&gt;
@@ -62,7 +62,7 @@
       <title>AI 시대의 Fail Fast: 실패의 수준이 달라졌다</title>
       <link>https://novemberde.github.io/post/2026/02/10/AI-Fail-Fast-Product-Quality-ko/</link>
       <pubDate>Tue, 10 Feb 2026 10:00:00 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2026/02/10/AI-Fail-Fast-Product-Quality-ko/</guid>
       <description>&lt;p&gt;&amp;ldquo;빠르게 실패하라(Fail Fast).&amp;rdquo;&lt;/p&gt;
 &lt;p&gt;스타트업과 프로덕트 세계에서 가장 많이 들리는 조언 중 하나다. 아이디어를 빠르게 시장에 내놓고, 피드백을 받고, 방향을 수정하라. 틀린 말이 아니다. 하지만 현실은 종종 이랬다. 빠르게 만드느라 수준이 떨어지고, 수준이 떨어지니 피드백 자체가 왜곡되고, 왜곡된 피드백으로 잘못된 결론을 내린다.&lt;/p&gt;
@@ -75,7 +75,7 @@
       <title>Fail Fast in the Age of AI: The Bar for Failure Has Changed</title>
       <link>https://novemberde.github.io/post/2026/02/10/AI-Fail-Fast-Product-Quality/</link>
       <pubDate>Tue, 10 Feb 2026 10:00:00 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2026/02/10/AI-Fail-Fast-Product-Quality/</guid>
       <description>&lt;p&gt;&amp;ldquo;Fail fast.&amp;rdquo;&lt;/p&gt;
 &lt;p&gt;It&amp;rsquo;s one of the most common pieces of advice in the startup and product world. Ship your idea quickly, get feedback, adjust course. It&amp;rsquo;s not wrong. But reality often looked like this: building fast meant building poorly, building poorly meant distorted feedback, and distorted feedback led to wrong conclusions.&lt;/p&gt;
@@ -88,7 +88,7 @@
       <title>AWS Unified Studio 살펴보기</title>
       <link>https://novemberde.github.io/post/2025/01/28/AWS-unified-studio/</link>
       <pubDate>Tue, 28 Jan 2025 00:30:00 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2025/01/28/AWS-unified-studio/</guid>
       <description>&lt;h2 id=&#34;들어가며-왜-통합-ml-플랫폼인가&#34;&gt;들어가며: 왜 통합 ML 플랫폼인가&lt;/h2&gt;
 &lt;p&gt;머신러닝 플랫폼을 구축하고 운영하다 보면 공통적으로 마주치는 문제들이 있다. 데이터 엔지니어는 Athena와 Glue를 사용하고, ML 엔지니어는 SageMaker를 사용하며, 애플리케이션 개발자는 Bedrock을 사용한다. 각 팀은 서로 다른 도구와 워크플로우를 가지고 있고, 이는 협업의 마찰을 증가시킨다.&lt;/p&gt;

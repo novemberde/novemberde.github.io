@@ -11,7 +11,7 @@
       <title>Bitbucket access key 발급하기</title>
       <link>https://novemberde.github.io/post/2017/04/18/Bitbucket_access_key_0/</link>
       <pubDate>Tue, 09 May 2017 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2017/04/18/Bitbucket_access_key_0/</guid>
       <description>&lt;p&gt;서버에 애플리케이션을 배포할 때 FTP로 파일을 일일이 옮기는 방식은 비효율적이다. Git을 활용하면 코드 변경사항을 추적하면서도 간단한 명령어로 서버 코드를 업데이트할 수 있다.&lt;/p&gt;
 &lt;p&gt;하지만 서버에서 매번 사용자 이름과 비밀번호를 입력하는 것도 번거롭고 보안상 좋지 않다. 이 글에서는 Bitbucket에서 안전하게 인증하는 여러 방법을 실제 사용 사례와 함께 살펴본다.&lt;/p&gt;
@@ -31,7 +31,7 @@
       <title>접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기</title>
       <link>https://novemberde.github.io/post/2017/04/01/Docker_2/</link>
       <pubDate>Sat, 01 Apr 2017 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2017/04/01/Docker_2/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;

@@ -11,7 +11,7 @@
       <title>Legacy android application, Kotlin 적용기</title>
       <link>https://novemberde.github.io/post/2018/05/28/kotlin/</link>
       <pubDate>Mon, 28 May 2018 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2018/05/28/kotlin/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;
@@ -40,7 +40,7 @@
       <title>The difference among String, StringBuilder, and StringBuffer in JAVA</title>
       <link>https://novemberde.github.io/post/2018/05/24/String/</link>
       <pubDate>Thu, 24 May 2018 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2018/05/24/String/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;
@@ -56,7 +56,7 @@ Let&amp;rsquo;s take a glance at the use cases of String, StringBuilder and Stri
       <title>Java에서 String, StringBuilder, StringBuffer의 차이</title>
       <link>https://novemberde.github.io/post/2017/04/15/String_0/</link>
       <pubDate>Sat, 15 Apr 2017 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2017/04/15/String_0/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;

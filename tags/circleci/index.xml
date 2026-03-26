@@ -11,7 +11,7 @@
       <title>Serverless Application CI/CD on CircleCI</title>
       <link>https://novemberde.github.io/post/2019/05/13/CircleCI-1st-Meetup/</link>
       <pubDate>Mon, 13 May 2019 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2019/05/13/CircleCI-1st-Meetup/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;
@@ -29,7 +29,7 @@
       <title>Circle CI에서 Docker Build 하기</title>
       <link>https://novemberde.github.io/post/2018/09/17/Circleci-docker/</link>
       <pubDate>Mon, 17 Sep 2018 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2018/09/17/Circleci-docker/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;
@@ -46,7 +46,7 @@ CircleCI에서 docker를 빌드할 수 있는 이미지 생성하는 방법 및 
       <title>CircleCI에서 Github private repository를 npm module로 사용하기</title>
       <link>https://novemberde.github.io/post/2018/05/16/CircleCI-npm-private-github/</link>
       <pubDate>Wed, 16 May 2018 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2018/05/16/CircleCI-npm-private-github/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;

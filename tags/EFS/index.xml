@@ -11,7 +11,7 @@
       <title>AWS EBS, FSx, EFS for EC2: Storage Comparison (2024)</title>
       <link>https://novemberde.github.io/post/2024/11/15/aws-ebs-2024/</link>
       <pubDate>Fri, 15 Nov 2024 00:30:00 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2024/11/15/aws-ebs-2024/</guid>
       <description>&lt;h1 id=&#34;개요&#34;&gt;개요&lt;/h1&gt;
 &lt;p&gt;ML Data platform engineering에서 Feature Store의 성능을 개선하기 위해 storage 옵션들을 검토하고 있다. Remote cache만으로는 network latency 문제가 있어서, disk storage를 활용하면 더 빠른 데이터 접근이 가능할 것으로 기대된다.&lt;/p&gt;
@@ -31,7 +31,7 @@
       <title>2024 AWS Serverless Computing 종류 정리</title>
       <link>https://novemberde.github.io/post/2024/10/23/aws-serverless-computing/</link>
       <pubDate>Wed, 23 Oct 2024 10:30:00 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2024/10/23/aws-serverless-computing/</guid>
       <description>&lt;p&gt;&lt;strong&gt;1. Computing &amp;amp; Application&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;AWS Lambda&lt;/strong&gt;&lt;/p&gt;

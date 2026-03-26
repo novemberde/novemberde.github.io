@@ -11,7 +11,7 @@
       <title>고언어(Golang) HACKING.md 내용 정리</title>
       <link>https://novemberde.github.io/post/2021/04/05/Golang-HACKING/</link>
       <pubDate>Mon, 05 Apr 2021 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2021/04/05/Golang-HACKING/</guid>
       <description>&lt;p&gt;Golang은 Open source project 이며 모든 개발 내역이 Github에 코드로 구현되어 있다.
 하나하나의 구현 내용을 이해하고 싶다면 각 패키지를 읽어보며 이해할 수 있다.
@@ -27,7 +27,7 @@
       <title>당근마켓의 고언어 도입기, 그리고 활용법</title>
       <link>https://novemberde.github.io/post/2020/11/24/Golang-use-case-in-karrot/</link>
       <pubDate>Tue, 24 Nov 2020 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2020/11/24/Golang-use-case-in-karrot/</guid>
       <description>&lt;p&gt;당근마켓에 들어와서 고언어를 어떻게 도입하고, 어떻게 활용했는지에 대해서 정리해보았다.
 서비스가 성장함에 따라서 요구하는 조건은 달라지고 이에 최적화된 언어를 도입하고,

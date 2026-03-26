@@ -11,7 +11,7 @@
       <title>2024 AWS Serverless Computing 종류 정리</title>
       <link>https://novemberde.github.io/post/2024/10/23/aws-serverless-computing/</link>
       <pubDate>Wed, 23 Oct 2024 10:30:00 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2024/10/23/aws-serverless-computing/</guid>
       <description>&lt;p&gt;&lt;strong&gt;1. Computing &amp;amp; Application&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;AWS Lambda&lt;/strong&gt;&lt;/p&gt;
@@ -45,7 +45,7 @@
       <title>Serverless Application CI/CD on CircleCI</title>
       <link>https://novemberde.github.io/post/2019/05/13/CircleCI-1st-Meetup/</link>
       <pubDate>Mon, 13 May 2019 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2019/05/13/CircleCI-1st-Meetup/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;
@@ -63,7 +63,7 @@
       <title>Serverless Websocket 톺아보기</title>
       <link>https://novemberde.github.io/post/2019/04/10/Serverless-Websocket/</link>
       <pubDate>Wed, 10 Apr 2019 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2019/04/10/Serverless-Websocket/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;
@@ -81,7 +81,7 @@
       <title>0원으로 시작하는 데이터 수집 및 분석</title>
       <link>https://novemberde.github.io/post/2018/10/29/Potal-Analysis/</link>
       <pubDate>Mon, 29 Oct 2018 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2018/10/29/Potal-Analysis/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;
@@ -104,7 +104,7 @@
       <title>AWS Lambda에서의 Cold Start 문제 해결하기(Golang &#43; serverless framework)</title>
       <link>https://novemberde.github.io/post/2018/02/02/Lambda_coldStart/</link>
       <pubDate>Fri, 02 Feb 2018 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2018/02/02/Lambda_coldStart/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;
@@ -121,7 +121,7 @@ lambda의 cold start의 가장 큰 시간을 소비하는 DB connection의 시�
       <title>AWS Lambda와 MySQL의 max connection 문제</title>
       <link>https://novemberde.github.io/post/2018/01/29/Mysql_maxConnection/</link>
       <pubDate>Mon, 29 Jan 2018 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2018/01/29/Mysql_maxConnection/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;
@@ -139,7 +139,7 @@ Database가 감당할 수 있는 Max connection이 얼마인지 알아야 대응
       <title>Serverless &#43; AWS Lambda &#43; AWS CloudWatch &#43; Slack 를 활용한  Web crawler 만들기</title>
       <link>https://novemberde.github.io/post/2017/12/31/Node-crawler/</link>
       <pubDate>Sun, 31 Dec 2017 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2017/12/31/Node-crawler/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;
@@ -170,7 +170,7 @@ npx는 해당 패키지 내에서 node_modules/.bin에 있는 명령어를 바�
       <title>Serverless을 이용한 AWS Lambda의 배포 자동화</title>
       <link>https://novemberde.github.io/post/2017/08/14/Serverless/</link>
       <pubDate>Mon, 14 Aug 2017 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2017/08/14/Serverless/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;

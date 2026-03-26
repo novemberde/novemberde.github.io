@@ -11,7 +11,7 @@
       <title>How to use multiple Cursor or VSCode by language</title>
       <link>https://novemberde.github.io/post/2025/03/03/cursor-user-data/</link>
       <pubDate>Mon, 03 Mar 2025 00:30:00 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2025/03/03/cursor-user-data/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve been using Cursor for a while and found it to be an excellent editor. However, when working on projects that require multiple programming languages, I often experience performance issues with the editor becoming sluggish. This reduces my productivity, so I&amp;rsquo;ve been searching for a way to use different editor setups for each language.&lt;/p&gt;
 &lt;h1 id=&#34;using-profiles&#34;&gt;Using Profiles&lt;/h1&gt;
@@ -22,7 +22,7 @@
       <title>언어별로 여러 Cursor 또는 VSCode를 사용하는 방법</title>
       <link>https://novemberde.github.io/post/2025/03/03/cursor-user-data-ko/</link>
       <pubDate>Mon, 03 Mar 2025 00:30:00 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2025/03/03/cursor-user-data-ko/</guid>
       <description>&lt;p&gt;한동안 Cursor를 사용했고 이것이 훌륭한 에디터라고 생각한다. 하지만 여러 프로그래밍 언어가 필요한 프로젝트에서 작업할 때, 종종 에디터가 무거워지는 경우가 있었다. 이럴 때 생산성이 떨어져서 각 언어마다 다른 에디터 설정을 사용하는 방법을 찾고 있었다.&lt;/p&gt;
 &lt;h1 id=&#34;profile을-이용하는-방법&#34;&gt;Profile을 이용하는 방법&lt;/h1&gt;
@@ -34,7 +34,7 @@
       <title>회고 방법론: 효과적인 성찰을 위한 실천 가이드 (Retrospective Methods)</title>
       <link>https://novemberde.github.io/post/2025/01/01/retrospective-method/</link>
       <pubDate>Wed, 01 Jan 2025 00:30:00 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2025/01/01/retrospective-method/</guid>
       <description>&lt;h2 id=&#34;executive-summary&#34;&gt;Executive Summary&lt;/h2&gt;
 &lt;p&gt;회고(retrospective)는 개인과 팀의 지속적인 성장을 위한 필수적인 실천 방법이다. 이 문서는 실무에서 활용할 수 있는 6가지 회고 방법론을 체계적으로 소개하고, 각 방법론의 특징, 적용 시나리오, 그리고 선택 기준을 제시한다.&lt;/p&gt;

@@ -11,7 +11,7 @@
       <title>EC2 meta data에 대해 알아보기</title>
       <link>https://novemberde.github.io/post/2017/11/06/Instance_metadata/</link>
       <pubDate>Wed, 06 Dec 2017 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2017/11/06/Instance_metadata/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;
@@ -32,7 +32,7 @@
       <title>AWS에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기</title>
       <link>https://novemberde.github.io/post/2017/03/31/Docker_1/</link>
       <pubDate>Fri, 31 Mar 2017 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2017/03/31/Docker_1/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;

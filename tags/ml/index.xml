@@ -11,7 +11,7 @@
       <title>AWS Unified Studio 살펴보기</title>
       <link>https://novemberde.github.io/post/2025/01/28/AWS-unified-studio/</link>
       <pubDate>Tue, 28 Jan 2025 00:30:00 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2025/01/28/AWS-unified-studio/</guid>
       <description>&lt;h2 id=&#34;들어가며-왜-통합-ml-플랫폼인가&#34;&gt;들어가며: 왜 통합 ML 플랫폼인가&lt;/h2&gt;
 &lt;p&gt;머신러닝 플랫폼을 구축하고 운영하다 보면 공통적으로 마주치는 문제들이 있다. 데이터 엔지니어는 Athena와 Glue를 사용하고, ML 엔지니어는 SageMaker를 사용하며, 애플리케이션 개발자는 Bedrock을 사용한다. 각 팀은 서로 다른 도구와 워크플로우를 가지고 있고, 이는 협업의 마찰을 증가시킨다.&lt;/p&gt;

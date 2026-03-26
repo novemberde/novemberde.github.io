@@ -11,7 +11,7 @@
       <title>DGX Spark 사용자 3인의 리얼 후기 - 44bits Podcast</title>
       <link>https://novemberde.github.io/post/2026/02/26/dgx-spark-user-experiences/</link>
       <pubDate>Thu, 26 Feb 2026 00:00:00 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2026/02/26/dgx-spark-user-experiences/</guid>
       <description>&lt;p&gt;44C캐스트 2026년 첫 번째 방송에서 DGX Spark 사용자 3인이 모여 리얼 사용기를 나눴다.&lt;/p&gt;
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
@@ -32,7 +32,7 @@
       <title>How to Use Apache Beam&#39;s MultiProcessShared (and Why You Need It)</title>
       <link>https://novemberde.github.io/post/2025/11/05/apache-beam-multiprocessshared-guide/</link>
       <pubDate>Wed, 05 Nov 2025 00:00:00 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2025/11/05/apache-beam-multiprocessshared-guide/</guid>
       <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;p&gt;If you&amp;rsquo;re running Apache Beam pipelines with GPUs or large ML models, you&amp;rsquo;ve probably hit &amp;ldquo;CUDA out of memory&amp;rdquo; errors. Here&amp;rsquo;s what&amp;rsquo;s happening: each worker process loads its own copy of your model, eating up memory until everything crashes.&lt;/p&gt;

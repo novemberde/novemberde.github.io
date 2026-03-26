@@ -11,7 +11,7 @@
       <title>EC2 meta data에 대해 알아보기</title>
       <link>https://novemberde.github.io/post/2017/11/06/Instance_metadata/</link>
       <pubDate>Wed, 06 Dec 2017 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2017/11/06/Instance_metadata/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;
@@ -32,7 +32,7 @@
       <title>EC2에서 Docker와 Docker-compose 사용하기</title>
       <link>https://novemberde.github.io/post/2017/10/20/Docker/</link>
       <pubDate>Fri, 20 Oct 2017 13:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2017/10/20/Docker/</guid>
       <description>&lt;p&gt;2017.06.08에 AWSKRUG에서 EC2에서 Docker와 Docker-compose 사용하기라는 주제로 발표했던 자료입니다.&lt;/p&gt;
 &lt;iframe src=&#34;//slides.com/byunkyuhyun/ec2-docker-docker-compose/embed&#34; width=&#34;576&#34; height=&#34;420&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;</description>
@@ -42,7 +42,7 @@
       <title>나만의 private docker registry 구성하기.</title>
       <link>https://novemberde.github.io/post/2017/04/09/Docker_Registry_0/</link>
       <pubDate>Sun, 09 Apr 2017 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2017/04/09/Docker_Registry_0/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;
@@ -56,7 +56,7 @@
       <title>만들어진 Docker image를 EC2 인스턴스에 배포하기</title>
       <link>https://novemberde.github.io/post/2017/04/03/Docker_9/</link>
       <pubDate>Mon, 03 Apr 2017 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2017/04/03/Docker_9/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;
@@ -85,7 +85,7 @@
       <title>PM2를 사용하여 EC2에 Node 서버 배포하기</title>
       <link>https://novemberde.github.io/post/2017/04/02/Docker_6/</link>
       <pubDate>Sun, 02 Apr 2017 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2017/04/02/Docker_6/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;
@@ -114,7 +114,7 @@
       <title>EC2에 Docker를 설치하고 Ubuntu 유저에게 권한주기</title>
       <link>https://novemberde.github.io/post/2017/04/01/Docker_3/</link>
       <pubDate>Sat, 01 Apr 2017 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2017/04/01/Docker_3/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;
@@ -143,7 +143,7 @@
       <title>접속 포트를 열어주고 별도의 Ubuntu 유저를 생성하기</title>
       <link>https://novemberde.github.io/post/2017/04/01/Docker_2/</link>
       <pubDate>Sat, 01 Apr 2017 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2017/04/01/Docker_2/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;
@@ -173,7 +173,7 @@
       <title>AWS에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기</title>
       <link>https://novemberde.github.io/post/2017/03/31/Docker_1/</link>
       <pubDate>Fri, 31 Mar 2017 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2017/03/31/Docker_1/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;
@@ -204,7 +204,7 @@ Amazon에서 지원하는 IaaS인 EC2를 사용하면 간단하게 서버 인프
       <title>Docker로 EC2에 Node 배포하기</title>
       <link>https://novemberde.github.io/post/2017/03/31/Docker_0/</link>
       <pubDate>Fri, 31 Mar 2017 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2017/03/31/Docker_0/</guid>
       <description>&lt;h2 id=&#34;소개&#34;&gt;소개&lt;/h2&gt;
 &lt;p&gt;Node JS 서버를 배포하려고 한다.

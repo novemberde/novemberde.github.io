@@ -11,7 +11,7 @@
       <title>2024 AWS Serverless Computing 종류 정리</title>
       <link>https://novemberde.github.io/post/2024/10/23/aws-serverless-computing/</link>
       <pubDate>Wed, 23 Oct 2024 10:30:00 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2024/10/23/aws-serverless-computing/</guid>
       <description>&lt;p&gt;&lt;strong&gt;1. Computing &amp;amp; Application&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;AWS Lambda&lt;/strong&gt;&lt;/p&gt;
@@ -45,7 +45,7 @@
       <title>나만의 private docker registry 구성하기.</title>
       <link>https://novemberde.github.io/post/2017/04/09/Docker_Registry_0/</link>
       <pubDate>Sun, 09 Apr 2017 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2017/04/09/Docker_Registry_0/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;

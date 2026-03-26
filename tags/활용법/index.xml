@@ -11,7 +11,7 @@
       <title>당근마켓의 고언어 도입기, 그리고 활용법</title>
       <link>https://novemberde.github.io/post/2020/11/24/Golang-use-case-in-karrot/</link>
       <pubDate>Tue, 24 Nov 2020 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2020/11/24/Golang-use-case-in-karrot/</guid>
       <description>&lt;p&gt;당근마켓에 들어와서 고언어를 어떻게 도입하고, 어떻게 활용했는지에 대해서 정리해보았다.
 서비스가 성장함에 따라서 요구하는 조건은 달라지고 이에 최적화된 언어를 도입하고,

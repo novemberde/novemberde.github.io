@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Startup on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/startup/</link>
+    <description>Recent content in Startup on Novemberde&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Tue, 10 Feb 2026 10:00:00 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/startup/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI 시대의 Fail Fast: 실패의 수준이 달라졌다</title>
+      <link>https://novemberde.github.io/post/2026/02/10/AI-Fail-Fast-Product-Quality-ko/</link>
+      <pubDate>Tue, 10 Feb 2026 10:00:00 +0000</pubDate>
+      <author>BYUN Kyuhyun</author>
+      <guid>https://novemberde.github.io/post/2026/02/10/AI-Fail-Fast-Product-Quality-ko/</guid>
+      <description>&lt;p&gt;&amp;ldquo;빠르게 실패하라(Fail Fast).&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;스타트업과 프로덕트 세계에서 가장 많이 들리는 조언 중 하나다. 아이디어를 빠르게 시장에 내놓고, 피드백을 받고, 방향을 수정하라. 틀린 말이 아니다. 하지만 현실은 종종 이랬다. 빠르게 만드느라 수준이 떨어지고, 수준이 떨어지니 피드백 자체가 왜곡되고, 왜곡된 피드백으로 잘못된 결론을 내린다.&lt;/p&gt;
+&lt;p&gt;AI가 이 공식을 근본적으로 바꾸고 있다.&lt;/p&gt;
+&lt;h2 id=&#34;과거의-fail-fast-속도와-수준의-트레이드오프&#34;&gt;과거의 Fail Fast: 속도와 수준의 트레이드오프&lt;/h2&gt;
+&lt;p&gt;전통적인 Fail Fast에는 구조적 한계가 있었다. 빠르게 만들려면 수준을 타협해야 했다. MVP(Minimum Viable Product)라는 이름 아래, &amp;ldquo;최소한으로 동작하는&amp;rdquo; 수준의 프로덕트를 만들어 시장에 내놓았다. 문제는 이 &amp;ldquo;최소한&amp;quot;의 수준이 너무 낮았다는 점이다.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Fail Fast in the Age of AI: The Bar for Failure Has Changed</title>
+      <link>https://novemberde.github.io/post/2026/02/10/AI-Fail-Fast-Product-Quality/</link>
+      <pubDate>Tue, 10 Feb 2026 10:00:00 +0000</pubDate>
+      <author>BYUN Kyuhyun</author>
+      <guid>https://novemberde.github.io/post/2026/02/10/AI-Fail-Fast-Product-Quality/</guid>
+      <description>&lt;p&gt;&amp;ldquo;Fail fast.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;It&amp;rsquo;s one of the most common pieces of advice in the startup and product world. Ship your idea quickly, get feedback, adjust course. It&amp;rsquo;s not wrong. But reality often looked like this: building fast meant building poorly, building poorly meant distorted feedback, and distorted feedback led to wrong conclusions.&lt;/p&gt;
+&lt;p&gt;AI is fundamentally changing this equation.&lt;/p&gt;
+&lt;h2 id=&#34;the-old-fail-fast-the-trade-off-between-speed-and-quality&#34;&gt;The Old Fail Fast: The Trade-off Between Speed and Quality&lt;/h2&gt;
+&lt;p&gt;Traditional Fail Fast had a structural limitation. Building fast meant compromising quality. Under the banner of MVP—Minimum Viable Product—teams shipped products that were &amp;ldquo;minimally functional.&amp;rdquo; The problem was that the bar for &amp;ldquo;minimal&amp;rdquo; was too low.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>스타트업 팀이 지속적으로 움직이기 위한 리더십</title>
+      <link>https://novemberde.github.io/post/2024/06/04/simple-leadership-principles/</link>
+      <pubDate>Mon, 03 Jun 2024 11:30:03 +0000</pubDate>
+      <author>BYUN Kyuhyun</author>
+      <guid>https://novemberde.github.io/post/2024/06/04/simple-leadership-principles/</guid>
+      <description>&lt;h2 id=&#34;의사결정과-업무-진행은-프로덕트를-사용하는-고객-관점에서-시작한다&#34;&gt;의사결정과 업무 진행은 프로덕트를 사용하는 고객 관점에서 시작한다.&lt;/h2&gt;
+&lt;p&gt;&amp;lsquo;고객 관점&amp;rsquo;이라는 말은 많이 사용되지만, 실제로 왜 중요한지 두 가지 측면에서 살펴보려고 한다.&lt;/p&gt;
+&lt;h3 id=&#34;1-조직에서의-의사결정-측면&#34;&gt;1. 조직에서의 의사결정 측면&lt;/h3&gt;
+&lt;p align=&#34;center&#34;&gt;
+  &lt;img src=&#34;https://novemberde.github.io/images/leadership/trouble.png&#34; style=&#34;height:150px&#34;&gt;
+&lt;/p&gt;
+&lt;!-- ![충돌](/images/leadership/trouble.png) --&gt;
+&lt;p&gt;이런 상황을 경험해본 적이 있을 것이다. 팀원들이 서로 다른 방향을 바라보며 의견이 엇갈리는 순간 말이다. 각자가 자신이 생각하는 해결 방법에 몰입하다 보면, 대화가 평행선을 달리기 쉽다. 이럴 때 어떻게 하면 좋을까?&lt;/p&gt;
+&lt;p align=&#34;center&#34;&gt;
+  &lt;img src=&#34;https://novemberde.github.io/images/leadership/choice.png&#34; style=&#34;height:300px&#34;&gt;
+&lt;/p&gt;
+&lt;p&gt;먼저 고객이 실제로 겪고 있는 문제 상황을 함께 정확히 이해해보자. 고객에게 정말 필요한 것이 무엇인지 함께 정의하는 것이다. &lt;strong&gt;이를 문서 최상위에 &amp;ldquo;목표&amp;quot;로 명확히 적어두면 좋다.&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

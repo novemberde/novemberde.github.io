@@ -11,7 +11,7 @@
       <title>hxxp와 hxxps: URL 무해화(Defanging)를 위한 http/https 대체 표기법 알아보기</title>
       <link>https://novemberde.github.io/post/2024/11/07/http-https-hxxp-hxxps/</link>
       <pubDate>Thu, 07 Nov 2024 00:30:00 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2024/11/07/http-https-hxxp-hxxps/</guid>
       <description>&lt;h2 id=&#34;url-무해화defanging란&#34;&gt;URL 무해화(Defanging)란?&lt;/h2&gt;
 &lt;p&gt;보안 전문가들은 악성 URL을 공유할 때 특별한 표기법을 쓴다. http 대신 hxxp를, https 대신 hxxps를 쓰는 것이다. 이런 방식을 &amp;lsquo;URL 무해화(URL defanging)&amp;lsquo;라고 한다.&lt;/p&gt;

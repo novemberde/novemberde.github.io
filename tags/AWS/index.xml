@@ -11,7 +11,7 @@
       <title>Amazon Redshift의 내부 Architecture: ParAccel에서 Serverless까지</title>
       <link>https://novemberde.github.io/post/2026/02/09/Redshift-Internals-Architecture-ko/</link>
       <pubDate>Mon, 09 Feb 2026 15:00:00 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2026/02/09/Redshift-Internals-Architecture-ko/</guid>
       <description>&lt;h2 id=&#34;용어-사전&#34;&gt;용어 사전&lt;/h2&gt;
 &lt;p&gt;이 글에서 자주 등장하는 핵심 용어를 먼저 정리한다.&lt;/p&gt;
@@ -90,7 +90,7 @@
       <title>BigQuery vs Redshift: Cloud Data Warehouse 선택을 위한 비교</title>
       <link>https://novemberde.github.io/post/2026/02/08/BigQuery-vs-Redshift-Deep-Dive-ko/</link>
       <pubDate>Sun, 08 Feb 2026 10:00:00 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2026/02/08/BigQuery-vs-Redshift-Deep-Dive-ko/</guid>
       <description>&lt;h2 id=&#34;용어-사전&#34;&gt;용어 사전&lt;/h2&gt;
 &lt;p&gt;이 글에서 자주 등장하는 핵심 용어를 먼저 정리한다.&lt;/p&gt;
@@ -173,7 +173,7 @@
       <title>AWS Hero가 선정한 2025년 클라우드 트렌드와 신규 서비스 - AWS re:Invent reCap 온라인 콘퍼런스</title>
       <link>https://novemberde.github.io/post/2025/02/07/AWS-reinvent-recap-with-heroes/</link>
       <pubDate>Fri, 07 Feb 2025 00:30:00 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2025/02/07/AWS-reinvent-recap-with-heroes/</guid>
       <description>&lt;p&gt;&amp;ldquo;AWS Hero가 선정한 2025년 클라우드 트렌드와 신규 서비스 - AWS re:Invent reCap 온라인 콘퍼런스&amp;rdquo; 에서 공유한 내용을 정리했다.&lt;/p&gt;
 &lt;h1 id=&#34;youtube&#34;&gt;Youtube&lt;/h1&gt;
@@ -187,7 +187,7 @@
       <title>AWS Unified Studio 살펴보기</title>
       <link>https://novemberde.github.io/post/2025/01/28/AWS-unified-studio/</link>
       <pubDate>Tue, 28 Jan 2025 00:30:00 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2025/01/28/AWS-unified-studio/</guid>
       <description>&lt;h2 id=&#34;들어가며-왜-통합-ml-플랫폼인가&#34;&gt;들어가며: 왜 통합 ML 플랫폼인가&lt;/h2&gt;
 &lt;p&gt;머신러닝 플랫폼을 구축하고 운영하다 보면 공통적으로 마주치는 문제들이 있다. 데이터 엔지니어는 Athena와 Glue를 사용하고, ML 엔지니어는 SageMaker를 사용하며, 애플리케이션 개발자는 Bedrock을 사용한다. 각 팀은 서로 다른 도구와 워크플로우를 가지고 있고, 이는 협업의 마찰을 증가시킨다.&lt;/p&gt;
@@ -199,7 +199,7 @@
       <title>AWS EBS, FSx, EFS for EC2: Storage Comparison (2024)</title>
       <link>https://novemberde.github.io/post/2024/11/15/aws-ebs-2024/</link>
       <pubDate>Fri, 15 Nov 2024 00:30:00 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2024/11/15/aws-ebs-2024/</guid>
       <description>&lt;h1 id=&#34;개요&#34;&gt;개요&lt;/h1&gt;
 &lt;p&gt;ML Data platform engineering에서 Feature Store의 성능을 개선하기 위해 storage 옵션들을 검토하고 있다. Remote cache만으로는 network latency 문제가 있어서, disk storage를 활용하면 더 빠른 데이터 접근이 가능할 것으로 기대된다.&lt;/p&gt;
@@ -219,7 +219,7 @@
       <title>2024 AWS Serverless Computing 종류 정리</title>
       <link>https://novemberde.github.io/post/2024/10/23/aws-serverless-computing/</link>
       <pubDate>Wed, 23 Oct 2024 10:30:00 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2024/10/23/aws-serverless-computing/</guid>
       <description>&lt;p&gt;&lt;strong&gt;1. Computing &amp;amp; Application&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;AWS Lambda&lt;/strong&gt;&lt;/p&gt;
@@ -253,7 +253,7 @@
       <title>2200만 사용자를 위한 채팅 시스템 아키텍처</title>
       <link>https://novemberde.github.io/post/2022/05/12/karrot-chat-system/</link>
       <pubDate>Thu, 12 May 2022 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2022/05/12/karrot-chat-system/</guid>
       <description>&lt;p&gt;채팅은 맨 처음 입사하고 나서 맡은 프로젝트였고, 지금까지도 운영하고 개선하는 서비스이다.
 처음에 Ruby on rails 로 개발하던 환경에서 처음으로 시작한 마이크로서비스다.
@@ -274,7 +274,7 @@
       <title>Athena &amp; Step Functions 로 통계 파이프라인 구축하기</title>
       <link>https://novemberde.github.io/post/2021/10/25/athena-step-function/</link>
       <pubDate>Mon, 25 Oct 2021 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2021/10/25/athena-step-function/</guid>
       <description>&lt;p&gt;보통 Airflow 와 EMR 조합으로 통계 파이프라인을 관리하곤 한다.
 사내에서 빠르게 통계를 구축하고 관리하기 위해 불필요한 인프라 관리를 제외하고
@@ -295,7 +295,7 @@ pipeline에 대해서만 집중할 수 있도록 step functions를 도입하고,
       <title>AWS re:Invent Recap For Data analyst</title>
       <link>https://novemberde.github.io/post/2021/01/15/AWS-Glue-DataBrew/</link>
       <pubDate>Fri, 15 Jan 2021 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2021/01/15/AWS-Glue-DataBrew/</guid>
       <description>&lt;p&gt;AWS re:Invent 2020 에서 새로 출시한 AWS Glue DataBrew라는 서비스를 살펴보고,
 기존의 Data engineer의 역할을 DataBrew로 어떻게 대체할 수 있는지 설명한다.
@@ -314,7 +314,7 @@ pipeline에 대해서만 집중할 수 있도록 step functions를 도입하고,
       <title>RDS PostgreSQL에서 Aurora PostgreSQL Migration 하기</title>
       <link>https://novemberde.github.io/post/2020/10/17/RDS-to-aurora/</link>
       <pubDate>Sat, 17 Oct 2020 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2020/10/17/RDS-to-aurora/</guid>
       <description>&lt;p&gt;RDS PostgreSQL에서 Aurora PostgreSQL을 도입한 후기&lt;/p&gt;
 &lt;h2 id=&#34;presentation&#34;&gt;Presentation&lt;/h2&gt;
@@ -331,7 +331,7 @@ pipeline에 대해서만 집중할 수 있도록 step functions를 도입하고,
       <title>Handle massive traffic with serverless</title>
       <link>https://novemberde.github.io/post/2020/07/10/Handle-massive-traffic-with-serverless/</link>
       <pubDate>Fri, 10 Jul 2020 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2020/07/10/Handle-massive-traffic-with-serverless/</guid>
       <description>&lt;p&gt;The journey to adopt the serverless architecture from beginning to advanced.&lt;/p&gt;
 &lt;h2 id=&#34;presentation&#34;&gt;Presentation&lt;/h2&gt;
@@ -342,7 +342,7 @@ pipeline에 대해서만 집중할 수 있도록 step functions를 도입하고,
       <title>Go언어로 서버리스 서비스 시작하기</title>
       <link>https://novemberde.github.io/post/2019/12/22/Go-serverless/</link>
       <pubDate>Sun, 22 Dec 2019 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2019/12/22/Go-serverless/</guid>
       <description>&lt;p&gt;AWS에서 서버리스로 구현하는 앱은 보통 Javascript 또는 Python으로 작성된다.
 그렇지만 AWS Lambda에서는 거의 모든 언어를 지원하고 있다.
@@ -368,7 +368,7 @@ Go 언어를 통해 서버리스 Todo 앱을 작성하고 배포하는 예제를
       <title>Serverless Application CI/CD on CircleCI</title>
       <link>https://novemberde.github.io/post/2019/05/13/CircleCI-1st-Meetup/</link>
       <pubDate>Mon, 13 May 2019 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2019/05/13/CircleCI-1st-Meetup/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;
@@ -386,7 +386,7 @@ Go 언어를 통해 서버리스 Todo 앱을 작성하고 배포하는 예제를
       <title>Serverless Websocket 톺아보기</title>
       <link>https://novemberde.github.io/post/2019/04/10/Serverless-Websocket/</link>
       <pubDate>Wed, 10 Apr 2019 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2019/04/10/Serverless-Websocket/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;
@@ -404,7 +404,7 @@ Go 언어를 통해 서버리스 Todo 앱을 작성하고 배포하는 예제를
       <title>Native addon을 포함하여 Node.js &#43; Typescript &#43; Serverless 빌드 및 배포하기</title>
       <link>https://novemberde.github.io/post/2019/02/14/Ts-Serverless-Build/</link>
       <pubDate>Thu, 14 Feb 2019 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2019/02/14/Ts-Serverless-Build/</guid>
       <description>&lt;p&gt;AWSKRUG Serverless Group에서 발표한 자료입니다.
 C++로 빌드한 Native addon을 Serverless 환경에서 사용할 때 빌드 및 배포하는 방법을 다루었습니다.&lt;/p&gt;
@@ -420,7 +420,7 @@ C++로 빌드한 Native addon을 Serverless 환경에서 사용할 때 빌드 �
       <title>Amazon Timestream 시계열 데이터 전용 DB 소개</title>
       <link>https://novemberde.github.io/post/2019/01/25/Timestream/</link>
       <pubDate>Fri, 25 Jan 2019 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2019/01/25/Timestream/</guid>
       <description>&lt;p&gt;&amp;ldquo;시계열 데이터 전용 DB 소개&amp;quot;라는 주제로 2019년 1월 25일에 &lt;a href=&#34;https://pages.awscloud.com/aws-community-day-seoul-2019.html&#34;&gt;AWSKRUG re:Invent recap 행사&lt;/a&gt;에서 발표한 자료입니다.&lt;/p&gt;
 &lt;h2 id=&#34;발표자료&#34;&gt;발표자료&lt;/h2&gt;
@@ -436,7 +436,7 @@ C++로 빌드한 Native addon을 Serverless 환경에서 사용할 때 빌드 �
       <title>0원으로 시작하는 데이터 수집 및 분석</title>
       <link>https://novemberde.github.io/post/2018/10/29/Potal-Analysis/</link>
       <pubDate>Mon, 29 Oct 2018 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2018/10/29/Potal-Analysis/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;
@@ -459,7 +459,7 @@ C++로 빌드한 Native addon을 Serverless 환경에서 사용할 때 빌드 �
       <title>2018년 AWS Serverless Hands-on 1, 손쉽게 시작하는 Serverless Architecture</title>
       <link>https://novemberde.github.io/post/2018/07/02/Serverless-Handson-1/</link>
       <pubDate>Mon, 02 Jul 2018 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2018/07/02/Serverless-Handson-1/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;
@@ -478,7 +478,7 @@ C++로 빌드한 Native addon을 Serverless 환경에서 사용할 때 빌드 �
       <title>AWS Configure 여러 계정으로 스위칭하며 사용하기</title>
       <link>https://novemberde.github.io/post/2018/06/20/AWS-config-switching/</link>
       <pubDate>Wed, 20 Jun 2018 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2018/06/20/AWS-config-switching/</guid>
       <description>&lt;p&gt;개인 프로젝트, 회사 업무, 클라이언트 작업 등 여러 AWS 계정을 동시에 관리하다 보면 계정 전환이 일상적인 작업이 된다. 실수로 프로덕션 계정에서 개발용 리소스를 생성하거나, 반대로 개발 계정에 운영 데이터를 배포하는 사고를 방지하려면 계정 전환을 체계적으로 관리해야 한다.&lt;/p&gt;
 &lt;p&gt;이 글에서는 AWS CLI를 사용한 계정 전환의 다양한 방법을 실제 사용 사례와 함께 살펴본다.&lt;/p&gt;
@@ -490,7 +490,7 @@ C++로 빌드한 Native addon을 Serverless 환경에서 사용할 때 빌드 �
       <title>ECS &amp; Fargate Demo</title>
       <link>https://novemberde.github.io/post/2018/01/20/ECS_Fargate/</link>
       <pubDate>Sat, 20 Jan 2018 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2018/01/20/ECS_Fargate/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;
@@ -517,7 +517,7 @@ C++로 빌드한 Native addon을 Serverless 환경에서 사용할 때 빌드 �
       <title>EC2에서 Docker와 Docker-compose 사용하기</title>
       <link>https://novemberde.github.io/post/2017/10/20/Docker/</link>
       <pubDate>Fri, 20 Oct 2017 13:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2017/10/20/Docker/</guid>
       <description>&lt;p&gt;2017.06.08에 AWSKRUG에서 EC2에서 Docker와 Docker-compose 사용하기라는 주제로 발표했던 자료입니다.&lt;/p&gt;
 &lt;iframe src=&#34;//slides.com/byunkyuhyun/ec2-docker-docker-compose/embed&#34; width=&#34;576&#34; height=&#34;420&#34; scrolling=&#34;no&#34; frameborder=&#34;0&#34; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;</description>
@@ -527,7 +527,7 @@ C++로 빌드한 Native addon을 Serverless 환경에서 사용할 때 빌드 �
       <title>CodeCommit 과 SourceTree 연동</title>
       <link>https://novemberde.github.io/post/2017/10/20/CodeCommit/</link>
       <pubDate>Fri, 20 Oct 2017 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2017/10/20/CodeCommit/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;
@@ -557,7 +557,7 @@ C++로 빌드한 Native addon을 Serverless 환경에서 사용할 때 빌드 �
       <title>Serverless을 이용한 AWS Lambda의 배포 자동화</title>
       <link>https://novemberde.github.io/post/2017/08/14/Serverless/</link>
       <pubDate>Mon, 14 Aug 2017 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2017/08/14/Serverless/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;
@@ -577,7 +577,7 @@ Startups and Fortune 500 companies are using it to build incredibly efficient ap
       <title>AWS CloudFormation을 활용한 Architecture</title>
       <link>https://novemberde.github.io/post/2017/08/03/CloudFormation/</link>
       <pubDate>Thu, 03 Aug 2017 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2017/08/03/CloudFormation/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;
@@ -621,7 +621,7 @@ instanceType, KeyName, SSHLocation을 설정할 수 있도록 되어 있다.
       <title>Docker image를 EB(Elastic Beanstalk)를 통해 배포하기</title>
       <link>https://novemberde.github.io/post/2017/07/03/Elastic_Beanstalk/</link>
       <pubDate>Mon, 03 Jul 2017 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2017/07/03/Elastic_Beanstalk/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;
@@ -655,7 +655,7 @@ instanceType, KeyName, SSHLocation을 설정할 수 있도록 되어 있다.
       <title>Amazon Aurora와 sequelize 연동해보기.</title>
       <link>https://novemberde.github.io/post/2017/05/09/Aurora_sequelize_0/</link>
       <pubDate>Tue, 09 May 2017 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2017/05/09/Aurora_sequelize_0/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;
@@ -675,7 +675,7 @@ aurora는 MySQL과 호환이 가능한 DB라고 하기 때문에 나 또한 궁�
       <title>Docker를 활용하여 AWS의 Elastic Cache 에 접근하기.</title>
       <link>https://novemberde.github.io/post/2017/04/30/VPC_Redis_0/</link>
       <pubDate>Tue, 09 May 2017 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2017/04/30/VPC_Redis_0/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;
@@ -695,7 +695,7 @@ Docker 이미지 중에서 Redis-cli가 있기 때문에 손쉽게 별도의 설
       <title>AWS에 Ubuntu OS를 사용하는 EC2 인스턴스 생성하기</title>
       <link>https://novemberde.github.io/post/2017/03/31/Docker_1/</link>
       <pubDate>Fri, 31 Mar 2017 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2017/03/31/Docker_1/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;

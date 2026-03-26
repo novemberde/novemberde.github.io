@@ -11,7 +11,7 @@
       <title>CircleCI에서 Github private repository를 npm module로 사용하기</title>
       <link>https://novemberde.github.io/post/2018/05/16/CircleCI-npm-private-github/</link>
       <pubDate>Wed, 16 May 2018 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2018/05/16/CircleCI-npm-private-github/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;
@@ -59,7 +59,7 @@ npm private module을 가져올 수가 없다.&lt;/p&gt;
       <title>나만의 private docker registry 구성하기.</title>
       <link>https://novemberde.github.io/post/2017/04/09/Docker_Registry_0/</link>
       <pubDate>Sun, 09 Apr 2017 11:30:03 +0000</pubDate>
-      
+      <author>BYUN Kyuhyun</author>
       <guid>https://novemberde.github.io/post/2017/04/09/Docker_Registry_0/</guid>
       <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
 &lt;hr&gt;
