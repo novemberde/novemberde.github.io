@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Devops on Novemberde&#39;s Blog</title>
+    <link>https://novemberde.github.io/tags/devops/</link>
+    <description>Recent content in Devops on Novemberde&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Sat, 04 Oct 2025 00:30:00 +0000</lastBuildDate><atom:link href="https://novemberde.github.io/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI Platform with Python at Karrot - Inference Pipeline Part(Pycon Korea 2025)</title>
+      <link>https://novemberde.github.io/post/2025/10/04/pycon-korea-2025-dataflow-at-karrot/</link>
+      <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2025/10/04/pycon-korea-2025-dataflow-at-karrot/</guid>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+&lt;p&gt;This article covers our journey building a large-scale ML inference pipeline at Karrot (당근) using Python, Apache Beam, and Google Cloud Dataflow. The presentation was given at PyConKR 2025 by Park JunSeong and Byun Kyuhyun from the ML Infrastructure and ML Data Platform teams.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://novemberde.github.io/pdfs/AI%20Platform%20with%20Python.pdf&#34;&gt;AI Platform with Python (PDF)&lt;/a&gt;&lt;/p&gt;
+&lt;iframe src=&#34;https://novemberde.github.io/pdfs/AI%20Platform%20with%20Python.pdf&#34; width=&#34;100%&#34; height=&#34;600px&#34; style=&#34;border: none;&#34;&gt;
+    This browser does not support PDFs. Please download the PDF to view it: &lt;a href=&#34;https://novemberde.github.io/pdfs/AI%20Platform%20with%20Python.pdf&#34;&gt;Download PDF&lt;/a&gt;
+&lt;/iframe&gt;
+&lt;h2 id=&#34;table-of-contents&#34;&gt;Table of Contents&lt;/h2&gt;
+&lt;h3 id=&#34;part-1-ml-infrastructure-with-python-by-park-junseong&#34;&gt;Part 1: ML Infrastructure with Python (by Park JunSeong)&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Service Growth with AI Models&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>DORA 메트릭스: DevOps 성과 측정의 핵심 지표</title>
+      <link>https://novemberde.github.io/post/2025/01/13/DORA-metrics/</link>
+      <pubDate>Mon, 13 Jan 2025 00:30:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2025/01/13/DORA-metrics/</guid>
+      <description>&lt;p&gt;소프트웨어 개발 조직에서 성과를 정량적으로 측정하는 것은 오래된 숙제다. 개발 프로세스가 개선되고 있다는 느낌은 있지만, 이를 명확한 숫자로 증명하기란 쉽지 않다. &amp;ldquo;어떤 팀이 정말 잘하고 있는가?&amp;rdquo;, &amp;ldquo;개선 노력이 실제로 효과가 있는가?&amp;ldquo;라는 질문에 객관적으로 답하기 위해서는 신뢰할 수 있는 측정 방법이 필요하다.&lt;/p&gt;
+&lt;p&gt;DORA 메트릭스는 이러한 문제에 대한 과학적 접근이다. 측정과 기록, 관리가 필요한 일이라 실무에 적용하기는 쉽지 않다는 평가가 많지만, DevOps 성과를 바라보는 관점을 이해하는 것만으로도 의미가 있다. 이 글에서는 DORA 메트릭스에 대해 깊이 있게 살펴본다.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Circle CI에서 Docker Build 하기</title>
+      <link>https://novemberde.github.io/post/2018/09/17/Circleci-docker/</link>
+      <pubDate>Mon, 17 Sep 2018 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2018/09/17/Circleci-docker/</guid>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;현재 Terraform으로 ECS 인프라를 생성하고, CircleCI에서 docker image를 빌드하고 ECR에 푸시하는 과정을 자동화하고 있다.
+이 과정에 있어서 docker image를 빌드하는 것에서 문제가 발생했다.&lt;/p&gt;
+&lt;p&gt;CircleCI에서 script를 실행하는 환경은 Container 기반으로 되어 있기 때문이다.
+Docker image를 빌드하기 위해서는 docker가 설치되어 있는 환경이어야 했다.&lt;/p&gt;
+&lt;p&gt;docker-in-docker라는 개념으로 docker hub에 &amp;ldquo;docker&amp;quot;라는 docker image가 있다.
+하지만 이 이미지로는 프로덕션 이미지를 빌드하고 배포할 때 사용하는 기본 패키지가 없는데, 이러한 기본패키지를 추가하여
+CircleCI에서 docker를 빌드할 수 있는 이미지 생성하는 방법 및 CircleCI 설정을 정리해보았다.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Docker와 DevOps에서 Serverless와 NoOps로의 여정</title>
+      <link>https://novemberde.github.io/post/2017/12/06/Docker-to-serverless/</link>
+      <pubDate>Wed, 06 Dec 2017 11:30:03 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/post/2017/12/06/Docker-to-serverless/</guid>
+      <description>&lt;h2 id=&#34;summary&#34;&gt;Summary&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;&amp;ldquo;Docker와 DevOps에서 Serverless와 NoOps로의 여정&amp;quot;이라는 주제로 2017년 12월 06일에 &lt;a href=&#34;https://onoffmix.com/event/119375&#34;&gt;W3C Conference&lt;/a&gt;에서 발표한 자료입니다.&lt;/p&gt;
+&lt;hr&gt;
+&lt;iframe src=&#34;//www.slideshare.net/slideshow/embed_code/key/BVtdqqJP0sX0xY&#34; width=&#34;595&#34; height=&#34;485&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt; &lt;/iframe&gt; &lt;div style=&#34;margin-bottom:5px&#34;&gt; &lt;strong&gt; &lt;a href=&#34;//www.slideshare.net/KyuhyunByun1/docker-devops-serverless-noops&#34; title=&#34;Docker와 DevOps에서 Serverless와 NoOps로의 여정&#34; target=&#34;_blank&#34;&gt;Docker와 DevOps에서 Serverless와 NoOps로의 여정&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href=&#34;https://www.slideshare.net/KyuhyunByun1&#34; target=&#34;_blank&#34;&gt;Kyuhyun Byun&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;
+&lt;div&gt;데모로 시연한 샘플코드는 아래와 같습니다.&lt;/div&gt;
+&lt;div&gt;https://github.com/novemberde/serverless-webapp-demo&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.slideshare.net/KyuhyunByun1/docker-devops-serverless-noops&#34;&gt;https://www.slideshare.net/KyuhyunByun1/docker-devops-serverless-noops&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://onoffmix.com/event/119375&#34;&gt;https://onoffmix.com/event/119375&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/novemberde/serverless-webapp-demo&#34;&gt;https://github.com/novemberde/serverless-webapp-demo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

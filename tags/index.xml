@@ -27,10 +27,10 @@
     
     <item>
       <title>Leadership</title>
-      <link>https://novemberde.github.io/tags/Leadership/</link>
+      <link>https://novemberde.github.io/tags/leadership/</link>
       <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
       
-      <guid>https://novemberde.github.io/tags/Leadership/</guid>
+      <guid>https://novemberde.github.io/tags/leadership/</guid>
       <description></description>
     </item>
     
@@ -49,6 +49,96 @@
       <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
       
       <guid>https://novemberde.github.io/tags/%EB%A6%AC%EB%8D%94%EC%8B%AD/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DGX Spark</title>
+      <link>https://novemberde.github.io/tags/DGX-Spark/</link>
+      <pubDate>Thu, 26 Feb 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/DGX-Spark/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GPU</title>
+      <link>https://novemberde.github.io/tags/GPU/</link>
+      <pubDate>Thu, 26 Feb 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/GPU/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>LLM</title>
+      <link>https://novemberde.github.io/tags/LLM/</link>
+      <pubDate>Thu, 26 Feb 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/LLM/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>NVIDIA</title>
+      <link>https://novemberde.github.io/tags/NVIDIA/</link>
+      <pubDate>Thu, 26 Feb 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/NVIDIA/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ollama</title>
+      <link>https://novemberde.github.io/tags/ollama/</link>
+      <pubDate>Thu, 26 Feb 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/ollama/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VLLM</title>
+      <link>https://novemberde.github.io/tags/vLLM/</link>
+      <pubDate>Thu, 26 Feb 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/vLLM/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>개발 환경</title>
+      <link>https://novemberde.github.io/tags/%EA%B0%9C%EB%B0%9C-%ED%99%98%EA%B2%BD/</link>
+      <pubDate>Thu, 26 Feb 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EA%B0%9C%EB%B0%9C-%ED%99%98%EA%B2%BD/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>로컬 AI</title>
+      <link>https://novemberde.github.io/tags/%EB%A1%9C%EC%BB%AC-AI/</link>
+      <pubDate>Thu, 26 Feb 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%EB%A1%9C%EC%BB%AC-AI/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>파인튜닝</title>
+      <link>https://novemberde.github.io/tags/%ED%8C%8C%EC%9D%B8%ED%8A%9C%EB%8B%9D/</link>
+      <pubDate>Thu, 26 Feb 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%ED%8C%8C%EC%9D%B8%ED%8A%9C%EB%8B%9D/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>하드웨어</title>
+      <link>https://novemberde.github.io/tags/%ED%95%98%EB%93%9C%EC%9B%A8%EC%96%B4/</link>
+      <pubDate>Thu, 26 Feb 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://novemberde.github.io/tags/%ED%95%98%EB%93%9C%EC%9B%A8%EC%96%B4/</guid>
       <description></description>
     </item>
     
@@ -197,11 +287,11 @@
     </item>
     
     <item>
-      <title>Aws</title>
-      <link>https://novemberde.github.io/tags/aws/</link>
+      <title>AWS</title>
+      <link>https://novemberde.github.io/tags/AWS/</link>
       <pubDate>Mon, 09 Feb 2026 15:00:00 +0000</pubDate>
       
-      <guid>https://novemberde.github.io/tags/aws/</guid>
+      <guid>https://novemberde.github.io/tags/AWS/</guid>
       <description></description>
     </item>
     
@@ -287,11 +377,11 @@
     </item>
     
     <item>
-      <title>GCP</title>
-      <link>https://novemberde.github.io/tags/GCP/</link>
+      <title>Gcp</title>
+      <link>https://novemberde.github.io/tags/gcp/</link>
       <pubDate>Mon, 09 Feb 2026 14:00:00 +0000</pubDate>
       
-      <guid>https://novemberde.github.io/tags/GCP/</guid>
+      <guid>https://novemberde.github.io/tags/gcp/</guid>
       <description></description>
     </item>
     
@@ -449,15 +539,6 @@
     </item>
     
     <item>
-      <title>GPU</title>
-      <link>https://novemberde.github.io/tags/GPU/</link>
-      <pubDate>Wed, 05 Nov 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://novemberde.github.io/tags/GPU/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Machine Learning</title>
       <link>https://novemberde.github.io/tags/Machine-Learning/</link>
       <pubDate>Wed, 05 Nov 2025 00:00:00 +0000</pubDate>
@@ -557,11 +638,11 @@
     </item>
     
     <item>
-      <title>DevOps</title>
-      <link>https://novemberde.github.io/tags/DevOps/</link>
+      <title>Devops</title>
+      <link>https://novemberde.github.io/tags/devops/</link>
       <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
       
-      <guid>https://novemberde.github.io/tags/DevOps/</guid>
+      <guid>https://novemberde.github.io/tags/devops/</guid>
       <description></description>
     </item>
     
@@ -594,10 +675,10 @@
     
     <item>
       <title>Karrot</title>
-      <link>https://novemberde.github.io/tags/Karrot/</link>
+      <link>https://novemberde.github.io/tags/karrot/</link>
       <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
       
-      <guid>https://novemberde.github.io/tags/Karrot/</guid>
+      <guid>https://novemberde.github.io/tags/karrot/</guid>
       <description></description>
     </item>
     
@@ -611,20 +692,11 @@
     </item>
     
     <item>
-      <title>LLM</title>
-      <link>https://novemberde.github.io/tags/LLM/</link>
+      <title>Mlops</title>
+      <link>https://novemberde.github.io/tags/mlops/</link>
       <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
       
-      <guid>https://novemberde.github.io/tags/LLM/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>MLOps</title>
-      <link>https://novemberde.github.io/tags/MLOps/</link>
-      <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
-      
-      <guid>https://novemberde.github.io/tags/MLOps/</guid>
+      <guid>https://novemberde.github.io/tags/mlops/</guid>
       <description></description>
     </item>
     
@@ -688,15 +760,6 @@
       <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
       
       <guid>https://novemberde.github.io/tags/Vertex-AI/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>VLLM</title>
-      <link>https://novemberde.github.io/tags/vLLM/</link>
-      <pubDate>Sat, 04 Oct 2025 00:30:00 +0000</pubDate>
-      
-      <guid>https://novemberde.github.io/tags/vLLM/</guid>
       <description></description>
     </item>
     
@@ -1206,10 +1269,10 @@
     
     <item>
       <title>S3</title>
-      <link>https://novemberde.github.io/tags/s3/</link>
+      <link>https://novemberde.github.io/tags/S3/</link>
       <pubDate>Wed, 23 Oct 2024 10:30:00 +0000</pubDate>
       
-      <guid>https://novemberde.github.io/tags/s3/</guid>
+      <guid>https://novemberde.github.io/tags/S3/</guid>
       <description></description>
     </item>
     
@@ -2709,10 +2772,10 @@
     
     <item>
       <title>Node</title>
-      <link>https://novemberde.github.io/tags/Node/</link>
+      <link>https://novemberde.github.io/tags/node/</link>
       <pubDate>Sun, 31 Dec 2017 11:30:03 +0000</pubDate>
       
-      <guid>https://novemberde.github.io/tags/Node/</guid>
+      <guid>https://novemberde.github.io/tags/node/</guid>
       <description></description>
     </item>
     
