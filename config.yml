@@ -15,7 +15,8 @@ params:
   title: Novemberde dev logs
   description: "Logs for troubleshooting, dev-experience"
   keywords: [golang, aws, docker, serverless, registry, lambda, serverless]
-  author: "BYUN Kyuhyun"
+  author:
+    name: "BYUN Kyuhyun"
   enableDisqus: true
   schema:
     publisherType: "Person"
