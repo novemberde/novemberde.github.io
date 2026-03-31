@@ -1,35 +1,4 @@
 User-agent: *
 Disallow: /tags/
 Allow: /
-
-# AI Search Bots - Allow (for citation in AI search results)
-User-agent: OAI-SearchBot
-Disallow: /tags/
-Allow: /
-
-User-agent: ChatGPT-User
-Disallow: /tags/
-Allow: /
-
-User-agent: PerplexityBot
-Disallow: /tags/
-Allow: /
-
-User-agent: Claude-SearchBot
-Disallow: /tags/
-Allow: /
-
-User-agent: Claude-User
-Disallow: /tags/
-Allow: /
-
-User-agent: Applebot-Extended
-Disallow: /tags/
-Allow: /
-
-User-agent: GoogleOther
-Disallow: /tags/
-Allow: /
-
 Sitemap: {{ "sitemap.xml" | absURL }}
-
