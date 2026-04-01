@@ -11,7 +11,7 @@
     <loc>https://novemberde.github.io/tags/career/</loc>
     <lastmod>2026-03-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/Leadership/</loc>
+    <loc>https://novemberde.github.io/tags/leadership/</loc>
     <lastmod>2026-03-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/</loc>
@@ -128,7 +128,7 @@
     <loc>https://novemberde.github.io/post/2026/02/09/Redshift-Internals-Architecture-ko/</loc>
     <lastmod>2026-02-09T15:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/AWS/</loc>
+    <loc>https://novemberde.github.io/tags/aws/</loc>
     <lastmod>2026-02-09T15:00:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/columnar-storage/</loc>
@@ -146,7 +146,7 @@
     <loc>https://novemberde.github.io/tags/mpp/</loc>
     <lastmod>2026-02-09T15:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/Redshift/</loc>
+    <loc>https://novemberde.github.io/tags/redshift/</loc>
     <lastmod>2026-02-09T15:00:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/bigquery/</loc>
@@ -161,7 +161,7 @@
     <loc>https://novemberde.github.io/post/2026/02/09/Colossus-Capacitor-BigQuery-Internals-ko/</loc>
     <lastmod>2026-02-09T14:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/GCP/</loc>
+    <loc>https://novemberde.github.io/tags/gcp/</loc>
     <lastmod>2026-02-09T14:00:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/storage/</loc>
@@ -284,7 +284,7 @@
     <loc>https://novemberde.github.io/tags/Kubeflow/</loc>
     <lastmod>2025-10-04T00:30:00+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/mlops/</loc>
+    <loc>https://novemberde.github.io/tags/MLOps/</loc>
     <lastmod>2025-10-04T00:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/Monitoring/</loc>
@@ -482,7 +482,7 @@
     <loc>https://novemberde.github.io/tags/AppSync/</loc>
     <lastmod>2024-10-23T10:30:00+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/Aurora/</loc>
+    <loc>https://novemberde.github.io/tags/aurora/</loc>
     <lastmod>2024-10-23T10:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/computing/</loc>
@@ -497,10 +497,10 @@
     <loc>https://novemberde.github.io/tags/Eventbridge/</loc>
     <lastmod>2024-10-23T10:30:00+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/fargate/</loc>
+    <loc>https://novemberde.github.io/tags/Fargate/</loc>
     <lastmod>2024-10-23T10:30:00+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/Lambda/</loc>
+    <loc>https://novemberde.github.io/tags/lambda/</loc>
     <lastmod>2024-10-23T10:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/Neptune/</loc>
@@ -509,7 +509,7 @@
     <loc>https://novemberde.github.io/tags/OpenSearch/</loc>
     <lastmod>2024-10-23T10:30:00+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/S3/</loc>
+    <loc>https://novemberde.github.io/tags/s3/</loc>
     <lastmod>2024-10-23T10:30:00+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/tags/serverless/</loc>
@@ -617,7 +617,7 @@
     <loc>https://novemberde.github.io/tags/%ED%8C%80%EC%9B%8C%ED%81%AC/</loc>
     <lastmod>2024-06-03T11:30:03+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/burnout/</loc>
+    <loc>https://novemberde.github.io/tags/Burnout/</loc>
     <lastmod>2024-02-18T11:30:03+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/post/2024/02/18/throttle-input-to-prevent-burning-out-en/</loc>
@@ -1142,7 +1142,7 @@
     <loc>https://novemberde.github.io/tags/got/</loc>
     <lastmod>2017-12-31T11:30:03+00:00</lastmod>
   </url><url>
-    <loc>https://novemberde.github.io/tags/Node/</loc>
+    <loc>https://novemberde.github.io/tags/node/</loc>
     <lastmod>2017-12-31T11:30:03+00:00</lastmod>
   </url><url>
     <loc>https://novemberde.github.io/post/2017/12/31/Node-crawler/</loc>
